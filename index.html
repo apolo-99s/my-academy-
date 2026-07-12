@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Skills Academy 🇩🇿</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#060608;color:#E5E7EB;font-family:system-ui,-apple-system,sans-serif;min-height:100vh}
+button{cursor:pointer;font-family:inherit}
+input{font-family:inherit}
+.hidden{display:none!important}
+
+/* NAV */
+nav{padding:16px 24px;border-bottom:1px solid #111118;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:#060608;position:sticky;top:0;z-index:100}
+.brand{font-weight:800;font-size:16px;color:#fff}
+.brand span{color:#7C3AED}
+.lang-btns{display:flex;gap:6px}
+.lang-btn{background:transparent;border:1px solid #1C1C28;color:#6B7280;border-radius:8px;padding:5px 12px;font-size:13px;font-weight:400;transition:all 0.15s}
+.lang-btn.active{background:#7C3AED;border-color:#7C3AED;color:#fff;font-weight:700}
+
+/* LANDING */
+#landing{min-height:100vh;display:flex;flex-direction:column}
+.hero{background:linear-gradient(180deg,#0D0818 0%,#060608 100%);padding:52px 20px 44px;text-align:center;border-bottom:1px solid #1C1C28}
+.hero-badge{display:inline-block;background:#0D0818;border:1px solid #7C3AED44;border-radius:6px;padding:5px 14px;margin-bottom:18px;font-size:11px;color:#A78BFA;letter-spacing:3px;text-transform:uppercase}
+.hero h1{font-size:clamp(26px,6vw,52px);font-weight:900;margin:0 0 14px;background:linear-gradient(135deg,#fff 30%,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#6B7280;font-size:16px;max-width:520px;margin:0 auto 32px;line-height:1.65}
+.features{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;font-size:13px;color:#4B5563}
+.feature-tag{background:#0F0F18;border:1px solid #1C1C28;border-radius:20px;padding:6px 14px}
+
+/* SKILL CARDS */
+.skill-cards{max-width:860px;margin:44px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.skill-card{border-radius:16px;padding:26px;cursor:pointer;transition:all 0.2s;border:2px solid transparent}
+.skill-card:hover{transform:translateY(-3px)}
+.skill-icon{font-size:44px;margin-bottom:14px}
+.skill-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.skill-title{font-size:22px;font-weight:800;color:#fff;margin:0 0 8px}
+.skill-tagline{color:#6B7280;font-size:13px;line-height:1.5;margin:0 0 18px}
+.skill-stats{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;border-top:1px solid #ffffff10;padding-top:14px}
+.skill-stat{display:flex;justify-content:space-between;font-size:12px}
+.stat-label{color:#4B5563}
+.skill-cta{border-radius:8px;padding:10px;text-align:center;font-weight:700;font-size:14px;color:#fff;border:none;width:100%}
+
+/* RECOMMENDATION */
+.recommendation{max-width:860px;margin:0 auto 48px;padding:0 20px}
+.rec-box{background:#0D0818;border:1px solid #1C1C28;border-radius:12px;padding:20px;text-align:center;color:#4B5563;font-size:13px}
+
+/* ACCESS BOX */
+.access-section{max-width:560px;margin:0 auto;padding:0 20px 48px}
+.includes-box{background:#0D0D14;border:1px solid #1C1C28;border-radius:14px;padding:22px 24px;margin-bottom:28px}
+.includes-title{font-size:11px;color:#6B7280;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;font-weight:600}
+.include-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.include-check{color:#7C3AED;font-size:14px;flex-shrink:0}
+.include-text{font-size:13px;color:#9CA3AF;line-height:1.5}
+.access-box{background:#0A0818;border:1px solid #7C3AED44;border-radius:16px;padding:26px 24px}
+.access-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.access-sub{font-size:13px;color:#4B5563;margin-bottom:18px}
+.access-input{width:100%;background:#060608;border:1px solid #1C1C28;border-radius:10px;padding:13px 16px;color:#fff;font-size:15px;margin-bottom:10px;outline:none;letter-spacing:2px;text-transform:uppercase}
+.access-input.error{border-color:#DC2626}
+.error-msg{color:#F87171;font-size:13px;margin-bottom:10px}
+.access-btn{width:100%;background:#7C3AED;border:none;border-radius:10px;padding:14px;color:#fff;font-size:15px;font-weight:700;transition:background 0.2s}
+.access-btn:disabled{background:#4C1D95}
+.divider{margin-top:18px;padding-top:16px;border-top:1px solid #1C1C28}
+.not-bought{font-size:12px;color:#374151;text-align:center;margin-bottom:8px}
+.whatsapp-btn{display:block;background:#064E3B;border:1px solid #16A34A44;border-radius:10px;padding:12px;text-align:center;color:#4ADE80;font-size:14px;font-weight:600;text-decoration:none}
+.stats-row{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap;justify-content:center}
+.stat-item{text-align:center}
+.stat-num{font-size:24px;font-weight:900;color:#7C3AED}
+.stat-lbl{font-size:12px;color:#374151}
+
+/* FOOTER */
+footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-size:12px;color:#1F2937;background:#060608}
+
+/* ACADEMY HOME */
+#academy{display:none;min-height:100vh;flex-direction:column}
+#academy.active{display:flex;flex-direction:column}
+.academy-hero{background:linear-gradient(180deg,#0D0818 0%,#060608 100%);padding:52px 20px 44px;text-align:center;border-bottom:1px solid #1C1C28}
+.academy-badge{display:inline-block;background:#0D0818;border:1px solid #7C3AED44;border-radius:6px;padding:5px 14px;margin-bottom:18px;font-size:11px;color:#A78BFA;letter-spacing:3px;text-transform:uppercase}
+.academy-hero h1{font-size:clamp(26px,6vw,52px);font-weight:900;margin:0 0 14px;background:linear-gradient(135deg,#fff 30%,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:pre-line}
+.academy-hero p{color:#6B7280;font-size:16px;max-width:520px;margin:0 auto 32px;line-height:1.65}
+
+/* SKILL VIEW */
+#skill-view{display:none;min-height:100vh;flex-direction:column}
+#skill-view.active{display:flex;flex-direction:column}
+.skill-header{padding:16px 20px;border-bottom-width:1px;border-bottom-style:solid}
+.skill-header-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.skill-header-icon{font-size:26px}
+.skill-header-title{font-weight:800;font-size:17px;color:#fff}
+.skill-header-earn{font-size:11px}
+.skill-body{max-width:860px;margin:0 auto;padding:28px 20px;width:100%}
+
+/* LEVEL TABS */
+.level-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.level-tab{border-width:2px;border-style:solid;border-radius:10px;padding:9px 16px;font-size:13px;display:flex;align-items:center;gap:6px;background:transparent;transition:all 0.15s}
+.level-info{border-radius:12px;padding:20px;margin-bottom:24px;border-width:1px;border-style:solid}
+.level-info-top{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.level-badge-big{font-size:30px}
+.level-name{font-size:20px;font-weight:800;color:#fff}
+.level-duration{font-size:12px;color:#4B5563}
+.level-count{margin-left:auto;background:#00000030;border-radius:8px;padding:8px 14px;text-align:center}
+.level-count-num{font-size:22px;font-weight:800}
+.level-count-lbl{font-size:10px;color:#4B5563}
+.level-goal{color:#6B7280;font-size:13px;margin:0}
+.level-goal strong{color:#9CA3AF}
+
+/* LESSON CARDS */
+.lesson-cards{display:flex;flex-direction:column;gap:10px}
+.lesson-card{background:#0D0D14;border:1px solid #1C1C28;border-radius:12px;padding:18px 20px;cursor:pointer;display:flex;align-items:center;gap:14px;transition:all 0.15s}
+.lesson-card:hover{background:#111118}
+.lesson-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.lesson-info{flex:1}
+.lesson-title{font-weight:600;font-size:15px;color:#E5E7EB;margin-bottom:3px}
+.lesson-meta{font-size:12px;color:#4B5563}
+.lesson-arrow{color:#374151;font-size:20px;flex-shrink:0}
+
+/* LEVEL NAV */
+.level-nav{display:flex;justify-content:space-between;margin-top:28px;gap:10px;flex-wrap:wrap}
+.nav-btn-prev{background:#0D0D14;border:1px solid #1C1C28;border-radius:10px;padding:11px 18px;color:#6B7280;font-size:13px}
+.nav-btn-next{border:none;border-radius:10px;padding:11px 20px;color:#fff;font-size:13px;font-weight:700}
+
+/* LESSON VIEW */
+#lesson-view{display:none;min-height:100vh;flex-direction:column}
+#lesson-view.active{display:flex;flex-direction:column}
+.lesson-topbar{background:#0A0A12;border-bottom:1px solid #1C1C28;padding:14px 20px;position:sticky;top:0;z-index:10}
+.lesson-topbar-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.back-btn{background:transparent;border:1px solid #1C1C28;color:#6B7280;border-radius:8px;padding:6px 11px;font-size:12px}
+.breadcrumb{font-size:12px;color:#4B5563}
+.breadcrumb-level{font-size:12px}
+.lesson-counter{margin-left:auto;font-size:12px;color:#374151}
+.lesson-body{max-width:780px;margin:0 auto;padding:32px 20px 60px;width:100%}
+.lesson-level-badge{border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600;border-width:1px;border-style:solid;display:inline-block;margin-bottom:12px}
+.lesson-num-badge{font-size:12px;color:#374151;margin-left:8px}
+.lesson-h1{font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 24px;line-height:1.25}
+
+/* LESSON IMAGE */
+.lesson-img{width:100%;border-radius:12px;object-fit:cover;height:220px;display:block;margin-bottom:20px}
+.lesson-img-side{width:38%;flex-shrink:0;border-radius:12px;overflow:hidden}
+.lesson-img-side img{width:100%;height:100%;min-height:220px;object-fit:cover;display:block;border-radius:12px}
+.steps-with-img{display:flex;gap:20px;align-items:flex-start}
+
+/* STEPS */
+.steps-header{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.steps-bar{width:4px;height:20px;border-radius:2px}
+.steps-title{font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px}
+.steps-list{display:flex;flex-direction:column;gap:8px;flex:1}
+.step-item{background:#0D0D14;border:1px solid #1C1C28;border-radius:10px;overflow:hidden;transition:border-color 0.15s}
+.step-btn{width:100%;background:transparent;border:none;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;text-align:left}
+.step-num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;background:#1C1C28;color:#4B5563;transition:all 0.15s}
+.step-num.open{color:#fff}
+.step-preview{font-size:14px;color:#9CA3AF;flex:1;line-height:1.5;font-weight:400;text-align:left}
+.step-preview.open{color:#fff;font-weight:600}
+.step-toggle{color:#374151;font-size:16px;flex-shrink:0;margin-top:2px}
+.step-content{padding:0 16px 16px 52px;color:#9CA3AF;font-size:14px;line-height:1.75}
+
+/* METHOD / EXERCISE / TIP */
+.method-box{border-radius:12px;padding:20px;margin-bottom:20px;border-width:1px;border-style:solid}
+.method-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.method-emoji{font-size:18px}
+.method-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.method-text{color:#9CA3AF;font-size:14px;line-height:1.75;margin:0}
+.exercise-box{background:#0E0A00;border:1px solid #92400E40;border-radius:12px;padding:20px;margin-bottom:20px}
+.exercise-text{color:#D97706;font-size:14px;line-height:1.75;margin:0}
+.tip-box{background:#0A100A;border:1px solid #16A34A30;border-radius:10px;padding:16px;margin-bottom:28px}
+.tip-text{color:#6B7280;font-size:13px;line-height:1.65;margin:0}
+
+/* LESSON NAV */
+.lesson-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.lesson-nav-prev{background:#0D0D14;border:1px solid #1C1C28;border-radius:10px;padding:12px 18px;color:#6B7280;font-size:13px}
+.lesson-nav-next{border:none;border-radius:10px;padding:12px 20px;color:#fff;font-size:13px;font-weight:700}
+.lesson-complete{border-radius:10px;padding:12px 20px;font-size:13px;font-weight:700;border-width:1px;border-style:solid;background:#0D0D14}
+
+@media(max-width:600px){
+.steps-with-img{flex-direction:column}
+.lesson-img-side{width:100%}
+.lesson-img-side img{min-height:auto;height:200px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- LANDING PAGE -->
+<!-- ═══════════════════════════════════════ -->
+<div id="landing">
+  <nav>
+    <div class="brand"><span>Digital</span>Skills.dz</div>
+    <div class="lang-btns">
+      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" onclick="setLang('ar')">ع</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge" id="l-badge"></div>
+    <h1 id="l-title"></h1>
+    <p id="l-subtitle"></p>
+    <div class="features">
+      <span class="feature-tag" id="l-f1"></span>
+      <span class="feature-tag" id="l-f2"></span>
+      <span class="feature-tag" id="l-f3"></span>
+      <span class="feature-tag" id="l-f4"></span>
+    </div>
+  </div>
+
+  <div class="skill-cards" id="l-skill-cards"></div>
+
+  <div class="recommendation">
+    <div class="rec-box" id="l-rec"></div>
+  </div>
+
+  <div class="access-section">
+    <div class="includes-box">
+      <div class="includes-title" id="l-includes-title"></div>
+      <div id="l-includes-list"></div>
+    </div>
+    <div class="access-box">
+      <div class="access-title" id="l-already"></div>
+      <div class="access-sub" id="l-enter"></div>
+      <input type="text" class="access-input" id="access-input"
+        oninput="clearErr()" onkeydown="if(event.key==='Enter')checkAccess()">
+      <div class="error-msg hidden" id="access-error"></div>
+      <button class="access-btn" id="access-btn" onclick="checkAccess()"></button>
+      <div class="divider">
+        <div class="not-bought" id="l-not-bought"></div>
+        <a class="whatsapp-btn" id="l-whatsapp" href="#" target="_blank"></a>
+      </div>
+    </div>
+    <div class="stats-row" id="l-stats"></div>
+  </div>
+
+  <footer id="l-footer"></footer>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ACADEMY HOME -->
+<!-- ═══════════════════════════════════════ -->
+<div id="academy">
+  <nav>
+    <div class="brand"><span>Digital</span>Skills.dz</div>
+    <div class="lang-btns">
+      <button class="lang-btn active" id="a-lang-fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" id="a-lang-ar" onclick="setLang('ar')">ع</button>
+      <button class="lang-btn" id="a-lang-en" onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
+  <div class="academy-hero">
+    <div class="academy-badge" id="a-badge"></div>
+    <h1 id="a-title"></h1>
+    <p id="a-subtitle"></p>
+    <div class="features" id="a-features"></div>
+  </div>
+  <div class="skill-cards" id="a-skill-cards"></div>
+  <div class="recommendation"><div class="rec-box" id="a-rec"></div></div>
+  <footer id="a-footer"></footer>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SKILL VIEW -->
+<!-- ═══════════════════════════════════════ -->
+<div id="skill-view">
+  <nav>
+    <div class="brand"><span>Digital</span>Skills.dz</div>
+    <div class="lang-btns">
+      <button class="lang-btn" id="s-lang-fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" id="s-lang-ar" onclick="setLang('ar')">ع</button>
+      <button class="lang-btn" id="s-lang-en" onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
+  <div class="skill-header" id="skill-header">
+    <div class="skill-header-inner">
+      <span class="skill-header-icon" id="sh-icon"></span>
+      <div>
+        <div class="skill-header-title" id="sh-title"></div>
+        <div class="skill-header-earn" id="sh-earn"></div>
+      </div>
+    </div>
+  </div>
+  <div class="skill-body">
+    <div class="level-tabs" id="level-tabs"></div>
+    <div class="level-info" id="level-info"></div>
+    <div class="lesson-cards" id="lesson-cards"></div>
+    <div class="level-nav" id="level-nav"></div>
+  </div>
+  <footer id="s-footer"></footer>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- LESSON VIEW -->
+<!-- ═══════════════════════════════════════ -->
+<div id="lesson-view">
+  <div class="lesson-topbar">
+    <div class="lesson-topbar-inner">
+      <button class="back-btn" id="lesson-back-btn"></button>
+      <span id="lesson-skill-icon" style="font-size:16px"></span>
+      <span class="breadcrumb" id="lesson-skill-name"></span>
+      <span class="breadcrumb">/</span>
+      <span class="breadcrumb-level" id="lesson-level-name"></span>
+      <span class="lesson-counter" id="lesson-counter"></span>
+    </div>
+  </div>
+  <div class="lesson-body" id="lesson-body"></div>
+  <footer id="lv-footer"></footer>
+</div>
