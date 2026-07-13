@@ -787,3 +787,464 @@ const SKILLS = [
     ]
   }
 ];
+// ═══════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════
+let lang = localStorage.getItem('lang') || 'fr';
+let hasAccess = localStorage.getItem('hasAccess') === 'true';
+let currentSkillId = null;
+let currentLevelIdx = 0;
+let currentLessonIdx = null;
+let openStepIdx = null;
+
+const LEVEL_STYLES = {
+  Beginner:     {bg:'#052E16',border:'#16A34A',text:'#4ADE80'},
+  Intermediate: {bg:'#1E3A5F',border:'#2563EB',text:'#60A5FA'},
+  Advanced:     {bg:'#450A0A',border:'#DC2626',text:'#F87171'},
+  Master:       {bg:'#431407',border:'#EA580C',text:'#FB923C'},
+};
+
+const LEVEL_KEY_MAP = {
+  'Débutant':'Beginner','Intermédiaire':'Intermediate','Avancé':'Advanced','Maître':'Master',
+  'مبتدئ':'Beginner','متوسط':'Intermediate','متقدم':'Advanced','محترف':'Master',
+  'Beginner':'Beginner','Intermediate':'Intermediate','Advanced':'Advanced','Master':'Master',
+};
+
+function getLevelStyle(name) {
+  return LEVEL_STYLES[LEVEL_KEY_MAP[name]] || LEVEL_STYLES.Beginner;
+}
+
+// ═══════════════════════════════════════
+// LANGUAGE
+// ═══════════════════════════════════════
+function setLang(l) {
+  lang = l;
+  localStorage.setItem('lang', l);
+  const isAr = l === 'ar';
+  document.documentElement.lang = l;
+  document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim() === (l==='fr'?'FR':l==='ar'?'ع':'EN'));
+  });
+  if (hasAccess) {
+    if (currentLessonIdx !== null) renderLesson();
+    else if (currentSkillId) renderSkill();
+    else renderAcademy();
+  } else {
+    renderLanding();
+  }
+}
+
+// ═══════════════════════════════════════
+// ACCESS
+// ═══════════════════════════════════════
+function checkAccess() {
+  const t = T[lang];
+  const input = document.getElementById('access-input');
+  const errEl = document.getElementById('access-error');
+  const btn = document.getElementById('access-btn');
+  const val = input.value.trim().toUpperCase();
+
+  if (!val) { showErr(t.errEmpty); return; }
+  if (!CODES.includes(val)) { showErr(t.errInvalid); return; }
+
+  const used = JSON.parse(localStorage.getItem('usedCodes') || '[]');
+  if (used.includes(val)) { showErr(t.errUsed); return; }
+
+  btn.textContent = t.loading;
+  btn.disabled = true;
+  input.classList.add('error');
+
+  setTimeout(() => {
+    used.push(val);
+    localStorage.setItem('usedCodes', JSON.stringify(used));
+    localStorage.setItem('hasAccess', 'true');
+    hasAccess = true;
+    renderAcademy();
+  }, 900);
+}
+
+function showErr(msg) {
+  const errEl = document.getElementById('access-error');
+  const input = document.getElementById('access-input');
+  errEl.textContent = msg;
+  errEl.classList.remove('hidden');
+  input.classList.add('error');
+}
+
+function clearErr() {
+  const errEl = document.getElementById('access-error');
+  const input = document.getElementById('access-input');
+  if (errEl) errEl.classList.add('hidden');
+  if (input) input.classList.remove('error');
+  const btn = document.getElementById('access-btn');
+  if (btn) { btn.textContent = T[lang].access; btn.disabled = false; }
+}
+
+// ═══════════════════════════════════════
+// VIEWS
+// ═══════════════════════════════════════
+function showView(id) {
+  ['landing','academy','skill-view','lesson-view'].forEach(v => {
+    const el = document.getElementById(v);
+    if (el) { el.style.display = 'none'; el.classList.remove('active'); }
+  });
+  const el = document.getElementById(id);
+  if (el) { el.style.display = 'flex'; el.classList.add('active'); }
+  window.scrollTo(0, 0);
+}
+
+// ═══════════════════════════════════════
+// RENDER LANDING
+// ═══════════════════════════════════════
+function renderLanding() {
+  const t = T[lang];
+  const isAr = lang === 'ar';
+  document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+
+  document.getElementById('l-badge').textContent = t.badge;
+  document.getElementById('l-title').textContent = t.title;
+  document.getElementById('l-subtitle').textContent = t.subtitle;
+  document.getElementById('l-f1').textContent = t.f1;
+  document.getElementById('l-f2').textContent = t.f2;
+  document.getElementById('l-f3').textContent = t.f3;
+  document.getElementById('l-f4').textContent = t.f4;
+  document.getElementById('l-rec').innerHTML = t.rec;
+  document.getElementById('l-includes-title').textContent = t.includesTitle;
+  document.getElementById('l-includes-list').innerHTML = t.includes.map(i =>
+    `<div class="include-item"><span class="include-check">✓</span><span class="include-text">${i}</span></div>`
+  ).join('');
+  document.getElementById('l-already').textContent = t.already;
+  document.getElementById('l-enter').textContent = t.enter;
+  document.getElementById('access-input').placeholder = t.code;
+  document.getElementById('access-btn').textContent = t.access;
+  document.getElementById('l-not-bought').textContent = t.notBought;
+  document.getElementById('l-whatsapp').textContent = t.whatsapp;
+  document.getElementById('l-whatsapp').href = `https://wa.me/213YOUR_NUMBER?text=${encodeURIComponent('Je veux acheter la formation Digital Skills')}`;
+  document.getElementById('l-footer').textContent = t.footer;
+  document.getElementById('l-stats').innerHTML = t.stats.map(s =>
+    `<div class="stat-item"><div class="stat-num">${s.n}</div><div class="stat-lbl">${s.l}</div></div>`
+  ).join('');
+
+  // Skill cards on landing
+  const cards = document.getElementById('l-skill-cards');
+  cards.innerHTML = SKILLS.map(s => `
+    <div class="skill-card" style="background:${s.bg};border-color:${s.color}30" onclick="goSkill('${s.id}')"
+      onmouseenter="this.style.borderColor='${s.color}'" onmouseleave="this.style.borderColor='${s.color}30'">
+      <div class="skill-icon">${s.icon}</div>
+      <div class="skill-sub" style="color:${s.accent}">${s.subtitle[lang]}</div>
+      <div class="skill-title">${s.title[lang]}</div>
+      <div class="skill-tagline">${s.tagline[lang]}</div>
+      <div class="skill-stats">
+        <div class="skill-stat"><span class="stat-label">${t.firstClient}</span><span style="color:${s.accent};font-weight:600">${s.firstClient[lang]}</span></div>
+        <div class="skill-stat"><span class="stat-label">${t.earning}</span><span style="color:${s.accent};font-weight:600;font-size:11px">${s.earning}</span></div>
+        <div class="skill-stat"><span class="stat-label">${t.startWith}</span><span style="color:#9CA3AF;font-size:11px">${s.startTool}</span></div>
+      </div>
+      <button class="skill-cta" style="background:${s.color}">${t.startLearning}</button>
+    </div>
+  `).join('');
+
+  showView('landing');
+}
+
+// ═══════════════════════════════════════
+// RENDER ACADEMY HOME
+// ═══════════════════════════════════════
+function renderAcademy() {
+  currentSkillId = null;
+  currentLevelIdx = 0;
+  currentLessonIdx = null;
+  const t = T[lang];
+  const isAr = lang === 'ar';
+  document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+
+  document.getElementById('a-badge').textContent = t.aBadge;
+  document.getElementById('a-title').textContent = t.aTitle;
+  document.getElementById('a-subtitle').textContent = t.aSubtitle;
+  document.getElementById('a-features').innerHTML = t.aFeatures.map(f =>
+    `<span class="feature-tag">✓ ${f}</span>`
+  ).join('');
+  document.getElementById('a-rec').innerHTML = t.aRec;
+  document.getElementById('a-footer').textContent = t.footer;
+
+  document.getElementById('a-skill-cards').innerHTML = SKILLS.map(s => `
+    <div class="skill-card" style="background:${s.bg};border-color:${s.color}30" onclick="goSkill('${s.id}')"
+      onmouseenter="this.style.borderColor='${s.color}'" onmouseleave="this.style.borderColor='${s.color}30'">
+      <div class="skill-icon">${s.icon}</div>
+      <div class="skill-sub" style="color:${s.accent}">${s.subtitle[lang]}</div>
+      <div class="skill-title">${s.title[lang]}</div>
+      <div class="skill-tagline">${s.tagline[lang]}</div>
+      <div class="skill-stats">
+        <div class="skill-stat"><span class="stat-label">${t.firstClient}</span><span style="color:${s.accent};font-weight:600">${s.firstClient[lang]}</span></div>
+        <div class="skill-stat"><span class="stat-label">${t.earning}</span><span style="color:${s.accent};font-weight:600;font-size:11px">${s.earning}</span></div>
+        <div class="skill-stat"><span class="stat-label">${t.startWith}</span><span style="color:#9CA3AF;font-size:11px">${s.startTool}</span></div>
+      </div>
+      <button class="skill-cta" style="background:${s.color}">${t.startLearning}</button>
+    </div>
+  `).join('');
+
+  showView('academy');
+}
+
+// ═══════════════════════════════════════
+// RENDER SKILL VIEW
+// ═══════════════════════════════════════
+function goSkill(id) {
+  currentSkillId = id;
+  currentLevelIdx = 0;
+  currentLessonIdx = null;
+  renderSkill();
+}
+
+function renderSkill() {
+  const t = T[lang];
+  const skill = SKILLS.find(s => s.id === currentSkillId);
+  const isAr = lang === 'ar';
+
+  // Header
+  document.getElementById('skill-header').style.background = skill.bg;
+  document.getElementById('skill-header').style.borderBottomColor = skill.color + '25';
+  document.getElementById('sh-icon').textContent = skill.icon;
+  document.getElementById('sh-title').textContent = skill.title[lang];
+  document.getElementById('sh-earn').textContent = skill.earning;
+  document.getElementById('sh-earn').style.color = skill.accent;
+  document.getElementById('s-footer').textContent = t.footer;
+
+  // Level tabs
+  const tabsEl = document.getElementById('level-tabs');
+  tabsEl.innerHTML = skill.levels.map((lv, i) => {
+    const ls = getLevelStyle(lv.name[lang]);
+    const active = i === currentLevelIdx;
+    return `<button class="level-tab" onclick="goLevel(${i})"
+      style="background:${active ? ls.bg : 'transparent'};border-color:${active ? ls.border : '#1C1C28'};color:${active ? ls.text : '#4B5563'};font-weight:${active ? 700 : 400}">
+      ${lv.badge} ${lv.name[lang]}
+    </button>`;
+  }).join('');
+
+  // Level info
+  const lv = skill.levels[currentLevelIdx];
+  const ls = getLevelStyle(lv.name[lang]);
+  document.getElementById('level-info').style.background = ls.bg;
+  document.getElementById('level-info').style.borderColor = ls.border + '40';
+  document.getElementById('level-info').innerHTML = `
+    <div class="level-info-top">
+      <span class="level-badge-big">${lv.badge}</span>
+      <div>
+        <div class="level-name">${lv.name[lang]}</div>
+        <div class="level-duration">${lv.duration[lang]}</div>
+      </div>
+      <div class="level-count" style="${isAr ? 'margin-right:auto' : 'margin-left:auto'}">
+        <div class="level-count-num" style="color:${ls.text}">${lv.lessons.length}</div>
+        <div class="level-count-lbl">${t.lessons}</div>
+      </div>
+    </div>
+    <p class="level-goal"><strong>${t.goal}:</strong> ${lv.goal[lang]}</p>
+  `;
+
+  // Lesson cards
+  document.getElementById('lesson-cards').innerHTML = lv.lessons.map((les, i) => `
+    <div class="lesson-card" onclick="goLesson(${i})"
+      style="direction:${isAr ? 'rtl' : 'ltr'}"
+      onmouseenter="this.style.borderColor='${skill.color}66'" onmouseleave="this.style.borderColor='#1C1C28'">
+      <span class="lesson-num" style="background:${skill.color}22;border:1px solid ${skill.color}44;color:${skill.accent}">${i + 1}</span>
+      <div class="lesson-info">
+        <div class="lesson-title">${les.title[lang]}</div>
+        <div class="lesson-meta">${les.steps[lang].length} steps · includes exercise</div>
+      </div>
+      <span class="lesson-arrow" style="transform:${isAr ? 'rotate(180deg)' : 'none'}">→</span>
+    </div>
+  `).join('');
+
+  // Level navigation
+  const navEl = document.getElementById('level-nav');
+  let navHTML = '';
+  if (currentLevelIdx > 0) {
+    navHTML += `<button class="nav-btn-prev" onclick="goLevel(${currentLevelIdx - 1})">
+      ${isAr ? '→' : '←'} ${skill.levels[currentLevelIdx - 1].name[lang]}
+    </button>`;
+  } else {
+    navHTML += `<button class="nav-btn-prev" onclick="renderAcademy()">${isAr ? '→' : '←'} ${t.backSkills}</button>`;
+  }
+  if (currentLevelIdx < skill.levels.length - 1) {
+    navHTML += `<button class="nav-btn-next" style="background:${skill.color}" onclick="goLevel(${currentLevelIdx + 1})">
+      ${skill.levels[currentLevelIdx + 1].name[lang]} ${isAr ? '←' : '→'}
+    </button>`;
+  }
+  navEl.innerHTML = navHTML;
+
+  showView('skill-view');
+}
+
+function goLevel(idx) {
+  currentLevelIdx = idx;
+  currentLessonIdx = null;
+  renderSkill();
+}
+
+// ═══════════════════════════════════════
+// RENDER LESSON VIEW
+// ═══════════════════════════════════════
+function goLesson(idx) {
+  currentLessonIdx = idx;
+  openStepIdx = null;
+  renderLesson();
+}
+
+function renderLesson() {
+  const t = T[lang];
+  const skill = SKILLS.find(s => s.id === currentSkillId);
+  const level = skill.levels[currentLevelIdx];
+  const lesson = level.lessons[currentLessonIdx];
+  const ls = getLevelStyle(level.name[lang]);
+  const isAr = lang === 'ar';
+  const steps = lesson.steps[lang];
+  const isMobile = window.innerWidth < 600;
+
+  // Top bar
+  document.getElementById('lesson-back-btn').textContent = `${isAr ? '→' : '←'} ${t.back}`;
+  document.getElementById('lesson-back-btn').onclick = () => renderSkill();
+  document.getElementById('lesson-skill-icon').textContent = skill.icon;
+  document.getElementById('lesson-skill-name').textContent = skill.title[lang];
+  document.getElementById('lesson-level-name').textContent = level.name[lang];
+  document.getElementById('lesson-level-name').style.color = ls.text;
+  document.getElementById('lesson-counter').textContent = `${t.lesson} ${currentLessonIdx + 1} ${t.of} ${level.lessons.length}`;
+  document.getElementById('lv-footer').textContent = t.footer;
+
+  // Image layout
+  const layout = lesson.layout || 'top';
+  const showLeft = layout === 'left' && !isMobile;
+  const showRight = layout === 'right' && !isMobile;
+  const showTop = layout === 'top' || isMobile;
+
+  let imgTopHTML = '';
+  let imgSideHTML = '';
+  if (lesson.image && showTop) {
+    imgTopHTML = `<img class="lesson-img" src="${lesson.image}" alt="${lesson.title[lang]}" loading="lazy">`;
+  } else if (lesson.image && (showLeft || showRight)) {
+    imgSideHTML = `<div class="lesson-img-side"><img src="${lesson.image}" alt="${lesson.title[lang]}" loading="lazy"></div>`;
+  }
+
+  // Steps HTML
+  const stepsHTML = steps.map((step, i) => {
+    const isOpen = openStepIdx === i;
+    const preview = step.length > 80 && !isOpen ? step.substring(0, 80) + '…' : step;
+    return `
+      <div class="step-item" style="border-color:${isOpen ? skill.color + '60' : '#1C1C28'}" id="step-${i}">
+        <button class="step-btn" onclick="toggleStep(${i})" style="text-align:${isAr ? 'right' : 'left'}">
+          <span class="step-num ${isOpen ? 'open' : ''}" style="${isOpen ? 'background:' + skill.color : ''}" id="stepnum-${i}">${i + 1}</span>
+          <span class="step-preview ${isOpen ? 'open' : ''}" id="stepprev-${i}">${preview}</span>
+          <span class="step-toggle">${isOpen ? '▲' : '▼'}</span>
+        </button>
+        ${isOpen ? `<div class="step-content" style="padding:${isAr ? '0 52px 16px 16px' : '0 16px 16px 52px'}">${step}</div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  // Steps wrapper (with possible side image)
+  let stepsWrapper = '';
+  if (showLeft) {
+    stepsWrapper = `<div class="steps-with-img" style="flex-direction:row">${imgSideHTML}<div class="steps-list">${stepsHTML}</div></div>`;
+  } else if (showRight) {
+    stepsWrapper = `<div class="steps-with-img" style="flex-direction:row-reverse">${imgSideHTML}<div class="steps-list">${stepsHTML}</div></div>`;
+  } else {
+    stepsWrapper = `<div class="steps-list">${stepsHTML}</div>`;
+  }
+
+  // Nav buttons
+  const hasPrev = currentLessonIdx > 0;
+  const hasNext = currentLessonIdx < level.lessons.length - 1;
+  const hasNextLv = currentLevelIdx < skill.levels.length - 1;
+
+  let prevBtn = hasPrev
+    ? `<button class="lesson-nav-prev" onclick="prevLesson()">${isAr ? '→' : '←'} ${t.prevLesson.replace('←','').replace('→','').trim()}</button>`
+    : `<button class="lesson-nav-prev" onclick="renderSkill()">${isAr ? '→' : '←'} ${t.back.replace('←','').replace('→','').trim()}</button>`;
+
+  let nextBtn = '';
+  if (hasNext) {
+    nextBtn = `<button class="lesson-nav-next" style="background:${skill.color}" onclick="nextLesson()">${t.nextLesson.replace('←','').replace('→','').trim()} ${isAr ? '←' : '→'}</button>`;
+  } else if (hasNextLv) {
+    nextBtn = `<button class="lesson-nav-next" style="background:${skill.color}" onclick="nextLevel()">${t.nextLevel}: ${skill.levels[currentLevelIdx + 1].name[lang]} ${isAr ? '←' : '→'}</button>`;
+  } else {
+    nextBtn = `<div class="lesson-complete" style="color:${skill.accent};border-color:${skill.color}50">${t.complete}</div>`;
+  }
+
+  document.getElementById('lesson-body').innerHTML = `
+    <div>
+      <span class="lesson-level-badge" style="background:${ls.bg};border-color:${ls.border};color:${ls.text}">${level.badge} ${level.name[lang]}</span>
+      <span class="lesson-num-badge">${t.lesson} ${currentLessonIdx + 1}</span>
+    </div>
+    <h1 class="lesson-h1">${lesson.title[lang]}</h1>
+
+    ${imgTopHTML}
+
+    <div style="margin-bottom:28px">
+      <div class="steps-header">
+        <div class="steps-bar" style="background:${skill.color}"></div>
+        <span class="steps-title">${t.howTo}</span>
+      </div>
+      ${stepsWrapper}
+    </div>
+
+    <div class="method-box" style="background:#0A0E18;border-color:${skill.color}30">
+      <div class="method-header">
+        <span class="method-emoji">🧠</span>
+        <span class="method-label" style="color:${skill.accent}">${t.bestWay}</span>
+      </div>
+      <p class="method-text">${lesson.method[lang]}</p>
+    </div>
+
+    <div class="exercise-box">
+      <div class="method-header">
+        <span class="method-emoji">💪</span>
+        <span class="method-label" style="color:#FCD34D">${t.exercise}</span>
+      </div>
+      <p class="exercise-text">${lesson.exercise[lang]}</p>
+    </div>
+
+    ${lesson.tip ? `<div class="tip-box"><p class="tip-text">${lesson.tip[lang]}</p></div>` : ''}
+
+    <div class="lesson-nav">${prevBtn}${nextBtn}</div>
+  `;
+
+  showView('lesson-view');
+}
+
+function toggleStep(i) {
+  openStepIdx = openStepIdx === i ? null : i;
+  renderLesson();
+}
+
+function prevLesson() {
+  currentLessonIdx--;
+  openStepIdx = null;
+  renderLesson();
+}
+
+function nextLesson() {
+  currentLessonIdx++;
+  openStepIdx = null;
+  renderLesson();
+}
+
+function nextLevel() {
+  currentLevelIdx++;
+  currentLessonIdx = null;
+  renderSkill();
+}
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+(function init() {
+  const isAr = lang === 'ar';
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim() === (lang==='fr'?'FR':lang==='ar'?'ع':'EN'));
+  });
+  if (hasAccess) renderAcademy();
+  else renderLanding();
+})();
+</script>
+</body>
+</html>
