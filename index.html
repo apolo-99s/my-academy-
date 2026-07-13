@@ -1247,9 +1247,14 @@ function nextLevel() {
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.textContent.trim() === (lang==='fr'?'FR':lang==='ar'?'ع':'EN'));
   });
+  document.getElementById('landing').style.display = 'none';
+  document.getElementById('academy').style.display = 'none';
+  document.getElementById('skill-view').style.display = 'none';
+  document.getElementById('lesson-view').style.display = 'none';
   if (hasAccess) renderAcademy();
   else renderLanding();
 })();
+
 </script>
 </body>
 </html>
