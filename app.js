@@ -195,12 +195,6 @@ function renderLesson() {
   showView('lesson-view');
 }
 
-function goHome() {
-  skillId = null;
-  levelIdx = 0;
-  lessonIdx = null;
-  renderAcademy();
-}
 // ===== INIT =====
 (function() {
   document.documentElement.lang = lang;
