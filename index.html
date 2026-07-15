@@ -517,7 +517,1582 @@ const SKILLS=[
     ]
   }
 ];
+// ============================================
+// SKILL: VIBE CODING (AI-Powered Development)
+// ============================================
 
+{
+  id: 'vibecoding',
+  icon: '🤖',
+  color: '#8B5CF6',
+  accent: '#A78BFA',
+  bg: '#0D0618',
+  earning: '30,000 – 150,000 DZD/month',
+  firstClient: {
+    fr: '4–8 semaines',
+    ar: '4–8 أسابيع',
+    en: '4–8 weeks'
+  },
+  startTool: 'Cursor AI + VSCode + GitHub Copilot',
+  title: {
+    fr: 'Vibe Coding',
+    ar: 'البرمجة بالذكاء الاصطناعي',
+    en: 'Vibe Coding'
+  },
+  subtitle: {
+    fr: 'Développement IA',
+    ar: 'التطوير بالذكاء الاصطناعي',
+    en: 'AI Development'
+  },
+  tagline: {
+    fr: 'Construisez des produits professionnels avec l\'IA sans être un développeur traditionnel',
+    ar: 'ابنِ منتجات احترافية بالذكاء الاصطناعي دون أن تكون مبرمجاً تقليدياً',
+    en: 'Build professional products with AI without being a traditional developer'
+  },
+  levels: [
+    // ============================================
+    // LEVEL 1: BEGINNER - 8 Lessons
+    // ============================================
+    {
+      name: {
+        fr: 'Débutant',
+        ar: 'مبتدئ',
+        en: 'Beginner'
+      },
+      badge: '🌱',
+      duration: {
+        fr: 'Semaines 1–4',
+        ar: 'الأسابيع 1–4',
+        en: 'Weeks 1–4'
+      },
+      goal: {
+        fr: 'Maîtriser les bases du Vibe Coding et créer votre première application avec l\'IA',
+        ar: 'إتقان أساسيات البرمجة بالذكاء الاصطناعي وإنشاء أول تطبيق لك',
+        en: 'Master Vibe Coding basics and create your first AI-powered application'
+      },
+      lessons: [
+        // Lesson 1: What is Vibe Coding
+        {
+          id: 'vc-b-1',
+          title: {
+            fr: 'Qu\'est-ce que le Vibe Coding?',
+            ar: 'ما هي البرمجة بالذكاء الاصطناعي؟',
+            en: 'What is Vibe Coding?'
+          },
+          image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Définition: Vibe Coding = utiliser des assistants IA pour écrire du code',
+              'Pourquoi c\'est différent: Vous devenez un "producteur" pas un "codage" traditionnel',
+              'L\'IA génère le code, vous guidez et validez les résultats',
+              'Exemple: "Crée une calculatrice React" → L\'IA écrit tout le code',
+              'Votre rôle: prompt engineer, architecte, testeur, et validateur',
+              'Avantages: 10x plus rapide, 100x plus accessible, moins d\'erreurs',
+              'Limites: l\'IA fait des erreurs, vous devez comprendre ce qu\'elle produit',
+              'Outils principaux: Cursor, GitHub Copilot, ChatGPT, Claude'
+            ],
+            ar: [
+              'تعريف: البرمجة بالذكاء الاصطناعي = استخدام مساعدين ذكاء اصطناعي لكتابة الأكواد',
+              'لماذا مختلف: أنت تصبح "منتجاً" وليس "مبرمجاً" تقليدياً',
+              'الذكاء الاصطناعي يكتب الكود، وأنت توجه وتتحقق من النتائج',
+              'مثال: "اصنع آلة حاسبة React" → الذكاء الاصطناعي يكتب كل الكود',
+              'دورك: مهندس الأوامر، المهندس المعماري، المختبر، والمدقق',
+              'المزايا: أسرع بـ10 مرات، أسهل بـ100 مرة، أخطاء أقل',
+              'الحدود: الذكاء الاصطناعي يخطئ، عليك فهم ما ينتجه',
+              'الأدوات الرئيسية: Cursor، GitHub Copilot، ChatGPT، Claude'
+            ],
+            en: [
+              'Definition: Vibe Coding = using AI assistants to write code',
+              'Why it\'s different: You become a "producer" not a traditional "coder"',
+              'AI generates the code, you guide and validate the results',
+              'Example: "Create a React calculator" → AI writes all the code',
+              'Your role: prompt engineer, architect, tester, and validator',
+              'Benefits: 10x faster, 100x more accessible, fewer errors',
+              'Limits: AI makes mistakes, you need to understand what it produces',
+              'Main tools: Cursor, GitHub Copilot, ChatGPT, Claude'
+            ]
+          },
+          method: {
+            fr: 'Installez ChatGPT ou Claude maintenant. Posez-lui une question simple: "Comment créer une page web avec une calculatrice?". Observez la réponse détaillée. C\'est votre premier moment de Vibe Coding!',
+            ar: 'ثبّت ChatGPT أو Claude الآن. اسأل سؤالاً بسيطاً: "كيف تصنع صفحة ويب بها آلة حاسبة؟". لاحظ الإجابة المفصلة. هذه أول لحظة برمجة بالذكاء الاصطناعي لك!',
+            en: 'Install ChatGPT or Claude now. Ask a simple question: "How to create a web page with a calculator?". Observe the detailed response. This is your first Vibe Coding moment!'
+          },
+          exercise: {
+            fr: 'Demandez à ChatGPT de vous expliquer ce qu\'est le Vibe Coding en 100 mots. Puis demandez-lui de vous donner 5 exemples d\'applications qu\'on peut créer avec l\'IA. Sauvegardez les réponses dans un document.',
+            ar: 'اطلب من ChatGPT شرح ما هي البرمجة بالذكاء الاصطناعي في 100 كلمة. ثم اطلب منه إعطائك 5 أمثلة لتطبيقات يمكن إنشاؤها بالذكاء الاصطناعي. احفظ الإجابات في مستند.',
+            en: 'Ask ChatGPT to explain what Vibe Coding is in 100 words. Then ask it to give you 5 examples of applications that can be built with AI. Save the responses in a document.'
+          },
+          tip: {
+            fr: '💡 Le Vibe Coding n\'est PAS une triche. C\'est la nouvelle façon de développer. Les développeurs qui refusent d\'utiliser l\'IA seront remplacés par ceux qui l\'utilisent.',
+            ar: '💡 البرمجة بالذكاء الاصطناعي ليست غشاً. هذه هي الطريقة الجديدة للتطوير. المطورون الذين يرفضون استخدام الذكاء الاصطناعي سيتم استبدالهم بأولئك الذين يستخدمونه.',
+            en: '💡 Vibe Coding is NOT cheating. It\'s the new way to develop. Developers who refuse to use AI will be replaced by those who do.'
+          }
+        },
+        // Lesson 2: AI Programming Mindset
+        {
+          id: 'vc-b-2',
+          title: {
+            fr: 'L\'État d\'Esprit du Programmeur IA',
+            ar: 'عقلية المبرمج بالذكاء الاصطناعي',
+            en: 'AI Programming Mindset'
+          },
+          image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Passer de "comment coder" à "comment décrire ce que je veux"',
+              'L\'IA excelle avec des instructions claires et détaillées',
+              'Apprenez à penser en "spécifications" pas en "syntaxe"',
+              'Développez la patience: l\'IA peut avoir besoin de 2-3 essais pour donner la bonne réponse',
+              'Acceptez que vous allez faire des erreurs - c\'est comme ça qu\'on apprend',
+              'Pratiquez la "lecture critique" du code généré par l\'IA',
+              'Commencez petit: chaque grand projet commence par un petit pas',
+              'Célébrez chaque victoire: chaque application construite est une réussite'
+            ],
+            ar: [
+              'الانتقال من "كيف أكتب كوداً" إلى "كيف أصف ما أريد"',
+              'الذكاء الاصطناعي يتفوق مع التعليمات الواضحة والمفصلة',
+              'تعلم التفكير في "مواصفات" وليس في "صياغة"',
+              'طوّر الصبر: قد يحتاج الذكاء الاصطناعي 2-3 محاولات لإعطاء الإجابة الصحيحة',
+              'تقبل أنك سترتكب أخطاء - هكذا تتعلم',
+              'مارس "القراءة النقدية" للكود المولد بواسطة الذكاء الاصطناعي',
+              'ابدأ صغيراً: كل مشروع كبير يبدأ بخطوة صغيرة',
+              'احتفل بكل انتصار: كل تطبيق تبني هو نجاح'
+            ],
+            en: [
+              'Shift from "how to code" to "how to describe what I want"',
+              'AI excels with clear and detailed instructions',
+              'Learn to think in "specifications" not "syntax"',
+              'Develop patience: AI may need 2-3 attempts to get it right',
+              'Accept that you will make mistakes - that\'s how you learn',
+              'Practice "critical reading" of AI-generated code',
+              'Start small: every big project starts with a small step',
+              'Celebrate every victory: every app built is a success'
+            ]
+          },
+          method: {
+            fr: 'Pendant 15 minutes, ne tapez PAS de code. Utilisez ChatGPT pour décrire une application de liste de tâches en français, sans code. Dites-lui: "Je veux une application qui permet d\'ajouter, supprimer et marquer des tâches comme faites". Observez comment il comprend.',
+            ar: 'لمدة 15 دقيقة، لا تكتب كوداً. استخدم ChatGPT لوصف تطبيق قائمة مهام بالعربية، بدون كود. قل له: "أريد تطبيقاً يسمح بإضافة وحذف ووضع علامة مكتمل على المهام". لاحظ كيف يفهم.',
+            en: 'For 15 minutes, do NOT type code. Use ChatGPT to describe a todo list application in English, without code. Tell it: "I want an app that allows adding, deleting, and marking tasks as done". Observe how it understands.'
+          },
+          exercise: {
+            fr: 'Écrivez une description détaillée (200 mots) d\'une application de votre choix en utilisant uniquement des mots, pas de code. Décrivez les fonctionnalités, l\'apparence et le flux utilisateur. Partagez avec un ami pour tester la clarté.',
+            ar: 'اكتب وصفاً مفصلاً (200 كلمة) لتطبيق من اختيارك باستخدام الكلمات فقط، بدون كود. صف الميزات والمظهر وتدفق المستخدم. شاركه مع صديق لاختبار الوضوح.',
+            en: 'Write a detailed description (200 words) of an application of your choice using only words, no code. Describe features, appearance, and user flow. Share with a friend to test clarity.'
+          },
+          tip: {
+            fr: '💡 La meilleure façon d\'apprendre le Vibe Coding est de COMMENCER. Ne lisez pas trop sur le sujet - construisez quelque chose aujourd\'hui!',
+            ar: '💡 أفضل طريقة لتعلم البرمجة بالذكاء الاصطناعي هي أن تبدأ. لا تقرأ كثيراً عن الموضوع - ابنِ شيئاً اليوم!',
+            en: '💡 The best way to learn Vibe Coding is to START. Don\'t read too much about it - build something today!'
+          }
+        },
+        // Lesson 3: Prompt Engineering Fundamentals
+        {
+          id: 'vc-b-3',
+          title: {
+            fr: 'Fondamentaux du Prompt Engineering',
+            ar: 'أساسيات هندسة الأوامر',
+            en: 'Prompt Engineering Fundamentals'
+          },
+          image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Prompt Engineering = l\'art de parler à l\'IA pour obtenir les meilleurs résultats',
+              'Règle 1: SOYEZ SPÉCIFIQUE. "Fais une calculatrice" vs "Fais une calculatrice React avec des boutons 0-9, +, -, *, /, =, et une interface moderne"',
+              'Règle 2: DONNEZ UN CONTEXTE. "Je suis un débutant, explique comme si j\'avais 6 mois d\'expérience"',
+              'Règle 3: DEMANDEZ DES EXPLICATIONS. "Explique chaque ligne de code"',
+              'Règle 4: UTILISEZ DES EXEMPLES. "Comme ceci: [exemple]"',
+              'Règle 5: ITÉREZ. La première réponse n\'est jamais parfaite, affinez',
+              'Règle 6: SPÉCIFIEZ LE FORMAT. "Donne-moi le code en un seul fichier HTML"',
+              'Règle 7: DÉCOMPOSEZ. "D\'abord fais la structure, puis ajoute le style, puis les fonctionnalités"'
+            ],
+            ar: [
+              'هندسة الأوامر = فن التحدث مع الذكاء الاصطناعي للحصول على أفضل النتائج',
+              'القاعدة 1: كُن مُحدداً. "اصنع آلة حاسبة" vs "اصنع آلة حاسبة React بأزرار 0-9، +، -، *، /، =، وواجهة عصرية"',
+              'القاعدة 2: قدم السياق. "أنا مبتدئ، اشرح كما لو كان لدي 6 أشهر خبرة"',
+              'القاعدة 3: اطلب تفسيرات. "اشرح كل سطر من الكود"',
+              'القاعدة 4: استخدم الأمثلة. "مثل هذا: [مثال]"',
+              'القاعدة 5: كرر وحسّن. الإجابة الأولى ليست مثالية أبداً، حسّنها',
+              'القاعدة 6: حدد التنسيق. "أعطني الكود في ملف HTML واحد"',
+              'القاعدة 7: قسّم. "أولاً اصنع الهيكل، ثم أضف التنسيق، ثم الوظائف"'
+            ],
+            en: [
+              'Prompt Engineering = the art of talking to AI to get the best results',
+              'Rule 1: BE SPECIFIC. "Make a calculator" vs "Make a React calculator with 0-9 buttons, +, -, *, /, =, and a modern interface"',
+              'Rule 2: GIVE CONTEXT. "I\'m a beginner, explain like I have 6 months experience"',
+              'Rule 3: ASK FOR EXPLANATIONS. "Explain each line of code"',
+              'Rule 4: USE EXAMPLES. "Like this: [example]"',
+              'Rule 5: ITERATE. The first response is never perfect, refine it',
+              'Rule 6: SPECIFY FORMAT. "Give me the code in a single HTML file"',
+              'Rule 7: DECOMPOSE. "First make the structure, then add styling, then functionality"'
+            ]
+          },
+          method: {
+            fr: 'Prenez votre description d\'application de la leçon précédente. Transformez-la en prompt structuré en utilisant les 7 règles. Tapez-la dans ChatGPT et regardez ce qu\'il produit. Comparez avec votre description originale.',
+            ar: 'خذ وصف تطبيقك من الدرس السابق. حوّله إلى أمر منظم باستخدام القواعد السبع. اكتبه في ChatGPT وشاهد ما ينتجه. قارن مع وصفك الأصلي.',
+            en: 'Take your app description from the previous lesson. Turn it into a structured prompt using the 7 rules. Type it into ChatGPT and watch what it produces. Compare to your original description.'
+          },
+          exercise: {
+            fr: 'Écrivez 5 prompts différents pour la même application: "une application météo". Variez le niveau de détail, le contexte, et le format. Notez les différences dans les réponses de l\'IA.',
+            ar: 'اكتب 5 أوامر مختلفة لنفس التطبيق: "تطبيق الطقس". تنوع في مستوى التفاصيل والسياق والتنسيق. لاحظ الاختلافات في ردود الذكاء الاصطناعي.',
+            en: 'Write 5 different prompts for the same application: "a weather app". Vary detail level, context, and format. Note differences in AI responses.'
+          },
+          tip: {
+            fr: '💡 Le meilleur prompt commence toujours par un objectif clair. "Je veux créer une application qui..." Dites à l\'IA ce que vous voulez construire, pas comment le construire.',
+            ar: '💡 أفضل أمر يبدأ دائماً بهدف واضح. "أريد إنشاء تطبيق..." أخبر الذكاء الاصطناعي بما تريد بناءه، وليس كيفية بنائه.',
+            en: '💡 The best prompt always starts with a clear goal. "I want to build an app that..." Tell the AI what you want to build, not how to build it.'
+          }
+        },
+        // Lesson 4: Using AI Coding Assistants
+        {
+          id: 'vc-b-4',
+          title: {
+            fr: 'Utiliser les Assistants de Codage IA',
+            ar: 'استخدام مساعدي البرمجة بالذكاء الاصطناعي',
+            en: 'Using AI Coding Assistants'
+          },
+          image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Cursor AI: Le meilleur éditeur IA (téléchargez gratuitement)',
+              'GitHub Copilot: Assistant intégré à VSCode',
+              'Configurer Cursor: Fichier → Préférences → IA → Activez',
+              'Interface: Barre latérale de chat, autocomplétion, génération de code',
+              'Raccourci Cursor: Ctrl+K pour générer, Ctrl+L pour chat',
+              'Demandez à l\'IA d\'écrire du code directement dans le fichier',
+              'Utilisez @ pour mentionner des fichiers spécifiques dans le chat',
+              'Exemple: @App.jsx "Ajoute un état pour les tâches"'
+            ],
+            ar: [
+              'Cursor AI: أفضل محرر ذكاء اصطناعي (حمّله مجاناً)',
+              'GitHub Copilot: مساعد مدمج في VSCode',
+              'إعداد Cursor: ملف → تفضيلات → الذكاء الاصطناعي → فعّل',
+              'الواجهة: شريط جانبي للمحادثة، إكمال تلقائي، توليد الكود',
+              'اختصار Cursor: Ctrl+K للتوليد، Ctrl+L للمحادثة',
+              'اطلب من الذكاء الاصطناعي كتابة كود مباشرة في الملف',
+              'استخدم @ لذكر ملفات محددة في المحادثة',
+              'مثال: @App.jsx "أضف حالة للمهام"'
+            ],
+            en: [
+              'Cursor AI: The best AI editor (download for free)',
+              'GitHub Copilot: Assistant integrated into VSCode',
+              'Setup Cursor: File → Preferences → AI → Enable',
+              'Interface: Sidebar chat, autocomplete, code generation',
+              'Cursor shortcut: Ctrl+K to generate, Ctrl+L to chat',
+              'Ask AI to write code directly into the file',
+              'Use @ to mention specific files in chat',
+              'Example: @App.jsx "Add state for todos"'
+            ]
+          },
+          method: {
+            fr: 'Téléchargez Cursor AI maintenant. Ouvrez-le et créez un nouveau fichier HTML. Appuyez sur Ctrl+K et tapez: "Crée une page HTML avec un en-tête, une section principale, et un pied de page". Regardez l\'IA écrire le code en direct!',
+            ar: 'حمّل Cursor AI الآن. افتحه وأنشئ ملف HTML جديد. اضغط Ctrl+K واكتب: "أنشئ صفحة HTML برأس وقسم رئيسي وتذييل". شاهد الذكاء الاصطناعي يكتب الكود مباشرةً!',
+            en: 'Download Cursor AI now. Open it and create a new HTML file. Press Ctrl+K and type: "Create an HTML page with a header, main section, and footer". Watch the AI write the code live!'
+          },
+          exercise: {
+            fr: 'Dans Cursor, créez 3 fichiers: index.html, style.css, script.js. Demandez à l\'IA de créer une page de portfolio simple en utilisant les 3 fichiers. Expérimentez avec différents prompts pour voir comment l\'IA répond.',
+            ar: 'في Cursor، أنشئ 3 ملفات: index.html، style.css، script.js. اطلب من الذكاء الاصطناعي إنشاء صفحة بورتفوليو بسيطة باستخدام الملفات الثلاثة. جرب أوامر مختلفة لترى كيف يستجيب الذكاء الاصطناعي.',
+            en: 'In Cursor, create 3 files: index.html, style.css, script.js. Ask the AI to create a simple portfolio page using all 3 files. Experiment with different prompts to see how the AI responds.'
+          },
+          tip: {
+            fr: '💡 Utilisez Cursor Pro (gratuit pour 14 jours) pour l\'IA illimitée. Après l\'essai, vous pouvez utiliser les modèles gratuits ou passer à l\'abonnement - même le modèle gratuit est très puissant.',
+            ar: '💡 استخدم Cursor Pro (مجاني لمدة 14 يوماً) للذكاء الاصطناعي غير المحدود. بعد التجربة، يمكنك استخدام النماذج المجانية أو الاشتراك - حتى النموذج المجاني قوي جداً.',
+            en: '💡 Use Cursor Pro (free for 14 days) for unlimited AI. After the trial, you can use the free models or subscribe - even the free model is very powerful.'
+          }
+        },
+        // Lesson 5: Reading AI Generated Code
+        {
+          id: 'vc-b-5',
+          title: {
+            fr: 'Lire le Code Généré par l\'IA',
+            ar: 'قراءة الكود المولد بواسطة الذكاء الاصطناعي',
+            en: 'Reading AI Generated Code'
+          },
+          image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Ne vous laissez pas intimider - le code est juste du texte avec des règles',
+              'Commencez par le haut: lisez les imports et les déclarations',
+              'Cherchez les fonctions: "function", "const x = () =>", "class"',
+              'Suivez le flux: d\'entrée → traitement → sortie',
+              'Regardez les commentaires - l\'IA en ajoute souvent',
+              'Décomposez: si c\'est trop long, lisez un paragraphe à la fois',
+              'Testez: mettez le code dans Cursor et voyez s\'il fonctionne',
+              'Posez des questions: "Pourquoi cette partie fait-elle ça?"'
+            ],
+            ar: [
+              'لا تخف - الكود مجرد نص بقواعد',
+              'ابدأ من الأعلى: اقرأ الاستيرادات والإعلانات',
+              'ابحث عن الدوال: "function"، "const x = () =>"، "class"',
+              'اتبع التدفق: مدخلات → معالجة → مخرجات',
+              'انظر إلى التعليقات - الذكاء الاصطناعي كثيراً ما يضيفها',
+              'قسّم: إذا كان طويلاً، اقرأ فقرة واحدة في كل مرة',
+              'اختبر: ضع الكود في Cursor وشاهد إذا كان يعمل',
+              'اسأل: "لماذا هذا الجزء يفعل ذلك؟"'
+            ],
+            en: [
+              'Don\'t be intimidated - code is just text with rules',
+              'Start from the top: read imports and declarations',
+              'Look for functions: "function", "const x = () =>", "class"',
+              'Follow the flow: input → processing → output',
+              'Look at comments - AI often adds them',
+              'Decompose: if it\'s too long, read one paragraph at a time',
+              'Test: put the code in Cursor and see if it works',
+              'Ask questions: "Why does this part do that?"'
+            ]
+          },
+          method: {
+            fr: 'Demandez à ChatGPT de générer une calculatrice en React. Copiez le code et collez-le dans Cursor. Lisez-le lentement, ligne par ligne. Entourez chaque partie que vous comprenez. Demandez des explications pour ce que vous ne comprenez pas.',
+            ar: 'اطلب من ChatGPT توليد آلة حاسبة في React. انسخ الكود والصقه في Cursor. اقرأه ببطء، سطراً سطراً. ضع دائرة حول كل جزء تفهمه. اطلب شرحاً لما لا تفهمه.',
+            en: 'Ask ChatGPT to generate a React calculator. Copy the code and paste it into Cursor. Read it slowly, line by line. Circle each part you understand. Ask for explanations on what you don\'t understand.'
+          },
+          exercise: {
+            fr: 'Trouvez un projet open-source simple sur GitHub (recherchez "to-do app" par exemple). Lisez le code pendant 20 minutes. Notez 5 choses que vous comprenez et 5 questions que vous avez. Posez ces questions à ChatGPT.',
+            ar: 'ابحث عن مشروع مفتوح المصدر بسيط على GitHub (ابحث عن "تطبيق مهام" مثلاً). اقرأ الكود لمدة 20 دقيقة. سجل 5 أشياء تفهمها و5 أسئلة لديك. اطرح هذه الأسئلة على ChatGPT.',
+            en: 'Find a simple open-source project on GitHub (search for "to-do app" for example). Read the code for 20 minutes. Note 5 things you understand and 5 questions you have. Ask these questions to ChatGPT.'
+          },
+          tip: {
+            fr: '💡 N\'essayez pas de tout comprendre d\'un coup. Le Vibe Coding, c\'est d\'abord comprendre assez pour poser les bonnes questions. Votre cerveau va s\'adapter avec la pratique.',
+            ar: '💡 لا تحاول فهم كل شيء دفعة واحدة. البرمجة بالذكاء الاصطناعي هي أولاً فهم ما يكفي لطرح الأسئلة الصحيحة. سيتكيف عقلك مع الممارسة.',
+            en: '💡 Don\'t try to understand everything at once. Vibe Coding is about understanding enough to ask the right questions. Your brain will adapt with practice.'
+          }
+        },
+        // Lesson 6: Fixing AI Mistakes
+        {
+          id: 'vc-b-6',
+          title: {
+            fr: 'Corriger les Erreurs de l\'IA',
+            ar: 'إصلاح أخطاء الذكاء الاصطناعي',
+            en: 'Fixing AI Mistakes'
+          },
+          image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'L\'IA n\'est pas parfaite - elle fait des erreurs (souvent)',
+              'Erreur courante 1: Code incomplet - demandez la suite',
+              'Erreur courante 2: Syntaxe incorrecte - dites à l\'IA l\'erreur exacte',
+              'Erreur courante 3: Logique erronée - décrivez ce que ça fait et ce que ça devrait faire',
+              'Erreur courante 4: Bibliothèques manquantes - demandez les imports',
+              'Erreur courante 5: Version obsolète - précisez la version de React/Node',
+              'La règle d\'or: Donnez l\'erreur complète à l\'IA',
+              'Si l\'IA ne résout pas, posez la question sur StackOverflow ou dans les communautés'
+            ],
+            ar: [
+              'الذكاء الاصطناعي ليس مثالياً - يخطئ (كثيراً)',
+              'الخطأ الشائع 1: كود غير مكتمل - اطلب البقية',
+              'الخطأ الشائع 2: صياغة غير صحيحة - أخبر الذكاء الاصطناعي بالخطأ الدقيق',
+              'الخطأ الشائع 3: منطق خاطئ - صف ما يفعله وما يجب أن يفعله',
+              'الخطأ الشائع 4: مكتبات مفقودة - اطلب الاستيرادات',
+              'الخطأ الشائع 5: إصدار قديم - حدد إصدار React/Node',
+              'القاعدة الذهبية: أعط الذكاء الاصطناعي الخطأ كاملاً',
+              'إذا لم يحلها الذكاء الاصطناعي، اطرح السؤال على StackOverflow أو المجتمعات'
+            ],
+            en: [
+              'AI is not perfect - it makes mistakes (often)',
+              'Common mistake 1: Incomplete code - ask for the rest',
+              'Common mistake 2: Incorrect syntax - tell AI the exact error',
+              'Common mistake 3: Wrong logic - describe what it does vs what it should do',
+              'Common mistake 4: Missing libraries - ask for imports',
+              'Common mistake 5: Outdated version - specify React/Node version',
+              'Golden rule: Give the AI the complete error',
+              'If AI can\'t fix it, ask on StackOverflow or communities'
+            ]
+          },
+          method: {
+            fr: 'Demandez à ChatGPT de créer une application React qui utilise useState. S'il y a une erreur, copiez-collez-la entièrement dans le chat et demandez: "Comment corriger cette erreur?". Utilisez toujours l\'erreur complète.',
+            ar: 'اطلب من ChatGPT إنشاء تطبيق React يستخدم useState. إذا كان هناك خطأ، انسخ والصقه بالكامل في المحادثة واسأل: "كيف أصلح هذا الخطأ؟". استخدم دائماً الخطأ كاملاً.',
+            en: 'Ask ChatGPT to create a React app that uses useState. If there\'s an error, copy-paste it entirely into the chat and ask: "How do I fix this error?". Always use the complete error.'
+          },
+          exercise: {
+            fr: 'Créez intentionnellement une erreur dans votre code (manquez un point-virgule, mal orthographiez une variable). Demandez à l\'IA de trouver et corriger l\'erreur. Faites ceci 5 fois avec différentes erreurs pour apprendre le processus.',
+            ar: 'اصنع خطأً عمداً في كودك (انسى فاصلة منقوطة، اكتب اسم متغير خطأ). اطلب من الذكاء الاصطناعي العثور على الخطأ وإصلاحه. افعل هذا 5 مرات بأخطاء مختلفة لتتعلم العملية.',
+            en: 'Intentionally create an error in your code (miss a semicolon, misspell a variable). Ask the AI to find and fix the error. Do this 5 times with different errors to learn the process.'
+          },
+          tip: {
+            fr: '💡 L\'erreur la plus commune: l\'IA ne sait pas que vous utilisez React 18 ou Node 18. Précisez toujours les versions. Ajoutez "pour React 18" ou "pour Node 18" à vos prompts.',
+            ar: '💡 الخطأ الأكثر شيوعاً: الذكاء الاصطناعي لا يعرف أنك تستخدم React 18 أو Node 18. حدد دائماً الإصدارات. أضف "لـ React 18" أو "لـ Node 18" إلى أوامرك.',
+            en: '💡 Most common mistake: AI doesn\'t know you\'re using React 18 or Node 18. Always specify versions. Add "for React 18" or "for Node 18" to your prompts.'
+          }
+        },
+        // Lesson 7: Git & GitHub Basics
+        {
+          id: 'vc-b-7',
+          title: {
+            fr: 'Git & GitHub - Les Bases',
+            ar: 'Git & GitHub - الأساسيات',
+            en: 'Git & GitHub Basics'
+          },
+          image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Git = système de versionnement (sauvegarder votre code)',
+              'GitHub = plateforme pour stocker et partager votre code',
+              'Commande git init: initialise un dépôt dans votre dossier',
+              'Commande git add .: ajoute tous les fichiers au suivi',
+              'Commande git commit -m "message": sauvegarde une version',
+              'Commande git push: envoie votre code sur GitHub',
+              'Commande git pull: récupère les mises à jour',
+              'Créez un compte GitHub gratuitement maintenant'
+            ],
+            ar: [
+              'Git = نظام إصدارات (حفظ كودك)',
+              'GitHub = منصة لتخزين ومشاركة كودك',
+              'أمر git init: يهيئ مستودعاً في مجلدك',
+              'أمر git add .: يضيف كل الملفات للمتابعة',
+              'أمر git commit -m "رسالة": يحفظ نسخة',
+              'أمر git push: يرسل كودك إلى GitHub',
+              'أمر git pull: يجلب التحديثات',
+              'أنشئ حساب GitHub مجاناً الآن'
+            ],
+            en: [
+              'Git = version control system (save your code)',
+              'GitHub = platform to store and share your code',
+              'Command git init: initializes a repository in your folder',
+              'Command git add .: adds all files to tracking',
+              'Command git commit -m "message": saves a version',
+              'Command git push: sends your code to GitHub',
+              'Command git pull: fetches updates',
+              'Create a GitHub account for free now'
+            ]
+          },
+          method: {
+            fr: 'Suivez ce workflow: 1) Créez un dossier 2) git init 3) Créez un fichier index.html 4) git add . 5) git commit -m "Premier commit" 6) Créez un repo sur GitHub 7) git push. Regardez votre code en ligne!',
+            ar: 'اتبع هذه سير العمل: 1) أنشئ مجلداً 2) git init 3) أنشئ ملف index.html 4) git add . 5) git commit -m "النسخة الأولى" 6) أنشئ مستودعاً على GitHub 7) git push. شاهد كودك أونلاين!',
+            en: 'Follow this workflow: 1) Create a folder 2) git init 3) Create index.html 4) git add . 5) git commit -m "First commit" 6) Create repo on GitHub 7) git push. Watch your code go live!'
+          },
+          exercise: {
+            fr: 'Créez un projet simple (le portfolio de la leçon 4). Initialisez Git, faites 3 commits différents en ajoutant des fonctionnalités, et poussez tout sur GitHub. Partagez le lien de votre repo.',
+            ar: 'أنشئ مشروعاً بسيطاً (البورتفوليو من الدرس 4). هَيّئ Git، اعمل 3 نسخ مختلفة بإضافة ميزات، وادفع كل شيء إلى GitHub. شارك رابط مستودعك.',
+            en: 'Create a simple project (the portfolio from lesson 4). Initialize Git, make 3 different commits adding features, and push everything to GitHub. Share your repo link.'
+          },
+          tip: {
+            fr: '💡 GitHub est votre CV en Vibe Coding. Les recruteurs regardent vos repos. Même les petits projets bien documentés impressionnent plus que les grands projets désordonnés.',
+            ar: '💡 GitHub هو سيرتك الذاتية في البرمجة بالذكاء الاصطناعي. المسؤولون عن التوظيف ينظرون إلى مستودعاتك. حتى المشاريع الصغيرة الموثقة جيداً تثير إعجاباً أكثر من المشاريع الكبيرة غير المنظمة.',
+            en: '💡 GitHub is your Vibe Coding resume. Recruiters look at your repos. Even small well-documented projects impress more than large messy projects.'
+          }
+        },
+        // Lesson 8: Deploying First Project
+        {
+          id: 'vc-b-8',
+          title: {
+            fr: 'Déployer Votre Premier Projet',
+            ar: 'نشر مشروعك الأول',
+            en: 'Deploying Your First Project'
+          },
+          image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Netlify = plateforme de déploiement la plus simple (gratuite)',
+              'Déployer un site statique: glissez-déposez votre dossier sur Netlify',
+              'Votre site sera en ligne en 30 secondes sur un URL personnalisé',
+              'Pour React: déployez via Netlify avec "npm run build"',
+              'Vercel = alternative puissante pour React/Next.js',
+              'Sur GitHub: Activez GitHub Pages dans les settings',
+              'Surrender: poussez vers GitHub et Netlify/Vercel détectent automatiquement',
+              'Votre portfolio: premier projet déployé = preuve de compétence'
+            ],
+            ar: [
+              'Netlify = أسهل منصة للنشر (مجانية)',
+              'نشر موقع ثابت: اسحب وأفلت مجلدك على Netlify',
+              'سيكون موقعك أونلاين في 30 ثانية على رابط مخصص',
+              'لـ React: انشر عبر Netlify باستخدام "npm run build"',
+              'Vercel = بديل قوي لـ React/Next.js',
+              'على GitHub: فعّل GitHub Pages في الإعدادات',
+              'رائع: ادفع إلى GitHub وNetlify/Vercel يكتشفان تلقائياً',
+              'بورتفوليو: أول مشروع منشور = دليل على المهارة'
+            ],
+            en: [
+              'Netlify = easiest deployment platform (free)',
+              'Deploy static site: drag and drop your folder on Netlify',
+              'Your site will be live in 30 seconds on a custom URL',
+              'For React: deploy via Netlify with "npm run build"',
+              'Vercel = powerful alternative for React/Next.js',
+              'On GitHub: Enable GitHub Pages in settings',
+              'Pro move: push to GitHub and Netlify/Vercel automatically detect',
+              'Portfolio: first deployed project = proof of skill'
+            ]
+          },
+          method: {
+            fr: 'Prenez le projet que vous avez créé dans les leçons précédentes. Déployez-le sur Netlify en suivant les étapes. Partagez le lien avec votre groupe ou sur les réseaux sociaux. C\'est votre premier projet en ligne!',
+            ar: 'خذ المشروع الذي أنشأته في الدروس السابقة. انشره على Netlify باتباع الخطوات. شارك الرابط مع مجموعتك أو على وسائل التواصل الاجتماعي. هذا أول مشروع لك أونلاين!',
+            en: 'Take the project you created in previous lessons. Deploy it on Netlify following the steps. Share the link with your group or on social media. This is your first project online!'
+          },
+          exercise: {
+            fr: 'Déployez le portfolio de la leçon 7 sur Netlify. Créez 3 déploiements différents de projets que vous avez construits avec l\'IA. Créez une page simple qui liste tous vos projets déployés.',
+            ar: 'انشر البورتفوليو من الدرس 7 على Netlify. أنشئ 3 نشرات مختلفة لمشاريع بنيتها بالذكاء الاصطناعي. أنشئ صفحة بسيطة تسرد جميع مشاريعك المنشورة.',
+            en: 'Deploy the portfolio from lesson 7 on Netlify. Create 3 different deployments of projects you built with AI. Create a simple page listing all your deployed projects.'
+          },
+          tip: {
+            fr: '💡 Mettez à jour votre projet quotidiennement pendant 7 jours. Chaque mise à jour = une nouvelle compétence acquise. Les recruteurs aiment voir des projets avec une activité constante.',
+            ar: '💡 حدّث مشروعك يومياً لمدة 7 أيام. كل تحديث = مهارة جديدة مكتسبة. مسؤولو التوظيف يحبون رؤية مشاريع ذات نشاط مستمر.',
+            en: '💡 Update your project daily for 7 days. Each update = a new skill learned. Recruiters love to see projects with consistent activity.'
+          }
+        }
+      ]
+    },
+    // ============================================
+    // LEVEL 2: INTERMEDIATE - 8 Lessons
+    // ============================================
+    {
+      name: {
+        fr: 'Intermédiaire',
+        ar: 'متوسط',
+        en: 'Intermediate'
+      },
+      badge: '⚡',
+      duration: {
+        fr: 'Semaines 5–12',
+        ar: 'الأسابيع 5–12',
+        en: 'Weeks 5–12'
+      },
+      goal: {
+        fr: 'Construire des applications modernes avec React, Vite, et des bases de données',
+        ar: 'بناء تطبيقات عصرية مع React وVite وقواعد البيانات',
+        en: 'Build modern apps with React, Vite, and databases'
+      },
+      lessons: [
+        // Lesson 1: Building React Apps with AI
+        {
+          id: 'vc-i-1',
+          title: {
+            fr: 'Construire des Apps React avec l\'IA',
+            ar: 'بناء تطبيقات React بالذكاء الاصطناعي',
+            en: 'Building React Apps with AI'
+          },
+          image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'React = bibliothèque JavaScript pour construire des interfaces utilisateur',
+              'Prompt: "Crée un composant React pour une carte de produit avec image, nom, prix"',
+              'L\'IA écrit le composant, vous le collez dans App.jsx',
+              'Apprenez à reconnaître les props, state, et hooks (useState, useEffect)',
+              'Demandez à l\'IA: "Ajoute un état pour gérer le panier"',
+              'Testez dans Cursor: il détecte automatiquement les erreurs',
+              'Itérez: ajoutez fonctionnalité par fonctionnalité',
+              'Déployez sur Vercel pour une expérience React parfaite'
+            ],
+            ar: [
+              'React = مكتبة جافا سكريبت لبناء واجهات المستخدم',
+              'الأمر: "أنشئ مكون React لبطاقة منتج مع صورة واسم وسعر"',
+              'الذكاء الاصطناعي يكتب المكون، وأنت تنسخه في App.jsx',
+              'تعلم التعرف على الخصائص والحالة والخطافات (useState, useEffect)',
+              'اطلب من الذكاء الاصطناعي: "أضف حالة لإدارة السلة"',
+              'اختبر في Cursor: يكتشف الأخطاء تلقائياً',
+              'كرّر: أضف ميزة تلو الأخرى',
+              'انشر على Vercel لتجربة React مثالية'
+            ],
+            en: [
+              'React = JavaScript library for building user interfaces',
+              'Prompt: "Create a React component for a product card with image, name, price"',
+              'AI writes the component, you paste it into App.jsx',
+              'Learn to recognize props, state, and hooks (useState, useEffect)',
+              'Ask AI: "Add state to manage the cart"',
+              'Test in Cursor: it automatically detects errors',
+              'Iterate: add feature by feature',
+              'Deploy to Vercel for the perfect React experience'
+            ]
+          },
+          method: {
+            fr: 'Demandez à l\'IA de générer un composant React pour un système de notation par étoiles (1-5). Copiez le code dans Cursor, testez-le, puis demandez à l\'IA d\'ajouter la possibilité de cliquer pour noter. Itérez 3 fois.',
+            ar: 'اطلب من الذكاء الاصطناعي توليد مكون React لنظام تقييم بالنجوم (1-5). انسخ الكود في Cursor، اختبره، ثم اطلب من الذكاء الاصطناعي إضافة إمكانية النقر للتقييم. كرر 3 مرات.',
+            en: 'Ask AI to generate a React component for a star rating system (1-5). Copy the code into Cursor, test it, then ask AI to add click-to-rate functionality. Iterate 3 times.'
+          },
+          exercise: {
+            fr: 'Construisez une application de galerie photo React. L\'application doit: Afficher une grille de 9 photos, permettre d\'agrandir une photo en cliquant dessus, avoir un design moderne. Utilisez l\'IA à chaque étape.',
+            ar: 'ابنِ تطبيق معرض صور React. يجب أن يعرض التطبيق: شبكة من 9 صور، يسمح بتكبير الصورة عند النقر عليها، له تصميم عصري. استخدم الذكاء الاصطناعي في كل خطوة.',
+            en: 'Build a React photo gallery app. It should: Display a 9-photo grid, allow enlarging a photo on click, have a modern design. Use AI at every step.'
+          },
+          tip: {
+            fr: '💡 Toujours structurer vos prompts React: d\'abord le composant, puis les props, puis les interactions, puis le style. L\'IA répond mieux avec cette progression logique.',
+            ar: '💡 دائماً هيكل أوامر React: أولاً المكون، ثم الخصائص، ثم التفاعلات، ثم التنسيق. يستجيب الذكاء الاصطناعي بشكل أفضل مع هذا التقدم المنطقي.',
+            en: '💡 Always structure your React prompts: first the component, then props, then interactions, then styling. AI responds better with this logical progression.'
+          }
+        },
+        // Lesson 2: Vite & Modern Development
+        {
+          id: 'vc-i-2',
+          title: {
+            fr: 'Vite & le Développement Moderne',
+            ar: 'Vite والتطوير الحديث',
+            en: 'Vite & Modern Development'
+          },
+          image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Vite = outil de build ultra-rapide (20x plus vite que Webpack)',
+              'npm create vite@latest mon-app -- --template react',
+              'Structure: index.html (entrée), src/ (code), package.json (dépendances)',
+              'Commandes: npm install, npm run dev (développement), npm run build (production)',
+              'Hot Reload: changez le code et voyez les changements instantanément',
+              'Demandez à l\'IA: "Comment configurer Vite avec React et Tailwind"',
+              'L\'IA peut générer le fichier vite.config.js pour vous',
+              'Déployez le build sur Netlify ou Vercel'
+            ],
+            ar: [
+              'Vite = أداة بناء فائقة السرعة (أسرع بـ20 مرة من Webpack)',
+              'npm create vite@latest تطبيقي -- --template react',
+              'الهيكل: index.html (مدخل)، src/ (كود)، package.json (الاعتماديات)',
+              'الأوامر: npm install، npm run dev (تطوير)، npm run build (إنتاج)',
+              'Hot Reload: غيّر الكود وشاهد التغييرات فوراً',
+              'اطلب من الذكاء الاصطناعي: "كيف أعد Vite مع React وTailwind"',
+              'يمكن للذكاء الاصطناعي توليد ملف vite.config.js لك',
+              'انشر النسخة المنتجة على Netlify أو Vercel'
+            ],
+            en: [
+              'Vite = ultra-fast build tool (20x faster than Webpack)',
+              'npm create vite@latest my-app -- --template react',
+              'Structure: index.html (entry), src/ (code), package.json (dependencies)',
+              'Commands: npm install, npm run dev (development), npm run build (production)',
+              'Hot Reload: change code and see changes instantly',
+              'Ask AI: "How to configure Vite with React and Tailwind"',
+              'AI can generate the vite.config.js file for you',
+              'Deploy the build to Netlify or Vercel'
+            ]
+          },
+          method: {
+            fr: 'Créez un nouveau projet Vite React. Demandez à l\'IA de vous guider pas à pas. Utilisez Cursor pour exécuter les commandes. Votre objectif: avoir un site React qui s\'affiche dans le navigateur en moins de 5 minutes.',
+            ar: 'أنشئ مشروع Vite React جديد. اطلب من الذكاء الاصطناعي إرشادك خطوة بخطوة. استخدم Cursor لتنفيذ الأوامر. هدفك: الحصول على موقع React يعرض في المتصفح في أقل من 5 دقائق.',
+            en: 'Create a new Vite React project. Ask AI to guide you step by step. Use Cursor to run the commands. Your goal: have a React site showing in the browser in under 5 minutes.'
+          },
+          exercise: {
+            fr: 'Créez 3 projets Vite différents: React + TypeScript, React + JavaScript, Vanilla JS. Comparez les structures. Notez les différences et les similitudes. Demandez à l\'IA d\'expliquer pourquoi chaque configuration est utile.',
+            ar: 'أنشئ 3 مشاريع Vite مختلفة: React + TypeScript، React + JavaScript، Vanilla JS. قارن الهياكل. لاحظ الاختلافات وأوجه التشابه. اطلب من الذكاء الاصطناعي شرح سبب فائدة كل تكوين.',
+            en: 'Create 3 different Vite projects: React + TypeScript, React + JavaScript, Vanilla JS. Compare the structures. Note differences and similarities. Ask AI to explain why each configuration is useful.'
+          },
+          tip: {
+            fr: '💡 npm create vite@latest est votre meilleur ami. Cette seule commande crée un projet moderne prêt à l\'emploi en 15 secondes. Pas besoin de configurer quoi que ce soit manuellement.',
+            ar: '💡 npm create vite@latest هو أفضل صديق لك. هذا الأمر الوحيد ينشئ مشروعاً حديثاً جاهزاً للاستخدام في 15 ثانية. لا حاجة لتكوين أي شيء يدوياً.',
+            en: '💡 npm create vite@latest is your best friend. This one command creates a modern project ready to go in 15 seconds. No need to configure anything manually.'
+          }
+        },
+        // Lesson 3: Supabase Integration
+        {
+          id: 'vc-i-3',
+          title: {
+            fr: 'Intégration Supabase',
+            ar: 'دمج Supabase',
+            en: 'Supabase Integration'
+          },
+          image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Supabase = Firebase alternatif open-source + PostgreSQL',
+              'Créez un compte gratuit sur supabase.com',
+              'Créez une table "tasks" avec: id, title, description, completed',
+              'Installez: npm install @supabase/supabase-js',
+              'Connectez: const supabase = createClient(url, key)',
+              'Fetch: const {data} = await supabase.from("tasks").select("*")',
+              'Insert: await supabase.from("tasks").insert({title: "Nouvelle tâche"})',
+              'Demandez à l\'IA: "Comment faire une application CRUD avec Supabase et React"'
+            ],
+            ar: [
+              'Supabase = بديل Firebase مفتوح المصدر + PostgreSQL',
+              'أنشئ حساباً مجانياً على supabase.com',
+              'أنشئ جدول "tasks" مع: id، title، description، completed',
+              'ثبّت: npm install @supabase/supabase-js',
+              'اتصل: const supabase = createClient(url, key)',
+              'جلب: const {data} = await supabase.from("tasks").select("*")',
+              'إدراج: await supabase.from("tasks").insert({title: "مهمة جديدة"})',
+              'اطلب من الذكاء الاصطناعي: "كيف أعمل تطبيق CRUD مع Supabase وReact"'
+            ],
+            en: [
+              'Supabase = open-source Firebase alternative + PostgreSQL',
+              'Create free account at supabase.com',
+              'Create "tasks" table with: id, title, description, completed',
+              'Install: npm install @supabase/supabase-js',
+              'Connect: const supabase = createClient(url, key)',
+              'Fetch: const {data} = await supabase.from("tasks").select("*")',
+              'Insert: await supabase.from("tasks").insert({title: "New task"})',
+              'Ask AI: "How to build a CRUD app with Supabase and React"'
+            ]
+          },
+          method: {
+            fr: 'Suivez le guide Supabase "React Quickstart". Demandez à l\'IA de clarifier chaque étape. L\'objectif: connecter votre application React à Supabase et afficher les données de la table en direct.',
+            ar: 'اتبع دليل Supabase "React Quickstart". اطلب من الذكاء الاصطناعي توضيح كل خطوة. الهدف: ربط تطبيق React الخاص بك بـ Supabase وعرض البيانات من الجدول مباشرة.',
+            en: 'Follow the Supabase "React Quickstart" guide. Ask AI to clarify each step. Goal: connect your React app to Supabase and display table data live.'
+          },
+          exercise: {
+            fr: 'Construisez une application de gestion de tâches avec Supabase. L\'application doit: Afficher les tâches, Ajouter de nouvelles tâches, Marquer les tâches comme complètes, Supprimer des tâches. Utilisez l\'IA pour chaque partie.',
+            ar: 'ابنِ تطبيق إدارة المهام مع Supabase. يجب أن يعرض التطبيق: المهام، إضافة مهام جديدة، وضع علامة مكتمل على المهام، حذف المهام. استخدم الذكاء الاصطناعي لكل جزء.',
+            en: 'Build a task management app with Supabase. It should: Display tasks, Add new tasks, Mark tasks as complete, Delete tasks. Use AI for each part.'
+          },
+          tip: {
+            fr: '💡 Supabase est gratuit jusqu\'à 500MB de base de données. C\'est plus que suffisant pour vos premiers projets. Les projets professionnels peuvent commencer sur le plan gratuit.',
+            ar: '💡 Supabase مجاني حتى 500 ميغابايت من قاعدة البيانات. هذا أكثر من كافٍ لمشاريعك الأولى. يمكن للمشاريع الاحترافية البدء على الخطة المجانية.',
+            en: '💡 Supabase is free up to 500MB database. This is more than enough for your first projects. Professional projects can start on the free tier.'
+          }
+        },
+        // Lesson 4: Firebase Basics
+        {
+          id: 'vc-i-4',
+          title: {
+            fr: 'Firebase - Les Bases',
+            ar: 'Firebase - الأساسيات',
+            en: 'Firebase Basics'
+          },
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Firebase = plateforme Google pour applications mobiles et web',
+              'Créez un projet Firebase dans la console Google',
+              'Firestore = base de données NoSQL en temps réel',
+              'Installez: npm install firebase',
+              'Configurez: import { initializeApp } from "firebase/app"',
+              'Firestore: addDoc, getDocs, updateDoc, deleteDoc',
+              'Realtime: onSnapshot pour les mises à jour en direct',
+              'Storage: upload de fichiers (images, vidéos)'
+            ],
+            ar: [
+              'Firebase = منصة Google للتطبيقات المحمولة والويب',
+              'أنشئ مشروع Firebase في وحدة تحكم Google',
+              'Firestore = قاعدة بيانات NoSQL في الوقت الفعلي',
+              'ثبّت: npm install firebase',
+              'إعداد: import { initializeApp } from "firebase/app"',
+              'Firestore: addDoc، getDocs، updateDoc، deleteDoc',
+              'الوقت الفعلي: onSnapshot للتحديثات المباشرة',
+              'التخزين: رفع ملفات (صور، فيديوهات)'
+            ],
+            en: [
+              'Firebase = Google platform for mobile and web apps',
+              'Create a Firebase project in Google Console',
+              'Firestore = real-time NoSQL database',
+              'Install: npm install firebase',
+              'Setup: import { initializeApp } from "firebase/app"',
+              'Firestore: addDoc, getDocs, updateDoc, deleteDoc',
+              'Realtime: onSnapshot for live updates',
+              'Storage: upload files (images, videos)'
+            ]
+          },
+          method: {
+            fr: 'Créez un projet Firebase. Demandez à l\'IA de générer le code de configuration. Suivez le tutoriel "Firebase v9 with React" avec l\'IA à côté. Construisez une application de chat simple en 30 minutes.',
+            ar: 'أنشئ مشروع Firebase. اطلب من الذكاء الاصطناعي توليد كود التهيئة. اتبع البرنامج التعليمي "Firebase v9 مع React" مع الذكاء الاصطناعي بجانبك. ابنِ تطبيق محادثة بسيط في 30 دقيقة.',
+            en: 'Create a Firebase project. Ask AI to generate the configuration code. Follow the "Firebase v9 with React" tutorial with AI by your side. Build a simple chat app in 30 minutes.'
+          },
+          exercise: {
+            fr: 'Construisez une application de chat en temps réel avec Firebase. Elle doit: Afficher les messages en direct, Permettre d\'envoyer des messages, Afficher les noms des utilisateurs, Avoir un design moderne.',
+            ar: 'ابنِ تطبيق محادثة في الوقت الفعلي مع Firebase. يجب أن: يعرض الرسائل مباشرة، يسمح بإرسال الرسائل، يعرض أسماء المستخدمين، له تصميم عصري.',
+            en: 'Build a real-time chat app with Firebase. It should: Display messages live, Allow sending messages, Show usernames, Have a modern design.'
+          },
+          tip: {
+            fr: '💡 Firebase est parfait pour les apps en temps réel (chat, jeux, collaboration). Mais commencez par Supabase si vous préférez SQL. Les deux sont excellents, choisissez selon votre confort.',
+            ar: '💡 Firebase مثالي للتطبيقات في الوقت الفعلي (المحادثة، الألعاب، التعاون). لكن ابدأ بـ Supabase إذا كنت تفضل SQL. كلاهما ممتاز، اختر حسب راحتك.',
+            en: '💡 Firebase is perfect for real-time apps (chat, games, collaboration). But start with Supabase if you prefer SQL. Both are excellent, choose based on your comfort.'
+          }
+        },
+        // Lesson 5: REST APIs
+        {
+          id: 'vc-i-5',
+          title: {
+            fr: 'APIs REST avec l\'IA',
+            ar: 'APIs REST مع الذكاء الاصطناعي',
+            en: 'REST APIs with AI'
+          },
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'REST API = manière de communiquer entre applications',
+              'Méthodes HTTP: GET (lire), POST (créer), PUT (mettre à jour), DELETE (supprimer)',
+              'Fetch: const response = await fetch(url)',
+              'Headers: { "Content-Type": "application/json" }',
+              'Exemple GET: fetch("https://api.example.com/users")',
+              'Exemple POST: fetch(url, { method: "POST", body: JSON.stringify(data) })',
+              'Demandez à l\'IA: "Comment créer une API REST avec Node.js et Express"',
+              'Testez avec Postman ou Insomnia'
+            ],
+            ar: [
+              'REST API = طريقة للتواصل بين التطبيقات',
+              'طرق HTTP: GET (قراءة)، POST (إنشاء)، PUT (تحديث)، DELETE (حذف)',
+              'Fetch: const response = await fetch(url)',
+              'الرؤوس: { "Content-Type": "application/json" }',
+              'مثال GET: fetch("https://api.example.com/users")',
+              'مثال POST: fetch(url, { method: "POST", body: JSON.stringify(data) })',
+              'اطلب من الذكاء الاصطناعي: "كيف تصنع REST API مع Node.js وExpress"',
+              'اختبر مع Postman أو Insomnia'
+            ],
+            en: [
+              'REST API = way for apps to communicate',
+              'HTTP methods: GET (read), POST (create), PUT (update), DELETE (delete)',
+              'Fetch: const response = await fetch(url)',
+              'Headers: { "Content-Type": "application/json" }',
+              'GET example: fetch("https://api.example.com/users")',
+              'POST example: fetch(url, { method: "POST", body: JSON.stringify(data) })',
+              'Ask AI: "How to build a REST API with Node.js and Express"',
+              'Test with Postman or Insomnia'
+            ]
+          },
+          method: {
+            fr: 'Demandez à l\'IA de créer une API REST simple avec Express et Node.js. Copiez le code, exécutez-le, et testez les endpoints avec Postman. Demandez à l\'IA d\'ajouter des fonctionnalités une par une.',
+            ar: 'اطلب من الذكاء الاصطناعي إنشاء REST API بسيط مع Express وNode.js. انسخ الكود، شغّله، واختبر النقاط الطرفية مع Postman. اطلب من الذكاء الاصطناعي إضافة ميزات واحدة تلو الأخرى.',
+            en: 'Ask AI to create a simple REST API with Express and Node.js. Copy the code, run it, and test the endpoints with Postman. Ask AI to add features one by one.'
+          },
+          exercise: {
+            fr: 'Créez une API REST pour un blog. Endpoints: GET /posts (tous), GET /posts/:id (un), POST /posts (créer), PUT /posts/:id (mettre à jour), DELETE /posts/:id (supprimer). Utilisez l\'IA pour chaque endpoint.',
+            ar: 'أنشئ REST API لمدونة. النقاط: GET /posts (الكل)، GET /posts/:id (واحد)، POST /posts (إنشاء)، PUT /posts/:id (تحديث)، DELETE /posts/:id (حذف). استخدم الذكاء الاصطناعي لكل نقطة.',
+            en: 'Create a REST API for a blog. Endpoints: GET /posts (all), GET /posts/:id (one), POST /posts (create), PUT /posts/:id (update), DELETE /posts/:id (delete). Use AI for each endpoint.'
+          },
+          tip: {
+            fr: '💡 Commencez toujours avec GET. Une fois que vous pouvez lire des données, ajoutez POST. Puis PUT, puis DELETE. Les APIs complexes sont juste des APIs simples reliées entre elles.',
+            ar: '💡 ابدأ دائماً بـ GET. بمجرد أن تتمكن من قراءة البيانات، أضف POST. ثم PUT، ثم DELETE. APIs المعقدة هي مجرد APIs بسيطة مرتبطة ببعضها البعض.',
+            en: '💡 Always start with GET. Once you can read data, add POST. Then PUT, then DELETE. Complex APIs are just simple APIs linked together.'
+          }
+        },
+        // Lesson 6: Authentication
+        {
+          id: 'vc-i-6',
+          title: {
+            fr: 'Authentification avec l\'IA',
+            ar: 'المصادقة مع الذكاء الاصطناعي',
+            en: 'Authentication with AI'
+          },
+          image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Authentification = vérifier l\'identité des utilisateurs',
+              'Méthodes: Email/Mot de passe, Google, Facebook, Apple',
+              'Firebase Auth: auth.signInWithEmailAndPassword(email, pass)',
+              'Supabase Auth: supabase.auth.signIn({ email, password })',
+              'JWT = JSON Web Tokens (contenant l\'identité)',
+              'Protégez les routes: middleware verifyToken',
+              'Demandez à l\'IA: "Comment ajouter l\'authentification à mon app React"',
+              'Testez: créez un compte, connectez-vous, déconnectez-vous'
+            ],
+            ar: [
+              'المصادقة = التحقق من هوية المستخدمين',
+              'الطرق: البريد الإلكتروني/كلمة المرور، Google، Facebook، Apple',
+              'Firebase Auth: auth.signInWithEmailAndPassword(email, pass)',
+              'Supabase Auth: supabase.auth.signIn({ email, password })',
+              'JWT = JSON Web Tokens (تحتوي على الهوية)',
+              'حماية المسارات: middleware verifyToken',
+              'اطلب من الذكاء الاصطناعي: "كيف أضيف المصادقة إلى تطبيق React الخاص بي"',
+              'اختبر: أنشئ حساباً، سجّل الدخول، سجّل الخروج'
+            ],
+            en: [
+              'Authentication = verifying user identities',
+              'Methods: Email/Password, Google, Facebook, Apple',
+              'Firebase Auth: auth.signInWithEmailAndPassword(email, pass)',
+              'Supabase Auth: supabase.auth.signIn({ email, password })',
+              'JWT = JSON Web Tokens (contain identity)',
+              'Protect routes: middleware verifyToken',
+              'Ask AI: "How to add authentication to my React app"',
+              'Test: create account, login, logout'
+            ]
+          },
+          method: {
+            fr: 'Ajoutez l\'authentification à votre application de gestion de tâches. Commencez par email/mot de passe avec Firebase. Ajoutez ensuite "Connexion avec Google". Documentez chaque étape avec l\'aide de l\'IA.',
+            ar: 'أضف المصادقة إلى تطبيق إدارة المهام الخاص بك. ابدأ بالبريد الإلكتروني/كلمة المرور مع Firebase. ثم أضف "تسجيل الدخول بـ Google". وثق كل خطوة بمساعدة الذكاء الاصطناعي.',
+            en: 'Add authentication to your task management app. Start with email/password with Firebase. Then add "Login with Google". Document each step with AI\'s help.'
+          },
+          exercise: {
+            fr: 'Créez une application avec: Page d\'inscription (email/password), Page de connexion, Page protégée (dashboard), Bouton de déconnexion, Routes protégées. Utilisez l\'IA pour tout le code.',
+            ar: 'أنشئ تطبيقاً مع: صفحة تسجيل (بريد إلكتروني/كلمة مرور)، صفحة تسجيل دخول، صفحة محمية (لوحة التحكم)، زر تسجيل خروج، مسارات محمية. استخدم الذكاء الاصطناعي لكل الكود.',
+            en: 'Create an app with: Sign-up page (email/password), Login page, Protected page (dashboard), Logout button, Protected routes. Use AI for all the code.'
+          },
+          tip: {
+            fr: '💡 Commencez TOUJOURS par l\'authentification dans vos applications. C\'est plus simple de l\'ajouter au début que de la greffer après. Toute application qui a des utilisateurs en a besoin.',
+            ar: '💡 ابدأ دائماً بالمصادقة في تطبيقاتك. من الأسهل إضافتها في البداية من لصقها لاحقاً. أي تطبيق له مستخدمين يحتاجها.',
+            en: '💡 ALWAYS start with authentication in your apps. It\'s easier to add at the start than to graft later. Any app with users needs it.'
+          }
+        },
+        // Lesson 7: GitHub Workflow
+        {
+          id: 'vc-i-7',
+          title: {
+            fr: 'Workflow GitHub Professionnel',
+            ar: 'سير عمل GitHub الاحترافي',
+            en: 'Professional GitHub Workflow'
+          },
+          image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Branches: main (production), develop (dev), feature/* (nouvelles fonctionnalités)',
+              'git checkout -b feature/authentification',
+              'git add . && git commit -m "Ajout authentification"',
+              'git push origin feature/authentification',
+              'Pull Request = demande de fusion sur GitHub',
+              'Review: demandez à l\'IA de relire votre code',
+              'Merge: fusionnez après validation',
+              'GitHub Actions = automatisation (CI/CD)'
+            ],
+            ar: [
+              'الفروع: main (الإنتاج)، develop (التطوير)، feature/* (ميزات جديدة)',
+              'git checkout -b feature/mots-clefs',
+              'git add . && git commit -m "إضافة الكلمات المفتاحية"',
+              'git push origin feature/mots-clefs',
+              'Pull Request = طلب دمج على GitHub',
+              'مراجعة: اطلب من الذكاء الاصطناعي مراجعة كودك',
+              'دمج: ادمج بعد التحقق',
+              'GitHub Actions = أتمتة (CI/CD)'
+            ],
+            en: [
+              'Branches: main (production), develop (dev), feature/* (new features)',
+              'git checkout -b feature/authentication',
+              'git add . && git commit -m "Add authentication"',
+              'git push origin feature/authentication',
+              'Pull Request = merge request on GitHub',
+              'Review: ask AI to review your code',
+              'Merge: merge after validation',
+              'GitHub Actions = automation (CI/CD)'
+            ]
+          },
+          method: {
+            fr: 'Créez un dépôt GitHub pour votre projet. Utilisez la méthode feature-branch. Créez 3 features différentes (authentification, base de données, UI). Faites une Pull Request pour chacune et fusionnez.',
+            ar: 'أنشئ مستودع GitHub لمشروعك. استخدم طريقة feature-branch. أنشئ 3 ميزات مختلفة (مصادقة، قاعدة بيانات، واجهة). اعمل طلب دمج لكل واحدة وادمجها.',
+            en: 'Create a GitHub repo for your project. Use the feature-branch method. Create 3 different features (auth, database, UI). Make a Pull Request for each and merge.'
+          },
+          exercise: {
+            fr: 'Pratiquez le workflow complet: 1) Créez un repo 2) Clonez localement 3) Créez une branche 4) Faites des changements 5) Commit 6) Push 7) Pull Request 8) Merge 9) Pull sur main 10) Recommencez 3 fois.',
+            ar: 'تمرّن على سير العمل الكامل: 1) أنشئ مستودعاً 2) استنسخ محلياً 3) أنشئ فرعاً 4) اعمل تغييرات 5) Commit 6) Push 7) طلب دمج 8) دمج 9) Pull على main 10) كرر 3 مرات.',
+            en: 'Practice the complete workflow: 1) Create repo 2) Clone locally 3) Create branch 4) Make changes 5) Commit 6) Push 7) Pull Request 8) Merge 9) Pull to main 10) Repeat 3 times.'
+          },
+          tip: {
+            fr: '💡 Écrivez des messages de commit descriptifs: "Ajout de la fonction de recherche" plutôt que "update". L\'IA peut vous aider à formater vos messages de commit.',
+            ar: '💡 اكتب رسائل commit وصفية: "إضافة وظيفة البحث" بدلاً من "تحديث". يمكن للذكاء الاصطناعي مساعدتك في تنسيق رسائل commit الخاصة بك.',
+            en: '💡 Write descriptive commit messages: "Add search functionality" rather than "update". AI can help you format your commit messages.'
+          }
+        },
+        // Lesson 8: Deploying with Vercel
+        {
+          id: 'vc-i-8',
+          title: {
+            fr: 'Déploiement avec Vercel',
+            ar: 'النشر مع Vercel',
+            en: 'Deploying with Vercel'
+          },
+          image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Vercel = plateforme de déploiement optimisée pour React/Next.js',
+              'Créez un compte sur vercel.com',
+              'Connectez votre dépôt GitHub',
+              'Vercel détecte automatiquement les builds',
+              'Déploiement automatique: push → build → deploy',
+              'Domaines: vercel.app ou domaine personnalisé',
+              'Variables d\'environnement: Configurées dans le dashboard',
+              'Analytics: intégré et gratuit pour les stats'
+            ],
+            ar: [
+              'Vercel = منصة نشر محسّنة لـ React/Next.js',
+              'أنشئ حساباً على vercel.com',
+              'اربط مستودع GitHub الخاص بك',
+              'يكتشف Vercel البناء تلقائياً',
+              'نشر تلقائي: push → build → deploy',
+              'المجالات: vercel.app أو مجال مخصص',
+              'متغيرات البيئة: مكونة في لوحة التحكم',
+              'التحليلات: مدمجة ومجانية للإحصائيات'
+            ],
+            en: [
+              'Vercel = deployment platform optimized for React/Next.js',
+              'Create an account at vercel.com',
+              'Connect your GitHub repository',
+              'Vercel automatically detects builds',
+              'Automatic deployment: push → build → deploy',
+              'Domains: vercel.app or custom domain',
+              'Environment variables: Configured in dashboard',
+              'Analytics: built-in and free for stats'
+            ]
+          },
+          method: {
+            fr: 'Connectez votre application React à Vercel. Poussez une modification sur GitHub et voyez le déploiement automatique. Ajoutez un domaine personnalisé. C\'est maintenant un site professionnel.',
+            ar: 'اربط تطبيق React الخاص بك بـ Vercel. ادفع تعديلاً إلى GitHub وشاهد النشر التلقائي. أضف مجالاً مخصصاً. أصبح الآن موقعاً احترافياً.',
+            en: 'Connect your React app to Vercel. Push a change to GitHub and watch the automatic deployment. Add a custom domain. It\'s now a professional site.'
+          },
+          exercise: {
+            fr: 'Déployez votre application de gestion de tâches sur Vercel. Ajoutez 3 variables d\'environnement (supabase url, supabase key, etc.). Vérifiez que tout fonctionne en production.',
+            ar: 'انشر تطبيق إدارة المهام الخاص بك على Vercel. أضف 3 متغيرات بيئة (url Supabase، مفتاح Supabase، إلخ). تحقق من أن كل شيء يعمل في الإنتاج.',
+            en: 'Deploy your task management app to Vercel. Add 3 environment variables (supabase url, supabase key, etc.). Verify everything works in production.'
+          },
+          tip: {
+            fr: '💡 La puissance de Vercel est l\'intégration avec GitHub. Chaque commit = nouveau déploiement de test. Chaque merge sur main = déploiement en production. Votre workflow devient fluide.',
+            ar: '💡 قوة Vercel هي التكامل مع GitHub. كل commit = نشر اختبار جديد. كل دمج على main = نشر في الإنتاج. يصبح سير عملك سلساً.',
+            en: '💡 Vercel\'s power is GitHub integration. Every commit = new test deployment. Every merge to main = production deployment. Your workflow becomes seamless.'
+          }
+        }
+      ]
+    },
+    // ============================================
+    // LEVEL 3: ADVANCED - 8 Lessons
+    // ============================================
+    {
+      name: {
+        fr: 'Avancé',
+        ar: 'متقدم',
+        en: 'Advanced'
+      },
+      badge: '🔥',
+      duration: {
+        fr: 'Semaines 13–24',
+        ar: 'الأسابيع 13–24',
+        en: 'Weeks 13–24'
+      },
+      goal: {
+        fr: 'Construire des SaaS complets, maîtriser les agents IA et créer des produits commercialisables',
+        ar: 'بناء SaaS كاملة، إتقان وكلاء الذكاء الاصطناعي وإنشاء منتجات قابلة للتسويق',
+        en: 'Build complete SaaS, master AI agents and create marketable products'
+      },
+      lessons: [
+        // Lesson 1: Building Complete SaaS Applications
+        {
+          id: 'vc-a-1',
+          title: {
+            fr: 'Construire des Applications SaaS Complètes',
+            ar: 'بناء تطبيقات SaaS كاملة',
+            en: 'Building Complete SaaS Applications'
+          },
+          image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'SaaS = Software as a Service (application payante en ligne)',
+              'Architecture: Frontend (React) + Backend (Node/Express) + Base de données (Supabase/Firebase)',
+              'Modèle économique: Abonnements (mensuel, annuel)',
+              'Stripe = paiement en ligne (ou CIH pour algériens)',
+              'Fonctionnalités clés: Authentification, Paiement, Dashboard, Notifications',
+              'Multi-tenant: Une codebase pour tous les clients',
+              'Demandez à l\'IA: "Structure d\'un projet SaaS avec React, Express et PostgreSQL"',
+              'Pricing tiers: Gratuit, Pro, Enterprise'
+            ],
+            ar: [
+              'SaaS = برنامج كخدمة (تطبيق مدفوع أونلاين)',
+              'الهيكل: الواجهة الأمامية (React) + الخلفية (Node/Express) + قاعدة البيانات (Supabase/Firebase)',
+              'النموذج الاقتصادي: اشتراكات (شهرية، سنوية)',
+              'Stripe = الدفع أونلاين (أو CIH للجزائريين)',
+              'الميزات الرئيسية: مصادقة، دفع، لوحة تحكم، إشعارات',
+              'متعدد المستأجرين: قاعدة كود واحدة لجميع العملاء',
+              'اطلب من الذكاء الاصطناعي: "هيكل مشروع SaaS مع React وExpress وPostgreSQL"',
+              'فئات التسعير: مجاني، Pro، Enterprise'
+            ],
+            en: [
+              'SaaS = Software as a Service (paid online application)',
+              'Architecture: Frontend (React) + Backend (Node/Express) + Database (Supabase/Firebase)',
+              'Business model: Subscriptions (monthly, yearly)',
+              'Stripe = online payment (or CIH for Algerians)',
+              'Key features: Authentication, Payment, Dashboard, Notifications',
+              'Multi-tenant: One codebase for all customers',
+              'Ask AI: "SaaS project structure with React, Express and PostgreSQL"',
+              'Pricing tiers: Free, Pro, Enterprise'
+            ]
+          },
+          method: {
+            fr: 'Demandez à l\'IA de créer un plan détaillé pour une application SaaS. Incluez: l\'architecture technique, la base de données, l\'authentification, les paiements, le dashboard, et les fonctionnalités clés. Créez ensuite le MVP (produit minimum viable).',
+            ar: 'اطلب من الذكاء الاصطناعي إنشاء خطة مفصلة لتطبيق SaaS. تشمل: الهيكل التقني، قاعدة البيانات، المصادقة، المدفوعات، لوحة التحكم، والميزات الرئيسية. ثم أنشئ MVP (المنتج الأدنى قابلية للحياة).',
+            en: 'Ask AI to create a detailed plan for a SaaS app. Include: technical architecture, database, authentication, payments, dashboard, and key features. Then build the MVP (minimum viable product).'
+          },
+          exercise: {
+            fr: 'Construisez un SaaS complet: Application de gestion de projets. Fonctionnalités: 3 rôles (admin, manager, member), création de projets, attribution de tâches, suivi des progrès, upload de fichiers.',
+            ar: 'ابنِ SaaS كاملاً: تطبيق إدارة المشاريع. الميزات: 3 أدوار (مدير، مدير مشروع، عضو)، إنشاء مشاريع، تعيين مهام، تتبع التقدم، رفع ملفات.',
+            en: 'Build a complete SaaS: Project management app. Features: 3 roles (admin, manager, member), project creation, task assignment, progress tracking, file uploads.'
+          },
+          tip: {
+            fr: '💡 Commencez par un SaaS simple et spécialisé. "Un CRM pour commerces en Algérie" est plus viable que "Un CRM pour tout le monde". La spécialisation paie.',
+            ar: '💡 ابدأ بـ SaaS بسيط ومتخصص. "نظام CRM للمتاجر في الجزائر" أكثر جدوى من "نظام CRM للجميع". التخصص يدفع.',
+            en: '💡 Start with a simple specialized SaaS. "A CRM for Algerian businesses" is more viable than "A CRM for everyone". Specialization pays.'
+          }
+        },
+        // Lesson 2: AI Agents
+        {
+          id: 'vc-a-2',
+          title: {
+            fr: 'Agents IA',
+            ar: 'وكلاء الذكاء الاصطناعي',
+            en: 'AI Agents'
+          },
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Agent IA = programme autonome utilisant l\'IA pour accomplir des tâches',
+              'Types: Assistant virtuel, Automatisation, Analyse de données, Génération de contenu',
+              'Architecture: Prompt + Modèle IA + Outils + Mémoire',
+              'Utiliser l\'API OpenAI: npm install openai',
+              'Exemple: const response = await openai.chat.completions.create()',
+              'Créer un chatbot: l\'IA répond aux questions des utilisateurs',
+              'Automatiser: l\'IA classe des emails, résume des documents',
+              'Demandez à l\'IA: "Comment créer un assistant IA avec React et OpenAI"'
+            ],
+            ar: [
+              'وكيل الذكاء الاصطناعي = برنامج مستقل يستخدم الذكاء الاصطناعي لإنجاز المهام',
+              'الأنواع: مساعد افتراضي، أتمتة، تحليل بيانات، توليد محتوى',
+              'الهيكل: الأمر + نموذج الذكاء الاصطناعي + أدوات + ذاكرة',
+              'استخدم API OpenAI: npm install openai',
+              'مثال: const response = await openai.chat.completions.create()',
+              'إنشاء محادثة: الذكاء الاصطناعي يجاوب على أسئلة المستخدمين',
+              'أتمتة: الذكاء الاصطناعي يصنف البريد الإلكتروني، يلخص المستندات',
+              'اطلب من الذكاء الاصطناعي: "كيف تصنع مساعد IA مع React وOpenAI"'
+            ],
+            en: [
+              'AI Agent = autonomous program using AI to complete tasks',
+              'Types: Virtual assistant, Automation, Data analysis, Content generation',
+              'Architecture: Prompt + AI Model + Tools + Memory',
+              'Use OpenAI API: npm install openai',
+              'Example: const response = await openai.chat.completions.create()',
+              'Build a chatbot: AI answers user questions',
+              'Automate: AI sorts emails, summarizes documents',
+              'Ask AI: "How to build an AI assistant with React and OpenAI"'
+            ]
+          },
+          method: {
+            fr: 'Créez un chatbot de support client pour votre SaaS. L\'IA doit répondre aux questions fréquentes. Utilisez la documentation OpenAI et demandez à l\'IA de générer le code. Testez avec des questions réelles.',
+            ar: 'أنشئ روبوت محادثة لدعم العملاء لـ SaaS الخاص بك. يجب على الذكاء الاصطناعي الإجابة على الأسئلة الشائعة. استخدم وثائق OpenAI واطلب من الذكاء الاصطناعي توليد الكود. اختبر مع أسئلة حقيقية.',
+            en: 'Build a customer support chatbot for your SaaS. AI should answer frequently asked questions. Use OpenAI docs and ask AI to generate the code. Test with real questions.'
+          },
+          exercise: {
+            fr: 'Créez 3 agents IA différents: 1) Générateur de descriptions de produits, 2) Analyseur de sentiment pour les avis clients, 3) Assistant de rédaction de posts LinkedIn. Intégrez-les dans votre application.',
+            ar: 'أنشئ 3 وكلاء IA مختلفين: 1) مولد أوصاف المنتجات، 2) محلل المشاعر لمراجعات العملاء، 3) مساعد كتابة منشورات LinkedIn. ادمجهم في تطبيقك.',
+            en: 'Create 3 different AI agents: 1) Product description generator, 2) Sentiment analyzer for customer reviews, 3) LinkedIn post writing assistant. Integrate them into your app.'
+          },
+          tip: {
+            fr: '💡 Les agents IA les plus utiles sont ceux qui automatisent les tâches répétitives. Identifiez ce que vos clients font chaque jour et créez un agent pour le faire à leur place.',
+            ar: '💡 أكثر وكلاء الذكاء الاصطناعي فائدة هم الذين يقومون بأتمتة المهام المتكررة. حدد ما يفعله عملاؤك كل يوم وأنشئ وكيلاً ليقوم بذلك بدلاً منهم.',
+            en: '💡 The most useful AI agents automate repetitive tasks. Identify what your clients do every day and build an agent to do it for them.'
+          }
+        },
+        // Lesson 3: Full Stack Architecture
+        {
+          id: 'vc-a-3',
+          title: {
+            fr: 'Architecture Full Stack',
+            ar: 'هندسة Full Stack',
+            en: 'Full Stack Architecture'
+          },
+          image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Full Stack = Frontend + Backend + Base de données',
+              'Frontend: React/Vite sur Vercel ou Netlify',
+              'Backend: Node.js + Express sur Heroku/Render/Railway',
+              'Base de données: PostgreSQL (Supabase) ou MongoDB (MongoDB Atlas)',
+              'API REST ou GraphQL pour la communication',
+              'Middleware: cors, express.json, helmet',
+              'Demandez à l\'IA: "Architecture full stack avec React, Express, PostgreSQL"',
+              'Sécurité: HTTPS, variables d\'environnement, CORS configuré'
+            ],
+            ar: [
+              'Full Stack = الواجهة الأمامية + الخلفية + قاعدة البيانات',
+              'الواجهة الأمامية: React/Vite على Vercel أو Netlify',
+              'الخلفية: Node.js + Express على Heroku/Render/Railway',
+              'قاعدة البيانات: PostgreSQL (Supabase) أو MongoDB (MongoDB Atlas)',
+              'API REST أو GraphQL للتواصل',
+              'الوسائط: cors، express.json، helmet',
+              'اطلب من الذكاء الاصطناعي: "هندسة full stack مع React وExpress وPostgreSQL"',
+              'الأمان: HTTPS، متغيرات البيئة، CORS مهيأ'
+            ],
+            en: [
+              'Full Stack = Frontend + Backend + Database',
+              'Frontend: React/Vite on Vercel or Netlify',
+              'Backend: Node.js + Express on Heroku/Render/Railway',
+              'Database: PostgreSQL (Supabase) or MongoDB (MongoDB Atlas)',
+              'REST API or GraphQL for communication',
+              'Middleware: cors, express.json, helmet',
+              'Ask AI: "Full stack architecture with React, Express, PostgreSQL"',
+              'Security: HTTPS, environment variables, CORS configured'
+            ]
+          },
+          method: {
+            fr: 'Construisez votre premier projet full stack complet. Le frontend sur Vercel, le backend sur Render, et la base de données sur Supabase. Faites-les communiquer via API REST. Documentez chaque étape.',
+            ar: 'ابنِ أول مشروع full stack كامل لك. الواجهة الأمامية على Vercel، الخلفية على Render، وقاعدة البيانات على Supabase. اجعلهم يتواصلون عبر REST API. وثق كل خطوة.',
+            en: 'Build your first complete full stack project. Frontend on Vercel, backend on Render, and database on Supabase. Make them communicate via REST API. Document each step.'
+          },
+          exercise: {
+            fr: 'Créez une application full stack: Blog avec authentification. Frontend: liste des articles, page article, admin panel. Backend: CRUD articles, authentification JWT. Database: users, posts, comments.',
+            ar: 'أنشئ تطبيق full stack: مدونة مع مصادقة. الواجهة الأمامية: قائمة المقالات، صفحة مقال، لوحة تحكم المدير. الخلفية: CRUD مقالات، مصادقة JWT. قاعدة البيانات: مستخدمون، منشورات، تعليقات.',
+            en: 'Create a full stack app: Blog with authentication. Frontend: article list, article page, admin panel. Backend: CRUD articles, JWT authentication. Database: users, posts, comments.'
+          },
+          tip: {
+            fr: '💡 L\'architecture full stack peut sembler complexe, mais avec l\'IA, c\'est abordable. Commencez par le frontend seul, puis ajoutez la base de données, puis le backend. Ne faites pas tout en même temps.',
+            ar: '💡 قد تبدو هندسة full stack معقدة، ولكن مع الذكاء الاصطناعي فهي سهلة. ابدأ بالواجهة الأمامية فقط، ثم أضف قاعدة البيانات، ثم الخلفية. لا تفعل كل شيء في وقت واحد.',
+            en: '💡 Full stack architecture might seem complex, but with AI it\'s manageable. Start with frontend only, then add the database, then the backend. Don\'t do everything at once.'
+          }
+        },
+        // Lesson 4: Performance Optimization
+        {
+          id: 'vc-a-4',
+          title: {
+            fr: 'Optimisation des Performances',
+            ar: 'تحسين الأداء',
+            en: 'Performance Optimization'
+          },
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Performance = vitesse de chargement et réactivité',
+              'Lighthouse: outil Google pour mesurer la performance',
+              'Optimisation React: React.memo, useMemo, useCallback',
+              'Code splitting: load on demand (lazy loading)',
+              'Optimisation images: WebP format, compression, lazy loading',
+              'CDN: Content Delivery Network (Cloudflare)',
+              'Demandez à l\'IA: "Comment optimiser mon application React"',
+              'Core Web Vitals: LCP, FID, CLS'
+            ],
+            ar: [
+              'الأداء = سرعة التحميل والاستجابة',
+              'Lighthouse: أداة Google لقياس الأداء',
+              'تحسين React: React.memo، useMemo، useCallback',
+              'تقسيم الكود: تحميل عند الطلب (lazy loading)',
+              'تحسين الصور: تنسيق WebP، ضغط، تحميل كسول',
+              'CDN: شبكة توصيل المحتوى (Cloudflare)',
+              'اطلب من الذكاء الاصطناعي: "كيف تحسن أداء تطبيق React الخاص بي"',
+              'Core Web Vitals: LCP، FID، CLS'
+            ],
+            en: [
+              'Performance = loading speed and responsiveness',
+              'Lighthouse: Google tool to measure performance',
+              'React optimization: React.memo, useMemo, useCallback',
+              'Code splitting: load on demand (lazy loading)',
+              'Image optimization: WebP format, compression, lazy loading',
+              'CDN: Content Delivery Network (Cloudflare)',
+              'Ask AI: "How to optimize my React application"',
+              'Core Web Vitals: LCP, FID, CLS'
+            ]
+          },
+          method: {
+            fr: 'Exécutez Lighthouse sur votre application. Notez le score. Demandez à l\'IA des suggestions pour améliorer chaque métrique. Implémentez une suggestion, testez à nouveau, et notez l\'amélioration. Répétez 5 fois.',
+            ar: 'شغل Lighthouse على تطبيقك. سجل النتيجة. اطلب من الذكاء الاصطناعي اقتراحات لتحسين كل مقياس. نفذ اقتراحاً واحداً، اختبر مرة أخرى، وسجل التحسين. كرر 5 مرات.',
+            en: 'Run Lighthouse on your app. Note the score. Ask AI for suggestions to improve each metric. Implement one suggestion, test again, and note the improvement. Repeat 5 times.'
+          },
+          exercise: {
+            fr: 'Optimisez votre application SaaS: 1) Ajoutez lazy loading pour les routes, 2) Compressez les images, 3) Utilisez React.memo, 4) Configurez un CDN, 5) Mesurez l\'amélioration avec Lighthouse.',
+            ar: 'حسّن تطبيق SaaS الخاص بك: 1) أضف lazy loading للمسارات، 2) ضغط الصور، 3) استخدم React.memo، 4) هيّئ CDN، 5) قس التحسن مع Lighthouse.',
+            en: 'Optimize your SaaS app: 1) Add lazy loading for routes, 2) Compress images, 3) Use React.memo, 4) Set up a CDN, 5) Measure improvement with Lighthouse.'
+          },
+          tip: {
+            fr: '💡 La performance est un facteur de conversion. Un site qui charge en 1 seconde convertit 3x mieux qu\'un site qui charge en 3 secondes. Votre temps d\'investissement en optimisation est payé par les clients.',
+            ar: '💡 الأداء عامل تحويل. موقع يحمل في ثانية واحدة يحوّل أفضل بـ3 مرات من موقع يحمل في 3 ثوانٍ. وقت استثمارك في التحسين يدفعه العملاء.',
+            en: '💡 Performance is a conversion factor. A site that loads in 1 second converts 3x better than a site that loads in 3 seconds. Your optimization time is paid by customers.'
+          }
+        },
+        // Lesson 5: Security Best Practices
+        {
+          id: 'vc-a-5',
+          title: {
+            fr: 'Bonnes Pratiques de Sécurité',
+            ar: 'أفضل ممارسات الأمان',
+            en: 'Security Best Practices'
+          },
+          image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Sécurité = protéger les données et les utilisateurs',
+              'Clés API: JAMAIS dans le code, utilisez .env',
+              'Authentification: JWT avec expiration, refresh token',
+              'Validation: validatez toutes les entrées utilisateur',
+              'CORS: configurez correctement pour éviter les attaques',
+              'Rate limiting: empêche les attaques par force brute',
+              'HTTPS: toujours en production (automatique sur Vercel/Netlify)',
+              'Demandez à l\'IA: "Vérifications de sécurité pour mon application"'
+            ],
+            ar: [
+              'الأمان = حماية البيانات والمستخدمين',
+              'مفاتيح API: أبداً في الكود، استخدم .env',
+              'المصادقة: JWT مع صلاحية، رمز تجديد',
+              'التحقق: تحقق من كل مدخلات المستخدم',
+              'CORS: هيّئ بشكل صحيح لتجنب الهجمات',
+              'معدل الطلب: يمنع هجمات القوة العمياء',
+              'HTTPS: دائماً في الإنتاج (تلقائي على Vercel/Netlify)',
+              'اطلب من الذكاء الاصطناعي: "فحوصات أمان لتطبيقي"'
+            ],
+            en: [
+              'Security = protecting data and users',
+              'API keys: NEVER in code, use .env',
+              'Authentication: JWT with expiration, refresh token',
+              'Validation: validate all user input',
+              'CORS: configure properly to prevent attacks',
+              'Rate limiting: prevents brute force attacks',
+              'HTTPS: always in production (automatic on Vercel/Netlify)',
+              'Ask AI: "Security checks for my application"'
+            ]
+          },
+          method: {
+            fr: 'Sécurisez votre application SaaS. Utilisez l\'IA pour générer une checklist de sécurité. Parcourez chaque point et vérifiez si votre application est conforme. Demandez à l\'IA de corriger chaque faille trouvée.',
+            ar: 'أمّن تطبيق SaaS الخاص بك. استخدم الذكاء الاصطناعي لتوليد قائمة تدقيق أمان. اطلع على كل نقطة وتحقق من امتثال تطبيقك. اطلب من الذكاء الاصطناعي إصلاح كل ثغرة تم العثور عليها.',
+            en: 'Secure your SaaS app. Use AI to generate a security checklist. Go through each point and check if your app complies. Ask AI to fix every vulnerability found.'
+          },
+          exercise: {
+            fr: 'Ajoutez à votre application: 1) Validation des entrées, 2) Rate limiting, 3) JWT avec expiration, 4) CORS configuré, 5) Variables d\'environnement pour les clés API. Testez chaque mesure.',
+            ar: 'أضف إلى تطبيقك: 1) التحقق من المدخلات، 2) تحديد معدل الطلب، 3) JWT مع صلاحية، 4) CORS مهيأ، 5) متغيرات البيئة لمفاتيح API. اختبر كل إجراء.',
+            en: 'Add to your app: 1) Input validation, 2) Rate limiting, 3) JWT with expiration, 4) CORS configured, 5) Environment variables for API keys. Test each measure.'
+          },
+          tip: {
+            fr: '💡 La sécurité n\'est pas une option, c\'est une nécessité. Une faille de sécurité peut détruire votre réputation. Passez 20% de votre temps de développement sur la sécurité, même si ça semble exagéré.',
+            ar: '💡 الأمان ليس خياراً، بل ضرورة. ثغرة أمان يمكن أن تدمر سمعتك. اقضِ 20% من وقت تطويرك على الأمان، حتى لو بدا مبالغاً فيه.',
+            en: '💡 Security isn\'t optional, it\'s a necessity. A security breach can destroy your reputation. Spend 20% of your development time on security, even if it seems excessive.'
+          }
+        },
+        // Lesson 6: Scaling Applications
+        {
+          id: 'vc-a-6',
+          title: {
+            fr: 'Mise à l\'Échelle des Applications',
+            ar: 'توسيع نطاق التطبيقات',
+            en: 'Scaling Applications'
+          },
+          image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Scaling = gérer plus d\'utilisateurs et plus de données',
+              'Vertical scaling: plus de RAM/CPU sur le serveur',
+              'Horizontal scaling: plus de serveurs (load balancing)',
+              'Database indexing: rend les requêtes plus rapides',
+              'Caching: Redis ou Memcached pour les données fréquentes',
+              'CDN: distribue le contenu statique près des utilisateurs',
+              'Queue: traite les tâches en arrière-plan (BullMQ)',
+              'Demandez à l\'IA: "Comment faire passer mon app de 100 à 10 000 utilisateurs"'
+            ],
+            ar: [
+              'التوسع = التعامل مع المزيد من المستخدمين والبيانات',
+              'التوسع الرأسي: مزيد من RAM/CPU على الخادم',
+              'التوسع الأفقي: مزيد من الخوادم (موازنة التحميل)',
+              'فهرسة قاعدة البيانات: تجعل الاستعلامات أسرع',
+              'التخزين المؤقت: Redis أو Memcached للبيانات المتكررة',
+              'CDN: يوزع المحتوى الثابت بالقرب من المستخدمين',
+              'الطابور: يعالج المهام في الخلفية (BullMQ)',
+              'اطلب من الذكاء الاصطناعي: "كيف أنقل تطبيقي من 100 إلى 10,000 مستخدم"'
+            ],
+            en: [
+              'Scaling = handling more users and more data',
+              'Vertical scaling: more RAM/CPU on the server',
+              'Horizontal scaling: more servers (load balancing)',
+              'Database indexing: makes queries faster',
+              'Caching: Redis or Memcached for frequent data',
+              'CDN: distributes static content near users',
+              'Queue: processes tasks in background (BullMQ)',
+              'Ask AI: "How to scale my app from 100 to 10,000 users"'
+            ]
+          },
+          method: {
+            fr: 'Analysez votre application. Identifiez 3 goulots d\'étranglement potentiels. Demandez à l\'IA des solutions pour chacun. Implémentez une solution et mesurez l\'amélioration. Documentez chaque étape.',
+            ar: 'حلل تطبيقك. حدد 3 اختناقات محتملة. اطلب من الذكاء الاصطناعي حلولاً لكل منها. نفذ حلاً واحداً وقس التحسن. وثق كل خطوة.',
+            en: 'Analyze your app. Identify 3 potential bottlenecks. Ask AI for solutions to each. Implement one solution and measure the improvement. Document each step.'
+          },
+          exercise: {
+            fr: 'Pratiquez le scaling sur votre application: 1) Indexez une colonne de base de données, 2) Ajoutez Redis pour le caching, 3) Configurez un CDN, 4) Ajoutez un système de queue pour les emails, 5) Mesurez la différence.',
+            ar: 'تمرّن على التوسع على تطبيقك: 1) فهرسة عمود في قاعدة البيانات، 2) أضف Redis للتخزين المؤقت، 3) هيّئ CDN، 4) أضف نظام طابور للبريد الإلكتروني، 5) قس الفرق.',
+            en: 'Practice scaling on your app: 1) Index a database column, 2) Add Redis for caching, 3) Set up a CDN, 4) Add a queue system for emails, 5) Measure the difference.'
+          },
+          tip: {
+            fr: '💡 Ne scalez pas avant d\'en avoir besoin. Un site de 100 utilisateurs n\'a pas besoin de l\'infrastructure d\'un site de 100 000 utilisateurs. Optimisez d\'abord, scalez ensuite.',
+            ar: '💡 لا توسع قبل الحاجة. موقع بـ100 مستخدم لا يحتاج بنية تحتية لموقع بـ100,000 مستخدم. حسّن أولاً، ثم وسّع.',
+            en: '💡 Don\'t scale before you need to. A site with 100 users doesn\'t need the infrastructure of a site with 100,000 users. Optimize first, scale second.'
+          }
+        },
+        // Lesson 7: Monetizing AI Products
+        {
+          id: 'vc-a-7',
+          title: {
+            fr: 'Monétiser les Produits IA',
+            ar: 'تحقيق الربح من منتجات الذكاء الاصطناعي',
+            en: 'Monetizing AI Products'
+          },
+          image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Modèles de monétisation: Abonnement, Pay-per-use, Freemium, Une fois, Service',
+              'Abonnement: 10-50€/mois pour les outils SaaS',
+              'Pay-per-use: Facturer à l\'utilisation (API, génération)',
+              'Freemium: Gratuit pour 100 utilisations/mois, puis paiement',
+              'Une fois: Licence perpétuelle pour outils desktop',
+              'Service: Vos compétences IA pour les clients',
+              'Prix Algérie: Adaptez aux capacités de paiement',
+              'Demandez à l\'IA: "Stratégies de monétisation pour mon produit"'
+            ],
+            ar: [
+              'نماذج الربح: اشتراك، دفع لكل استخدام، Freemium، مرة واحدة، خدمة',
+              'اشتراك: 10-50€/شهر لأدوات SaaS',
+              'دفع لكل استخدام: الفوترة حسب الاستخدام (API، توليد)',
+              'Freemium: مجاني لـ100 استخدام/شهر، ثم دفع',
+              'مرة واحدة: ترخيص دائم لأدوات سطح المكتب',
+              'خدمة: مهاراتك في الذكاء الاصطناعي للعملاء',
+              'أسعار الجزائر: تكييف مع قدرات الدفع',
+              'اطلب من الذكاء الاصطناعي: "استراتيجيات ربح لمنتجي"'
+            ],
+            en: [
+              'Monetization models: Subscription, Pay-per-use, Freemium, One-time, Service',
+              'Subscription: 10-50€/month for SaaS tools',
+              'Pay-per-use: Charge per usage (API, generation)',
+              'Freemium: Free for 100 uses/month, then pay',
+              'One-time: Perpetual license for desktop tools',
+              'Service: Your AI skills for clients',
+              'Algeria pricing: Adapt to payment capacity',
+              'Ask AI: "Monetization strategies for my product"'
+            ]
+          },
+          method: {
+            fr: 'Choisissez un de vos projets IA. Développez un plan de monétisation. Utilisez l\'IA pour estimer les prix potentiels, calculer les coûts, et prévoir les revenus. Créez une page de prix pour votre produit.',
+            ar: 'اختر أحد مشاريع الذكاء الاصطناعي الخاصة بك. طور خطة ربح. استخدم الذكاء الاصطناعي لتقدير الأسعار المحتملة، حساب التكاليف، وتوقع الإيرادات. أنشئ صفحة أسعار لمنتجك.',
+            en: 'Choose one of your AI projects. Develop a monetization plan. Use AI to estimate potential prices, calculate costs, and forecast revenue. Create a pricing page for your product.'
+          },
+          exercise: {
+            fr: 'Créez un plan de monétisation complet: 1) 3 niveaux de prix, 2) Calcul des coûts d\'infrastructure, 3) Projection des revenus, 4) Stratégie marketing, 5) Page de vente. Tout avec l\'aide de l\'IA.',
+            ar: 'أنشئ خطة ربح كاملة: 1) 3 مستويات أسعار، 2) حساب تكاليف البنية التحتية، 3) توقع الإيرادات، 4) استراتيجية تسويق، 5) صفحة بيع. كل شيء بمساعدة الذكاء الاصطناعي.',
+            en: 'Create a complete monetization plan: 1) 3 pricing tiers, 2) Infrastructure cost calculation, 3) Revenue projection, 4) Marketing strategy, 5) Sales page. All with AI\'s help.'
+          },
+          tip: {
+            fr: '💡 Les produits IA les plus rentables résolvent un problème spécifique et douloureux. "Un outil qui génère des descriptifs produits pour e-commerce" est plus rentable que "Un outil de génération de texte général".',
+            ar: '💡 أكثر منتجات الذكاء الاصطناعي ربحاً تحل مشكلة محددة ومؤلمة. "أداة تولد أوصاف منتجات للتجارة الإلكترونية" أكثر ربحاً من "أداة توليد نصوص عامة".',
+            en: '💡 The most profitable AI products solve a specific and painful problem. "A tool that generates product descriptions for e-commerce" is more profitable than "A general text generation tool".'
+          }
+        },
+        // Lesson 8: Client Projects & Portfolio
+        {
+          id: 'vc-a-8',
+          title: {
+            fr: 'Projets Clients & Portfolio',
+            ar: 'مشاريع العملاء والبورتفوليو',
+            en: 'Client Projects & Portfolio'
+          },
+          image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Portfolio: Vitrine de vos compétences Vibe Coding',
+              'Sélectionnez vos 3 meilleurs projets (qualité > quantité)',
+              'Chaque projet doit avoir: Description, Démo, Code source, Résultats',
+              'Plateformes: Votre site, GitHub, LinkedIn, YouTube',
+              'Projets clients: Commencez petit, faites gratuitement pour les premiers',
+              'Tarification: 50€/heure pour les débutants, 100-200€/heure après',
+              'Cas d\'étude: Documentez le problème, la solution, l\'impact',
+              'Demandez à l\'IA: "Comment présenter mon portfolio pour attirer des clients"'
+            ],
+            ar: [
+              'البورتفوليو: واجهة عرض مهاراتك في البرمجة بالذكاء الاصطناعي',
+              'اختر أفضل 3 مشاريع لديك (الجودة > الكمية)',
+              'كل مشروع يجب أن يكون له: وصف، عرض توضيحي، كود مصدر، نتائج',
+              'المنصات: موقعك، GitHub، LinkedIn، YouTube',
+              'مشاريع العملاء: ابدأ صغيراً، اعمل مجاناً للأوائل',
+              'التسعير: 50€/ساعة للمبتدئين، 100-200€/ساعة بعد ذلك',
+              'دراسة حالة: وثق المشكلة والحل والتأثير',
+              'اطلب من الذكاء الاصطناعي: "كيف أقدم بورتفوليو لجذب العملاء"'
+            ],
+            en: [
+              'Portfolio: Showcase of your Vibe Coding skills',
+              'Select your 3 best projects (quality > quantity)',
+              'Each project should have: Description, Demo, Source code, Results',
+              'Platforms: Your site, GitHub, LinkedIn, YouTube',
+              'Client projects: Start small, do free work for the first few',
+              'Pricing: 50€/hour for beginners, 100-200€/hour after that',
+              'Case study: Document the problem, solution, impact',
+              'Ask AI: "How to present my portfolio to attract clients"'
+            ]
+          },
+          method: {
+            fr: 'Créez votre portfolio de Vibe Coding. Sélectionnez 3 projets (1 de chaque niveau). Créez une page de portfolio avec démos et descriptions. Rédigez des études de cas pour chaque projet avec l\'aide de l\'IA.',
+            ar: 'أنشئ بورتفوليو البرمجة بالذكاء الاصطناعي الخاص بك. اختر 3 مشاريع (1 من كل مستوى). أنشئ صفحة بورتفوليو مع عروض توضيحية وأوصاف. اكتب دراسات حالة لكل مشروع بمساعدة الذكاء الاصطناعي.',
+            en: 'Create your Vibe Coding portfolio. Select 3 projects (1 from each level). Create a portfolio page with demos and descriptions. Write case studies for each project with AI\'s help.'
+          },
+          exercise: {
+            fr: '1) Sélectionnez 3 projets de votre formation. 2) Créez des démos en direct sur Vercel. 3) Écrivez les descriptions. 4) Rédigez les études de cas. 5) Publiez tout sur GitHub et votre site. 6) Partagez sur LinkedIn.',
+            ar: '1) اختر 3 مشاريع من تدريبك. 2) أنشئ عروضاً حية على Vercel. 3) اكتب الأوصاف. 4) اكتب دراسات الحالة. 5) انشر كل شيء على GitHub وموقعك. 6) شارك على LinkedIn.',
+            en: '1) Select 3 projects from your training. 2) Create live demos on Vercel. 3) Write descriptions. 4) Write case studies. 5) Publish everything on GitHub and your site. 6) Share on LinkedIn.'
+          },
+          tip: {
+            fr: '💡 Votre portfolio est votre CV. Un portfolio avec 3 projets professionnels vaut mieux qu\'un CV avec 10 ans d\'expérience non vérifiée. Les clients paient pour ce qu\'ils peuvent voir et tester.',
+            ar: '💡 بورتفوليو هو سيرتك الذاتية. بورتفوليو مع 3 مشاريع احترافية أفضل من سيرة ذاتية مع 10 سنوات خبرة غير مثبتة. العملاء يدفعون لما يمكنهم رؤيته واختباره.',
+            en: '💡 Your portfolio is your resume. A portfolio with 3 professional projects beats a resume with 10 years of unverified experience. Clients pay for what they can see and test.'
+          }
+        }
+      ]
+    },
+    // ============================================
+    // CAPSTONE PROJECT
+    // ============================================
+    {
+      name: {
+        fr: 'Projet Final',
+        ar: 'المشروع النهائي',
+        en: 'Capstone Project'
+      },
+      badge: '🎯',
+      duration: {
+        fr: 'Mois 5-6',
+        ar: 'الشهر 5-6',
+        en: 'Month 5-6'
+      },
+      goal: {
+        fr: 'Construire et déployer un SaaS complet de A à Z avec l\'IA',
+        ar: 'بناء ونشر SaaS كاملة من الألف إلى الياء مع الذكاء الاصطناعي',
+        en: 'Build and deploy a complete SaaS from A to Z with AI'
+      },
+      lessons: [
+        {
+          id: 'vc-capstone',
+          title: {
+            fr: 'Projet Final: SaaS avec IA',
+            ar: 'المشروع النهائي: SaaS بالذكاء الاصطناعي',
+            en: 'Capstone: AI-powered SaaS'
+          },
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Objectif: Construire un SaaS qui résout un vrai problème pour des clients algériens',
+              'Phase 1: Identification du problème → Validation (10% du temps)',
+              'Phase 2: Architecture → Design → Prototype (20%)',
+              'Phase 3: Développement frontend + backend (40%)',
+              'Phase 4: Tests → Sécurité → Performance (15%)',
+              'Phase 5: Déploiement → Mise en ligne (10%)',
+              'Phase 6: Marketing → Acquérir 10 premiers clients (5%)',
+              'Utilisez l\'IA à chaque étape: Prompt, Code, Debug, Doc'
+            ],
+            ar: [
+              'الهدف: بناء SaaS يحل مشكلة حقيقية لعملاء جزائريين',
+              'المرحلة 1: تحديد المشكلة → التحقق (10% من الوقت)',
+              'المرحلة 2: الهندسة → التصميم → النموذج الأولي (20%)',
+              'المرحلة 3: تطوير الواجهة الأمامية + الخلفية (40%)',
+              'المرحلة 4: الاختبارات → الأمان → الأداء (15%)',
+              'المرحلة 5: النشر → الإطلاق (10%)',
+              'المرحلة 6: التسويق → اكتساب 10 عملاء أولى (5%)',
+              'استخدم الذكاء الاصطناعي في كل خطوة: أمر، كود، تصحيح، وثائق'
+            ],
+            en: [
+              'Goal: Build a SaaS that solves a real problem for Algerian clients',
+              'Phase 1: Problem identification → Validation (10% of time)',
+              'Phase 2: Architecture → Design → Prototype (20%)',
+              'Phase 3: Frontend + Backend development (40%)',
+              'Phase 4: Testing → Security → Performance (15%)',
+              'Phase 5: Deployment → Launch (10%)',
+              'Phase 6: Marketing → Get first 10 clients (5%)',
+              'Use AI at every step: Prompt, Code, Debug, Doc'
+            ]
+          },
+          method: {
+            fr: 'Choisissez un problème réel. Utilisez l\'IA pour valider l\'idée. Construisez un MVP en 2 semaines. Déployez-le et obtenez des retours. Itérez rapidement. Votre objectif: un produit que des gens paient.',
+            ar: 'اختر مشكلة حقيقية. استخدم الذكاء الاصطناعي للتحقق من الفكرة. ابنِ MVP في أسبوعين. انشره واحصل على ملاحظات. كرر بسرعة. هدفك: منتج يدفع الناس من أجله.',
+            en: 'Choose a real problem. Use AI to validate the idea. Build an MVP in 2 weeks. Deploy it and get feedback. Iterate quickly. Your goal: a product people pay for.'
+          },
+          exercise: {
+            fr: 'Documentez votre projet final: 1) Pitch (1 page), 2) User stories, 3) Architecture, 4) Code source, 5) Démo en direct, 6) Retours utilisateurs, 7) Lessons learned. Tout avec l\'IA.',
+            ar: 'وثق مشروعك النهائي: 1) عرض (صفحة واحدة)، 2) قصص المستخدم، 3) الهندسة، 4) كود المصدر، 5) عرض حي، 6) ملاحظات المستخدمين، 7) الدروس المستفادة. كل شيء مع الذكاء الاصطناعي.',
+            en: 'Document your final project: 1) Pitch (1 page), 2) User stories, 3) Architecture, 4) Source code, 5) Live demo, 6) User feedback, 7) Lessons learned. Everything with AI.'
+          },
+          tip: {
+            fr: '💡 Le projet final n\'est pas la fin, c\'est le début. Mettez-le en ligne, partagez-le, vendez-le. Le capstone avec IA le plus réussi sera celui qui génère des revenus réels.',
+            ar: '💡 المشروع النهائي ليس النهاية، بل البداية. ضعه أونلاين، شاركه، بيعه. أنجح مشروع نهائي بالذكاء الاصطناعي هو الذي يحقق إيرادات حقيقية.',
+            en: '💡 The capstone project isn\'t the end, it\'s the beginning. Launch it, share it, sell it. The most successful AI capstone will be the one that generates real revenue.'
+          }
+        }
+      ]
+    }
+  ]
+}
 // ═══════════════════════
 // STATE
 // ═══════════════════════
