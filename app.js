@@ -194,7 +194,12 @@ function renderLesson() {
   document.getElementById('lesson-body').innerHTML = '<div style="margin-bottom:20px"><span style="background:' + style.bg + ';border:1px solid ' + style.border + ';color:' + style.text + ';border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600">' + style.badge + ' ' + lv.name[lang] + '</span><span style="font-size:12px;color:#374151;margin-left:8px">' + t.lesson + ' ' + (lessonIdx + 1) + '</span></div><h1 style="font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 24px;line-height:1.25">' + les.title[lang] + '</h1>' + imgTop + '<div style="margin-bottom:28px"><div class="steps-header"><div class="steps-bar" style="background:' + skill.color + '"></div><span class="steps-label">' + t.howTo + '</span></div>' + stepsWrap + '</div><div class="method-box" style="background:#0A0E18;border-color:' + skill.color + '30"><div class="box-header"><span class="box-emoji">🧠</span><span class="box-label" style="color:' + skill.accent + '">' + t.bestWay + '</span></div><p class="box-text" style="color:#9CA3AF">' + les.method[lang] + '</p></div><div class="method-box" style="background:#0E0A00;border-color:#92400E40"><div class="box-header"><span class="box-emoji">💪</span><span class="box-label" style="color:#FCD34D">' + t.exercise + '</span></div><p class="box-text" style="color:#D97706">' + les.exercise[lang] + '</p></div>' + (les.tip ? '<div class="tip-box"><p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0">' + les.tip[lang] + '</p></div>' : '') + '<div class="lesson-nav">' + prevBtn + nextBtn + '</div>';
   showView('lesson-view');
 }
-
+function goHome() {
+  skillId = null;
+  levelIdx = 0;
+  lessonIdx = null;
+  renderAcademy();
+}
 // ===== INIT =====
 (function() {
   document.documentElement.lang = lang;
