@@ -984,3 +984,1499 @@ var SKILLS = [
     ]
   }
 ];
+// ============================================
+// SKILL: UI/UX DESIGN
+// ============================================
+
+{
+  id: 'uiux',
+  icon: '🎨',
+  color: '#6366F1',
+  accent: '#818CF8',
+  bg: '#0C0A1A',
+  earning: '20,000 – 100,000 DZD/month',
+  firstClient: {
+    fr: '4–8 semaines',
+    ar: '4–8 أسابيع',
+    en: '4–8 weeks'
+  },
+  startTool: 'Figma + Adobe XD + Pen & Paper',
+  title: {
+    fr: 'UI/UX Design',
+    ar: 'تصميم واجهات المستخدم وتجربة المستخدم',
+    en: 'UI/UX Design'
+  },
+  subtitle: {
+    fr: 'User Interface & Experience',
+    ar: 'تصميم واجهات وتجارب المستخدم',
+    en: 'User Interface & Experience'
+  },
+  tagline: {
+    fr: 'Créez des expériences numériques qui racontent des histoires et convertissent les utilisateurs',
+    ar: 'أنشئ تجارب رقمية تحكي قصصاً وتحول المستخدمين',
+    en: 'Create digital experiences that tell stories and convert users'
+  },
+  levels: [
+    // ============================================
+    // LEVEL 1: BEGINNER - 8 Lessons
+    // ============================================
+    {
+      name: {
+        fr: 'Débutant',
+        ar: 'مبتدئ',
+        en: 'Beginner'
+      },
+      badge: '🌱',
+      duration: {
+        fr: 'Semaines 1–4',
+        ar: 'الأسابيع 1–4',
+        en: 'Weeks 1–4'
+      },
+      goal: {
+        fr: 'Maîtriser les fondamentaux du UI/UX Design et créer vos premiers wireframes',
+        ar: 'إتقان أساسيات تصميم واجهات وتجارب المستخدم وإنشاء أول الرسوم الهيكلية',
+        en: 'Master UI/UX Design fundamentals and create your first wireframes'
+      },
+      lessons: [
+        // Lesson 1: UI vs UX
+        {
+          id: 'uiux-b-1',
+          title: {
+            fr: 'UI vs UX - Comprendre la Différence',
+            ar: 'UI vs UX - فهم الفرق',
+            en: 'UI vs UX - Understanding the Difference'
+          },
+          image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'UI = User Interface (Interface Utilisateur) = l\'apparence du produit',
+              'UX = User Experience (Expérience Utilisateur) = comment l\'utilisateur se sent',
+              'UI est ce que vous voyez, UX est ce que vous ressentez',
+              'Exemple: Un site beau mais confus = bon UI, mauvais UX',
+              'Exemple: Un site simple mais agréable = bon UX, UI correct',
+              'Les deux doivent travailler ensemble pour un grand produit',
+              'Le UI/UX Designer combine les deux disciplines',
+              'Objectif final: créer des produits que les gens aiment utiliser'
+            ],
+            ar: [
+              'UI = واجهة المستخدم = مظهر المنتج',
+              'UX = تجربة المستخدم = كيف يشعر المستخدم',
+              'UI هو ما تراه، UX هو ما تشعر به',
+              'مثال: موقع جميل لكن مربك = UI جيد، UX سيء',
+              'مثال: موقع بسيط لكن ممتع = UX جيد، UI مقبول',
+              'يجب أن يعمل الاثنان معاً لمنتج رائع',
+              'مصمم UI/UX يجمع بين التخصصين',
+              'الهدف النهائي: إنشاء منتجات يحب الناس استخدامها'
+            ],
+            en: [
+              'UI = User Interface = the appearance of the product',
+              'UX = User Experience = how the user feels',
+              'UI is what you see, UX is what you feel',
+              'Example: A beautiful but confusing site = good UI, bad UX',
+              'Example: A simple but enjoyable site = good UX, okay UI',
+              'Both must work together for a great product',
+              'The UI/UX Designer combines both disciplines',
+              'Final goal: create products people love to use'
+            ]
+          },
+          method: {
+            fr: 'Analysez 3 applications que vous utilisez quotidiennement. Notez 5 éléments UI et 5 éléments UX pour chacune. Identifiez ce qui fonctionne et ce qui pourrait être amélioré.',
+            ar: 'حلل 3 تطبيقات تستخدمها يومياً. سجل 5 عناصر UI و5 عناصر UX لكل منها. حدد ما يعمل وما يمكن تحسينه.',
+            en: 'Analyze 3 applications you use daily. Note 5 UI elements and 5 UX elements for each. Identify what works and what could be improved.'
+          },
+          exercise: {
+            fr: 'Créez une comparaison visuelle: prenez une capture d\'écran d\'une app bien conçue et une mal conçue. Notez 10 différences UI et 10 différences UX. Présentez vos conclusions.',
+            ar: 'أنشئ مقارنة بصرية: خذ لقطة شاشة لتطبيق مصمم جيداً وآخر سيئ التصميم. سجل 10 اختلافات في UI و10 اختلافات في UX. قدم استنتاجاتك.',
+            en: 'Create a visual comparison: take a screenshot of a well-designed app and a poorly designed one. Note 10 UI differences and 10 UX differences. Present your findings.'
+          },
+          tip: {
+            fr: '💡 Un bon UI/UX Designer pense d\'abord à l\'utilisateur. La beauté suit la fonctionnalité. Si un produit n\'est pas utile, même le plus beau design échoue.',
+            ar: '💡 مصمم UI/UX الجيد يفكر أولاً في المستخدم. الجمال يتبع الوظيفة. إذا لم يكن المنتج مفيداً، حتى أجمل تصميم يفشل.',
+            en: '💡 A good UI/UX Designer thinks about the user first. Beauty follows functionality. If a product isn\'t useful, even the most beautiful design fails.'
+          }
+        },
+        // Lesson 2: Design Principles
+        {
+          id: 'uiux-b-2',
+          title: {
+            fr: 'Principes de Design',
+            ar: 'مبادئ التصميم',
+            en: 'Design Principles'
+          },
+          image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Contraste: les éléments différents se distinguent (couleurs, tailles)',
+              'Alignement: tout doit être aligné, rien au hasard',
+              'Répétition: utiliser les mêmes styles pour les mêmes éléments',
+              'Proximité: grouper les éléments connexes ensemble',
+              'Hiérarchie: ordonner l\'importance par taille/couleur/position',
+              'Équilibre: répartir le poids visuel harmonieusement',
+              'Espace blanc: utiliser l\'espace vide pour respirer',
+              'Ces principes s\'appliquent à TOUT design'
+            ],
+            ar: [
+              'التباين: العناصر المختلفة تبرز (ألوان، أحجام)',
+              'المحاذاة: كل شيء يجب أن يكون محاذياً، لا شيء عشوائي',
+              'التكرار: استخدام نفس الأنماط لنفس العناصر',
+              'التقارب: تجميع العناصر المرتبطة معاً',
+              'التسلسل الهرمي: ترتيب الأهمية بالحجم/اللون/الموضع',
+              'التوازن: توزيع الوزن البصري بتناغم',
+              'الفراغ الأبيض: استخدام المساحة الفارغة للتنفس',
+              'هذه المبادئ تنطبق على أي تصميم'
+            ],
+            en: [
+              'Contrast: different elements stand out (colors, sizes)',
+              'Alignment: everything should be aligned, nothing random',
+              'Repetition: use same styles for same elements',
+              'Proximity: group related elements together',
+              'Hierarchy: order importance by size/color/position',
+              'Balance: distribute visual weight harmoniously',
+              'White space: use empty space for breathing room',
+              'These principles apply to ALL design'
+            ]
+          },
+          method: {
+            fr: 'Prenez un design que vous aimez (affiche, site, app). Identifiez chaque principe de design utilisé. Notez comment ils contribuent à l\'efficacité du design.',
+            ar: 'خذ تصميماً تحبه (ملصق، موقع، تطبيق). حدد كل مبدأ تصميم مستخدم. سجل كيف يساهم كل مبدأ في فعالية التصميم.',
+            en: 'Take a design you like (poster, site, app). Identify each design principle used. Note how they contribute to the design\'s effectiveness.'
+          },
+          exercise: {
+            fr: 'Refaites un design existant en violant DÉLIBÉREMENT chaque principe. Refaites-le ensuite en suivant parfaitement les principes. Comparez les deux versions.',
+            ar: 'أعد تصميم موجود عن عمد بكسر كل مبدأ. ثم أعد تصميمه باتباع المبادئ تماماً. قارن النسختين.',
+            en: 'Redesign an existing design by DELIBERATELY violating each principle. Then redesign it perfectly following the principles. Compare both versions.'
+          },
+          tip: {
+            fr: '💡 Les grands designers maîtrisent les règles pour mieux les briser. Mais d\'abord, apprenez les règles. L\'intuition vient avec la pratique des principes.',
+            ar: '💡 المصممون الكبار يتقنون القواعد لكسرها بشكل أفضل. لكن أولاً، تعلم القواعد. الحدس يأتي مع ممارسة المبادئ.',
+            en: '💡 Great designers master the rules to break them better. But first, learn the rules. Intuition comes with practicing principles.'
+          }
+        },
+        // Lesson 3: Color Theory
+        {
+          id: 'uiux-b-3',
+          title: {
+            fr: 'Théorie des Couleurs en UI Design',
+            ar: 'نظرية الألوان في تصميم واجهات المستخدم',
+            en: 'Color Theory in UI Design'
+          },
+          image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Roue chromatique: les relations entre les couleurs',
+              'Couleurs primaires: Rouge, Bleu, Jaune',
+              'Couleurs secondaires: Vert, Orange, Violet',
+              'Couleurs tertiaires: mélange de primaires et secondaires',
+              'Palettes de couleurs: Monochrome, Complémentaire, Analogue',
+              'Psychologie des couleurs: chaque couleur évoque des émotions',
+              'Contraste: essentiel pour l\'accessibilité (WCAG)',
+              'Exemple: Bleu = confiance, Rouge = urgence, Vert = succès'
+            ],
+            ar: [
+              'عجلة الألوان: العلاقات بين الألوان',
+              'الألوان الأساسية: الأحمر، الأزرق، الأصفر',
+              'الألوان الثانوية: الأخضر، البرتقالي، البنفسجي',
+              'الألوان الثلاثية: مزج الأساسية والثانوية',
+              'لوحات الألوان: أحادية اللون، مكملة، متماثلة',
+              'سيكولوجية الألوان: كل لون يثير مشاعر',
+              'التباين: ضروري لإمكانية الوصول (WCAG)',
+              'مثال: الأزرق = ثقة، الأحمر = طوارئ، الأخضر = نجاح'
+            ],
+            en: [
+              'Color wheel: relationships between colors',
+              'Primary colors: Red, Blue, Yellow',
+              'Secondary colors: Green, Orange, Purple',
+              'Tertiary colors: mix of primary and secondary',
+              'Color palettes: Monochrome, Complementary, Analogous',
+              'Color psychology: each color evokes emotions',
+              'Contrast: essential for accessibility (WCAG)',
+              'Example: Blue = trust, Red = urgency, Green = success'
+            ]
+          },
+          method: {
+            fr: 'Créez 5 palettes de couleurs pour 5 types d\'entreprises différents (fintech, santé, éducation, voyage, luxe). Justifiez chaque choix de couleur.',
+            ar: 'أنشئ 5 لوحات ألوان لـ5 أنواع مختلفة من الشركات (تقنية مالية، صحة، تعليم، سفر، فاخرة). برر كل اختيار لون.',
+            en: 'Create 5 color palettes for 5 different business types (fintech, health, education, travel, luxury). Justify each color choice.'
+          },
+          exercise: {
+            fr: 'Analysez les couleurs de 10 sites web populaires. Notez leur palette primaire, secondaire, et accent. Expliquez pourquoi ces choix fonctionnent pour leur marque.',
+            ar: 'حلل ألوان 10 مواقع ويب شهيرة. سجل لوحتهم الأساسية والثانوية والبارزة. اشرح لماذا هذه الخيارات تعمل لعلامتهم التجارية.',
+            en: 'Analyze the colors of 10 popular websites. Note their primary, secondary, and accent palettes. Explain why these choices work for their brand.'
+          },
+          tip: {
+            fr: '💡 Utilisez des outils comme Coolors, Adobe Color ou Figma pour créer des palettes. Commencez avec 3 couleurs: primaire, secondaire, accent. Ajoutez-en plus seulement si nécessaire.',
+            ar: '💡 استخدم أدوات مثل Coolors أو Adobe Color أو Figma لإنشاء لوحات. ابدأ بـ3 ألوان: أساسي، ثانوي، بارز. أضف المزيد فقط إذا لزم الأمر.',
+            en: '💡 Use tools like Coolors, Adobe Color, or Figma to create palettes. Start with 3 colors: primary, secondary, accent. Add more only if needed.'
+          }
+        },
+        // Lesson 4: Typography
+        {
+          id: 'uiux-b-4',
+          title: {
+            fr: 'Typographie en UI Design',
+            ar: 'الطباعة في تصميم واجهات المستخدم',
+            en: 'Typography in UI Design'
+          },
+          image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Typographie = l\'art d\'organiser et de styliser le texte',
+              'Polices: Serif (élégant), Sans-serif (moderne), Script (décoratif)',
+              'Hiérarchie typographique: Titre (H1), Sous-titre (H2), Corps (body)',
+              'Taille: 16-18px pour le texte principal, 24-32px pour les titres',
+              'Espacement: line-height (1.5x), letter-spacing (0.5-1px)',
+              'Limitez à 2 familles de polices maximum',
+              'Google Fonts: 1400+ polices gratuites',
+              'Exemple: Inter (moderne) + Merriweather (élégant)'
+            ],
+            ar: [
+              'الطباعة = فن تنظيم وتصميم النصوص',
+              'الخطوط: Serif (أنيق)، Sans-serif (عصري)، Script (زخرفي)',
+              'التسلسل الهرمي للطباعة: عنوان رئيسي، عنوان فرعي، نص',
+              'الحجم: 16-18px للنص الرئيسي، 24-32px للعناوين',
+              'التباعد: ارتفاع السطر (1.5x)، تباعد الحروف (0.5-1px)',
+              'حدد عائلتي خط كحد أقصى',
+              'Google Fonts: 1400+ خط مجاني',
+              'مثال: Inter (عصري) + Merriweather (أنيق)'
+            ],
+            en: [
+              'Typography = the art of organizing and styling text',
+              'Fonts: Serif (elegant), Sans-serif (modern), Script (decorative)',
+              'Typographic hierarchy: Title (H1), Subtitle (H2), Body',
+              'Size: 16-18px for body text, 24-32px for titles',
+              'Spacing: line-height (1.5x), letter-spacing (0.5-1px)',
+              'Limit to 2 font families maximum',
+              'Google Fonts: 1400+ free fonts',
+              'Example: Inter (modern) + Merriweather (elegant)'
+            ]
+          },
+          method: {
+            fr: 'Créez une hiérarchie typographique pour un article de blog. Utilisez 2 polices, 5 tailles différentes, et variez les poids (gras, régulier, léger). Justifiez chaque choix.',
+            ar: 'أنشئ تسلسلاً هرمياً للطباعة لمقال مدونة. استخدم خطين و5 أحجام مختلفة وتباين في الوزن (غامق، عادي، خفيف). برر كل اختيار.',
+            en: 'Create a typographic hierarchy for a blog article. Use 2 fonts, 5 different sizes, and vary weights (bold, regular, light). Justify each choice.'
+          },
+          exercise: {
+            fr: 'Refaites la typographie d\'un site web existant. Choisissez 3 nouvelles combinaisons de polices et testez-les. Créez un moodboard montrant pourquoi chaque combinaison fonctionne.',
+            ar: 'أعد تصميم طباعة موقع ويب موجود. اختر 3 تركيبات خطوط جديدة واختبرها. أنشئ لوحة مزاجية تظهر لماذا كل تركيبة تعمل.',
+            en: 'Redesign the typography of an existing website. Choose 3 new font combinations and test them. Create a moodboard showing why each combination works.'
+          },
+          tip: {
+            fr: '💡 La typographie constitue 90% de la perception de votre design. Choisissez des polices qui reflètent votre marque. Testez-les toujours avec du vrai contenu, pas du Lorem Ipsum.',
+            ar: '💡 الطباعة تشكل 90% من إدراك تصميمك. اختر خطوطاً تعكس علامتك التجارية. اختبرها دائماً بمحتوى حقيقي، ليس بـ Lorem Ipsum.',
+            en: '💡 Typography makes up 90% of your design perception. Choose fonts that reflect your brand. Always test with real content, not Lorem Ipsum.'
+          }
+        },
+        // Lesson 5: Layout & Grid
+        {
+          id: 'uiux-b-5',
+          title: {
+            fr: 'Layout & Grilles',
+            ar: 'التخطيط والشبكات',
+            en: 'Layout & Grid'
+          },
+          image: 'https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Grille = structure invisible qui organise les éléments',
+              'Systèmes de grille: 12 colonnes (standard), 16 colonnes, 24 colonnes',
+              'Gouttières: espace entre les colonnes (16-24px)',
+              'Marges: espace sur les bords (16-40px)',
+              'Hiérarchie de grille: containers, rows, columns',
+              'Breakpoints: Mobile (1 col), Tablette (4-8 col), Desktop (12 col)',
+              'Figma: utilisation des Auto Layout + Grids',
+              'Exemple: Amazon, Airbnb, Apple utilisent tous des grilles'
+            ],
+            ar: [
+              'الشبكة = هيكل غير مرئي ينظم العناصر',
+              'أنظمة الشبكة: 12 عموداً (قياسي)، 16 عموداً، 24 عموداً',
+              'المزاريب: مسافة بين الأعمدة (16-24px)',
+              'الهوامش: مسافة على الحواف (16-40px)',
+              'تسلسل الشبكة: حاويات، صفوف، أعمدة',
+              'نقاط التوقف: موبايل (عمود 1)، جهاز لوحي (4-8 أعمدة)، سطح المكتب (12 عموداً)',
+              'Figma: استخدام التخطيط التلقائي + الشبكات',
+              'مثال: Amazon، Airbnb، Apple كلها تستخدم شبكات'
+            ],
+            en: [
+              'Grid = invisible structure that organizes elements',
+              'Grid systems: 12 columns (standard), 16 columns, 24 columns',
+              'Gutters: space between columns (16-24px)',
+              'Margins: space on edges (16-40px)',
+              'Grid hierarchy: containers, rows, columns',
+              'Breakpoints: Mobile (1 col), Tablet (4-8 col), Desktop (12 col)',
+              'Figma: Use Auto Layout + Grids',
+              'Example: Amazon, Airbnb, Apple all use grids'
+            ]
+          },
+          method: {
+            fr: 'Prenez 5 sites web populaires. Superposez une grille de 12 colonnes sur leurs designs. Analysez comment ils utilisent les colonnes, les gouttières, et les marges.',
+            ar: 'خذ 5 مواقع ويب شهيرة. ضع شبكة من 12 عموداً فوق تصاميمها. حلل كيف يستخدمون الأعمدة والمزاريب والهوامش.',
+            en: 'Take 5 popular websites. Overlay a 12-column grid on their designs. Analyze how they use columns, gutters, and margins.'
+          },
+          exercise: {
+            fr: 'Créez une page web complète en utilisant une grille de 12 colonnes. Incluez: header, navigation, contenu principal, sidebar, footer. Assurez-vous que tout est parfaitement aligné.',
+            ar: 'أنشئ صفحة ويب كاملة باستخدام شبكة من 12 عموداً. تشمل: رأس، تنقل، محتوى رئيسي، شريط جانبي، تذييل. تأكد من أن كل شيء محاذٍ تماماً.',
+            en: 'Create a complete web page using a 12-column grid. Include: header, navigation, main content, sidebar, footer. Ensure everything is perfectly aligned.'
+          },
+          tip: {
+            fr: '💡 Ne laissez jamais d\'éléments flotter au hasard. Utilisez la grille pour tout aligner. Un design aligné = un design professionnel. C\'est aussi simple que ça.',
+            ar: '💡 لا تترك أبداً عناصر تطفو بشكل عشوائي. استخدم الشبكة لمحاذاة كل شيء. تصميم محاذي = تصميم احترافي. بهذه البساطة.',
+            en: '💡 Never leave elements floating randomly. Use the grid to align everything. An aligned design = a professional design. It\'s that simple.'
+          }
+        },
+        // Lesson 6: Wireframing
+        {
+          id: 'uiux-b-6',
+          title: {
+            fr: 'Wireframing - Les Bases',
+            ar: 'الرسوم الهيكلية - الأساسيات',
+            en: 'Wireframing - The Basics'
+          },
+          image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Wireframe = croquis basse fidélité du design',
+              'Niveaux: Low-fidelity (papier), Medium (digital), High (détaillé)',
+              'Éléments: boîtes pour images, lignes pour texte, formes pour boutons',
+              'Objectif: tester la structure avant de s\'attacher aux détails',
+              'Outils: Papier/crayon, Figma, Balsamiq, Miro',
+              'Ne vous inquiétez pas des couleurs ou polices',
+              'Concentrez-vous sur: mise en page, hiérarchie, fonctionnalité',
+              'Itérez: faites 3-5 versions avant de finaliser'
+            ],
+            ar: [
+              'الرسم الهيكلي = مخطط منخفض الدقة للتصميم',
+              'المستويات: منخفض الدقة (ورق)، متوسط (رقمي)، عالي (مفصل)',
+              'العناصر: مربعات للصور، خطوط للنص، أشكال للأزرار',
+              'الهدف: اختبار الهيكل قبل الالتزام بالتفاصيل',
+              'الأدوات: ورق/قلم، Figma، Balsamiq، Miro',
+              'لا تقلق بشأن الألوان أو الخطوط',
+              'ركز على: التخطيط، التسلسل الهرمي، الوظيفة',
+              'كرر: اعمل 3-5 نسخ قبل الانتهاء'
+            ],
+            en: [
+              'Wireframe = low-fidelity sketch of the design',
+              'Levels: Low-fidelity (paper), Medium (digital), High (detailed)',
+              'Elements: boxes for images, lines for text, shapes for buttons',
+              'Goal: test structure before committing to details',
+              'Tools: Paper/pen, Figma, Balsamiq, Miro',
+              'Don\'t worry about colors or fonts',
+              'Focus on: layout, hierarchy, functionality',
+              'Iterate: make 3-5 versions before finalizing'
+            ]
+          },
+          method: {
+            fr: 'Dessinez 3 wireframes différents pour la page d\'accueil d\'une application de votre choix. Faites-les sur papier d\'abord, puis numériquement. Comparez les 3 approches.',
+            ar: 'ارسم 3 رسوم هيكلية مختلفة للصفحة الرئيسية لتطبيق من اختيارك. اعملها على الورق أولاً، ثم رقمياً. قارن الطرق الثلاث.',
+            en: 'Draw 3 different wireframes for the homepage of an app of your choice. Do them on paper first, then digitally. Compare the 3 approaches.'
+          },
+          exercise: {
+            fr: 'Créez un wireframe complet pour une application mobile de réservation de restaurant. Incluez: écran d\'accueil, recherche, résultats, détails, réservation, confirmation. 3 niveaux de fidélité.',
+            ar: 'أنشئ رسماً هيكلياً كاملاً لتطبيق موبايل لحجز مطعم. يشمل: شاشة رئيسية، بحث، نتائج، تفاصيل، حجز، تأكيد. 3 مستويات من الدقة.',
+            en: 'Create a complete wireframe for a restaurant booking mobile app. Include: home screen, search, results, details, booking, confirmation. 3 fidelity levels.'
+          },
+          tip: {
+            fr: '💡 Le wireframing est l\'étape la plus importante. 80% de votre temps devrait être en wireframes, 20% en design final. Un bon wireframe = un bon design final.',
+            ar: '💡 الرسم الهيكلي هو الخطوة الأكثر أهمية. 80% من وقتك يجب أن يكون في الرسوم الهيكلية، 20% في التصميم النهائي. رسم هيكلي جيد = تصميم نهائي جيد.',
+            en: '💡 Wireframing is the most important step. 80% of your time should be on wireframes, 20% on final design. A good wireframe = a good final design.'
+          }
+        },
+        // Lesson 7: User Flow
+        {
+          id: 'uiux-b-7',
+          title: {
+            fr: 'User Flow - Le Parcours Utilisateur',
+            ar: 'تدفق المستخدم - رحلة المستخدم',
+            en: 'User Flow - The User Journey'
+          },
+          image: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'User Flow = le chemin que l\'utilisateur suit pour accomplir une tâche',
+              'Étapes: Point de départ → Actions → Décisions → Point d\'arrivée',
+              'Visualisation: diagrammes avec rectangles, losanges, flèches',
+              'Rectangles = pages/écrans, Losanges = décisions, Flèches = navigation',
+              'Exemple: Acheter un produit: Accueil → Recherche → Produit → Panier → Paiement → Confirmation',
+              'Identifier les points de friction: où l\'utilisateur bloque?',
+              'Optimiser le flow: réduire les étapes, simplifier les décisions',
+              'Objectif: le chemin le plus court vers l\'objectif de l\'utilisateur'
+            ],
+            ar: [
+              'تدفق المستخدم = المسار الذي يتبعه المستخدم لإنجاز مهمة',
+              'الخطوات: نقطة البداية → إجراءات → قرارات → نقطة النهاية',
+              'التصور: رسوم بيانية بمستطيلات، معينات، أسهم',
+              'المستطيلات = صفحات/شاشات، المعينات = قرارات، الأسهم = تنقل',
+              'مثال: شراء منتج: رئيسية → بحث → منتج → سلة → دفع → تأكيد',
+              'تحديد نقاط الاحتكاك: أين يتعطل المستخدم؟',
+              'تحسين التدفق: تقليل الخطوات، تبسيط القرارات',
+              'الهدف: أقصر طريق إلى هدف المستخدم'
+            ],
+            en: [
+              'User Flow = the path the user follows to complete a task',
+              'Steps: Starting point → Actions → Decisions → End point',
+              'Visualization: diagrams with rectangles, diamonds, arrows',
+              'Rectangles = pages/screens, Diamonds = decisions, Arrows = navigation',
+              'Example: Buy a product: Home → Search → Product → Cart → Payment → Confirmation',
+              'Identify friction points: where does the user get stuck?',
+              'Optimize flow: reduce steps, simplify decisions',
+              'Goal: the shortest path to the user\'s objective'
+            ]
+          },
+          method: {
+            fr: 'Créez un user flow complet pour 3 scénarios: 1) S\'inscrire à un service, 2) Acheter un produit, 3) Contacter le support. Cartographiez chaque étape.',
+            ar: 'أنشئ تدفق مستخدم كامل لـ3 سيناريوهات: 1) التسجيل في خدمة، 2) شراء منتج، 3) الاتصال بالدعم. رسم خرائط لكل خطوة.',
+            en: 'Create a complete user flow for 3 scenarios: 1) Sign up for a service, 2) Buy a product, 3) Contact support. Map out each step.'
+          },
+          exercise: {
+            fr: 'Analysez le user flow d\'une application populaire (ex: Airbnb). Identifiez chaque étape, les points de friction, et suggérez 3 améliorations. Créez le flow optimisé.',
+            ar: 'حلل تدفق المستخدم لتطبيق شهير (مثال: Airbnb). حدد كل خطوة ونقاط الاحتكاك واقترح 3 تحسينات. أنشئ التدفق المحسّن.',
+            en: 'Analyze the user flow of a popular app (ex: Airbnb). Identify each step, friction points, and suggest 3 improvements. Create the optimized flow.'
+          },
+          tip: {
+            fr: '💡 Un bon user flow est invisible. L\'utilisateur ne pense pas à la navigation - il pense à accomplir sa tâche. Testez toujours vos flows avec des vrais utilisateurs.',
+            ar: '💡 تدفق المستخدم الجيد غير مرئي. لا يفكر المستخدم في التنقل - بل يفكر في إنجاز مهمته. اختبر دائماً تدفقاتك مع مستخدمين حقيقيين.',
+            en: '💡 A good user flow is invisible. The user doesn\'t think about navigation - they think about completing their task. Always test your flows with real users.'
+          }
+        },
+        // Lesson 8: Design Thinking
+        {
+          id: 'uiux-b-8',
+          title: {
+            fr: 'Design Thinking - Approche Centrée Utilisateur',
+            ar: 'التفكير التصميمي - نهج يركز على المستخدم',
+            en: 'Design Thinking - User-Centered Approach'
+          },
+          image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Design Thinking = méthode de résolution de problèmes centrée sur l\'humain',
+              '5 phases: Empathie, Définir, Idéation, Prototype, Tester',
+              'Empathie: comprendre les besoins réels des utilisateurs',
+              'Définir: formuler clairement le problème',
+              'Idéation: générer des solutions (brainstorming)',
+              'Prototype: créer des solutions tangibles (wireframes)',
+              'Tester: valider avec des utilisateurs réels',
+              'Itératif: revenez en arrière à n\'importe quelle phase'
+            ],
+            ar: [
+              'التفكير التصميمي = طريقة لحل المشاكل تركز على الإنسان',
+              '5 مراحل: التعاطف، التعريف، التوليد، النموذج، الاختبار',
+              'التعاطف: فهم احتياجات المستخدمين الحقيقية',
+              'التعريف: صياغة المشكلة بوضوح',
+              'التوليد: إنتاج حلول (العصف الذهني)',
+              'النموذج: إنشاء حلول ملموسة (رسوم هيكلية)',
+              'الاختبار: التحقق مع مستخدمين حقيقيين',
+              'تكرار: عد إلى أي مرحلة'
+            ],
+            en: [
+              'Design Thinking = human-centered problem-solving method',
+              '5 phases: Empathize, Define, Ideate, Prototype, Test',
+              'Empathize: understand real user needs',
+              'Define: clearly formulate the problem',
+              'Ideate: generate solutions (brainstorming)',
+              'Prototype: create tangible solutions (wireframes)',
+              'Test: validate with real users',
+              'Iterative: go back to any phase'
+            ]
+          },
+          method: {
+            fr: 'Appliquez le Design Thinking à un problème de votre vie quotidienne. Parcourez les 5 phases. Documentez chaque phase. Participez à un atelier de Design Thinking.',
+            ar: 'طبق التفكير التصميمي على مشكلة في حياتك اليومية. انتقل عبر المراحل الخمس. وثق كل مرحلة. شارك في ورشة عمل للتفكير التصميمي.',
+            en: 'Apply Design Thinking to a problem in your daily life. Go through all 5 phases. Document each phase. Participate in a Design Thinking workshop.'
+          },
+          exercise: {
+            fr: 'Choisissez un problème réel (ex: les transports en commun à Alger). Appliquez les 5 phases du Design Thinking. Créez une présentation de 10 slides montrant votre processus.',
+            ar: 'اختر مشكلة حقيقية (مثال: وسائل النقل العام في الجزائر). طبق مراحل التفكير التصميمي الخمس. أنشئ عرضاً من 10 شرائح يظهر عمليتك.',
+            en: 'Choose a real problem (ex: public transport in Algiers). Apply the 5 Design Thinking phases. Create a 10-slide presentation showing your process.'
+          },
+          tip: {
+            fr: '💡 Le Design Thinking n\'est pas une formule magique. C\'est un outil. Utilisez-le quand vous avez besoin de comprendre les utilisateurs et de résoudre des problèmes complexes.',
+            ar: '💡 التفكير التصميمي ليس صيغة سحرية. إنها أداة. استخدمها عندما تحتاج إلى فهم المستخدمين وحل مشاكل معقدة.',
+            en: '💡 Design Thinking isn\'t a magic formula. It\'s a tool. Use it when you need to understand users and solve complex problems.'
+          }
+        }
+      ]
+    },
+    // ============================================
+    // LEVEL 2: INTERMEDIATE - 8 Lessons
+    // ============================================
+    {
+      name: {
+        fr: 'Intermédiaire',
+        ar: 'متوسط',
+        en: 'Intermediate'
+      },
+      badge: '⚡',
+      duration: {
+        fr: 'Semaines 5–12',
+        ar: 'الأسابيع 5–12',
+        en: 'Weeks 5–12'
+      },
+      goal: {
+        fr: 'Maîtriser Figma, créer des composants avancés et commencer à designer pour le web et le mobile',
+        ar: 'إتقان Figma، إنشاء مكونات متقدمة والبدء في تصميم الويب والموبايل',
+        en: 'Master Figma, create advanced components and start designing for web and mobile'
+      },
+      lessons: [
+        // Lesson 1: Figma Complete
+        {
+          id: 'uiux-i-1',
+          title: {
+            fr: 'Figma - Maîtrise Complète',
+            ar: 'Figma - إتقان كامل',
+            en: 'Figma - Complete Mastery'
+          },
+          image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'Figma = outil de design collaboratif (gratuit pour individus)',
+              'Interface: Canvas central, panneaux gauche/droite, barre supérieure',
+              'Outils: Rectangle, Texte, Ellipse, Ligne, Stylo, Main',
+              'Frames: conteneurs pour vos designs (tailles d\'écran)',
+              'Layers: organisez vos éléments dans une hiérarchie',
+              'Plugins: extensible avec des plugins communautaires',
+              'Prototypage: créez des prototypes interactifs',
+              'Partage: collaborez en temps réel avec votre équipe'
+            ],
+            ar: [
+              'Figma = أداة تصميم تعاونية (مجانية للأفراد)',
+              'الواجهة: لوحة مركزية، لوحات يسار/يمين، شريط علوي',
+              'الأدوات: مستطيل، نص، قطع ناقص، خط، قلم، يد',
+              'الإطارات: حاويات لتصاميمك (أحجام الشاشات)',
+              'الطبقات: تنظيم عناصرك في تسلسل هرمي',
+              'الإضافات: قابلة للتوسيع بإضافات المجتمع',
+              'النماذج الأولية: إنشاء نماذج تفاعلية',
+              'المشاركة: التعاون في الوقت الفعلي مع فريقك'
+            ],
+            en: [
+              'Figma = collaborative design tool (free for individuals)',
+              'Interface: Center canvas, left/right panels, top bar',
+              'Tools: Rectangle, Text, Ellipse, Line, Pen, Hand',
+              'Frames: containers for your designs (screen sizes)',
+              'Layers: organize your elements in hierarchy',
+              'Plugins: extensible with community plugins',
+              'Prototyping: create interactive prototypes',
+              'Sharing: collaborate in real-time with your team'
+            ]
+          },
+          method: {
+            fr: 'Créez un projet Figma pour un site web de portfolio. Ajoutez 5 frames (pages), utilisez au moins 10 shapes, 5 text elements, et 3 images. Organisez tout avec des layers.',
+            ar: 'أنشئ مشروع Figma لموقع ويب بورتفوليو. أضف 5 إطارات (صفحات)، استخدم 10 أشكال على الأقل، 5 عناصر نص، و3 صور. نظم كل شيء بطبقات.',
+            en: 'Create a Figma project for a portfolio website. Add 5 frames (pages), use at least 10 shapes, 5 text elements, and 3 images. Organize everything with layers.'
+          },
+          exercise: {
+            fr: 'Refaites un site web populaire dans Figma (ex: le site d\'une banque algérienne). Reconstruisez la page d\'accueil et une page intérieure. Prenez des captures pour comparer avec l\'original.',
+            ar: 'أعد إنشاء موقع ويب شهير في Figma (مثال: موقع بنك جزائري). أعد بناء الصفحة الرئيسية وصفحة داخلية. خذ لقطات للمقارنة مع الأصل.',
+            en: 'Redesign a popular website in Figma (ex: an Algerian bank\'s site). Rebuild the homepage and an inner page. Take screenshots to compare with the original.'
+          },
+          tip: {
+            fr: '💡 Maîtrisez les raccourcis Figma: R (rectangle), T (texte), F (frame), Shift+2 (zoom), Shift+0 (reset). La vitesse vient des raccourcis.',
+            ar: '💡 أتقن اختصارات Figma: R (مستطيل)، T (نص)، F (إطار)، Shift+2 (تكبير)، Shift+0 (إعادة تعيين). السرعة تأتي من الاختصارات.',
+            en: '💡 Master Figma shortcuts: R (rectangle), T (text), F (frame), Shift+2 (zoom), Shift+0 (reset). Speed comes from shortcuts.'
+          }
+        },
+        // Lesson 2: Auto Layout
+        {
+          id: 'uiux-i-2',
+          title: {
+            fr: 'Auto Layout dans Figma',
+            ar: 'التخطيط التلقائي في Figma',
+            en: 'Auto Layout in Figma'
+          },
+          image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Auto Layout = système de grille flexible pour organiser des éléments',
+              'Raccourci: Shift + A pour activer Auto Layout',
+              'Direction: verticale (colonne) ou horizontale (rangée)',
+              'Padding: espace entre les bords et le contenu',
+              'Gap: espace entre les éléments',
+              'Fill: l\'élément s\'étire pour remplir l\'espace disponible',
+              'Hug: l\'élément s\'ajuste au contenu',
+              'Exemple: boutons, cartes, listes, navigations'
+            ],
+            ar: [
+              'التخطيط التلقائي = نظام شبكي مرن لتنظيم العناصر',
+              'اختصار: Shift + A لتفعيل التخطيط التلقائي',
+              'الاتجاه: عمودي أو أفقي',
+              'الحشو: مسافة بين الحواف والمحتوى',
+              'الفجوة: مسافة بين العناصر',
+              'Fill: العنصر يتمدد لملء المساحة المتاحة',
+              'Hug: العنصر يتكيف مع المحتوى',
+              'مثال: أزرار، بطاقات، قوائم، تنقل'
+            ],
+            en: [
+              'Auto Layout = flexible grid system to organize elements',
+              'Shortcut: Shift + A to enable Auto Layout',
+              'Direction: vertical (column) or horizontal (row)',
+              'Padding: space between edges and content',
+              'Gap: space between elements',
+              'Fill: element stretches to fill available space',
+              'Hug: element adjusts to content',
+              'Example: buttons, cards, lists, navigations'
+            ]
+          },
+          method: {
+            fr: 'Créez 5 composants différents en utilisant Auto Layout: un bouton, une carte, une navigation, une liste, un formulaire. Faites-les responsive en utilisant Fill et Hug.',
+            ar: 'أنشئ 5 مكونات مختلفة باستخدام التخطيط التلقائي: زر، بطاقة، تنقل، قائمة، نموذج. اجعلها متجاوبة باستخدام Fill وHug.',
+            en: 'Create 5 different components using Auto Layout: a button, a card, a navigation, a list, a form. Make them responsive using Fill and Hug.'
+          },
+          exercise: {
+            fr: 'Refaites une interface populaire (ex: Netflix) en utilisant uniquement Auto Layout. Aucune position absolue, aucun élément flottant. Tout doit être dans des Auto Layouts.',
+            ar: 'أعد إنشاء واجهة شهيرة (مثال: Netflix) باستخدام التخطيط التلقائي فقط. لا مواضع مطلقة، ولا عناصر عائمة. كل شيء يجب أن يكون في تخطيطات تلقائية.',
+            en: 'Redesign a popular interface (ex: Netflix) using only Auto Layout. No absolute positions, no floating elements. Everything must be in Auto Layouts.'
+          },
+          tip: {
+            fr: '💡 Auto Layout est votre meilleur ami dans Figma. Une fois que vous le maîtrisez, vous pouvez créer des designs 5x plus rapidement et 10x plus facile à mettre à jour.',
+            ar: '💡 التخطيط التلقائي هو أفضل صديق لك في Figma. بمجرد إتقانه، يمكنك إنشاء تصاميم أسرع بـ5 مرات وأسهل بـ10 مرات للتحديث.',
+            en: '💡 Auto Layout is your best friend in Figma. Once you master it, you can create designs 5x faster and 10x easier to update.'
+          }
+        },
+        // Lesson 3: Components
+        {
+          id: 'uiux-i-3',
+          title: {
+            fr: 'Composants dans Figma',
+            ar: 'المكونات في Figma',
+            en: 'Components in Figma'
+          },
+          image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Composant = élément réutilisable (bouton, carte, icon)',
+              'Créer: sélectionnez l\'élément → Cliquez sur "Create Component"',
+              'Instance = copie du composant (liée au parent)',
+              'Modifier le parent → toutes les instances se mettent à jour',
+              'Nested Components = composants dans des composants',
+              'Overrides: modifier une instance sans affecter les autres',
+              'Organisation: nommez vos composants (Bouton/Primary, Bouton/Secondary)',
+              'Exemple: système de design avec 50+ composants'
+            ],
+            ar: [
+              'المكون = عنصر قابل لإعادة الاستخدام (زر، بطاقة، أيقونة)',
+              'الإنشاء: حدد العنصر → انقر على "إنشاء مكون"',
+              'المثيل = نسخة من المكون (مرتبطة بالأصل)',
+              'تعديل الأصل → يتم تحديث جميع المثيلات',
+              'مكونات متداخلة = مكونات داخل مكونات',
+              'التجاوزات: تعديل مثيل دون التأثير على الآخرين',
+              'التنظيم: اسم مكوناتك (زر/أساسي، زر/ثانوي)',
+              'مثال: نظام تصميم مع 50+ مكوناً'
+            ],
+            en: [
+              'Component = reusable element (button, card, icon)',
+              'Create: select element → Click "Create Component"',
+              'Instance = copy of component (linked to parent)',
+              'Edit parent → all instances update',
+              'Nested Components = components inside components',
+              'Overrides: modify an instance without affecting others',
+              'Organization: name your components (Button/Primary, Button/Secondary)',
+              'Example: design system with 50+ components'
+            ]
+          },
+          method: {
+            fr: 'Créez un système de boutons: 5 variantes (primary, secondary, outline, disabled, danger). Utilisez un composant principal et 4 instances avec overrides.',
+            ar: 'أنشئ نظام أزرار: 5 متغيرات (أساسي، ثانوي، مخطط، معطل، خطر). استخدم مكوناً رئيسياً و4 مثيلات مع تجاوزات.',
+            en: 'Create a button system: 5 variants (primary, secondary, outline, disabled, danger). Use a main component and 4 instances with overrides.'
+          },
+          exercise: {
+            fr: 'Construisez un système de design complet pour une application mobile: 10 composants (boutons, inputs, cards, modals, etc.), organisés en pages, tous réutilisables.',
+            ar: 'ابنِ نظام تصميم كامل لتطبيق موبايل: 10 مكونات (أزرار، إدخالات، بطاقات، نوافذ منبثقة، إلخ)، منظمة في صفحات، كلها قابلة لإعادة الاستخدام.',
+            en: 'Build a complete design system for a mobile app: 10 components (buttons, inputs, cards, modals, etc.), organized in pages, all reusable.'
+          },
+          tip: {
+            fr: '💡 Les composants sont la clé de la scalabilité. Un bon système de composants permet à une équipe de 10 designers de travailler sur le même projet sans conflits.',
+            ar: '💡 المكونات هي مفتاح قابلية التوسع. نظام مكونات جيد يسمح لفريق من 10 مصممين بالعمل على نفس المشروع دون تعارضات.',
+            en: '💡 Components are the key to scalability. A good component system allows a team of 10 designers to work on the same project without conflicts.'
+          }
+        },
+        // Lesson 4: Variants
+        {
+          id: 'uiux-i-4',
+          title: {
+            fr: 'Variants dans Figma',
+            ar: 'المتغيرات في Figma',
+            en: 'Variants in Figma'
+          },
+          image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Variants = différentes versions d\'un même composant',
+              'Propriétés: State (default, hover, active, disabled)',
+              'Propriétés: Size (small, medium, large)',
+              'Propriétés: Color (primary, secondary, danger)',
+              'Propriétés: Icon (left, right, none)',
+              'Combinez les propriétés pour créer des centaines de variations',
+              'Raccourci: sélectionnez plusieurs composants → "Combine as Variants"',
+              'Utilisation: choisir une variante dans la barre latérale droite'
+            ],
+            ar: [
+              'المتغيرات = إصدارات مختلفة لنفس المكون',
+              'الخصائص: الحالة (افتراضي، تمرير، نشط، معطل)',
+              'الخصائص: الحجم (صغير، متوسط، كبير)',
+              'الخصائص: اللون (أساسي، ثانوي، خطر)',
+              'الخصائص: الأيقونة (يسار، يمين، لا شيء)',
+              'دمج الخصائص لإنشاء مئات التغييرات',
+              'اختصار: حدد مكونات متعددة → "دمج كمتغيرات"',
+              'الاستخدام: اختيار متغير في الشريط الجانبي الأيمن'
+            ],
+            en: [
+              'Variants = different versions of the same component',
+              'Properties: State (default, hover, active, disabled)',
+              'Properties: Size (small, medium, large)',
+              'Properties: Color (primary, secondary, danger)',
+              'Properties: Icon (left, right, none)',
+              'Combine properties to create hundreds of variations',
+              'Shortcut: select multiple components → "Combine as Variants"',
+              'Usage: choose variant in right sidebar'
+            ]
+          },
+          method: {
+            fr: 'Créez un système de bouton complet avec variants: 3 tailles × 4 états × 5 couleurs = 60 variations. Organisez-les dans un grid pour voir toutes les combinaisons.',
+            ar: 'أنشئ نظام أزرار كامل مع متغيرات: 3 أحجام × 4 حالات × 5 ألوان = 60 تغييراً. نظمها في شبكة لرؤية كل التركيبات.',
+            en: 'Create a complete button system with variants: 3 sizes × 4 states × 5 colors = 60 variations. Organize them in a grid to see all combinations.'
+          },
+          exercise: {
+            fr: 'Créez 3 familles de composants avec variants: 1) Input fields (3 tailles × 4 états), 2) Cards (2 tailles × 3 styles), 3) Icons (2 tailles × 10 couleurs).',
+            ar: 'أنشئ 3 عائلات من المكونات مع متغيرات: 1) حقول الإدخال (3 أحجام × 4 حالات)، 2) البطاقات (حجمين × 3 أنماط)، 3) الأيقونات (حجمين × 10 ألوان).',
+            en: 'Create 3 component families with variants: 1) Input fields (3 sizes × 4 states), 2) Cards (2 sizes × 3 styles), 3) Icons (2 sizes × 10 colors).'
+          },
+          tip: {
+            fr: '💡 Les variants rendent votre système de design incroyablement puissant. Un seul composant peut remplacer 50+ composants individuels.',
+            ar: '💡 المتغيرات تجعل نظام التصميم الخاص بك قوياً بشكل لا يصدق. مكون واحد يمكن أن يحل محل 50+ مكوناً فردياً.',
+            en: '💡 Variants make your design system incredibly powerful. One component can replace 50+ individual components.'
+          }
+        },
+        // Lesson 5: Responsive Design
+        {
+          id: 'uiux-i-5',
+          title: {
+            fr: 'Design Responsive',
+            ar: 'التصميم المتجاوب',
+            en: 'Responsive Design'
+          },
+          image: 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Responsive = design qui s\'adapte à toutes les tailles d\'écran',
+              'Breakpoints: Mobile (360-420px), Tablette (768-1024px), Desktop (1200px+)',
+              'Mobile-first: design pour mobile puis agrandissez pour desktop',
+              'Desktop-first: design pour desktop puis réduisez pour mobile',
+              'Contenu: adaptez la taille, l\'espacement, la disposition',
+              'Navigation: hamburger menu sur mobile, barre complète sur desktop',
+              'Images: redimensionnables, compressées, optimisées',
+              'Figma: utilisez les contraintes (constraints) et auto layout'
+            ],
+            ar: [
+              'التصميم المتجاوب = تصميم يتكيف مع جميع أحجام الشاشات',
+              'نقاط التوقف: موبايل (360-420px)، جهاز لوحي (768-1024px)، سطح المكتب (1200px+)',
+              'موبايل أولاً: تصميم للموبايل ثم تكبير لسطح المكتب',
+              'سطح المكتب أولاً: تصميم لسطح المكتب ثم تصغير للموبايل',
+              'المحتوى: تكييف الحجم والتباعد والترتيب',
+              'التنقل: قائمة هامبرغر على الموبايل، شريط كامل على سطح المكتب',
+              'الصور: قابلة لإعادة التحجيم، مضغوطة، محسّنة',
+              'Figma: استخدم القيود والتخطيط التلقائي'
+            ],
+            en: [
+              'Responsive = design that adapts to all screen sizes',
+              'Breakpoints: Mobile (360-420px), Tablet (768-1024px), Desktop (1200px+)',
+              'Mobile-first: design for mobile then scale up to desktop',
+              'Desktop-first: design for desktop then scale down to mobile',
+              'Content: adapt size, spacing, layout',
+              'Navigation: hamburger menu on mobile, full bar on desktop',
+              'Images: resizable, compressed, optimized',
+              'Figma: use constraints and auto layout'
+            ]
+          },
+          method: {
+            fr: 'Prenez un design que vous avez créé. Faites 3 versions: mobile, tablette, desktop. Utilisez les constraints et auto layout pour que tout s\'ajuste automatiquement.',
+            ar: 'خذ تصميماً أنشأته. اعمل 3 نسخ: موبايل، جهاز لوحي، سطح المكتب. استخدم القيود والتخطيط التلقائي ليتكيف كل شيء تلقائياً.',
+            en: 'Take a design you created. Make 3 versions: mobile, tablet, desktop. Use constraints and auto layout so everything adjusts automatically.'
+          },
+          exercise: {
+            fr: 'Concevez une landing page responsive. Créez 3 frames (mobile, tablette, desktop). Assurez-vous que tous les éléments se réorganisent correctement aux 3 tailles.',
+            ar: 'صمم صفحة هبوط متجاوبة. أنشئ 3 إطارات (موبايل، جهاز لوحي، سطح المكتب). تأكد من إعادة ترتيب جميع العناصر بشكل صحيح في الأحجام الثلاثة.',
+            en: 'Design a responsive landing page. Create 3 frames (mobile, tablet, desktop). Ensure all elements reorganize correctly at all 3 sizes.'
+          },
+          tip: {
+            fr: '💡 Le responsive design n\'est plus un luxe, c\'est une nécessité. 60% du trafic web vient du mobile. Si votre design ne fonctionne pas sur mobile, 60% de vos utilisateurs partent.',
+            ar: '💡 التصميم المتجاوب لم يعد رفاهية، بل ضرورة. 60% من حركة المرور على الويب تأتي من الموبايل. إذا لم يعمل تصميمك على الموبايل، 60% من مستخدميك يرحلون.',
+            en: '💡 Responsive design is no longer a luxury, it\'s a necessity. 60% of web traffic comes from mobile. If your design doesn\'t work on mobile, 60% of your users leave.'
+          }
+        },
+        // Lesson 6: Design Systems
+        {
+          id: 'uiux-i-6',
+          title: {
+            fr: 'Systèmes de Design',
+            ar: 'أنظمة التصميم',
+            en: 'Design Systems'
+          },
+          image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Design System = collection de composants, styles, et règles',
+              'Styles: Couleurs, Typographie, Espacement, Shadows, Border Radius',
+              'Composants: Boutons, Inputs, Cards, Modal, Navigation',
+              'Documentation: Guide d\'utilisation, Pattern Library, Code snippets',
+              'Outils: Figma + Storybook (pour développement)',
+              'Avantages: Cohérence, Rapidité, Scalabilité',
+              'Exemple: Material Design (Google), Carbon (IBM)',
+              'Commencez petit: 3-5 composants, évoluez ensuite'
+            ],
+            ar: [
+              'نظام التصميم = مجموعة من المكونات والأنماط والقواعد',
+              'الأنماط: الألوان، الطباعة، التباعد، الظلال، نصف القطر',
+              'المكونات: أزرار، حقول إدخال، بطاقات، نوافذ منبثقة، تنقل',
+              'التوثيق: دليل الاستخدام، مكتبة الأنماط، مقتطفات الكود',
+              'الأدوات: Figma + Storybook (للتطوير)',
+              'المزايا: الاتساق، السرعة، قابلية التوسع',
+              'مثال: Material Design (Google)، Carbon (IBM)',
+              'ابدأ صغيراً: 3-5 مكونات، ثم تطور'
+            ],
+            en: [
+              'Design System = collection of components, styles, and rules',
+              'Styles: Colors, Typography, Spacing, Shadows, Border Radius',
+              'Components: Buttons, Inputs, Cards, Modal, Navigation',
+              'Documentation: Usage Guide, Pattern Library, Code snippets',
+              'Tools: Figma + Storybook (for development)',
+              'Benefits: Consistency, Speed, Scalability',
+              'Example: Material Design (Google), Carbon (IBM)',
+              'Start small: 3-5 components, evolve from there'
+            ]
+          },
+          method: {
+            fr: 'Créez votre premier design system. Commencez par: 5 couleurs, 3 typographies, un système d\'espacement (4px, 8px, 16px, 24px, 32px). Puis ajoutez 5 composants.',
+            ar: 'أنشئ نظام التصميم الأول لك. ابدأ بـ: 5 ألوان، 3 خطوط، نظام تباعد (4px، 8px، 16px، 24px، 32px). ثم أضف 5 مكونات.',
+            en: 'Create your first design system. Start with: 5 colors, 3 fonts, a spacing system (4px, 8px, 16px, 24px, 32px). Then add 5 components.'
+          },
+          exercise: {
+            fr: 'Construisez un design system complet pour une application de type SaaS. Incluez: Styles (couleurs, typo, spacing), Composants (20+), Templates (3-5 pages), Documentation.',
+            ar: 'ابنِ نظام تصميم كامل لتطبيق من نوع SaaS. يشمل: الأنماط (ألوان، خطوط، تباعد)، المكونات (20+)، القوالب (3-5 صفحات)، التوثيق.',
+            en: 'Build a complete design system for a SaaS-type application. Include: Styles (colors, typo, spacing), Components (20+), Templates (3-5 pages), Documentation.'
+          },
+          tip: {
+            fr: '💡 Un bon design system est la différence entre un produit et une marque. C\'est l\'ADN visuel de votre entreprise. Investissez du temps à le construire bien.',
+            ar: '💡 نظام التصميم الجيد هو الفرق بين منتج وعلامة تجارية. إنه الحمض النووي البصري لشركتك. استثمر الوقت في بنائه بشكل جيد.',
+            en: '💡 A good design system is the difference between a product and a brand. It\'s the visual DNA of your company. Invest time in building it well.'
+          }
+        },
+        // Lesson 7: Mobile Design
+        {
+          id: 'uiux-i-7',
+          title: {
+            fr: 'Design Mobile',
+            ar: 'تصميم الموبايل',
+            en: 'Mobile Design'
+          },
+          image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Mobile = l\'écran principal (70% du trafic web)',
+              'Taille: 375x812 (iPhone X), 414x896 (iPhone 11), 360x640 (Android)',
+              'Design: Pouces, gestes, contexte (en déplacement)',
+              'Navigation: Tab Bar (bas), Navigation (haut), Hamburger',
+              'Contenu: Priorisez, simplifiez, une action par écran',
+              'Formulaires: utilisez les bons claviers (email, nombre, téléphone)',
+              'Gestes: Tap, Swipe, Pinch, Long press',
+              'Ergonomie: tout doit être accessible avec un pouce'
+            ],
+            ar: [
+              'الموبايل = الشاشة الرئيسية (70% من حركة مرور الويب)',
+              'الحجم: 375x812 (iPhone X)، 414x896 (iPhone 11)، 360x640 (Android)',
+              'التصميم: الإبهام، الإيماءات، السياق (أثناء التنقل)',
+              'التنقل: شريط علامات تبويب (أسفل)، تنقل (أعلى)، هامبرغر',
+              'المحتوى: الأولوية، التبسيط، إجراء واحد لكل شاشة',
+              'النماذج: استخدم لوحات المفاتيح الصحيحة (بريد إلكتروني، رقم، هاتف)',
+              'الإيماءات: نقر، تمرير، قرص، ضغط مطول',
+              'بيئة العمل: كل شيء يجب أن يكون متاحاً بالإبهام'
+            ],
+            en: [
+              'Mobile = the primary screen (70% of web traffic)',
+              'Size: 375x812 (iPhone X), 414x896 (iPhone 11), 360x640 (Android)',
+              'Design: Thumbs, gestures, context (on the go)',
+              'Navigation: Tab Bar (bottom), Navigation (top), Hamburger',
+              'Content: Prioritize, simplify, one action per screen',
+              'Forms: use the right keyboards (email, number, phone)',
+              'Gestures: Tap, Swipe, Pinch, Long press',
+              'Ergonomics: everything should be reachable with one thumb'
+            ]
+          },
+          method: {
+            fr: 'Prenez un site web que vous aimez. Redessinez-le pour mobile en gardant 60% des fonctionnalités, 30% en simplification, 10% en suppression. Justifiez chaque décision.',
+            ar: 'خذ موقع ويب تحبه. أعد تصميمه للموبايل مع الاحتفاظ بـ60% من الميزات، 30% تبسيط، 10% إزالة. برر كل قرار.',
+            en: 'Take a website you like. Redesign it for mobile keeping 60% of features, 30% simplification, 10% removal. Justify each decision.'
+          },
+          exercise: {
+            fr: 'Concevez 5 écrans d\'application mobile pour un service de livraison de repas: Accueil, Recherche, Résultats, Détails du restaurant, Panier. Respectez les contraintes mobiles.',
+            ar: 'صمم 5 شاشات لتطبيق موبايل لخدمة توصيل طعام: رئيسية، بحث، نتائج، تفاصيل مطعم، سلة. احترم قيود الموبايل.',
+            en: 'Design 5 mobile app screens for a food delivery service: Home, Search, Results, Restaurant details, Cart. Respect mobile constraints.'
+          },
+          tip: {
+            fr: '💡 Le mobile est impitoyable: si votre design ne fonctionne pas en 3 secondes, l\'utilisateur part. Testez toujours sur un vrai téléphone, pas juste sur Figma.',
+            ar: '💡 الموبايل قاسٍ: إذا لم يعمل تصميمك في 3 ثوانٍ، يغادر المستخدم. اختبر دائماً على هاتف حقيقي، وليس فقط على Figma.',
+            en: '💡 Mobile is unforgiving: if your design doesn\'t work in 3 seconds, the user leaves. Always test on a real phone, not just in Figma.'
+          }
+        },
+        // Lesson 8: Web Design
+        {
+          id: 'uiux-i-8',
+          title: {
+            fr: 'Web Design',
+            ar: 'تصميم الويب',
+            en: 'Web Design'
+          },
+          image: 'https://images.unsplash.com/photo-1488590528505-98d2b853aba4?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Web = plus grand écran, plus de possibilités, plus de complexité',
+              'Taille: 1200-1440px standard, parfois plus pour les grandes résolutions',
+              'Layout: Multi-colonnes, contenus riches, animations',
+              'Navigation: Barre supérieure, sidebar, footer détaillé',
+              'Contenu: plus de texte, plus d\'images, vidéos, interactions',
+              'Scrolling: important - les gens scrollent, utilisez-le',
+              'Interactions: Hover, transitions, micro-interactions',
+              'Exemple: Landing pages, portfolios, sites vitrines'
+            ],
+            ar: [
+              'الويب = شاشة أكبر، إمكانيات أكثر، تعقيد أكبر',
+              'الحجم: 1200-1440px قياسي، أحياناً أكثر للدقة العالية',
+              'التخطيط: متعدد الأعمدة، محتوى غني، رسوم متحركة',
+              'التنقل: شريط علوي، شريط جانبي، تذييل مفصل',
+              'المحتوى: نص أكثر، صور أكثر، فيديوهات، تفاعلات',
+              'التمرير: مهم - الناس تمرر، استخدمها',
+              'التفاعلات: تمرير، انتقالات، تفاعلات صغيرة',
+              'مثال: صفحات الهبوط، البورتفوليو، مواقع العرض'
+            ],
+            en: [
+              'Web = bigger screen, more possibilities, more complexity',
+              'Size: 1200-1440px standard, sometimes wider for high resolutions',
+              'Layout: Multi-column, rich content, animations',
+              'Navigation: Top bar, sidebar, detailed footer',
+              'Content: more text, more images, videos, interactions',
+              'Scrolling: important - people scroll, use it',
+              'Interactions: Hover, transitions, micro-interactions',
+              'Example: Landing pages, portfolios, showcase sites'
+            ]
+          },
+          method: {
+            fr: 'Prenez le design mobile que vous avez créé. Faites une version web complète. Ajoutez des fonctionnalités qui n\'étaient pas possibles sur mobile (hover, vidéos, plus de contenu).',
+            ar: 'خذ التصميم المحمول الذي أنشأته. اصنع نسخة ويب كاملة. أضف ميزات لم تكن ممكنة على الموبايل (تمرير، فيديوهات، محتوى أكثر).',
+            en: 'Take the mobile design you created. Make a complete web version. Add features that weren\'t possible on mobile (hover, videos, more content).'
+          },
+          exercise: {
+            fr: 'Concevez une landing page web complète: Hero section, Features (3), Testimonials (3), Pricing (3 plans), CTA final. 5 sections, design professionnel, responsive.',
+            ar: 'صمم صفحة هبوط ويب كاملة: قسم رئيسي، ميزات (3)، شهادات (3)، أسعار (3 خطط)، دعوة للعمل النهائية. 5 أقسام، تصميم احترافي، متجاوب.',
+            en: 'Design a complete web landing page: Hero section, Features (3), Testimonials (3), Pricing (3 plans), Final CTA. 5 sections, professional design, responsive.'
+          },
+          tip: {
+            fr: '💡 Le web et le mobile sont complémentaires. Ne concevez pas l\'un sans penser à l\'autre. Un bon designer crée des expériences cohérentes sur tous les supports.',
+            ar: '💡 الويب والموبايل مكملان لبعضهما. لا تصمم أحدهما دون التفكير في الآخر. المصمم الجيد يخلق تجارب متسقة على جميع المنصات.',
+            en: '💡 Web and mobile are complementary. Don\'t design one without thinking about the other. A good designer creates consistent experiences across all platforms.'
+          }
+        }
+      ]
+    },
+    // ============================================
+    // LEVEL 3: ADVANCED - 8 Lessons
+    // ============================================
+    {
+      name: {
+        fr: 'Avancé',
+        ar: 'متقدم',
+        en: 'Advanced'
+      },
+      badge: '🔥',
+      duration: {
+        fr: 'Semaines 13–24',
+        ar: 'الأسابيع 13–24',
+        en: 'Weeks 13–24'
+      },
+      goal: {
+        fr: 'Maîtriser la recherche UX, le prototypage avancé, et livrer des projets à des clients professionnels',
+        ar: 'إتقان بحث تجربة المستخدم، النماذج الأولية المتقدمة، وتسليم مشاريع لعملاء محترفين',
+        en: 'Master UX research, advanced prototyping, and deliver projects to professional clients'
+      },
+      lessons: [
+        // Lesson 1: UX Research
+        {
+          id: 'uiux-a-1',
+          title: {
+            fr: 'Recherche UX',
+            ar: 'بحث تجربة المستخدم',
+            en: 'UX Research'
+          },
+          image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: [
+              'UX Research = comprendre les besoins et comportements des utilisateurs',
+              'Méthodes qualitatives: interviews, observations, personas',
+              'Méthodes quantitatives: sondages, analytics, A/B testing',
+              'Interview: 5-8 utilisateurs, questions ouvertes, écouter plus que parler',
+              'Sondages: Google Forms, Typeform, à grande échelle',
+              'Analytics: Google Analytics, Hotjar, heatmaps',
+              'Synthèse: affinités, patterns, insights',
+              'Objectif: prendre des décisions basées sur des données réelles'
+            ],
+            ar: [
+              'بحث تجربة المستخدم = فهم احتياجات وسلوكيات المستخدمين',
+              'الطرق النوعية: المقابلات، الملاحظات، الشخصيات',
+              'الطرق الكمية: الاستبيانات، التحليلات، اختبار A/B',
+              'المقابلة: 5-8 مستخدمين، أسئلة مفتوحة، استمع أكثر مما تتكلم',
+              'الاستبيانات: Google Forms، Typeform، على نطاق واسع',
+              'التحليلات: Google Analytics، Hotjar، خرائط الحرارة',
+              'التوليف: التقارب، الأنماط، الأفكار',
+              'الهدف: اتخاذ قرارات مبنية على بيانات حقيقية'
+            ],
+            en: [
+              'UX Research = understanding user needs and behaviors',
+              'Qualitative methods: interviews, observations, personas',
+              'Quantitative methods: surveys, analytics, A/B testing',
+              'Interview: 5-8 users, open questions, listen more than talk',
+              'Surveys: Google Forms, Typeform, large scale',
+              'Analytics: Google Analytics, Hotjar, heatmaps',
+              'Synthesis: affinities, patterns, insights',
+              'Goal: make decisions based on real data'
+            ]
+          },
+          method: {
+            fr: 'Menez 5 interviews utilisateurs. Préparez 10 questions ouvertes. Enregistrez (avec permission), transcrivez, et identifiez 5 patterns communs. Présentez vos findings.',
+            ar: 'أجرِ 5 مقابلات مع مستخدمين. جهز 10 أسئلة مفتوحة. سجل (بإذن)، انسخ، وحدد 5 أنماط مشتركة. قدم نتائجك.',
+            en: 'Conduct 5 user interviews. Prepare 10 open questions. Record (with permission), transcribe, and identify 5 common patterns. Present your findings.'
+          },
+          exercise: {
+            fr: 'Créez un plan de recherche UX complet pour un projet de votre choix. Incluez: objectifs, méthodes, participants, questions, timeline, analyse prévue.',
+            ar: 'أنشئ خطة بحث UX كاملة لمشروع من اختيارك. تشمل: الأهداف، الطرق، المشاركون، الأسئلة، الجدول الزمني، التحليل المتوقع.',
+            en: 'Create a complete UX research plan for a project of your choice. Include: objectives, methods, participants, questions, timeline, analysis plan.'
+          },
+          tip: {
+            fr: '💡 La recherche UX n\'est pas facultative. Les designers qui font de la recherche créent des produits 3x plus efficaces que ceux qui ne le font pas.',
+            ar: '💡 بحث UX ليس اختيارياً. المصممون الذين يقومون بالبحث يصنعون منتجات أكثر فعالية بـ3 مرات من أولئك الذين لا يفعلون.',
+            en: '💡 UX research isn\'t optional. Designers who do research create products 3x more effective than those who don\'t.'
+          }
+        },
+        // Lesson 2: Personas
+        {
+          id: 'uiux-a-2',
+          title: {
+            fr: 'Personas Utilisateur',
+            ar: 'شخصيات المستخدم',
+            en: 'User Personas'
+          },
+          image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Persona = personnage fictif représentant un type d\'utilisateur',
+              'Éléments: Nom, Âge, Profession, Photo, Bio, Objectifs, Pain points',
+              'Objectifs: ce que l\'utilisateur veut accomplir',
+              'Pain points: frustrations, obstacles, défis',
+              'Scénarios: situations d\'utilisation typiques',
+              'Motivations: pourquoi l\'utilisateur utilise votre produit',
+              '3-5 personas maximum par projet',
+              'Utilisation: guide pour toutes les décisions de design'
+            ],
+            ar: [
+              'الشخصية = شخصية خيالية تمثل نوعاً من المستخدمين',
+              'العناصر: الاسم، العمر، المهنة، الصورة، السيرة الذاتية، الأهداف، نقاط الألم',
+              'الأهداف: ما يريد المستخدم تحقيقه',
+              'نقاط الألم: الإحباطات، العقبات، التحديات',
+              'السيناريوهات: حالات الاستخدام النموذجية',
+              'الدوافع: لماذا يستخدم المستخدم منتجك',
+              'الحد الأقصى 3-5 شخصيات لكل مشروع',
+              'الاستخدام: دليل لجميع قرارات التصميم'
+            ],
+            en: [
+              'Persona = fictional character representing a user type',
+              'Elements: Name, Age, Profession, Photo, Bio, Goals, Pain points',
+              'Goals: what the user wants to accomplish',
+              'Pain points: frustrations, obstacles, challenges',
+              'Scenarios: typical use situations',
+              'Motivations: why the user uses your product',
+              '3-5 personas maximum per project',
+              'Usage: guide for all design decisions'
+            ]
+          },
+          method: {
+            fr: 'Créez 3 personas pour un projet de votre choix. Utilisez des données réelles de vos interviews. Donnez-leur des noms, des photos, des histoires. Utilisez-les pour guider vos designs.',
+            ar: 'أنشئ 3 شخصيات لمشروع من اختيارك. استخدم بيانات حقيقية من مقابلاتك. أعطهم أسماء وصوراً وقصصاً. استخدمها لتوجيه تصميماتك.',
+            en: 'Create 3 personas for a project of your choice. Use real data from your interviews. Give them names, photos, stories. Use them to guide your designs.'
+          },
+          exercise: {
+            fr: 'Pour un projet de votre choix, créez une affiche de persona A1. Incluez: tous les éléments, une citation, un jour typique, 3 scénarios d\'utilisation.',
+            ar: 'لمشروع من اختيارك، أنشئ ملصق شخصية بحجم A1. يشمل: جميع العناصر، اقتباس، يوم نموذجي، 3 سيناريوهات استخدام.',
+            en: 'For a project of your choice, create an A1 persona poster. Include: all elements, a quote, a typical day, 3 use scenarios.'
+          },
+          tip: {
+            fr: '💡 Les personas ne sont pas des exercices académiques. Utilisez-les. Accrochez-les sur votre mur. Quand vous avez un doute, demandez: "Que ferait [nom du persona]?".',
+            ar: '💡 الشخصيات ليست تمارين أكاديمية. استخدمها. علقها على حائطك. عندما تكون في شك، اسأل: "ماذا سيفعل [اسم الشخصية]؟".',
+            en: '💡 Personas aren\'t academic exercises. Use them. Pin them to your wall. When in doubt, ask: "What would [persona name] do?".'
+          }
+        },
+        // Lesson 3: Journey Maps
+        {
+          id: 'uiux-a-3',
+          title: {
+            fr: 'Cartes de Parcours Utilisateur',
+            ar: 'خرائط رحلة المستخدم',
+            en: 'User Journey Maps'
+          },
+          image: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Journey Map = visualisation de l\'expérience utilisateur dans le temps',
+              'Phases: Découverte, Recherche, Comparaison, Achat, Post-achat',
+              'Actions: ce que l\'utilisateur fait à chaque phase',
+              'Pensées: ce que l\'utilisateur pense',
+              'Émotions: ce que l\'utilisateur ressent (courbe émotionnelle)',
+              'Points de friction: où l\'utilisateur rencontre des problèmes',
+              'Opportunités: où améliorer l\'expérience',
+              'Objectif: 1 map = 1 persona = 1 scénario'
+            ],
+            ar: [
+              'خريطة الرحلة = تصور لتجربة المستخدم مع مرور الوقت',
+              'المراحل: الاكتشاف، البحث، المقارنة، الشراء، ما بعد الشراء',
+              'الإجراءات: ما يفعله المستخدم في كل مرحلة',
+              'الأفكار: ما يفكر فيه المستخدم',
+              'المشاعر: ما يشعر به المستخدم (منحنى عاطفي)',
+              'نقاط الاحتكاك: أين يواجه المستخدم مشاكل',
+              'الفرص: أين تحسين التجربة',
+              'الهدف: خريطة واحدة = شخصية واحدة = سيناريو واحد'
+            ],
+            en: [
+              'Journey Map = visualization of user experience over time',
+              'Phases: Discovery, Research, Comparison, Purchase, Post-purchase',
+              'Actions: what the user does at each phase',
+              'Thoughts: what the user thinks',
+              'Emotions: what the user feels (emotional curve)',
+              'Friction points: where the user encounters problems',
+              'Opportunities: where to improve the experience',
+              'Goal: 1 map = 1 persona = 1 scenario'
+            ]
+          },
+          method: {
+            fr: 'Créez une journey map pour un de vos personas. Cartographiez 5-8 phases, 5-10 actions par phase. Identifiez 3 points de friction majeurs et proposez 3 solutions.',
+            ar: 'أنشئ خريطة رحلة لأحد شخصياتك. رسم خرائط لـ5-8 مراحل، 5-10 إجراءات لكل مرحلة. حدد 3 نقاط احتكاك رئيسية واقترح 3 حلول.',
+            en: 'Create a journey map for one of your personas. Map 5-8 phases, 5-10 actions per phase. Identify 3 major friction points and propose 3 solutions.'
+          },
+          exercise: {
+            fr: 'Créez une journey map complète pour le parcours d\'achat d\'un produit. Incluez: 6 phases, émotions par phase, 3 points de friction, 5 opportunités d\'amélioration.',
+            ar: 'أنشئ خريطة رحلة كاملة لمسار شراء منتج. تشمل: 6 مراحل، مشاعر لكل مرحلة، 3 نقاط احتكاك، 5 فرص للتحسين.',
+            en: 'Create a complete journey map for a product purchase journey. Include: 6 phases, emotions per phase, 3 friction points, 5 improvement opportunities.'
+          },
+          tip: {
+            fr: '💡 Une journey map bien faite est plus puissante qu\'un rapport de 50 pages. Elle raconte une histoire et rend visible ce qui est invisible. Investissez du temps dans votre première map.',
+            ar: '💡 خريطة رحلة مصممة جيداً هي أقوى من تقرير من 50 صفحة. إنها تحكي قصة وتجعل غير المرئي مرئياً. استثمر الوقت في خريطتك الأولى.',
+            en: '💡 A well-made journey map is more powerful than a 50-page report. It tells a story and makes the invisible visible. Invest time in your first map.'
+          }
+        },
+        // Lesson 4: Prototyping
+        {
+          id: 'uiux-a-4',
+          title: {
+            fr: 'Prototypage Avancé',
+            ar: 'النمذجة الأولية المتقدمة',
+            en: 'Advanced Prototyping'
+          },
+          image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Prototype = version interactive de votre design',
+              'Types: Low-fidelity (cliquable), High-fidelity (animé)',
+              'Figma Prototyping: connectez les frames avec des lignes',
+              'Interactions: Click, Hover, Drag, Scroll, Type',
+              'Transitions: Slide, Fade, Smart Animate, Push',
+              'Micro-interactions: animations subtiles (50-300ms)',
+              'Testing: testez vos prototypes avec de vrais utilisateurs',
+              'Exemple: prototype d\'app avec 20 écrans + animations'
+            ],
+            ar: [
+              'النموذج الأولي = نسخة تفاعلية من تصميمك',
+              'الأنواع: منخفض الدقة (قابل للنقر)، عالي الدقة (متحرك)',
+              'النمذجة في Figma: ربط الإطارات بخطوط',
+              'التفاعلات: نقر، تمرير، سحب، تمرير، كتابة',
+              'الانتقالات: انزلاق، تلاشي، تحريك ذكي، دفع',
+              'التفاعلات الدقيقة: رسوم متحركة دقيقة (50-300ms)',
+              'الاختبار: اختبر نماذجك الأولية مع مستخدمين حقيقيين',
+              'مثال: نموذج تطبيق بـ20 شاشة + رسوم متحركة'
+            ],
+            en: [
+              'Prototype = interactive version of your design',
+              'Types: Low-fidelity (clickable), High-fidelity (animated)',
+              'Figma Prototyping: connect frames with lines',
+              'Interactions: Click, Hover, Drag, Scroll, Type',
+              'Transitions: Slide, Fade, Smart Animate, Push',
+              'Micro-interactions: subtle animations (50-300ms)',
+              'Testing: test your prototypes with real users',
+              'Example: app prototype with 20 screens + animations'
+            ]
+          },
+          method: {
+            fr: 'Créez un prototype complet de 15 écrans dans Figma. Ajoutez des transitions, des micro-interactions, et des états (hover, loading, error). Testez-le sur votre téléphone.',
+            ar: 'أنشئ نموذجاً أولياً كاملاً من 15 شاشة في Figma. أضف انتقالات وتفاعلات دقيقة وحالات (تمرير، تحميل، خطأ). اختبره على هاتفك.',
+            en: 'Create a complete 15-screen prototype in Figma. Add transitions, micro-interactions, and states (hover, loading, error). Test it on your phone.'
+          },
+          exercise: {
+            fr: 'Créez un prototype haute fidélité pour une application de e-commerce. Incluez: 20 écrans, 5 micro-interactions, 3 transitions différentes, 2 états de chargement.',
+            ar: 'أنشئ نموذجاً أولياً عالي الدقة لتطبيق تجارة إلكترونية. يشمل: 20 شاشة، 5 تفاعلات دقيقة، 3 انتقالات مختلفة، حالتي تحميل.',
+            en: 'Create a high-fidelity prototype for an e-commerce app. Include: 20 screens, 5 micro-interactions, 3 different transitions, 2 loading states.'
+          },
+          tip: {
+            fr: '💡 Le prototypage n\'est pas pour faire joli - c\'est pour tester. Plus votre prototype est proche du produit final, plus vos tests utilisateur seront valables.',
+            ar: '💡 النمذجة الأولية ليست للجمال - إنها للاختبار. كلما كان نموذجك الأولي أقرب للمنتج النهائي، كانت اختبارات المستخدم الخاصة بك أكثر صحة.',
+            en: '💡 Prototyping isn\'t for pretty - it\'s for testing. The closer your prototype is to the final product, the more valid your user tests will be.'
+          }
+        },
+        // Lesson 5: Micro Interactions
+        {
+          id: 'uiux-a-5',
+          title: {
+            fr: 'Micro-Interactions',
+            ar: 'التفاعلات الدقيقة',
+            en: 'Micro-Interactions'
+          },
+          image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Micro-interaction = petit moment interactif (50-300ms)',
+              '4 parties: Trigger (ce qui déclenche), Règle (comment ça marche), Feedback (ce que voit l\'utilisateur), Loop (répétition)',
+              'Exemples: Bouton qui s\'anime au clic, Carrousel qui glisse, Like qui explose',
+              'Pourquoi: rend l\'expérience humaine, mémorable, agréable',
+              'Sans micro-interactions: expérience robotique',
+              'Outils: Figma (Smart Animate), Protopie, Principle',
+              'Bonnes pratiques: rapides (200ms), subtiles, cohérentes',
+              'Exemple: le "heart" de Twitter qui s\'anime'
+            ],
+            ar: [
+              'التفاعل الدقيق = لحظة تفاعلية صغيرة (50-300ms)',
+              '4 أجزاء: المشغل (ما يبدأ)، القاعدة (كيف يعمل)، التغذية الراجعة (ما يراه المستخدم)، التكرار',
+              'أمثلة: زر يتحرك عند النقر، دائري ينزلق، إعجاب ينفجر',
+              'لماذا: يجعل التجربة إنسانية، لا تُنسى، ممتعة',
+              'بدون تفاعلات دقيقة: تجربة آلية',
+              'الأدوات: Figma (التحريك الذكي)، Protopie، Principle',
+              'الممارسات الجيدة: سريعة (200ms)، دقيقة، متسقة',
+              'مثال: قلب تويتر الذي يتحرك'
+            ],
+            en: [
+              'Micro-interaction = small interactive moment (50-300ms)',
+              '4 parts: Trigger (what starts it), Rule (how it works), Feedback (what user sees), Loop (repetition)',
+              'Examples: Button animating on click, Carousel sliding, Like exploding',
+              'Why: makes the experience human, memorable, enjoyable',
+              'Without micro-interactions: robotic experience',
+              'Tools: Figma (Smart Animate), Protopie, Principle',
+              'Best practices: fast (200ms), subtle, consistent',
+              'Example: Twitter\'s heart animation'
+            ]
+          },
+          method: {
+            fr: 'Analysez 10 applications populaires. Identifiez 3 micro-interactions dans chacune. Notez ce qui fonctionne et ce qui pourrait être amélioré. Catégorisez les types.',
+            ar: 'حلل 10 تطبيقات شهيرة. حدد 3 تفاعلات دقيقة في كل منها. سجل ما يعمل وما يمكن تحسينه. صنف الأنواع.',
+            en: 'Analyze 10 popular apps. Identify 3 micro-interactions in each. Note what works and what could be improved. Categorize the types.'
+          },
+          exercise: {
+            fr: 'Créez 5 micro-interactions dans Figma: 1) Bouton qui bounce au hover, 2) Loader qui tourne, 3) Like qui pulse, 4) Menu qui slide, 5) Input qui s\'anime au focus.',
+            ar: 'أنشئ 5 تفاعلات دقيقة في Figma: 1) زر يرتد عند التمرير، 2) مؤشر تحميل يدور، 3) إعجاب ينبض، 4) قائمة تنزلق، 5) حقل إدخال يتحرك عند التركيز.',
+            en: 'Create 5 micro-interactions in Figma: 1) Button bounces on hover, 2) Spinning loader, 3) Pulsing like, 4) Sliding menu, 5) Input animating on focus.'
+          },
+          tip: {
+            fr: '💡 Les micro-interactions sont le secret des produits qu\'on aime. Pas besoin d\'animations complexes. 200ms de mouvement peut transformer l\'expérience entière.',
+            ar: '💡 التفاعلات الدقيقة هي سر المنتجات التي نحبها. لا حاجة لرسوم متحركة معقدة. 200ms من الحركة يمكن أن تحول التجربة بأكملها.',
+            en: '💡 Micro-interactions are the secret to lovable products. No complex animations needed. 200ms of motion can transform the entire experience.'
+          }
+        },
+        // Lesson 6: Accessibility
+        {
+          id: 'uiux-a-6',
+          title: {
+            fr: 'Accessibilité - Design pour Tous',
+            ar: 'إمكانية الوصول - تصميم للجميع',
+            en: 'Accessibility - Design for All'
+          },
+          image: 'https://images.unsplash.com/photo-1577962917302-cd874c4e96d2?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Accessibilité = concevoir pour tous, y compris les personnes handicapées',
+              'Contenu: WCAG (Web Content Accessibility Guidelines)',
+              'Niveaux: A (minimum), AA (recommandé), AAA (excellent)',
+              'Contraste: ratio 4.5:1 pour le texte, 3:1 pour les grands textes',
+              'Taille: texte minimum 16px, espacement suffisant',
+              'Navigation: au clavier, pas seulement à la souris',
+              'Screen readers: compatibilité avec les lecteurs d\'écran',
+              'Exemple: Apple et Microsoft excellent en accessibilité'
+            ],
+            ar: [
+              'إمكانية الوصول = تصميم للجميع، بما في ذلك الأشخاص ذوي الإعاقة',
+              'المحتوى: WCAG (إرشادات إمكانية الوصول لمحتوى الويب)',
+              'المستويات: A (الحد الأدنى)، AA (موصى به)، AAA (ممتاز)',
+              'التباين: نسبة 4.5:1 للنص، 3:1 للنصوص الكبيرة',
+              'الحجم: نص بحد أدنى 16px، تباعد كافٍ',
+              'التنقل: عبر لوحة المفاتيح، وليس فقط بالماوس',
+              'قارئات الشاشة: التوافق مع قارئات الشاشة',
+              'مثال: Apple وMicrosoft تتفوقان في إمكانية الوصول'
+            ],
+            en: [
+              'Accessibility = designing for all, including people with disabilities',
+              'Content: WCAG (Web Content Accessibility Guidelines)',
+              'Levels: A (minimum), AA (recommended), AAA (excellent)',
+              'Contrast: 4.5:1 ratio for text, 3:1 for large text',
+              'Size: minimum 16px text, sufficient spacing',
+              'Navigation: by keyboard, not just mouse',
+              'Screen readers: compatibility with screen readers',
+              'Example: Apple and Microsoft excel in accessibility'
+            ]
+          },
+          method: {
+            fr: 'Testez votre design avec un lecteur d\'écran (NVDA sur PC, VoiceOver sur Mac). Essayez de naviguer uniquement au clavier. Notez les problèmes rencontrés.',
+            ar: 'اختبر تصميمك مع قارئ شاشة (NVDA على PC، VoiceOver على Mac). حاول التنقل باستخدام لوحة المفاتيح فقط. سجل المشاكل التي واجهتها.',
+            en: 'Test your design with a screen reader (NVDA on PC, VoiceOver on Mac). Try navigating with keyboard only. Note the problems encountered.'
+          },
+          exercise: {
+            fr: 'Auditez un site web populaire pour l\'accessibilité. Utilisez un outil comme WAVE ou Lighthouse. Notez 10 problèmes et proposez 10 solutions.',
+            ar: 'دقق في موقع ويب شهير من حيث إمكانية الوصول. استخدم أداة مثل WAVE أو Lighthouse. سجل 10 مشاكل واقترح 10 حلول.',
+            en: 'Audit a popular website for accessibility. Use a tool like WAVE or Lighthouse. Note 10 problems and propose 10 solutions.'
+          },
+          tip: {
+            fr: '💡 L\'accessibilité n\'est pas une option, c\'est une obligation légale et morale. 15% de la population a un handicap. Ignorer l\'accessibilité, c\'est ignorer 15% de vos utilisateurs.',
+            ar: '💡 إمكانية الوصول ليست اختياراً، بل التزام قانوني وأخلاقي. 15% من السكان لديهم إعاقة. تجاهل إمكانية الوصول هو تجاهل 15% من مستخدميك.',
+            en: '💡 Accessibility isn\'t optional, it\'s a legal and moral obligation. 15% of the population has a disability. Ignoring accessibility is ignoring 15% of your users.'
+          }
+        },
+        // Lesson 7: Usability Testing
+        {
+          id: 'uiux-a-7',
+          title: {
+            fr: 'Tests d\'Utilisabilité',
+            ar: 'اختبارات سهولة الاستخدام',
+            en: 'Usability Testing'
+          },
+          image: 'https://images.unsplash.com/photo-1577962917302-cd874c4e96d2?w=800&q=80',
+          layout: 'left',
+          steps: {
+            fr: [
+              'Usability Testing = observer des utilisateurs interagir avec votre design',
+              'Types: Modéré (en personne), Non modéré (automatisé), À distance (en ligne)',
+              'Protocole: 5-8 participants, 5-10 tâches, 60-90 minutes',
+              'Tâches: spécifiques, réalisables, non guidées',
+              'Métriques: taux de succès, temps, erreurs, satisfaction',
+              'Outils: Lookback, UserTesting, Maze, Optimal Workshop',
+              'Analyse: identifiez les patterns, priorisez les problèmes',
+              'Itérez: testez, modifiez, retestez'
+            ],
+            ar: [
+              'اختبار سهولة الاستخدام = مراقبة المستخدمين أثناء تفاعلهم مع تصميمك',
+              'الأنواع: معتدل (شخصياً)، غير معتدل (آلي)، عن بُعد (أونلاين)',
+              'البروتوكول: 5-8 مشاركين، 5-10 مهام، 60-90 دقيقة',
+              'المهام: محددة، قابلة للتحقيق، غير موجهة',
+              'المقاييس: معدل النجاح، الوقت، الأخطاء، الرضا',
+              'الأدوات: Lookback، UserTesting، Maze، Optimal Workshop',
+              'التحليل: تحديد الأنماط، تحديد أولويات المشاكل',
+              'كرر: اختبر، عدّل، اختبر مرة أخرى'
+            ],
+            en: [
+              'Usability Testing = observing users interact with your design',
+              'Types: Moderated (in-person), Unmoderated (automated), Remote (online)',
+              'Protocol: 5-8 participants, 5-10 tasks, 60-90 minutes',
+              'Tasks: specific, achievable, unguided',
+              'Metrics: success rate, time, errors, satisfaction',
+              'Tools: Lookback, UserTesting, Maze, Optimal Workshop',
+              'Analysis: identify patterns, prioritize problems',
+              'Iterate: test, modify, test again'
+            ]
+          },
+          method: {
+            fr: 'Préparez un test utilisabilité pour votre prototype. Créez 5 tâches, trouvez 5 participants, faites le test, analysez les résultats. Rapport de 2 pages.',
+            ar: 'جهز اختبار سهولة استخدام لنموذجك الأولي. أنشئ 5 مهام، ابحث عن 5 مشاركين، أجرِ الاختبار، حلل النتائج. تقرير من صفحتين.',
+            en: 'Prepare a usability test for your prototype. Create 5 tasks, find 5 participants, run the test, analyze results. 2-page report.'
+          },
+          exercise: {
+            fr: 'Conduisez un test utilisabilité complet. Incluez: 1) Plan de test, 2) Script, 3) 5 participants, 4) Résultats, 5) 5 recommandations d\'amélioration.',
+            ar: 'أجرِ اختبار سهولة استخدام كامل. يشمل: 1) خطة اختبار، 2) نص، 3) 5 مشاركين، 4) نتائج، 5) 5 توصيات للتحسين.',
+            en: 'Conduct a complete usability test. Include: 1) Test plan, 2) Script, 3) 5 participants, 4) Results, 5) 5 improvement recommendations.'
+          },
+          tip: {
+            fr: '💡 5 utilisateurs suffisent pour trouver 80% des problèmes d\'utilisabilité. Testez tôt, testez souvent. Un test par semaine pendant le projet.',
+            ar: '💡 5 مستخدمين كافٍ للعثور على 80% من مشاكل سهولة الاستخدام. اختبر مبكراً، اختبر كثيراً. اختبار واحد أسبوعياً أثناء المشروع.',
+            en: '💡 5 users are enough to find 80% of usability problems. Test early, test often. One test per week during the project.'
+          }
+        },
+        // Lesson 8: Developer Handoff
+        {
+          id: 'uiux-a-8',
+          title: {
+            fr: 'Handoff aux Développeurs',
+            ar: 'التسليم للمطورين',
+            en: 'Developer Handoff'
+          },
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: [
+              'Handoff = livraison du design aux développeurs',
+              'Figma: Inspect mode pour voir les détails (couleurs, tailles, espacements)',
+              'Exporter: assets (icônes, images) en PNG, SVG, PDF',
+              'Design Tokens: couleurs, typographie, espacement en variables',
+              'Redlines: annotations avec mesures et spécifications',
+              'Style Guide: document de référence pour tout le projet',
+              'Réunions: workshops avec l\'équipe de développement',
+              'Objectif: design implémenté à 100% comme prévu'
+            ],
+            ar: [
+              'التسليم للمطورين = تسليم التصميم للمطورين',
+              'Figma: وضع التدقيق لرؤية التفاصيل (الألوان، الأحجام، التباعد)',
+              'التصدير: أصول (أيقونات، صور) بتنسيق PNG، SVG، PDF',
+              'رموز التصميم: الألوان، الطباعة، التباعد كمتغيرات',
+              'الخطوط الحمراء: تعليقات توضيحية مع قياسات ومواصفات',
+              'دليل الأنماط: وثيقة مرجعية للمشروع بأكمله',
+              'الاجتماعات: ورش عمل مع فريق التطوير',
+              'الهدف: تنفيذ التصميم بنسبة 100% كما هو مخطط'
+            ],
+            en: [
+              'Handoff = delivering design to developers',
+              'Figma: Inspect mode to see details (colors, sizes, spacing)',
+              'Export: assets (icons, images) as PNG, SVG, PDF',
+              'Design Tokens: colors, typography, spacing as variables',
+              'Redlines: annotations with measurements and specs',
+              'Style Guide: reference document for the entire project',
+              'Meetings: workshops with the development team',
+              'Goal: design implemented 100% as intended'
+            ]
+          },
+          method: {
+            fr: 'Préparez un package de handoff complet pour votre projet. Incluez: 1) Figma file partagé, 2) Assets exportés, 3) Design tokens, 4) Style guide, 5) Documentation.',
+            ar: 'جهز حزمة تسليم كاملة لمشروعك. تشمل: 1) ملف Figma مشترك، 2) أصول مصدرة، 3) رموز تصميم، 4) دليل أنماط، 5) توثيق.',
+            en: 'Prepare a complete handoff package for your project. Include: 1) Shared Figma file, 2) Exported assets, 3) Design tokens, 4) Style guide, 5) Documentation.'
+          },
+          exercise: {
+            fr: 'Créez un handoff complet pour un projet de votre choix. Rendez chaque détail inspectable. Ajoutez des commentaires pour les parties complexes. Exportez les assets nécessaires.',
+            ar: 'أنشئ تسليماً كاملاً لمشروع من اختيارك. اجعل كل تفصيل قابلاً للتدقيق. أضف تعليقات للأجزاء المعقدة. صدّر الأصول اللازمة.',
+            en: 'Create a complete handoff for a project of your choice. Make every detail inspectable. Add comments for complex parts. Export necessary assets.'
+          },
+          tip: {
+            fr: '💡 Un bon handoff est la différence entre un design bien implémenté et un design massacré. Passez 20% de votre temps sur le handoff. Les développeurs vous adoreront.',
+            ar: '💡 التسليم الجيد هو الفرق بين تصميم منفذ جيداً وتصميم مشوّه. اقضِ 20% من وقتك على التسليم. سيعشقك المطورون.',
+            en: '💡 A good handoff is the difference between a well-implemented design and a butchered one. Spend 20% of your time on handoff. Developers will love you.'
+          }
+        }
+      ]
+    }
+  ]
+}
