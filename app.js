@@ -1,4 +1,7 @@
-// ===== APPLICATION LOGIC =====
+// ============================================================
+// APP.JS - LOGIQUE COMPLÈTE
+// ============================================================
+
 var lang = localStorage.getItem('lang') || 'fr';
 var hasAccess = localStorage.getItem('hasAccess') === 'true';
 var skillId = null, levelIdx = 0, lessonIdx = null, openStep = null;
@@ -9,6 +12,13 @@ function showView(id) {
   });
   document.getElementById(id).style.display = 'flex';
   window.scrollTo(0, 0);
+}
+
+function goHome() {
+  skillId = null;
+  levelIdx = 0;
+  lessonIdx = null;
+  renderAcademy();
 }
 
 function setLang(l) {
