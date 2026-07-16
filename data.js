@@ -241,34 +241,6 @@ var SKILLS = [
             method: { fr: 'Explorez Canva pendant 20 minutes.', ar: 'استكشف Canva لمدة 20 دقيقة.', en: 'Explore Canva for 20 minutes.' },
             exercise: { fr: 'Créez un post Instagram avec votre nom.', ar: 'أنشئ منشور Instagram باسمك.', en: 'Create an Instagram post with your name.' },
             tip: { fr: '💡 Canva Gratuit donne 250k+ templates.', ar: '💡 Canva المجاني يعطيك 250k+ قالب.', en: '💡 Canva Free gives 250k+ templates.' }
-          },
-          {
-            id: 'd-b-2',
-            title: { fr: 'Les 4 Règles du Design CARP', ar: '4 قواعد التصميم CARP', en: 'The 4 Design Rules CARP' },
-            image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
-            layout: 'right',
-            steps: {
-              fr: ['CONTRASTE: Rendez la chose la plus importante différente.','ALIGNEMENT: Rien placé au hasard.','RÉPÉTITION: Même style pour éléments similaires.','PROXIMITÉ: Groupez ce qui va ensemble.'],
-              ar: ['التباين: خلّي الحاجة المهمة مختلفة.','المحاذاة: ما كاين والو موضوع بالعشوائية.','التكرار: نفس الستايل للعناصر المتشابهة.','القرب: جمّع الأشياء اللي تمشي مع بعض.'],
-              en: ['CONTRAST: Make important things different.','ALIGNMENT: Nothing placed randomly.','REPETITION: Same style for similar elements.','PROXIMITY: Group things that belong together.']
-            },
-            method: { fr: 'Brisez les 4 règles puis recréez correctement.', ar: 'اكسر الـ4 قواعد ثم أعد إنشاؤه صح.', en: 'Break all 4 rules then recreate correctly.' },
-            exercise: { fr: 'Designez une carte de visite 2 fois: une mauvaise, une bonne.', ar: 'صمّم بطاقة أعمال مرتين: سيئة وجيدة.', en: 'Design a business card twice: bad and good.' },
-            tip: { fr: '💡 Les pros brisent les règles APRÈS les avoir maîtrisées.', ar: '💡 المحترفون يكسرون القواعد بعد ما يتقنوها.', en: '💡 Professionals break rules AFTER mastering them.' }
-          },
-          {
-            id: 'd-b-3',
-            title: { fr: 'Théorie des Couleurs', ar: 'نظرية الألوان', en: 'Color Theory' },
-            image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?w=800&q=80',
-            layout: 'left',
-            steps: {
-              fr: ['coolors.co — génère des palettes harmonieuses.','Émotions: Rouge=urgence, Bleu=confiance, Vert=nature, Jaune=bonheur, Noir=luxe.','Règle 60-30-10: Principal 60%, Secondaire 30%, Accent 10%.','Extraire couleurs photo: Canva → image → pipette.','Maximum 3 couleurs par design.'],
-              ar: ['coolors.co — يولّد باليتات منسجمة.','المشاعر: أحمر=إلحاح، أزرق=ثقة، أخضر=طبيعة، أصفر=سعادة، أسود=فخامة.','قاعدة 60-30-10: رئيسي 60%، ثانوي 30%، بارز 10%.','استخراج ألوان: Canva → صورة → قطّارة.','أقصاه 3 ألوان في تصميم.'],
-              en: ['coolors.co — generates harmonious palettes.','Emotions: Red=urgency, Blue=trust, Green=nature, Yellow=happiness, Black=luxury.','60-30-10 rule: Main 60%, Secondary 30%, Accent 10%.','Extract colors: Canva → image → eyedropper.','Maximum 3 colors per design.']
-            },
-            method: { fr: 'Analysez les couleurs de 5 marques algériennes.', ar: 'حلل ألوان 5 علامات جزائرية.', en: 'Analyze the colors of 5 Algerian brands.' },
-            exercise: { fr: 'Générez 5 palettes sur coolors.co.', ar: 'ولّد 5 باليتات على coolors.co.', en: 'Generate 5 palettes on coolors.co.' },
-            tip: { fr: '💡 En cas de doute: texte noir sur blanc + UNE couleur accent.', ar: '💡 في حالة الشك: نص أسود على أبيض + لون accent واحد.', en: '💡 When in doubt: black text on white + ONE accent color.' }
           }
         ]
       },
