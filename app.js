@@ -1,7 +1,3 @@
-// ============================================================
-// APP.JS - LOGIQUE COMPLÈTE AVEC BACKGROUND IMAGES
-// ============================================================
-
 var lang = localStorage.getItem('lang') || 'fr';
 var hasAccess = localStorage.getItem('hasAccess') === 'true';
 var skillId = null, levelIdx = 0, lessonIdx = null, openStep = null;
@@ -15,9 +11,7 @@ function showView(id) {
 }
 
 function goHome() {
-  skillId = null;
-  levelIdx = 0;
-  lessonIdx = null;
+  skillId = null; levelIdx = 0; lessonIdx = null;
   renderAcademy();
 }
 
@@ -94,9 +88,6 @@ function renderLanding() {
   showView('landing');
 }
 
-// ============================================================
-// RENDER ACADEMY - AVEC BACKGROUND IMAGES
-// ============================================================
 function renderAcademy() {
   skillId = null; levelIdx = 0; lessonIdx = null;
   var t = T[lang];
@@ -208,7 +199,6 @@ function renderLesson() {
   showView('lesson-view');
 }
 
-// ===== INIT =====
 (function() {
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
