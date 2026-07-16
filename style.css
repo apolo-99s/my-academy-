@@ -1,12 +1,12 @@
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#060608;color:#E5E7EB;font-family:system-ui,-apple-system,sans-serif;min-height:100vh;background-image:radial-gradient(ellipse at 10% 20%,#1A1040 0%,transparent 50%),radial-gradient(ellipse at 90% 80%,#0C0A1A 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,#060608 0%,#000 100%)}
+body{background:#060608;color:#E5E7EB;font-family:system-ui,-apple-system,sans-serif;min-height:100vh}
 button{cursor:pointer;font-family:inherit}
 input{font-family:inherit}
 #landing,#academy,#skill-view,#lesson-view{display:none;flex-direction:column;min-height:100vh}
 .glass{background:rgba(255,255,255,0.03);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.05);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
 .glass-btn{background:rgba(99,102,241,0.15);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(99,102,241,0.2);transition:all 0.3s ease}
-.glass-btn:hover{background:rgba(99,102,241,0.3);border-color:rgba(99,102,241,0.4);transform:scale(1.02);box-shadow:0 0 30px rgba(99,102,241,0.1)}
-nav{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:rgba(6,6,8,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:sticky;top:0;z-index:100}
+.glass-btn:hover{background:rgba(99,102,241,0.3);border-color:rgba(99,102,241,0.4);transform:scale(1.02)}
+nav{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:rgba(6,6,8,0.8);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100}
 .brand{font-weight:800;font-size:16px;color:#fff;cursor:pointer;position:relative;transition:transform 0.3s ease}
 .brand span{color:#818CF8}
 .brand:hover{transform:scale(1.05)}
@@ -14,15 +14,15 @@ nav{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.05);display:fle
 .brand:hover::after{opacity:1}
 .lang-btns{display:flex;gap:6px}
 .lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.1);color:#6B7280;border-radius:8px;padding:5px 12px;font-size:13px;font-weight:400;transition:all 0.3s ease}
-.lang-btn.active{background:rgba(99,102,241,0.2);border-color:#818CF8;color:#fff;font-weight:700;box-shadow:0 0 20px rgba(99,102,241,0.1)}
-.hero{padding:52px 20px 44px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(6,6,8,0.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.lang-btn.active{background:rgba(99,102,241,0.2);border-color:#818CF8;color:#fff;font-weight:700}
+.hero{padding:52px 20px 44px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05)}
 .hero-badge{display:inline-block;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2);border-radius:6px;padding:5px 14px;margin-bottom:18px;font-size:11px;color:#818CF8;letter-spacing:3px;text-transform:uppercase}
 .hero h1{font-size:clamp(26px,6vw,52px);font-weight:900;margin:0 0 14px;background:linear-gradient(135deg,#fff 30%,#818CF8,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:pre-line}
 .hero p{color:#6B7280;font-size:16px;max-width:520px;margin:0 auto 32px;line-height:1.65}
 .features{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;font-size:13px;color:#4B5563}
 .feature-tag{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:6px 14px}
 .skill-cards{max-width:860px;margin:44px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.skill-card{position:relative;overflow:hidden;background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.05);box-shadow:0 4px 24px rgba(0,0,0,0.2);border-radius:16px;padding:26px;cursor:pointer;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
+.skill-card{position:relative;overflow:hidden;background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.05);box-shadow:0 4px 24px rgba(0,0,0,0.2);border-radius:16px;padding:26px;cursor:pointer;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
 .skill-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:var(--bg-image);background-size:cover;background-position:center;opacity:0.12;transition:opacity 0.5s ease;z-index:0}
 .skill-card:hover::before{opacity:0.25;transform:scale(1.05)}
 .skill-card::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.7) 100%);z-index:0;border-radius:16px}
@@ -36,7 +36,7 @@ nav{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.05);display:fle
 .skill-stat{display:flex;justify-content:space-between;font-size:12px}
 .stat-label{color:#4B5563}
 .skill-cta{border-radius:8px;padding:10px;text-align:center;font-weight:700;font-size:14px;color:#fff;border:none;width:100%;background:rgba(99,102,241,0.2);backdrop-filter:blur(10px);border:1px solid rgba(99,102,241,0.2);transition:all 0.3s ease}
-.skill-cta:hover{background:rgba(99,102,241,0.4);transform:scale(1.02);box-shadow:0 0 30px rgba(99,102,241,0.1)}
+.skill-cta:hover{background:rgba(99,102,241,0.4);transform:scale(1.02)}
 .access-section{max-width:560px;margin:0 auto;padding:0 20px 48px}
 .includes-box{border-radius:14px;padding:22px 24px;margin-bottom:28px;background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.05)}
 .includes-title{font-size:11px;color:#6B7280;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;font-weight:600}
@@ -47,11 +47,11 @@ nav{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.05);display:fle
 .access-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
 .access-sub{font-size:13px;color:#4B5563;margin-bottom:18px}
 .access-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:13px 16px;color:#fff;font-size:15px;margin-bottom:10px;outline:none;letter-spacing:2px;text-transform:uppercase;transition:all 0.3s ease}
-.access-input:focus{border-color:#818CF8;box-shadow:0 0 30px rgba(99,102,241,0.1)}
+.access-input:focus{border-color:#818CF8}
 .access-input.err{border-color:#DC2626}
 .error-msg{color:#F87171;font-size:13px;margin-bottom:10px;display:none}
 .access-btn{width:100%;border:none;border-radius:10px;padding:14px;color:#fff;font-size:15px;font-weight:700;background:rgba(99,102,241,0.2);backdrop-filter:blur(10px);border:1px solid rgba(99,102,241,0.2);transition:all 0.3s ease}
-.access-btn:hover{background:rgba(99,102,241,0.4);transform:scale(1.02);box-shadow:0 0 30px rgba(99,102,241,0.1)}
+.access-btn:hover{background:rgba(99,102,241,0.4);transform:scale(1.02)}
 .access-btn:disabled{opacity:0.5;cursor:default}
 .divider{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.05)}
 .not-bought{font-size:12px;color:#374151;text-align:center;margin-bottom:8px}
