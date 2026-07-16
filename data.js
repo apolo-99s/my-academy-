@@ -1,5 +1,7 @@
+// ===== CODES =====
 var CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
 
+// ===== LEVEL STYLES =====
 var LS = {
   Beginner: { bg: '#052E16', border: '#16A34A', text: '#4ADE80', badge: '🌱' },
   Intermediate: { bg: '#1E3A5F', border: '#2563EB', text: '#60A5FA', badge: '⚡' },
@@ -7,65 +9,66 @@ var LS = {
   Master: { bg: '#431407', border: '#EA580C', text: '#FB923C', badge: '👑' }
 };
 
+// ===== TRADUCTIONS =====
 var T = {
   fr: {
-    badge: 'Formation Complète — 10 Skills',
+    badge: 'Formation Complète — 7 Skills',
     title: 'Maîtrisez les Compétences\nDigitales qui Paient en Algérie',
-    subtitle: '10 formations complètes. Graphisme, Social Media, Vidéo, Web, SEO, Data, Copywriting, UI/UX, Automation, Vibe Coding.',
+    subtitle: '7 formations complètes. Graphisme, Social Media, Vidéo, Web, SEO, Data, Copywriting.',
     f1: '✓ Méthodes étape par étape', f2: '✓ Exercices réels', f3: '✓ Outils gratuits', f4: '✓ Tarifs marché algérien',
     includesTitle: 'Ce que vous obtenez',
-    includes: ['10 formations complètes — Beginner → Master','Chaque leçon: méthode exacte étape par étape','Exercices pratiques avec livrables concrets','Outils gratuits','Prix du marché algérien en DZD','Scripts de communication client','Accès à vie — mises à jour incluses'],
+    includes: ['7 formations complètes — Beginner → Master','Chaque leçon: méthode exacte étape par étape','Exercices pratiques avec livrables concrets','Outils gratuits','Prix du marché algérien en DZD','Scripts de communication client','Accès à vie — mises à jour incluses'],
     already: 'Vous avez déjà acheté?', enter: 'Entrez votre code d\'accès pour commencer.', code: 'VOTRE CODE D\'ACCÈS...',
     access: 'Accéder à la Formation →', loading: 'Vérification...', notBought: 'Pas encore acheté?', whatsapp: '💬 Commander via WhatsApp',
     errEmpty: 'Entrez votre code d\'accès.', errInvalid: 'Code invalide. Vérifiez votre achat.', errUsed: 'Ce code a déjà été utilisé.',
-    stats: [{ n: '50+', l: 'Leçons détaillées' }, { n: '4', l: 'Niveaux par skill' }, { n: '0 DZD', l: 'Pour commencer' }],
+    stats: [{ n: '35+', l: 'Leçons détaillées' }, { n: '4', l: 'Niveaux par skill' }, { n: '0 DZD', l: 'Pour commencer' }],
     footer: 'DigitalSkills.dz — Formation Professionnelle Algérie 🇩🇿',
     aBadge: '🇩🇿 Digital Skills Academy — Algérie', aTitle: 'Apprenez. Pratiquez.\nSoyez Payé.',
-    aSubtitle: '10 skills, du débutant au maître. Chaque leçon vous dit exactement comment faire.',
+    aSubtitle: '7 skills, du débutant au maître. Chaque leçon vous dit exactement comment faire.',
     aFeatures: ['Méthodes étape par étape','Exercices réels','Outils gratuits','Tarifs marché algérien'],
-    aRec: '💡 Ordre recommandé: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting → UI/UX → Automation → Vibe Coding',
+    aRec: '💡 Ordre recommandé: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting',
     startLearning: 'Commencer →', firstClient: 'Premier client', earning: 'Revenus', startWith: 'Commencer avec',
     backSkills: '← Skills', goal: 'Objectif', lessons: 'leçons', back: '← Retour', lesson: 'Leçon', of: 'sur',
     howTo: 'Comment Faire — Étape par Étape', bestWay: 'La Meilleure Façon d\'Apprendre', exercise: 'Votre Exercice Pratique',
     prevLesson: '← Leçon Précédente', nextLesson: 'Leçon Suivante →', nextLevel: 'Niveau Suivant', complete: '👑 Formation Terminée!'
   },
   ar: {
-    badge: 'تكوين كامل — 10 مهارات',
+    badge: 'تكوين كامل — 7 مهارات',
     title: 'تعلم المهارات الرقمية\nاللي تدر فلوس في الجزائر',
-    subtitle: '10 تكوينات كاملة. تصميم، سوشيال ميديا، مونتاج، ويب، SEO، بيانات، كتابة، UI/UX، أتمتة، برمجة بالذكاء الاصطناعي.',
+    subtitle: '7 تكوينات كاملة. تصميم، سوشيال ميديا، مونتاج، ويب، SEO، بيانات، كتابة.',
     f1: '✓ خطوات واضحة وعملية', f2: '✓ تمارين حقيقية', f3: '✓ أدوات مجانية', f4: '✓ أسعار السوق الجزائري',
     includesTitle: 'شنو راه فيه',
-    includes: ['10 تكوينات كاملة — مبتدئ → محترف','كل درس: الطريقة الصحيحة خطوة بخطوة','تمارين عملية مع نتائج حقيقية','أدوات مجانية','أسعار السوق الجزائري بالدينار','نصوص التواصل مع الزبائن','وصول مدى الحياة — التحديثات مشمولة'],
+    includes: ['7 تكوينات كاملة — مبتدئ → محترف','كل درس: الطريقة الصحيحة خطوة بخطوة','تمارين عملية مع نتائج حقيقية','أدوات مجانية','أسعار السوق الجزائري بالدينار','نصوص التواصل مع الزبائن','وصول مدى الحياة — التحديثات مشمولة'],
     already: 'راك شريت من قبل؟', enter: 'دخل رمز الدخول ديالك باش تبدا.', code: 'رمز الدخول...',
     access: 'ادخل للتكوين →', loading: 'كاين التحقق...', notBought: 'مازلتش شريت؟', whatsapp: '💬 اطلب عبر واتساب',
     errEmpty: 'دخل رمز الدخول.', errInvalid: 'الرمز غلط. راجع الشراء.', errUsed: 'هذا الرمز تستخدم من قبل.',
-    stats: [{ n: '+50', l: 'درس مفصل' }, { n: '4', l: 'مستويات لكل مهارة' }, { n: '0 دج', l: 'باش تبدا' }],
+    stats: [{ n: '+35', l: 'درس مفصل' }, { n: '4', l: 'مستويات لكل مهارة' }, { n: '0 دج', l: 'باش تبدا' }],
     footer: 'DigitalSkills.dz — تكوين محترف الجزائر 🇩🇿',
     aBadge: '🇩🇿 أكاديمية المهارات الرقمية — الجزائر', aTitle: 'تعلم. تمرن.\nتربح.',
-    aSubtitle: '10 مهارات، من الصفر للاحتراف. كل درس يقولك بالضبط كيفاش تدير.',
+    aSubtitle: '7 مهارات، من الصفر للاحتراف. كل درس يقولك بالضبط كيفاش تدير.',
     aFeatures: ['خطوات واضحة وعملية','تمارين حقيقية','أدوات مجانية','أسعار السوق الجزائري'],
-    aRec: '💡 الترتيب المنصوح: سوشيال ميديا → تصميم → مونتاج → ويب → SEO → بيانات → كتابة → UI/UX → أتمتة → برمجة بالذكاء الاصطناعي',
+    aRec: '💡 الترتيب المنصوح: سوشيال ميديا → تصميم → مونتاج → ويب → SEO → بيانات → كتابة',
     startLearning: 'ابدا التعلم →', firstClient: 'أول زبون', earning: 'الأرباح', startWith: 'ابدا بـ',
     backSkills: 'المهارات →', goal: 'الهدف', lessons: 'دروس', back: 'رجع →', lesson: 'الدرس', of: 'من',
     howTo: 'كيفاش تدير — خطوة بخطوة', bestWay: 'أحسن طريقة باش تتعلم', exercise: 'تمرينك العملي',
     prevLesson: 'الدرس السابق →', nextLesson: '← الدرس الموالي', nextLevel: 'المستوى الموالي', complete: '👑 كملت التكوين!'
   },
   en: {
-    badge: 'Complete Course — 10 Skills',
+    badge: 'Complete Course — 7 Skills',
     title: 'Master Digital Skills That\nGenerate Income in Algeria',
-    subtitle: '10 complete courses. Design, Social Media, Video, Web, SEO, Data, Copywriting, UI/UX, Automation, Vibe Coding.',
+    subtitle: '7 complete courses. Design, Social Media, Video, Web, SEO, Data, Copywriting.',
     f1: '✓ Step-by-step methods', f2: '✓ Real exercises', f3: '✓ Free tools only', f4: '✓ Algerian market rates',
     includesTitle: 'What you get',
-    includes: ['10 complete courses — Beginner → Master','Every lesson: exact step-by-step method','Practical exercises with real deliverables','Free tools','Algerian market rates in DZD','Client communication scripts','Lifetime access — updates included'],
+    includes: ['7 complete courses — Beginner → Master','Every lesson: exact step-by-step method','Practical exercises with real deliverables','Free tools','Algerian market rates in DZD','Client communication scripts','Lifetime access — updates included'],
     already: 'Already purchased?', enter: 'Enter your access code to get started.', code: 'YOUR ACCESS CODE...',
     access: 'Access the Course →', loading: 'Verifying...', notBought: 'Haven\'t bought yet?', whatsapp: '💬 Order via WhatsApp',
     errEmpty: 'Please enter your access code.', errInvalid: 'Invalid code. Check your purchase.', errUsed: 'This code has already been used.',
-    stats: [{ n: '50+', l: 'Detailed lessons' }, { n: '4', l: 'Levels per skill' }, { n: '0 DZD', l: 'To get started' }],
+    stats: [{ n: '35+', l: 'Detailed lessons' }, { n: '4', l: 'Levels per skill' }, { n: '0 DZD', l: 'To get started' }],
     footer: 'DigitalSkills.dz — Professional Training Algeria 🇩🇿',
     aBadge: '🇩🇿 Digital Skills Academy — Algeria', aTitle: 'Learn It. Practice It.\nGet Paid.',
-    aSubtitle: '10 skills, beginner to master. Every lesson tells you exactly how to do it.',
+    aSubtitle: '7 skills, beginner to master. Every lesson tells you exactly how to do it.',
     aFeatures: ['Step-by-step methods','Real exercises','Free tools only','Algerian market rates'],
-    aRec: '💡 Recommended: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting → UI/UX → Automation → Vibe Coding',
+    aRec: '💡 Recommended: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting',
     startLearning: 'Start Learning →', firstClient: 'First client', earning: 'Earning range', startWith: 'Start with',
     backSkills: '← Skills', goal: 'Goal', lessons: 'lessons', back: '← Back', lesson: 'Lesson', of: 'of',
     howTo: 'How To Do It — Step by Step', bestWay: 'The Best Way to Learn This', exercise: 'Your Practice Exercise',
@@ -73,8 +76,9 @@ var T = {
   }
 };
 
-// ===== SKILLS =====
+// ===== SKILLS (7 SKILLS avec bgImage) =====
 var SKILLS = [
+  // SKILL 1: GRAPHIC DESIGN
   {
     id: 'design',
     icon: '🎨',
@@ -113,7 +117,7 @@ var SKILLS = [
       }
     ]
   },
-  // ===== SKILL 2-10: (similaire avec bgImage) =====
+  // SKILL 2: SOCIAL MEDIA MANAGEMENT
   {
     id: 'smm',
     icon: '📱',
@@ -152,6 +156,7 @@ var SKILLS = [
       }
     ]
   },
+  // SKILL 3: VIDEO EDITING
   {
     id: 'video',
     icon: '🎬',
@@ -190,6 +195,7 @@ var SKILLS = [
       }
     ]
   },
+  // SKILL 4: WEB DEVELOPMENT
   {
     id: 'webdev',
     icon: '💻',
@@ -228,6 +234,7 @@ var SKILLS = [
       }
     ]
   },
+  // SKILL 5: SEO
   {
     id: 'seo',
     icon: '📈',
@@ -266,6 +273,7 @@ var SKILLS = [
       }
     ]
   },
+  // SKILL 6: DATA ANALYSIS
   {
     id: 'data',
     icon: '📊',
@@ -304,6 +312,7 @@ var SKILLS = [
       }
     ]
   },
+  // SKILL 7: COPYWRITING
   {
     id: 'copy',
     icon: '✍️',
@@ -337,120 +346,6 @@ var SKILLS = [
             method: { fr: 'Analysez 10 publicités.', ar: 'حلّل 10 إعلانات.', en: 'Analyze 10 ads.' },
             exercise: { fr: 'Écrivez un titre accrocheur.', ar: 'اكتب عنواناً جذاباً.', en: 'Write a catchy headline.' },
             tip: { fr: '💡 Utilisez des chiffres: "5 secrets"', ar: '💡 استخدم الأرقام: "5 أسرار"', en: '💡 Use numbers: "5 secrets"' }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'uiux',
-    icon: '🎨',
-    color: '#6366F1',
-    accent: '#818CF8',
-    bg: 'linear-gradient(135deg, #0C0A1A 0%, #1A1040 50%, #0C0A1A 100%)',
-    bgImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80',
-    earning: '20,000 – 100,000 DZD/month',
-    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
-    startTool: 'Figma + Spline (3D) + Pen & Paper',
-    title: { fr: 'UI/UX Design 3D', ar: 'تصميم واجهات 3D', en: '3D UI/UX Design' },
-    subtitle: { fr: 'User Interface & 3D Experience', ar: 'واجهات وتجارب 3D', en: 'User Interface & 3D Experience' },
-    tagline: { fr: 'Créez des expériences numériques immersives en 3D', ar: 'أنشئ تجارب رقمية غامرة بتقنية 3D', en: 'Create immersive 3D digital experiences' },
-    levels: [
-      {
-        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-        badge: '🌱',
-        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-        goal: { fr: 'Maîtriser les fondamentaux du UI/UX Design', ar: 'إتقان أساسيات UI/UX', en: 'Master UI/UX fundamentals' },
-        lessons: [
-          {
-            id: 'uiux-b-1',
-            title: { fr: 'UI vs UX - Comprendre la Différence', ar: 'UI vs UX - فهم الفرق', en: 'UI vs UX - Understanding the Difference' },
-            image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
-            layout: 'top',
-            steps: {
-              fr: ['UI = Interface Utilisateur = l\'apparence du produit','UX = Expérience Utilisateur = comment l\'utilisateur se sent','UI est ce que vous voyez, UX est ce que vous ressentez','Les deux doivent travailler ensemble pour un grand produit'],
-              ar: ['UI = واجهة المستخدم = مظهر المنتج','UX = تجربة المستخدم = كيف يشعر المستخدم','UI هو ما تراه، UX هو ما تشعر به','يجب أن يعمل الاثنان معاً لمنتج رائع'],
-              en: ['UI = User Interface = the appearance of the product','UX = User Experience = how the user feels','UI is what you see, UX is what you feel','Both must work together for a great product']
-            },
-            method: { fr: 'Analysez 3 applications que vous utilisez quotidiennement.', ar: 'حلل 3 تطبيقات تستخدمها يومياً.', en: 'Analyze 3 applications you use daily.' },
-            exercise: { fr: 'Créez une comparaison visuelle: app bien conçue vs mal conçue.', ar: 'أنشئ مقارنة بصرية: تطبيق مصمم جيداً vs سيء.', en: 'Create a visual comparison: well-designed vs poorly designed app.' },
-            tip: { fr: '💡 Un bon UI/UX Designer pense d\'abord à l\'utilisateur.', ar: '💡 مصمم UI/UX الجيد يفكر أولاً في المستخدم.', en: '💡 A good UI/UX Designer thinks about the user first.' }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'n8n',
-    icon: '⚡',
-    color: '#E94E1B',
-    accent: '#FF6B35',
-    bg: 'linear-gradient(135deg, #1A0A04 0%, #3A1808 50%, #1A0A04 100%)',
-    bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
-    earning: '25,000 – 120,000 DZD/month',
-    firstClient: { fr: '3–6 semaines', ar: '3–6 أسابيع', en: '3–6 weeks' },
-    startTool: 'n8n (self-hosted or cloud) + Docker',
-    title: { fr: 'Automation avec n8n', ar: 'الأتمتة مع n8n', en: 'Automation with n8n' },
-    subtitle: { fr: 'Workflow Automation', ar: 'أتمتة سير العمل', en: 'Workflow Automation' },
-    tagline: { fr: 'Automatisez tout sans coder - connectez vos apps, économisez des heures', ar: 'أتمتة كل شيء بدون برمجة - اربط تطبيقاتك، وفر ساعات', en: 'Automate everything without coding - connect your apps, save hours' },
-    levels: [
-      {
-        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-        badge: '🌱',
-        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-        goal: { fr: 'Maîtriser les bases de n8n', ar: 'إتقان أساسيات n8n', en: 'Master n8n basics' },
-        lessons: [
-          {
-            id: 'n8n-b-1',
-            title: { fr: 'Introduction à l\'Automatisation', ar: 'مقدمة في الأتمتة', en: 'Introduction to Automation' },
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-            layout: 'top',
-            steps: {
-              fr: ['Qu\'est-ce que l\'automatisation? = faire faire par des machines','n8n = outil open-source','Alternative à Zapier/Make','Workflows = chaînes d\'actions','Nodes = actions, Triggers = déclencheurs'],
-              ar: ['ما هي الأتمتة؟ = جعل الآلات تقوم بالمهام','n8n = أداة مفتوحة المصدر','بديل لـ Zapier/Make','سير العمل = سلاسل إجراءات','العقد = إجراءات، المشغلات = مبتدئات'],
-              en: ['What is automation? = machines doing tasks','n8n = open-source tool','Alternative to Zapier/Make','Workflows = chains of actions','Nodes = actions, Triggers = starters']
-            },
-            method: { fr: 'Identifiez 5 tâches répétitives.', ar: 'حدد 5 مهام متكررة.', en: 'Identify 5 repetitive tasks.' },
-            exercise: { fr: 'Listez 10 processus à automatiser.', ar: 'اكتب 10 عمليات لأتمتتها.', en: 'List 10 processes to automate.' },
-            tip: { fr: '💡 Si vous faites une tâche plus de 3 fois, automatisez-la.', ar: '💡 إذا قمت بمهمة أكثر من 3 مرات، قم بأتمتتها.', en: '💡 If you do a task more than 3 times, automate it.' }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'vibecoding',
-    icon: '🤖',
-    color: '#8B5CF6',
-    accent: '#A78BFA',
-    bg: 'linear-gradient(135deg, #0D0618 0%, #1A0A30 50%, #0D0618 100%)',
-    bgImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80',
-    earning: '30,000 – 150,000 DZD/month',
-    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
-    startTool: 'Cursor AI + VSCode + GitHub Copilot',
-    title: { fr: 'Vibe Coding', ar: 'البرمجة بالذكاء الاصطناعي', en: 'Vibe Coding' },
-    subtitle: { fr: 'Développement IA', ar: 'التطوير بالذكاء الاصطناعي', en: 'AI Development' },
-    tagline: { fr: 'Construisez avec l\'IA sans être un développeur traditionnel', ar: 'ابنِ بالذكاء الاصطناعي دون أن تكون مبرمجاً تقليدياً', en: 'Build with AI without being a traditional developer' },
-    levels: [
-      {
-        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-        badge: '🌱',
-        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-        goal: { fr: 'Maîtriser les bases du Vibe Coding', ar: 'إتقان أساسيات البرمجة بالذكاء الاصطناعي', en: 'Master Vibe Coding basics' },
-        lessons: [
-          {
-            id: 'vc-b-1',
-            title: { fr: 'Qu\'est-ce que le Vibe Coding?', ar: 'ما هي البرمجة بالذكاء الاصطناعي؟', en: 'What is Vibe Coding?' },
-            image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
-            layout: 'top',
-            steps: {
-              fr: ['Vibe Coding = utiliser des assistants IA','L\'IA génère le code, vous guidez','Rôle: prompt engineer, architecte','Outils: Cursor, GitHub Copilot, ChatGPT'],
-              ar: ['البرمجة بالذكاء الاصطناعي = استخدام مساعدين ذكاء اصطناعي','الذكاء الاصطناعي يكتب الكود، وأنت توجه','دورك: مهندس أوامر، مهندس معماري','الأدوات: Cursor، GitHub Copilot، ChatGPT'],
-              en: ['Vibe Coding = using AI assistants','AI writes code, you guide','Role: prompt engineer, architect','Tools: Cursor, GitHub Copilot, ChatGPT']
-            },
-            method: { fr: 'Installez ChatGPT et posez une question.', ar: 'ثبّت ChatGPT واسأل سؤالاً.', en: 'Install ChatGPT and ask a question.' },
-            exercise: { fr: 'Demandez à ChatGPT d\'expliquer le Vibe Coding.', ar: 'اطلب من ChatGPT شرح البرمجة بالذكاء الاصطناعي.', en: 'Ask ChatGPT to explain Vibe Coding.' },
-            tip: { fr: '💡 Le Vibe Coding n\'est PAS une triche.', ar: '💡 البرمجة بالذكاء الاصطناعي ليست غشاً.', en: '💡 Vibe Coding is NOT cheating.' }
           }
         ]
       }
