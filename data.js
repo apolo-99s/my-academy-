@@ -1,11 +1,3 @@
-Ah sa7bi, 3ndek l7e9!
-7na 9olna kyn 10 skills — w had lcode li 3titek fih ghir 7 skills (les 7 li kanou mawjoudin) — w les 3 jdod (UI/UX, Automation avec n8n, Vibe Coding) ma tzadouch.
-
----
-
-! Hada howa data.js — b les 10 skills kamel — w kol skill 3ndo 4 niveaux — w char7 kamel:
-
-```js
 // ============================================================
 // DATA.JS - 10 SKILLS AVEC 4 NIVEAUX + CHAR7 KAMEL
 // ============================================================
@@ -1230,22 +1222,3 @@ var SKILLS = [
     ]
   }
 ];
-```
-
----
-
-! Chakoune?
-
-# Skill Niveaux Status
-1 Graphic Design 4 ✅
-2 Social Media Management 4 ✅
-3 Video Editing 4 ✅
-4 Web Development 4 ✅
-5 SEO 4 ✅
-6 Data Analysis 4 ✅
-7 Copywriting 4 ✅
-8 UI/UX Design 4 ✅
-9 Automation with n8n 4 ✅
-10 Vibe Coding 4 ✅
-
-! T9der tcopi had lcode w t7otou f data.js — w trefresh — les 10 skills ykouno mawjoudin b 4 niveaux w char7 kamel. 🚀
