@@ -1,5 +1,5 @@
 // ============================================================
-// DATA.JS - 10 SKILLS AVEC CHAR7 KAMEL
+// DATA.JS - 10 SKILLS AVEC 4 NIVEAUX + CHAR7 KAMEL
 // ============================================================
 
 var CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
@@ -78,10 +78,12 @@ var T = {
 };
 
 // ============================================================
-// SKILLS (10 SKILLS AVEC CHAR7 KAMEL)
+// SKILLS (10 SKILLS COMPLETS)
 // ============================================================
 var SKILLS = [
-  // ===== SKILL 1: GRAPHIC DESIGN =====
+  // ============================================================
+  // SKILL 1: GRAPHIC DESIGN
+  // ============================================================
   {
     id: 'design',
     icon: '🎨',
@@ -96,230 +98,86 @@ var SKILLS = [
     subtitle: { fr: 'Communication Visuelle', ar: 'التواصل البصري', en: 'Visual Communication' },
     tagline: { fr: 'Transformez vos idées en visuels qui vendent', ar: 'حوّل أفكارك لتصاميم تبيع', en: 'Turn ideas into visuals that sell' },
     levels: [
-      // ===== BEGINNER =====
+      // Beginner
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
         duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-        goal: { fr: 'Apprendre les bases de Canva et les 4 règles du design', ar: 'تعلم أساسيات Canva وقواعد التصميم الأربعة', en: 'Learn Canva basics and the 4 design rules' },
+        goal: { fr: 'Apprendre les bases de Canva', ar: 'تعلم أساسيات Canva', en: 'Learn Canva basics' },
         lessons: [
-          // Lesson 1: Installer Canva
           {
             id: 'd-b-1',
-            title: { fr: 'Installer et utiliser Canva comme un pro', ar: 'تنصيب واستخدام Canva كمحترف', en: 'Install and use Canva like a pro' },
+            title: { fr: 'Installer et utiliser Canva', ar: 'تنصيب واستخدام Canva', en: 'Install & Use Canva' },
             image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Rendez-vous sur canva.com ou téléchargez l\'application depuis Google Play ou App Store — c\'est totalement gratuit.',
-                'Cliquez sur "S\'inscrire" et créez un compte avec votre email ou directement via Google, ça prend 30 secondes.',
-                'Une fois connecté, cliquez sur "Créer un design" en haut à droite du tableau de bord.',
-                'Choisissez "Post Instagram Carré" — vous aurez un canvas vierge de 1080x1080 pixels, parfait pour commencer.',
-                'À gauche, vous avez le panneau principal: Templates (des milliers de modèles), Éléments (formes, icônes), Texte, Arrière-plan, et vos Téléchargements.',
-                'En haut, la barre d\'outils vous permet de modifier la police, la taille, la couleur et la position de vos éléments.',
-                'Utilisez Ctrl+Z pour annuler une action et Ctrl+D pour dupliquer un élément — ces raccourcis vous feront gagner un temps fou.',
-                'Pour exporter: cliquez sur "Partager" en haut à droite → "Télécharger" → choisissez PNG (pour les réseaux sociaux) ou PDF (pour l\'impression).'
-              ],
-              ar: [
-                'روح لـ canva.com أو حمّل التطبيق من Google Play أو App Store — مجاني تماماً.',
-                'اضغط على "سجّل" وأنشئ حساب بإيميلك أو عبر Google، ياخذ 30 ثانية فقط.',
-                'بعد الدخول، اضغط على "إنشاء تصميم" في أعلى يمين لوحة التحكم.',
-                'اختار "منشور Instagram مربع" — راح يكون عندك مساحة فارغة 1080x1080 بكسل، مثالية للبداية.',
-                'على اليسار عندك اللوحة الرئيسية: قوالب (آلاف النماذج)، عناصر (أشكال وأيقونات)، نص، خلفية، وملفاتك المحمّلة.',
-                'في الأعلى، شريط الأدوات يسمح لك بتغيير الخط، الحجم، اللون وموضع العناصر.',
-                'استخدم Ctrl+Z للتراجع و Ctrl+D للنسخ — هالاختصارات توفر وقتك بزاف.',
-                'للتصدير: اضغط على "مشاركة" → "تحميل" → اختار PNG (للتواصل الاجتماعي) أو PDF (للطباعة).'
-              ],
-              en: [
-                'Go to canva.com or download the app from Google Play or App Store — it\'s completely free.',
-                'Click "Sign Up" and create an account with your email or via Google, it takes 30 seconds.',
-                'Once logged in, click "Create a design" at the top right of the dashboard.',
-                'Choose "Instagram Post Square" — you\'ll have a blank 1080x1080px canvas, perfect to start.',
-                'On the left, you have the main panel: Templates (thousands of models), Elements (shapes, icons), Text, Background, and your Uploads.',
-                'At the top, the toolbar lets you change font, size, color and position of your elements.',
-                'Use Ctrl+Z to undo and Ctrl+D to duplicate — these shortcuts will save you a lot of time.',
-                'To export: click "Share" → "Download" → choose PNG (for social media) or PDF (for printing).'
-              ]
+              fr: ['Allez sur canva.com','Créez un compte gratuit','Cliquez Créer un design','Choisissez Post Instagram','Utilisez Templates et Éléments'],
+              ar: ['روح لـ canva.com','أنشئ حساب مجاني','اضغط إنشاء تصميم','اختار منشور Instagram','استخدم القوالب والعناصر'],
+              en: ['Go to canva.com','Create a free account','Click Create a design','Choose Instagram Post','Use Templates & Elements']
             },
-            method: {
-              fr: 'Ouvrez Canva maintenant et passez 20 minutes à cliquer sur chaque bouton. Ne concevez rien — explorez juste. Cette session est votre vraie leçon.',
-              ar: 'افتح Canva الآن واقضِ 20 دقيقة تضغط على كل زر. ما تصمّمش شيء — بس استكشف. هالجلسة هي درسك الحقيقي.',
-              en: 'Open Canva now and spend 20 minutes clicking every button. Do not design anything — just explore. This session is your real lesson.'
-            },
-            exercise: {
-              fr: 'Créez un post Instagram avec votre nom en grand texte gras et un fond coloré. Téléchargez-le et envoyez-le à votre formateur.',
-              ar: 'أنشئ منشور Instagram باسمك بخط كبير وعريض وخلفية ملونة. حمّله وأرسله للمدرب.',
-              en: 'Create an Instagram post with your name in big bold text and a colored background. Download it and send it to your trainer.'
-            },
-            tip: {
-              fr: '💡 Canva Gratuit vous donne accès à plus de 250 000 templates. Ne passez pas à la version Pro avant d\'avoir vos premiers clients payants.',
-              ar: '💡 Canva المجاني يعطيك أكثر من 250,000 قالب. ما تنتقلش للـ Pro قبل ما تجيك أول زبون.',
-              en: '💡 Canva Free gives you access to over 250,000 templates. Don\'t upgrade to Pro until you have your first paying clients.'
-            }
+            method: { fr: 'Explorez Canva pendant 20 minutes.', ar: 'استكشف Canva لمدة 20 دقيقة.', en: 'Explore Canva for 20 minutes.' },
+            exercise: { fr: 'Créez un post Instagram avec votre nom.', ar: 'أنشئ منشور Instagram باسمك.', en: 'Create an Instagram post with your name.' },
+            tip: { fr: '💡 Canva Gratuit donne 250k+ templates.', ar: '💡 Canva المجاني يعطيك 250k+ قالب.', en: '💡 Canva Free gives 250k+ templates.' }
           },
-          // Lesson 2: 4 règles CARP
           {
             id: 'd-b-2',
-            title: { fr: 'Les 4 Règles d\'Or du Design (CARP)', ar: 'قواعد التصميم الأربعة الذهبية (CARP)', en: 'The 4 Golden Rules of Design (CARP)' },
+            title: { fr: 'Les 4 Règles du Design CARP', ar: '4 قواعد التصميم CARP', en: 'The 4 Design Rules CARP' },
             image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
             layout: 'right',
             steps: {
-              fr: [
-                'CONTRASTE: Rendez l\'élément le plus important le plus grand, plus coloré ou plus différent du reste. Le contraste attire l\'œil et crée une hiérarchie visuelle.',
-                'ALIGNEMENT: Rien ne doit être placé au hasard. Activez les guides (Vue → Afficher les règles) pour aligner parfaitement vos éléments.',
-                'RÉPÉTITION: Utilisez la même police, les mêmes couleurs et le même style pour les éléments similaires. Cela crée une cohérence professionnelle.',
-                'PROXIMITÉ: Groupez les éléments qui vont ensemble et séparez ceux qui n\'ont pas de lien. L\'espacement crée la clarté.',
-                'Astuce pro: Ouvrez n\'importe quel template Canva et identifiez ces 4 règles dans chaque élément. Vous verrez qu\'elles sont toutes respectées.',
-                'Exercice: Cherchez "flyer restaurant algérie" sur Google. Identifiez quelles règles sont respectées et lesquelles sont brisées.'
-              ],
-              ar: [
-                'التباين: خلّي العنصر الأهم أكبر، أو أكثر لوناً، أو مختلفاً عن الباقي. التباين يجذب العين ويخلق تسلسلاً بصرياً.',
-                'المحاذاة: ما كاين والو موضوع بالعشوائية. فعّل الخطوط (عرض → أظهر الخطوط) باش تراصف عناصرك بالضبط.',
-                'التكرار: استخدم نفس الخط، نفس الألوان ونفس الستايل للعناصر المتشابهة. هذا يخلق انسجاماً احترافياً.',
-                'القرب: جمّع العناصر اللي تمشي مع بعض وفرّق اللي ما عندهمش رابط. التباعد يخلق الوضوح.',
-                'نصيحة: افتح أي قالب Canva وحدّد هالقواعد الأربعة في كل عنصر. راح تشوف أنهم كلهم مطبقين.',
-                'تمرين: دور على "flyer مطعم الجزائر" في Google. حدّد القواعد المطبقة والمكسورة.'
-              ],
-              en: [
-                'CONTRAST: Make the most important element bigger, more colorful, or different from the rest. Contrast attracts the eye and creates visual hierarchy.',
-                'ALIGNMENT: Nothing should be placed randomly. Enable guides (View → Show Rulers) to align your elements perfectly.',
-                'REPETITION: Use the same font, colors and style for similar elements. This creates professional consistency.',
-                'PROXIMITY: Group elements that belong together and separate those that don\'t. Spacing creates clarity.',
-                'Pro tip: Open any Canva template and identify these 4 rules in every element. You\'ll see they\'re all respected.',
-                'Exercise: Search "flyer restaurant algeria" on Google. Identify which rules are followed and which are broken.'
-              ]
+              fr: ['CONTRASTE: Rendez la chose la plus importante différente.','ALIGNEMENT: Rien placé au hasard.','RÉPÉTITION: Même style pour éléments similaires.','PROXIMITÉ: Groupez ce qui va ensemble.'],
+              ar: ['التباين: خلّي الحاجة المهمة مختلفة.','المحاذاة: ما كاين والو موضوع بالعشوائية.','التكرار: نفس الستايل للعناصر المتشابهة.','القرب: جمّع الأشياء اللي تمشي مع بعض.'],
+              en: ['CONTRAST: Make important things different.','ALIGNMENT: Nothing placed randomly.','REPETITION: Same style for similar elements.','PROXIMITY: Group things that belong together.']
             },
-            method: {
-              fr: 'Créez deux versions d\'un même design: une où vous violez délibérément les 4 règles, et une où vous les respectez parfaitement. La comparaison rend les règles inoubliables.',
-              ar: 'أنشئ نسختين من نفس التصميم: وحدة تكسر فيها القواعد الأربعة، ووحدة تتبعها بالضبط. المقارنة تخلّيك ما تنساش القواعد.',
-              en: 'Create two versions of the same design: one where you deliberately break all 4 rules, and one where you follow them perfectly. The comparison makes the rules unforgettable.'
-            },
-            exercise: {
-              fr: 'Designez une carte de visite pour un restaurant algérien (El Baraka) DEUX fois: Version 1 = violez les 4 règles. Version 2 = respectez-les parfaitement. Comparez les deux.',
-              ar: 'صمّم بطاقة أعمال لمطعم جزائري (البركة) مرتين: نسخة 1 = اكسر القواعد الأربعة. نسخة 2 = اتبعها بالضبط. قارن بينهما.',
-              en: 'Design a business card for an Algerian restaurant (El Baraka) TWICE: Version 1 = violate all 4 rules. Version 2 = follow them perfectly. Compare both.'
-            },
-            tip: {
-              fr: '💡 Les designers professionnels ne brisent les règles qu\'APRÈS les avoir parfaitement maîtrisées. C\'est la différence entre un amateur et un pro.',
-              ar: '💡 المصممون المحترفين ما يكسرونش القواعد إلا بعد ما يتقنوها بالكامل. هذا هو الفرق بين الهاوي والمحترف.',
-              en: '💡 Professional designers only break rules AFTER perfectly mastering them. That\'s the difference between an amateur and a pro.'
-            }
+            method: { fr: 'Brisez les 4 règles puis recréez correctement.', ar: 'اكسر الـ4 قواعد ثم أعد إنشاؤه صح.', en: 'Break all 4 rules then recreate correctly.' },
+            exercise: { fr: 'Designez une carte de visite 2 fois: une mauvaise, une bonne.', ar: 'صمّم بطاقة أعمال مرتين: سيئة وجيدة.', en: 'Design a business card twice: bad and good.' },
+            tip: { fr: '💡 Les pros brisent les règles APRÈS les avoir maîtrisées.', ar: '💡 المحترفون يكسرون القواعد بعد ما يتقنوها.', en: '💡 Professionals break rules AFTER mastering them.' }
           },
-          // Lesson 3: Théorie des couleurs
           {
             id: 'd-b-3',
             title: { fr: 'Théorie des Couleurs', ar: 'نظرية الألوان', en: 'Color Theory' },
             image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?w=800&q=80',
             layout: 'left',
             steps: {
-              fr: [
-                'coolors.co — génère des palettes harmonieuses. Appuyez sur la barre d\'espace pour générer une nouvelle palette.',
-                'Émotions des couleurs: Rouge=urgence, passion. Bleu=confiance, calme. Vert=nature, santé. Jaune=bonheur, optimisme. Noir=luxe, élégance.',
-                'Règle 60-30-10: 60% de couleur principale (fonds), 30% de couleur secondaire (titres), 10% de couleur d\'accent (boutons, éléments importants).',
-                'Pour extraire des couleurs d\'une photo: Canva → image → outil pipette → appliquez aux textes et formes.',
-                'Vérifiez l\'harmonie des couleurs sur color.adobe.com → choisissez Complémentaire → bougez la roue pour trouver des combinaisons.',
-                'Maximum 3 couleurs par design en tant que débutant — c\'est une règle simple mais efficace.'
-              ],
-              ar: [
-                'coolors.co — يولّد باليتات منسجمة. اضغط على مفتاح المسافة لتوليد باليت جديد.',
-                'مشاعر الألوان: أحمر=إلحاح، شغف. أزرق=ثقة، هدوء. أخضر=طبيعة، صحة. أصفر=سعادة، تفاؤل. أسود=فخامة، أناقة.',
-                'قاعدة 60-30-10: 60% لون رئيسي (خلفيات)، 30% لون ثانوي (عناوين)، 10% لون بارز (أزرار، عناصر مهمة).',
-                'لاستخراج ألوان من صورة: Canva → صورة → أداة القطارة → طبّق على النصوص والأشكال.',
-                'تحقق من تناسق الألوان على color.adobe.com → اختار مكمل → حرّك العجلة لتجد تركيبات.',
-                'أقصاه 3 ألوان في تصميم واحد وأنت مبتدئ — هذه قاعدة بسيطة لكن فعالة.'
-              ],
-              en: [
-                'coolors.co — generates harmonious palettes. Press the spacebar to generate a new palette.',
-                'Color emotions: Red=urgency, passion. Blue=trust, calm. Green=nature, health. Yellow=happiness, optimism. Black=luxury, elegance.',
-                '60-30-10 rule: 60% primary color (backgrounds), 30% secondary color (titles), 10% accent color (buttons, important elements).',
-                'To extract colors from a photo: Canva → image → eyedropper tool → apply to text and shapes.',
-                'Check color harmony on color.adobe.com → choose Complementary → move the wheel to find combinations.',
-                'Maximum 3 colors per design as a beginner — this is a simple but effective rule.'
-              ]
+              fr: ['coolors.co — génère des palettes harmonieuses.','Émotions: Rouge=urgence, Bleu=confiance, Vert=nature, Jaune=bonheur, Noir=luxe.','Règle 60-30-10: Principal 60%, Secondaire 30%, Accent 10%.','Extraire couleurs photo: Canva → image → pipette.','Maximum 3 couleurs par design.'],
+              ar: ['coolors.co — يولّد باليتات منسجمة.','المشاعر: أحمر=إلحاح، أزرق=ثقة، أخضر=طبيعة، أصفر=سعادة، أسود=فخامة.','قاعدة 60-30-10: رئيسي 60%، ثانوي 30%، بارز 10%.','استخراج ألوان: Canva → صورة → قطّارة.','أقصاه 3 ألوان في تصميم.'],
+              en: ['coolors.co — generates harmonious palettes.','Emotions: Red=urgency, Blue=trust, Green=nature, Yellow=happiness, Black=luxury.','60-30-10 rule: Main 60%, Secondary 30%, Accent 10%.','Extract colors: Canva → image → eyedropper.','Maximum 3 colors per design.']
             },
-            method: {
-              fr: 'Analysez les pages Instagram de 5 marques algériennes. Pour chaque post populaire: notez la couleur principale, l\'émotion qu\'elle évoque, et le nombre de couleurs utilisées.',
-              ar: 'حلّل صفحات Instagram لـ5 علامات جزائرية. لكل منشور شهير: سجل اللون الرئيسي، المشاعر التي يثيرها، وعدد الألوان المستخدمة.',
-              en: 'Analyze the Instagram pages of 5 Algerian brands. For each popular post: note the main color, the emotion it evokes, and the number of colors used.'
-            },
-            exercise: {
-              fr: 'Générez 5 palettes sur coolors.co. Pour chacune: nommez un type d\'entreprise algérienne et expliquez pourquoi les couleurs correspondent à son activité.',
-              ar: 'ولّد 5 باليتات على coolors.co. لكل واحدة: سمّي نوع مشروع جزائري واشرح لماذا الألوان تناسبه.',
-              en: 'Generate 5 palettes on coolors.co. For each: name an Algerian business type and explain why the colors fit its activity.'
-            },
-            tip: {
-              fr: '💡 En cas de doute: texte noir sur fond blanc + UNE couleur d\'accent. C\'est simple, lisible et toujours professionnel.',
-              ar: '💡 في حالة الشك: نص أسود على أبيض + لون accent واحد. بسيط، واضح، ودائماً يبان محترف.',
-              en: '💡 When in doubt: black text on white + ONE accent color. Simple, readable, and always looks professional.'
-            }
+            method: { fr: 'Analysez les couleurs de 5 marques algériennes.', ar: 'حلل ألوان 5 علامات جزائرية.', en: 'Analyze the colors of 5 Algerian brands.' },
+            exercise: { fr: 'Générez 5 palettes sur coolors.co.', ar: 'ولّد 5 باليتات على coolors.co.', en: 'Generate 5 palettes on coolors.co.' },
+            tip: { fr: '💡 En cas de doute: texte noir sur blanc + UNE couleur accent.', ar: '💡 في حالة الشك: نص أسود على أبيض + لون accent واحد.', en: '💡 When in doubt: black text on white + ONE accent color.' }
           }
         ]
       },
-      // ===== INTERMEDIATE =====
+      // Intermediate
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
         duration: { fr: 'Semaines 5–10', ar: 'الأسابيع 5–10', en: 'Weeks 5–10' },
-        goal: { fr: 'Passer de Canva à Photoshop et construire vos premiers projets clients', ar: 'الانتقال من Canva إلى Photoshop وبناء أول مشاريعك للزبائن', en: 'Move from Canva to Photoshop and build your first client projects' },
+        goal: { fr: 'Passer de Canva à Photoshop', ar: 'الانتقال من Canva لـ Photoshop', en: 'Move from Canva to Photoshop' },
         lessons: [
           {
             id: 'd-i-1',
-            title: { fr: 'Photopea — L\'alternative gratuite à Photoshop', ar: 'Photopea — البديل المجاني لـ Photoshop', en: 'Photopea — The free alternative to Photoshop' },
+            title: { fr: 'Photopea — Photoshop Gratuit', ar: 'Photopea — بديل Photoshop المجاني', en: 'Photopea — Free Photoshop Alternative' },
             image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=800&q=80',
             layout: 'left',
             steps: {
-              fr: [
-                'Photopea (photopea.com) fonctionne directement dans votre navigateur et est identique à Photoshop à 99% — totalement gratuit.',
-                'L\'interface: à gauche vous avez la barre d\'outils (sélection, pinceau, texte, etc.). À droite, le panneau des calques. En haut, les options contextuelles.',
-                'Les CALQUES sont comme des feuilles transparentes superposées. Chaque élément (texte, image, forme) doit être sur son propre calque pour pouvoir le modifier indépendamment.',
-                'Pour ouvrir une photo: Fichier → Ouvrir. Double-cliquez sur le calque "Arrière-plan" et cliquez OK pour le déverrouiller.',
-                'Pour supprimer un fond: utilisez l\'outil Baguette magique, cliquez sur le fond, puis appuyez sur Delete. Pour les fonds complexes: Sélection → Sujet.',
-                'Pour ajouter du texte: sélectionnez l\'outil T, cliquez sur le canvas, tapez votre texte, puis modifiez police, taille et couleur.',
-                'Pour exporter: Fichier → Exporter → Exporter sous → PNG (en cochant Transparence) ou JPEG.'
-              ],
-              ar: [
-                'Photopea (photopea.com) يشتغل مباشرة في المتصفح وهو مطابق لـ Photoshop بنسبة 99% — مجاني تماماً.',
-                'الواجهة: على اليسار عندك شريط الأدوات (تحديد، فرشاة، نص...). على اليمين، لوحة الطبقات. في الأعلى، الخيارات السياقية.',
-                'الطبقات هي أوراق شفافة مكدسة. كل عنصر (نص، صورة، شكل) لازم يكون على طبقته الخاصة باش تقدر تعدله بشكل مستقل.',
-                'لفتح صورة: ملف → فتح. انقر مرتين على طبقة "الخلفية" واضغط OK باش تفتحها.',
-                'لحذف الخلفية: استخدم أداة العصا السحرية، انقر على الخلفية، ثم اضغط Delete. للخلفيات المعقدة: تحديد → الموضوع.',
-                'لإضافة نص: اختر أداة T، انقر على المساحة، اكتب نصك، ثم غيّر الخط، الحجم واللون.',
-                'للتصدير: ملف → تصدير → تصدير كـ → PNG (فعّل الشفافية) أو JPEG.'
-              ],
-              en: [
-                'Photopea (photopea.com) runs directly in your browser and is 99% identical to Photoshop — completely free.',
-                'Interface: on the left you have the toolbar (selection, brush, text, etc.). On the right, the layers panel. At the top, contextual options.',
-                'LAYERS are like transparent sheets stacked on top of each other. Each element (text, image, shape) must be on its own layer to edit it independently.',
-                'To open a photo: File → Open. Double-click on the "Background" layer and click OK to unlock it.',
-                'To remove a background: use the Magic Wand tool, click on the background, then press Delete. For complex backgrounds: Select → Subject.',
-                'To add text: select the T tool, click on the canvas, type your text, then change font, size and color.',
-                'To export: File → Export → Export As → PNG (check Transparency) or JPEG.'
-              ]
+              fr: ['photopea.com 99% identique à Photoshop','Interface: Gauche=Outils. Droite=Calques.','CALQUES: chaque élément sur son propre calque','Supprimer fond: Baguette magique → Delete','Exporter: PNG ou JPEG'],
+              ar: ['photopea.com شبه Photoshop بـ99%','الواجهة: يسار=أدوات. يمين=طبقات.','الطبقات: كل عنصر على طبقته الخاصة','إزالة خلفية: عصا سحرية → Delete','التصدير: PNG أو JPEG'],
+              en: ['photopea.com 99% identical to Photoshop','Interface: Left=Tools. Right=Layers.','LAYERS: each element on its own layer','Remove background: Magic Wand → Delete','Export: PNG or JPEG']
             },
-            method: {
-              fr: 'Ouvrez une photo de produit dans Photopea, supprimez l\'arrière-plan, ajoutez un fond coloré et du texte (nom du produit + prix). C\'est une simulation parfaite d\'une publicité professionnelle.',
-              ar: 'افتح صورة منتج في Photopea، ازل الخلفية، زيد خلفية ملونة ونص (اسم المنتج + السعر). هذي محاكاة مثالية لإعلان احترافي.',
-              en: 'Open a product photo in Photopea, remove the background, add a colored background and text (product name + price). This is a perfect simulation of a professional ad.'
-            },
-            exercise: {
-              fr: 'Prenez une photo d\'un produit algérien (ex: café, huile d\'olive, miel). Supprimez le fond dans Photopea, placez-le sur fond blanc, ajoutez le prix et le nom. Exportez en PNG.',
-              ar: 'اخذ صورة منتج جزائري (مثلاً: قهوة، زيت زيتون، عسل). ازل الخلفية في Photopea، حطها على خلفية بيضاء، زيد السعر والاسم. صدّر PNG.',
-              en: 'Take a photo of an Algerian product (e.g.: coffee, olive oil, honey). Remove the background in Photopea, place it on a white background, add price and name. Export as PNG.'
-            },
-            tip: {
-              fr: '💡 Pour ajouter une ombre: clic droit sur le calque → Options de fusion → Ombre portée → opacité 40%, distance 10px, flou 20px. Le résultat est immédiatement professionnel.',
-              ar: '💡 لإضافة ظل: انقر يمين على الطبقة → خيارات المزج → ظل مسقط → شفافية 40%، مسافة 10px، تعتيم 20px. النتيجة تكون احترافية مباشرة.',
-              en: '💡 To add a shadow: right-click on the layer → Blending Options → Drop Shadow → opacity 40%, distance 10px, blur 20px. The result is instantly professional.'
-            }
+            method: { fr: 'Supprimez l\'arrière-plan d\'une photo produit.', ar: 'ازل خلفية صورة منتج.', en: 'Remove background from a product photo.' },
+            exercise: { fr: 'Photo produit algérien: fond blanc + prix + nom.', ar: 'صورة منتج جزائري: خلفية بيضاء + سعر + اسم.', en: 'Algerian product photo: white background + price + name.' },
+            tip: { fr: '💡 Ombre: clic droit calque → Fusion → Ombre portée', ar: '💡 الظل: انقر يمين الطبقة → خيارات المزج → ظل مسقط', en: '💡 Shadow: right-click layer → Blending Options → Drop Shadow' }
           }
         ]
       },
-      // ===== ADVANCED =====
+      // Advanced
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
         duration: { fr: 'Semaines 11–20', ar: 'الأسابيع 11–20', en: 'Weeks 11–20' },
-        goal: { fr: 'Maîtriser Illustrator et livrer des identités visuelles complètes', ar: 'إتقان Illustrator وتسليم هويات بصرية كاملة', en: 'Master Illustrator and deliver complete visual identities' },
+        goal: { fr: 'Maîtriser Illustrator', ar: 'إتقان Illustrator', en: 'Master Illustrator' },
         lessons: [
           {
             id: 'd-a-1',
@@ -327,55 +185,22 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
             layout: 'right',
             steps: {
-              fr: [
-                'Inkscape (inkscape.org) est un outil vectoriel 100% gratuit et très similaire à Illustrator.',
-                'Les vecteurs sont des images qui peuvent être agrandies à l\'infini sans perte de qualité — un logo vectoriel s\'adapte d\'une carte de visite à un panneau de 10 mètres.',
-                'L\'outil Plume (P) permet de tracer des formes précises: cliquez pour un angle droit, cliquez et glissez pour une courbe, cliquez sur le point de départ pour fermer la forme.',
-                'Pour recréer un logo: importez l\'image, verrouillez le calque, créez un nouveau calque et tracez avec la Plume.',
-                'Pathfinder: Unir (fusionner), Soustraction (soustraire), Intersection (chevaucher) — ces outils transforment vos formes.',
-                'Pour les couleurs: sélectionnez la forme → le carré de remplissage en bas à gauche → entrez le code hexadécimal de la couleur.'
-              ],
-              ar: [
-                'Inkscape (inkscape.org) أداة فيكتور مجانية 100% وشبيهة جداً بـ Illustrator.',
-                'الفيكتورات هي صور يمكن تكبيرها إلى ما لا نهاية دون فقدان الجودة — شعار فيكتور يتكيف من بطاقة إلى إعلان 10 أمتار.',
-                'أداة القلم (P) تسمح برسم أشكال دقيقة: اضغط لزاوية مستقيمة، اضغط واسحب لمنحنى، اضغط على نقطة البداية لإغلاق الشكل.',
-                'لإعادة إنشاء شعار: استورد الصورة، اقفل الطبقة، أنشئ طبقة جديدة وتتبّع بالقلم.',
-                'Pathfinder: توحيد (دمج)، طرح (سحب)، تقاطع (تداخل) — هذه الأدوات تحول أشكالك.',
-                'للألوان: اختر الشكل → مربع التعبئة في الأسفل اليسار → أدخل الكود السداسي للون.'
-              ],
-              en: [
-                'Inkscape (inkscape.org) is a 100% free vector tool very similar to Illustrator.',
-                'Vectors are images that can be scaled infinitely without quality loss — a vector logo adapts from a business card to a 10-meter billboard.',
-                'The Pen Tool (P) allows you to draw precise shapes: click for a straight corner, click and drag for a curve, click the starting point to close the shape.',
-                'To recreate a logo: import the image, lock the layer, create a new layer and trace with the Pen.',
-                'Pathfinder: Unite (merge), Minus Front (subtract), Intersect (overlap) — these tools transform your shapes.',
-                'For colors: select the shape → the fill square at the bottom left → enter the hex code for the color.'
-              ]
+              fr: ['Inkscape.org 100% gratuit','Vecteurs: logo adaptable à toutes tailles','Outil Plume P: cliquez=angle, glissez=courbe','Pathfinder: Unir, Soustraction, Intersection'],
+              ar: ['Inkscape.org مجاني 100%','الفيكتور: شعار يتكيف مع كل الأحجام','أداة القلم P: اضغط=زاوية، اسحب=منحنى','Pathfinder: توحيد، طرح، تقاطع'],
+              en: ['Inkscape.org 100% free','Vectors: logo scales to any size','Pen Tool P: click=angle, drag=curve','Pathfinder: Unite, Subtract, Intersect']
             },
-            method: {
-              fr: 'Imprimez un logo simple (3-5 formes). Tracez chaque forme avec UNIQUEMENT l\'outil Plume dans Inkscape. Répétez pour 5 logos sur une semaine.',
-              ar: 'اطبع شعاراً بسيطاً (3-5 أشكال). تتبّع كل شكل بأداة القلم فقط في Inkscape. كرّر لـ5 شعارات على أسبوع.',
-              en: 'Print a simple logo (3-5 shapes). Trace every shape with ONLY the Pen Tool in Inkscape. Repeat for 5 logos over one week.'
-            },
-            exercise: {
-              fr: 'Recréez le logo d\'Ooredoo ou Djezzy en vectoriel avec Inkscape. Utilisez uniquement l\'outil Plume et Pathfinder. Comparez avec le logo original.',
-              ar: 'أعد إنشاء شعار Ooredoo أو Djezzy كفيكتور مع Inkscape. استخدم أداة القلم و Pathfinder فقط. قارن مع الشعار الأصلي.',
-              en: 'Recreate the Ooredoo or Djezzy logo as vector with Inkscape. Use only the Pen Tool and Pathfinder. Compare with the original logo.'
-            },
-            tip: {
-              fr: '💡 Client avec logo JPEG: proposez de le redessiner en vectoriel. Facturez 3000-8000 DZD pour 30-90 minutes de travail.',
-              ar: '💡 زبون بشعار JPEG: اقترح إعادة رسمه كفيكتور. اشحن 3000-8000 دج مقابل 30-90 دقيقة عمل.',
-              en: '💡 Client with JPEG logo: offer to redraw it as vector. Charge 3000-8000 DZD for 30-90 minutes of work.'
-            }
+            method: { fr: 'Tracez un logo avec l\'outil Plume uniquement.', ar: 'تتبّع شعاراً بأداة القلم فقط.', en: 'Trace a logo with the Pen Tool only.' },
+            exercise: { fr: 'Recréez logo Ooredoo ou Djezzy en vectoriel.', ar: 'أعد إنشاء شعار Ooredoo أو Djezzy كفيكتور.', en: 'Recreate Ooredoo or Djezzy logo as vector.' },
+            tip: { fr: '💡 Client avec logo JPEG: proposez de le vectoriser. 3000-8000 DZD.', ar: '💡 زبون بشعار JPEG: اقترح تحويله لفيكتور. 3000-8000 دج.', en: '💡 Client with JPEG logo: offer to vectorize it. 3000-8000 DZD.' }
           }
         ]
       },
-      // ===== MASTER =====
+      // Master
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
         duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
-        goal: { fr: 'Diriger une agence de design et embaucher des juniors', ar: 'إدارة أجنسي تصميم وتوظيف مساعدين', en: 'Run a design agency and hire juniors' },
+        goal: { fr: 'Diriger une agence de design', ar: 'إدارة أجنسي تصميم', en: 'Run a design agency' },
         lessons: [
           {
             id: 'd-m-1',
@@ -383,52 +208,21 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Bon moment: quand vous avez un travail constant qui dépasse votre capacité seul ET que vous refusez des projets. Pas avant.',
-                'Collaborateur: votre meilleur étudiant ou un designer en ligne. Paiement par projet. Payez-les 40-50% du montant.',
-                'Rôles: Vous gérez l\'acquisition et les propositions de qualité. Eux gèrent l\'exécution.',
-                'Marque agence: Nom, logo, site Carrd.co (30 minutes, gratuit), Instagram professionnel.',
-                'Forfaits: Starter 25K/mois, Croissance 55K/mois, Premium 100K+/mois.',
-                'Ciblez les agences publicitaires: 1 client agence = 10 clients individuels en termes de revenus.'
-              ],
-              ar: [
-                'الوقت المناسب: عندما يكون لديك عمل مستمر يفوق طاقتك وحدك وترفض مشاريع. مش قبل.',
-                'المتعاون: أفضل طالب أو مصمم أونلاين. دفع بالمشروع. ادفع لهم 40-50% من المبلغ.',
-                'الأدوار: أنت تدير الاستقطاب والعروض الجيدة. هم يديرون التنفيذ.',
-                'علامة الأجنسي: اسم، شعار، موقع Carrd.co (30 دقيقة، مجاني)، Instagram احترافي.',
-                'الباقات: Starter 25K/شهر، نمو 55K/شهر، Premium 100K+/شهر.',
-                'استهدف وكالات الإعلان: زبون أجنسي واحد = 10 زبائن أفراد من حيث الإيرادات.'
-              ],
-              en: [
-                'Right time: when you have constant work exceeding your solo capacity AND you\'re refusing projects. Not before.',
-                'Collaborator: your best student or an online designer. Payment per project. Pay them 40-50% of the amount.',
-                'Roles: You handle acquisition and quality proposals. They handle execution.',
-                'Agency brand: Name, logo, Carrd.co site (30 minutes, free), professional Instagram.',
-                'Packages: Starter 25K/month, Growth 55K/month, Premium 100K+/month.',
-                'Target advertising agencies: 1 agency client = 10 individual clients in terms of revenue.'
-              ]
+              fr: ['Travail constant > capacité seul = bon moment','Collaborateur: payé par projet 40-50%','Forfaits: Starter 25K, Croissance 55K, Premium 100K+ DZD','Ciblez les agences publicitaires'],
+              ar: ['عمل مستمر > طاقتك وحدك = الوقت المناسب','متعاون: يدفع بالمشروع 40-50%','الباقات: Starter 25K، نمو 55K، Premium 100K+ دج','استهدف وكالات الإعلان'],
+              en: ['Constant work > your capacity = right time','Collaborator: paid per project 40-50%','Packages: Starter 25K, Growth 55K, Premium 100K+ DZD','Target advertising agencies']
             },
-            method: {
-              fr: 'Créez un pitch non sollicité: trouvez une entreprise avec un mauvais design, refaites leur logo + 3 posts gratuitement. Envoyez-leur en disant "Je voulais vous montrer ce qui est possible".',
-              ar: 'أنشئ عرضاً غير مطلوب: ابحث عن مشروع بتصميم ضعيف، أعد تصميم شعارهم + 3 منشورات مجاناً. أرسل لهم قائلاً "أردت أن أريك ما هو ممكن".',
-              en: 'Create an unsolicited pitch: find a business with poor design, redo their logo + 3 posts for free. Send it saying "I wanted to show you what\'s possible".'
-            },
-            exercise: {
-              fr: 'Identifiez 3 entreprises algériennes avec un design faible. Refaites le design pour l\'une d\'elles: logo + 2 posts. Envoyez un message de prospection.',
-              ar: 'حدّد 3 مشاريع جزائرية بتصميم ضعيف. أعد تصميم واحد منهم: شعار + 2 منشور. أرسل رسالة تواصل.',
-              en: 'Identify 3 Algerian businesses with weak design. Redesign one of them: logo + 2 posts. Send a prospecting message.'
-            },
-            tip: {
-              fr: '💡 La stratégie la plus rapide: spécialisez-vous dans UN secteur. Les spécialistes facturent toujours plus cher que les généralistes.',
-              ar: '💡 أسرع استراتيجية: تخصّص في قطاع واحد. المتخصصون دائماً يشحنون أكثر من العامين.',
-              en: '💡 The fastest strategy: specialize in ONE sector. Specialists always charge more than generalists.'
-            }
+            method: { fr: 'Fake pitch: refaites logo + 3 posts gratuitement.', ar: 'عرض وهمي: أعد تصميم شعار + 3 منشورات مجاناً.', en: 'Fake pitch: redo logo + 3 posts for free.' },
+            exercise: { fr: 'Identifiez 3 entreprises avec design faible. Refonte pour 1.', ar: 'حدّد 3 مشاريع بتصميم ضعيف. إعادة تصميم لواحد.', en: 'Identify 3 businesses with weak design. Redesign for 1.' },
+            tip: { fr: '💡 Spécialisez-vous dans UN secteur. Les spécialistes facturent plus.', ar: '💡 تخصّص في قطاع واحد. المتخصصون يشحنون أكثر.', en: '💡 Specialize in ONE sector. Specialists charge more.' }
           }
         ]
       }
     ]
   },
-  // ===== SKILL 2: SOCIAL MEDIA MANAGEMENT (4 niveaux) =====
+  // ============================================================
+  // SKILL 2: SOCIAL MEDIA MANAGEMENT
+  // ============================================================
   {
     id: 'smm',
     icon: '📱',
@@ -443,168 +237,72 @@ var SKILLS = [
     subtitle: { fr: 'Marketing Digital', ar: 'التسويق الرقمي', en: 'Digital Marketing' },
     tagline: { fr: 'Aidez les entreprises à grandir et vendre en ligne', ar: 'ساعد المشاريع تكبر وتبيع أونلاين', en: 'Help businesses grow their audience and sell online' },
     levels: [
+      // Beginner
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
         duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
-        goal: { fr: 'Comprendre les algorithmes et créer votre première stratégie de contenu', ar: 'تفهم الخوارزميات وتصنع أول استراتيجية محتوى', en: 'Understand algorithms and create your first content strategy' },
+        goal: { fr: 'Comprendre les algorithmes', ar: 'تفهم الخوارزميات', en: 'Understand algorithms' },
         lessons: [
           {
             id: 's-b-1',
-            title: { fr: 'Configurer un Compte Business Professionnel', ar: 'إعداد حساب Business احترافي', en: 'Set up a Professional Business Account' },
+            title: { fr: 'Configurer un Compte Business', ar: 'إعداد حساب Business', en: 'Set Up a Business Account' },
             image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Instagram: Allez dans votre Profil → les 3 lignes en haut à droite → Paramètres → Compte → "Passer en compte professionnel" → choisissez "Business".',
-                'Facebook: Rendez-vous sur facebook.com/pages/create → sélectionnez "Entreprise" → donnez un nom et une catégorie à votre page.',
-                'Meta Business Suite: Connectez-vous sur business.facebook.com → connectez votre Page Facebook et votre compte Instagram.',
-                'WhatsApp Business: Téléchargez l\'application, utilisez un numéro professionnel et liez-le à votre compte Facebook. Indispensable en Algérie.',
-                'Profil 100%: Ajoutez une photo professionnelle, une bio de 80 caractères max, un lien bio (linktr.ee est gratuit) et activez le bouton "Contacter".',
-                'Créez un dossier "Contenu Client" sur votre ordinateur avec: Photos, Vidéos, Légendes prêtes à l\'emploi.'
-              ],
-              ar: [
-                'Instagram: روح للبروفيل → 3 خطوط في الأعلى → إعدادات → حساب → "تحويل لحساب محترف" → اختار "Business".',
-                'Facebook: روح لـ facebook.com/pages/create → اختار "مشروع" → سمّي صفحتك وحدّد الفئة.',
-                'Meta Business Suite: سجل دخول على business.facebook.com → اربط صفحة Facebook وحساب Instagram.',
-                'WhatsApp Business: حمّل التطبيق، استخدم رقم احترافي واربطه بحساب Facebook. ضروري في الجزائر.',
-                'بروفيل 100%: زيد صورة احترافية، bio 80 حرف كحد أقصى، رابط bio (linktr.ee مجاني) وفعّل زر "تواصل".',
-                'أنشئ مجلد "محتوى الزبون" على كمبيوتريك فيه: صور، فيديوهات، تعليقات جاهزة.'
-              ],
-              en: [
-                'Instagram: Go to your Profile → the 3 lines → Settings → Account → "Switch to Professional Account" → choose "Business".',
-                'Facebook: Go to facebook.com/pages/create → select "Business" → name your page and choose a category.',
-                'Meta Business Suite: Log in to business.facebook.com → connect your Facebook Page and Instagram account.',
-                'WhatsApp Business: Download the app, use a professional number and link it to your Facebook account. Essential in Algeria.',
-                '100% Profile: Add a professional photo, a bio of 80 characters max, a bio link (linktr.ee is free) and activate the "Contact" button.',
-                'Create a "Client Content" folder on your computer with: Photos, Videos, Ready-to-use Captions.'
-              ]
+              fr: ['Instagram: Profil → Compte professionnel → Business','Facebook: facebook.com/pages/create','Meta Business Suite: connectez Page + Instagram','WhatsApp Business: numéro professionnel'],
+              ar: ['Instagram: بروفيل → حساب محترف → Business','Facebook: facebook.com/pages/create','Meta Business Suite: اربط الصفحة + Instagram','WhatsApp Business: رقم احترافي'],
+              en: ['Instagram: Profile → Professional → Business','Facebook: facebook.com/pages/create','Meta Business Suite: connect Page + Instagram','WhatsApp Business: professional number']
             },
-            method: {
-              fr: 'Créez un compte Instagram test avec une nouvelle adresse email. Appelez-le "DZFoodTest" — ce sera votre bac à sable pour tester toutes vos stratégies.',
-              ar: 'أنشئ حساب Instagram تجريبي بإيميل جديد. سمّيه "DZFoodTest" — هذا صندوق الرمل الخاص بك لتجربة كل الاستراتيجيات.',
-              en: 'Create a test Instagram account with a new email address. Call it "DZFoodTest" — this will be your sandbox to test all your strategies.'
-            },
-            exercise: {
-              fr: 'Configurez un profil business complet pour un restaurant fictif sur Instagram ET Facebook. Connectez les deux comptes à Meta Business Suite. Capturez d\'écran pour preuve.',
-              ar: 'اعدد بروفيل business كامل لمطعم وهمي على Instagram وFacebook. اربط الحسابين بـ Meta Business Suite. خذ لقطة شاشة كدليل.',
-              en: 'Set up a complete business profile for a fictional restaurant on Instagram AND Facebook. Connect both accounts to Meta Business Suite. Screenshot as proof.'
-            },
-            tip: {
-              fr: '💡 Utilisez linktr.ee pour créer une page de destination gratuite avec plusieurs boutons: WhatsApp, Facebook, Menu, Localisation. C\'est la solution la plus professionnelle en Algérie.',
-              ar: '💡 استخدم linktr.ee باش تصنع صفحة هبوط مجانية بعدة أزرار: WhatsApp، Facebook، القائمة، الموقع. هذا أحسن حل احترافي في الجزائر.',
-              en: '💡 Use linktr.ee to create a free landing page with multiple buttons: WhatsApp, Facebook, Menu, Location. This is the most professional solution in Algeria.'
-            }
+            method: { fr: 'Créez un compte test Instagram.', ar: 'أنشئ حساب Instagram تجريبي.', en: 'Create a test Instagram account.' },
+            exercise: { fr: 'Configurez un profil business complet.', ar: 'اعدد بروفيل business كامل.', en: 'Set up a complete business profile.' },
+            tip: { fr: '💡 Utilisez linktr.ee pour plusieurs liens.', ar: '💡 استخدم linktr.ee لعدة روابط.', en: '💡 Use linktr.ee for multiple links.' }
           },
           {
             id: 's-b-2',
-            title: { fr: 'Comprendre et Dompter l\'Algorithme Instagram', ar: 'تفهم والسيطرة على خوارزمية Instagram', en: 'Understand and Master the Instagram Algorithm' },
+            title: { fr: 'Comment Fonctionne Algorithme Instagram', ar: 'كيفاش تشتغل خوارزمية Instagram', en: 'How the Instagram Algorithm Works' },
             image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
             layout: 'right',
             steps: {
-              fr: [
-                'L\'algorithme a un seul objectif: garder les gens le plus longtemps possible sur l\'application. Il montre donc le contenu qui génère le plus d\'engagement.',
-                'Les 5 signaux les plus importants: 1. SAUVEGARDES (le plus puissant), 2. PARTAGES, 3. COMMENTAIRES de +10 mots, 4. LIKES, 5. TEMPS DE VISIONNAGE.',
-                'Pour augmenter les sauvegardes: terminez chaque post éducatif par "Sauvegardez ce post pour le retrouver plus tard".',
-                'Pour booster les commentaires: posez une question spécifique en fin de légende. Ex: "Entre tajine et couscous, quel est votre plat préféré ce weekend?"',
-                'Analysez vos Insights: chaque post → "Voir les insights" → vous verrez: comptes touchés, impressions, interactions.',
-                'Les meilleures heures de publication en Algérie: 12h-13h30, 18h-20h, 21h-23h. Testez ces créneaux.'
-              ],
-              ar: [
-                'الخوارزمية عندها هدف واحد: تخلّي الناس أطول وقت ممكن على التطبيق. لذلك تعرض المحتوى اللي يولد أكبر تفاعل.',
-                'أقوى 5 إشارات: 1. الحفظ (الأقوى)، 2. المشاركة، 3. التعليقات +10 كلمات، 4. الإعجابات، 5. وقت المشاهدة.',
-                'باش تزيد الحفظ: اختم كل منشور تعليمي بـ "احفظ هذا المنشور باش ترجعله وقت الحاجة".',
-                'باش تزيد التعليقات: اطرح سؤال محدد في نهاية التعليق. مثال: "بين الطاجين والكسكس، شنو هو طبقك المفضل هذا الويكند؟"',
-                'حلّل Insights: كل منشور → "عرض الإحصائيات" → راح تشوف: الحسابات الموصلة، مرات الظهور، التفاعلات.',
-                'أفضل أوقات النشر في الجزائر: 12-13:30، 18-20، 21-23. جرب هالمواعيد.'
-              ],
-              en: [
-                'The algorithm has one goal: keep people on the app as long as possible. So it shows content that generates the most engagement.',
-                'The 5 most important signals: 1. SAVES (the strongest), 2. SHARES, 3. COMMENTS of +10 words, 4. LIKES, 5. WATCH TIME.',
-                'To increase saves: end every educational post with "Save this post to find it later".',
-                'To boost comments: ask a specific question at the end of the caption. Ex: "Between tajine and couscous, what\'s your favorite dish this weekend?"',
-                'Analyze your Insights: each post → "View Insights" → you\'ll see: accounts reached, impressions, interactions.',
-                'Best posting times in Algeria: 12pm-1:30pm, 6pm-8pm, 9pm-11pm. Test these time slots.'
-              ]
+              fr: ['5 signaux: Sauvegardes, Partages, Commentaires, Likes, Temps','Sauvegardes = le plus puissant','Questions en fin de légende = plus de commentaires','Meilleures heures: 12h-13h30, 18h-20h, 21h-23h'],
+              ar: ['5 إشارات: الحفظ، المشاركة، التعليقات، الإعجابات، الوقت','الحفظ = الأقوى','أسئلة في نهاية التعليق = تعليقات أكثر','أفضل الأوقات: 12-13:30، 18-20، 21-23'],
+              en: ['5 signals: Saves, Shares, Comments, Likes, Time','Saves = the strongest','Questions at end = more comments','Best times: 12pm-1:30pm, 6pm-8pm, 9pm-11pm']
             },
-            method: {
-              fr: 'Pendant 20 minutes, regardez consciemment les Reels. Chaque Reel qui vous retient plus de 5 secondes: mettez en pause. Notez: Quel était l\'accroche? Quelle émotion a été utilisée?',
-              ar: 'لمدة 20 دقيقة، شاهد Reels بوعي. كل Reel يبقيك أكثر من 5 ثوانٍ: وقّف. دوّن: شو كانت الجذبة؟ شو المشاعر المستخدمة؟',
-              en: 'For 20 minutes, consciously watch Reels. Every Reel that keeps you for more than 5 seconds: pause. Note: What was the hook? What emotion was used?'
-            },
-            exercise: {
-              fr: 'Publiez 3 posts différents sur votre compte test: Post 1 = photo sans CTA. Post 2 = carrousel + "Sauvegardez ce post". Post 3 = photo + question. Comparez les Insights après 48h.',
-              ar: 'انشر 3 منشورات مختلفة على حسابك التجريبي: منشور 1 = صورة بدون CTA. منشور 2 = كاروسيل + "احفظ هذا المنشور". منشور 3 = صورة + سؤال. قارن Insights بعد 48 ساعة.',
-              en: 'Post 3 different posts on your test account: Post 1 = photo without CTA. Post 2 = carousel + "Save this post". Post 3 = photo + question. Compare Insights after 48h.'
-            },
-            tip: {
-              fr: '💡 Instagram pénalise sévèrement les posts qui contiennent des liens externes dans la LÉGENDE. Dites toujours "lien en bio" ou "lien dans ma bio".',
-              ar: '💡 Instagram يعاقب بشدة المنشورات اللي فيها روابط خارجية في التعليق. دائماً قول "الرابط في البروفيل" أو "الرابط في البايو".',
-              en: '💡 Instagram severely penalizes posts that contain external links in the CAPTION. Always say "link in bio" or "link in my bio".'
-            }
+            method: { fr: 'Regardez 20 posts avec fort engagement.', ar: 'شوف 20 منشور بتفاعل عالٍ.', en: 'Look at 20 posts with high engagement.' },
+            exercise: { fr: 'Publiez 3 posts: photo, carrousel, photo+question. Comparez.', ar: 'انشر 3 منشورات: صورة، كاروسيل، صورة+سؤال. قارن.', en: 'Post 3 posts: photo, carousel, photo+question. Compare.' },
+            tip: { fr: '💡 Pas de liens externes dans la légende. Mettez-les en bio.', ar: '💡 لا تحط روابط خارجية في التعليق. حطهم في البروفيل.', en: '💡 No external links in caption. Put them in bio.' }
           }
         ]
       },
+      // Intermediate
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
         duration: { fr: 'Semaines 4–9', ar: 'الأسابيع 4–9', en: 'Weeks 4–9' },
-        goal: { fr: 'Créer des Reels, lancer des pubs et gérer votre premier vrai client', ar: 'إنشاء Reels، إطلاق إعلانات وإدارة أول زبون حقيقي', en: 'Create Reels, run ads and manage your first real client' },
+        goal: { fr: 'Créer des Reels et lancer des pubs', ar: 'إنشاء Reels وإطلاق إعلانات', en: 'Create Reels and run ads' },
         lessons: [
           {
             id: 's-i-1',
-            title: { fr: 'Créer un Reel qui Génère de Vraies Vues', ar: 'إنشاء Reel يحصل على مشاهدات حقيقية', en: 'Create a Reel That Gets Real Views' },
+            title: { fr: 'Créer un Reel qui Génère des Vues', ar: 'إنشاء Reel يحصل على مشاهدات', en: 'Create a Reel That Gets Views' },
             image: 'https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Règle 0.5 seconde: le premier frame doit stopper le scroll. JAMAIS de logo ou d\'écran d\'intro.',
-                'Structure: Accroche (0-2s) → Setup (2-8s) → Payoff (8-20s) → CTA (dernières 2s).',
-                'Tournage: téléphone VERTICAL (9:16), caméra arrière, regardez l\'objectif pas l\'écran.',
-                'CapCut: Nouveau projet → clips → Split pour couper → Texte → Auto Captions.',
-                'Audio tendance: onglet Reels → flèche tendance → utilisez cet audio.',
-                'Sous-titres obligatoires: 60% regardent sans son. CapCut → Texte → Sous-titres automatiques.'
-              ],
-              ar: [
-                'قاعدة 0.5 ثانية: أول إطار يجب أن يوقف التمرير. أبداً لا شعار أو شاشة مقدمة.',
-                'الهيكل: خطّاف (0-2ث) → إعداد (2-8ث) → نتيجة (8-20ث) → CTA (آخر 2ث).',
-                'التصوير: هاتف عمودي (9:16)، الكاميرا الخلفية، انظر للعدسة مش الشاشة.',
-                'CapCut: مشروع جديد → كليبات → Split للقطع → نص → تعليقات تلقائية.',
-                'الصوت الرائج: تبويب Reels → سهم الترند → استخدم هذا الصوت.',
-                'الترجمة إلزامية: 60% يشاهدون بدون صوت. CapCut → نص → تعليقات تلقائية.'
-              ],
-              en: [
-                '0.5 second rule: the first frame must stop the scroll. NEVER a logo or intro screen.',
-                'Structure: Hook (0-2s) → Setup (2-8s) → Payoff (8-20s) → CTA (last 2s).',
-                'Filming: phone VERTICAL (9:16), back camera, look at the lens not the screen.',
-                'CapCut: New project → clips → Split to cut → Text → Auto Captions.',
-                'Trending audio: Reels tab → trending arrow → use this audio.',
-                'Subtitles mandatory: 60% watch without sound. CapCut → Text → Auto Captions.'
-              ]
+              fr: ['Règle 0.5s: premier frame stoppe le scroll','Structure: Accroche 0-2s → Setup 2-8s → Payoff 8-20s → CTA','Tournage: VERTICAL 9:16, caméra arrière','CapCut: Split, Texte, Auto Captions','Audio tendance: utilisez cet audio'],
+              ar: ['قاعدة 0.5 ث: أول إطار يوقف التمرير','الهيكل: جذبة 0-2ث → إعداد 2-8ث → نتيجة 8-20ث → CTA','التصوير: عمودي 9:16، كاميرا خلفية','CapCut: قطع، نص، تعليقات تلقائية','الصوت الرائج: استخدم هذا الصوت'],
+              en: ['0.5s rule: first frame stops the scroll','Structure: Hook 0-2s → Setup 2-8s → Payoff 8-20s → CTA','Filming: VERTICAL 9:16, back camera','CapCut: Split, Text, Auto Captions','Trending audio: use this audio']
             },
-            method: {
-              fr: 'Regardez des Reels pendant 20 minutes avec un œil critique. Chaque Reel qui vous retient plus de 5s: mettez pause et notez ce qui vous a accroché.',
-              ar: 'شاهد Reels لمدة 20 دقيقة بعين ناقدة. كل Reel يبقيك أكثر من 5ث: وقّف ودوّن ما جذبك.',
-              en: 'Watch Reels for 20 minutes with a critical eye. Every Reel that keeps you for more than 5s: pause and note what hooked you.'
-            },
-            exercise: {
-              fr: 'Filmez et éditez 3 Reels différents: 1) Avant/Après, 2) 3 Conseils éducatifs, 3) Coulisses. Publiez-les sur votre compte test.',
-              ar: 'صوّر وعدّل 3 Reels مختلفة: 1) قبل/بعد، 2) 3 نصائح تعليمية، 3) كواليس. انشرهم على حسابك التجريبي.',
-              en: 'Film and edit 3 different Reels: 1) Before/After, 2) 3 Educational Tips, 3) Behind the Scenes. Post them on your test account.'
-            },
-            tip: {
-              fr: '💡 Publiez votre meilleur Reel à 19h (heure algérienne). Utilisez Meta Business Suite pour programmer à l\'avance.',
-              ar: '💡 انشر أفضل Reel لديك الساعة 7 مساءً (توقيت الجزائر). استخدم Meta Business Suite للجدولة مسبقاً.',
-              en: '💡 Post your best Reel at 7pm (Algeria time). Use Meta Business Suite to schedule in advance.'
-            }
+            method: { fr: 'Regardez Reels 20 minutes pour étudier.', ar: 'شاهد Reels 20 دقيقة للدراسة.', en: 'Watch Reels for 20 minutes to study.' },
+            exercise: { fr: 'Filmez et éditez 3 Reels différents.', ar: 'صوّر وعدّل 3 Reels مختلفة.', en: 'Film and edit 3 different Reels.' },
+            tip: { fr: '💡 Publiez à 19h heure algérienne.', ar: '💡 انشر الساعة 7 مساءً بتوقيت الجزائر.', en: '💡 Post at 7pm Algeria time.' }
           }
         ]
       },
+      // Advanced
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
         duration: { fr: 'Semaines 10–18', ar: 'الأسابيع 10–18', en: 'Weeks 10–18' },
-        goal: { fr: 'Développer des stratégies complètes et gérer plusieurs clients', ar: 'تطوير استراتيجيات كاملة وإدارة عدة زبائن', en: 'Develop full strategies and manage multiple clients' },
+        goal: { fr: 'Développer des stratégies complètes', ar: 'تطوير استراتيجيات كاملة', en: 'Develop full strategies' },
         lessons: [
           {
             id: 's-a-1',
@@ -612,54 +310,22 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Section 1 Audit: followers, taux d\'engagement, top 5 posts analysés, démographie, fréquence de publication.',
-                'Section 2 Concurrents: 3-5 concurrents directs. Analysez leurs followers, engagement, contenu, fréquence. Identifiez les GAPS.',
-                'Section 3 Persona: profil fictif complet (nom, âge, ville, job, revenus, objectifs, habitudes).',
-                'Section 4 Objectifs SMART: Ex: Augmenter l\'engagement de 1.2% à 4.5% en 90 jours.',
-                'Section 5 Stratégie 90 jours: plateformes, piliers de contenu, mix de formats, fréquence, hashtags, budget pubs.',
-                'Présentez en PDF designé sur Canva. Cela vous positionne comme premium avant même que le client ne voie vos tarifs.'
-              ],
-              ar: [
-                'القسم 1 تدقيق: المتابعون، معدل التفاعل، أفضل 5 منشورات، الديموغرافيا، تكرار النشر.',
-                'القسم 2 المنافسون: 3-5 منافسين مباشرين. حلل متابعيهم، تفاعلهم، محتواهم، تكرارهم. حدّد الثغرات.',
-                'القسم 3 الشخصية: ملف خيالي كامل (الاسم، العمر، المدينة، العمل، الدخل، الأهداف، العادات).',
-                'القسم 4 أهداف SMART: مثال: زيادة التفاعل من 1.2% إلى 4.5% في 90 يوماً.',
-                'القسم 5 استراتيجية 90 يوماً: المنصات، ركائز المحتوى، مزيج الصيغ، التكرار، الهاشتاجات، ميزانية الإعلانات.',
-                'قدّمها كـ PDF مصمم على Canva. يضعك كخيار premium قبل أن يرى الزبون أسعارك.'
-              ],
-              en: [
-                'Section 1 Audit: followers, engagement rate, top 5 posts analyzed, demographics, posting frequency.',
-                'Section 2 Competitors: 3-5 direct competitors. Analyze their followers, engagement, content, frequency. Identify GAPS.',
-                'Section 3 Persona: complete fictional profile (name, age, city, job, income, goals, habits).',
-                'Section 4 SMART Goals: Example: Increase engagement from 1.2% to 4.5% in 90 days.',
-                'Section 5 90-day strategy: platforms, content pillars, format mix, frequency, hashtags, ad budget.',
-                'Present as a designed Canva PDF. Positions you as premium before the client even sees your rates.'
-              ]
+              fr: ['Section 1: Audit','Section 2: Concurrents','Section 3: Persona','Section 4: Objectifs SMART','Section 5: Stratégie 90 jours'],
+              ar: ['القسم 1: تدقيق','القسم 2: منافسون','القسم 3: شخصية','القسم 4: أهداف SMART','القسم 5: استراتيجية 90 يوماً'],
+              en: ['Section 1: Audit','Section 2: Competitors','Section 3: Persona','Section 4: SMART Goals','Section 5: 90-day strategy']
             },
-            method: {
-              fr: 'Rédigez votre premier document pour une vraie entreprise locale, même si elle ne vous a pas engagé. Envoyez-le comme cadeau gratuit. Le taux de réponse est extrêmement élevé.',
-              ar: 'اكتب أول وثيقة لمشروع محلي حقيقي، حتى لو لم يوظّفك. أرسلها كهدية مجانية. معدل الاستجابة مرتفع جداً.',
-              en: 'Write your first document for a real local business, even if they haven\'t hired you. Send it as a free gift. The response rate is extremely high.'
-            },
-            exercise: {
-              fr: 'Créez un document complet (8 pages minimum) en PDF Canva pour une entreprise algérienne. Incluez toutes les 5 sections.',
-              ar: 'أنشئ وثيقة كاملة (8 صفحات كحد أدنى) PDF Canva لمشروع جزائري. تضمّن الأقسام الخمسة.',
-              en: 'Create a complete document (8 pages minimum) as a Canva PDF for an Algerian business. Include all 5 sections.'
-            },
-            tip: {
-              fr: '💡 Ne dites jamais "je pense". Dites "les données montrent". La confiance basée sur les données est ce que les clients paient vraiment.',
-              ar: '💡 لا تقل أبداً "أعتقد". قل "البيانات تُظهر". الثقة المبنية على البيانات هي ما يدفع الزبائن حقاً.',
-              en: '💡 Never say "I think". Say "the data shows". Data-based confidence is what clients really pay for.'
-            }
+            method: { fr: 'Rédigez un document pour une vraie entreprise.', ar: 'اكتب وثيقة لمشروع حقيقي.', en: 'Write a document for a real business.' },
+            exercise: { fr: 'Document complet min 8 pages PDF Canva.', ar: 'وثيقة كاملة 8 صفحات PDF Canva.', en: 'Complete document min 8 pages Canva PDF.' },
+            tip: { fr: '💡 Ne dites jamais "je pense". Dites "les données montrent".', ar: '💡 لا تقل "أعتقد". قل "البيانات تُظهر".', en: '💡 Never say "I think". Say "the data shows".' }
           }
         ]
       },
+      // Master
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
         duration: { fr: 'Mois 5+', ar: 'الشهر 5+', en: 'Month 5+' },
-        goal: { fr: 'Construire une agence SMM avec des clients récurrents', ar: 'بناء أجنسي SMM مع زبائن متكررين', en: 'Build an SMM agency with recurring clients' },
+        goal: { fr: 'Construire une agence SMM', ar: 'بناء أجنسي SMM', en: 'Build an SMM agency' },
         lessons: [
           {
             id: 's-m-1',
@@ -667,52 +333,21 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Mindset: un freelance vend son temps. Une agence vend des résultats. Garantissez des métriques spécifiques.',
-                'Garantie: définissez quelle métrique vous livrez avec confiance. Continuez gratuitement si vous manquez l\'objectif.',
-                'Premier membre: Community Manager 3-4h/jour. Salaire: 15000-25000 DZD/mois. Recrutez dans les groupes Facebook Algérie.',
-                'Tarification: Starter 15K/mois, Croissance 35K/mois, Premium 65K+/mois.',
-                'Acquisition: Références (10% commission), DMs Instagram froids, partenariats avec designers et développeurs.',
-                'Case study: documentez 1 succès client (avant/après). Publiez en carousel Instagram + PDF.'
-              ],
-              ar: [
-                'العقلية: فريلانسر يبيع وقته. أجنسي يبيع النتائج. اضمن مقاييس محددة.',
-                'الضمان: حدّد أي مقياس تسلّمه بثقة. استمر مجاناً إذا فاتك الهدف.',
-                'أول عضو: مدير مجتمع 3-4 ساعات/يوم. الراتب: 15000-25000 دج/شهر. ابحث في مجموعات Facebook الجزائر.',
-                'التسعير: Starter 15K/شهر، نمو 35K/شهر، Premium 65K+/شهر.',
-                'الاستقطاب: إحالات (عمولة 10%)، DMs Instagram باردة، شراكات مع مصممين ومطورين.',
-                'دراسة حالة: وثّق نجاح زبون واحد (قبل/بعد). انشر كاروسيل Instagram + PDF.'
-              ],
-              en: [
-                'Mindset: a freelancer sells their time. An agency sells results. Guarantee specific metrics.',
-                'Guarantee: define what metric you confidently deliver. Continue for free if you miss the target.',
-                'First member: Community Manager 3-4h/day. Salary: 15000-25000 DZD/month. Recruit in Algeria Facebook groups.',
-                'Pricing: Starter 15K/month, Growth 35K/month, Premium 65K+/month.',
-                'Acquisition: Referrals (10% commission), cold Instagram DMs, partnerships with designers and developers.',
-                'Case study: document 1 client success (before/after). Publish as an Instagram carousel + PDF.'
-              ]
+              fr: ['Mindset: freelance vend son temps, agence vend des résultats','Garantie: livrez des métriques spécifiques','Premier membre: Community Manager 3-4h/jour','Tarification: Starter 15K, Croissance 35K, Premium 65K+ DZD'],
+              ar: ['العقلية: فريلانسر يبيع وقته، أجنسي يبيع النتائج','الضمان: سلم مقاييس محددة','أول عضو: مدير مجتمع 3-4 ساعات/يوم','التسعير: Starter 15K، نمو 35K، Premium 65K+ دج'],
+              en: ['Mindset: freelancer sells time, agency sells results','Guarantee: deliver specific metrics','First member: Community Manager 3-4h/day','Pricing: Starter 15K, Growth 35K, Premium 65K+ DZD']
             },
-            method: {
-              fr: 'Documentez UNE histoire de succès: métriques avant → ce que vous avez fait → métriques 3 mois après. Ce contenu vous apportera plus de clients que n\'importe quel pitch commercial.',
-              ar: 'وثّق قصة نجاح واحدة: المقاييس قبل → ما فعلته → المقاييس بعد 3 أشهر. هذا المحتوى يجلب عملاء أكثر من أي عرض بيع.',
-              en: 'Document ONE success story: metrics before → what you did → metrics 3 months after. This content will bring you more clients than any sales pitch.'
-            },
-            exercise: {
-              fr: 'Créez un modèle d\'affaires sur 1 page: votre niche, 3 forfaits avec prix, votre garantie, 3 canaux d\'acquisition, objectif de revenus 6 mois.',
-              ar: 'أنشئ نموذج عمل في صفحة واحدة: نيشتك، 3 باقات مع أسعار، ضمانك، 3 قنوات استقطاب، هدف الإيرادات 6 أشهر.',
-              en: 'Create a business model on 1 page: your niche, 3 packages with prices, your guarantee, 3 acquisition channels, 6-month revenue goal.'
-            },
-            tip: {
-              fr: '💡 Le chemin le plus rapide: 1 client → des résultats exceptionnels → 1 recommandation → répétez. Pas besoin de site web ou de publicité pour commencer.',
-              ar: '💡 أسرع طريق: زبون 1 → نتائج استثنائية → إحالة 1 → كرّر. لا تحتاج موقعاً أو إعلانات للبدء.',
-              en: '💡 The fastest path: 1 client → exceptional results → 1 referral → repeat. No need for a website or ads to start.'
-            }
+            method: { fr: 'Documentez UNE histoire de succès.', ar: 'وثّق قصة نجاح واحدة.', en: 'Document ONE success story.' },
+            exercise: { fr: 'Modèle affaires sur 1 page.', ar: 'نموذج عمل في صفحة واحدة.', en: 'Business model on 1 page.' },
+            tip: { fr: '💡 1 client → résultats → 1 référral → répétez.', ar: '💡 زبون 1 → نتائج → إحالة 1 → كرّر.', en: '💡 1 client → results → 1 referral → repeat.' }
           }
         ]
       }
     ]
   },
-  // ===== SKILL 3: VIDEO EDITING (4 niveaux) =====
+  // ============================================================
+  // SKILL 3: VIDEO EDITING
+  // ============================================================
   {
     id: 'video',
     icon: '🎬',
@@ -725,71 +360,37 @@ var SKILLS = [
     startTool: 'CapCut (free) → DaVinci Resolve (free)',
     title: { fr: 'Montage Vidéo', ar: 'مونتاج الفيديو', en: 'Video Editing' },
     subtitle: { fr: 'Création de Contenu', ar: 'إنشاء المحتوى', en: 'Content Creation' },
-    tagline: { fr: 'La compétence créative la plus demandée de la décennie', ar: 'أكثر مهارة إبداعية مطلوبة في العقد', en: 'The most in-demand creative skill of the decade' },
+    tagline: { fr: 'La compétence créative la plus demandée', ar: 'أكثر مهارة إبداعية مطلوبة', en: 'The most in-demand creative skill' },
     levels: [
+      // Beginner
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
         duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-        goal: { fr: 'Monter votre première vidéo complète avec CapCut sur téléphone', ar: 'تعديل أول فيديو كامل باستخدام CapCut على هاتفك', en: 'Edit your first complete video using CapCut on your phone' },
+        goal: { fr: 'Monter votre première vidéo avec CapCut', ar: 'تعديل أول فيديو باستخدام CapCut', en: 'Edit your first video with CapCut' },
         lessons: [
           {
             id: 'v-b-1',
-            title: { fr: 'Installer CapCut et Monter votre Première Vidéo', ar: 'تنصيب CapCut وتعديل أول فيديو', en: 'Install CapCut and Edit Your First Video' },
+            title: { fr: 'Installer CapCut et monter votre première vidéo', ar: 'تنصيب CapCut وتعديل أول فيديو', en: 'Install CapCut and edit your first video' },
             image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Téléchargez CapCut depuis Google Play ou App Store gratuit sans filigrane.',
-                'Ouvrez CapCut → + → sélectionnez vidéos et photos → Ajouter → timeline s\'ouvre.',
-                'Timeline: clips = blocs. Tapez clip → sélectionné. Bas: Split Delete Speed.',
-                'Couper: faites glisser la ligne blanche vers le moment voulu → Split → Delete partie non voulue.',
-                'Musique: Audio → Sons → recherchez → +. Volume → baissez à 30% si vous avez dialogue.',
-                'Texte: Texte → Ajouter → tapez → choisissez police couleur → faites glisser pour positionner.',
-                'Exporter: flèche haut droite → 1080p et 30fps → exportez.'
-              ],
-              ar: [
-                'حمّل CapCut من Google Play أو App Store مجاني بدون علامة مائية.',
-                'افتح CapCut → + → اختار فيديوهات وصور → أضف → الجدول الزمني يفتح.',
-                'الجدول الزمني: الكليبات = بلوكات. اضغط كليب → محدد. الأسفل: Split Delete Speed.',
-                'القطع: اسحب الخط الأبيض للحظة المطلوبة → Split → احذف الجزء غير المرغوب.',
-                'الموسيقى: Audio → أصوات → ابحث → +. Volume → خفّض لـ30% إذا كان لديك حوار.',
-                'النص: نص → أضف → اكتب → اختار خط لون → اسحب للتموضع.',
-                'التصدير: سهم أعلى يمين → 1080p و30fps → صدّر.'
-              ],
-              en: [
-                'Download CapCut from Google Play or App Store free no watermark.',
-                'Open CapCut → + → select videos and photos → Add → timeline opens.',
-                'Timeline: clips = blocks. Tap clip → selected. Bottom: Split Delete Speed.',
-                'Cut: drag white line to the moment you want → Split → Delete unwanted part.',
-                'Music: Audio → Sounds → search → +. Volume → lower to 30% if you have dialogue.',
-                'Text: Text → Add → type → choose font color → drag to position.',
-                'Export: arrow top right → 1080p and 30fps → export.'
-              ]
+              fr: ['Téléchargez CapCut (gratuit)','Ouvrez → + → sélectionnez vidéos','Timeline: clips = blocs','Couper: Split → Delete','Musique: Audio → Sons','Exporter: 1080p 30fps'],
+              ar: ['حمّل CapCut (مجاني)','افتح → + → اختار فيديوهات','الجدول الزمني: كليبات','القطع: Split → حذف','الموسيقى: Audio → أصوات','التصدير: 1080p 30fps'],
+              en: ['Download CapCut (free)','Open → + → select videos','Timeline: clips = blocks','Cut: Split → Delete','Music: Audio → Sounds','Export: 1080p 30fps']
             },
-            method: {
-              fr: 'Filmez 10 courts clips de nimporte quoi. Importez dans CapCut. Gardez seulement 3 meilleures secondes de chacun. Ajoutez musique. Exportez. Regardez et notez ce qui semble bizarre.',
-              ar: 'صوّر 10 كليبات قصيرة من أي شيء. استورد في CapCut. احتفظ بأحسن 3 ثوانٍ من كل واحد. زيد موسيقى. صدّر. شاهد ولاحظ ما يبدو غريباً.',
-              en: 'Film 10 short clips of anything. Import into CapCut. Keep only best 3 seconds of each. Add music. Export. Watch and note what seems off.'
-            },
-            exercise: {
-              fr: 'Vidéo 60 secondes sur votre journée: minimum 8 clips différents, musique de fond, votre nom en texte au début, titre à la fin.',
-              ar: 'فيديو 60 ثانية عن يومك: 8 كليبات مختلفة على الأقل، موسيقى خلفية، اسمك كنص في البداية، عنوان في النهاية.',
-              en: '60-second video about your day: minimum 8 different clips, background music, your name as text at the start, title at the end.'
-            },
-            tip: {
-              fr: '💡 Erreur la plus commune: clips trop longs. Chaque clip devrait faire 1.5-4 secondes max. Le montage rapide semble toujours plus professionnel.',
-              ar: '💡 أكثر خطأ شيوعاً: كليبات طويلة جداً. كل كليب يجب أن يكون 1.5-4 ثوانٍ كحد أقصى. المونتاج السريع يبان دائماً أكثر احترافية.',
-              en: '💡 Most common mistake: clips too long. Every clip should be 1.5-4 seconds max. Fast pacing always looks more professional.'
-            }
+            method: { fr: 'Filmez 10 clips courts et montez-les.', ar: 'صوّر 10 كليبات قصيرة وعدّلها.', en: 'Film 10 short clips and edit them.' },
+            exercise: { fr: 'Vidéo 60 secondes avec musique et texte.', ar: 'فيديو 60 ثانية مع موسيقى ونص.', en: '60-second video with music and text.' },
+            tip: { fr: '💡 Chaque clip: 1.5-4 secondes max.', ar: '💡 كل كليب: 1.5-4 ثوانٍ كحد أقصى.', en: '💡 Each clip: 1.5-4 seconds max.' }
           }
         ]
       },
+      // Intermediate
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
         duration: { fr: 'Semaines 5–11', ar: 'الأسابيع 5–11', en: 'Weeks 5–11' },
-        goal: { fr: 'Apprendre DaVinci Resolve et se spécialiser dans un type de vidéo', ar: 'تعلم DaVinci Resolve والتخصص في نوع معين من الفيديو', en: 'Learn DaVinci Resolve and specialize in a video type' },
+        goal: { fr: 'Apprendre DaVinci Resolve', ar: 'تعلم DaVinci Resolve', en: 'Learn DaVinci Resolve' },
         lessons: [
           {
             id: 'v-i-1',
@@ -797,54 +398,22 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Téléchargez DaVinci Resolve sur blackmagicdesign.com (version gratuite, PAS Studio payant).',
-                'Configuration: Fichier → Paramètres projet → 25fps et 1920x1080.',
-                '5 pages: Cut, Edit (utilisez celle-ci), Fusion, Color, Fairlight. Commencez avec Edit + Color.',
-                'Pour importer: Fichier → Importer → Importer médias → Media Pool → glissez vers la Timeline.',
-                'Pour monter: Lame B = couper, Sélection A = déplacer, Backspace = supprimer.',
-                'Pour exporter: page Deliver → choisissez YouTube ou H.264 1080p → Tout rendre.'
-              ],
-              ar: [
-                'حمّل DaVinci Resolve من blackmagicdesign.com (النسخة المجانية، مش Studio المدفوع).',
-                'الإعداد: ملف → إعدادات المشروع → 25fps و1920x1080.',
-                '5 صفحات: Cut، Edit (استخدم هذه)، Fusion، Color، Fairlight. ابدأ بـ Edit + Color.',
-                'للاستيراد: ملف → استيراد → استيراد وسائط → Media Pool → اسحب للجدول الزمني.',
-                'للمونتاج: شفرة B = قطع، تحديد A = تحريك، Backspace = حذف.',
-                'للتصدير: صفحة Deliver → اختار YouTube أو H.264 1080p → تصيير الكل.'
-              ],
-              en: [
-                'Download DaVinci Resolve from blackmagicdesign.com (free version, NOT Studio paid).',
-                'Setup: File → Project Settings → 25fps and 1920x1080.',
-                '5 pages: Cut, Edit (use this one), Fusion, Color, Fairlight. Start with Edit + Color.',
-                'To import: File → Import → Import Media → Media Pool → drag to Timeline.',
-                'To edit: Blade B = cut, Selection A = move, Backspace = delete.',
-                'To export: Deliver page → choose YouTube or H.264 1080p → Render All.'
-              ]
+              fr: ['blackmagicdesign.com → DaVinci Resolve gratuit','Configuration: 25fps 1920x1080','5 pages: Cut, Edit, Fusion, Color, Fairlight','Importer: Fichier → Importer → Media Pool','Montage: Lame B=couper, Sélection A=déplacer','Exporter: Deliver → YouTube ou H.264'],
+              ar: ['blackmagicdesign.com → DaVinci Resolve مجاني','الإعداد: 25fps 1920x1080','5 صفحات: Cut, Edit, Fusion, Color, Fairlight','الاستيراد: ملف → استيراد → Media Pool','المونتاج: شفرة B=قطع، تحديد A=تحريك','التصدير: Deliver → YouTube أو H.264'],
+              en: ['blackmagicdesign.com → DaVinci Resolve free','Setup: 25fps 1920x1080','5 pages: Cut, Edit, Fusion, Color, Fairlight','Import: File → Import → Media Pool','Editing: Blade B=cut, Selection A=move','Export: Deliver → YouTube or H.264']
             },
-            method: {
-              fr: 'Importez 5 minutes de métrage dans DaVinci Resolve. Votre seule tâche: couper chaque moment sans intérêt. C\'est le principe fondamental du montage.',
-              ar: 'استورد 5 دقائق من اللقطات في DaVinci Resolve. مهمتك الوحيدة: اقطع كل لحظة بدون اهتمام. هذا المبدأ الأساسي للمونتاج.',
-              en: 'Import 5 minutes of footage into DaVinci Resolve. Your only task: cut out every uninteresting moment. This is the fundamental principle of editing.'
-            },
-            exercise: {
-              fr: 'Montez une vidéo de 3 minutes avec DaVinci Resolve en utilisant des clips gratuits de pexels.com/videos. Incluez coupes propres, musique libre, et correction colorimétrique.',
-              ar: 'عدّل فيديو 3 دقائق مع DaVinci Resolve باستخدام لقطات مجانية من pexels.com/videos. تشمل قطعاً نظيفة، موسيقى مجانية، وتصحيح ألوان.',
-              en: 'Edit a 3-minute video with DaVinci Resolve using free clips from pexels.com/videos. Include clean cuts, free music, and color correction.'
-            },
-            tip: {
-              fr: '💡 Raccourci pro: I = marquer point IN, O = marquer point OUT, F9 = ajouter automatiquement à la timeline.',
-              ar: '💡 اختصار احترافي: I = نقطة البداية، O = نقطة النهاية، F9 = أضف تلقائياً للجدول.',
-              en: '💡 Pro shortcut: I = mark IN point, O = mark OUT point, F9 = automatically add to timeline.'
-            }
+            method: { fr: 'Importez 5 minutes de métrage et coupez les moments sans intérêt.', ar: 'استورد 5 دقائق من اللقطات واقطع اللحظات غير المهمة.', en: 'Import 5 minutes of footage and cut uninteresting moments.' },
+            exercise: { fr: 'Montez une vidéo de 3 minutes avec DaVinci Resolve.', ar: 'عدّل فيديو 3 دقائق باستخدام DaVinci Resolve.', en: 'Edit a 3-minute video with DaVinci Resolve.' },
+            tip: { fr: '💡 Raccourci: I=point IN, O=point OUT, F9=ajouter à la timeline.', ar: '💡 اختصار: I=نقطة البداية, O=نقطة النهاية, F9=أضف للجدول.', en: '💡 Shortcut: I=IN point, O=OUT point, F9=add to timeline.' }
           }
         ]
       },
+      // Advanced
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
         duration: { fr: 'Semaines 12–20', ar: 'الأسابيع 12–20', en: 'Weeks 12–20' },
-        goal: { fr: 'Maîtriser l\'étalonnage et fixer des tarifs premium', ar: 'إتقان تصحيح الألوان وتحديد أسعار premium', en: 'Master color grading and set premium rates' },
+        goal: { fr: 'Maîtriser l\'étalonnage et les tarifs premium', ar: 'إتقان تصحيح الألوان والأسعار premium', en: 'Master color grading and premium rates' },
         lessons: [
           {
             id: 'v-a-1',
@@ -852,107 +421,44 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Page Color: graphe de noeuds. Noeud 1 = Correction, Noeud 2 = Grade créatif.',
-                '3 oscilloscopes: Waveform (luminosité), Parade (équilibre R G B), Vectorscope (saturation).',
-                'Roues primaires: Lift (ombres), Gamma (tons moyens), Gain (hautes lumières).',
-                'Outil Qualificateur: pipette → cliquez une couleur → isole UNIQUEMENT cette couleur.',
-                'Correspondance: clic droit sur un clip gradé → Capturer image fixe → Appliquer le grade.',
-                'LUTs: clic droit sur un noeud → LUTs → appliquez. Réduisez l\'opacité à 30-70%. Jamais 100%.'
-              ],
-              ar: [
-                'صفحة Color: رسم العقد. العقدة 1 = تصحيح، العقدة 2 = Grade إبداعي.',
-                '3 أجهزة قياس: Waveform (السطوع)، Parade (توازن R G B)، Vectorscope (التشبع).',
-                'العجلات الأساسية: Lift (ظلال)، Gamma (أوساط)، Gain (إضاءات).',
-                'أداة المؤهّل: قطّارة → اضغط لون → يعزل هذا اللون فقط.',
-                'المطابقة: انقر يمين على كليب مصحّح → التقاط صورة ثابتة → تطبيق الـ Grade.',
-                'LUTs: انقر يمين على عقدة → LUTs → طبّق. قلّل الشفافية إلى 30-70%. أبداً 100%.'
-              ],
-              en: [
-                'Color page: node graph. Node 1 = Correction, Node 2 = Creative grade.',
-                '3 scopes: Waveform (brightness), Parade (R G B balance), Vectorscope (saturation).',
-                'Primary wheels: Lift (shadows), Gamma (midtones), Gain (highlights).',
-                'Qualifier tool: eyedropper → click a color → isolates ONLY that color.',
-                'Matching: right-click on a graded clip → Grab Still → Apply Grade.',
-                'LUTs: right-click on a node → LUTs → apply. Reduce opacity to 30-70%. Never 100%.'
-              ]
+              fr: ['Page Color: graphe de noeuds','3 oscilloscopes: Waveform, Parade, Vectorscope','Roues primaires: Lift, Gamma, Gain','Outil Qualificateur: isole UNE couleur','Correspondance: Capturer image fixe → Appliquer grade','LUTs: appliquez à 30-70% opacité'],
+              ar: ['صفحة Color: رسم العقد','3 أجهزة قياس: Waveform, Parade, Vectorscope','العجلات الأساسية: Lift, Gamma, Gain','أداة المؤهّل: يعزل لون واحد','المطابقة: التقاط صورة ثابتة → تطبيق الgrade','LUTs: طبّق بشفافية 30-70%'],
+              en: ['Color page: node graph','3 scopes: Waveform, Parade, Vectorscope','Primary wheels: Lift, Gamma, Gain','Qualifier tool: isolates ONE color','Matching: Grab Still → Apply Grade','LUTs: apply at 30-70% opacity']
             },
-            method: {
-              fr: 'Gradez le même clip de 5 façons différentes: 1) Après-midi dorée, 2) Thriller froid, 3) Film vintage, 4) Action, 5) Romance douce. Exportez les 5 versions.',
-              ar: 'صحّح نفس الكليب بـ5 طرق مختلفة: 1) بعد ظهر ذهبي، 2) إثارة باردة، 3) فيلم قديم، 4) أكشن، 5) رومانسية ناعمة. صدّر النسخ الخمس.',
-              en: 'Grade the same clip in 5 different ways: 1) Golden afternoon, 2) Cold thriller, 3) Vintage film, 4) Action, 5) Soft romance. Export all 5 versions.'
-            },
-            exercise: {
-              fr: 'Téléchargez 3 clips Pexels (extérieur, portrait, nuit). Gradez les 3 pour qu\'ils paraissent appartenir au même film. Montrez les versions avant/après.',
-              ar: 'حمّل 3 كليبات Pexels (خارجي، بورتريه، ليلي). صحّحهم ليبدوا من نفس الفيلم. أظهر النسخ قبل/بعد.',
-              en: 'Download 3 Pexels clips (outdoor, portrait, night). Grade them to look like they belong to the same film. Show before/after versions.'
-            },
-            tip: {
-              fr: '💡 Les coloristes utilisent les oscilloscopes, pas leurs yeux. Fixez d\'abord l\'exposition technique. Un grade créatif sur une mauvaise exposition sera toujours mauvais.',
-              ar: '💡 مصححو الألوان يستخدمون أجهزة القياس، ليس أعينهم. صحّح الكشف التقني أولاً. Grade إبداعي على كشف سيئ = دائماً سيئ.',
-              en: '💡 Colorists use scopes, not their eyes. Fix technical exposure first. A creative grade on wrong exposure will always be bad.'
-            }
+            method: { fr: 'Gradez le même clip de 5 façons différentes.', ar: 'صحّح نفس الكليب بـ5 طرق مختلفة.', en: 'Grade the same clip in 5 different ways.' },
+            exercise: { fr: 'Téléchargez 3 clips et gradez-les pour paraître du même film.', ar: 'حمّل 3 كليبات وصحّحها لتبدو من نفس الفيلم.', en: 'Download 3 clips and grade them to look like the same film.' },
+            tip: { fr: '💡 Les coloristes utilisent les oscilloscopes, pas leurs yeux.', ar: '💡 مصححو الألوان يستخدمون أجهزة القياس، ليس أعينهم.', en: '💡 Colorists use scopes, not their eyes.' }
           }
         ]
       },
+      // Master
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
         duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
-        goal: { fr: 'Produire des publicités commerciales et construire une société de production', ar: 'إنتاج إعلانات تجارية وبناء شركة إنتاج', en: 'Produce commercial videos and build a production company' },
+        goal: { fr: 'Produire des publicités commerciales', ar: 'إنتاج إعلانات تجارية', en: 'Produce commercial ads' },
         lessons: [
           {
             id: 'v-m-1',
-            title: { fr: 'Produire et Monter une Publicité Commerciale', ar: 'إنتاج ومونتاج إعلان تجاري', en: 'Produce and Edit a Commercial Ad' },
+            title: { fr: 'Produire une Publicité Commerciale', ar: 'إنتاج إعلان تجاري', en: 'Produce a Commercial Ad' },
             image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Structure 30-60s: 0-5s = Problème, 5-20s = Solution, 20-28s = Transformation, 28-30s = CTA.',
-                'Pré-production: Brief → Script → Storyboard → Liste des plans → Repérage → Planning tournage.',
-                'Sur le plateau: Dirigez le talent. Minimum 3 prises. Variez les angles. Ne partez pas sans tous les plans.',
-                'Post-production: Montage image → Sound design → Étalonnage → Graphiques → Révision client → Export.',
-                'Voix off: Trouvez un voix off dans les groupes Facebook "voix off algérie" ou enregistrez-vous + Adobe Podcast.',
-                'Prix: pub sociale 30s = 40-120K DZD, TV = 150-500K DZD, montage seul = divisez par 3.'
-              ],
-              ar: [
-                'هيكل 30-60ث: 0-5ث = مشكلة، 5-20ث = حل، 20-28ث = تحول، 28-30ث = CTA.',
-                'ما قبل الإنتاج: بريف → سكريبت → Storyboard → قائمة اللقطات → استكشاف → جدول تصوير.',
-                'في الموقع: وجّه الممثلين. 3 تسجيلات على الأقل. تنويع الزوايا. لا تغادر بدون كل اللقطات.',
-                'ما بعد الإنتاج: مونتاج الصورة → تصميم صوتي → تصحيح ألوان → جرافيك → مراجعة الزبون → تصدير.',
-                'صوت تعليقي: ابحث في مجموعات Facebook "voix off algérie" أو سجّل بنفسك + Adobe Podcast.',
-                'الأسعار: إعلان سوشيال 30ث = 40-120K دج، تلفزيون = 150-500K دج، مونتاج فقط = اقسم على 3.'
-              ],
-              en: [
-                'Structure 30-60s: 0-5s = Problem, 5-20s = Solution, 20-28s = Transformation, 28-30s = CTA.',
-                'Pre-production: Brief → Script → Storyboard → Shot list → Location scouting → Shooting schedule.',
-                'On set: Direct talent. Minimum 3 takes. Vary angles. Don\'t leave without all shots.',
-                'Post-production: Picture edit → Sound design → Color grade → Graphics → Client review → Export.',
-                'Voiceover: Find voiceover in Facebook groups "voix off algérie" or record yourself + Adobe Podcast.',
-                'Prices: 30s social commercial = 40-120K DZD, TV = 150-500K DZD, editing only = divide by 3.'
-              ]
+              fr: ['Structure 30-60s: Problème → Solution → Transformation → CTA','Pré-production: Brief → Script → Storyboard → Shot list','Tournage: 3 prises minimum, variez les angles','Post-production: Montage → Son → Étalonnage → Graphiques','Voix off: enregistrez ou trouvez un voix off','Prix: 40-120K (social), 150-500K (TV) DZD'],
+              ar: ['هيكل 30-60ث: مشكلة → حل → تحول → CTA','ما قبل الإنتاج: بريف → سكريبت → Storyboard → قائمة لقطات','التصوير: 3 تسجيلات على الأقل، تنويع الزوايا','ما بعد الإنتاج: مونتاج → صوت → تصحيح ألوان → جرافيك','صوت تعليقي: سجّل أو ابحث عن صوت','الأسعار: 40-120K (سوشيال), 150-500K (تلفزيون) دج'],
+              en: ['Structure 30-60s: Problem → Solution → Transformation → CTA','Pre-production: Brief → Script → Storyboard → Shot list','Shooting: 3 takes minimum, vary angles','Post-production: Edit → Sound → Color grade → Graphics','Voiceover: record or find a voiceover artist','Prices: 40-120K (social), 150-500K (TV) DZD']
             },
-            method: {
-              fr: 'Créez votre premier pub de démonstration: choisissez un produit local réel. Écrivez un script de 30s. Filmez. Montez. Publiez sur Instagram en taguant la marque.',
-              ar: 'أنشئ أول إعلانك التجريبي: اختر منتجاً محلياً حقيقياً. اكتب سكريبت 30ث. صوّر. عدّل. انشر على Instagram مع وضع علامة للعلامة التجارية.',
-              en: 'Create your first spec commercial: choose a real local product. Write a 30s script. Film. Edit. Post on Instagram tagging the brand.'
-            },
-            exercise: {
-              fr: 'Créez un commercial complet de 30s pour un produit algérien (ex: jus Sahara Fresh). Incluez storyboard, tournage, montage, grade vibrant, voix off. Exportez horizontal et vertical.',
-              ar: 'أنشئ إعلاناً كاملاً 30ث لمنتج جزائري (مثال: عصير Sahara Fresh). يشمل storyboard، تصوير، مونتاج، Grade نابض، صوت تعليقي. صدّر أفقي وعمودي.',
-              en: 'Create a complete 30s commercial for an Algerian product (e.g.: Sahara Fresh juice). Include storyboard, filming, editing, vibrant grade, voiceover. Export horizontal and vertical.'
-            },
-            tip: {
-              fr: '💡 Le monteur qui comprend la stratégie publicitaire gagne 3x plus que celui qui ne connaît que le logiciel.',
-              ar: '💡 المحرر الذي يفهم استراتيجية الإعلان يكسب 3 أضعاف من يعرف البرنامج فقط.',
-              en: '💡 The editor who understands advertising strategy earns 3x more than one who only knows the software.'
-            }
+            method: { fr: 'Créez un pub de démonstration pour un produit local.', ar: 'أنشئ إعلاناً تجريبياً لمنتج محلي.', en: 'Create a spec commercial for a local product.' },
+            exercise: { fr: 'Commercial complet 30s pour un produit algérien.', ar: 'إعلان كامل 30 ثانية لمنتج جزائري.', en: 'Complete 30s commercial for an Algerian product.' },
+            tip: { fr: '💡 Le monteur qui comprend la stratégie publicitaire gagne 3x plus.', ar: '💡 المحرر الذي يفهم استراتيجية الإعلان يكسب 3 أضعاف.', en: '💡 The editor who understands advertising strategy earns 3x more.' }
           }
         ]
       }
     ]
   },
-  // ===== SKILL 4: WEB DEVELOPMENT (4 niveaux) =====
+  // ============================================================
+  // SKILL 4: WEB DEVELOPMENT (4 niveaux)
+  // ============================================================
   {
     id: 'webdev',
     icon: '💻',
@@ -967,6 +473,7 @@ var SKILLS = [
     subtitle: { fr: 'Développement Front-End', ar: 'تطوير الواجهات', en: 'Front-End Development' },
     tagline: { fr: 'Créez des sites web professionnels qui génèrent des revenus', ar: 'أنشئ مواقع ويب احترافية تدرّ عليك', en: 'Build professional websites that generate income' },
     levels: [
+      // Beginner
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -975,103 +482,21 @@ var SKILLS = [
         lessons: [
           {
             id: 'w-b-1',
-            title: { fr: 'HTML - La structure de base de tout site web', ar: 'HTML - هيكل أساسي لكل موقع ويب', en: 'HTML - The basic structure of every website' },
+            title: { fr: 'HTML - La structure de base', ar: 'HTML - الهيكل الأساسي', en: 'HTML - The basic structure' },
             image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Ouvrez VS Code (ou tout autre éditeur de code) → Fichier → Nouveau fichier → index.html.',
-                'Tapez le point d\'exclamation (!) et appuyez sur Tab — cela génère automatiquement la structure HTML de base.',
-                'DOCTYPE html déclare que c\'est un document HTML5. <html> est la racine. <head> contient les métadonnées (titre, encodage, etc.).',
-                'Le <body> contient tout ce qui s\'affiche sur la page: textes, images, liens, boutons.',
-                'Les titres: <h1> à <h6> — <h1> est le plus important, <h6> le moins important. Utilisez <h1> pour le titre principal.',
-                'Les paragraphes: <p> pour le texte normal. Les liens: <a href="https://google.com">Google</a> pour créer des liens.',
-                'Les images: <img src="photo.jpg" alt="description">. Les div: <div> sont des conteneurs qui permettent de structurer la page.'
-              ],
-              ar: [
-                'افتح VS Code (أو أي محرر كود) → ملف → ملف جديد → index.html.',
-                'اكتب علامة التعجب (!) واضغط Tab — هذا يولّد هيكل HTML الأساسي تلقائياً.',
-                'DOCTYPE html تصريح بأنها صفحة HTML5. <html> هو الجذر. <head> يحتوي البيانات الوصفية (العنوان، الترميز، الخ.).',
-                '<body> يحتوي كل ما يظهر على الصفحة: نصوص، صور، روابط، أزرار.',
-                'العناوين: <h1> إلى <h6> — <h1> هو الأهم، <h6> الأقل أهمية. استخدم <h1> للعنوان الرئيسي.',
-                'الفقرات: <p> للنص العادي. الروابط: <a href="https://google.com">Google</a> لإنشاء روابط.',
-                'الصور: <img src="photo.jpg" alt="وصف">. الـ div: <div> هي حاويات تسمح بتنظيم الصفحة.'
-              ],
-              en: [
-                'Open VS Code (or any code editor) → File → New File → index.html.',
-                'Type the exclamation mark (!) and press Tab — this automatically generates the basic HTML structure.',
-                'DOCTYPE html declares it\'s an HTML5 document. <html> is the root. <head> contains metadata (title, encoding, etc.).',
-                'The <body> contains everything displayed on the page: text, images, links, buttons.',
-                'Headings: <h1> to <h6> — <h1> is the most important, <h6> the least. Use <h1> for the main title.',
-                'Paragraphs: <p> for normal text. Links: <a href="https://google.com">Google</a> to create links.',
-                'Images: <img src="photo.jpg" alt="description">. The div: <div> are containers that structure the page.'
-              ]
+              fr: ['VS Code → index.html','! + Tab = structure de base','DOCTYPE html = déclaration','html = racine','head = métadonnées','body = contenu visible'],
+              ar: ['VS Code → index.html','! + Tab = هيكل أساسي','DOCTYPE html = تصريح','html = الجذر','head = بيانات وصفية','body = المحتوى الظاهر'],
+              en: ['VS Code → index.html','! + Tab = basic structure','DOCTYPE html = declaration','html = root','head = metadata','body = visible content']
             },
-            method: {
-              fr: 'Créez 5 pages HTML différentes: index.html, about.html, contact.html, services.html, blog.html. Ouvrez-les dans le navigateur pour voir la différence.',
-              ar: 'أنشئ 5 صفحات HTML مختلفة: index.html، about.html، contact.html، services.html، blog.html. افتحهم في المتصفح لترى الفرق.',
-              en: 'Create 5 different HTML pages: index.html, about.html, contact.html, services.html, blog.html. Open them in the browser to see the difference.'
-            },
-            exercise: {
-              fr: 'Créez une page "À propos de moi" complète avec: 1 titre principal (<h1>), 1 sous-titre (<h2>), 1 paragraphe vous présentant, 1 image de vous, et 1 lien vers Google.',
-              ar: 'أنشئ صفحة "عني" كاملة بها: عنوان رئيسي (<h1>)، عنوان فرعي (<h2>)، فقرة تعرفك، صورة لك، ورابط إلى Google.',
-              en: 'Create a complete "About Me" page with: 1 main heading (<h1>), 1 subheading (<h2>), 1 paragraph introducing yourself, 1 picture of yourself, and 1 link to Google.'
-            },
-            tip: {
-              fr: '💡 Utilisez Emmet pour générer du HTML plus rapidement. Exemple: tapez "div.container>p*3" et appuyez sur Tab — cela génère une div avec une classe "container" et 3 paragraphes.',
-              ar: '💡 استخدم Emmet لتوليد HTML أسرع. مثال: اكتب "div.container>p*3" واضغط Tab — هذا يولّد div مع كلاس "container" و3 فقرات.',
-              en: '💡 Use Emmet to generate HTML faster. Example: type "div.container>p*3" and press Tab — this generates a div with class "container" and 3 paragraphs.'
-            }
-          },
-          {
-            id: 'w-b-2',
-            title: { fr: 'CSS - Le style qui rend votre site magnifique', ar: 'CSS - التصميم اللي يخلّي موقعك جميل', en: 'CSS - The style that makes your site beautiful' },
-            image: 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&q=80',
-            layout: 'right',
-            steps: {
-              fr: [
-                'CSS (Cascading Style Sheets) est le langage qui donne du style à votre HTML. Créez un fichier style.css et liez-le à votre HTML avec: <link rel="stylesheet" href="style.css">.',
-                'Les sélecteurs: h1 { color: blue; } — cela rend tous les titres <h1> bleus. Vous pouvez sélectionner par balise, classe ou ID.',
-                'Les classes: .ma-classe { background: red; } — utilisez class="ma-classe" dans votre HTML pour appliquer le style.',
-                'Les propriétés essentielles: color (couleur du texte), background-color (fond), font-size (taille), margin (marge extérieure), padding (marge intérieure), border (bordure).',
-                'Le modèle de boîte: margin = espace hors de la boîte, padding = espace à l\'intérieur, border = contour.',
-                'Flexbox: display:flex + justify-content + align-items permet de disposer les éléments flexiblement — c\'est LA méthode moderne.'
-              ],
-              ar: [
-                'CSS هو اللغة اللي تعطي ستايل لـ HTML. أنشئ ملف style.css واربطه بـ HTML بـ: <link rel="stylesheet" href="style.css">.',
-                'المحددات: h1 { color: blue; } — هذا يخلّي كل عناوين <h1> زرقاء. تقدر تحدد بالوسومة، الكلاس أو الـ ID.',
-                'الكلاسات: .ma-classe { background: red; } — استخدم class="ma-classe" في HTML باش تطبق الستايل.',
-                'الخصائص الأساسية: color (لون النص)، background-color (الخلفية)، font-size (الحجم)، margin (الهامش الخارجي)، padding (الهامش الداخلي)، border (الحدود).',
-                'نموذج المربع: margin = المساحة خارج المربع، padding = المساحة داخل المربع، border = الحدود.',
-                'Flexbox: display:flex + justify-content + align-items تخلّيك ترتب العناصر بمرونة — هذي الطريقة العصرية.'
-              ],
-              en: [
-                'CSS (Cascading Style Sheets) is the language that styles your HTML. Create a style.css file and link it to your HTML with: <link rel="stylesheet" href="style.css">.',
-                'Selectors: h1 { color: blue; } — this turns all <h1> headings blue. You can select by tag, class or ID.',
-                'Classes: .my-class { background: red; } — use class="my-class" in your HTML to apply the style.',
-                'Essential properties: color (text color), background-color (background), font-size (size), margin (outer space), padding (inner space), border (outline).',
-                'The box model: margin = space outside the box, padding = space inside, border = outline.',
-                'Flexbox: display:flex + justify-content + align-items lets you arrange elements flexibly — this is THE modern method.'
-              ]
-            },
-            method: {
-              fr: 'Prenez une page HTML simple et appliquez-y 5 styles différents. Expérimentez avec chaque propriété, changez les valeurs, observez le résultat en direct dans votre navigateur avec les DevTools (F12).',
-              ar: 'خذ صفحة HTML بسيطة وطبّق عليها 5 ستايلات مختلفة. جرب كل خاصية، غيّر القيم، شاهد النتيجة مباشرة في المتصفح باستخدام أدوات المطور (F12).',
-              en: 'Take a simple HTML page and apply 5 different styles to it. Experiment with each property, change values, observe the result live in your browser using DevTools (F12).'
-            },
-            exercise: {
-              fr: 'Stylisez votre page "À propos de moi": titre principal en bleu, fond de page gris clair, texte centré, image arrondie (border-radius: 50%), marges de 20px. Utilisez Flexbox pour centrer le contenu.',
-              ar: 'صمّم صفحة "عني": العنوان الرئيسي أزرق، خلفية الصفحة رمادية، النص في المنتصف، صورة مدورة (border-radius: 50%)، هوامش 20px. استخدم Flexbox لتوسيط المحتوى.',
-              en: 'Style your "About Me" page: main heading in blue, light gray page background, centered text, rounded image (border-radius: 50%), margins of 20px. Use Flexbox to center the content.'
-            },
-            tip: {
-              fr: '💡 Utilisez les DevTools (F12) de votre navigateur pour expérimenter le CSS en direct. Vous pouvez modifier n\'importe quelle propriété et voir le changement instantanément — puis copier le code dans votre fichier.',
-              ar: '💡 استخدم أدوات المطور (F12) في متصفحك لتجربة CSS مباشرة. تقدر تغيّر أي خاصية وتشوف التغيير فوراً — ثم انسخ الكود في ملفك.',
-              en: '💡 Use your browser\'s DevTools (F12) to experiment with CSS live. You can modify any property and see the change instantly — then copy the code into your file.'
-            }
+            method: { fr: 'Créez 5 pages HTML différentes.', ar: 'أنشئ 5 صفحات HTML مختلفة.', en: 'Create 5 different HTML pages.' },
+            exercise: { fr: 'Page "À propos de moi" avec titre, paragraphe, image, lien.', ar: 'صفحة "عني" مع عنوان، فقرة، صورة، رابط.', en: '"About Me" page with heading, paragraph, image, link.' },
+            tip: { fr: '💡 Utilisez Emmet pour générer du HTML rapidement.', ar: '💡 استخدم Emmet لتوليد HTML بسرعة.', en: '💡 Use Emmet to generate HTML quickly.' }
           }
         ]
       },
+      // Intermediate
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -1084,49 +509,17 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'JavaScript est le langage qui rend les sites web interactifs. Ouvrez la console du navigateur (F12 → Console) pour tester du code.',
-                'Déclarez une variable: let nom = "Ahmed"; — une variable stocke une valeur.',
-                'Affichez dans la console: console.log(nom); — cela affiche "Ahmed" dans la console.',
-                'Créez une fonction: function bonjour() { alert("Bonjour!"); } — une fonction exécute du code.',
-                'Ajoutez un événement: document.getElementById("btn").onclick = function() { alert("Cliqué!"); } — cela exécute la fonction quand on clique sur le bouton.',
-                'Le DOM (Document Object Model) permet de manipuler le HTML. Exemple: document.getElementById("titre").style.color = "red"; change la couleur du texte.'
-              ],
-              ar: [
-                'JavaScript هي اللغة اللي تخلّي المواقع تفاعلية. افتح وحدة التحكم في المتصفح (F12 → Console) لتجربة الكود.',
-                'صرّح بمتغير: let nom = "Ahmed"; — المتغير يخزّن قيمة.',
-                'أظهر في وحدة التحكم: console.log(nom); — هذا يعرض "Ahmed" في وحدة التحكم.',
-                'أنشئ دالة: function bonjour() { alert("Bonjour!"); } — الدالة تنفذ كوداً.',
-                'أضف حدث: document.getElementById("btn").onclick = function() { alert("تم النقر!"); } — هذا ينفذ الدالة عند النقر على الزر.',
-                'DOM يسمح بمعالجة HTML. مثال: document.getElementById("titre").style.color = "red"; يغير لون النص.'
-              ],
-              en: [
-                'JavaScript is the language that makes websites interactive. Open the browser console (F12 → Console) to test code.',
-                'Declare a variable: let name = "Ahmed"; — a variable stores a value.',
-                'Display in console: console.log(name); — this displays "Ahmed" in the console.',
-                'Create a function: function hello() { alert("Hello!"); } — a function executes code.',
-                'Add an event: document.getElementById("btn").onclick = function() { alert("Clicked!"); } — this executes the function when the button is clicked.',
-                'The DOM (Document Object Model) allows manipulating HTML. Example: document.getElementById("title").style.color = "red"; changes the text color.'
-              ]
+              fr: ['let nom = "Ahmed";','console.log(nom);','function bonjour() { alert("Bonjour!"); }','document.getElementById("btn").onclick = function() { ... }'],
+              ar: ['let nom = "Ahmed";','console.log(nom);','function bonjour() { alert("Bonjour!"); }','document.getElementById("btn").onclick = function() { ... }'],
+              en: ['let name = "Ahmed";','console.log(name);','function hello() { alert("Hello!"); }','document.getElementById("btn").onclick = function() { ... }']
             },
-            method: {
-              fr: 'Créez une page HTML avec un bouton qui affiche une alerte "Bonjour!" quand on clique dessus. Puis ajoutez un compteur qui s\'incrémente à chaque clic.',
-              ar: 'أنشئ صفحة HTML مع زر يعرض تنبيه "Bonjour!" عند النقر عليه. ثم أضف عداداً يزداد مع كل نقرة.',
-              en: 'Create an HTML page with a button that shows an alert "Hello!" when clicked. Then add a counter that increments with each click.'
-            },
-            exercise: {
-              fr: 'Créez un compteur: un bouton "+" qui augmente un nombre affiché à l\'écran, et un bouton "-" qui le diminue. Le nombre doit être affiché dans un élément HTML.',
-              ar: 'أنشئ عداداً: زر "+" يزيد رقماً معروضاً على الشاشة، وزر "-" يقلله. يجب عرض الرقم في عنصر HTML.',
-              en: 'Create a counter: a "+" button that increases a displayed number, and a "-" button that decreases it. The number must be displayed in an HTML element.'
-            },
-            tip: {
-              fr: '💡 Utilisez console.log() pour déboguer votre code. C\'est la technique la plus simple pour comprendre ce qui se passe dans votre programme.',
-              ar: '💡 استخدم console.log() لتصحيح أخطاء الكود. هذه أبسط تقنية لفهم ما يحدث في برنامجك.',
-              en: '💡 Use console.log() to debug your code. It\'s the simplest technique to understand what\'s happening in your program.'
-            }
+            method: { fr: 'Créez un bouton qui affiche une alerte.', ar: 'أنشئ زراً يعرض تنبيه.', en: 'Create a button that shows an alert.' },
+            exercise: { fr: 'Créez un compteur avec un bouton "+".', ar: 'أنشئ عداداً مع زر "+".', en: 'Create a counter with a "+" button.' },
+            tip: { fr: '💡 Utilisez console.log() pour déboguer.', ar: '💡 استخدم console.log() لتصحيح الأخطاء.', en: '💡 Use console.log() to debug.' }
           }
         ]
       },
+      // Advanced
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -1139,54 +532,22 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'React est une bibliothèque JavaScript pour construire des interfaces utilisateur. Créez un projet: npx create-react-app mon-projet (ou utilisez Vite pour plus de rapidité).',
-                'Structure: components (composants), props (propriétés), state (état), hooks (useState, useEffect).',
-                'JSX: mélange de HTML et JavaScript. Exemple: <h1>Bonjour {nom}</h1>',
-                'Props: passer des données entre composants. Exemple: <User name="Ahmed" age="25" />',
-                'State: gérer les données qui changent avec useState. Exemple: const [count, setCount] = useState(0);',
-                'Déployez sur Vercel ou Netlify pour partager votre travail en ligne.'
-              ],
-              ar: [
-                'React هي مكتبة JavaScript لبناء واجهات المستخدم. أنشئ مشروعاً: npx create-react-app mon-projet (أو استخدم Vite للسرعة).',
-                'الهيكل: المكونات، الخصائص (props)، الحالة (state)، الخطافات (useState، useEffect).',
-                'JSX: مزيج من HTML و JavaScript. مثال: <h1>مرحباً {nom}</h1>',
-                'الخصائص: تمرير البيانات بين المكونات. مثال: <User name="Ahmed" age="25" />',
-                'الحالة: إدارة البيانات المتغيرة مع useState. مثال: const [count, setCount] = useState(0);',
-                'انشر على Vercel أو Netlify لمشاركة عملك أونلاين.'
-              ],
-              en: [
-                'React is a JavaScript library for building user interfaces. Create a project: npx create-react-app my-project (or use Vite for speed).',
-                'Structure: components, props, state, hooks (useState, useEffect).',
-                'JSX: mix of HTML and JavaScript. Example: <h1>Hello {name}</h1>',
-                'Props: pass data between components. Example: <User name="Ahmed" age="25" />',
-                'State: manage changing data with useState. Example: const [count, setCount] = useState(0);',
-                'Deploy to Vercel or Netlify to share your work online.'
-              ]
+              fr: ['npx create-react-app mon-projet','Components, props, state, hooks','JSX: mélange HTML + JS','Props: passer des données entre composants','State: gérer les données qui changent'],
+              ar: ['npx create-react-app mon-projet','المكونات, props, state, hooks','JSX: مزيج HTML + JS','Props: تمرير البيانات بين المكونات','State: إدارة البيانات المتغيرة'],
+              en: ['npx create-react-app my-project','Components, props, state, hooks','JSX: HTML + JS mix','Props: pass data between components','State: manage changing data']
             },
-            method: {
-              fr: 'Créez un composant React qui affiche "Bonjour, [nom]" en utilisant les props. Puis ajoutez un bouton qui change le nom quand on clique dessus.',
-              ar: 'أنشئ مكون React يعرض "Bonjour, [nom]" باستخدام الخصائص. ثم أضف زراً يغير الاسم عند النقر عليه.',
-              en: 'Create a React component that displays "Hello, [name]" using props. Then add a button that changes the name when clicked.'
-            },
-            exercise: {
-              fr: 'Créez une todo-list avec React: ajouter des tâches, supprimer des tâches, et marquer les tâches comme complètes. Utilisez useState pour gérer la liste.',
-              ar: 'أنشئ قائمة مهام مع React: إضافة مهام، حذف مهام، ووضع علامة مكتمل على المهام. استخدم useState لإدارة القائمة.',
-              en: 'Create a todo-list with React: add tasks, delete tasks, and mark tasks as complete. Use useState to manage the list.'
-            },
-            tip: {
-              fr: '💡 Utilisez les hooks (useState, useEffect) pour gérer l\'état et les effets de bord. Ce sont les briques de base de React moderne.',
-              ar: '💡 استخدم hooks (useState، useEffect) لإدارة الحالة والتأثيرات الجانبية. هذه هي اللبنات الأساسية لـ React الحديث.',
-              en: '💡 Use hooks (useState, useEffect) to manage state and side effects. They are the building blocks of modern React.'
-            }
+            method: { fr: 'Créez un composant React qui affiche "Bonjour, [nom]"', ar: 'أنشئ مكون React يعرض "Bonjour, [nom]"', en: 'Create a React component that displays "Hello, [name]"' },
+            exercise: { fr: 'Créez une todo-list avec React.', ar: 'أنشئ قائمة مهام مع React.', en: 'Create a todo-list with React.' },
+            tip: { fr: '💡 Utilisez useState et useEffect.', ar: '💡 استخدم useState و useEffect.', en: '💡 Use useState and useEffect.' }
           }
         ]
       },
+      // Master
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
         duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
-        goal: { fr: 'Diriger une équipe de développement et livrer des projets complexes', ar: 'إدارة فريق تطوير وتسليم مشاريع معقدة', en: 'Lead a development team and deliver complex projects' },
+        goal: { fr: 'Diriger une équipe de développement', ar: 'إدارة فريق تطوير', en: 'Lead a development team' },
         lessons: [
           {
             id: 'w-m-1',
@@ -1194,52 +555,21 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Architecture: Frontend (React) → Backend (Node.js/Express) → Base de données (MongoDB/PostgreSQL).',
-                'Git: versionnez votre code avec git init, git add, git commit, git push.',
-                'Méthodologie: Agile / Scrum pour gérer les sprints et les livrables.',
-                'Déploiement: Vercel/Netlify pour le frontend, Heroku/Render/AWS pour le backend.',
-                'Sécurité: HTTPS, authentification JWT, validation des inputs, CORS.',
-                'Tarification: site vitrine 50-200K DZD, site e-commerce 200K-1M DZD.'
-              ],
-              ar: [
-                'الهندسة: الواجهة الأمامية (React) → الخلفية (Node.js/Express) → قاعدة البيانات (MongoDB/PostgreSQL).',
-                'Git: تحكم في إصدارات كودك مع git init, git add, git commit, git push.',
-                'المنهجية: Agile / Scrum لإدارة الدورات والتسليمات.',
-                'النشر: Vercel/Netlify للواجهة الأمامية، Heroku/Render/AWS للخلفية.',
-                'الأمان: HTTPS، مصادقة JWT، التحقق من المدخلات، CORS.',
-                'التسعير: موقع عرضي 50-200K دج، موقع تجاري 200K-1M دج.'
-              ],
-              en: [
-                'Architecture: Frontend (React) → Backend (Node.js/Express) → Database (MongoDB/PostgreSQL).',
-                'Git: version your code with git init, git add, git commit, git push.',
-                'Methodology: Agile / Scrum to manage sprints and deliverables.',
-                'Deployment: Vercel/Netlify for frontend, Heroku/Render/AWS for backend.',
-                'Security: HTTPS, JWT authentication, input validation, CORS.',
-                'Pricing: portfolio site 50-200K DZD, e-commerce site 200K-1M DZD.'
-              ]
+              fr: ['Frontend (React) → Backend (Node) → DB','Git: init, add, commit, push','Agile/Scrum','Déploiement: Vercel, Netlify, Heroku','Sécurité: HTTPS, JWT','Tarification: 50-200K, 200K-1M DZD'],
+              ar: ['Frontend (React) → Backend (Node) → DB','Git: init, add, commit, push','Agile/Scrum','النشر: Vercel, Netlify, Heroku','الأمان: HTTPS, JWT','التسعير: 50-200K، 200K-1M دج'],
+              en: ['Frontend (React) → Backend (Node) → DB','Git: init, add, commit, push','Agile/Scrum','Deployment: Vercel, Netlify, Heroku','Security: HTTPS, JWT','Pricing: 50-200K, 200K-1M DZD']
             },
-            method: {
-              fr: 'Créez un projet complet de A à Z: planification → conception → développement → déploiement. Utilisez Git pour suivre chaque étape.',
-              ar: 'أنشئ مشروعاً كاملاً من الصفر: تخطيط → تصميم → تطوير → نشر. استخدم Git لتتبع كل خطوة.',
-              en: 'Create a complete project from A to Z: planning → design → development → deployment. Use Git to track each step.'
-            },
-            exercise: {
-              fr: 'Planifiez et estimez un projet web pour un client fictif: cahier des charges, stack technique, timeline, budget, équipe.',
-              ar: 'خطط وقدّر مشروع ويب لعميل وهمي: دفتر الشروط، التقنيات، الجدول الزمني، الميزانية، الفريق.',
-              en: 'Plan and estimate a web project for a fictional client: specifications, tech stack, timeline, budget, team.'
-            },
-            tip: {
-              fr: '💡 Les clients ne paient pas pour le code, ils paient pour les problèmes résolus. Un projet bien géré avec un code correct est plus important qu\'un projet parfait en retard.',
-              ar: '💡 الزبائن لا يدفعون للكود، بل للمشاكل المحلولة. مشروع جيد الإدارة بكود صحيح أهم من مشروع مثالي متأخر.',
-              en: '💡 Clients don\'t pay for code, they pay for solved problems. A well-managed project with correct code is more important than a perfect late project.'
-            }
+            method: { fr: 'Créez un projet complet de A à Z.', ar: 'أنشئ مشروعاً كاملاً من الصفر.', en: 'Create a complete project from scratch.' },
+            exercise: { fr: 'Planifiez un projet web pour un client fictif.', ar: 'خطط لمشروع ويب لعميل وهمي.', en: 'Plan a web project for a fictional client.' },
+            tip: { fr: '💡 Spécialisez-vous dans une niche.', ar: '💡 تخصّص في مجال.', en: '💡 Specialize in a niche.' }
           }
         ]
       }
     ]
   },
-  // ===== SKILL 5: SEO (4 niveaux) =====
+  // ============================================================
+  // SKILL 5: SEO (4 niveaux)
+  // ============================================================
   {
     id: 'seo',
     icon: '📈',
@@ -1254,6 +584,7 @@ var SKILLS = [
     subtitle: { fr: 'Référencement Naturel', ar: 'تحسين محركات البحث', en: 'Search Engine Optimization' },
     tagline: { fr: 'Faites apparaître les sites en première page de Google', ar: 'خلّي المواقع تظهر في الصفحة الأولى من Google', en: 'Make websites appear on Google\'s first page' },
     levels: [
+      // Beginner
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -1262,58 +593,26 @@ var SKILLS = [
         lessons: [
           {
             id: 'seo-b-1',
-            title: { fr: 'Introduction au SEO - Comment Google fonctionne', ar: 'مقدمة في SEO - كيفاش تشتغل Google', en: 'Introduction to SEO - How Google works' },
+            title: { fr: 'Introduction au SEO', ar: 'مقدمة في SEO', en: 'Introduction to SEO' },
             image: 'https://images.unsplash.com/photo-1432889821006-ca37c5ce1bfa?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'SEO = Search Engine Optimization. C\'est l\'ensemble des techniques qui permettent à un site web d\'apparaître en haut des résultats de recherche sur Google.',
-                'Google utilise plus de 200 facteurs pour classer les sites. Les 3 piliers du SEO: 1. SEO Technique (la structure du site), 2. Contenu (le texte), 3. Backlinks (les liens externes).',
-                'Les mots-clés sont ce que les gens tapent dans Google. Exemple: si vous vendez des chaussures, vos mots-clés sont "chaussures", "baskets", "chaussures pas chères".',
-                'Le SEO On-Page: tout ce que vous pouvez contrôler sur votre site. Les balises title (le titre dans les résultats Google), meta description (le texte sous le lien), les H1 (titres), et les URL.',
-                'Le SEO Off-Page: ce qui se passe en dehors de votre site. Les backlinks (liens d\'autres sites vers le vôtre) sont le facteur le plus important.',
-                'Objectif SEO: comprendre ce que recherchent vos clients potentiels et créer du contenu qui répond à leurs questions.'
-              ],
-              ar: [
-                'SEO = تحسين محركات البحث. هو مجموعة التقنيات اللي تخلّي الموقع يظهر في أعلى نتائج البحث على Google.',
-                'Google يستخدم أكثر من 200 عامل لترتيب المواقع. 3 ركائز SEO: 1. التقني (هيكل الموقع)، 2. المحتوى (النص)، 3. الروابط الخلفية (الروابط الخارجية).',
-                'الكلمات المفتاحية هي اللي يكتبها الناس في Google. مثال: إذا تبيع شوز، كلماتك هي "شوز"، "باسكيت"، "شوز رخيص".',
-                'SEO On-Page: كل شيء تقدر تتحكم فيه على موقعك. علامات title (العنوان في نتائج Google)، meta description (النص تحت الرابط)، H1 (العناوين)، والـ URL.',
-                'SEO Off-Page: اللي يخرج خارج موقعك. الروابط الخلفية (روابط من مواقع أخرى لموقعك) هي العامل الأهم.',
-                'هدف SEO: تفهم شنو يبحث عنه زبائنك المحتملين وتصنع محتوى يجاوب على أسئلتهم.'
-              ],
-              en: [
-                'SEO = Search Engine Optimization. It\'s the set of techniques that help a website appear at the top of Google search results.',
-                'Google uses over 200 factors to rank sites. The 3 pillars of SEO: 1. Technical SEO (site structure), 2. Content (text), 3. Backlinks (external links).',
-                'Keywords are what people type into Google. Example: if you sell shoes, your keywords are "shoes", "sneakers", "cheap shoes".',
-                'On-Page SEO: everything you can control on your site. Title tags (the title in Google results), meta description (the text under the link), H1s (headings), and URLs.',
-                'Off-Page SEO: what happens outside your site. Backlinks (links from other sites to yours) are the most important factor.',
-                'SEO goal: understand what your potential clients are searching for and create content that answers their questions.'
-              ]
+              fr: ['SEO = Search Engine Optimization','3 piliers: technique, contenu, backlinks','Mots-clés: ce que les gens tapent','On-Page: title, meta, H1, URL','Off-Page: backlinks, autorité'],
+              ar: ['SEO = تحسين محركات البحث','3 ركائز: تقني، محتوى، روابط','الكلمات المفتاحية: ما يكتبه الناس','On-Page: عنوان، meta، H1، رابط','Off-Page: روابط خلفية، سلطة'],
+              en: ['SEO = Search Engine Optimization','3 pillars: technical, content, backlinks','Keywords: what people type','On-Page: title, meta, H1, URL','Off-Page: backlinks, authority']
             },
-            method: {
-              fr: 'Faites une recherche Google pour 3 mots-clés qui vous intéressent. Analysez les 10 premiers résultats: titres, descriptions, URL.',
-              ar: 'ابحث في Google عن 3 كلمات مفتاحية تهمك. حلّل النتائج العشرة الأولى: العناوين، الأوصاف، الروابط.',
-              en: 'Google search for 3 keywords that interest you. Analyze the top 10 results: titles, descriptions, URLs.'
-            },
-            exercise: {
-              fr: 'Listez 20 mots-clés pour une entreprise de votre choix. Classez-les par catégorie: généraux, de niche, locaux (Algérie).',
-              ar: 'اكتب 20 كلمة مفتاحية لمشروع من اختيارك. صنّفهم حسب الفئة: عامة، متخصصة، محلية (الجزائر).',
-              en: 'List 20 keywords for a business of your choice. Classify them by category: general, niche, local (Algeria).'
-            },
-            tip: {
-              fr: '💡 Utilisez Google Keyword Planner (outil gratuit) pour trouver des mots-clés et voir leur volume de recherche mensuel en Algérie.',
-              ar: '💡 استخدم Google Keyword Planner (أداة مجانية) للعثور على كلمات مفتاحية ومعرفة حجم البحث الشهري في الجزائر.',
-              en: '💡 Use Google Keyword Planner (free tool) to find keywords and see their monthly search volume in Algeria.'
-            }
+            method: { fr: 'Recherchez 3 mots-clés sur Google.', ar: 'ابحث عن 3 كلمات مفتاحية في Google.', en: 'Search for 3 keywords on Google.' },
+            exercise: { fr: 'Listez 20 mots-clés pour une entreprise.', ar: 'اكتب 20 كلمة مفتاحية لمشروع.', en: 'List 20 keywords for a business.' },
+            tip: { fr: '💡 Utilisez Google Keyword Planner.', ar: '💡 استخدم Google Keyword Planner.', en: '💡 Use Google Keyword Planner.' }
           }
         ]
       },
+      // Intermediate
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
         duration: { fr: 'Semaines 4–8', ar: 'الأسابيع 4–8', en: 'Weeks 4–8' },
-        goal: { fr: 'Maîtriser les techniques On-Page et Off-Page', ar: 'إتقان تقنيات On-Page و Off-Page', en: 'Master On-Page and Off-Page techniques' },
+        goal: { fr: 'Maîtriser On-Page et Off-Page', ar: 'إتقان On-Page و Off-Page', en: 'Master On-Page and Off-Page' },
         lessons: [
           {
             id: 'seo-i-1',
@@ -1321,54 +620,22 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Optimisez vos balises title: 50-60 caractères, incluez le mot-clé principal au début.',
-                'Meta description: 150-160 caractères, incluez un CTA (ex: "Achetez maintenant").',
-                'Structure H1-H6: un seul H1 par page. Les H2, H3 organisent le contenu.',
-                'URL: courte, descriptive, avec le mot-clé. Ex: /chaussures-homme-alger.',
-                'Contenu: 800+ mots minimum. Utilisez des sous-titres, listes, images.',
-                'Liens internes: reliez vos pages entre elles pour distribuer l\'autorité.'
-              ],
-              ar: [
-                'حسّن علامات title: 50-60 حرف، ضمّن الكلمة المفتاحية الرئيسية في البداية.',
-                'Meta description: 150-160 حرف، ضمّن دعوة للفعل (مثال: "تسوق الآن").',
-                'هيكل H1-H6: H1 واحد فقط لكل صفحة. H2، H3 تنظم المحتوى.',
-                'الرابط: قصير، وصفي، مع الكلمة المفتاحية. مثال: /ahzia-rijal-alger.',
-                'المحتوى: 800+ كلمة كحد أدنى. استخدم عناوين فرعية، قوائم، صور.',
-                'الروابط الداخلية: اربط صفحاتك ببعض لتوزيع السلطة.'
-              ],
-              en: [
-                'Optimize title tags: 50-60 characters, include the main keyword at the start.',
-                'Meta description: 150-160 characters, include a CTA (e.g.: "Buy now").',
-                'H1-H6 structure: one H1 per page. H2, H3 organize the content.',
-                'URL: short, descriptive, with the keyword. Ex: /mens-shoes-algiers.',
-                'Content: 800+ words minimum. Use subheadings, lists, images.',
-                'Internal links: link your pages together to distribute authority.'
-              ]
+              fr: ['Title: 50-60 caractères','Meta: 150-160 caractères','H1-H6: un seul H1','URL: courte, descriptive','Contenu: 800+ mots','Liens internes'],
+              ar: ['Title: 50-60 حرف','Meta: 150-160 حرف','H1-H6: H1 واحد','الرابط: قصير، وصفي','المحتوى: 800+ كلمة','روابط داخلية'],
+              en: ['Title: 50-60 characters','Meta: 150-160 characters','H1-H6: one H1','URL: short, descriptive','Content: 800+ words','Internal links']
             },
-            method: {
-              fr: 'Prenez une page existante de votre site. Optimisez le title, la meta description, les H1-H6, et l\'URL. Ajoutez des liens internes.',
-              ar: 'خذ صفحة موجودة على موقعك. حسّن العنوان، الوصف، H1-H6، والرابط. أضف روابط داخلية.',
-              en: 'Take an existing page on your site. Optimize the title, meta description, H1-H6, and URL. Add internal links.'
-            },
-            exercise: {
-              fr: 'Rédigez un article de blog SEO optimisé (800+ mots) sur un sujet de votre choix. Incluez le mot-clé principal 3-4 fois, des sous-titres, et des liens internes.',
-              ar: 'اكتب مقالة مدونة محسّنة لـ SEO (800+ كلمة) حول موضوع من اختيارك. ضمّن الكلمة المفتاحية 3-4 مرات، عناوين فرعية، وروابط داخلية.',
-              en: 'Write an SEO-optimized blog post (800+ words) on a topic of your choice. Include the main keyword 3-4 times, subheadings, and internal links.'
-            },
-            tip: {
-              fr: '💡 Utilisez Yoast SEO (WordPress) ou Rank Math pour analyser votre optimisation On-Page. Ils vous donnent des conseils concrets pour vous améliorer.',
-              ar: '💡 استخدم Yoast SEO (WordPress) أو Rank Math لتحليل تحسين On-Page الخاص بك. يقدمان نصائح ملموسة للتحسين.',
-              en: '💡 Use Yoast SEO (WordPress) or Rank Math to analyze your On-Page optimization. They give concrete advice to improve.'
-            }
+            method: { fr: 'Optimisez une page existante.', ar: 'حسّن صفحة موجودة.', en: 'Optimize an existing page.' },
+            exercise: { fr: 'Rédigez un article SEO optimisé (800+ mots).', ar: 'اكتب مقالة SEO محسّنة (800+ كلمة).', en: 'Write an SEO-optimized article (800+ words).' },
+            tip: { fr: '💡 Utilisez Yoast SEO ou Rank Math.', ar: '💡 استخدم Yoast SEO أو Rank Math.', en: '💡 Use Yoast SEO or Rank Math.' }
           }
         ]
       },
+      // Advanced
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
         duration: { fr: 'Semaines 9–16', ar: 'الأسابيع 9–16', en: 'Weeks 9–16' },
-        goal: { fr: 'Maîtriser les backlinks et les stratégies avancées', ar: 'إتقان الروابط الخلفية والاستراتيجيات المتقدمة', en: 'Master backlinks and advanced strategies' },
+        goal: { fr: 'Maîtriser les backlinks', ar: 'إتقان الروابط الخلفية', en: 'Master backlinks' },
         lessons: [
           {
             id: 'seo-a-1',
@@ -1376,46 +643,343 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Les backlinks sont le facteur de classement numéro 1 pour Google.',
-                'Qualité > quantité: un lien d\'un site autoritaire (ex: journal) vaut plus que 100 liens de sites faibles.',
-                'Techniques: guest blogging (écrire sur d\'autres blogs), broken link building (remplacer des liens cassés), annuaires de qualité.',
-                'Analysez vos concurrents: utilisez Ahrefs ou SEMrush pour voir leurs backlinks.',
-                'Créez du contenu "linkable": guides, études de cas, infographies, outils gratuits.',
-                'Évitez les techniques black hat: achat de liens, PBN, spam de commentaires.'
-              ],
-              ar: [
-                'الروابط الخلفية هي عامل الترتيب رقم 1 لـ Google.',
-                'الجودة > الكمية: رابط واحد من موقع قوي (مثال: جريدة) يساوي أكثر من 100 رابط من مواقع ضعيفة.',
-                'التقنيات: guest blogging (الكتابة على مدونات أخرى)، broken link building (استبدال روابط مكسورة)، أدلة جيدة.',
-                'حلّل منافسيك: استخدم Ahrefs أو SEMrush لمشاهدة روابطهم الخلفية.',
-                'أنشئ محتوى "linkable": أدلة، دراسات حالة، إنفوغرافيك، أدوات مجانية.',
-                'تجنّب تقنيات black hat: شراء روابط، PBN، تعليقات سبام.'
-              ],
-              en: [
-                'Backlinks are Google\'s #1 ranking factor.',
-                'Quality > quantity: one link from an authoritative site (e.g.: a newspaper) is worth more than 100 links from weak sites.',
-                'Techniques: guest blogging, broken link building, quality directories.',
-                'Analyze your competitors: use Ahrefs or SEMrush to see their backlinks.',
-                'Create "linkable" content: guides, case studies, infographics, free tools.',
-                'Avoid black hat techniques: buying links, PBN, comment spam.'
-              ]
+              fr: ['Backlinks = facteur #1','Qualité > quantité','Guest blogging, broken link building','Analysez concurrents avec Ahrefs','Contenu "linkable": guides','Évitez black hat'],
+              ar: ['الروابط الخلفية = عامل #1','الجودة > الكمية','Guest blogging, broken link building','حلل منافسيك مع Ahrefs','محتوى "linkable": أدلة','تجنّب black hat'],
+              en: ['Backlinks = factor #1','Quality > quantity','Guest blogging, broken link building','Analyze competitors with Ahrefs','"Linkable" content: guides','Avoid black hat']
             },
-            method: {
-              fr: 'Créez une stratégie de backlinks pour un site dans une niche de votre choix. Identifiez 20 sites cibles et 5 types de contenu "linkable".',
-              ar: 'أنشئ استراتيجية روابط خلفية لموقع في مجال من اختيارك. حدد 20 موقعاً مستهدفاً و5 أنواع من المحتوى "linkable".',
-              en: 'Create a backlink strategy for a site in a niche of your choice. Identify 20 target sites and 5 types of "linkable" content.'
+            method: { fr: 'Créez une stratégie de backlinks.', ar: 'أنشئ استراتيجية روابط خلفية.', en: 'Create a backlink strategy.' },
+            exercise: { fr: 'Identifiez 20 sites pour obtenir un backlink.', ar: 'حدّد 20 موقعاً للحصول على رابط خلفي.', en: 'Identify 20 sites to get a backlink.' },
+            tip: { fr: '💡 Les backlinks locaux sont très puissants.', ar: '💡 الروابط الخلفية المحلية قوية جداً.', en: '💡 Local backlinks are very powerful.' }
+          }
+        ]
+      },
+      // Master
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Diriger une agence SEO', ar: 'إدارة وكالة SEO', en: 'Lead an SEO agency' },
+        lessons: [
+          {
+            id: 'seo-m-1',
+            title: { fr: 'Agence SEO', ar: 'وكالة SEO', en: 'SEO Agency' },
+            image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Audit complet','Rapport PDF','Stratégie 6 mois','KPIs: positions, trafic','Outils: Search Console, Analytics, Ahrefs','Tarification: audit 30-80K, forfait 50-200K DZD'],
+              ar: ['تدقيق كامل','تقرير PDF','استراتيجية 6 أشهر','KPIs: مراكز، زيارات','الأدوات: Search Console, Analytics, Ahrefs','التسعير: تدقيق 30-80K، باقة 50-200K دج'],
+              en: ['Complete audit','PDF report','6-month strategy','KPIs: positions, traffic','Tools: Search Console, Analytics, Ahrefs','Pricing: audit 30-80K, package 50-200K DZD']
             },
-            exercise: {
-              fr: 'Identifiez 20 sites où vous pourriez obtenir un backlink. Rédigez un pitch personnalisé pour chacun (2-3 phrases).',
-              ar: 'حدّد 20 موقعاً يمكنك الحصول على رابط خلفي منه. اكتب عرضاً مخصصاً لكل واحد (2-3 جمل).',
-              en: 'Identify 20 sites where you could get a backlink. Write a personalized pitch for each (2-3 sentences).'
+            method: { fr: 'Réalisez un audit SEO complet.', ar: 'قم بتدقيق SEO كامل.', en: 'Perform a complete SEO audit.' },
+            exercise: { fr: 'Créez votre offre de services SEO.', ar: 'أنشئ عرض الخدمات SEO الخاص بك.', en: 'Create your SEO service offering.' },
+            tip: { fr: '💡 Les clients paient pour des résultats.', ar: '💡 الزبائن يدفعون للنتائج.', en: '💡 Clients pay for results.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 6: DATA ANALYSIS (4 niveaux)
+  // ============================================================
+  {
+    id: 'data',
+    icon: '📊',
+    color: '#8B5CF6',
+    accent: '#A78BFA',
+    bg: 'linear-gradient(135deg, #0D0818 0%, #1A1040 50%, #0D0818 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+    earning: '25,000 – 90,000 DZD/project',
+    firstClient: { fr: '3–5 semaines', ar: '3–5 أسابيع', en: '3–5 weeks' },
+    startTool: 'Excel + Power BI (free)',
+    title: { fr: 'Data Analysis', ar: 'تحليل البيانات', en: 'Data Analysis' },
+    subtitle: { fr: 'Analyse de Données', ar: 'تحليل البيانات', en: 'Data Analytics' },
+    tagline: { fr: 'Transformez les données en décisions qui rapportent', ar: 'حوّل البيانات لقرارات تدرّ عليك', en: 'Turn data into decisions that generate revenue' },
+    levels: [
+      // Beginner
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
+        goal: { fr: 'Comprendre Excel', ar: 'تفهم Excel', en: 'Understand Excel' },
+        lessons: [
+          {
+            id: 'data-b-1',
+            title: { fr: 'Excel pour Débutants', ar: 'Excel للمبتدئين', en: 'Excel for Beginners' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Ouvrez Excel → Nouveau classeur','Colonnes: A, B, C... Lignes: 1, 2, 3...','Somme automatique pour additionner','Filtres: sélectionnez → Filtrer','Graphiques: Insérer → Graphique','Formules: =SOMME, =MOYENNE'],
+              ar: ['افتح Excel → مصنف جديد','الأعمدة: A, B, C... الصفوف: 1, 2, 3...','الجمع التلقائي','تصفية: اختر → تصفية','الرسوم: إدراج → رسم بياني','الصيغ: =SUM, =AVERAGE'],
+              en: ['Open Excel → New Workbook','Columns: A, B, C... Rows: 1, 2, 3...','AutoSum to add','Filters: select → Filter','Charts: Insert → Chart','Formulas: =SUM, =AVERAGE']
             },
-            tip: {
-              fr: '💡 Les backlinks locaux (blogs algériens, annuaires DZ) sont très puissants pour le référencement local. Commencez par eux, ils sont plus faciles à obtenir.',
-              ar: '💡 الروابط الخلفية المحلية (المدونات الجزائرية، الأدلة الجزائرية) قوية جداً للـ SEO المحلي. ابدأ بها، فهي أسهل في الحصول عليها.',
-              en: '💡 Local backlinks (Algerian blogs, DZ directories) are very powerful for local SEO. Start with them, they\'re easier to get.'
-            }
+            method: { fr: 'Importez un jeu de données.', ar: 'استورد مجموعة بيانات.', en: 'Import a dataset.' },
+            exercise: { fr: 'Tableau de ventes avec 10 produits.', ar: 'جدول مبيعات بـ10 منتجات.', en: 'Sales table with 10 products.' },
+            tip: { fr: '💡 Utilisez Ctrl+C Ctrl+V Ctrl+Z.', ar: '💡 استخدم Ctrl+C Ctrl+V Ctrl+Z.', en: '💡 Use Ctrl+C Ctrl+V Ctrl+Z.' }
+          }
+        ]
+      },
+      // Intermediate
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 4–8', ar: 'الأسابيع 4–8', en: 'Weeks 4–8' },
+        goal: { fr: 'Maîtriser Power BI', ar: 'إتقان Power BI', en: 'Master Power BI' },
+        lessons: [
+          {
+            id: 'data-i-1',
+            title: { fr: 'Power BI - Visualisez vos données', ar: 'Power BI - صور بياناتك', en: 'Power BI - Visualize your data' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Power BI Desktop (gratuit)','Importez vos données: Excel, CSV','Créez des visualisations: graphiques, cartes, jauges','DAX: langage de formules avancées','Partagez: Power BI Service ou PDF'],
+              ar: ['Power BI Desktop (مجاني)','استورد بياناتك: Excel، CSV','أنشئ تصورات: رسوماً بيانية، خرائط، مقاييس','DAX: لغة صيغ متقدمة','شارك: Power BI Service أو PDF'],
+              en: ['Power BI Desktop (free)','Import your data: Excel, CSV','Create visualizations: charts, maps, gauges','DAX: advanced formula language','Share: Power BI Service or PDF']
+            },
+            method: { fr: 'Créez un dashboard avec 5 visualisations.', ar: 'أنشئ لوحة قيادة بـ5 تصورات.', en: 'Create a dashboard with 5 visualizations.' },
+            exercise: { fr: 'Dashboard de ventes par mois, produit, région.', ar: 'لوحة قيادة للمبيعات حسب الشهر، المنتج، المنطقة.', en: 'Sales dashboard by month, product, region.' },
+            tip: { fr: '💡 Utilisez les slicers pour filtrer.', ar: '💡 استخدم slicers للتصفية.', en: '💡 Use slicers to filter.' }
+          }
+        ]
+      },
+      // Advanced
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 9–16', ar: 'الأسابيع 9–16', en: 'Weeks 9–16' },
+        goal: { fr: 'Maîtriser SQL et Python', ar: 'إتقان SQL و Python', en: 'Master SQL and Python' },
+        lessons: [
+          {
+            id: 'data-a-1',
+            title: { fr: 'SQL - Interrogez vos données', ar: 'SQL - استعلم عن بياناتك', en: 'SQL - Query your data' },
+            image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['SELECT * FROM clients;','SELECT nom FROM clients WHERE ville = "Alger";','JOIN: combinez plusieurs tables','GROUP BY: regroupez','ORDER BY: triez'],
+              ar: ['SELECT * FROM clients;','SELECT nom FROM clients WHERE ville = "Alger";','JOIN: ادمج عدة جداول','GROUP BY: جمّع','ORDER BY: رتّب'],
+              en: ['SELECT * FROM customers;','SELECT name FROM customers WHERE city = "Algiers";','JOIN: combine tables','GROUP BY: group','ORDER BY: sort']
+            },
+            method: { fr: 'Créez une base SQLite et écrivez 10 requêtes.', ar: 'أنشئ قاعدة SQLite واكتب 10 استعلامات.', en: 'Create an SQLite database and write 10 queries.' },
+            exercise: { fr: 'Requête SQL pour les ventes par mois et produit.', ar: 'استعلام SQL للمبيعات حسب الشهر والمنتج.', en: 'SQL query for sales by month and product.' },
+            tip: { fr: '💡 Utilisez SQLite Browser ou DBeaver.', ar: '💡 استخدم SQLite Browser أو DBeaver.', en: '💡 Use SQLite Browser or DBeaver.' }
+          }
+        ]
+      },
+      // Master
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Devenir consultant data', ar: 'كن مستشار بيانات', en: 'Become a data consultant' },
+        lessons: [
+          {
+            id: 'data-m-1',
+            title: { fr: 'Consultant Data', ar: 'مستشار بيانات', en: 'Data Consultant' },
+            image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Collecte → Analyse → Visualisation → Recommandations','Outils: Excel, Power BI, SQL, Python','Livrables: dashboards, rapports PDF','Tarification: projet 50-200K, forfait 80-300K DZD'],
+              ar: ['جمع → تحليل → تصور → توصيات','الأدوات: Excel, Power BI, SQL, Python','التسليمات: لوحات قيادة، تقارير PDF','التسعير: مشروع 50-200K، باقة 80-300K دج'],
+              en: ['Collection → Analysis → Visualization → Recommendations','Tools: Excel, Power BI, SQL, Python','Deliverables: dashboards, PDF reports','Pricing: project 50-200K, package 80-300K DZD']
+            },
+            method: { fr: 'Réalisez une analyse complète pour une entreprise fictive.', ar: 'قم بتحليل كامل لمشروع وهمي.', en: 'Perform a complete analysis for a fictional company.' },
+            exercise: { fr: 'Créez votre offre de services data.', ar: 'أنشئ عرض الخدمات data الخاص بك.', en: 'Create your data service offering.' },
+            tip: { fr: '💡 Les données sont le nouvel or.', ar: '💡 البيانات هي الذهب الجديد.', en: '💡 Data is the new gold.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 7: COPYWRITING (4 niveaux)
+  // ============================================================
+  {
+    id: 'copy',
+    icon: '✍️',
+    color: '#EC4899',
+    accent: '#F472B6',
+    bg: 'linear-gradient(135deg, #1A0512 0%, #3A0A28 50%, #1A0512 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80',
+    earning: '10,000 – 50,000 DZD/project',
+    firstClient: { fr: '1–2 semaines', ar: '1–2 أسابيع', en: '1–2 weeks' },
+    startTool: 'Google Docs + Grammarly',
+    title: { fr: 'Copywriting', ar: 'الكتابة الإعلانية', en: 'Copywriting' },
+    subtitle: { fr: 'Rédaction Publicitaire', ar: 'الكتابة التسويقية', en: 'Copywriting' },
+    tagline: { fr: 'Des mots qui vendent, convertissent et persuadent', ar: 'كلمات تبيع وتحوّل وتقنع', en: 'Words that sell, convert and persuade' },
+    levels: [
+      // Beginner
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–2', ar: 'الأسابيع 1–2', en: 'Weeks 1–2' },
+        goal: { fr: 'Maîtriser les bases', ar: 'إتقان الأساسيات', en: 'Master basics' },
+        lessons: [
+          {
+            id: 'copy-b-1',
+            title: { fr: 'Les Fondamentaux du Copywriting', ar: 'أساسيات الكتابة الإعلانية', en: 'Copywriting Fundamentals' },
+            image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['AIDA: Attention, Intérêt, Désir, Action','Headlines: 80% lisent les titres','Avantages vs Caractéristiques','Call to Action','Storytelling'],
+              ar: ['AIDA: الانتباه، الاهتمام، الرغبة، الفعل','العناوين: 80% يقرأون العناوين','الفوائد vs الميزات','الدعوة للفعل','سرد القصص'],
+              en: ['AIDA: Attention, Interest, Desire, Action','Headlines: 80% read headlines','Benefits vs Features','Call to Action','Storytelling']
+            },
+            method: { fr: 'Analysez 10 publicités.', ar: 'حلّل 10 إعلانات.', en: 'Analyze 10 ads.' },
+            exercise: { fr: 'Écrivez un titre accrocheur.', ar: 'اكتب عنواناً جذاباً.', en: 'Write a catchy headline.' },
+            tip: { fr: '💡 Les chiffres fonctionnent toujours: "5 secrets"', ar: '💡 الأرقام دائماً تشتغل: "5 أسرار"', en: '💡 Numbers always work: "5 secrets"' }
+          }
+        ]
+      },
+      // Intermediate
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 3–6', ar: 'الأسابيع 3–6', en: 'Weeks 3–6' },
+        goal: { fr: 'Rédiger pour différents supports', ar: 'الكتابة لمنصات مختلفة', en: 'Write for different platforms' },
+        lessons: [
+          {
+            id: 'copy-i-1',
+            title: { fr: 'Copywriting pour les Réseaux Sociaux', ar: 'الكتابة الإعلانية للسوشيال ميديا', en: 'Copywriting for Social Media' },
+            image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Facebook: posts 100-200 mots','Instagram: légendes 50-150 mots','LinkedIn: posts 200-500 mots','Twitter: 280 caractères max','Reels/TikTok: scripts 15-30s'],
+              ar: ['Facebook: منشورات 100-200 كلمة','Instagram: تعليقات 50-150 كلمة','LinkedIn: منشورات 200-500 كلمة','Twitter: 280 حرف كحد أقصى','Reels/TikTok: سكريبتات 15-30ث'],
+              en: ['Facebook: 100-200 word posts','Instagram: 50-150 word captions','LinkedIn: 200-500 word posts','Twitter: 280 characters max','Reels/TikTok: 15-30s scripts']
+            },
+            method: { fr: 'Créez 5 posts pour différentes plateformes.', ar: 'أنشئ 5 منشورات لمنصات مختلفة.', en: 'Create 5 posts for different platforms.' },
+            exercise: { fr: 'Rédigez une légende Instagram complète.', ar: 'اكتب تعليقاً إعلانياً كاملاً لـ Instagram.', en: 'Write a complete Instagram caption.' },
+            tip: { fr: '💡 Adaptez votre ton à chaque plateforme.', ar: '💡 طوّع نبرتك لكل منصة.', en: '💡 Adapt your tone to each platform.' }
+          }
+        ]
+      },
+      // Advanced
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 7–12', ar: 'الأسابيع 7–12', en: 'Weeks 7–12' },
+        goal: { fr: 'Maîtriser le copywriting de vente', ar: 'إتقان الكتابة الإعلانية للبيع', en: 'Master sales copywriting' },
+        lessons: [
+          {
+            id: 'copy-a-1',
+            title: { fr: 'Copywriting de Vente - Landing Pages', ar: 'الكتابة الإعلانية للبيع - صفحات الهبوط', en: 'Sales Copywriting - Landing Pages' },
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Landing page: Accroche → Problème → Solution → Preuve → Offre → CTA','VSL: vidéo de vente 20-40 minutes','Anticipez les objections','Urgence: offres limitées'],
+              ar: ['صفحة الهبوط: جذبة → مشكلة → حل → دليل → عرض → CTA','VSL: فيديو بيعي 20-40 دقيقة','توقع الاعتراضات','الإلحاح: عروض محدودة'],
+              en: ['Landing page: Hook → Problem → Solution → Proof → Offer → CTA','VSL: 20-40 minute sales video','Anticipate objections','Urgency: limited offers']
+            },
+            method: { fr: 'Créez une landing page complète.', ar: 'أنشئ صفحة هبوط كاملة.', en: 'Create a complete landing page.' },
+            exercise: { fr: 'Rédigez un script VSL complet.', ar: 'اكتب سكريبت VSL كامل.', en: 'Write a complete VSL script.' },
+            tip: { fr: '💡 Parlez UNIQUEMENT des avantages client.', ar: '💡 تحدث فقط عن فوائد الزبون.', en: '💡 Talk ONLY about client benefits.' }
+          }
+        ]
+      },
+      // Master
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 4+', ar: 'الشهر 4+', en: 'Month 4+' },
+        goal: { fr: 'Devenir consultant copywriting', ar: 'كن مستشار كتابة إعلانية', en: 'Become a copywriting consultant' },
+        lessons: [
+          {
+            id: 'copy-m-1',
+            title: { fr: 'Consultant Copywriting', ar: 'مستشار كتابة إعلانية', en: 'Copywriting Consultant' },
+            image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Services: audit, rédaction, scripts, emails','Processus: Brief → Recherche → Rédaction → Révision → Livraison','Tarification: landing page 20-50K, VSL 50-100K, forfait 30-80K DZD','Spécialisez-vous dans une niche'],
+              ar: ['الخدمات: تدقيق، كتابة، سكريبتات، إيميلات','العملية: بريف → بحث → كتابة → مراجعة → تسليم','التسعير: صفحة هبوط 20-50K، VSL 50-100K، باقة 30-80K دج','تخصّص في مجال'],
+              en: ['Services: audit, writing, scripts, emails','Process: Brief → Research → Writing → Revision → Delivery','Pricing: landing page 20-50K, VSL 50-100K, package 30-80K DZD','Specialize in a niche']
+            },
+            method: { fr: 'Réalisez un audit de copywriting.', ar: 'قم بتدقيق كتابة إعلانية.', en: 'Perform a copywriting audit.' },
+            exercise: { fr: 'Créez votre offre de services copywriting.', ar: 'أنشئ عرض الخدمات الكتابية الخاص بك.', en: 'Create your copywriting service offering.' },
+            tip: { fr: '💡 Les meilleurs copywriters facturent à la performance.', ar: '💡 أفضل كتاب الإعلانات يشحنون على الأداء.', en: '💡 The best copywriters charge on performance.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 8: UI/UX DESIGN (4 niveaux)
+  // ============================================================
+  {
+    id: 'uiux',
+    icon: '🎨',
+    color: '#6366F1',
+    accent: '#818CF8',
+    bg: 'linear-gradient(135deg, #0C0A1A 0%, #1A1040 50%, #0C0A1A 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80',
+    earning: '20,000 – 100,000 DZD/month',
+    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
+    startTool: 'Figma + Spline (3D) + Pen & Paper',
+    title: { fr: 'UI/UX Design 3D', ar: 'تصميم واجهات 3D', en: '3D UI/UX Design' },
+    subtitle: { fr: 'User Interface & 3D Experience', ar: 'واجهات وتجارب 3D', en: 'User Interface & 3D Experience' },
+    tagline: { fr: 'Créez des expériences numériques immersives en 3D', ar: 'أنشئ تجارب رقمية غامرة بتقنية 3D', en: 'Create immersive 3D digital experiences' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les fondamentaux du UI/UX Design', ar: 'إتقان أساسيات UI/UX', en: 'Master UI/UX fundamentals' },
+        lessons: [
+          {
+            id: 'uiux-b-1',
+            title: { fr: 'UI vs UX en 3D', ar: 'UI vs UX في 3D', en: 'UI vs UX in 3D' },
+            image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['UI = Interface Utilisateur = apparence','UX = Expérience Utilisateur = sentiment','En 3D: UI devient immersive (profondeur, perspective)','Objectif: créer des produits 3D que les gens aiment'],
+              ar: ['UI = واجهة المستخدم = المظهر','UX = تجربة المستخدم = المشاعر','في 3D: UI تصبح غامرة (عمق، منظور)','الهدف: إنشاء منتجات 3D يحبها الناس'],
+              en: ['UI = User Interface = appearance','UX = User Experience = feeling','In 3D: UI becomes immersive (depth, perspective)','Goal: create 3D products people love']
+            },
+            method: { fr: 'Analysez 3 apps avec des éléments 3D.', ar: 'حلل 3 تطبيقات بعناصر 3D.', en: 'Analyze 3 apps with 3D elements.' },
+            exercise: { fr: 'Comparez un design 2D vs 3D. Notez 10 différences.', ar: 'قارن تصميم 2D vs 3D. سجل 10 اختلافات.', en: 'Compare a 2D vs 3D design. Note 10 differences.' },
+            tip: { fr: '💡 Le 3D doit être subtil. Trop de 3D tue le 3D.', ar: '💡 يجب أن يكون 3D خفيفاً. الكثير من 3D يقتل 3D.', en: '💡 3D must be subtle. Too much 3D kills 3D.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–12', ar: 'الأسابيع 5–12', en: 'Weeks 5–12' },
+        goal: { fr: 'Maîtriser Figma + Spline', ar: 'إتقان Figma + Spline', en: 'Master Figma + Spline' },
+        lessons: [
+          {
+            id: 'uiux-i-1',
+            title: { fr: 'Figma + Spline - 3D Mastery', ar: 'Figma + Spline - إتقان 3D', en: 'Figma + Spline - 3D Mastery' },
+            image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Figma: design collaboratif (gratuit)','Spline: design 3D (gratuit)','Export: Spline → Figma en PNG/SVG','Composants 3D réutilisables','Animations 3D avec Spline'],
+              ar: ['Figma: تصميم تعاوني (مجاني)','Spline: تصميم 3D (مجاني)','تصدير: Spline → Figma كـ PNG/SVG','مكونات 3D قابلة لإعادة الاستخدام','رسوم متحركة 3D مع Spline'],
+              en: ['Figma: collaborative design (free)','Spline: 3D design (free)','Export: Spline → Figma as PNG/SVG','Reusable 3D components','3D animations with Spline']
+            },
+            method: { fr: 'Créez un cube rotatif 3D dans Spline. Exportez-le en PNG.', ar: 'أنشئ مكعباً دواراً 3D في Spline. صدّره PNG.', en: 'Create a rotating 3D cube in Spline. Export it as PNG.' },
+            exercise: { fr: 'Créez 5 composants 3D avec glassmorphism.', ar: 'أنشئ 5 مكونات 3D مع زجاجية.', en: 'Create 5 3D components with glassmorphism.' },
+            tip: { fr: '💡 Spline est l\'outil 3D le plus accessible pour les designers UI/UX.', ar: '💡 Spline هي أداة 3D الأكثر سهولة لمصممي UI/UX.', en: '💡 Spline is the most accessible 3D tool for UI/UX designers.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 13–24', ar: 'الأسابيع 13–24', en: 'Weeks 13–24' },
+        goal: { fr: 'Maîtriser la recherche UX et le prototypage avancé', ar: 'إتقان بحث UX والنماذج الأولية المتقدمة', en: 'Master UX research and advanced prototyping' },
+        lessons: [
+          {
+            id: 'uiux-a-1',
+            title: { fr: 'Recherche UX 3D', ar: 'بحث تجربة المستخدم 3D', en: '3D UX Research' },
+            image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['UX Research 3D = comprendre les besoins en 3D','Méthodes: interviews, observations','Interview: 5-8 utilisateurs','Personas 3D','Objectif: décisions basées sur des données 3D'],
+              ar: ['بحث UX 3D = فهم الاحتياجات في 3D','الطرق: مقابلات، ملاحظات','المقابلة: 5-8 مستخدمين','شخصيات 3D','الهدف: قرارات مبنية على بيانات 3D'],
+              en: ['3D UX Research = understanding 3D needs','Methods: interviews, observations','Interview: 5-8 users','3D Personas','Goal: 3D data-driven decisions']
+            },
+            method: { fr: 'Menez 5 interviews sur l\'expérience 3D.', ar: 'أجرِ 5 مقابلات عن تجربة 3D.', en: 'Conduct 5 interviews about 3D experience.' },
+            exercise: { fr: 'Créez un plan de recherche UX 3D complet.', ar: 'أنشئ خطة بحث UX 3D كاملة.', en: 'Create a complete 3D UX research plan.' },
+            tip: { fr: '💡 La recherche UX 3D est essentielle pour comprendre la perception de la profondeur.', ar: '💡 بحث UX 3D ضروري لفهم إدراك العمق.', en: '💡 3D UX research is essential to understand depth perception.' }
           }
         ]
       },
@@ -1423,62 +987,238 @@ var SKILLS = [
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
         duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
-        goal: { fr: 'Diriger une agence SEO et livrer des résultats mesurables', ar: 'إدارة وكالة SEO وتحقيق نتائج قابلة للقياس', en: 'Lead an SEO agency and deliver measurable results' },
+        goal: { fr: 'Livrer des projets professionnels et construire une agence UI/UX', ar: 'تسليم مشاريع احترافية وبناء وكالة UI/UX', en: 'Deliver professional projects and build a UI/UX agency' },
         lessons: [
           {
-            id: 'seo-m-1',
-            title: { fr: 'Agence SEO - De la Stratégie aux Résultats', ar: 'وكالة SEO - من الاستراتيجية للنتائج', en: 'SEO Agency - From Strategy to Results' },
+            id: 'uiux-m-1',
+            title: { fr: 'Agence UI/UX', ar: 'وكالة UI/UX', en: 'UI/UX Agency' },
             image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: [
-                'Audit SEO complet: technique, contenu, backlinks, concurrence.',
-                'Rapport d\'audit: PDF professionnel avec recommandations détaillées.',
-                'Stratégie 6 mois: objectifs SMART, budget, plan d\'action mensuel.',
-                'Suivi des KPIs: positions Google, trafic organique, taux de conversion.',
-                'Outils: Google Search Console, Google Analytics, Ahrefs, SEMrush, Screaming Frog.',
-                'Tarification: audit 30-80K DZD, forfait mensuel 50-200K DZD selon la taille du site.'
-              ],
-              ar: [
-                'تدقيق SEO كامل: تقني، محتوى، روابط خلفية، منافسة.',
-                'تقرير التدقيق: PDF احترافي مع توصيات مفصلة.',
-                'استراتيجية 6 أشهر: أهداف SMART، ميزانية، خطة عمل شهرية.',
-                'متابعة مؤشرات الأداء: مراكز Google، الزيارات العضوية، معدل التحويل.',
-                'الأدوات: Google Search Console، Google Analytics، Ahrefs، SEMrush، Screaming Frog.',
-                'التسعير: تدقيق 30-80K دج، باقة شهرية 50-200K دج حسب حجم الموقع.'
-              ],
-              en: [
-                'Complete SEO audit: technical, content, backlinks, competition.',
-                'Audit report: professional PDF with detailed recommendations.',
-                '6-month strategy: SMART goals, budget, monthly action plan.',
-                'KPI tracking: Google positions, organic traffic, conversion rate.',
-                'Tools: Google Search Console, Google Analytics, Ahrefs, SEMrush, Screaming Frog.',
-                'Pricing: audit 30-80K DZD, monthly package 50-200K DZD depending on site size.'
-              ]
+              fr: ['Services: Audit UI/UX, Design 3D, Prototypage','Processus: Brief → Recherche → Design → Prototype → Test → Livraison','Tarification: audit 50-150K, design complet 200K-1M DZD','Spécialisez-vous: SaaS, e-commerce, apps mobiles','Portfolio: 3 projets 3D'],
+              ar: ['الخدمات: تدقيق UI/UX، تصميم 3D، نمذجة أولية','العملية: بريف → بحث → تصميم → نموذج أولي → اختبار → تسليم','التسعير: تدقيق 50-150K، تصميم كامل 200K-1M دج','تخصّص: SaaS، التجارة الإلكترونية، تطبيقات موبايل','البورتفوليو: 3 مشاريع 3D'],
+              en: ['Services: UI/UX Audit, 3D Design, Prototyping','Process: Brief → Research → Design → Prototype → Test → Delivery','Pricing: audit 50-150K, complete design 200K-1M DZD','Specialize: SaaS, e-commerce, mobile apps','Portfolio: 3 3D projects']
             },
-            method: {
-              fr: 'Réalisez un audit SEO complet pour un site de votre choix (ou un site fictif). Présentez-le sous forme de rapport PDF professionnel.',
-              ar: 'قم بتدقيق SEO كامل لموقع من اختيارك (أو موقع وهمي). قدمه كتقرير PDF احترافي.',
-              en: 'Perform a complete SEO audit for a site of your choice (or a fictional site). Present it as a professional PDF report.'
-            },
-            exercise: {
-              fr: 'Créez votre offre de services SEO: audit, forfaits mensuels, garanties, cas clients. Préparez une présentation commerciale.',
-              ar: 'أنشئ عرض الخدمات SEO الخاص بك: تدقيق، باقات شهرية، ضمانات، حالات عملاء. جهز عرضاً تجارياً.',
-              en: 'Create your SEO service offering: audit, monthly packages, guarantees, case studies. Prepare a sales presentation.'
-            },
-            tip: {
-              fr: '💡 Les clients paient pour des résultats, pas pour du travail. Garantissez des positions ou un trafic spécifique. Si vous les obtenez, vous avez des clients à vie.',
-              ar: '💡 الزبائن يدفعون للنتائج، مش للشغل. اضمن مراكز محددة أو زيارة محددة. إذا حققتها، لديك زبائن مدى الحياة.',
-              en: '💡 Clients pay for results, not for work. Guarantee specific positions or traffic. If you deliver, you have clients for life.'
-            }
+            method: { fr: 'Réalisez un audit UI/UX pour un site.', ar: 'قم بتدقيق UI/UX لموقع.', en: 'Perform a UI/UX audit for a site.' },
+            exercise: { fr: 'Créez votre offre de services UI/UX.', ar: 'أنشئ عرض الخدمات UI/UX الخاص بك.', en: 'Create your UI/UX service offering.' },
+            tip: { fr: '💡 Les clients paient pour des résultats, pas pour du travail.', ar: '💡 الزبائن يدفعون للنتائج، مش للشغل.', en: '💡 Clients pay for results, not for work.' }
           }
         ]
       }
     ]
   },
-  // ===== SKILL 6: DATA ANALYSIS (4 niveaux) =====
-  // ===== SKILL 7: COPYWRITING (4 niveaux) =====
-  // ===== SKILL 8: UI/UX DESIGN (4 niveaux) =====
-  // ===== SKILL 9: AUTOMATION WITH N8N (4 niveaux) =====
-  // ===== SKILL 10: VIBE CODING (4 niveaux) =====
+  // ============================================================
+  // SKILL 9: AUTOMATION WITH N8N (4 niveaux)
+  // ============================================================
+  {
+    id: 'n8n',
+    icon: '⚡',
+    color: '#E94E1B',
+    accent: '#FF6B35',
+    bg: 'linear-gradient(135deg, #1A0A04 0%, #3A1808 50%, #1A0A04 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+    earning: '25,000 – 120,000 DZD/month',
+    firstClient: { fr: '3–6 semaines', ar: '3–6 أسابيع', en: '3–6 weeks' },
+    startTool: 'n8n (self-hosted or cloud) + Docker',
+    title: { fr: 'Automation avec n8n', ar: 'الأتمتة مع n8n', en: 'Automation with n8n' },
+    subtitle: { fr: 'Workflow Automation', ar: 'أتمتة سير العمل', en: 'Workflow Automation' },
+    tagline: { fr: 'Automatisez tout sans coder', ar: 'أتمتة كل شيء بدون برمجة', en: 'Automate everything without coding' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les bases de n8n', ar: 'إتقان أساسيات n8n', en: 'Master n8n basics' },
+        lessons: [
+          {
+            id: 'n8n-b-1',
+            title: { fr: 'Introduction à l\'Automatisation', ar: 'مقدمة في الأتمتة', en: 'Introduction to Automation' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Automatisation = faire faire par des machines','n8n = outil open-source','Alternative à Zapier/Make','Workflows = chaînes d\'actions','Nodes = actions, Triggers = déclencheurs'],
+              ar: ['الأتمتة = جعل الآلات تقوم بالمهام','n8n = أداة مفتوحة المصدر','بديل لـ Zapier/Make','سير العمل = سلاسل إجراءات','العقد = إجراءات، المشغلات = مبتدئات'],
+              en: ['Automation = machines doing tasks','n8n = open-source tool','Alternative to Zapier/Make','Workflows = chains of actions','Nodes = actions, Triggers = starters']
+            },
+            method: { fr: 'Identifiez 5 tâches répétitives.', ar: 'حدد 5 مهام متكررة.', en: 'Identify 5 repetitive tasks.' },
+            exercise: { fr: 'Listez 10 processus à automatiser.', ar: 'اكتب 10 عمليات لأتمتتها.', en: 'List 10 processes to automate.' },
+            tip: { fr: '💡 Si vous faites une tâche plus de 3 fois, automatisez-la.', ar: '💡 إذا قمت بمهمة أكثر من 3 مرات، قم بأتمتتها.', en: '💡 If you do a task more than 3 times, automate it.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–10', ar: 'الأسابيع 5–10', en: 'Weeks 5–10' },
+        goal: { fr: 'Connecter n8n aux APIs', ar: 'ربط n8n بـ APIs', en: 'Connect n8n to APIs' },
+        lessons: [
+          {
+            id: 'n8n-i-1',
+            title: { fr: 'Requêtes HTTP avec n8n', ar: 'طلبات HTTP مع n8n', en: 'HTTP Requests with n8n' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['HTTP Request = appels API','Méthodes: GET, POST, PUT, DELETE','URL: endpoint','Headers: authentification','Body: données JSON'],
+              ar: ['HTTP Request = استدعاء APIs','الطرق: GET، POST، PUT، DELETE','الرابط: نقطة النهاية','الرؤوس: مصادقة','الجسم: بيانات JSON'],
+              en: ['HTTP Request = API calls','Methods: GET, POST, PUT, DELETE','URL: endpoint','Headers: authentication','Body: JSON data']
+            },
+            method: { fr: 'Utilisez JSONPlaceholder pour tester.', ar: 'استخدم JSONPlaceholder للاختبار.', en: 'Use JSONPlaceholder for testing.' },
+            exercise: { fr: 'Créez un workflow qui récupère des données d\'une API.', ar: 'أنشئ سير عمل يسترجع بيانات من API.', en: 'Create a workflow that fetches data from an API.' },
+            tip: { fr: '💡 Testez avec Postman avant de mettre dans n8n.', ar: '💡 اختبر مع Postman قبل وضعها في n8n.', en: '💡 Test with Postman before putting in n8n.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 11–20', ar: 'الأسابيع 11–20', en: 'Weeks 11–20' },
+        goal: { fr: 'Maîtriser les workflows avancés et l\'IA', ar: 'إتقان سير العمل المتقدم والذكاء الاصطناعي', en: 'Master advanced workflows and AI' },
+        lessons: [
+          {
+            id: 'n8n-a-1',
+            title: { fr: 'Agents IA avec n8n', ar: 'وكلاء الذكاء الاصطناعي مع n8n', en: 'AI Agents with n8n' },
+            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Node AI: utiliser OpenAI','GPT-4 pour analyse','Génération de contenu','Analyse de sentiments','Résumé automatique'],
+              ar: ['عقدة الذكاء الاصطناعي: استخدام OpenAI','GPT-4 للتحليل','توليد المحتوى','تحليل المشاعر','تلخيص تلقائي'],
+              en: ['AI Node: use OpenAI','GPT-4 for analysis','Content generation','Sentiment analysis','Automatic summarization']
+            },
+            method: { fr: 'Intégrez OpenAI dans n8n.', ar: 'ادمج OpenAI في n8n.', en: 'Integrate OpenAI into n8n.' },
+            exercise: { fr: 'Créez un agent IA qui répond automatiquement.', ar: 'أنشئ وكيل ذكاء اصطناعي يرد تلقائياً.', en: 'Create an AI agent that replies automatically.' },
+            tip: { fr: '💡 L\'IA + n8n = automatisation intelligente.', ar: '💡 الذكاء الاصطناعي + n8n = أتمتة ذكية.', en: '💡 AI + n8n = intelligent automation.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Construire des automations commerciales', ar: 'بناء أتمتة تجارية', en: 'Build business automations' },
+        lessons: [
+          {
+            id: 'n8n-m-1',
+            title: { fr: 'Automatisations Commerciales', ar: 'أتمتة تجارية', en: 'Business Automations' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Processus de vente complet','Gestion de contenu','Support client','Recrutement','Gestion de projet'],
+              ar: ['عملية مبيعات كاملة','إدارة المحتوى','دعم العملاء','التوظيف','إدارة المشاريع'],
+              en: ['Complete sales process','Content management','Customer support','Recruitment','Project management']
+            },
+            method: { fr: 'Automatisez un processus métier complet.', ar: 'أتمتة عملية تجارية كاملة.', en: 'Automate a complete business process.' },
+            exercise: { fr: 'Créez une automatisation pour un processus de vente.', ar: 'أنشئ أتمتة لعملية مبيعات.', en: 'Create an automation for a sales process.' },
+            tip: { fr: '💡 Objectif: des automations sans intervention humaine.', ar: '💡 الهدف: أتمتة بدون تدخل بشري.', en: '💡 Goal: automations without human intervention.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 10: VIBE CODING (4 niveaux)
+  // ============================================================
+  {
+    id: 'vibecoding',
+    icon: '🤖',
+    color: '#8B5CF6',
+    accent: '#A78BFA',
+    bg: 'linear-gradient(135deg, #0D0618 0%, #1A0A30 50%, #0D0618 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80',
+    earning: '30,000 – 150,000 DZD/month',
+    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
+    startTool: 'Cursor AI + VSCode + GitHub Copilot',
+    title: { fr: 'Vibe Coding', ar: 'البرمجة بالذكاء الاصطناعي', en: 'Vibe Coding' },
+    subtitle: { fr: 'Développement IA', ar: 'التطوير بالذكاء الاصطناعي', en: 'AI Development' },
+    tagline: { fr: 'Construisez avec l\'IA sans être un développeur traditionnel', ar: 'ابنِ بالذكاء الاصطناعي دون أن تكون مبرمجاً تقليدياً', en: 'Build with AI without being a traditional developer' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les bases du Vibe Coding', ar: 'إتقان أساسيات البرمجة بالذكاء الاصطناعي', en: 'Master Vibe Coding basics' },
+        lessons: [
+          {
+            id: 'vc-b-1',
+            title: { fr: 'Qu\'est-ce que le Vibe Coding?', ar: 'ما هي البرمجة بالذكاء الاصطناعي؟', en: 'What is Vibe Coding?' },
+            image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Vibe Coding = utiliser des assistants IA','L\'IA génère le code, vous guidez','Rôle: prompt engineer, architecte','Outils: Cursor, GitHub Copilot, ChatGPT'],
+              ar: ['البرمجة بالذكاء الاصطناعي = استخدام مساعدين ذكاء اصطناعي','الذكاء الاصطناعي يكتب الكود، وأنت توجه','دورك: مهندس أوامر، مهندس معماري','الأدوات: Cursor، GitHub Copilot، ChatGPT'],
+              en: ['Vibe Coding = using AI assistants','AI writes code, you guide','Role: prompt engineer, architect','Tools: Cursor, GitHub Copilot, ChatGPT']
+            },
+            method: { fr: 'Installez ChatGPT et posez une question.', ar: 'ثبّت ChatGPT واسأل سؤالاً.', en: 'Install ChatGPT and ask a question.' },
+            exercise: { fr: 'Demandez à ChatGPT d\'expliquer le Vibe Coding.', ar: 'اطلب من ChatGPT شرح البرمجة بالذكاء الاصطناعي.', en: 'Ask ChatGPT to explain Vibe Coding.' },
+            tip: { fr: '💡 Le Vibe Coding n\'est PAS une triche.', ar: '💡 البرمجة بالذكاء الاصطناعي ليست غشاً.', en: '💡 Vibe Coding is NOT cheating.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–12', ar: 'الأسابيع 5–12', en: 'Weeks 5–12' },
+        goal: { fr: 'Construire des apps modernes avec React et l\'IA', ar: 'بناء تطبيقات عصرية مع React والذكاء الاصطناعي', en: 'Build modern apps with React and AI' },
+        lessons: [
+          {
+            id: 'vc-i-1',
+            title: { fr: 'Construire des Apps React avec l\'IA', ar: 'بناء تطبيقات React بالذكاء الاصطناعي', en: 'Building React Apps with AI' },
+            image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Prompt: "Crée un composant React"','L\'IA écrit le code','Reconnaître props, state, hooks','Tester dans Cursor','Déployer sur Vercel'],
+              ar: ['الأمر: "أنشئ مكون React"','الذكاء الاصطناعي يكتب الكود','التعرف على الخصائص، الحالة، الخطافات','الاختبار في Cursor','النشر على Vercel'],
+              en: ['Prompt: "Create a React component"','AI writes the code','Recognize props, state, hooks','Test in Cursor','Deploy to Vercel']
+            },
+            method: { fr: 'Générez un composant React avec l\'IA.', ar: 'ولّد مكون React بالذكاء الاصطناعي.', en: 'Generate a React component with AI.' },
+            exercise: { fr: 'Construisez une application React avec l\'IA.', ar: 'ابنِ تطبيق React بالذكاء الاصطناعي.', en: 'Build a React app with AI.' },
+            tip: { fr: '💡 Structure: composant → props → interactions → style.', ar: '💡 الهيكل: المكون → الخصائص → التفاعلات → التنسيق.', en: '💡 Structure: component → props → interactions → styling.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 13–24', ar: 'الأسابيع 13–24', en: 'Weeks 13–24' },
+        goal: { fr: 'Construire des SaaS complets', ar: 'بناء SaaS كاملة', en: 'Build complete SaaS' },
+        lessons: [
+          {
+            id: 'vc-a-1',
+            title: { fr: 'Construire des SaaS avec l\'IA', ar: 'بناء SaaS بالذكاء الاصطناعي', en: 'Building SaaS with AI' },
+            image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Architecture: React + Node + Supabase','Modèle: Abonnements','Fonctionnalités: Auth, Paiement, Dashboard','Multi-tenant','Pricing: Gratuit, Pro, Enterprise'],
+              ar: ['الهندسة: React + Node + Supabase','النموذج: اشتراكات','الميزات: مصادقة، دفع، لوحة تحكم','متعدد المستأجرين','التسعير: مجاني، Pro، Enterprise'],
+              en: ['Architecture: React + Node + Supabase','Model: Subscriptions','Features: Auth, Payment, Dashboard','Multi-tenant','Pricing: Free, Pro, Enterprise']
+            },
+            method: { fr: 'Demandez à l\'IA de créer un plan SaaS.', ar: 'اطلب من الذكاء الاصطناعي إنشاء خطة SaaS.', en: 'Ask AI to create a SaaS plan.' },
+            exercise: { fr: 'Construisez un SaaS de gestion de projets.', ar: 'ابنِ SaaS لإدارة المشاريع.', en: 'Build a project management SaaS.' },
+            tip: { fr: '💡 Commencez par un SaaS simple et spécialisé.', ar: '💡 ابدأ بـ SaaS بسيط ومتخصص.', en: '💡 Start with a simple specialized SaaS.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Créer des produits commercialisables', ar: 'إنشاء منتجات قابلة للتسويق', en: 'Create marketable products' },
+        lessons: [
+          {
+            id: 'vc-m-1',
+            title: { fr: 'Monétiser les Produits IA', ar: 'تحقيق الربح من منتجات الذكاء الاصطناعي', en: 'Monetizing AI Products' },
+            image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Modèles: Abonnement, Freemium, Pay-per-use','Prix Algérie: adapté','3 niveaux de prix','Stratégie marketing','Page de vente'],
+              ar: ['النماذج: اشتراك، Freemium، دفع لكل استخدام','أسعار الجزائر: مكيفة','3 مستويات أسعار','استراتيجية تسويق','صفحة بيع'],
+              en: ['Models: Subscription, Freemium, Pay-per-use','Algeria pricing: adapted','3 pricing tiers','Marketing strategy','Sales page']
+            },
+            method: { fr: 'Développez un plan de monétisation.', ar: 'طور خطة ربح.', en: 'Develop a monetization plan.' },
+            exercise: { fr: 'Créez un plan de monétisation complet avec l\'IA.', ar: 'أنشئ خطة ربح كاملة بالذكاء الاصطناعي.', en: 'Create a complete monetization plan with AI.' },
+            tip: { fr: '💡 Les produits IA les plus rentables résolvent un problème spécifique.', ar: '💡 أكثر منتجات الذكاء الاصطناعي ربحاً تحل مشكلة محددة.', en: '💡 The most profitable AI products solve a specific problem.' }
+          }
+        ]
+      }
+    ]
+  }
 ];
