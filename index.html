@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- LANDING -->
+<!-- ===== LANDING ===== -->
 <div id="landing">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
@@ -18,7 +18,7 @@
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </nav>
-  <div class="hero">
+  <div class="hero glass">
     <div class="hero-badge" id="l-badge"></div>
     <h1 id="l-title"></h1>
     <p id="l-subtitle"></p>
@@ -30,27 +30,26 @@
     </div>
   </div>
   <div class="access-section" style="margin-top:32px">
-    <div class="includes-box">
+    <div class="includes-box glass">
       <div class="includes-title" id="l-includes-title"></div>
       <div id="l-includes-list"></div>
     </div>
-    <div class="access-box">
+    <div class="access-box glass">
       <div class="access-title" id="l-already"></div>
       <div class="access-sub" id="l-enter"></div>
-      <input type="text" class="access-input" id="access-input" oninput="clearErr()" onkeydown="if(event.key==='Enter')checkAccess()">
+      <input type="text" class="access-input glass" id="access-input" oninput="clearErr()" onkeydown="if(event.key==='Enter')checkAccess()">
       <div class="error-msg" id="access-error"></div>
-      <button class="access-btn" id="access-btn" onclick="checkAccess()"></button>
-      <div class="divider">
-        <div class="not-bought" id="l-not-bought"></div>
-        <a class="whatsapp-btn" id="l-whatsapp" href="#" target="_blank"></a>
-      </div>
+      <button class="access-btn glass-btn" id="access-btn" onclick="checkAccess()"></button>
+      <div class="divider"></div>
+      <div class="not-bought" id="l-not-bought"></div>
+      <a class="whatsapp-btn glass-btn" id="l-whatsapp" href="#" target="_blank"></a>
     </div>
     <div class="stats-row" id="l-stats"></div>
   </div>
   <footer id="l-footer"></footer>
 </div>
 
-<!-- ACADEMY -->
+<!-- ===== ACADEMY ===== -->
 <div id="academy">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
@@ -60,18 +59,18 @@
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </nav>
-  <div class="hero">
+  <div class="hero glass">
     <div class="hero-badge" id="a-badge"></div>
     <h1 id="a-title"></h1>
     <p id="a-subtitle"></p>
     <div class="features" id="a-features"></div>
   </div>
   <div class="skill-cards" id="a-skill-cards"></div>
-  <div class="recommendation"><div class="rec-box" id="a-rec"></div></div>
+  <div class="recommendation"><div class="rec-box glass" id="a-rec"></div></div>
   <footer id="a-footer"></footer>
 </div>
 
-<!-- SKILL VIEW -->
+<!-- ===== SKILL VIEW ===== -->
 <div id="skill-view">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
@@ -81,7 +80,7 @@
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </nav>
-  <div class="skill-header" id="skill-header">
+  <div class="skill-header glass" id="skill-header">
     <div class="skill-header-inner">
       <span id="sh-icon" style="font-size:26px"></span>
       <div>
@@ -92,18 +91,18 @@
   </div>
   <div class="skill-body">
     <div class="level-tabs" id="level-tabs"></div>
-    <div class="level-info" id="level-info"></div>
+    <div class="level-info glass" id="level-info"></div>
     <div class="lesson-cards" id="lesson-cards"></div>
     <div class="level-nav" id="level-nav"></div>
   </div>
   <footer id="s-footer"></footer>
 </div>
 
-<!-- LESSON VIEW -->
+<!-- ===== LESSON VIEW ===== -->
 <div id="lesson-view">
-  <div class="lesson-topbar">
+  <div class="lesson-topbar glass">
     <div class="lesson-topbar-inner">
-      <button class="back-btn" id="lesson-back-btn"></button>
+      <button class="back-btn glass-btn" id="lesson-back-btn"></button>
       <span id="lesson-skill-icon" style="font-size:16px"></span>
       <span id="lesson-skill-name" style="font-size:12px;color:#4B5563"></span>
       <span style="font-size:12px;color:#4B5563">/</span>
