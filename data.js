@@ -1,7 +1,3 @@
-// ============================================================
-// DATA.JS - 10 SKILLS AVEC BACKGROUND IMAGES + CONTENU COMPLET
-// ============================================================
-
 var CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
 
 var LS = {
@@ -77,11 +73,8 @@ var T = {
   }
 };
 
-// ============================================================
-// SKILLS (10 SKILLS AVEC BACKGROUND IMAGES + CONTENU COMPLET)
-// ============================================================
+// ===== SKILLS =====
 var SKILLS = [
-  // ===== SKILL 1: GRAPHIC DESIGN =====
   {
     id: 'design',
     icon: '🎨',
@@ -108,99 +101,19 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: ['Allez sur canva.com ou téléchargez l\'app depuis Google Play ou App Store.','Cliquez S\'inscrire et créez un compte gratuit avec votre email ou Google.','Cliquez Créer un design en haut du tableau de bord.','Choisissez Post Instagram Carré — canvas vierge 1080x1080px.','Panneau GAUCHE: Templates, Éléments, Texte, Arrière-plan, Téléchargements.','Barre du HAUT: contrôles de police, couleurs, position.','Ctrl+Z pour annuler. Ctrl+D pour dupliquer.','Bouton Partager → Télécharger → PNG pour réseaux ou PDF pour impression.'],
-              ar: ['روح لـ canva.com أو حمّل التطبيق من Google Play أو App Store.','اضغط سجّل وأنشئ حساب مجاني بإيميلك أو Google.','اضغط إنشاء تصميم في الأعلى.','اختار منشور Instagram — canvas فارغ 1080x1080px.','اللوحة اليسرى: Templates، عناصر، نص، خلفية، تحميلات.','شريط الأعلى: خطوط، ألوان، موضع.','Ctrl+Z للتراجع. Ctrl+D للنسخ.','زر مشاركة → تحميل → PNG للسوشيال أو PDF للطباعة.'],
-              en: ['Go to canva.com or download the app from Google Play or App Store.','Click Sign Up and create a free account with your email or Google.','Click Create a design at the top of the dashboard.','Choose Instagram Post Square — blank 1080x1080px canvas.','LEFT panel: Templates, Elements, Text, Background, Uploads.','TOP toolbar: font controls, colors, position.','Ctrl+Z to undo. Ctrl+D to duplicate.','Share button → Download → PNG for social or PDF for print.']
+              fr: ['Allez sur canva.com','Créez un compte gratuit','Cliquez Créer un design','Choisissez Post Instagram','Utilisez Templates et Éléments'],
+              ar: ['روح لـ canva.com','أنشئ حساب مجاني','اضغط إنشاء تصميم','اختار منشور Instagram','استخدم القوالب والعناصر'],
+              en: ['Go to canva.com','Create a free account','Click Create a design','Choose Instagram Post','Use Templates & Elements']
             },
-            method: { fr: 'Ouvrez Canva maintenant et passez 20 minutes à cliquer sur chaque bouton. Ne dessinez rien — explorez juste.', ar: 'افتح Canva الآن واقضِ 20 دقيقة تضغط على كل زر. ما تصمّمش شيء — بس استكشف.', en: 'Open Canva right now and spend 20 minutes clicking every button. Do not design anything — just explore.' },
-            exercise: { fr: 'Créez un post Instagram avec votre nom en grand texte gras et un fond coloré. Téléchargez-le.', ar: 'صنع منشور Instagram باسمك بخط كبير وخلفية ملونة. حمّله.', en: 'Create an Instagram post with your name in big bold text and a colored background. Download it.' },
-            tip: { fr: '💡 Canva Gratuit vous donne 250 000+ templates. Passez à Pro seulement après avoir des clients payants.', ar: '💡 Canva المجاني يعطيك +250,000 قالب. انتقل للـ Pro بس بعد ما تجيك زبائن.', en: '💡 Canva Free gives you 250,000+ templates. Only upgrade after you have paying clients.' }
-          },
-          {
-            id: 'd-b-2',
-            title: { fr: 'Les 4 Règles du Design CARP', ar: '4 قواعد التصميم CARP', en: 'The 4 Design Rules CARP' },
-            image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
-            layout: 'right',
-            steps: {
-              fr: ['CONTRASTE: Rendez la chose la plus importante la plus grande ou la plus différente.','ALIGNEMENT: Rien placé au hasard. Activez les guides: Vue → Afficher règles.','RÉPÉTITION: Même police, même couleur, même style pour les éléments similaires.','PROXIMITÉ: Groupez les choses qui vont ensemble. Séparez ce qui ne va pas.','Pratiquez: Ouvrez un template Canva. Identifiez chaque règle dans chaque élément.','Cherchez flyer algérie restaurant sur Google. Identifiez les règles respectées et brisées.'],
-              ar: ['التباين: خلّي الحاجة المهمة أكبر أو أختلف.','المحاذاة: ما كاين والو موضوع بالعشوائية. فعّل الخطوط: عرض → أظهر الخطوط.','التكرار: نفس الخط، نفس اللون، نفس الستايل للعناصر المتشابهة.','القرب: جمّع الأشياء اللي تمشي مع بعض. فرّق ما لا يمشي.','تمرّن: افتح قالب Canva. حدّد كل قاعدة في كل عنصر.','دور على flyer algérie restaurant في Google. حدّد القواعد المتّبعة والمكسورة.'],
-              en: ['CONTRAST: Make the most important thing the biggest or most different.','ALIGNMENT: Nothing placed randomly. Enable guides: View → Show Rulers.','REPETITION: Same font, same color, same style for similar elements.','PROXIMITY: Group things that belong together. Separate what does not.','Practice: Open a Canva template. Identify each rule in each element.','Search flyer algerie restaurant on Google. Identify rules followed and broken.']
-            },
-            method: { fr: 'Brisez les 4 règles délibérément dans un design puis recréez-le correctement. La comparaison rend les règles inoubliables.', ar: 'اكسر الـ4 قواعد بالقصد في تصميم ثم أعد إنشاؤه صح. المقارنة تخلّيك ما تنساش.', en: 'Break all 4 rules deliberately in one design then recreate it correctly. The comparison makes rules unforgettable.' },
-            exercise: { fr: 'Designez Restaurant El Baraka Alger comme carte de visite DEUX FOIS: Version 1 = violez les 4 règles. Version 2 = respectez-les parfaitement.', ar: 'صمّم مطعم البركة الجزائر كبطاقة أعمال مرتين: نسخة 1 = اكسر الـ4 قواعد. نسخة 2 = اتبّعها.', en: 'Design Restaurant El Baraka Alger as a business card TWICE: Version 1 violate all 4 rules. Version 2 follow them perfectly.' },
-            tip: { fr: '💡 Les designers professionnels brisent les règles seulement APRÈS les avoir maîtrisées.', ar: '💡 المصممون المحترفون يكسرون القواعد بس بعد ما يتقنوها.', en: '💡 Professional designers break rules only AFTER mastering them.' }
-          }
-        ]
-      },
-      {
-        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
-        badge: '⚡',
-        duration: { fr: 'Semaines 5–10', ar: 'الأسابيع 5–10', en: 'Weeks 5–10' },
-        goal: { fr: 'Passer de Canva à Photoshop', ar: 'الانتقال من Canva لـ Photoshop', en: 'Move from Canva to Photoshop' },
-        lessons: [
-          {
-            id: 'd-i-1',
-            title: { fr: 'Photopea — Photoshop Gratuit', ar: 'Photopea — بديل Photoshop المجاني', en: 'Photopea — Free Photoshop Alternative' },
-            image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=800&q=80',
-            layout: 'left',
-            steps: {
-              fr: ['photopea.com fonctionne dans le navigateur identique à Photoshop à 99% gratuit.','Interface: Gauche=Outils. Droite=Calques. Haut=Options. Centre=Canvas.','CALQUES: Feuilles transparentes empilées. Chaque élément sur son propre calque.','Ouvrir photo: Fichier → Ouvrir. Double-cliquez Arrière-plan → OK pour déverrouiller.','Supprimer fond: Baguette magique → cliquez fond → Delete. Complexe: Sélection → Objet.','Texte: T → cliquez canvas → tapez → changez police taille couleur.','Exporter: Fichier → Exporter → Exporter sous → PNG cochez Transparence ou JPEG.'],
-              ar: ['photopea.com يشتغل في المتصفح شبه Photoshop بـ99% مجاني.','الواجهة: يسار=أدوات. يمين=طبقات. أعلى=خيارات. وسط=Canvas.','الطبقات: أوراق شفافة مكدّسة. كل عنصر على طبقته الخاصة.','فتح صورة: ملف → فتح. انقر مرتين الخلفية → OK لفتحها.','إزالة خلفية: عصا سحرية → اضغط الخلفية → Delete. معقد: تحديد → موضوع.','نص: T → اضغط Canvas → اكتب → غيّر الخط الحجم اللون.','تصدير: ملف → تصدير → تصدير كـ → PNG فعّل الشفافية أو JPEG.'],
-              en: ['photopea.com runs in browser 99% identical to Photoshop free.','Interface: Left=Tools. Right=Layers. Top=Options. Center=Canvas.','LAYERS: Transparent sheets stacked. Each element on its own layer.','Open photo: File → Open. Double-click Background → OK to unlock.','Remove background: Magic Wand → click background → Delete. Complex: Select → Subject.','Text: T → click canvas → type → change font size color.','Export: File → Export → Export As → PNG check Transparency or JPEG.']
-            },
-            method: { fr: 'Sur Photopea: ouvrez un produit supprimez arrière-plan ajoutez fond coloré + texte prix. Simulation parfaite pub.', ar: 'على Photopea: افتح منتج ازل الخلفية زيد خلفية ملونة + نص سعر. محاكاة إعلان حقيقي.', en: 'On Photopea: open a product remove background add colored background + price text. Perfect ad simulation.' },
-            exercise: { fr: 'Photo produit algérien: supprimez fond dans Photopea placez sur blanc ajoutez prix + nom + ombre. Exportez PNG.', ar: 'صورة منتج جزائري: ازل الخلفية في Photopea حطّها على أبيض زيد سعر + اسم + ظل. صدّر PNG.', en: 'Algerian product photo: remove background in Photopea place on white add price + name + shadow. Export PNG.' },
-            tip: { fr: '💡 Ombre: clic droit calque → Fusion → Ombre portée → opacité 40% distance 10px flou 20px.', ar: '💡 الظل: انقر يمين الطبقة → خيارات المزج → ظل مسقط → شفافية 40% مسافة 10px تعتيم 20px.', en: '💡 Shadow: right-click layer → Blending Options → Drop Shadow → opacity 40% distance 10px blur 20px.' }
-          }
-        ]
-      },
-      {
-        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
-        badge: '🔥',
-        duration: { fr: 'Semaines 11–20', ar: 'الأسابيع 11–20', en: 'Weeks 11–20' },
-        goal: { fr: 'Maîtriser Illustrator', ar: 'إتقان Illustrator', en: 'Master Illustrator' },
-        lessons: [
-          {
-            id: 'd-a-1',
-            title: { fr: 'Adobe Illustrator Vecteurs', ar: 'Adobe Illustrator الفيكتور', en: 'Adobe Illustrator Vectors' },
-            image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
-            layout: 'right',
-            steps: {
-              fr: ['Inkscape inkscape.org 100% gratuit très similaire à Illustrator.','Vecteurs: un logo vectoriel adapte de carte de visite à panneau 10m sans perte.','Outil Plume P: Cliquez=angle droit. Cliquez+glissez=courbe. Cliquez départ=fermer.','Tracer logo: Importez image → verrouillez calque → nouveau calque → tracez Plume.','Pathfinder: Unir fusionner Soustraction soustraire Intersection chevaucher.','Couleurs: sélectionnez forme → carré Remplissage bas gauche → entrez code hex.'],
-              ar: ['Inkscape inkscape.org مجاني 100% شبيه جداً بـ Illustrator.','الفيكتور: شعار فيكتور يتكيّف من بطاقة لإعلان 10م بدون فقدان جودة.','أداة القلم P: اضغط=زاوية مستقيمة. اضغط+اسحب=منحنى. اضغط البداية=أغلق.','تتبع شعار: استورد صورة → اقفل الطبقة → طبقة جديدة → تتبّع بالقلم.','Pathfinder: توحيد دمج طرح إزالة تقاطع الاحتفاظ بالتداخل.','الألوان: اختار شكل → مربع التعبئة أسفل يسار → أدخل كود hex.'],
-              en: ['Inkscape inkscape.org 100% free very similar to Illustrator.','Vectors: a vector logo scales from business card to 10m billboard without quality loss.','Pen Tool P: Click=straight corner. Click+drag=curve. Click start=close shape.','Trace logo: Import image → lock layer → new layer → trace with Pen Tool.','Pathfinder: Unite merge Minus Front subtract Intersect overlap only.','Colors: select shape → Fill square bottom left → enter hex code.']
-            },
-            method: { fr: 'Imprimez un logo simple 3-5 formes. Tracez chaque forme avec UNIQUEMENT Outil Plume dans Inkscape. Répétez pour 5 logos sur une semaine.', ar: 'اطبع شعاراً بسيطاً 3-5 أشكال. تتبّع كل شكل بأداة القلم فقط في Inkscape. كرّر لـ5 شعارات على أسبوع.', en: 'Print a simple logo 3-5 shapes. Trace every shape with ONLY the Pen Tool in Inkscape. Repeat for 5 logos over one week.' },
-            exercise: { fr: 'Recréez logo Ooredoo ou Djezzy dans Inkscape: Outil Plume + Pathfinder uniquement. Comparez au logo original.', ar: 'أعد إنشاء شعار Ooredoo أو Djezzy في Inkscape: أداة القلم + Pathfinder فقط. قارن مع الأصل.', en: 'Recreate Ooredoo or Djezzy logo in Inkscape: Pen Tool + Pathfinder only. Compare to the original.' },
-            tip: { fr: '💡 Client avec logo JPEG: proposez de le redessiner en vectoriel. Facturez 3000-8000 DZD. Durée 30-90 minutes.', ar: '💡 زبون بشعار JPEG: اقترح إعادة رسمه كفيكتور. اشحن 3000-8000 دج. المدة 30-90 دقيقة.', en: '💡 Client with JPEG logo: offer to redraw as vector. Charge 3000-8000 DZD. Duration 30-90 minutes.' }
-          }
-        ]
-      },
-      {
-        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
-        badge: '👑',
-        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
-        goal: { fr: 'Diriger une agence de design', ar: 'إدارة أجنسي تصميم', en: 'Run a design agency' },
-        lessons: [
-          {
-            id: 'd-m-1',
-            title: { fr: 'De Freelance à Agence', ar: 'من فريلانس لأجنسي', en: 'From Freelancer to Agency' },
-            image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
-            layout: 'top',
-            steps: {
-              fr: ['Bon moment: travail constant > capacité seul ET vous refusez des projets. Pas avant.','Collaborateur: votre meilleur étudiant ou designer en ligne. Paiement par projet.','Rôles: Vous=acquisition propositions qualité. Eux=exécution. Payez-les 40-50%.','Marque agence: Nom logo Instagram site Carrd.co gratuit 30 min.','Forfaits: Starter 25K/mois. Croissance 55K/mois. Premium 100K+/mois. DZD','Ciblez les agences publicitaires: 1 client agence = 10 clients individuels.'],
-              ar: ['الوقت المناسب: عمل مستمر > طاقتك وحدك وترفض مشاريع. مش قبل.','المتعاون: أحسن طالب أو مصمم أونلاين. دفع بالمشروع.','الأدوار: أنت=استقطاب عروض جودة. هم=تنفيذ. ادفع لهم 40-50%.','علامة الأجنسي: اسم شعار Instagram موقع Carrd.co مجاني 30 دقيقة.','الباقات: Starter 25K/شهر. نمو 55K/شهر. Premium 100K+/شهر. دج','استهدف وكالات الإعلان: زبون أجنسي واحد = 10 زبائن أفراد.'],
-              en: ['Right time: constant work > your capacity alone AND refusing projects. Not before.','Collaborator: your best student or online designer. Pay per project.','Roles: You=acquisition proposals quality. Them=execution. Pay them 40-50%.','Agency brand: Name logo Instagram Carrd.co site free 30 min.','Packages: Starter 25K/month. Growth 55K/month. Premium 100K+/month. DZD','Target advertising agencies: 1 agency client = 10 individual clients.']
-            },
-            method: { fr: 'Fake pitch: trouvez entreprise avec mauvais design. Refaites logo + 3 posts gratuitement. Envoyez: Je voulais vous montrer ce qui est possible.', ar: 'عرض وهمي: لقّي مشروعاً بتصميم ضعيف. أعد تصميم الشعار + 3 منشورات مجاناً. أرسل: أردت أن أريك ما هو ممكن.', en: 'Fake pitch: find business with bad design. Redo logo + 3 posts for free. Send: I wanted to show you what is possible.' },
-            exercise: { fr: 'Identifiez 3 entreprises algériennes avec design faible. Refonte non sollicitée pour 1: logo + 2 posts. Message prospection. Publiez comme concept.', ar: 'حدّد 3 مشاريع جزائرية بتصميم ضعيف. إعادة تصميم غير مطلوبة لواحد: شعار + 2 منشور. رسالة تواصل. انشر كمشروع مفهوم.', en: 'Identify 3 Algerian businesses with weak design. Unsolicited redesign for 1: logo + 2 posts. Outreach message. Publish as concept project.' },
-            tip: { fr: '💡 Stratégie la plus rapide: spécialisez-vous dans UN secteur. Les spécialistes facturent toujours plus.', ar: '💡 أسرع استراتيجية: تخصّص في قطاع واحد. المتخصصون دائماً يشحنون أكثر.', en: '💡 Fastest strategy: specialize in ONE sector. Specialists always charge more.' }
+            method: { fr: 'Explorez Canva pendant 20 minutes.', ar: 'استكشف Canva لمدة 20 دقيقة.', en: 'Explore Canva for 20 minutes.' },
+            exercise: { fr: 'Créez un post Instagram avec votre nom.', ar: 'أنشئ منشور Instagram باسمك.', en: 'Create an Instagram post with your name.' },
+            tip: { fr: '💡 Canva Gratuit donne 250k+ templates.', ar: '💡 Canva المجاني يعطيك 250k+ قالب.', en: '💡 Canva Free gives 250k+ templates.' }
           }
         ]
       }
     ]
   },
-  // ===== SKILL 2: SOCIAL MEDIA MANAGEMENT =====
+  // ===== SKILL 2-10: (similaire avec bgImage) =====
   {
     id: 'smm',
     icon: '📱',
@@ -223,9 +136,324 @@ var SKILLS = [
         lessons: [
           {
             id: 's-b-1',
-            title: { fr: 'Configurer un Compte Business', ar: 'إعداد حساب Business', en: 'Set Up a Business Account' },
+            title: { fr: 'Configurer un compte business', ar: 'إعداد حساب Business', en: 'Set up Business Account' },
             image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80',
             layout: 'top',
             steps: {
-              fr: ['Instagram: Profil → 3 lignes → Paramètres → Compte → Passer en compte professionnel → Business.','Facebook: facebook.com/pages/create → Entreprise → nom + catégorie → remplissez TOUS les champs.','Meta Business Suite: business.facebook.com → connectez Page + Instagram → gère les deux.','WhatsApp Business: téléchargez app → numéro professionnel → liez dans Facebook. Indispensable Algérie.','Profil 100%: photo bio 80 chars lien bio linktr.ee gratuit localisation bouton contact.','Dossier Contenu Client: Photos Vidéos Légendes Posts approuvés.'],
-              ar: ['Instagram: بروفيل → 3 خطوط → إعدادات → حساب → تحويل لحساب محترف → Business.','Facebook: facebook.com/pages/create → مشروع → اسم
+              fr: ['Instagram: Profil → Compte professionnel','Facebook: facebook.com/pages/create','Meta Business Suite: connectez Page + Instagram','WhatsApp Business: numéro professionnel'],
+              ar: ['Instagram: بروفيل → حساب محترف','Facebook: facebook.com/pages/create','Meta Business Suite: اربط الصفحة + Instagram','WhatsApp Business: رقم احترافي'],
+              en: ['Instagram: Profile → Professional account','Facebook: facebook.com/pages/create','Meta Business Suite: connect Page + Instagram','WhatsApp Business: professional number']
+            },
+            method: { fr: 'Créez un compte test Instagram.', ar: 'أنشئ حساب Instagram تجريبي.', en: 'Create a test Instagram account.' },
+            exercise: { fr: 'Configurez un profil business complet.', ar: 'اعدد بروفيل business كامل.', en: 'Set up a complete business profile.' },
+            tip: { fr: '💡 Utilisez linktr.ee pour plusieurs liens.', ar: '💡 استخدم linktr.ee لعدة روابط.', en: '💡 Use linktr.ee for multiple links.' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'video',
+    icon: '🎬',
+    color: '#DC2626',
+    accent: '#F87171',
+    bg: 'linear-gradient(135deg, #1A0303 0%, #3A0A0A 50%, #1A0303 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80',
+    earning: '8,000 – 80,000 DZD/project',
+    firstClient: { fr: '4–6 semaines', ar: '4–6 أسابيع', en: '4–6 weeks' },
+    startTool: 'CapCut (free) → DaVinci Resolve (free)',
+    title: { fr: 'Montage Vidéo', ar: 'مونتاج الفيديو', en: 'Video Editing' },
+    subtitle: { fr: 'Création de Contenu', ar: 'إنشاء المحتوى', en: 'Content Creation' },
+    tagline: { fr: 'La compétence créative la plus demandée', ar: 'أكثر مهارة إبداعية مطلوبة', en: 'The most in-demand creative skill' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Monter votre première vidéo avec CapCut', ar: 'تعديل أول فيديو باستخدام CapCut', en: 'Edit your first video with CapCut' },
+        lessons: [
+          {
+            id: 'v-b-1',
+            title: { fr: 'Installer CapCut et monter votre première vidéo', ar: 'تنصيب CapCut وتعديل أول فيديو', en: 'Install CapCut and edit your first video' },
+            image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Téléchargez CapCut (gratuit)','Ouvrez → + → sélectionnez vidéos','Timeline: clips = blocs','Couper: Split → Delete','Musique: Audio → Sons','Exporter: 1080p 30fps'],
+              ar: ['حمّل CapCut (مجاني)','افتح → + → اختار فيديوهات','الجدول الزمني: كليبات','القطع: Split → حذف','الموسيقى: Audio → أصوات','التصدير: 1080p 30fps'],
+              en: ['Download CapCut (free)','Open → + → select videos','Timeline: clips = blocks','Cut: Split → Delete','Music: Audio → Sounds','Export: 1080p 30fps']
+            },
+            method: { fr: 'Filmez 10 clips courts et montez-les.', ar: 'صوّر 10 كليبات قصيرة وعدّلها.', en: 'Film 10 short clips and edit them.' },
+            exercise: { fr: 'Vidéo 60 secondes avec musique et texte.', ar: 'فيديو 60 ثانية مع موسيقى ونص.', en: '60-second video with music and text.' },
+            tip: { fr: '💡 Chaque clip: 1.5-4 secondes max.', ar: '💡 كل كليب: 1.5-4 ثوانٍ كحد أقصى.', en: '💡 Each clip: 1.5-4 seconds max.' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'webdev',
+    icon: '💻',
+    color: '#F59E0B',
+    accent: '#FCD34D',
+    bg: 'linear-gradient(135deg, #1A1200 0%, #3A2800 50%, #1A1200 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80',
+    earning: '30,000 – 150,000 DZD/project',
+    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
+    startTool: 'VS Code + HTML/CSS/JS',
+    title: { fr: 'Web Development', ar: 'تطوير الويب', en: 'Web Development' },
+    subtitle: { fr: 'Développement Front-End', ar: 'تطوير الواجهات', en: 'Front-End Development' },
+    tagline: { fr: 'Créez des sites web professionnels qui génèrent des revenus', ar: 'أنشئ مواقع ويب احترافية تدرّ عليك', en: 'Build professional websites that generate income' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Comprendre le HTML, CSS et créer votre première page web', ar: 'تفهم HTML و CSS وتصنع أول صفحة ويب', en: 'Understand HTML & CSS and create your first web page' },
+        lessons: [
+          {
+            id: 'w-b-1',
+            title: { fr: 'HTML - La structure de base', ar: 'HTML - الهيكل الأساسي', en: 'HTML - The basic structure' },
+            image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['VS Code → index.html','! + Tab = structure de base','DOCTYPE html = déclaration','html = racine','head = métadonnées','body = contenu visible'],
+              ar: ['VS Code → index.html','! + Tab = هيكل أساسي','DOCTYPE html = تصريح','html = الجذر','head = بيانات وصفية','body = المحتوى الظاهر'],
+              en: ['VS Code → index.html','! + Tab = basic structure','DOCTYPE html = declaration','html = root','head = metadata','body = visible content']
+            },
+            method: { fr: 'Créez 5 pages HTML différentes.', ar: 'أنشئ 5 صفحات HTML مختلفة.', en: 'Create 5 different HTML pages.' },
+            exercise: { fr: 'Page "À propos de moi" avec titre, paragraphe, image, lien.', ar: 'صفحة "عني" مع عنوان، فقرة، صورة، رابط.', en: '"About Me" page with heading, paragraph, image, link.' },
+            tip: { fr: '💡 Utilisez Emmet pour générer du HTML rapidement.', ar: '💡 استخدم Emmet لتوليد HTML بسرعة.', en: '💡 Use Emmet to generate HTML quickly.' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'seo',
+    icon: '📈',
+    color: '#3B82F6',
+    accent: '#60A5FA',
+    bg: 'linear-gradient(135deg, #0A1428 0%, #1A2A50 50%, #0A1428 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1432889821006-ca37c5ce1bfa?w=600&q=80',
+    earning: '20,000 – 100,000 DZD/month',
+    firstClient: { fr: '2–4 semaines', ar: '2–4 أسابيع', en: '2–4 weeks' },
+    startTool: 'Google Analytics + Search Console',
+    title: { fr: 'SEO & Marketing Digital', ar: 'SEO والتسويق الرقمي', en: 'SEO & Digital Marketing' },
+    subtitle: { fr: 'Référencement Naturel', ar: 'تحسين محركات البحث', en: 'Search Engine Optimization' },
+    tagline: { fr: 'Faites apparaître les sites en première page de Google', ar: 'خلّي المواقع تظهر في الصفحة الأولى من Google', en: 'Make websites appear on Google\'s first page' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
+        goal: { fr: 'Comprendre le SEO et les mots-clés', ar: 'تفهم SEO والكلمات المفتاحية', en: 'Understand SEO and keywords' },
+        lessons: [
+          {
+            id: 'seo-b-1',
+            title: { fr: 'Introduction au SEO', ar: 'مقدمة في SEO', en: 'Introduction to SEO' },
+            image: 'https://images.unsplash.com/photo-1432889821006-ca37c5ce1bfa?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['SEO = Search Engine Optimization','3 piliers: technique, contenu, backlinks','Mots-clés: ce que les gens tapent','On-Page SEO: title, meta, H1, URL','Off-Page SEO: backlinks, autorité'],
+              ar: ['SEO = تحسين محركات البحث','3 ركائز: تقني، محتوى، روابط','الكلمات المفتاحية: ما يكتبه الناس','On-Page SEO: عنوان، meta، H1، رابط','Off-Page SEO: روابط خلفية، سلطة'],
+              en: ['SEO = Search Engine Optimization','3 pillars: technical, content, backlinks','Keywords: what people type','On-Page SEO: title, meta, H1, URL','Off-Page SEO: backlinks, authority']
+            },
+            method: { fr: 'Recherchez 3 mots-clés sur Google.', ar: 'ابحث عن 3 كلمات مفتاحية في Google.', en: 'Search for 3 keywords on Google.' },
+            exercise: { fr: 'Listez 20 mots-clés pour une entreprise.', ar: 'اكتب 20 كلمة مفتاحية لمشروع.', en: 'List 20 keywords for a business.' },
+            tip: { fr: '💡 Utilisez Google Keyword Planner.', ar: '💡 استخدم Google Keyword Planner.', en: '💡 Use Google Keyword Planner.' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'data',
+    icon: '📊',
+    color: '#8B5CF6',
+    accent: '#A78BFA',
+    bg: 'linear-gradient(135deg, #0D0818 0%, #1A1040 50%, #0D0818 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+    earning: '25,000 – 90,000 DZD/project',
+    firstClient: { fr: '3–5 semaines', ar: '3–5 أسابيع', en: '3–5 weeks' },
+    startTool: 'Excel + Power BI (free)',
+    title: { fr: 'Data Analysis', ar: 'تحليل البيانات', en: 'Data Analysis' },
+    subtitle: { fr: 'Analyse de Données', ar: 'تحليل البيانات', en: 'Data Analytics' },
+    tagline: { fr: 'Transformez les données en décisions qui rapportent', ar: 'حوّل البيانات لقرارات تدرّ عليك', en: 'Turn data into decisions that generate revenue' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
+        goal: { fr: 'Comprendre Excel', ar: 'تفهم Excel', en: 'Understand Excel' },
+        lessons: [
+          {
+            id: 'data-b-1',
+            title: { fr: 'Excel pour Débutants', ar: 'Excel للمبتدئين', en: 'Excel for Beginners' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Ouvrez Excel → Nouveau classeur','Colonnes: A, B, C... Lignes: 1, 2, 3...','Somme automatique pour additionner','Filtres: sélectionnez → Filtrer','Graphiques: Insérer → Graphique','Formules: =SOMME, =MOYENNE'],
+              ar: ['افتح Excel → مصنف جديد','الأعمدة: A, B, C... الصفوف: 1, 2, 3...','الجمع التلقائي','تصفية: اختر → تصفية','الرسوم: إدراج → رسم بياني','الصيغ: =SUM, =AVERAGE'],
+              en: ['Open Excel → New Workbook','Columns: A, B, C... Rows: 1, 2, 3...','AutoSum to add','Filters: select → Filter','Charts: Insert → Chart','Formulas: =SUM, =AVERAGE']
+            },
+            method: { fr: 'Importez un jeu de données.', ar: 'استورد مجموعة بيانات.', en: 'Import a dataset.' },
+            exercise: { fr: 'Tableau de ventes avec 10 produits.', ar: 'جدول مبيعات بـ10 منتجات.', en: 'Sales table with 10 products.' },
+            tip: { fr: '💡 Utilisez Ctrl+C Ctrl+V Ctrl+Z.', ar: '💡 استخدم Ctrl+C Ctrl+V Ctrl+Z.', en: '💡 Use Ctrl+C Ctrl+V Ctrl+Z.' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'copy',
+    icon: '✍️',
+    color: '#EC4899',
+    accent: '#F472B6',
+    bg: 'linear-gradient(135deg, #1A0512 0%, #3A0A28 50%, #1A0512 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80',
+    earning: '10,000 – 50,000 DZD/project',
+    firstClient: { fr: '1–2 semaines', ar: '1–2 أسابيع', en: '1–2 weeks' },
+    startTool: 'Google Docs + Grammarly',
+    title: { fr: 'Copywriting', ar: 'الكتابة الإعلانية', en: 'Copywriting' },
+    subtitle: { fr: 'Rédaction Publicitaire', ar: 'الكتابة التسويقية', en: 'Copywriting' },
+    tagline: { fr: 'Des mots qui vendent, convertissent et persuadent', ar: 'كلمات تبيع وتحوّل وتقنع', en: 'Words that sell, convert and persuade' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–2', ar: 'الأسابيع 1–2', en: 'Weeks 1–2' },
+        goal: { fr: 'Maîtriser les bases', ar: 'إتقان الأساسيات', en: 'Master basics' },
+        lessons: [
+          {
+            id: 'copy-b-1',
+            title: { fr: 'Les Fondamentaux du Copywriting', ar: 'أساسيات الكتابة الإعلانية', en: 'Copywriting Fundamentals' },
+            image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['AIDA: Attention, Intérêt, Désir, Action','Headlines: 80% des gens lisent les titres','Avantages vs Caractéristiques','Call to Action: dites exactement quoi faire','Storytelling: les histoires vendent mieux'],
+              ar: ['AIDA: الانتباه، الاهتمام، الرغبة، الفعل','العناوين: 80% يقرأون العناوين','الفوائد vs الميزات','الدعوة للفعل: قل بالضبط ما يجب فعله','سرد القصص: القصص تبيع أفضل'],
+              en: ['AIDA: Attention, Interest, Desire, Action','Headlines: 80% read headlines','Benefits vs Features','Call to Action: tell exactly what to do','Storytelling: stories sell better']
+            },
+            method: { fr: 'Analysez 10 publicités.', ar: 'حلّل 10 إعلانات.', en: 'Analyze 10 ads.' },
+            exercise: { fr: 'Écrivez un titre accrocheur.', ar: 'اكتب عنواناً جذاباً.', en: 'Write a catchy headline.' },
+            tip: { fr: '💡 Utilisez des chiffres: "5 secrets"', ar: '💡 استخدم الأرقام: "5 أسرار"', en: '💡 Use numbers: "5 secrets"' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'uiux',
+    icon: '🎨',
+    color: '#6366F1',
+    accent: '#818CF8',
+    bg: 'linear-gradient(135deg, #0C0A1A 0%, #1A1040 50%, #0C0A1A 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80',
+    earning: '20,000 – 100,000 DZD/month',
+    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
+    startTool: 'Figma + Spline (3D) + Pen & Paper',
+    title: { fr: 'UI/UX Design 3D', ar: 'تصميم واجهات 3D', en: '3D UI/UX Design' },
+    subtitle: { fr: 'User Interface & 3D Experience', ar: 'واجهات وتجارب 3D', en: 'User Interface & 3D Experience' },
+    tagline: { fr: 'Créez des expériences numériques immersives en 3D', ar: 'أنشئ تجارب رقمية غامرة بتقنية 3D', en: 'Create immersive 3D digital experiences' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les fondamentaux du UI/UX Design', ar: 'إتقان أساسيات UI/UX', en: 'Master UI/UX fundamentals' },
+        lessons: [
+          {
+            id: 'uiux-b-1',
+            title: { fr: 'UI vs UX - Comprendre la Différence', ar: 'UI vs UX - فهم الفرق', en: 'UI vs UX - Understanding the Difference' },
+            image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['UI = Interface Utilisateur = l\'apparence du produit','UX = Expérience Utilisateur = comment l\'utilisateur se sent','UI est ce que vous voyez, UX est ce que vous ressentez','Les deux doivent travailler ensemble pour un grand produit'],
+              ar: ['UI = واجهة المستخدم = مظهر المنتج','UX = تجربة المستخدم = كيف يشعر المستخدم','UI هو ما تراه، UX هو ما تشعر به','يجب أن يعمل الاثنان معاً لمنتج رائع'],
+              en: ['UI = User Interface = the appearance of the product','UX = User Experience = how the user feels','UI is what you see, UX is what you feel','Both must work together for a great product']
+            },
+            method: { fr: 'Analysez 3 applications que vous utilisez quotidiennement.', ar: 'حلل 3 تطبيقات تستخدمها يومياً.', en: 'Analyze 3 applications you use daily.' },
+            exercise: { fr: 'Créez une comparaison visuelle: app bien conçue vs mal conçue.', ar: 'أنشئ مقارنة بصرية: تطبيق مصمم جيداً vs سيء.', en: 'Create a visual comparison: well-designed vs poorly designed app.' },
+            tip: { fr: '💡 Un bon UI/UX Designer pense d\'abord à l\'utilisateur.', ar: '💡 مصمم UI/UX الجيد يفكر أولاً في المستخدم.', en: '💡 A good UI/UX Designer thinks about the user first.' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'n8n',
+    icon: '⚡',
+    color: '#E94E1B',
+    accent: '#FF6B35',
+    bg: 'linear-gradient(135deg, #1A0A04 0%, #3A1808 50%, #1A0A04 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+    earning: '25,000 – 120,000 DZD/month',
+    firstClient: { fr: '3–6 semaines', ar: '3–6 أسابيع', en: '3–6 weeks' },
+    startTool: 'n8n (self-hosted or cloud) + Docker',
+    title: { fr: 'Automation avec n8n', ar: 'الأتمتة مع n8n', en: 'Automation with n8n' },
+    subtitle: { fr: 'Workflow Automation', ar: 'أتمتة سير العمل', en: 'Workflow Automation' },
+    tagline: { fr: 'Automatisez tout sans coder - connectez vos apps, économisez des heures', ar: 'أتمتة كل شيء بدون برمجة - اربط تطبيقاتك، وفر ساعات', en: 'Automate everything without coding - connect your apps, save hours' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les bases de n8n', ar: 'إتقان أساسيات n8n', en: 'Master n8n basics' },
+        lessons: [
+          {
+            id: 'n8n-b-1',
+            title: { fr: 'Introduction à l\'Automatisation', ar: 'مقدمة في الأتمتة', en: 'Introduction to Automation' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Qu\'est-ce que l\'automatisation? = faire faire par des machines','n8n = outil open-source','Alternative à Zapier/Make','Workflows = chaînes d\'actions','Nodes = actions, Triggers = déclencheurs'],
+              ar: ['ما هي الأتمتة؟ = جعل الآلات تقوم بالمهام','n8n = أداة مفتوحة المصدر','بديل لـ Zapier/Make','سير العمل = سلاسل إجراءات','العقد = إجراءات، المشغلات = مبتدئات'],
+              en: ['What is automation? = machines doing tasks','n8n = open-source tool','Alternative to Zapier/Make','Workflows = chains of actions','Nodes = actions, Triggers = starters']
+            },
+            method: { fr: 'Identifiez 5 tâches répétitives.', ar: 'حدد 5 مهام متكررة.', en: 'Identify 5 repetitive tasks.' },
+            exercise: { fr: 'Listez 10 processus à automatiser.', ar: 'اكتب 10 عمليات لأتمتتها.', en: 'List 10 processes to automate.' },
+            tip: { fr: '💡 Si vous faites une tâche plus de 3 fois, automatisez-la.', ar: '💡 إذا قمت بمهمة أكثر من 3 مرات، قم بأتمتتها.', en: '💡 If you do a task more than 3 times, automate it.' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'vibecoding',
+    icon: '🤖',
+    color: '#8B5CF6',
+    accent: '#A78BFA',
+    bg: 'linear-gradient(135deg, #0D0618 0%, #1A0A30 50%, #0D0618 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80',
+    earning: '30,000 – 150,000 DZD/month',
+    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
+    startTool: 'Cursor AI + VSCode + GitHub Copilot',
+    title: { fr: 'Vibe Coding', ar: 'البرمجة بالذكاء الاصطناعي', en: 'Vibe Coding' },
+    subtitle: { fr: 'Développement IA', ar: 'التطوير بالذكاء الاصطناعي', en: 'AI Development' },
+    tagline: { fr: 'Construisez avec l\'IA sans être un développeur traditionnel', ar: 'ابنِ بالذكاء الاصطناعي دون أن تكون مبرمجاً تقليدياً', en: 'Build with AI without being a traditional developer' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les bases du Vibe Coding', ar: 'إتقان أساسيات البرمجة بالذكاء الاصطناعي', en: 'Master Vibe Coding basics' },
+        lessons: [
+          {
+            id: 'vc-b-1',
+            title: { fr: 'Qu\'est-ce que le Vibe Coding?', ar: 'ما هي البرمجة بالذكاء الاصطناعي؟', en: 'What is Vibe Coding?' },
+            image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Vibe Coding = utiliser des assistants IA','L\'IA génère le code, vous guidez','Rôle: prompt engineer, architecte','Outils: Cursor, GitHub Copilot, ChatGPT'],
+              ar: ['البرمجة بالذكاء الاصطناعي = استخدام مساعدين ذكاء اصطناعي','الذكاء الاصطناعي يكتب الكود، وأنت توجه','دورك: مهندس أوامر، مهندس معماري','الأدوات: Cursor، GitHub Copilot، ChatGPT'],
+              en: ['Vibe Coding = using AI assistants','AI writes code, you guide','Role: prompt engineer, architect','Tools: Cursor, GitHub Copilot, ChatGPT']
+            },
+            method: { fr: 'Installez ChatGPT et posez une question.', ar: 'ثبّت ChatGPT واسأل سؤالاً.', en: 'Install ChatGPT and ask a question.' },
+            exercise: { fr: 'Demandez à ChatGPT d\'expliquer le Vibe Coding.', ar: 'اطلب من ChatGPT شرح البرمجة بالذكاء الاصطناعي.', en: 'Ask ChatGPT to explain Vibe Coding.' },
+            tip: { fr: '💡 Le Vibe Coding n\'est PAS une triche.', ar: '💡 البرمجة بالذكاء الاصطناعي ليست غشاً.', en: '💡 Vibe Coding is NOT cheating.' }
+          }
+        ]
+      }
+    ]
+  }
+];
