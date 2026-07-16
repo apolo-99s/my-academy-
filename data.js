@@ -1,5 +1,5 @@
 // ============================================================
-// DATA.JS - 10 SKILLS AVEC 4 NIVEAUX + CHAR7 KAMEL
+// DATA.JS - 10 SKILLS COMPLETS AVEC CHAR7
 // ============================================================
 
 var CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
@@ -16,69 +16,192 @@ var T = {
     badge: 'Formation Complète — 10 Skills',
     title: 'Maîtrisez les Compétences\nDigitales qui Paient en Algérie',
     subtitle: '10 formations complètes. Graphisme, Social Media, Vidéo, Web, SEO, Data, Copywriting, UI/UX, Automation, Vibe Coding.',
-    f1: '✓ Méthodes étape par étape', f2: '✓ Exercices réels', f3: '✓ Outils gratuits', f4: '✓ Tarifs marché algérien',
+    f1: '✓ Méthodes étape par étape',
+    f2: '✓ Exercices réels',
+    f3: '✓ Outils gratuits',
+    f4: '✓ Tarifs marché algérien',
     includesTitle: 'Ce que vous obtenez',
-    includes: ['10 formations complètes — Beginner → Master','Chaque leçon: méthode exacte étape par étape','Exercices pratiques avec livrables concrets','Outils gratuits','Prix du marché algérien en DZD','Scripts de communication client','Accès à vie — mises à jour incluses'],
-    already: 'Vous avez déjà acheté?', enter: 'Entrez votre code d\'accès pour commencer.', code: 'VOTRE CODE D\'ACCÈS...',
-    access: 'Accéder à la Formation →', loading: 'Vérification...', notBought: 'Pas encore acheté?', whatsapp: '💬 Commander via WhatsApp',
-    errEmpty: 'Entrez votre code d\'accès.', errInvalid: 'Code invalide. Vérifiez votre achat.', errUsed: 'Ce code a déjà été utilisé.',
-    stats: [{ n: '50+', l: 'Leçons détaillées' }, { n: '4', l: 'Niveaux par skill' }, { n: '0 DZD', l: 'Pour commencer' }],
+    includes: [
+      '10 formations complètes — Beginner → Master',
+      'Chaque leçon: méthode exacte étape par étape',
+      'Exercices pratiques avec livrables concrets',
+      'Outils gratuits',
+      'Prix du marché algérien en DZD',
+      'Scripts de communication client',
+      'Accès à vie — mises à jour incluses'
+    ],
+    already: 'Vous avez déjà acheté?',
+    enter: 'Entrez votre code d\'accès pour commencer.',
+    code: 'VOTRE CODE D\'ACCÈS...',
+    access: 'Accéder à la Formation →',
+    loading: 'Vérification...',
+    notBought: 'Pas encore acheté?',
+    whatsapp: '💬 Commander via WhatsApp',
+    errEmpty: 'Entrez votre code d\'accès.',
+    errInvalid: 'Code invalide. Vérifiez votre achat.',
+    errUsed: 'Ce code a déjà été utilisé.',
+    stats: [
+      { n: '50+', l: 'Leçons détaillées' },
+      { n: '4', l: 'Niveaux par skill' },
+      { n: '0 DZD', l: 'Pour commencer' }
+    ],
     footer: 'DigitalSkills.dz — Formation Professionnelle Algérie 🇩🇿',
-    aBadge: '🇩🇿 Digital Skills Academy — Algérie', aTitle: 'Apprenez. Pratiquez.\nSoyez Payé.',
+    aBadge: '🇩🇿 Digital Skills Academy — Algérie',
+    aTitle: 'Apprenez. Pratiquez.\nSoyez Payé.',
     aSubtitle: '10 skills, du débutant au maître. Chaque leçon vous dit exactement comment faire.',
-    aFeatures: ['Méthodes étape par étape','Exercices réels','Outils gratuits','Tarifs marché algérien'],
+    aFeatures: [
+      'Méthodes étape par étape',
+      'Exercices réels',
+      'Outils gratuits',
+      'Tarifs marché algérien'
+    ],
     aRec: '💡 Ordre recommandé: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting → UI/UX → Automation → Vibe Coding',
-    startLearning: 'Commencer →', firstClient: 'Premier client', earning: 'Revenus', startWith: 'Commencer avec',
-    backSkills: '← Skills', goal: 'Objectif', lessons: 'leçons', back: '← Retour', lesson: 'Leçon', of: 'sur',
-    howTo: 'Comment Faire — Étape par Étape', bestWay: 'La Meilleure Façon d\'Apprendre', exercise: 'Votre Exercice Pratique',
-    prevLesson: '← Leçon Précédente', nextLesson: 'Leçon Suivante →', nextLevel: 'Niveau Suivant', complete: '👑 Formation Terminée!'
+    startLearning: 'Commencer →',
+    firstClient: 'Premier client',
+    earning: 'Revenus',
+    startWith: 'Commencer avec',
+    backSkills: '← Skills',
+    goal: 'Objectif',
+    lessons: 'leçons',
+    back: '← Retour',
+    lesson: 'Leçon',
+    of: 'sur',
+    howTo: 'Comment Faire — Étape par Étape',
+    bestWay: 'La Meilleure Façon d\'Apprendre',
+    exercise: 'Votre Exercice Pratique',
+    prevLesson: '← Leçon Précédente',
+    nextLesson: 'Leçon Suivante →',
+    nextLevel: 'Niveau Suivant',
+    complete: '👑 Formation Terminée!'
   },
   ar: {
     badge: 'تكوين كامل — 10 مهارات',
     title: 'تعلم المهارات الرقمية\nاللي تدر فلوس في الجزائر',
     subtitle: '10 تكوينات كاملة. تصميم، سوشيال ميديا، مونتاج، ويب، SEO، بيانات، كتابة، UI/UX، أتمتة، برمجة بالذكاء الاصطناعي.',
-    f1: '✓ خطوات واضحة وعملية', f2: '✓ تمارين حقيقية', f3: '✓ أدوات مجانية', f4: '✓ أسعار السوق الجزائري',
+    f1: '✓ خطوات واضحة وعملية',
+    f2: '✓ تمارين حقيقية',
+    f3: '✓ أدوات مجانية',
+    f4: '✓ أسعار السوق الجزائري',
     includesTitle: 'شنو راه فيه',
-    includes: ['10 تكوينات كاملة — مبتدئ → محترف','كل درس: الطريقة الصحيحة خطوة بخطوة','تمارين عملية مع نتائج حقيقية','أدوات مجانية','أسعار السوق الجزائري بالدينار','نصوص التواصل مع الزبائن','وصول مدى الحياة — التحديثات مشمولة'],
-    already: 'راك شريت من قبل؟', enter: 'دخل رمز الدخول ديالك باش تبدا.', code: 'رمز الدخول...',
-    access: 'ادخل للتكوين →', loading: 'كاين التحقق...', notBought: 'مازلتش شريت؟', whatsapp: '💬 اطلب عبر واتساب',
-    errEmpty: 'دخل رمز الدخول.', errInvalid: 'الرمز غلط. راجع الشراء.', errUsed: 'هذا الرمز تستخدم من قبل.',
-    stats: [{ n: '+50', l: 'درس مفصل' }, { n: '4', l: 'مستويات لكل مهارة' }, { n: '0 دج', l: 'باش تبدا' }],
+    includes: [
+      '10 تكوينات كاملة — مبتدئ → محترف',
+      'كل درس: الطريقة الصحيحة خطوة بخطوة',
+      'تمارين عملية مع نتائج حقيقية',
+      'أدوات مجانية',
+      'أسعار السوق الجزائري بالدينار',
+      'نصوص التواصل مع الزبائن',
+      'وصول مدى الحياة — التحديثات مشمولة'
+    ],
+    already: 'راك شريت من قبل؟',
+    enter: 'دخل رمز الدخول ديالك باش تبدا.',
+    code: 'رمز الدخول...',
+    access: 'ادخل للتكوين →',
+    loading: 'كاين التحقق...',
+    notBought: 'مازلتش شريت؟',
+    whatsapp: '💬 اطلب عبر واتساب',
+    errEmpty: 'دخل رمز الدخول.',
+    errInvalid: 'الرمز غلط. راجع الشراء.',
+    errUsed: 'هذا الرمز تستخدم من قبل.',
+    stats: [
+      { n: '+50', l: 'درس مفصل' },
+      { n: '4', l: 'مستويات لكل مهارة' },
+      { n: '0 دج', l: 'باش تبدا' }
+    ],
     footer: 'DigitalSkills.dz — تكوين محترف الجزائر 🇩🇿',
-    aBadge: '🇩🇿 أكاديمية المهارات الرقمية — الجزائر', aTitle: 'تعلم. تمرن.\nتربح.',
+    aBadge: '🇩🇿 أكاديمية المهارات الرقمية — الجزائر',
+    aTitle: 'تعلم. تمرن.\nتربح.',
     aSubtitle: '10 مهارات، من الصفر للاحتراف. كل درس يقولك بالضبط كيفاش تدير.',
-    aFeatures: ['خطوات واضحة وعملية','تمارين حقيقية','أدوات مجانية','أسعار السوق الجزائري'],
+    aFeatures: [
+      'خطوات واضحة وعملية',
+      'تمارين حقيقية',
+      'أدوات مجانية',
+      'أسعار السوق الجزائري'
+    ],
     aRec: '💡 الترتيب المنصوح: سوشيال ميديا → تصميم → مونتاج → ويب → SEO → بيانات → كتابة → UI/UX → أتمتة → برمجة بالذكاء الاصطناعي',
-    startLearning: 'ابدا التعلم →', firstClient: 'أول زبون', earning: 'الأرباح', startWith: 'ابدا بـ',
-    backSkills: 'المهارات →', goal: 'الهدف', lessons: 'دروس', back: 'رجع →', lesson: 'الدرس', of: 'من',
-    howTo: 'كيفاش تدير — خطوة بخطوة', bestWay: 'أحسن طريقة باش تتعلم', exercise: 'تمرينك العملي',
-    prevLesson: 'الدرس السابق →', nextLesson: '← الدرس الموالي', nextLevel: 'المستوى الموالي', complete: '👑 كملت التكوين!'
+    startLearning: 'ابدا التعلم →',
+    firstClient: 'أول زبون',
+    earning: 'الأرباح',
+    startWith: 'ابدا بـ',
+    backSkills: 'المهارات →',
+    goal: 'الهدف',
+    lessons: 'دروس',
+    back: 'رجع →',
+    lesson: 'الدرس',
+    of: 'من',
+    howTo: 'كيفاش تدير — خطوة بخطوة',
+    bestWay: 'أحسن طريقة باش تتعلم',
+    exercise: 'تمرينك العملي',
+    prevLesson: 'الدرس السابق →',
+    nextLesson: '← الدرس الموالي',
+    nextLevel: 'المستوى الموالي',
+    complete: '👑 كملت التكوين!'
   },
   en: {
     badge: 'Complete Course — 10 Skills',
     title: 'Master Digital Skills That\nGenerate Income in Algeria',
     subtitle: '10 complete courses. Design, Social Media, Video, Web, SEO, Data, Copywriting, UI/UX, Automation, Vibe Coding.',
-    f1: '✓ Step-by-step methods', f2: '✓ Real exercises', f3: '✓ Free tools only', f4: '✓ Algerian market rates',
+    f1: '✓ Step-by-step methods',
+    f2: '✓ Real exercises',
+    f3: '✓ Free tools only',
+    f4: '✓ Algerian market rates',
     includesTitle: 'What you get',
-    includes: ['10 complete courses — Beginner → Master','Every lesson: exact step-by-step method','Practical exercises with real deliverables','Free tools','Algerian market rates in DZD','Client communication scripts','Lifetime access — updates included'],
-    already: 'Already purchased?', enter: 'Enter your access code to get started.', code: 'YOUR ACCESS CODE...',
-    access: 'Access the Course →', loading: 'Verifying...', notBought: 'Haven\'t bought yet?', whatsapp: '💬 Order via WhatsApp',
-    errEmpty: 'Please enter your access code.', errInvalid: 'Invalid code. Check your purchase.', errUsed: 'This code has already been used.',
-    stats: [{ n: '50+', l: 'Detailed lessons' }, { n: '4', l: 'Levels per skill' }, { n: '0 DZD', l: 'To get started' }],
+    includes: [
+      '10 complete courses — Beginner → Master',
+      'Every lesson: exact step-by-step method',
+      'Practical exercises with real deliverables',
+      'Free tools',
+      'Algerian market rates in DZD',
+      'Client communication scripts',
+      'Lifetime access — updates included'
+    ],
+    already: 'Already purchased?',
+    enter: 'Enter your access code to get started.',
+    code: 'YOUR ACCESS CODE...',
+    access: 'Access the Course →',
+    loading: 'Verifying...',
+    notBought: 'Haven\'t bought yet?',
+    whatsapp: '💬 Order via WhatsApp',
+    errEmpty: 'Please enter your access code.',
+    errInvalid: 'Invalid code. Check your purchase.',
+    errUsed: 'This code has already been used.',
+    stats: [
+      { n: '50+', l: 'Detailed lessons' },
+      { n: '4', l: 'Levels per skill' },
+      { n: '0 DZD', l: 'To get started' }
+    ],
     footer: 'DigitalSkills.dz — Professional Training Algeria 🇩🇿',
-    aBadge: '🇩🇿 Digital Skills Academy — Algeria', aTitle: 'Learn It. Practice It.\nGet Paid.',
+    aBadge: '🇩🇿 Digital Skills Academy — Algeria',
+    aTitle: 'Learn It. Practice It.\nGet Paid.',
     aSubtitle: '10 skills, beginner to master. Every lesson tells you exactly how to do it.',
-    aFeatures: ['Step-by-step methods','Real exercises','Free tools only','Algerian market rates'],
+    aFeatures: [
+      'Step-by-step methods',
+      'Real exercises',
+      'Free tools only',
+      'Algerian market rates'
+    ],
     aRec: '💡 Recommended: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting → UI/UX → Automation → Vibe Coding',
-    startLearning: 'Start Learning →', firstClient: 'First client', earning: 'Earning range', startWith: 'Start with',
-    backSkills: '← Skills', goal: 'Goal', lessons: 'lessons', back: '← Back', lesson: 'Lesson', of: 'of',
-    howTo: 'How To Do It — Step by Step', bestWay: 'The Best Way to Learn This', exercise: 'Your Practice Exercise',
-    prevLesson: '← Previous Lesson', nextLesson: 'Next Lesson →', nextLevel: 'Next Level', complete: '👑 Track Complete!'
+    startLearning: 'Start Learning →',
+    firstClient: 'First client',
+    earning: 'Earning range',
+    startWith: 'Start with',
+    backSkills: '← Skills',
+    goal: 'Goal',
+    lessons: 'lessons',
+    back: '← Back',
+    lesson: 'Lesson',
+    of: 'of',
+    howTo: 'How To Do It — Step by Step',
+    bestWay: 'The Best Way to Learn This',
+    exercise: 'Your Practice Exercise',
+    prevLesson: '← Previous Lesson',
+    nextLesson: 'Next Lesson →',
+    nextLevel: 'Next Level',
+    complete: '👑 Track Complete!'
   }
 };
 
 // ============================================================
-// SKILLS (10 SKILLS COMPLETS)
+// SKILLS (10 SKILLS)
 // ============================================================
 var SKILLS = [
   // ============================================================
@@ -98,7 +221,7 @@ var SKILLS = [
     subtitle: { fr: 'Communication Visuelle', ar: 'التواصل البصري', en: 'Visual Communication' },
     tagline: { fr: 'Transformez vos idées en visuels qui vendent', ar: 'حوّل أفكارك لتصاميم تبيع', en: 'Turn ideas into visuals that sell' },
     levels: [
-      // Beginner
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -149,7 +272,7 @@ var SKILLS = [
           }
         ]
       },
-      // Intermediate
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -172,7 +295,7 @@ var SKILLS = [
           }
         ]
       },
-      // Advanced
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -195,7 +318,7 @@ var SKILLS = [
           }
         ]
       },
-      // Master
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
@@ -237,7 +360,7 @@ var SKILLS = [
     subtitle: { fr: 'Marketing Digital', ar: 'التسويق الرقمي', en: 'Digital Marketing' },
     tagline: { fr: 'Aidez les entreprises à grandir et vendre en ligne', ar: 'ساعد المشاريع تكبر وتبيع أونلاين', en: 'Help businesses grow their audience and sell online' },
     levels: [
-      // Beginner
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -274,7 +397,7 @@ var SKILLS = [
           }
         ]
       },
-      // Intermediate
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -297,7 +420,7 @@ var SKILLS = [
           }
         ]
       },
-      // Advanced
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -320,7 +443,7 @@ var SKILLS = [
           }
         ]
       },
-      // Master
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
@@ -362,7 +485,7 @@ var SKILLS = [
     subtitle: { fr: 'Création de Contenu', ar: 'إنشاء المحتوى', en: 'Content Creation' },
     tagline: { fr: 'La compétence créative la plus demandée', ar: 'أكثر مهارة إبداعية مطلوبة', en: 'The most in-demand creative skill' },
     levels: [
-      // Beginner
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -385,7 +508,7 @@ var SKILLS = [
           }
         ]
       },
-      // Intermediate
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -408,7 +531,7 @@ var SKILLS = [
           }
         ]
       },
-      // Advanced
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -431,7 +554,7 @@ var SKILLS = [
           }
         ]
       },
-      // Master
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
@@ -457,7 +580,7 @@ var SKILLS = [
     ]
   },
   // ============================================================
-  // SKILL 4: WEB DEVELOPMENT (4 niveaux)
+  // SKILL 4: WEB DEVELOPMENT
   // ============================================================
   {
     id: 'webdev',
@@ -473,7 +596,7 @@ var SKILLS = [
     subtitle: { fr: 'Développement Front-End', ar: 'تطوير الواجهات', en: 'Front-End Development' },
     tagline: { fr: 'Créez des sites web professionnels qui génèrent des revenus', ar: 'أنشئ مواقع ويب احترافية تدرّ عليك', en: 'Build professional websites that generate income' },
     levels: [
-      // Beginner
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -496,7 +619,7 @@ var SKILLS = [
           }
         ]
       },
-      // Intermediate
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -519,7 +642,7 @@ var SKILLS = [
           }
         ]
       },
-      // Advanced
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -542,7 +665,7 @@ var SKILLS = [
           }
         ]
       },
-      // Master
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
@@ -568,7 +691,7 @@ var SKILLS = [
     ]
   },
   // ============================================================
-  // SKILL 5: SEO (4 niveaux)
+  // SKILL 5: SEO
   // ============================================================
   {
     id: 'seo',
@@ -584,7 +707,7 @@ var SKILLS = [
     subtitle: { fr: 'Référencement Naturel', ar: 'تحسين محركات البحث', en: 'Search Engine Optimization' },
     tagline: { fr: 'Faites apparaître les sites en première page de Google', ar: 'خلّي المواقع تظهر في الصفحة الأولى من Google', en: 'Make websites appear on Google\'s first page' },
     levels: [
-      // Beginner
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -607,7 +730,7 @@ var SKILLS = [
           }
         ]
       },
-      // Intermediate
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -630,7 +753,7 @@ var SKILLS = [
           }
         ]
       },
-      // Advanced
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -653,7 +776,7 @@ var SKILLS = [
           }
         ]
       },
-      // Master
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
@@ -679,7 +802,7 @@ var SKILLS = [
     ]
   },
   // ============================================================
-  // SKILL 6: DATA ANALYSIS (4 niveaux)
+  // SKILL 6: DATA ANALYSIS
   // ============================================================
   {
     id: 'data',
@@ -695,7 +818,7 @@ var SKILLS = [
     subtitle: { fr: 'Analyse de Données', ar: 'تحليل البيانات', en: 'Data Analytics' },
     tagline: { fr: 'Transformez les données en décisions qui rapportent', ar: 'حوّل البيانات لقرارات تدرّ عليك', en: 'Turn data into decisions that generate revenue' },
     levels: [
-      // Beginner
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -718,7 +841,7 @@ var SKILLS = [
           }
         ]
       },
-      // Intermediate
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -741,7 +864,7 @@ var SKILLS = [
           }
         ]
       },
-      // Advanced
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -764,7 +887,7 @@ var SKILLS = [
           }
         ]
       },
-      // Master
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
@@ -790,7 +913,7 @@ var SKILLS = [
     ]
   },
   // ============================================================
-  // SKILL 7: COPYWRITING (4 niveaux)
+  // SKILL 7: COPYWRITING
   // ============================================================
   {
     id: 'copy',
@@ -806,7 +929,7 @@ var SKILLS = [
     subtitle: { fr: 'Rédaction Publicitaire', ar: 'الكتابة التسويقية', en: 'Copywriting' },
     tagline: { fr: 'Des mots qui vendent, convertissent et persuadent', ar: 'كلمات تبيع وتحوّل وتقنع', en: 'Words that sell, convert and persuade' },
     levels: [
-      // Beginner
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -829,7 +952,7 @@ var SKILLS = [
           }
         ]
       },
-      // Intermediate
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -852,7 +975,7 @@ var SKILLS = [
           }
         ]
       },
-      // Advanced
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -875,7 +998,7 @@ var SKILLS = [
           }
         ]
       },
-      // Master
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
@@ -901,7 +1024,7 @@ var SKILLS = [
     ]
   },
   // ============================================================
-  // SKILL 8: UI/UX DESIGN (4 niveaux)
+  // SKILL 8: UI/UX DESIGN
   // ============================================================
   {
     id: 'uiux',
@@ -917,6 +1040,7 @@ var SKILLS = [
     subtitle: { fr: 'User Interface & 3D Experience', ar: 'واجهات وتجارب 3D', en: 'User Interface & 3D Experience' },
     tagline: { fr: 'Créez des expériences numériques immersives en 3D', ar: 'أنشئ تجارب رقمية غامرة بتقنية 3D', en: 'Create immersive 3D digital experiences' },
     levels: [
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -939,6 +1063,7 @@ var SKILLS = [
           }
         ]
       },
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -961,6 +1086,7 @@ var SKILLS = [
           }
         ]
       },
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -983,6 +1109,7 @@ var SKILLS = [
           }
         ]
       },
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
@@ -1008,7 +1135,7 @@ var SKILLS = [
     ]
   },
   // ============================================================
-  // SKILL 9: AUTOMATION WITH N8N (4 niveaux)
+  // SKILL 9: AUTOMATION WITH N8N
   // ============================================================
   {
     id: 'n8n',
@@ -1024,6 +1151,7 @@ var SKILLS = [
     subtitle: { fr: 'Workflow Automation', ar: 'أتمتة سير العمل', en: 'Workflow Automation' },
     tagline: { fr: 'Automatisez tout sans coder', ar: 'أتمتة كل شيء بدون برمجة', en: 'Automate everything without coding' },
     levels: [
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -1046,6 +1174,7 @@ var SKILLS = [
           }
         ]
       },
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -1068,6 +1197,7 @@ var SKILLS = [
           }
         ]
       },
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -1090,6 +1220,7 @@ var SKILLS = [
           }
         ]
       },
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
@@ -1115,7 +1246,7 @@ var SKILLS = [
     ]
   },
   // ============================================================
-  // SKILL 10: VIBE CODING (4 niveaux)
+  // SKILL 10: VIBE CODING
   // ============================================================
   {
     id: 'vibecoding',
@@ -1131,6 +1262,7 @@ var SKILLS = [
     subtitle: { fr: 'Développement IA', ar: 'التطوير بالذكاء الاصطناعي', en: 'AI Development' },
     tagline: { fr: 'Construisez avec l\'IA sans être un développeur traditionnel', ar: 'ابنِ بالذكاء الاصطناعي دون أن تكون مبرمجاً تقليدياً', en: 'Build with AI without being a traditional developer' },
     levels: [
+      // BEGINNER
       {
         name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
         badge: '🌱',
@@ -1153,6 +1285,7 @@ var SKILLS = [
           }
         ]
       },
+      // INTERMEDIATE
       {
         name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
         badge: '⚡',
@@ -1175,6 +1308,7 @@ var SKILLS = [
           }
         ]
       },
+      // ADVANCED
       {
         name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
         badge: '🔥',
@@ -1197,6 +1331,7 @@ var SKILLS = [
           }
         ]
       },
+      // MASTER
       {
         name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
         badge: '👑',
