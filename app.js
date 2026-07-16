@@ -1,5 +1,5 @@
 // ============================================================
-// APP.JS - LOGIQUE COMPLÈTE
+// APP.JS - LOGIQUE COMPLÈTE AVEC BACKGROUND IMAGES
 // ============================================================
 
 var lang = localStorage.getItem('lang') || 'fr';
@@ -94,6 +94,9 @@ function renderLanding() {
   showView('landing');
 }
 
+// ============================================================
+// RENDER ACADEMY - AVEC BACKGROUND IMAGES
+// ============================================================
 function renderAcademy() {
   skillId = null; levelIdx = 0; lessonIdx = null;
   var t = T[lang];
@@ -106,7 +109,7 @@ function renderAcademy() {
   document.getElementById('a-rec').innerHTML = t.aRec;
   document.getElementById('a-footer').textContent = t.footer;
   document.getElementById('a-skill-cards').innerHTML = SKILLS.map(function(s) {
-    return '<div class="skill-card" style="background:' + s.bg + ';border-color:' + s.color + '30" onclick="goSkill(\'' + s.id + '\')" onmouseenter="this.style.borderColor=\'' + s.color + '\'" onmouseleave="this.style.borderColor=\'' + s.color + '30\'"><div class="skill-icon">' + s.icon + '</div><div class="skill-sub" style="color:' + s.accent + '">' + s.subtitle[lang] + '</div><div class="skill-title">' + s.title[lang] + '</div><div class="skill-tagline">' + s.tagline[lang] + '</div><div class="skill-stats"><div class="skill-stat"><span class="stat-label">' + t.firstClient + '</span><span style="color:' + s.accent + ';font-weight:600">' + s.firstClient[lang] + '</span></div><div class="skill-stat"><span class="stat-label">' + t.earning + '</span><span style="color:' + s.accent + ';font-weight:600;font-size:11px">' + s.earning + '</span></div><div class="skill-stat"><span class="stat-label">' + t.startWith + '</span><span style="color:#9CA3AF;font-size:11px">' + s.startTool + '</span></div></div><button class="skill-cta" style="background:' + s.color + '">' + t.startLearning + '</button></div>';
+    return '<div class="skill-card" style="background:' + s.bg + ';border-color:' + s.color + '30;--bg-image:url(' + s.bgImage + ')" onclick="goSkill(\'' + s.id + '\')" onmouseenter="this.style.borderColor=\'' + s.color + '\'" onmouseleave="this.style.borderColor=\'' + s.color + '30\'"><div class="skill-icon">' + s.icon + '</div><div class="skill-sub" style="color:' + s.accent + '">' + s.subtitle[lang] + '</div><div class="skill-title">' + s.title[lang] + '</div><div class="skill-tagline">' + s.tagline[lang] + '</div><div class="skill-stats"><div class="skill-stat"><span class="stat-label">' + t.firstClient + '</span><span style="color:' + s.accent + ';font-weight:600">' + s.firstClient[lang] + '</span></div><div class="skill-stat"><span class="stat-label">' + t.earning + '</span><span style="color:' + s.accent + ';font-weight:600;font-size:11px">' + s.earning + '</span></div><div class="skill-stat"><span class="stat-label">' + t.startWith + '</span><span style="color:#9CA3AF;font-size:11px">' + s.startTool + '</span></div></div><button class="skill-cta" style="background:' + s.color + '22;border-color:' + s.color + '44;color:' + s.accent + '">' + t.startLearning + '</button></div>';
   }).join('');
   showView('academy');
 }
