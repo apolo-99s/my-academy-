@@ -2,6 +2,9 @@
 // DATA.JS - 10 SKILLS COMPLETS AVEC CHAR7 DÉTAILLÉ
 // ============================================================
 
+// NOTE: this CODES array is no longer used for access checks — that now
+// goes through Supabase (see supabase-schema.sql / app.js checkAccess()).
+// Kept here only as a historical reference of the original seed codes.
 var CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
 
 var LS = {
@@ -31,7 +34,8 @@ var T = {
     startLearning: 'Commencer →', firstClient: 'Premier client', earning: 'Revenus', startWith: 'Commencer avec',
     backSkills: '← Skills', goal: 'Objectif', lessons: 'leçons', back: '← Retour', lesson: 'Leçon', of: 'sur',
     howTo: 'Comment Faire — Étape par Étape', bestWay: 'La Meilleure Façon d\'Apprendre', exercise: 'Votre Exercice Pratique',
-    prevLesson: '← Leçon Précédente', nextLesson: 'Leçon Suivante →', nextLevel: 'Niveau Suivant', complete: '👑 Formation Terminée!'
+    prevLesson: '← Leçon Précédente', nextLesson: 'Leçon Suivante →', nextLevel: 'Niveau Suivant', complete: '👑 Formation Terminée!',
+    dash: { navLabel: 'Suivi', title: 'Mon Tableau de Bord', subtitle: 'Suivez votre progression sur les 10 compétences', overallTitle: 'Progression Globale', lessonsCompleted: 'leçons terminées', continueLearning: 'Continuer l\'apprentissage →', allComplete: '👑 Toutes les leçons terminées !', lessonsLabel: 'leçons', empty: 'Commencez une leçon pour voir votre progression ici.' }
   },
   ar: {
     badge: 'تكوين كامل — 10 مهارات',
@@ -52,7 +56,8 @@ var T = {
     startLearning: 'ابدا التعلم →', firstClient: 'أول زبون', earning: 'الأرباح', startWith: 'ابدا بـ',
     backSkills: 'المهارات →', goal: 'الهدف', lessons: 'دروس', back: 'رجع →', lesson: 'الدرس', of: 'من',
     howTo: 'كيفاش تدير — خطوة بخطوة', bestWay: 'أحسن طريقة باش تتعلم', exercise: 'تمرينك العملي',
-    prevLesson: 'الدرس السابق →', nextLesson: '← الدرس الموالي', nextLevel: 'المستوى الموالي', complete: '👑 كملت التكوين!'
+    prevLesson: 'الدرس السابق →', nextLesson: '← الدرس الموالي', nextLevel: 'المستوى الموالي', complete: '👑 كملت التكوين!',
+    dash: { navLabel: 'التقدم', title: 'لوحة التحكم ديالي', subtitle: 'تابع تقدمك في 10 مهارات', overallTitle: 'التقدم الإجمالي', lessonsCompleted: 'درس مكتمل', continueLearning: '← تابع التعلم', allComplete: '👑 كملت كل الدروس!', lessonsLabel: 'دروس', empty: 'ابدأ درساً باش تشوف تقدمك هنا.' }
   },
   en: {
     badge: 'Complete Course — 10 Skills',
@@ -73,7 +78,8 @@ var T = {
     startLearning: 'Start Learning →', firstClient: 'First client', earning: 'Earning range', startWith: 'Start with',
     backSkills: '← Skills', goal: 'Goal', lessons: 'lessons', back: '← Back', lesson: 'Lesson', of: 'of',
     howTo: 'How To Do It — Step by Step', bestWay: 'The Best Way to Learn This', exercise: 'Your Practice Exercise',
-    prevLesson: '← Previous Lesson', nextLesson: 'Next Lesson →', nextLevel: 'Next Level', complete: '👑 Track Complete!'
+    prevLesson: '← Previous Lesson', nextLesson: 'Next Lesson →', nextLevel: 'Next Level', complete: '👑 Track Complete!',
+    dash: { navLabel: 'Progress', title: 'My Dashboard', subtitle: 'Track your progress across the 10 skills', overallTitle: 'Overall Progress', lessonsCompleted: 'lessons completed', continueLearning: 'Continue Learning →', allComplete: '👑 All lessons complete!', lessonsLabel: 'lessons', empty: 'Start a lesson to see your progress here.' }
   }
 };
 
