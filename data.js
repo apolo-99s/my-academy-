@@ -124,13 +124,79 @@ var SKILLS = [
             image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
             layout: 'right',
             steps: {
-              fr: ['CONTRASTE: Rendez l\'élément le plus important plus grand, plus coloré ou plus différent du reste.','ALIGNEMENT: Rien ne doit être placé au hasard. Activez les guides pour aligner parfaitement vos éléments.','RÉPÉTITION: Utilisez la même police, les mêmes couleurs et le même style pour les éléments similaires.','PROXIMITÉ: Groupez les éléments qui vont ensemble et séparez ceux qui n\'ont pas de lien.','Astuce pro: Ouvrez n\'importe quel template Canva et identifiez ces 4 règles dans chaque élément.','Exercice: Cherchez "flyer restaurant algérie" sur Google. Identifiez les règles respectées et brisées.'],
+              fr: ['CONTRASTE: Rendez l\'élément le plus important plus grand, plus coloré ou plus différent du reste.','ALIGNEMENT: Rien ne doit être placé au hasard. Activez les guides pour aligner parfaitement vos éléments.','RÉPÉTITION: Utilisez la même police, les mêmes couleurs et le même style pour les éléments similaires.','PROXIMITÉ: Groupez les éléments qui vont ensemble et séparez ceux qui n\'ont pas de lien.','Astuce pro: Ouvrez n\'importe quel template Canva et identifiez ces 4 règles dans chaque élément.','Exercice: Cherchez "flyer restaurant algerie" sur Google. Identifiez les règles respectées et brisées.'],
               ar: ['التباين: خلّي العنصر الأهم أكبر، أو أكثر لوناً، أو مختلفاً عن الباقي.','المحاذاة: ما كاين والو موضوع بالعشوائية. فعّل الخطوط باش تراصف عناصرك بالضبط.','التكرار: استخدم نفس الخط، نفس الألوان ونفس الستايل للعناصر المتشابهة.','القرب: جمّع العناصر اللي تمشي مع بعض وفرّق اللي ما عندهمش رابط.','نصيحة: افتح أي قالب Canva وحدّد هالقواعد الأربعة في كل عنصر.','تمرين: دور على "flyer مطعم الجزائر" في Google. حدّد القواعد المطبقة والمكسورة.'],
               en: ['CONTRAST: Make the most important element bigger, more colorful, or different from the rest.','ALIGNMENT: Nothing should be placed randomly. Enable guides to align your elements perfectly.','REPETITION: Use the same font, colors and style for similar elements.','PROXIMITY: Group elements that belong together and separate those that don\'t.','Pro tip: Open any Canva template and identify these 4 rules in every element.','Exercise: Search "flyer restaurant algeria" on Google. Identify rules followed and broken.']
             },
             method: { fr: 'Créez deux versions d\'un même design: une où vous violez les 4 règles, et une où vous les respectez parfaitement.', ar: 'أنشئ نسختين من نفس التصميم: وحدة تكسر فيها القواعد الأربعة، ووحدة تتبعها بالضبط.', en: 'Create two versions of the same design: one where you break all 4 rules, and one where you follow them perfectly.' },
             exercise: { fr: 'Designez une carte de visite pour un restaurant algérien DEUX fois: Version 1 = violez les 4 règles. Version 2 = respectez-les parfaitement.', ar: 'صمّم بطاقة أعمال لمطعم جزائري مرتين: نسخة 1 = اكسر القواعد الأربعة. نسخة 2 = اتبعها بالضبط.', en: 'Design a business card for an Algerian restaurant TWICE: Version 1 = violate all 4 rules. Version 2 = follow them perfectly.' },
             tip: { fr: '💡 Les designers professionnels ne brisent les règles qu\'APRÈS les avoir parfaitement maîtrisées.', ar: '💡 المصممون المحترفين ما يكسرونش القواعد إلا بعد ما يتقنوها بالكامل.', en: '💡 Professional designers only break rules AFTER perfectly mastering them.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–10', ar: 'الأسابيع 5–10', en: 'Weeks 5–10' },
+        goal: { fr: 'Passer de Canva à des outils professionnels avec Photopea', ar: 'الانتقال من Canva لأدوات احترافية مع Photopea', en: 'Move from Canva to professional tools with Photopea' },
+        lessons: [
+          {
+            id: 'd-i-1',
+            title: { fr: 'Photopea — L\'Alternative Gratuite à Photoshop', ar: 'Photopea — البديل المجاني لـ Photoshop', en: 'Photopea — The Free Photoshop Alternative' },
+            image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=800&q=80',
+            layout: 'left',
+            steps: {
+              fr: ['Rendez-vous sur photopea.com — c\'est un clone de Photoshop qui tourne directement dans votre navigateur, sans installation, et il est 100% gratuit.','L\'interface est identique à Photoshop: les outils sont à gauche, les calques (Layers) sont à droite, et la barre d\'options est en haut.','Le concept clé: les CALQUES. Chaque élément (photo, texte, forme) doit être sur son propre calque pour rester modifiable indépendamment.','Pour supprimer un arrière-plan: sélectionnez l\'outil Baguette Magique (W), cliquez sur le fond, puis appuyez sur Suppr — répétez sur les zones oubliées avec Maj+clic.','Ajoutez une ombre portée réaliste: clic droit sur le calque → Options de fusion → Ombre portée, ajustez l\'opacité à 30-40% pour un rendu naturel.','Utilisez les Calques de Réglage pour corriger la luminosité et le contraste sans jamais modifier l\'image originale.','Exportez en PNG (fond transparent conservé) via Fichier → Exporter comme → PNG.'],
+              ar: ['روح لـ photopea.com — نسخة من Photoshop تخدم مباشرة في المتصفح، بلا تنصيب، ومجانية 100%.','الواجهة نفسها Photoshop: الأدوات على اليسار، الطبقات (Layers) على اليمين، وشريط الخيارات في الأعلى.','المفهوم الأساسي: الطبقات. كل عنصر (صورة، نص، شكل) خاصو يكون في طبقته الخاصة باش يبقى قابل للتعديل بمفرده.','باش تزيل الخلفية: اختار أداة العصا السحرية (W)، اضغط على الخلفية، بعدها Suppr — كرر على الأماكن الناقصة بـ Maj+clic.','زيد ظل واقعي: كليك يمين على الطبقة → خيارات المزج → ظل مسقط، ظبط الشفافية 30-40% باش يبان طبيعي.','استخدم طبقات التعديل باش تصحح الإضاءة والتباين بلا ما تلمس الصورة الأصلية.','صدّر بـ PNG (تبقى الخلفية شفافة) عبر ملف → تصدير كـ → PNG.'],
+              en: ['Go to photopea.com — a Photoshop clone that runs directly in your browser, no installation needed, and it\'s 100% free.','The interface is identical to Photoshop: tools on the left, Layers on the right, and the options bar at the top.','Key concept: LAYERS. Every element (photo, text, shape) should be on its own layer to stay independently editable.','To remove a background: select the Magic Wand tool (W), click the background, then press Delete — repeat on missed spots with Shift+click.','Add a realistic drop shadow: right-click the layer → Blending Options → Drop Shadow, set opacity to 30-40% for a natural look.','Use Adjustment Layers to fix brightness and contrast without ever touching the original image.','Export as PNG (keeps transparent background) via File → Export as → PNG.']
+            },
+            method: { fr: 'Supprimez l\'arrière-plan d\'une photo de produit et remplacez-le par un fond uni.', ar: 'ازل خلفية صورة منتج وعوضها بخلفية لون واحد.', en: 'Remove the background from a product photo and replace it with a solid color.' },
+            exercise: { fr: 'Trouvez une photo de produit algérien en ligne (téléphone, vêtement, plat), supprimez le fond, ajoutez une ombre et un fond coloré, puis ajoutez le prix en DZD.', ar: 'دور على صورة منتج جزائري أونلاين (هاتف، لباس، طبق)، ازل الخلفية، زيد ظل وخلفية ملونة، وزيد السعر بالدينار.', en: 'Find an Algerian product photo online (phone, clothing, dish), remove the background, add a shadow and colored background, then add the price in DZD.' },
+            tip: { fr: '💡 Photopea sauvegarde en format .psd — gardez toujours le fichier source pour pouvoir le modifier plus tard.', ar: '💡 Photopea يسجل بصيغة .psd — احتفظ دائماً بالملف الأصلي باش تقدر تعدلو من بعد.', en: '💡 Photopea saves in .psd format — always keep the source file so you can edit it later.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 11–20', ar: 'الأسابيع 11–20', en: 'Weeks 11–20' },
+        goal: { fr: 'Maîtriser le design vectoriel avec Inkscape', ar: 'إتقان التصميم الفيكتوري مع Inkscape', en: 'Master vector design with Inkscape' },
+        lessons: [
+          {
+            id: 'd-a-1',
+            title: { fr: 'Inkscape — Maîtriser le Vectoriel', ar: 'Inkscape — إتقان الفيكتور', en: 'Inkscape — Mastering Vectors' },
+            image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
+            layout: 'right',
+            steps: {
+              fr: ['Téléchargez Inkscape (inkscape.org) — c\'est l\'équivalent gratuit et open-source d\'Adobe Illustrator, 100% suffisant pour un usage professionnel.','La différence fondamentale avec Photopea: le vectoriel n\'est pas fait de pixels mais de formes mathématiques — un logo vectoriel peut être agrandi à l\'infini sans perdre en qualité.','Maîtrisez l\'outil Plume (touche B): un clic simple crée un point anguleux, un clic-glissé crée une courbe fluide.','Utilisez le panneau Pathfinder pour combiner des formes: Union (fusionne), Différence (soustrait), Intersection (garde le chevauchement).','Travaillez avec des calques nommés clairement pour garder un fichier propre et modifiable.','Exportez toujours en SVG (pour le web) et en PDF vectoriel (pour l\'impression professionnelle).'],
+              ar: ['حمّل Inkscape (inkscape.org) — البديل المجاني والمفتوح المصدر لـ Adobe Illustrator، كافي 100% للاستعمال الاحترافي.','الفرق الأساسي مع Photopea: الفيكتور ماشي بيكسلات، هو أشكال رياضية — الشعار الفيكتوري يكبر بلا حدود بلا ما يخسر الجودة.','اتقن أداة القلم (B): كليك بسيط يعطي نقطة زاوية، كليك مسحوب يعطي منحنى ناعم.','استخدم لوحة Pathfinder باش تدمج الأشكال: Union (دمج)، Difference (طرح)، Intersection (تقاطع).','اخدم بطبقات مسماة بوضوح باش يبقى الملف نظيف وقابل للتعديل.','صدّر دائماً بـ SVG (للويب) وPDF فيكتوري (للطباعة الاحترافية).'],
+              en: ['Download Inkscape (inkscape.org) — the free, open-source equivalent of Adobe Illustrator, 100% sufficient for professional use.','The key difference from Photopea: vectors aren\'t made of pixels but mathematical shapes — a vector logo can be scaled infinitely without losing quality.','Master the Pen Tool (key B): a simple click creates a sharp point, a click-drag creates a smooth curve.','Use the Pathfinder panel to combine shapes: Union (merges), Difference (subtracts), Intersection (keeps overlap).','Work with clearly named layers to keep the file clean and editable.','Always export as SVG (for web) and vector PDF (for professional printing).']
+            },
+            method: { fr: 'Recréez un logo simple existant en utilisant uniquement l\'outil Plume, sans tracé automatique.', ar: 'أعد إنشاء شعار بسيط موجود باستخدام أداة القلم فقط، بلا تتبع تلقائي.', en: 'Recreate an existing simple logo using only the Pen Tool, no auto-trace.' },
+            exercise: { fr: 'Choisissez le logo d\'une marque algérienne connue (Djezzy, Ooredoo, Cevital) et reconstruisez-le entièrement en vectoriel dans Inkscape.', ar: 'اختار شعار ماركة جزائرية معروفة (Djezzy، Ooredoo، Cevital) وأعد بناءه بالكامل فيكتور في Inkscape.', en: 'Choose the logo of a well-known Algerian brand (Djezzy, Ooredoo, Cevital) and rebuild it entirely in vector form in Inkscape.' },
+            tip: { fr: '💡 Un client avec seulement un logo en JPEG flou a besoin de le vectoriser — c\'est un service payant à part entière (3000-8000 DZD).', ar: '💡 الزبون اللي عندو غير شعار JPEG معتم محتاج يحوله فيكتور — هادي خدمة مدفوعة بذاتها (3000-8000 دج).', en: '💡 A client with only a blurry JPEG logo needs it vectorized — that\'s a standalone paid service (3000-8000 DZD).' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Passer de Freelance à Agence de Design', ar: 'الانتقال من فريلانس لأجنسي تصميم', en: 'Move from Freelancer to Design Agency' },
+        lessons: [
+          {
+            id: 'd-m-1',
+            title: { fr: 'De Freelance à Agence de Design', ar: 'من فريلانس لأجنسي تصميم', en: 'From Freelancer to Design Agency' },
+            image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Le signal pour passer à l\'agence: vous refusez des clients faute de temps, ou vous travaillez plus de 50h/semaine sur du design seul.','Recrutez un premier collaborateur en freelance, payé au projet (40-50% du prix facturé au client) plutôt qu\'en salaire fixe au début.','Structurez vos offres en 3 forfaits clairs: Starter (~25 000 DZD, logo + 5 visuels), Croissance (~55 000 DZD, identité complète), Premium (100 000+ DZD, branding complet).','Démarchez directement les agences de publicité et de communication qui sous-traitent souvent le design visuel — elles ont un flux de clients constant.','Créez un book (portfolio) qui montre 3 à 5 projets complets avec avant/après, pas seulement des visuels isolés.','Spécialisez-vous idéalement dans un secteur (restauration, mode, immobilier) — les clients paient plus cher un spécialiste reconnu qu\'un généraliste.'],
+              ar: ['إشارة الانتقال للأجنسي: تولي ترفض زبائن بسبب الوقت، أو تخدم أكثر من 50 ساعة/أسبوع في التصميم وحدك.','جيب متعاون أول فريلانس، يتخلص بالمشروع (40-50% من ثمن الفاتورة للزبون) بدل راتب ثابت في البداية.','رتب عروضك في 3 باقات واضحة: Starter (~25,000 دج، شعار + 5 تصاميم)، نمو (~55,000 دج، هوية كاملة)، Premium (100,000+ دج، براندينغ كامل).','قصد مباشرة وكالات الإشهار والتواصل اللي غالباً يسندو التصميم البصري لمقاول خارجي — عندهم تدفق زبائن ثابت.','اصنع بورتفوليو يوري 3 إلى 5 مشاريع كاملة بقبل/بعد، ماشي غير تصاميم منفصلة.','تخصص في قطاع واحد (مطاعم، موضة، عقار) — الزبائن يدفعو أكثر للمتخصص المعروف من العام.'],
+              en: ['The signal to move to an agency: you\'re turning down clients due to lack of time, or working over 50h/week on design alone.','Bring on a first freelance collaborator, paid per project (40-50% of the client invoice) rather than a fixed salary at first.','Structure your offers into 3 clear packages: Starter (~25,000 DZD, logo + 5 visuals), Growth (~55,000 DZD, complete identity), Premium (100,000+ DZD, full branding).','Approach advertising and communication agencies directly — they often outsource visual design and have a steady client flow.','Build a portfolio (book) showing 3 to 5 complete projects with before/after, not just isolated visuals.','Ideally specialize in one sector (restaurants, fashion, real estate) — clients pay more for a recognized specialist than a generalist.']
+            },
+            method: { fr: 'Faites un "fake pitch": redesignez gratuitement le logo et 3 posts d\'une entreprise locale pour l\'utiliser comme exemple dans votre book.', ar: 'دير "عرض وهمي": أعد تصميم شعار و3 منشورات لمشروع محلي مجاناً باش تستخدمها كمثال في البورتفوليو ديالك.', en: 'Do a "fake pitch": redesign a local business\'s logo and 3 posts for free to use as an example in your portfolio.' },
+            exercise: { fr: 'Identifiez 3 entreprises algériennes avec un design visuel faible, et créez une proposition de refonte complète pour l\'une d\'elles.', ar: 'حدد 3 مشاريع جزائرية بتصميم بصري ضعيف، واصنع اقتراح إعادة تصميم كامل لواحد منهم.', en: 'Identify 3 Algerian businesses with weak visual design, and create a complete redesign proposal for one of them.' },
+            tip: { fr: '💡 Les clients ne paient pas pour "du travail" — ils paient pour un résultat qui les fait paraître professionnels. Vendez la transformation, pas les heures.', ar: '💡 الزبائن ما يدفعوش على "الخدمة" — يدفعو على نتيجة توريهم محترفين. بيع التحول، ماشي الساعات.', en: '💡 Clients don\'t pay for "work" — they pay for a result that makes them look professional. Sell the transformation, not the hours.' }
           }
         ]
       }
