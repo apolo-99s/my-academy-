@@ -1,12 +1,14 @@
 var lang = localStorage.getItem('lang') || 'fr';
 var hasAccess = localStorage.getItem('hasAccess') === 'true';
 var skillId = null, levelIdx = 0, lessonIdx = null, openStep = null;
+var currentView = 'academy';
 
 function showView(id) {
-  ['landing','academy','skill-view','lesson-view'].forEach(function(v) {
+  ['landing','academy','skill-view','lesson-view','dashboard'].forEach(function(v) {
     document.getElementById(v).style.display = 'none';
   });
   document.getElementById(id).style.display = 'flex';
+  currentView = id;
   window.scrollTo(0, 0);
 }
 
@@ -25,7 +27,8 @@ function setLang(l) {
     b.classList.toggle('active', (l === 'fr' && txt === 'FR') || (l === 'ar' && txt === 'ع') || (l === 'en' && txt === 'EN'));
   });
   if (hasAccess) {
-    if (lessonIdx !== null) renderLesson();
+    if (currentView === 'dashboard') renderDashboard();
+    else if (lessonIdx !== null) renderLesson();
     else if (skillId) renderSkill();
     else renderAcademy();
   } else {
@@ -33,24 +36,45 @@ function setLang(l) {
   }
 }
 
-function checkAccess() {
+async function checkAccess() {
   var t = T[lang];
   var val = document.getElementById('access-input').value.trim().toUpperCase();
   var err = document.getElementById('access-error');
   var btn = document.getElementById('access-btn');
   if (!val) { err.textContent = t.errEmpty; err.style.display = 'block'; return; }
-  if (!CODES.includes(val)) { err.textContent = t.errInvalid; err.style.display = 'block'; return; }
-  var used = JSON.parse(localStorage.getItem('usedCodes') || '[]');
-  if (used.includes(val)) { err.textContent = t.errUsed; err.style.display = 'block'; return; }
+  err.style.display = 'none';
   btn.textContent = t.loading;
   btn.disabled = true;
-  setTimeout(function() {
-    used.push(val);
-    localStorage.setItem('usedCodes', JSON.stringify(used));
-    localStorage.setItem('hasAccess', 'true');
-    hasAccess = true;
-    renderAcademy();
-  }, 900);
+
+  var lookup = await sb.from('access_codes').select('code, used').eq('code', val).maybeSingle();
+  if (lookup.error || !lookup.data) {
+    err.textContent = t.errInvalid; err.style.display = 'block';
+    btn.textContent = t.access; btn.disabled = false;
+    return;
+  }
+  if (lookup.data.used) {
+    err.textContent = t.errUsed; err.style.display = 'block';
+    btn.textContent = t.access; btn.disabled = false;
+    return;
+  }
+
+  var claim = await sb.from('access_codes')
+    .update({ used: true, used_at: new Date().toISOString() })
+    .eq('code', val)
+    .eq('used', false)
+    .select();
+  if (claim.error || !claim.data || claim.data.length === 0) {
+    // someone else claimed it between our check and this update
+    err.textContent = t.errUsed; err.style.display = 'block';
+    btn.textContent = t.access; btn.disabled = false;
+    return;
+  }
+
+  localStorage.setItem('hasAccess', 'true');
+  localStorage.setItem('myCode', val);
+  hasAccess = true;
+  await loadProgress();
+  renderAcademy();
 }
 
 function clearErr() {
@@ -80,7 +104,7 @@ function renderLanding() {
   document.getElementById('access-btn').textContent = t.access;
   document.getElementById('l-not-bought').textContent = t.notBought;
   document.getElementById('l-whatsapp').textContent = t.whatsapp;
-  document.getElementById('l-whatsapp').href = 'https://wa.me/213697105325?text=' + encodeURIComponent('Je veux acheter la formation');
+  document.getElementById('l-whatsapp').href = 'https://wa.me/213YOUR_NUMBER?text=' + encodeURIComponent('Je veux acheter la formation');
   document.getElementById('l-footer').textContent = t.footer;
   document.getElementById('l-stats').innerHTML = t.stats.map(function(s) {
     return '<div class="stat-item"><div class="stat-num">' + s.n + '</div><div class="stat-lbl">' + s.l + '</div></div>';
@@ -99,6 +123,7 @@ function renderAcademy() {
   }).join('');
   document.getElementById('a-rec').innerHTML = t.aRec;
   document.getElementById('a-footer').textContent = t.footer;
+  document.getElementById('nav-dash-label').textContent = t.dash.navLabel;
   document.getElementById('a-skill-cards').innerHTML = SKILLS.map(function(s) {
     return '<div class="skill-card" style="background:' + s.bg + ';border-color:' + s.color + '30;--bg-image:url(' + s.bgImage + ')" onclick="goSkill(\'' + s.id + '\')" onmouseenter="this.style.borderColor=\'' + s.color + '\'" onmouseleave="this.style.borderColor=\'' + s.color + '30\'"><div class="skill-icon">' + s.icon + '</div><div class="skill-sub" style="color:' + s.accent + '">' + s.subtitle[lang] + '</div><div class="skill-title">' + s.title[lang] + '</div><div class="skill-tagline">' + s.tagline[lang] + '</div><div class="skill-stats"><div class="skill-stat"><span class="stat-label">' + t.firstClient + '</span><span style="color:' + s.accent + ';font-weight:600">' + s.firstClient[lang] + '</span></div><div class="skill-stat"><span class="stat-label">' + t.earning + '</span><span style="color:' + s.accent + ';font-weight:600;font-size:11px">' + s.earning + '</span></div><div class="skill-stat"><span class="stat-label">' + t.startWith + '</span><span style="color:#9CA3AF;font-size:11px">' + s.startTool + '</span></div></div><button class="skill-cta" style="background:' + s.color + '22;border-color:' + s.color + '44;color:' + s.accent + '">' + t.startLearning + '</button></div>';
   }).join('');
@@ -125,6 +150,7 @@ function renderSkill() {
   document.getElementById('sh-earn').textContent = skill.earning;
   document.getElementById('sh-earn').style.color = skill.accent;
   document.getElementById('s-footer').textContent = t.footer;
+  document.getElementById('nav-dash-label-2').textContent = t.dash.navLabel;
   document.getElementById('level-tabs').innerHTML = skill.levels.map(function(lv, i) {
     var style = getLevelStyle(lv.name[lang]);
     var active = i === levelIdx;
@@ -136,7 +162,8 @@ function renderSkill() {
   document.getElementById('level-info').style.borderColor = style.border + '40';
   document.getElementById('level-info').innerHTML = '<div class="level-info-top"><span style="font-size:30px">' + lv.badge + '</span><div><div style="font-size:20px;font-weight:800;color:#fff">' + lv.name[lang] + '</div><div style="font-size:12px;color:#4B5563">' + lv.duration[lang] + '</div></div><div class="level-count" style="' + (isAr ? 'margin-right:auto' : 'margin-left:auto') + '"><div class="level-count-num" style="color:' + style.text + '">' + lv.lessons.length + '</div><div class="level-count-lbl">' + t.lessons + '</div></div></div><p style="color:#6B7280;font-size:13px;margin:0"><strong style="color:#9CA3AF">' + t.goal + ':</strong> ' + lv.goal[lang] + '</p>';
   document.getElementById('lesson-cards').innerHTML = lv.lessons.map(function(les, i) {
-    return '<div class="lesson-card" onclick="goLesson(' + i + ')" onmouseenter="this.style.borderColor=\'' + skill.color + '66\'" onmouseleave="this.style.borderColor=\'#1C1C28\'"><span class="lesson-num" style="background:' + skill.color + '22;border:1px solid ' + skill.color + '44;color:' + skill.accent + '">' + (i + 1) + '</span><div class="lesson-info"><div class="lesson-title-text">' + les.title[lang] + '</div><div class="lesson-meta">' + les.steps[lang].length + ' étapes · exercice inclus</div></div><span style="color:#374151;font-size:20px;flex-shrink:0;transform:' + (isAr ? 'rotate(180deg)' : 'none') + '">→</span></div>';
+    var done = isLessonComplete(skill.id, levelIdx, i);
+    return '<div class="lesson-card" onclick="goLesson(' + i + ')" onmouseenter="this.style.borderColor=\'' + skill.color + '66\'" onmouseleave="this.style.borderColor=\'#1C1C28\'"><span class="lesson-num' + (done ? ' done' : '') + '" style="' + (done ? '' : 'background:' + skill.color + '22;border:1px solid ' + skill.color + '44;color:' + skill.accent) + '">' + (done ? '✓' : (i + 1)) + '</span><div class="lesson-info"><div class="lesson-title-text">' + les.title[lang] + '</div><div class="lesson-meta">' + les.steps[lang].length + ' étapes · exercice inclus</div></div><span style="color:#374151;font-size:20px;flex-shrink:0;transform:' + (isAr ? 'rotate(180deg)' : 'none') + '">→</span></div>';
   }).join('');
   var nav = '';
   if (levelIdx > 0) nav += '<button class="nav-prev" onclick="goLevel(' + (levelIdx - 1) + ')">' + (isAr ? '→' : '←') + ' ' + skill.levels[levelIdx - 1].name[lang] + '</button>';
@@ -160,6 +187,7 @@ function renderLesson() {
   if (!lv) { console.error('Level not found'); return; }
   var les = lv.lessons[lessonIdx];
   if (!les) { console.error('Lesson not found'); return; }
+  markLessonComplete(skill.id, levelIdx, lessonIdx);
   var style = getLevelStyle(lv.name[lang]);
   var isAr = lang === 'ar';
   var isMobile = window.innerWidth < 600;
@@ -206,6 +234,9 @@ function renderLesson() {
     var txt = b.textContent.trim();
     b.classList.toggle('active', (lang === 'fr' && txt === 'FR') || (lang === 'ar' && txt === 'ع') || (lang === 'en' && txt === 'EN'));
   });
-  if (hasAccess) renderAcademy();
-  else renderLanding();
+  if (hasAccess) {
+    loadProgress().then(renderAcademy);
+  } else {
+    renderLanding();
+  }
 })();
