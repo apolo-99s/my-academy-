@@ -7,7 +7,7 @@
 // (see supabase-schema.sql). Change the password below, and don't
 // reuse a password you use elsewhere.
 // ============================================================
-var ADMIN_PASSWORD = 'CHANGE-ME-2026';
+var ADMIN_PASSWORD = 'Fycal2299';
 
 function adminLogin() {
   var val = document.getElementById('admin-pass-input').value;
