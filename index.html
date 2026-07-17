@@ -53,10 +53,13 @@
 <div id="academy">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
-    <div class="lang-btns">
-      <button class="lang-btn" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('ar')">ع</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <div class="nav-actions">
+      <button class="dash-btn" onclick="goDashboard()">📊 <span id="nav-dash-label"></span></button>
+      <div class="lang-btns">
+        <button class="lang-btn" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('ar')">ع</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
     </div>
   </nav>
   <div class="hero glass">
@@ -74,10 +77,13 @@
 <div id="skill-view">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
-    <div class="lang-btns">
-      <button class="lang-btn" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('ar')">ع</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <div class="nav-actions">
+      <button class="dash-btn" onclick="goDashboard()">📊 <span id="nav-dash-label-2"></span></button>
+      <div class="lang-btns">
+        <button class="lang-btn" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('ar')">ع</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
     </div>
   </nav>
   <div class="skill-header glass" id="skill-header">
@@ -114,7 +120,47 @@
   <footer id="lv-footer"></footer>
 </div>
 
+<!-- DASHBOARD -->
+<div id="dashboard">
+  <nav>
+    <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
+    <div class="nav-actions">
+      <div class="lang-btns">
+        <button class="lang-btn" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('ar')">ع</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </nav>
+  <div class="dash-body">
+    <h1 id="dash-title" style="font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 6px"></h1>
+    <p id="dash-subtitle" style="color:#6B7280;font-size:14px;margin:0 0 24px"></p>
+
+    <div class="dash-summary glass">
+      <div class="dash-ring">
+        <svg viewBox="0 0 88 88">
+          <circle class="dash-ring-bg" cx="44" cy="44" r="36"></circle>
+          <circle class="dash-ring-fg" id="dash-ring-fg" cx="44" cy="44" r="36"></circle>
+        </svg>
+        <div class="dash-ring-label" id="dash-ring-label"></div>
+      </div>
+      <div class="dash-summary-text">
+        <h2 id="dash-summary-title"></h2>
+        <p id="dash-summary-sub"></p>
+      </div>
+      <button class="dash-continue" id="dash-continue-btn"></button>
+    </div>
+
+    <div class="dash-grid" id="dash-grid"></div>
+  </div>
+  <footer id="dash-footer"></footer>
+</div>
+
 <script src="data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="supabase-client.js"></script>
+<script src="progress.js"></script>
 <script src="app.js"></script>
+<script src="dashboard.js"></script>
 </body>
 </html>
