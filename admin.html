@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Digital Skills Academy 🇩🇿</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div id="admin-login" class="admin-screen">
+  <div class="admin-login-box glass">
+    <div class="hero-badge" style="margin-bottom:18px">🔒 ADMIN</div>
+    <h1 style="font-size:22px;font-weight:800;color:#fff;margin-bottom:8px">Digital Skills Academy</h1>
+    <p style="color:#6B7280;font-size:13px;margin-bottom:22px">Accès réservé à l'administrateur.</p>
+    <input type="password" id="admin-pass-input" class="access-input glass" placeholder="MOT DE PASSE" style="text-transform:none;letter-spacing:normal" onkeydown="if(event.key==='Enter')adminLogin()">
+    <div class="error-msg" id="admin-login-error">Mot de passe incorrect.</div>
+    <button class="access-btn glass-btn" onclick="adminLogin()">Se connecter →</button>
+  </div>
+</div>
+
+<div id="admin-panel" class="admin-screen" style="display:none">
+  <nav>
+    <div class="brand"><span>Digital</span>Skills.dz <span style="color:#6B7280;font-weight:400;font-size:13px">/ admin</span></div>
+    <button class="dash-btn" onclick="adminLogout()">Déconnexion</button>
+  </nav>
+
+  <div class="admin-body">
+    <div class="admin-warning glass">
+      ✅ Ces statistiques viennent maintenant de <strong>Supabase</strong> — elles reflètent tous les appareils,
+      pas seulement ce navigateur. La colonne "Leçons faites" compte les leçons complétées pour ce code, tous
+      appareils confondus.
+    </div>
+
+    <div class="admin-stats">
+      <div class="admin-stat-card glass">
+        <div class="admin-stat-num" id="stat-total">0</div>
+        <div class="admin-stat-lbl">Codes au total</div>
+      </div>
+      <div class="admin-stat-card glass">
+        <div class="admin-stat-num" style="color:#4ADE80" id="stat-used">0</div>
+        <div class="admin-stat-lbl">Utilisés</div>
+      </div>
+      <div class="admin-stat-card glass">
+        <div class="admin-stat-num" style="color:#818CF8" id="stat-remaining">0</div>
+        <div class="admin-stat-lbl">Disponibles</div>
+      </div>
+    </div>
+
+    <div class="admin-table-wrap glass">
+      <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center">
+        <span>Codes d'accès</span>
+        <button class="dash-btn" onclick="renderAdminStats()">🔄 Actualiser</button>
+      </div>
+      <table class="admin-table" id="codes-table"></table>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="supabase-client.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
