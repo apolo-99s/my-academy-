@@ -2,11 +2,9 @@
 // SUPABASE CLIENT — DigitalSkills.dz
 // ============================================================
 
-// ⚠️ REMPLACE CES 2 VALEURS PAR LES TIENNES DE SUPABASE
-const SUPABASE_URL = 'https://vvqkxtiepgxvymhtllwa.supabase.co'
-const SUPABASE_ANON_KEY = 'sb_publishable_GZP0iy972Hs6NhzW39CYZQ_bvSKmzIc';
+// REMPLACE par tes vraies valeurs de Supabase
+const SUPABASE_URL = 'https://myrhxpctkbxkfkrxtjfs.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_7eV-URskWryaWzbLQENLbQ_80KDVKRX';
 
-// Création du client Supabase
-var sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
+var sb = supabase.createClient(https://myrhxpctkbxkfkrxtjfs.supabase.co, sb_publishable_7eV-URskWryaWzbLQENLbQ_80KDVKRX);
 console.log('[Supabase] Client initialisé');
