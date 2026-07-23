@@ -1,15 +1,11 @@
-
-
 // ============================================================
-// DATA.JS v3.0 — Digital Skills Academy
-// Visual Learning System with AI Integration
-// ============================================================
-// NOTE: CODES array is historical reference only.
-// Access verification now goes through Supabase.
+// DATA.JS - 10 SKILLS COMPLETS AVEC CHAR7 DÉTAILLÉ
 // ============================================================
 
-var CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO',
-  'LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
+// NOTE: this CODES array is no longer used for access checks — that now
+// goes through Supabase (see supabase-schema.sql / app.js checkAccess()).
+// Kept here only as a historical reference of the original seed codes.
+var CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
 
 var LS = {
   Beginner: { bg: '#052E16', border: '#16A34A', text: '#4ADE80', badge: '🌱' },
@@ -20,935 +16,1187 @@ var LS = {
 
 var T = {
   fr: {
-    badge: 'Formation Complète — 11 Skills + IA',
-    title: 'Maîtrisez les Compétences\nDigitales & IA qui Paient en Algérie',
-    subtitle: '11 formations complètes + méthodes IA. Graphisme, Social Media, Vidéo, Web, SEO, Data, Copywriting, UI/UX, Automation, Vibe Coding, IA.',
-    f1: '✓ Méthodes étape par étape avec visuels', f2: '✓ Exercices réels + projets clients', f3: '✓ Outils gratuits + IA intégrée', f4: '✓ Tarifs marché algérien en DZD',
+    badge: 'Formation Complète — 10 Skills',
+    title: 'Maîtrisez les Compétences\nDigitales qui Paient en Algérie',
+    subtitle: '10 formations complètes. Graphisme, Social Media, Vidéo, Web, SEO, Data, Copywriting, UI/UX, Automation, Vibe Coding.',
+    f1: '✓ Méthodes étape par étape', f2: '✓ Exercices réels', f3: '✓ Outils gratuits', f4: '✓ Tarifs marché algérien',
     includesTitle: 'Ce que vous obtenez',
-    includes: ['11 formations complètes — Beginner → Master','Leçons visuelles avec captures écran','Exercices pratiques avec livrables concrets','Outils gratuits + IA (ChatGPT, Midjourney, etc.)','Prix du marché algérien en DZD','Scripts de communication client','Accès à vie — mises à jour incluses'],
+    includes: ['10 formations complètes — Beginner → Master','Chaque leçon: méthode exacte étape par étape','Exercices pratiques avec livrables concrets','Outils gratuits','Prix du marché algérien en DZD','Scripts de communication client','Accès à vie — mises à jour incluses'],
     already: 'Vous avez déjà acheté?', enter: 'Entrez votre code d\'accès pour commencer.', code: 'VOTRE CODE D\'ACCÈS...',
     access: 'Accéder à la Formation →', loading: 'Vérification...', notBought: 'Pas encore acheté?', whatsapp: '💬 Commander via WhatsApp',
     errEmpty: 'Entrez votre code d\'accès.', errInvalid: 'Code invalide. Vérifiez votre achat.', errUsed: 'Ce code a déjà été utilisé.',
-    stats: [{ n: '100+', l: 'Leçons visuelles' }, { n: '4', l: 'Niveaux par skill' }, { n: '0 DZD', l: 'Pour commencer' }],
+    stats: [{ n: '50+', l: 'Leçons détaillées' }, { n: '4', l: 'Niveaux par skill' }, { n: '0 DZD', l: 'Pour commencer' }],
     footer: 'DigitalSkills.dz — Formation Professionnelle Algérie 🇩🇿',
     aBadge: '🇩🇿 Digital Skills Academy — Algérie', aTitle: 'Apprenez. Pratiquez.\nSoyez Payé.',
-    aSubtitle: '11 skills + IA, du débutant au maître. Chaque leçon vous montre exactement comment faire.',
-    aFeatures: ['Méthodes visuelles étape par étape','Exercices réels avec IA','Outils gratuits','Tarifs marché algérien'],
-    aRec: '💡 Ordre recommandé: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting → UI/UX → Automation → Vibe Coding → IA',
+    aSubtitle: '10 skills, du débutant au maître. Chaque leçon vous dit exactement comment faire.',
+    aFeatures: ['Méthodes étape par étape','Exercices réels','Outils gratuits','Tarifs marché algérien'],
+    aRec: '💡 Ordre recommandé: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting → UI/UX → Automation → Vibe Coding',
     startLearning: 'Commencer →', firstClient: 'Premier client', earning: 'Revenus', startWith: 'Commencer avec',
     backSkills: '← Skills', goal: 'Objectif', lessons: 'leçons', back: '← Retour', lesson: 'Leçon', of: 'sur',
     howTo: 'Comment Faire — Étape par Étape', bestWay: 'La Meilleure Façon d\'Apprendre', exercise: 'Votre Exercice Pratique',
     prevLesson: '← Leçon Précédente', nextLesson: 'Leçon Suivante →', nextLevel: 'Niveau Suivant', complete: '👑 Formation Terminée!',
-    aiTip: '🤖 Astuce IA', proTip: '💡 Secret Pro', warning: '⚠️ Attention',
-    dash: { navLabel: 'Suivi', title: 'Mon Tableau de Bord', subtitle: 'Suivez votre progression sur les 11 compétences', overallTitle: 'Progression Globale', lessonsCompleted: 'leçons terminées', continueLearning: 'Continuer l\'apprentissage →', allComplete: '👑 Toutes les leçons terminées !', lessonsLabel: 'leçons', empty: 'Commencez une leçon pour voir votre progression ici.' }
+    dash: { navLabel: 'Suivi', title: 'Mon Tableau de Bord', subtitle: 'Suivez votre progression sur les 10 compétences', overallTitle: 'Progression Globale', lessonsCompleted: 'leçons terminées', continueLearning: 'Continuer l\'apprentissage →', allComplete: '👑 Toutes les leçons terminées !', lessonsLabel: 'leçons', empty: 'Commencez une leçon pour voir votre progression ici.' }
   },
   ar: {
-    badge: 'تكوين كامل — 11 مهارة + ذكاء اصطناعي',
-    title: 'تعلم المهارات الرقمية\nوالذكاء الاصطناعي اللي تدر فلوس',
-    subtitle: '11 تكوين كامل + طرق الذكاء الاصطناعي. تصميم، سوشيال ميديا، مونتاج، ويب، SEO، بيانات، كتابة، UI/UX، أتمتة، برمجة بالذكاء، ذكاء اصطناعي.',
-    f1: '✓ خطوات واضحة مع صور', f2: '✓ تمارين حقيقية + مشاريع', f3: '✓ أدوات مجانية + ذكاء اصطناعي', f4: '✓ أسعار السوق الجزائري',
+    badge: 'تكوين كامل — 10 مهارات',
+    title: 'تعلم المهارات الرقمية\nاللي تدر فلوس في الجزائر',
+    subtitle: '10 تكوينات كاملة. تصميم، سوشيال ميديا، مونتاج، ويب، SEO، بيانات، كتابة، UI/UX، أتمتة، برمجة بالذكاء الاصطناعي.',
+    f1: '✓ خطوات واضحة وعملية', f2: '✓ تمارين حقيقية', f3: '✓ أدوات مجانية', f4: '✓ أسعار السوق الجزائري',
     includesTitle: 'شنو راه فيه',
-    includes: ['11 تكوينات كاملة — مبتدئ → محترف','دروس مرئية مع لقطات الشاشة','تمارين عملية مع نتائج حقيقية','أدوات مجانية + ذكاء اصطناعي','أسعار السوق الجزائري بالدينار','نصوص التواصل مع الزبائن','وصول مدى الحياة — التحديثات مشمولة'],
+    includes: ['10 تكوينات كاملة — مبتدئ → محترف','كل درس: الطريقة الصحيحة خطوة بخطوة','تمارين عملية مع نتائج حقيقية','أدوات مجانية','أسعار السوق الجزائري بالدينار','نصوص التواصل مع الزبائن','وصول مدى الحياة — التحديثات مشمولة'],
     already: 'راك شريت من قبل؟', enter: 'دخل رمز الدخول ديالك باش تبدا.', code: 'رمز الدخول...',
     access: 'ادخل للتكوين →', loading: 'كاين التحقق...', notBought: 'مازلتش شريت؟', whatsapp: '💬 اطلب عبر واتساب',
     errEmpty: 'دخل رمز الدخول.', errInvalid: 'الرمز غلط. راجع الشراء.', errUsed: 'هذا الرمز تستخدم من قبل.',
-    stats: [{ n: '+100', l: 'درس مرئي' }, { n: '4', l: 'مستويات لكل مهارة' }, { n: '0 دج', l: 'باش تبدا' }],
+    stats: [{ n: '+50', l: 'درس مفصل' }, { n: '4', l: 'مستويات لكل مهارة' }, { n: '0 دج', l: 'باش تبدا' }],
     footer: 'DigitalSkills.dz — تكوين محترف الجزائر 🇩🇿',
     aBadge: '🇩🇿 أكاديمية المهارات الرقمية — الجزائر', aTitle: 'تعلم. تمرن.\nتربح.',
-    aSubtitle: '11 مهارة + ذكاء اصطناعي، من الصفر للاحتراف. كل درس يوريك بالضبط كيفاش تدير.',
-    aFeatures: ['خطوات مرئية واضحة','تمارين حقيقية بالذكاء الاصطناعي','أدوات مجانية','أسعار السوق الجزائري'],
-    aRec: '💡 الترتيب المنصوح: سوشيال ميديا → تصميم → مونتاج → ويب → SEO → بيانات → كتابة → UI/UX → أتمتة → برمجة بالذكاء → الذكاء الاصطناعي',
+    aSubtitle: '10 مهارات، من الصفر للاحتراف. كل درس يقولك بالضبط كيفاش تدير.',
+    aFeatures: ['خطوات واضحة وعملية','تمارين حقيقية','أدوات مجانية','أسعار السوق الجزائري'],
+    aRec: '💡 الترتيب المنصوح: سوشيال ميديا → تصميم → مونتاج → ويب → SEO → بيانات → كتابة → UI/UX → أتمتة → برمجة بالذكاء الاصطناعي',
     startLearning: 'ابدا التعلم →', firstClient: 'أول زبون', earning: 'الأرباح', startWith: 'ابدا بـ',
     backSkills: 'المهارات →', goal: 'الهدف', lessons: 'دروس', back: 'رجع →', lesson: 'الدرس', of: 'من',
     howTo: 'كيفاش تدير — خطوة بخطوة', bestWay: 'أحسن طريقة باش تتعلم', exercise: 'تمرينك العملي',
     prevLesson: 'الدرس السابق →', nextLesson: '← الدرس الموالي', nextLevel: 'المستوى الموالي', complete: '👑 كملت التكوين!',
-    aiTip: '🤖 نصيحة الذكاء الاصطناعي', proTip: '💡 سر محترف', warning: '⚠️ تنبيه',
-    dash: { navLabel: 'التقدم', title: 'لوحة التحكم ديالي', subtitle: 'تابع تقدمك في 11 مهارة', overallTitle: 'التقدم الإجمالي', lessonsCompleted: 'درس مكتمل', continueLearning: '← تابع التعلم', allComplete: '👑 كملت كل الدروس!', lessonsLabel: 'دروس', empty: 'ابدأ درساً باش تشوف تقدمك هنا.' }
+    dash: { navLabel: 'التقدم', title: 'لوحة التحكم ديالي', subtitle: 'تابع تقدمك في 10 مهارات', overallTitle: 'التقدم الإجمالي', lessonsCompleted: 'درس مكتمل', continueLearning: '← تابع التعلم', allComplete: '👑 كملت كل الدروس!', lessonsLabel: 'دروس', empty: 'ابدأ درساً باش تشوف تقدمك هنا.' }
   },
   en: {
-    badge: 'Complete Course — 11 Skills + AI',
-    title: 'Master Digital Skills & AI\nThat Generate Income in Algeria',
-    subtitle: '11 complete courses + AI methods. Design, Social Media, Video, Web, SEO, Data, Copywriting, UI/UX, Automation, Vibe Coding, AI.',
-    f1: '✓ Visual step-by-step methods', f2: '✓ Real exercises + client projects', f3: '✓ Free tools + AI integrated', f4: '✓ Algerian market rates in DZD',
+    badge: 'Complete Course — 10 Skills',
+    title: 'Master Digital Skills That\nGenerate Income in Algeria',
+    subtitle: '10 complete courses. Design, Social Media, Video, Web, SEO, Data, Copywriting, UI/UX, Automation, Vibe Coding.',
+    f1: '✓ Step-by-step methods', f2: '✓ Real exercises', f3: '✓ Free tools only', f4: '✓ Algerian market rates',
     includesTitle: 'What you get',
-    includes: ['11 complete courses — Beginner → Master','Visual lessons with screenshots','Practical exercises with real deliverables','Free tools + AI (ChatGPT, Midjourney, etc.)','Algerian market rates in DZD','Client communication scripts','Lifetime access — updates included'],
+    includes: ['10 complete courses — Beginner → Master','Every lesson: exact step-by-step method','Practical exercises with real deliverables','Free tools','Algerian market rates in DZD','Client communication scripts','Lifetime access — updates included'],
     already: 'Already purchased?', enter: 'Enter your access code to get started.', code: 'YOUR ACCESS CODE...',
     access: 'Access the Course →', loading: 'Verifying...', notBought: 'Haven\'t bought yet?', whatsapp: '💬 Order via WhatsApp',
     errEmpty: 'Please enter your access code.', errInvalid: 'Invalid code. Check your purchase.', errUsed: 'This code has already been used.',
-    stats: [{ n: '100+', l: 'Visual lessons' }, { n: '4', l: 'Levels per skill' }, { n: '0 DZD', l: 'To get started' }],
+    stats: [{ n: '50+', l: 'Detailed lessons' }, { n: '4', l: 'Levels per skill' }, { n: '0 DZD', l: 'To get started' }],
     footer: 'DigitalSkills.dz — Professional Training Algeria 🇩🇿',
     aBadge: '🇩🇿 Digital Skills Academy — Algeria', aTitle: 'Learn It. Practice It.\nGet Paid.',
-    aSubtitle: '11 skills + AI, beginner to master. Every lesson shows you exactly how to do it.',
-    aFeatures: ['Visual step-by-step methods','Real exercises with AI','Free tools only','Algerian market rates'],
-    aRec: '💡 Recommended: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting → UI/UX → Automation → Vibe Coding → AI',
+    aSubtitle: '10 skills, beginner to master. Every lesson tells you exactly how to do it.',
+    aFeatures: ['Step-by-step methods','Real exercises','Free tools only','Algerian market rates'],
+    aRec: '💡 Recommended: Social Media → Graphic Design → Video Editing → Web Dev → SEO → Data → Copywriting → UI/UX → Automation → Vibe Coding',
     startLearning: 'Start Learning →', firstClient: 'First client', earning: 'Earning range', startWith: 'Start with',
     backSkills: '← Skills', goal: 'Goal', lessons: 'lessons', back: '← Back', lesson: 'Lesson', of: 'of',
     howTo: 'How To Do It — Step by Step', bestWay: 'The Best Way to Learn This', exercise: 'Your Practice Exercise',
     prevLesson: '← Previous Lesson', nextLesson: 'Next Lesson →', nextLevel: 'Next Level', complete: '👑 Track Complete!',
-    aiTip: '🤖 AI Tip', proTip: '💡 Pro Secret', warning: '⚠️ Warning',
-    dash: { navLabel: 'Progress', title: 'My Dashboard', subtitle: 'Track your progress across the 11 skills', overallTitle: 'Overall Progress', lessonsCompleted: 'lessons completed', continueLearning: 'Continue Learning →', allComplete: '👑 All lessons complete!', lessonsLabel: 'lessons', empty: 'Start a lesson to see your progress here.' }
+    dash: { navLabel: 'Progress', title: 'My Dashboard', subtitle: 'Track your progress across the 10 skills', overallTitle: 'Overall Progress', lessonsCompleted: 'lessons completed', continueLearning: 'Continue Learning →', allComplete: '👑 All lessons complete!', lessonsLabel: 'lessons', empty: 'Start a lesson to see your progress here.' }
   }
 };
 
 // ============================================================
-// SKILLS — 11 COMPLETE COURSES WITH VISUAL STEPS & AI
+// SKILLS (10 SKILLS COMPLETS)
 // ============================================================
 var SKILLS = [
-
-// ============================================================
-// SKILL 1: GRAPHIC DESIGN (COMPLET + IA)
-// ============================================================
-{
-  id: 'design',
-  icon: '🎨',
-  color: '#7C3AED',
-  accent: '#A78BFA',
-  bg: 'linear-gradient(135deg, #0D0818 0%, #1A0A30 50%, #0D0818 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80',
-  earning: '5,000 – 150,000 DZD',
-  firstClient: { fr: '2–3 semaines', ar: '2–3 أسابيع', en: '2–3 weeks' },
-  startTool: 'Canva (canva.com) + ChatGPT',
-  title: { fr: 'Graphic Design', ar: 'التصميم الجرافيكي', en: 'Graphic Design' },
-  subtitle: { fr: 'Communication Visuelle + IA', ar: 'التواصل البصري + الذكاء الاصطناعي', en: 'Visual Communication + AI' },
-  tagline: { fr: 'Transformez vos idées en visuels qui vendent — avec ou sans IA', ar: 'حوّل أفكارك لتصاميم تبيع — بالذكاء الاصطناعي أو بلا', en: 'Turn ideas into visuals that sell — with or without AI' },
-  aiTools: ['Midjourney', 'DALL-E 3', 'Canva AI', 'Adobe Firefly', 'Remove.bg'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-      goal: { fr: 'Maîtriser Canva + les 4 règles CARP + générer des visuels avec IA', ar: 'إتقان Canva + قواعد CARP الأربعة + توليد تصاميم بالذكاء الاصطناعي', en: 'Master Canva + CARP rules + generate visuals with AI' },
-      lessons: [
-        {
-          id: 'd-b-1',
-          title: { fr: 'Canva + IA : Votre Premier Design Pro', ar: 'Canva + الذكاء الاصطناعي: أول تصميم احترافي', en: 'Canva + AI: Your First Pro Design' },
-          image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/canva/step1-homepage.jpg',
-              caption: { fr: 'Rendez-vous sur canva.com', ar: 'روح لـ canva.com', en: 'Go to canva.com' },
-              detail: { fr: 'Créez un compte gratuit. La version Pro n\'est PAS nécessaire pour débuter.', ar: 'أنشئ حساب مجاني. الـ Pro مايش ضروري للبداية.', en: 'Create a free account. Pro version is NOT needed to start.' },
-              hotspot: { x: 72, y: 8, label: 'S\'inscrire' },
-              shortcuts: ['Ctrl+T : Nouvel onglet', 'canva.com dans la barre d\'adresse'],
-              aiPrompt: null
+  // ============================================================
+  // SKILL 1: GRAPHIC DESIGN (COMPLET)
+  // ============================================================
+  {
+    id: 'design',
+    icon: '🎨',
+    color: '#7C3AED',
+    accent: '#A78BFA',
+    bg: 'linear-gradient(135deg, #0D0818 0%, #1A0A30 50%, #0D0818 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80',
+    earning: '5,000 – 80,000 DZD',
+    firstClient: { fr: '3–4 semaines', ar: '3–4 أسابيع', en: '3–4 weeks' },
+    startTool: 'Canva (canva.com)',
+    title: { fr: 'Graphic Design', ar: 'التصميم الجرافيكي', en: 'Graphic Design' },
+    subtitle: { fr: 'Communication Visuelle', ar: 'التواصل البصري', en: 'Visual Communication' },
+    tagline: { fr: 'Transformez vos idées en visuels qui vendent', ar: 'حوّل أفكارك لتصاميم تبيع', en: 'Turn ideas into visuals that sell' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Apprendre les bases de Canva et les 4 règles du design', ar: 'تعلم أساسيات Canva وقواعد التصميم الأربعة', en: 'Learn Canva basics and the 4 design rules' },
+        lessons: [
+          {
+            id: 'd-b-1',
+            title: { fr: 'Installer et utiliser Canva comme un pro', ar: 'تنصيب واستخدام Canva كمحترف', en: 'Install and use Canva like a pro' },
+            image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Rendez-vous sur canva.com ou téléchargez l\'application depuis Google Play ou App Store — c\'est totalement gratuit.','Cliquez sur "S\'inscrire" et créez un compte avec votre email ou directement via Google, ça prend 30 secondes.','Une fois connecté, cliquez sur "Créer un design" en haut à droite du tableau de bord.','Choisissez "Post Instagram Carré" — vous aurez un canvas vierge de 1080x1080 pixels, parfait pour commencer.','À gauche, vous avez le panneau principal: Templates (des milliers de modèles), Éléments (formes, icônes), Texte, Arrière-plan, et vos Téléchargements.','En haut, la barre d\'outils vous permet de modifier la police, la taille, la couleur et la position de vos éléments.','Utilisez Ctrl+Z pour annuler une action et Ctrl+D pour dupliquer un élément — ces raccourcis vous feront gagner un temps fou.','Pour exporter: cliquez sur "Partager" en haut à droite → "Télécharger" → choisissez PNG (pour les réseaux sociaux) ou PDF (pour l\'impression).'],
+              ar: ['روح لـ canva.com أو حمّل التطبيق من Google Play أو App Store — مجاني تماماً.','اضغط على "سجّل" وأنشئ حساب بإيميلك أو عبر Google، ياخذ 30 ثانية فقط.','بعد الدخول، اضغط على "إنشاء تصميم" في أعلى يمين لوحة التحكم.','اختار "منشور Instagram مربع" — راح يكون عندك مساحة فارغة 1080x1080 بكسل، مثالية للبداية.','على اليسار عندك اللوحة الرئيسية: قوالب (آلاف النماذج)، عناصر (أشكال وأيقونات)، نص، خلفية، وملفاتك المحمّلة.','في الأعلى، شريط الأدوات يسمح لك بتغيير الخط، الحجم، اللون وموضع العناصر.','استخدم Ctrl+Z للتراجع و Ctrl+D للنسخ — هالاختصارات توفر وقتك بزاف.','للتصدير: اضغط على "مشاركة" → "تحميل" → اختار PNG (للتواصل الاجتماعي) أو PDF (للطباعة).'],
+              en: ['Go to canva.com or download the app from Google Play or App Store — it\'s completely free.','Click "Sign Up" and create an account with your email or via Google, it takes 30 seconds.','Once logged in, click "Create a design" at the top right of the dashboard.','Choose "Instagram Post Square" — you\'ll have a blank 1080x1080px canvas, perfect to start.','On the left, you have the main panel: Templates (thousands of models), Elements (shapes, icons), Text, Background, and your Uploads.','At the top, the toolbar lets you change font, size, color and position of your elements.','Use Ctrl+Z to undo and Ctrl+D to duplicate — these shortcuts will save you a lot of time.','To export: click "Share" → "Download" → choose PNG (for social media) or PDF (for printing).']
             },
-            {
-              step: 2,
-              image: 'images/lessons/canva/step2-dashboard.jpg',
-              caption: { fr: 'Cliquez sur "Créer un design"', ar: 'اضغط على "إنشاء تصميم"', en: 'Click "Create a design"' },
-              detail: { fr: 'Choisissez "Post Instagram" (1080×1080px) — le format le plus demandé par les clients algériens.', ar: 'اختار "منشور Instagram" (1080×1080px) — أكثر صيغة مطلوبة من الزبائن الجزائريين.', en: 'Choose "Instagram Post" (1080×1080px) — the most requested format by Algerian clients.' },
-              hotspot: { x: 75, y: 12, label: 'Créer un design' },
-              shortcuts: ['Dimensions personnalisées: 1080 x 1080 px'],
-              aiPrompt: null
+            method: { fr: 'Ouvrez Canva maintenant et passez 20 minutes à cliquer sur chaque bouton. Ne concevez rien — explorez juste.', ar: 'افتح Canva الآن واقضِ 20 دقيقة تضغط على كل زر. ما تصمّمش شيء — بس استكشف.', en: 'Open Canva now and spend 20 minutes clicking every button. Do not design anything — just explore.' },
+            exercise: { fr: 'Créez un post Instagram avec votre nom en grand texte gras et un fond coloré. Téléchargez-le.', ar: 'أنشئ منشور Instagram باسمك بخط كبير وعريض وخلفية ملونة. حمّله.', en: 'Create an Instagram post with your name in big bold text and a colored background. Download it.' },
+            tip: { fr: '💡 Canva Gratuit vous donne accès à plus de 250 000 templates. Ne passez pas à la version Pro avant d\'avoir vos premiers clients payants.', ar: '💡 Canva المجاني يعطيك أكثر من 250,000 قالب. ما تنتقلش للـ Pro قبل ما تجيك أول زبون.', en: '💡 Canva Free gives you access to over 250,000 templates. Don\'t upgrade to Pro until you have your first paying clients.' }
+          },
+          {
+            id: 'd-b-2',
+            title: { fr: 'Les 4 Règles d\'Or du Design (CARP)', ar: 'قواعد التصميم الأربعة الذهبية (CARP)', en: 'The 4 Golden Rules of Design (CARP)' },
+            image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
+            layout: 'right',
+            steps: {
+              fr: ['CONTRASTE: Rendez l\'élément le plus important plus grand, plus coloré ou plus différent du reste.','ALIGNEMENT: Rien ne doit être placé au hasard. Activez les guides pour aligner parfaitement vos éléments.','RÉPÉTITION: Utilisez la même police, les mêmes couleurs et le même style pour les éléments similaires.','PROXIMITÉ: Groupez les éléments qui vont ensemble et séparez ceux qui n\'ont pas de lien.','Astuce pro: Ouvrez n\'importe quel template Canva et identifiez ces 4 règles dans chaque élément.','Exercice: Cherchez "flyer restaurant algerie" sur Google. Identifiez les règles respectées et brisées.'],
+              ar: ['التباين: خلّي العنصر الأهم أكبر، أو أكثر لوناً، أو مختلفاً عن الباقي.','المحاذاة: ما كاين والو موضوع بالعشوائية. فعّل الخطوط باش تراصف عناصرك بالضبط.','التكرار: استخدم نفس الخط، نفس الألوان ونفس الستايل للعناصر المتشابهة.','القرب: جمّع العناصر اللي تمشي مع بعض وفرّق اللي ما عندهمش رابط.','نصيحة: افتح أي قالب Canva وحدّد هالقواعد الأربعة في كل عنصر.','تمرين: دور على "flyer مطعم الجزائر" في Google. حدّد القواعد المطبقة والمكسورة.'],
+              en: ['CONTRAST: Make the most important element bigger, more colorful, or different from the rest.','ALIGNMENT: Nothing should be placed randomly. Enable guides to align your elements perfectly.','REPETITION: Use the same font, colors and style for similar elements.','PROXIMITY: Group elements that belong together and separate those that don\'t.','Pro tip: Open any Canva template and identify these 4 rules in every element.','Exercise: Search "flyer restaurant algeria" on Google. Identify rules followed and broken.']
             },
-            {
-              step: 3,
-              image: 'images/lessons/canva/step3-ai-generate.jpg',
-              caption: { fr: '🤖 Générez une image avec IA', ar: '🤖 ولّد صورة بالذكاء الاصطناعي', en: '🤖 Generate an image with AI' },
-              detail: { fr: 'Cliquez sur "Apps" → "Magic Media" (IA intégrée). Écrivez: "Professional coffee shop logo, minimalist, warm colors, Algerian style". Ou utilisez ChatGPT pour générer des prompts optimisés.', ar: 'اضغط على "Apps" → "Magic Media" (ذكاء اصطناعي مدمج). اكتب: "Professional coffee shop logo, minimalist, warm colors, Algerian style". أو استخدم ChatGPT باش تولّد prompts محسّنة.', en: 'Click "Apps" → "Magic Media" (built-in AI). Type: "Professional coffee shop logo, minimalist, warm colors, Algerian style". Or use ChatGPT to generate optimized prompts.' },
-              hotspot: { x: 15, y: 25, label: 'Apps' },
-              shortcuts: ['Apps → Magic Media → Text to Image'],
-              aiPrompt: { tool: 'ChatGPT / Midjourney', prompt: 'Generate 5 professional logo prompts for an Algerian coffee shop. Style: minimalist, warm colors, Arabic calligraphy influence. Format: Midjourney v6 optimized.', result: '5 prompts prêts à copier' }
+            method: { fr: 'Créez deux versions d\'un même design: une où vous violez les 4 règles, et une où vous les respectez parfaitement.', ar: 'أنشئ نسختين من نفس التصميم: وحدة تكسر فيها القواعد الأربعة، ووحدة تتبعها بالضبط.', en: 'Create two versions of the same design: one where you break all 4 rules, and one where you follow them perfectly.' },
+            exercise: { fr: 'Designez une carte de visite pour un restaurant algérien DEUX fois: Version 1 = violez les 4 règles. Version 2 = respectez-les parfaitement.', ar: 'صمّم بطاقة أعمال لمطعم جزائري مرتين: نسخة 1 = اكسر القواعد الأربعة. نسخة 2 = اتبعها بالضبط.', en: 'Design a business card for an Algerian restaurant TWICE: Version 1 = violate all 4 rules. Version 2 = follow them perfectly.' },
+            tip: { fr: '💡 Les designers professionnels ne brisent les règles qu\'APRÈS les avoir parfaitement maîtrisées.', ar: '💡 المصممون المحترفين ما يكسرونش القواعد إلا بعد ما يتقنوها بالكامل.', en: '💡 Professional designers only break rules AFTER perfectly mastering them.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–10', ar: 'الأسابيع 5–10', en: 'Weeks 5–10' },
+        goal: { fr: 'Passer de Canva à des outils professionnels avec Photopea', ar: 'الانتقال من Canva لأدوات احترافية مع Photopea', en: 'Move from Canva to professional tools with Photopea' },
+        lessons: [
+          {
+            id: 'd-i-1',
+            title: { fr: 'Photopea — L\'Alternative Gratuite à Photoshop', ar: 'Photopea — البديل المجاني لـ Photoshop', en: 'Photopea — The Free Photoshop Alternative' },
+            image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=800&q=80',
+            layout: 'left',
+            steps: {
+              fr: ['Rendez-vous sur photopea.com — c\'est un clone de Photoshop qui tourne directement dans votre navigateur, sans installation, et il est 100% gratuit.','L\'interface est identique à Photoshop: les outils sont à gauche, les calques (Layers) sont à droite, et la barre d\'options est en haut.','Le concept clé: les CALQUES. Chaque élément (photo, texte, forme) doit être sur son propre calque pour rester modifiable indépendamment.','Pour supprimer un arrière-plan: sélectionnez l\'outil Baguette Magique (W), cliquez sur le fond, puis appuyez sur Suppr — répétez sur les zones oubliées avec Maj+clic.','Ajoutez une ombre portée réaliste: clic droit sur le calque → Options de fusion → Ombre portée, ajustez l\'opacité à 30-40% pour un rendu naturel.','Utilisez les Calques de Réglage pour corriger la luminosité et le contraste sans jamais modifier l\'image originale.','Exportez en PNG (fond transparent conservé) via Fichier → Exporter comme → PNG.'],
+              ar: ['روح لـ photopea.com — نسخة من Photoshop تخدم مباشرة في المتصفح، بلا تنصيب، ومجانية 100%.','الواجهة نفسها Photoshop: الأدوات على اليسار، الطبقات (Layers) على اليمين، وشريط الخيارات في الأعلى.','المفهوم الأساسي: الطبقات. كل عنصر (صورة، نص، شكل) خاصو يكون في طبقته الخاصة باش يبقى قابل للتعديل بمفرده.','باش تزيل الخلفية: اختار أداة العصا السحرية (W)، اضغط على الخلفية، بعدها Suppr — كرر على الأماكن الناقصة بـ Maj+clic.','زيد ظل واقعي: كليك يمين على الطبقة → خيارات المزج → ظل مسقط، ظبط الشفافية 30-40% باش يبان طبيعي.','استخدم طبقات التعديل باش تصحح الإضاءة والتباين بلا ما تلمس الصورة الأصلية.','صدّر بـ PNG (تبقى الخلفية شفافة) عبر ملف → تصدير كـ → PNG.'],
+              en: ['Go to photopea.com — a Photoshop clone that runs directly in your browser, no installation needed, and it\'s 100% free.','The interface is identical to Photoshop: tools on the left, Layers on the right, and the options bar at the top.','Key concept: LAYERS. Every element (photo, text, shape) should be on its own layer to stay independently editable.','To remove a background: select the Magic Wand tool (W), click the background, then press Delete — repeat on missed spots with Shift+click.','Add a realistic drop shadow: right-click the layer → Blending Options → Drop Shadow, set opacity to 30-40% for a natural look.','Use Adjustment Layers to fix brightness and contrast without ever touching the original image.','Export as PNG (keeps transparent background) via File → Export as → PNG.']
             },
-            {
-              step: 4,
-              image: 'images/lessons/canva/step4-carp-rules.jpg',
-              caption: { fr: 'Appliquez les 4 règles CARP', ar: 'طبق قواعد CARP الأربعة', en: 'Apply the 4 CARP rules' },
-              detail: { fr: 'CONTRASTE: Titre en 48px gras, texte en 16px régulier. ALIGNEMENT: Tout aligné à gauche ou centré (pas les deux!). RÉPÉTITION: Même police pour tous les titres. PROXIMITÉ: Le prix près du produit, pas en bas de page.', ar: 'التباين: العنوان 48px عريض، النص 16px عادي. المحاذاة: كلشي على اليسار أو في الوسط (ماشي الاثنين!). التكرار: نفس الخط لكل العناوين. القرب: السعر جنب المنتج، مشي في أسفل الصفحة.', en: 'CONTRAST: Title at 48px bold, text at 16px regular. ALIGNMENT: Everything left-aligned or centered (not both!). REPETITION: Same font for all headings. PROXIMITY: Price near the product, not at the bottom.' },
-              hotspot: { x: 50, y: 50, label: 'Vérifier CARP' },
-              shortcuts: ['Ctrl+A : Sélectionner tout', 'C : Centrer', 'L : Aligner gauche'],
-              aiPrompt: null
+            method: { fr: 'Supprimez l\'arrière-plan d\'une photo de produit et remplacez-le par un fond uni.', ar: 'ازل خلفية صورة منتج وعوضها بخلفية لون واحد.', en: 'Remove the background from a product photo and replace it with a solid color.' },
+            exercise: { fr: 'Trouvez une photo de produit algérien en ligne (téléphone, vêtement, plat), supprimez le fond, ajoutez une ombre et un fond coloré, puis ajoutez le prix en DZD.', ar: 'دور على صورة منتج جزائري أونلاين (هاتف، لباس، طبق)، ازل الخلفية، زيد ظل وخلفية ملونة، وزيد السعر بالدينار.', en: 'Find an Algerian product photo online (phone, clothing, dish), remove the background, add a shadow and colored background, then add the price in DZD.' },
+            tip: { fr: '💡 Photopea sauvegarde en format .psd — gardez toujours le fichier source pour pouvoir le modifier plus tard.', ar: '💡 Photopea يسجل بصيغة .psd — احتفظ دائماً بالملف الأصلي باش تقدر تعدلو من بعد.', en: '💡 Photopea saves in .psd format — always keep the source file so you can edit it later.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 11–20', ar: 'الأسابيع 11–20', en: 'Weeks 11–20' },
+        goal: { fr: 'Maîtriser le design vectoriel avec Inkscape', ar: 'إتقان التصميم الفيكتوري مع Inkscape', en: 'Master vector design with Inkscape' },
+        lessons: [
+          {
+            id: 'd-a-1',
+            title: { fr: 'Inkscape — Maîtriser le Vectoriel', ar: 'Inkscape — إتقان الفيكتور', en: 'Inkscape — Mastering Vectors' },
+            image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
+            layout: 'right',
+            steps: {
+              fr: ['Téléchargez Inkscape (inkscape.org) — c\'est l\'équivalent gratuit et open-source d\'Adobe Illustrator, 100% suffisant pour un usage professionnel.','La différence fondamentale avec Photopea: le vectoriel n\'est pas fait de pixels mais de formes mathématiques — un logo vectoriel peut être agrandi à l\'infini sans perdre en qualité.','Maîtrisez l\'outil Plume (touche B): un clic simple crée un point anguleux, un clic-glissé crée une courbe fluide.','Utilisez le panneau Pathfinder pour combiner des formes: Union (fusionne), Différence (soustrait), Intersection (garde le chevauchement).','Travaillez avec des calques nommés clairement pour garder un fichier propre et modifiable.','Exportez toujours en SVG (pour le web) et en PDF vectoriel (pour l\'impression professionnelle).'],
+              ar: ['حمّل Inkscape (inkscape.org) — البديل المجاني والمفتوح المصدر لـ Adobe Illustrator، كافي 100% للاستعمال الاحترافي.','الفرق الأساسي مع Photopea: الفيكتور ماشي بيكسلات، هو أشكال رياضية — الشعار الفيكتوري يكبر بلا حدود بلا ما يخسر الجودة.','اتقن أداة القلم (B): كليك بسيط يعطي نقطة زاوية، كليك مسحوب يعطي منحنى ناعم.','استخدم لوحة Pathfinder باش تدمج الأشكال: Union (دمج)، Difference (طرح)، Intersection (تقاطع).','اخدم بطبقات مسماة بوضوح باش يبقى الملف نظيف وقابل للتعديل.','صدّر دائماً بـ SVG (للويب) وPDF فيكتوري (للطباعة الاحترافية).'],
+              en: ['Download Inkscape (inkscape.org) — the free, open-source equivalent of Adobe Illustrator, 100% sufficient for professional use.','The key difference from Photopea: vectors aren\'t made of pixels but mathematical shapes — a vector logo can be scaled infinitely without losing quality.','Master the Pen Tool (key B): a simple click creates a sharp point, a click-drag creates a smooth curve.','Use the Pathfinder panel to combine shapes: Union (merges), Difference (subtracts), Intersection (keeps overlap).','Work with clearly named layers to keep the file clean and editable.','Always export as SVG (for web) and vector PDF (for professional printing).']
             },
-            {
-              step: 5,
-              image: 'images/lessons/canva/step5-export.jpg',
-              caption: { fr: 'Exportez en PNG HD', ar: 'صدّر بـ PNG عالي الجودة', en: 'Export as HD PNG' },
-              detail: { fr: 'Partager → Télécharger → PNG → Cochez "Fond transparent" si besoin. Pour l\'impression: PDF Print. Secret pro: Exportez aussi en MP4 (4s) pour les stories animées — facturez 2x plus !', ar: 'مشاركة → تحميل → PNG → علّم "خلفية شفافة" إذا لزم. للطباعة: PDF Print. سر محترف: صدّر كمان بـ MP4 (4 ثواني) للستوريز المتحركة — فاتورة ضعف!', en: 'Share → Download → PNG → Check "Transparent background" if needed. For print: PDF Print. Pro secret: Also export as MP4 (4s) for animated stories — charge 2x more!' },
-              hotspot: { x: 85, y: 8, label: 'Partager' },
-              shortcuts: ['Ctrl+Shift+E : Export rapide'],
-              aiPrompt: null
-            }
-          ],
-          method: { fr: 'Ouvrez Canva maintenant et créez un post Instagram pour un restaurant algérien fictif. Utilisez Magic Media pour générer l\'image principale.', ar: 'افتح Canva الآن وأنشئ منشور Instagram لمطعم جزائري وهمي. استخدم Magic Media باش تولّد الصورة الرئيسية.', en: 'Open Canva now and create an Instagram post for a fictional Algerian restaurant. Use Magic Media to generate the main image.' },
-          exercise: { fr: 'Créez un post Instagram complet avec: (1) Image générée par IA, (2) Nom du restaurant en arabe/français, (3) Prix d\'un plat en DZD, (4) Horaires d\'ouverture. Exportez en PNG + MP4 4s.', ar: 'أنشئ منشور Instagram كامل يحتوي على: (1) صورة مولدة بالذكاء الاصطناعي، (2) اسم المطعم بالعربية/الفرنسية، (3) سعر طبق بالدينار، (4) أوقات الفتح. صدّر بـ PNG + MP4 4 ثواني.', en: 'Create a complete Instagram post with: (1) AI-generated image, (2) Restaurant name in Arabic/French, (3) Dish price in DZD, (4) Opening hours. Export as PNG + MP4 4s.' },
-          tip: { fr: '💡 Secret Pro: Les clients algériens paient 3x plus pour des designs avec animation (MP4/Canva Animation). Un post statique = 500 DZD, un Reel animé = 1,500 DZD.', ar: '💡 سر محترف: الزبائن الجزائريين يدفعوا 3 مرات أكثر للتصاميم المتحركة (MP4/Canva Animation). منشور ثابت = 500 دج، ريل متحرك = 1,500 دج.', en: '💡 Pro Secret: Algerian clients pay 3x more for animated designs (MP4/Canva Animation). Static post = 500 DZD, animated Reel = 1,500 DZD.' }
-        },
-        {
-          id: 'd-b-2',
-          title: { fr: 'Photopea : Retouche Pro Gratuite', ar: 'Photopea: تعديل احترافي مجاني', en: 'Photopea: Free Pro Retouching' },
-          image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=800&q=80',
-          layout: 'left',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/photopea/step1-interface.jpg',
-              caption: { fr: 'Ouvrez photopea.com', ar: 'افتح photopea.com', en: 'Open photopea.com' },
-              detail: { fr: 'Interface 100% identique à Photoshop. Outils à gauche, calques à droite. Aucune installation nécessaire.', ar: 'واجهة 100% نفس Photoshop. الأدوات على اليسار، الطبقات على اليمين. بلا تنصيب.', en: 'Interface 100% identical to Photoshop. Tools on the left, layers on the right. No installation needed.' },
-              hotspot: { x: 50, y: 50, label: 'Interface' },
-              shortcuts: [],
-              aiPrompt: null
+            method: { fr: 'Recréez un logo simple existant en utilisant uniquement l\'outil Plume, sans tracé automatique.', ar: 'أعد إنشاء شعار بسيط موجود باستخدام أداة القلم فقط، بلا تتبع تلقائي.', en: 'Recreate an existing simple logo using only the Pen Tool, no auto-trace.' },
+            exercise: { fr: 'Choisissez le logo d\'une marque algérienne connue (Djezzy, Ooredoo, Cevital) et reconstruisez-le entièrement en vectoriel dans Inkscape.', ar: 'اختار شعار ماركة جزائرية معروفة (Djezzy، Ooredoo، Cevital) وأعد بناءه بالكامل فيكتور في Inkscape.', en: 'Choose the logo of a well-known Algerian brand (Djezzy, Ooredoo, Cevital) and rebuild it entirely in vector form in Inkscape.' },
+            tip: { fr: '💡 Un client avec seulement un logo en JPEG flou a besoin de le vectoriser — c\'est un service payant à part entière (3000-8000 DZD).', ar: '💡 الزبون اللي عندو غير شعار JPEG معتم محتاج يحوله فيكتور — هادي خدمة مدفوعة بذاتها (3000-8000 دج).', en: '💡 A client with only a blurry JPEG logo needs it vectorized — that\'s a standalone paid service (3000-8000 DZD).' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Passer de Freelance à Agence de Design', ar: 'الانتقال من فريلانس لأجنسي تصميم', en: 'Move from Freelancer to Design Agency' },
+        lessons: [
+          {
+            id: 'd-m-1',
+            title: { fr: 'De Freelance à Agence de Design', ar: 'من فريلانس لأجنسي تصميم', en: 'From Freelancer to Design Agency' },
+            image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Le signal pour passer à l\'agence: vous refusez des clients faute de temps, ou vous travaillez plus de 50h/semaine sur du design seul.','Recrutez un premier collaborateur en freelance, payé au projet (40-50% du prix facturé au client) plutôt qu\'en salaire fixe au début.','Structurez vos offres en 3 forfaits clairs: Starter (~25 000 DZD, logo + 5 visuels), Croissance (~55 000 DZD, identité complète), Premium (100 000+ DZD, branding complet).','Démarchez directement les agences de publicité et de communication qui sous-traitent souvent le design visuel — elles ont un flux de clients constant.','Créez un book (portfolio) qui montre 3 à 5 projets complets avec avant/après, pas seulement des visuels isolés.','Spécialisez-vous idéalement dans un secteur (restauration, mode, immobilier) — les clients paient plus cher un spécialiste reconnu qu\'un généraliste.'],
+              ar: ['إشارة الانتقال للأجنسي: تولي ترفض زبائن بسبب الوقت، أو تخدم أكثر من 50 ساعة/أسبوع في التصميم وحدك.','جيب متعاون أول فريلانس، يتخلص بالمشروع (40-50% من ثمن الفاتورة للزبون) بدل راتب ثابت في البداية.','رتب عروضك في 3 باقات واضحة: Starter (~25,000 دج، شعار + 5 تصاميم)، نمو (~55,000 دج، هوية كاملة)، Premium (100,000+ دج، براندينغ كامل).','قصد مباشرة وكالات الإشهار والتواصل اللي غالباً يسندو التصميم البصري لمقاول خارجي — عندهم تدفق زبائن ثابت.','اصنع بورتفوليو يوري 3 إلى 5 مشاريع كاملة بقبل/بعد، ماشي غير تصاميم منفصلة.','تخصص في قطاع واحد (مطاعم، موضة، عقار) — الزبائن يدفعو أكثر للمتخصص المعروف من العام.'],
+              en: ['The signal to move to an agency: you\'re turning down clients due to lack of time, or working over 50h/week on design alone.','Bring on a first freelance collaborator, paid per project (40-50% of the client invoice) rather than a fixed salary at first.','Structure your offers into 3 clear packages: Starter (~25,000 DZD, logo + 5 visuals), Growth (~55,000 DZD, complete identity), Premium (100,000+ DZD, full branding).','Approach advertising and communication agencies directly — they often outsource visual design and have a steady client flow.','Build a portfolio (book) showing 3 to 5 complete projects with before/after, not just isolated visuals.','Ideally specialize in one sector (restaurants, fashion, real estate) — clients pay more for a recognized specialist than a generalist.']
             },
-            {
-              step: 2,
-              image: 'images/lessons/photopea/step2-remove-bg.jpg',
-              caption: { fr: 'Supprimer l\'arrière-plan', ar: 'إزالة الخلفية', en: 'Remove background' },
-              detail: { fr: 'Méthode 1 (rapide): remove.bg (gratuit). Méthode 2 (pro): Outil Baguette Magique (W) → Sélectionner le fond → Suppr. Méthode 3 (IA): Apps → Remove Background AI.', ar: 'طريقة 1 (سريعة): remove.bg (مجاني). طريقة 2 (احترافية): أداة العصا السحرية (W) → اختار الخلفية → Suppr. طريقة 3 (ذكاء اصطناعي): Apps → Remove Background AI.', en: 'Method 1 (fast): remove.bg (free). Method 2 (pro): Magic Wand tool (W) → Select background → Delete. Method 3 (AI): Apps → Remove Background AI.' },
-              hotspot: { x: 5, y: 20, label: 'Baguette W' },
-              shortcuts: ['W : Baguette Magique', 'Ctrl+Shift+I : Inverser sélection', 'Suppr : Supprimer'],
-              aiPrompt: { tool: 'remove.bg', prompt: 'Upload product photo → Auto-remove background → Download PNG', result: 'Fond transparent en 5s' }
+            method: { fr: 'Faites un "fake pitch": redesignez gratuitement le logo et 3 posts d\'une entreprise locale pour l\'utiliser comme exemple dans votre book.', ar: 'دير "عرض وهمي": أعد تصميم شعار و3 منشورات لمشروع محلي مجاناً باش تستخدمها كمثال في البورتفوليو ديالك.', en: 'Do a "fake pitch": redesign a local business\'s logo and 3 posts for free to use as an example in your portfolio.' },
+            exercise: { fr: 'Identifiez 3 entreprises algériennes avec un design visuel faible, et créez une proposition de refonte complète pour l\'une d\'elles.', ar: 'حدد 3 مشاريع جزائرية بتصميم بصري ضعيف، واصنع اقتراح إعادة تصميم كامل لواحد منهم.', en: 'Identify 3 Algerian businesses with weak visual design, and create a complete redesign proposal for one of them.' },
+            tip: { fr: '💡 Les clients ne paient pas pour "du travail" — ils paient pour un résultat qui les fait paraître professionnels. Vendez la transformation, pas les heures.', ar: '💡 الزبائن ما يدفعوش على "الخدمة" — يدفعو على نتيجة توريهم محترفين. بيع التحول، ماشي الساعات.', en: '💡 Clients don\'t pay for "work" — they pay for a result that makes them look professional. Sell the transformation, not the hours.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 2: SOCIAL MEDIA MANAGEMENT (COMPLET)
+  // ============================================================
+  {
+    id: 'smm',
+    icon: '📱',
+    color: '#059669',
+    accent: '#34D399',
+    bg: 'linear-gradient(135deg, #021A12 0%, #063A24 50%, #021A12 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80',
+    earning: '15,000 – 60,000 DZD/month',
+    firstClient: { fr: '2–3 semaines', ar: '2–3 أسابيع', en: '2–3 weeks' },
+    startTool: 'Meta Business Suite + Canva',
+    title: { fr: 'Social Media Management', ar: 'إدارة السوشيال ميديا', en: 'Social Media Management' },
+    subtitle: { fr: 'Marketing Digital', ar: 'التسويق الرقمي', en: 'Digital Marketing' },
+    tagline: { fr: 'Aidez les entreprises à grandir et vendre en ligne', ar: 'ساعد المشاريع تكبر وتبيع أونلاين', en: 'Help businesses grow and sell online' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
+        goal: { fr: 'Comprendre les algorithmes et créer une stratégie de contenu', ar: 'تفهم الخوارزميات وإنشاء استراتيجية محتوى', en: 'Understand algorithms and create a content strategy' },
+        lessons: [
+          {
+            id: 's-b-1',
+            title: { fr: 'Configurer un Compte Business Professionnel', ar: 'إعداد حساب Business احترافي', en: 'Set up a Professional Business Account' },
+            image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Instagram: Profil → 3 lignes → Paramètres → Compte → Passer en compte professionnel → Business.','Facebook: facebook.com/pages/create → Entreprise → nom + catégorie.','Meta Business Suite: business.facebook.com → connectez Page + Instagram.','WhatsApp Business: téléchargez app → numéro professionnel → liez dans Facebook.','Profil 100%: photo bio 80 chars lien bio linktr.ee gratuit localisation bouton contact.'],
+              ar: ['Instagram: بروفيل → 3 خطوط → إعدادات → حساب → تحويل لحساب محترف → Business.','Facebook: facebook.com/pages/create → مشروع → اسم + فئة.','Meta Business Suite: business.facebook.com → اربط الصفحة + Instagram.','WhatsApp Business: حمّل التطبيق → رقم احترافي → اربط في Facebook.','بروفيل 100%: صورة bio 80 حرف رابط bio linktr.ee مجاني موقع زر تواصل.'],
+              en: ['Instagram: Profile → 3 lines → Settings → Account → Switch to Professional → Business.','Facebook: facebook.com/pages/create → Business → name + category.','Meta Business Suite: business.facebook.com → connect Page + Instagram.','WhatsApp Business: download app → business number → link in Facebook.','100% Profile: photo bio 80 chars bio link linktr.ee free location contact button.']
             },
-            {
-              step: 3,
-              image: 'images/lessons/photopea/step3-layers.jpg',
-              caption: { fr: 'Maîtriser les Calques (Layers)', ar: 'إتقان الطبقات (Layers)', en: 'Master Layers' },
-              detail: { fr: 'Chaque élément = un calque séparé. Calque de texte = modifiable. Calque d\'image = transformable. Calque de réglage = modifie tout sans toucher l\'original. Secret: Nommez vos calques (double-clic) pour retrouver facilement.', ar: 'كل عنصر = طبقة منفصلة. طبقة النص = قابلة للتعديل. طبقة الصورة = قابلة للتحويل. طبقة التعديل = تعدل كلشي بلا ما تلمس الأصل. سر: سمّي طبقاتك (double-clic) باش تلقاهم بسهولة.', en: 'Every element = separate layer. Text layer = editable. Image layer = transformable. Adjustment layer = modifies everything without touching original. Secret: Name your layers (double-click) to find them easily.' },
-              hotspot: { x: 85, y: 30, label: 'Calques' },
-              shortcuts: ['Ctrl+J : Dupliquer calque', 'Ctrl+G : Grouper', 'Ctrl+E : Fusionner'],
-              aiPrompt: null
+            method: { fr: 'Créez un compte test Instagram avec un nouvel email.', ar: 'أنشئ حساب Instagram تجريبي بإيميل جديد.', en: 'Create a test Instagram account with a new email.' },
+            exercise: { fr: 'Configurez un profil business complet pour un restaurant fictif.', ar: 'اعدد بروفيل business كامل لمطعم وهمي.', en: 'Set up a complete business profile for a fictional restaurant.' },
+            tip: { fr: '💡 Utilisez linktr.ee pour une page gratuite avec plusieurs boutons.', ar: '💡 استخدم linktr.ee لصفحة مجانية بعدة أزرار.', en: '💡 Use linktr.ee for a free page with multiple buttons.' }
+          },
+          {
+            id: 's-b-2',
+            title: { fr: 'Comprendre l\'Algorithme Instagram', ar: 'فهم خوارزمية Instagram', en: 'Understanding the Instagram Algorithm' },
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+            layout: 'right',
+            steps: {
+              fr: ['L\'algorithme a un seul objectif: garder les gens sur l\'app.','5 signaux: 1.SAUVEGARDES (le plus puissant), 2.PARTAGES, 3.COMMENTAIRES, 4.LIKES, 5.TEMPS DE VISIONNAGE.','Terminez chaque post éducatif par "Sauvegardez ce post".','Posez une question spécifique en fin de légende.','Meilleures heures Algérie: 12h-13h30, 18h-20h, 21h-23h.'],
+              ar: ['الخوارزمية عندها هدف واحد: تخلّي الناس على التطبيق.','5 إشارات: 1.الحفظ (الأقوى), 2.المشاركة, 3.التعليقات, 4.الإعجابات, 5.وقت المشاهدة.','اختم كل منشور تعليمي بـ "احفظ هذا المنشور".','اطرح سؤال محدد في نهاية التعليق.','أفضل أوقات الجزائر: 12-13:30, 18-20, 21-23.'],
+              en: ['The algorithm has one goal: keep people on the app.','5 signals: 1.SAVES (strongest), 2.SHARES, 3.COMMENTS, 4.LIKES, 5.WATCH TIME.','End every educational post with "Save this post".','Ask a specific question at the end of the caption.','Best times Algeria: 12pm-1:30pm, 6pm-8pm, 9pm-11pm.']
             },
-            {
-              step: 4,
-              image: 'images/lessons/photopea/step4-export.jpg',
-              caption: { fr: 'Export PSD + PNG', ar: 'تصدير PSD + PNG', en: 'Export PSD + PNG' },
-              detail: { fr: 'Fichier → Enregistrer sous PSD (pour modification future). Fichier → Exporter → PNG (fond transparent) pour le client. Gardez TOUJOURS le PSD — les clients demandent des modifications.', ar: 'ملف → حفظ بصيغة PSD (للتعديل المستقبلي). ملف → تصدير → PNG (خلفية شفافة) للزبون. احتفظ دايماً بـ PSD — الزبائن يطلبوا تعديلات.', en: 'File → Save as PSD (for future edits). File → Export → PNG (transparent) for client. ALWAYS keep the PSD — clients ask for revisions.' },
-              hotspot: { x: 10, y: 5, label: 'Fichier' },
-              shortcuts: ['Ctrl+S : Enregistrer PSD', 'Ctrl+Shift+S : Enregistrer sous'],
-              aiPrompt: null
-            }
-          ],
-          method: { fr: 'Retouchez une photo de produit: supprimez l\'arrière-plan, ajustez la luminosité, ajoutez une ombre portée réaliste. Exportez PSD + PNG.', ar: 'عدّل صورة منتج: أزل الخلفية، ظبط الإضاءة، زيد ظل واقعي. صدّر PSD + PNG.', en: 'Retouch a product photo: remove background, adjust brightness, add realistic drop shadow. Export PSD + PNG.' },
-          exercise: { fr: 'Prenez une photo de votre téléphone. (1) Supprimez l\'arrière-plan avec remove.bg, (2) Ouvrez dans Photopea, (3) Ajoutez une ombre portée, (4) Changez la couleur de fond en dégradé, (5) Exportez PSD + PNG.', ar: 'خد صورة من تليفونك. (1) أزل الخلفية بـ remove.bg، (2) افتحها ف Photopea، (3) زيد ظل مسقط، (4) غيّر لون الخلفية بتدرج، (5) صدّر PSD + PNG.', en: 'Take a photo with your phone. (1) Remove background with remove.bg, (2) Open in Photopea, (3) Add drop shadow, (4) Change background to gradient, (5) Export PSD + PNG.' },
-          tip: { fr: '🤖 Astuce IA: Utilisez "Generative Fill" (Photopea Pro) ou DALL-E pour générer des arrière-plans de produits professionnels. Un client paie 5,000 DZD pour 10 photos de produits retouchées.', ar: '🤖 نصيحة الذكاء الاصطناعي: استخدم "Generative Fill" (Photopea Pro) أو DALL-E باش تولّد خلفيات منتجات احترافية. زبون يدفع 5,000 دج مقابل 10 صور منتجات معدّلة.', en: '🤖 AI Tip: Use "Generative Fill" (Photopea Pro) or DALL-E to generate professional product backgrounds. A client pays 5,000 DZD for 10 retouched product photos.' }
-        }
-      ]
-    },
-    {
-      name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
-      badge: '⚡',
-      duration: { fr: 'Semaines 5–10', ar: 'الأسابيع 5–10', en: 'Weeks 5–10' },
-      goal: { fr: 'Designs complexes + Branding complet + Mockups 3D avec IA', ar: 'تصاميم معقدة + هوية بصرية كاملة + Mockups 3D بالذكاء الاصطناعي', en: 'Complex designs + Full branding + 3D Mockups with AI' },
-      lessons: [
-        {
-          id: 'd-i-1',
-          title: { fr: 'Charte Graphique Complète avec IA', ar: 'هوية بصرية كاملة بالذكاء الاصطناعي', en: 'Complete Brand Identity with AI' },
-          image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/branding/step1-brief.jpg',
-              caption: { fr: 'Le Brief Client structuré', ar: 'الموجز الزبون المهيكل', en: 'Structured Client Brief' },
-              detail: { fr: 'Utilisez ChatGPT pour générer un brief professionnel. Prompt: "Crée un brief design pour un restaurant algérien traditionnel à Oran. Inclus: cible, valeurs, concurrents, 3 mots-clés visuels."', ar: 'استخدم ChatGPT باش تولّد موجز احترافي. Prompt: "أنشئ موجز تصميم لمطعم جزائري تقليدي في وهران. يشمل: الجمهور المستهدف، القيم، المنافسين، 3 كلمات مفتاحية بصرية."', en: 'Use ChatGPT to generate a professional brief. Prompt: "Create a design brief for a traditional Algerian restaurant in Oran. Include: target audience, values, competitors, 3 visual keywords."' },
-              hotspot: { x: 50, y: 50, label: 'Brief' },
-              shortcuts: [],
-              aiPrompt: { tool: 'ChatGPT', prompt: 'Crée un brief design complet pour [TYPE BUSINESS] à [VILLE]. Structure: 1. Contexte 2. Cible (âge, revenus, habitudes) 3. Valeurs 4. 3 mots-clés visuels 5. 3 concurrents 6. Budget indicatif', result: 'Brief prêt en 2 minutes' }
+            method: { fr: 'Regardez 20 posts avec fort engagement et notez les patterns.', ar: 'شوف 20 منشور بتفاعل عالٍ ولاحظ الأنماط.', en: 'Look at 20 posts with high engagement and note the patterns.' },
+            exercise: { fr: 'Publiez 3 posts: photo, carrousel, photo+question. Comparez les Insights.', ar: 'انشر 3 منشورات: صورة, كاروسيل, صورة+سؤال. قارن Insights.', en: 'Post 3 posts: photo, carousel, photo+question. Compare Insights.' },
+            tip: { fr: '💡 Pas de liens externes dans la légende. Mettez-les en bio.', ar: '💡 لا تحط روابط خارجية في التعليق. حطهم في البروفيل.', en: '💡 No external links in caption. Put them in bio.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 4–9', ar: 'الأسابيع 4–9', en: 'Weeks 4–9' },
+        goal: { fr: 'Créer des Reels et lancer des publicités', ar: 'إنشاء Reels وإطلاق إعلانات', en: 'Create Reels and run ads' },
+        lessons: [
+          {
+            id: 's-i-1',
+            title: { fr: 'Créer un Reel qui Génère des Vues', ar: 'إنشاء Reel يحصل على مشاهدات', en: 'Create a Reel That Gets Views' },
+            image: 'https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Règle 0.5s: premier frame stoppe le scroll.','Structure: Accroche 0-2s → Setup 2-8s → Payoff 8-20s → CTA.','Tournage: VERTICAL 9:16, caméra arrière.','CapCut: Split, Texte, Auto Captions.','Audio tendance: utilisez cet audio.'],
+              ar: ['قاعدة 0.5 ث: أول إطار يوقف التمرير.','الهيكل: جذبة 0-2ث → إعداد 2-8ث → نتيجة 8-20ث → CTA.','التصوير: عمودي 9:16، كاميرا خلفية.','CapCut: قطع، نص، تعليقات تلقائية.','الصوت الرائج: استخدم هذا الصوت.'],
+              en: ['0.5s rule: first frame stops the scroll.','Structure: Hook 0-2s → Setup 2-8s → Payoff 8-20s → CTA.','Filming: VERTICAL 9:16, back camera.','CapCut: Split, Text, Auto Captions.','Trending audio: use this audio.']
             },
-            {
-              step: 2,
-              image: 'images/lessons/branding/step2-logo-ai.jpg',
-              caption: { fr: '🤖 Générer 20 logos avec Midjourney', ar: '🤖 ولّد 20 شعار بـ Midjourney', en: '🤖 Generate 20 logos with Midjourney' },
-              detail: { fr: 'Midjourney prompt: "Minimalist logo for Algerian coffee shop, warm earth tones, Arabic geometric patterns, vector style, white background --v 6 --s 250". Générez 20 variantes, sélectionnez 3, affinez.', ar: 'Midjourney prompt: "Minimalist logo for Algerian coffee shop, warm earth tones, Arabic geometric patterns, vector style, white background --v 6 --s 250". ولّد 20 نسخة، اختار 3، حسّنهم.', en: 'Midjourney prompt: "Minimalist logo for Algerian coffee shop, warm earth tones, Arabic geometric patterns, vector style, white background --v 6 --s 250". Generate 20 variants, select 3, refine.' },
-              hotspot: { x: 50, y: 40, label: 'Midjourney' },
-              shortcuts: [],
-              aiPrompt: { tool: 'Midjourney', prompt: 'Minimalist [business type] logo, [style] colors, [cultural element] influence, vector style, white background --v 6 --s 250 --no text', result: '20 logos uniques' }
+            method: { fr: 'Regardez Reels 20 minutes pour étudier.', ar: 'شاهد Reels 20 دقيقة للدراسة.', en: 'Watch Reels for 20 minutes to study.' },
+            exercise: { fr: 'Filmez et éditez 3 Reels différents.', ar: 'صوّر وعدّل 3 Reels مختلفة.', en: 'Film and edit 3 different Reels.' },
+            tip: { fr: '💡 Publiez à 19h heure algérienne.', ar: '💡 انشر الساعة 7 مساءً بتوقيت الجزائر.', en: '💡 Post at 7pm Algeria time.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 10–18', ar: 'الأسابيع 10–18', en: 'Weeks 10–18' },
+        goal: { fr: 'Développer des stratégies complètes', ar: 'تطوير استراتيجيات كاملة', en: 'Develop full strategies' },
+        lessons: [
+          {
+            id: 's-a-1',
+            title: { fr: 'Document de Stratégie Social Media', ar: 'وثيقة استراتيجية سوشيال ميديا', en: 'Social Media Strategy Document' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Section 1: Audit (followers, engagement, top posts)','Section 2: Concurrents (3-5 directs)','Section 3: Persona (profil fictif complet)','Section 4: Objectifs SMART','Section 5: Stratégie 90 jours'],
+              ar: ['القسم 1: تدقيق (متابعون، تفاعل، أفضل المنشورات)','القسم 2: منافسون (3-5 مباشرين)','القسم 3: شخصية (ملف خيالي كامل)','القسم 4: أهداف SMART','القسم 5: استراتيجية 90 يوماً'],
+              en: ['Section 1: Audit (followers, engagement, top posts)','Section 2: Competitors (3-5 direct)','Section 3: Persona (complete fictional profile)','Section 4: SMART Goals','Section 5: 90-day strategy']
             },
-            {
-              step: 3,
-              image: 'images/lessons/branding/step3-mockup.jpg',
-              caption: { fr: 'Mockups 3D réalistes avec IA', ar: 'Mockups 3D واقعية بالذكاء الاصطناعي', en: 'Realistic 3D Mockups with AI' },
-              detail: { fr: 'Utilisez Placeit.net (gratuit) ou Mockups-Design.com. Pour les mockups 3D avancés: DALL-E prompt "3D mockup of [logo] on coffee cup, realistic lighting, Algerian café background, 4K". Facturez 10,000 DZD pour une charte complète avec mockups.', ar: 'استخدم Placeit.net (مجاني) أو Mockups-Design.com. للـ mockups 3D المتقدمة: DALL-E prompt "3D mockup of [logo] on coffee cup, realistic lighting, Algerian café background, 4K". فاتورة 10,000 دج مقابل هوية كاملة مع mockups.', en: 'Use Placeit.net (free) or Mockups-Design.com. For advanced 3D mockups: DALL-E prompt "3D mockup of [logo] on coffee cup, realistic lighting, Algerian café background, 4K". Charge 10,000 DZD for complete identity with mockups.' },
-              hotspot: { x: 50, y: 50, label: 'Mockup' },
-              shortcuts: [],
-              aiPrompt: { tool: 'DALL-E 3 / Placeit', prompt: '3D mockup of [your design] on [product], realistic lighting, [location] background, professional photography style, 4K', result: 'Mockup pro en 30s' }
-            }
-          ],
-          method: { fr: 'Créez une charte graphique complète pour un client fictif: logo, couleurs, typographie, mockups carte de visite + enseigne + réseaux sociaux.', ar: 'أنشئ هوية بصرية كاملة لزبون وهمي: شعار، ألوان، خطوط، mockups بطاقة أعمال + لوحة + سوشيال ميديا.', en: 'Create a complete brand identity for a fictional client: logo, colors, typography, mockups business card + signage + social media.' },
-          exercise: { fr: 'Charte complète pour "Café El Medina" (Oran): (1) Brief ChatGPT, (2) 20 logos Midjourney, (3) Sélection + vectorisation, (4) Palette de couleurs, (5) Mockups 3D (carte, tasse, enseigne), (6) Templates réseaux sociaux. Livrable: PDF 10 pages + fichiers source.', ar: 'هوية كاملة لـ "Café El Medina" (وهران): (1) موجز ChatGPT، (2) 20 شعار Midjourney، (3) اختيار + تحويل لvector، (4) لوحة ألوان، (5) Mockups 3D (بطاقة، كاس، لوحة)، (6) قوالب سوشيال ميديا. تسليم: PDF 10 صفحات + ملفات المصدر.', en: 'Complete identity for "Café El Medina" (Oran): (1) ChatGPT brief, (2) 20 Midjourney logos, (3) Selection + vectorization, (4) Color palette, (5) 3D Mockups (card, cup, signage), (6) Social media templates. Deliverable: 10-page PDF + source files.' },
-          tip: { fr: '💰 Secret Pro: Une charte graphique complète se vend entre 15,000–50,000 DZD en Algérie. Avec les mockups 3D IA, vous justifiez le prix haut. Les clients paient pour VOIR le résultat avant d\'acheter.', ar: '💰 سر محترف: الهوية البصرية الكاملة تتباع بين 15,000–50,000 دج في الجزائر. بالـ mockups 3D بالذكاء الاصطناعي، تبرر السعر العالي. الزبائن يدفعوا باش يشوفوا النتيجة قبل الشراء.', en: '💰 Pro Secret: A complete brand identity sells for 15,000–50,000 DZD in Algeria. With AI 3D mockups, you justify the high price. Clients pay to SEE the result before buying.' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 2: SOCIAL MEDIA MANAGEMENT + IA
-// ============================================================
-{
-  id: 'social',
-  icon: '📱',
-  color: '#2563EB',
-  accent: '#60A5FA',
-  bg: 'linear-gradient(135deg, #0A1628 0%, #0D1B3E 50%, #0A1628 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80',
-  earning: '10,000 – 200,000 DZD/mois',
-  firstClient: { fr: '1–2 semaines', ar: '1–2 أسابيع', en: '1–2 weeks' },
-  startTool: 'Meta Business Suite + ChatGPT + Canva',
-  title: { fr: 'Social Media Management', ar: 'إدارة وسائل التواصل', en: 'Social Media Management' },
-  subtitle: { fr: 'Stratégie + Contenu + IA', ar: 'استراتيجية + محتوى + ذكاء اصطناعي', en: 'Strategy + Content + AI' },
-  tagline: { fr: 'Gérez les réseaux sociaux des entreprises algériennes avec l\'IA', ar: 'دير سوشيال ميديا لمؤسسات جزائرية بالذكاء الاصطناعي', en: 'Manage social media for Algerian businesses with AI' },
-  aiTools: ['ChatGPT', 'Canva AI', 'Meta AI', 'Later', 'Metricool'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
-      goal: { fr: 'Créer un calendrier éditorial + générer 30 posts avec IA', ar: 'إنشاء تقويم تحريري + توليد 30 منشور بالذكاء الاصطناعي', en: 'Create editorial calendar + generate 30 posts with AI' },
-      lessons: [
-        {
-          id: 's-b-1',
-          title: { fr: 'Calendrier Éditorial IA : 30 Jours en 2h', ar: 'تقويم تحريري بالذكاء الاصطناعي: 30 يوم فـ 2 ساعات', en: 'AI Editorial Calendar: 30 Days in 2 Hours' },
-          image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/social/step1-chatgpt-calendar.jpg',
-              caption: { fr: 'Générez le calendrier avec ChatGPT', ar: 'ولّد التقويم بـ ChatGPT', en: 'Generate calendar with ChatGPT' },
-              detail: { fr: 'Prompt: "Crée un calendrier éditorial Instagram pour un restaurant algérien à Alger. 30 jours. Mix: 40% produit, 30% behind-the-scenes, 20% client, 10% promo. Inclus captions avec hashtags algériens. Format: table JSON."', ar: 'Prompt: "أنشئ تقويم تحريري Instagram لمطعم جزائري في الجزائر العاصمة. 30 يوم. مزيج: 40% منتج، 30% خلف الكواليس، 20% زبون، 10% عروض. يشمل captions مع hashtags جزائرية. صيغة: table JSON."', en: 'Prompt: "Create an Instagram editorial calendar for an Algerian restaurant in Algiers. 30 days. Mix: 40% product, 30% behind-the-scenes, 20% client, 10% promo. Include captions with Algerian hashtags. Format: table JSON."' },
-              hotspot: { x: 50, y: 50, label: 'ChatGPT' },
-              shortcuts: [],
-              aiPrompt: { tool: 'ChatGPT', prompt: 'Crée un calendrier éditorial 30 jours pour [TYPE BUSINESS] à [VILLE]. Structure: Date | Type de post | Caption (150 mots) | Hashtags (10) | Heure de publication. Mix: 40% produit, 30% BTS, 20% client, 10% promo. Langue: fr+ar.', result: '30 posts prêts à programmer' }
+            method: { fr: 'Rédigez un document pour une vraie entreprise.', ar: 'اكتب وثيقة لمشروع حقيقي.', en: 'Write a document for a real business.' },
+            exercise: { fr: 'Document complet min 8 pages PDF Canva.', ar: 'وثيقة كاملة 8 صفحات PDF Canva.', en: 'Complete document min 8 pages Canva PDF.' },
+            tip: { fr: '💡 Ne dites jamais "je pense". Dites "les données montrent".', ar: '💡 لا تقل "أعتقد". قل "البيانات تُظهر".', en: '💡 Never say "I think". Say "the data shows".' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 5+', ar: 'الشهر 5+', en: 'Month 5+' },
+        goal: { fr: 'Construire une agence SMM', ar: 'بناء أجنسي SMM', en: 'Build an SMM agency' },
+        lessons: [
+          {
+            id: 's-m-1',
+            title: { fr: 'Construire une Agence SMM', ar: 'بناء أجنسي SMM', en: 'Build an SMM Agency' },
+            image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Mindset: freelance vend son temps, agence vend des résultats','Garantie: livrez des métriques spécifiques','Premier membre: Community Manager 3-4h/jour','Tarification: Starter 15K, Croissance 35K, Premium 65K+ DZD'],
+              ar: ['العقلية: فريلانسر يبيع وقته، أجنسي يبيع النتائج','الضمان: سلم مقاييس محددة','أول عضو: مدير مجتمع 3-4 ساعات/يوم','التسعير: Starter 15K، نمو 35K، Premium 65K+ دج'],
+              en: ['Mindset: freelancer sells time, agency sells results','Guarantee: deliver specific metrics','First member: Community Manager 3-4h/day','Pricing: Starter 15K, Growth 35K, Premium 65K+ DZD']
             },
-            {
-              step: 2,
-              image: 'images/lessons/social/step2-canva-batch.jpg',
-              caption: { fr: 'Créer 30 visuels en batch avec Canva', ar: 'أنشئ 30 تصميم دفعة واحدة بـ Canva', en: 'Create 30 visuals in batch with Canva' },
-              detail: { fr: 'Canva Pro → "Bulk Create": Uploadez un CSV (date, type, texte) → Canva génère automatiquement 30 designs. Ou utilisez Canva AI: "Magic Design" → décrivez le post → IA génère 4 variantes.', ar: 'Canva Pro → "Bulk Create": حمّل CSV (تاريخ، نوع، نص) → Canva تولّد تلقائياً 30 تصميم. أو استخدم Canva AI: "Magic Design" → صف المنشور → الذكاء الاصطناعي يولّد 4 نسخ.', en: 'Canva Pro → "Bulk Create": Upload CSV (date, type, text) → Canva auto-generates 30 designs. Or use Canva AI: "Magic Design" → describe the post → AI generates 4 variants.' },
-              hotspot: { x: 50, y: 50, label: 'Bulk Create' },
-              shortcuts: ['Apps → Bulk Create', 'Magic Design'],
-              aiPrompt: { tool: 'Canva AI', prompt: 'Magic Design: "Instagram post for Algerian couscous Friday special, warm colors, traditional patterns"', result: '4 designs en 10s' }
+            method: { fr: 'Documentez UNE histoire de succès.', ar: 'وثّق قصة نجاح واحدة.', en: 'Document ONE success story.' },
+            exercise: { fr: 'Modèle affaires sur 1 page.', ar: 'نموذج عمل في صفحة واحدة.', en: 'Business model on 1 page.' },
+            tip: { fr: '💡 1 client → résultats → 1 référral → répétez.', ar: '💡 زبون 1 → نتائج → إحالة 1 → كرّر.', en: '💡 1 client → results → 1 referral → repeat.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 3: VIDEO EDITING (COMPLET)
+  // ============================================================
+  {
+    id: 'video',
+    icon: '🎬',
+    color: '#DC2626',
+    accent: '#F87171',
+    bg: 'linear-gradient(135deg, #1A0303 0%, #3A0A0A 50%, #1A0303 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80',
+    earning: '8,000 – 80,000 DZD/project',
+    firstClient: { fr: '4–6 semaines', ar: '4–6 أسابيع', en: '4–6 weeks' },
+    startTool: 'CapCut (free) → DaVinci Resolve (free)',
+    title: { fr: 'Montage Vidéo', ar: 'مونتاج الفيديو', en: 'Video Editing' },
+    subtitle: { fr: 'Création de Contenu', ar: 'إنشاء المحتوى', en: 'Content Creation' },
+    tagline: { fr: 'La compétence créative la plus demandée', ar: 'أكثر مهارة إبداعية مطلوبة', en: 'The most in-demand creative skill' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Monter votre première vidéo avec CapCut', ar: 'تعديل أول فيديو باستخدام CapCut', en: 'Edit your first video with CapCut' },
+        lessons: [
+          {
+            id: 'v-b-1',
+            title: { fr: 'Installer CapCut et monter votre première vidéo', ar: 'تنصيب CapCut وتعديل أول فيديو', en: 'Install CapCut and edit your first video' },
+            image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Téléchargez CapCut (gratuit)','Ouvrez → + → sélectionnez vidéos','Timeline: clips = blocs','Couper: Split → Delete','Musique: Audio → Sons','Exporter: 1080p 30fps'],
+              ar: ['حمّل CapCut (مجاني)','افتح → + → اختار فيديوهات','الجدول الزمني: كليبات','القطع: Split → حذف','الموسيقى: Audio → أصوات','التصدير: 1080p 30fps'],
+              en: ['Download CapCut (free)','Open → + → select videos','Timeline: clips = blocks','Cut: Split → Delete','Music: Audio → Sounds','Export: 1080p 30fps']
             },
-            {
-              step: 3,
-              image: 'images/lessons/social/step3-schedule.jpg',
-              caption: { fr: 'Programmer avec Meta Business Suite', ar: 'برمج النشر بـ Meta Business Suite', en: 'Schedule with Meta Business Suite' },
-              detail: { fr: 'Gratuit et illimité pour Facebook + Instagram. Créateur Studio → Planifier → Uploadez le visuel + caption + hashtags → Choisissez date/heure. Meilleures heures en Algérie: 12h-14h, 19h-22h.', ar: 'مجاني وغير محدود لفيسبوك + انستغرام. Creator Studio → جدولة → حمّل التصميم + caption + hashtags → اختار التاريخ/الوقت. أفضل الأوقات في الجزائر: 12h-14h، 19h-22h.', en: 'Free and unlimited for Facebook + Instagram. Creator Studio → Schedule → Upload visual + caption + hashtags → Choose date/time. Best times in Algeria: 12pm-2pm, 7pm-10pm.' },
-              hotspot: { x: 50, y: 50, label: 'Planifier' },
-              shortcuts: [],
-              aiPrompt: null
-            }
-          ],
-          method: { fr: 'Créez un calendrier complet pour un client fictif: 30 posts programmés avec ChatGPT + Canva + Meta Business Suite.', ar: 'أنشئ تقويم كامل لزبون وهمي: 30 منشور مبرمج بـ ChatGPT + Canva + Meta Business Suite.', en: 'Create a complete calendar for a fictional client: 30 scheduled posts with ChatGPT + Canva + Meta Business Suite.' },
-          exercise: { fr: 'Pour "Boulangerie Amoud" (Constantine): (1) ChatGPT: calendrier 30 jours, (2) Canva: 30 visuels avec templates, (3) Meta: programmer les 30 posts, (4) Rapport: heures optimales + hashtags performants.', ar: 'لـ "Boulangerie Amoud" (قسنطينة): (1) ChatGPT: تقويم 30 يوم، (2) Canva: 30 تصميم بقوالب، (3) Meta: برمج الـ 30 منشور، (4) تقرير: الأوقات المثلى + hashtags الأكثر فعالية.', en: 'For "Boulangerie Amoud" (Constantine): (1) ChatGPT: 30-day calendar, (2) Canva: 30 visuals with templates, (3) Meta: schedule all 30 posts, (4) Report: optimal hours + top hashtags.' },
-          tip: { fr: '💰 Secret Pro: Un community manager IA facture 30,000–80,000 DZD/mois par client en Algérie. Avec ChatGPT + Canva, vous gérez 5 clients seul (150,000–400,000 DZD/mois).', ar: '💰 سر محترف: مدير مجتمع بالذكاء الاصطناعي يفاتورة 30,000–80,000 دج/شهر لكل زبون في الجزائر. بـ ChatGPT + Canva، تقدر تدير 5 زبائن وحدك (150,000–400,000 دج/شهر).', en: '💰 Pro Secret: An AI community manager charges 30,000–80,000 DZD/month per client in Algeria. With ChatGPT + Canva, you can manage 5 clients alone (150,000–400,000 DZD/month).' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 3: VIDEO EDITING + IA
-// ============================================================
-{
-  id: 'video',
-  icon: '🎬',
-  color: '#DC2626',
-  accent: '#F87171',
-  bg: 'linear-gradient(135deg, #1A0505 0%, #2D0A0A 50%, #1A0505 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80',
-  earning: '15,000 – 300,000 DZD/mois',
-  firstClient: { fr: '2–3 semaines', ar: '2–3 أسابيع', en: '2–3 weeks' },
-  startTool: 'CapCut + Descript + Runway ML',
-  title: { fr: 'Video Editing', ar: 'المونتاج', en: 'Video Editing' },
-  subtitle: { fr: 'Montage Pro + IA Générative', ar: 'مونتاج احترافي + ذكاء اصطناعي توليدي', en: 'Pro Editing + Generative AI' },
-  tagline: { fr: 'Créez des vidéos virales pour les marques algériennes avec l\'IA', ar: 'أنشئ فيديوهات فيروسية للماركات الجزائرية بالذكاء الاصطناعي', en: 'Create viral videos for Algerian brands with AI' },
-  aiTools: ['CapCut AI', 'Descript', 'Runway ML', 'Pika Labs', 'HeyGen'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-      goal: { fr: 'Monter une vidéo Reels/TikTok avec CapCut + générer des transitions IA', ar: 'تعديل فيديو Reels/TikTok بـ CapCut + توليد انتقالات بالذكاء الاصطناعي', en: 'Edit a Reels/TikTok video with CapCut + generate AI transitions' },
-      lessons: [
-        {
-          id: 'v-b-1',
-          title: { fr: 'CapCut Pro + IA : Montage Express', ar: 'CapCut Pro + الذكاء الاصطناعي: مونتاج سريع', en: 'CapCut Pro + AI: Express Editing' },
-          image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/video/step1-capcut-import.jpg',
-              caption: { fr: 'Importer et couper automatiquement', ar: 'استيراد وقص تلقائي', en: 'Import and auto-cut' },
-              detail: { fr: 'CapCut PC → "Auto Cut" détecte les silences et coupe automatiquement. Un vlog de 10 min devient un Reels de 60s en 2 clics. Secret: Gardez les "ums" et "euh" — ça rend authentique pour le marché algérien.', ar: 'CapCut PC → "Auto Cut" يكشف الصمت ويقص تلقائياً. فيديو مدته 10 دقايق يولي Reels 60 ثانية بـ 2 كليك. سر: خلّي "ems" و "euh" — يعطو مصداقية للسوق الجزائري.', en: 'CapCut PC → "Auto Cut" detects silences and auto-cuts. A 10-min vlog becomes a 60s Reels in 2 clicks. Secret: Keep the "ums" and "uhs" — it feels authentic for the Algerian market.' },
-              hotspot: { x: 50, y: 50, label: 'Auto Cut' },
-              shortcuts: ['Ctrl+I : Importer', 'Auto Cut : Détection silences'],
-              aiPrompt: { tool: 'CapCut AI', prompt: 'Auto Cut: Upload video → AI detects best moments → Auto-remove silences → Export 9:16', result: 'Reels prêt en 30s' }
+            method: { fr: 'Filmez 10 clips courts et montez-les.', ar: 'صوّر 10 كليبات قصيرة وعدّلها.', en: 'Film 10 short clips and edit them.' },
+            exercise: { fr: 'Vidéo 60 secondes avec musique et texte.', ar: 'فيديو 60 ثانية مع موسيقى ونص.', en: '60-second video with music and text.' },
+            tip: { fr: '💡 Chaque clip: 1.5-4 secondes max.', ar: '💡 كل كليب: 1.5-4 ثوانٍ كحد أقصى.', en: '💡 Each clip: 1.5-4 seconds max.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–11', ar: 'الأسابيع 5–11', en: 'Weeks 5–11' },
+        goal: { fr: 'Apprendre DaVinci Resolve', ar: 'تعلم DaVinci Resolve', en: 'Learn DaVinci Resolve' },
+        lessons: [
+          {
+            id: 'v-i-1',
+            title: { fr: 'DaVinci Resolve - L\'Outil Pro Gratuit', ar: 'DaVinci Resolve - الأداة الاحترافية المجانية', en: 'DaVinci Resolve - Professional Free Tool' },
+            image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['blackmagicdesign.com → DaVinci Resolve gratuit','Configuration: 25fps 1920x1080','5 pages: Cut, Edit, Fusion, Color, Fairlight','Importer: Fichier → Importer → Media Pool','Montage: Lame B=couper, Sélection A=déplacer','Exporter: Deliver → YouTube ou H.264'],
+              ar: ['blackmagicdesign.com → DaVinci Resolve مجاني','الإعداد: 25fps 1920x1080','5 صفحات: Cut, Edit, Fusion, Color, Fairlight','الاستيراد: ملف → استيراد → Media Pool','المونتاج: شفرة B=قطع، تحديد A=تحريك','التصدير: Deliver → YouTube أو H.264'],
+              en: ['blackmagicdesign.com → DaVinci Resolve free','Setup: 25fps 1920x1080','5 pages: Cut, Edit, Fusion, Color, Fairlight','Import: File → Import → Media Pool','Editing: Blade B=cut, Selection A=move','Export: Deliver → YouTube or H.264']
             },
-            {
-              step: 2,
-              image: 'images/lessons/video/step2-ai-subtitles.jpg',
-              caption: { fr: '🤖 Sous-titres auto en darija', ar: '🤖 ترجمة تلقائية بالدارجة', en: '🤖 Auto subtitles in darija' },
-              detail: { fr: 'CapCut → "Auto Captions" → Choisissez "Arabic" (fonctionne pour darija algérienne aussi!). Personnalisez: police bold, couleur jaune, contour noir. Les vidéos sous-titrées ont 80% plus de rétention.', ar: 'CapCut → "Auto Captions" → اختار "Arabic" (تخدم للدارجة الجزائرية كمان!). خصّص: خط عريض، لون أصفر، حاشية سوداء. الفيديوهات المترجمة عندها 80% احتفاظ أكثر.', en: 'CapCut → "Auto Captions" → Choose "Arabic" (works for Algerian darija too!). Customize: bold font, yellow color, black outline. Subtitled videos have 80% more retention.' },
-              hotspot: { x: 50, y: 50, label: 'Auto Captions' },
-              shortcuts: ['Text → Auto Captions → Arabic'],
-              aiPrompt: null
+            method: { fr: 'Importez 5 minutes de métrage et coupez les moments sans intérêt.', ar: 'استورد 5 دقائق من اللقطات واقطع اللحظات غير المهمة.', en: 'Import 5 minutes of footage and cut uninteresting moments.' },
+            exercise: { fr: 'Montez une vidéo de 3 minutes avec DaVinci Resolve.', ar: 'عدّل فيديو 3 دقائق باستخدام DaVinci Resolve.', en: 'Edit a 3-minute video with DaVinci Resolve.' },
+            tip: { fr: '💡 Raccourci: I=point IN, O=point OUT, F9=ajouter à la timeline.', ar: '💡 اختصار: I=نقطة البداية, O=نقطة النهاية, F9=أضف للجدول.', en: '💡 Shortcut: I=IN point, O=OUT point, F9=add to timeline.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 12–20', ar: 'الأسابيع 12–20', en: 'Weeks 12–20' },
+        goal: { fr: 'Maîtriser l\'étalonnage et les tarifs premium', ar: 'إتقان تصحيح الألوان والأسعار premium', en: 'Master color grading and premium rates' },
+        lessons: [
+          {
+            id: 'v-a-1',
+            title: { fr: 'Maîtriser l\'Étalonnage dans DaVinci Resolve', ar: 'إتقان تصحيح الألوان في DaVinci Resolve', en: 'Master Color Grading in DaVinci Resolve' },
+            image: 'https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Page Color: graphe de noeuds','3 oscilloscopes: Waveform, Parade, Vectorscope','Roues primaires: Lift, Gamma, Gain','Outil Qualificateur: isole UNE couleur','Correspondance: Capturer image fixe → Appliquer grade','LUTs: appliquez à 30-70% opacité'],
+              ar: ['صفحة Color: رسم العقد','3 أجهزة قياس: Waveform, Parade, Vectorscope','العجلات الأساسية: Lift, Gamma, Gain','أداة المؤهّل: يعزل لون واحد','المطابقة: التقاط صورة ثابتة → تطبيق الgrade','LUTs: طبّق بشفافية 30-70%'],
+              en: ['Color page: node graph','3 scopes: Waveform, Parade, Vectorscope','Primary wheels: Lift, Gamma, Gain','Qualifier tool: isolates ONE color','Matching: Grab Still → Apply Grade','LUTs: apply at 30-70% opacity']
             },
-            {
-              step: 3,
-              image: 'images/lessons/video/step3-runway.jpg',
-              caption: { fr: 'Transitions IA avec Runway ML', ar: 'انتقالات بالذكاء الاصطناعي بـ Runway ML', en: 'AI Transitions with Runway ML' },
-              detail: { fr: 'Runway ML → "Gen-2" : Uploadez 2 clips → L\'IA génère une transition cinématographique entre eux. Parfait pour les pubs de restaurants, immobilier, mariages. Coût: ~$0.20/transition. Facturez 2,000 DZD/transition au client.', ar: 'Runway ML → "Gen-2": حمّل مقطعين → الذكاء الاصطناعي يولّد انتقال سينمائي بينهم. مثالي لإعلانات المطاعم، العقارات، الأعراس. التكلفة: ~$0.20/انتقال. فاتورة 2,000 دج/انتقال للزبون.', en: 'Runway ML → "Gen-2": Upload 2 clips → AI generates a cinematic transition between them. Perfect for restaurant ads, real estate, weddings. Cost: ~$0.20/transition. Charge client 2,000 DZD/transition.' },
-              hotspot: { x: 50, y: 50, label: 'Gen-2' },
-              shortcuts: [],
-              aiPrompt: { tool: 'Runway ML Gen-2', prompt: 'Upload clip A + clip B → Select "Cinematic transition" → AI generates seamless morph', result: 'Transition pro en 1 min' }
-            }
-          ],
-          method: { fr: 'Montez un Reels de 60s pour un restaurant algérien: import, auto-cut, sous-titres darija, transition IA, musique tendance.', ar: 'عدّل Reels 60 ثانية لمطعم جزائري: استيراد، قص تلقائي، ترجمة بالدارجة، انتقال بالذكاء الاصطناعي، موسيقى ترند.', en: 'Edit a 60s Reels for an Algerian restaurant: import, auto-cut, darija subtitles, AI transition, trending music.' },
-          exercise: { fr: 'Reels pour "Pâtisserie El Amal" (Annaba): (1) Filmez 5 plans (produits, chef, clients), (2) CapCut: auto-cut + sous-titres, (3) Runway: transition entre 2 plans, (4) Musique tendance TikTok Algérie, (5) Export 9:16 + 4:5.', ar: 'Reels لـ "Pâtisserie El Amal" (عنابة): (1) صوّر 5 لقطات (منتجات، شيف، زبائن)، (2) CapCut: قص تلقائي + ترجمة، (3) Runway: انتقال بين لقطتين، (4) موسيقى ترند TikTok الجزائر، (5) تصدير 9:16 + 4:5.', en: 'Reels for "Pâtisserie El Amal" (Annaba): (1) Film 5 shots (products, chef, clients), (2) CapCut: auto-cut + subtitles, (3) Runway: transition between 2 shots, (4) Trending TikTok Algeria music, (5) Export 9:16 + 4:5.' },
-          tip: { fr: '🤖 Astuce IA: HeyGen permet de créer un avatar virtuel qui parle darija. Parfait pour les pubs sans filmer. Un client paie 20,000 DZD pour 5 vidéos avatar.', ar: '🤖 نصيحة الذكاء الاصطناعي: HeyGen يسمح بإنشاء avatar افتراضي يتكلم الدارجة. مثالي للإعلانات بلا تصوير. زبون يدفع 20,000 دج مقابل 5 فيديوهات avatar.', en: '🤖 AI Tip: HeyGen lets you create a virtual avatar that speaks darija. Perfect for ads without filming. A client pays 20,000 DZD for 5 avatar videos.' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 4: WEB DEVELOPMENT + IA (Vibe Coding)
-// ============================================================
-{
-  id: 'web',
-  icon: '🌐',
-  color: '#EA580C',
-  accent: '#FB923C',
-  bg: 'linear-gradient(135deg, #1A0F05 0%, #2D1A0A 50%, #1A0F05 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80',
-  earning: '30,000 – 500,000 DZD/projet',
-  firstClient: { fr: '3–4 semaines', ar: '3–4 أسابيع', en: '3–4 weeks' },
-  startTool: 'Cursor.sh + Vercel + ChatGPT',
-  title: { fr: 'Web Development', ar: 'تطوير الويب', en: 'Web Development' },
-  subtitle: { fr: 'Vibe Coding + Sites IA', ar: 'برمجة بالتوجه + مواقع بالذكاء الاصطناعي', en: 'Vibe Coding + AI Sites' },
-  tagline: { fr: 'Codez des sites web professionnels sans écrire de code — avec l\'IA', ar: 'برمج مواقع احترافية بلا كتابة كود — بالذكاء الاصطناعي', en: 'Build professional websites without writing code — with AI' },
-  aiTools: ['Cursor.sh', 'v0.dev', 'Claude', 'Replit', 'Vercel AI'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-      goal: { fr: 'Créer un site vitrine complet avec Cursor.sh + le déployer gratuitement', ar: 'إنشاء موقع تعريفي كامل بـ Cursor.sh + نشره مجاناً', en: 'Create a complete showcase site with Cursor.sh + deploy for free' },
-      lessons: [
-        {
-          id: 'w-b-1',
-          title: { fr: 'Vibe Coding : Votre Premier Site en 1h', ar: 'برمجة بالتوجه: أول موقع فـ 1 ساعة', en: 'Vibe Coding: Your First Site in 1 Hour' },
-          image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/web/step1-cursor-install.jpg',
-              caption: { fr: 'Installez Cursor.sh (VS Code + IA)', ar: 'نصّب Cursor.sh (VS Code + ذكاء اصطناعي)', en: 'Install Cursor.sh (VS Code + AI)' },
-              detail: { fr: 'Cursor.sh = VS Code avec Claude/GPT-4 intégré. Téléchargez sur cursor.com. C\'est gratuit. Ouvrez un nouveau fichier → Ctrl+K → Décrivez ce que vous voulez → L\'IA écrit le code.', ar: 'Cursor.sh = VS Code مع Claude/GPT-4 مدمج. حمّله من cursor.com. مجاني. افتح ملف جديد → Ctrl+K → صف اللي تبغي → الذكاء الاصطناعي يكتب الكود.', en: 'Cursor.sh = VS Code with Claude/GPT-4 built-in. Download from cursor.com. It\'s free. Open new file → Ctrl+K → Describe what you want → AI writes the code.' },
-              hotspot: { x: 50, y: 50, label: 'Cursor' },
-              shortcuts: ['Ctrl+K : AI Chat', 'Ctrl+L : AI Edit', 'Tab : Accept suggestion'],
-              aiPrompt: null
+            method: { fr: 'Gradez le même clip de 5 façons différentes.', ar: 'صحّح نفس الكليب بـ5 طرق مختلفة.', en: 'Grade the same clip in 5 different ways.' },
+            exercise: { fr: 'Téléchargez 3 clips et gradez-les pour paraître du même film.', ar: 'حمّل 3 كليبات وصحّحها لتبدو من نفس الفيلم.', en: 'Download 3 clips and grade them to look like the same film.' },
+            tip: { fr: '💡 Les coloristes utilisent les oscilloscopes, pas leurs yeux.', ar: '💡 مصححو الألوان يستخدمون أجهزة القياس، ليس أعينهم.', en: '💡 Colorists use scopes, not their eyes.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Produire des publicités commerciales', ar: 'إنتاج إعلانات تجارية', en: 'Produce commercial ads' },
+        lessons: [
+          {
+            id: 'v-m-1',
+            title: { fr: 'Produire une Publicité Commerciale', ar: 'إنتاج إعلان تجاري', en: 'Produce a Commercial Ad' },
+            image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Structure 30-60s: Problème → Solution → Transformation → CTA','Pré-production: Brief → Script → Storyboard → Shot list','Tournage: 3 prises minimum, variez les angles','Post-production: Montage → Son → Étalonnage → Graphiques','Voix off: enregistrez ou trouvez un voix off','Prix: 40-120K (social), 150-500K (TV) DZD'],
+              ar: ['هيكل 30-60ث: مشكلة → حل → تحول → CTA','ما قبل الإنتاج: بريف → سكريبت → Storyboard → قائمة لقطات','التصوير: 3 تسجيلات على الأقل، تنويع الزوايا','ما بعد الإنتاج: مونتاج → صوت → تصحيح ألوان → جرافيك','صوت تعليقي: سجّل أو ابحث عن صوت','الأسعار: 40-120K (سوشيال), 150-500K (تلفزيون) دج'],
+              en: ['Structure 30-60s: Problem → Solution → Transformation → CTA','Pre-production: Brief → Script → Storyboard → Shot list','Shooting: 3 takes minimum, vary angles','Post-production: Edit → Sound → Color grade → Graphics','Voiceover: record or find a voiceover artist','Prices: 40-120K (social), 150-500K (TV) DZD']
             },
-            {
-              step: 2,
-              image: 'images/lessons/web/step2-vibe-prompt.jpg',
-              caption: { fr: '🤖 Prompt : "Crée un site restaurant algérien"', ar: '🤖 Prompt: "أنشئ موقع مطعم جزائري"', en: '🤖 Prompt: "Create an Algerian restaurant website"' },
-              detail: { fr: 'Dans Cursor: Ctrl+K → Tapez: "Crée un site vitrine responsive pour un restaurant algérien à Oran. Sections: Hero avec image, Menu avec prix en DZD, Galerie, Contact avec WhatsApp, Footer. Style: moderne, couleurs chaudes, typographie élégante." → Entrée → L\'IA génère HTML + CSS + JS complet.', ar: 'ف Cursor: Ctrl+K → اكتب: "أنشئ موقع تعريفي responsive لمطعم جزائري في وهران. أقسام: Hero بصورة، Menu بأسعار بالدينار، معرض، Contact بـ WhatsApp، Footer. ستايل: عصري، ألوان دافئة، طباعة أنيقة." → Entrée → الذكاء الاصطناعي يولّد HTML + CSS + JS كامل.', en: 'In Cursor: Ctrl+K → Type: "Create a responsive showcase site for an Algerian restaurant in Oran. Sections: Hero with image, Menu with prices in DZD, Gallery, Contact with WhatsApp, Footer. Style: modern, warm colors, elegant typography." → Enter → AI generates complete HTML + CSS + JS.' },
-              hotspot: { x: 50, y: 50, label: 'Ctrl+K' },
-              shortcuts: ['Ctrl+K : Ouvrir AI Chat', 'Ctrl+Entrée : Envoyer prompt'],
-              aiPrompt: { tool: 'Cursor.sh', prompt: 'Crée un site vitrine responsive pour [TYPE BUSINESS] à [VILLE]. Sections: Hero, Services/Menu, Galerie, Témoignages, Contact (WhatsApp), Footer. Style: [description]. Langue: fr+ar. Responsive mobile.', result: 'Site complet en 2-5 min' }
+            method: { fr: 'Créez un pub de démonstration pour un produit local.', ar: 'أنشئ إعلاناً تجريبياً لمنتج محلي.', en: 'Create a spec commercial for a local product.' },
+            exercise: { fr: 'Commercial complet 30s pour un produit algérien.', ar: 'إعلان كامل 30 ثانية لمنتج جزائري.', en: 'Complete 30s commercial for an Algerian product.' },
+            tip: { fr: '💡 Le monteur qui comprend la stratégie publicitaire gagne 3x plus.', ar: '💡 المحرر الذي يفهم استراتيجية الإعلان يكسب 3 أضعاف.', en: '💡 The editor who understands advertising strategy earns 3x more.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 4: WEB DEVELOPMENT
+  // ============================================================
+  {
+    id: 'webdev',
+    icon: '💻',
+    color: '#F59E0B',
+    accent: '#FCD34D',
+    bg: 'linear-gradient(135deg, #1A1200 0%, #3A2800 50%, #1A1200 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80',
+    earning: '30,000 – 150,000 DZD/project',
+    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
+    startTool: 'VS Code + HTML/CSS/JS',
+    title: { fr: 'Web Development', ar: 'تطوير الويب', en: 'Web Development' },
+    subtitle: { fr: 'Développement Front-End', ar: 'تطوير الواجهات', en: 'Front-End Development' },
+    tagline: { fr: 'Créez des sites web professionnels qui génèrent des revenus', ar: 'أنشئ مواقع ويب احترافية تدرّ عليك', en: 'Build professional websites that generate income' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Comprendre le HTML et CSS et créer votre première page web', ar: 'تفهم HTML و CSS وتصنع أول صفحة ويب', en: 'Understand HTML and CSS and create your first web page' },
+        lessons: [
+          {
+            id: 'w-b-1',
+            title: { fr: 'HTML - La structure de base de tout site web', ar: 'HTML - هيكل أساسي لكل موقع ويب', en: 'HTML - The basic structure of every website' },
+            image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Ouvrez VS Code → Fichier → Nouveau fichier → index.html.','Tapez ! → appuyez Tab pour générer la structure HTML de base.','DOCTYPE html est la déclaration. html est la racine. head contient les métadonnées.','body contient tout ce qui s\'affiche sur la page.','h1 à h6 = titres. p = paragraphe. a = lien (href). img = image (src).','div = conteneur. section = section. main = contenu principal.'],
+              ar: ['افتح VS Code → ملف → ملف جديد → index.html.','اكتب ! → اضغط Tab لتوليد هيكل HTML الأساسي.','DOCTYPE html هو التصريح. html هو الجذر. head يحتوي البيانات الوصفية.','body يحتوي كل ما يظهر على الصفحة.','h1 إلى h6 = عناوين. p = فقرة. a = رابط (href). img = صورة (src).','div = حاوية. section = قسم. main = المحتوى الرئيسي.'],
+              en: ['Open VS Code → File → New File → index.html.','Type ! → press Tab to generate basic HTML structure.','DOCTYPE html is the declaration. html is the root. head contains metadata.','body contains everything displayed on the page.','h1 to h6 = headings. p = paragraph. a = link (href). img = image (src).','div = container. section = section. main = main content.']
             },
-            {
-              step: 3,
-              image: 'images/lessons/web/step3-vercel-deploy.jpg',
-              caption: { fr: 'Déployer gratuitement sur Vercel', ar: 'انشر مجاناً على Vercel', en: 'Deploy for free on Vercel' },
-              detail: { fr: 'Vercel.com → Connectez GitHub → Uploadez votre dossier → Déploiement auto en 30s. URL gratuite: monsite.vercel.app. Custom domain: 3,000 DZD/an (chez Hostinger.dz). Secret: Vercel est gratuit et illimité pour les sites statiques.', ar: 'Vercel.com → ربط GitHub → حمّل مجلدك → نشر تلقائي فـ 30 ثانية. رابط مجاني: monsite.vercel.app. دومين خاص: 3,000 دج/سنة (عند Hostinger.dz). سر: Vercel مجاني وغير محدود للمواقع الثابتة.', en: 'Vercel.com → Connect GitHub → Upload your folder → Auto deploy in 30s. Free URL: monsite.vercel.app. Custom domain: 3,000 DZD/year (at Hostinger.dz). Secret: Vercel is free and unlimited for static sites.' },
-              hotspot: { x: 50, y: 50, label: 'Vercel' },
-              shortcuts: ['Drag & Drop dossier', 'Auto-deploy en 30s'],
-              aiPrompt: null
+            method: { fr: 'Créez 5 pages HTML différentes et ouvrez-les dans le navigateur.', ar: 'أنشئ 5 صفحات HTML مختلفة وافتحها في المتصفح.', en: 'Create 5 different HTML pages and open them in browser.' },
+            exercise: { fr: 'Page "À propos de moi" avec titre, paragraphe, image, lien.', ar: 'صفحة "عني" مع عنوان، فقرة، صورة، رابط.', en: '"About Me" page with heading, paragraph, image, link.' },
+            tip: { fr: '💡 Utilisez Emmet pour générer du HTML plus rapidement.', ar: '💡 استخدم Emmet لتوليد HTML أسرع.', en: '💡 Use Emmet to generate HTML faster.' }
+          },
+          {
+            id: 'w-b-2',
+            title: { fr: 'CSS - Rendre votre site magnifique', ar: 'CSS - يجعل موقعك جميلاً', en: 'CSS - Make your site beautiful' },
+            image: 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&q=80',
+            layout: 'right',
+            steps: {
+              fr: ['CSS = Cascading Style Sheets. Fichier style.css lié avec link rel="stylesheet" href="style.css".','Sélecteurs: h1 { color: blue; } = tous les h1 deviennent bleus.','Classes: .ma-classe { } -> utilisez class="ma-classe" dans HTML.','Propriétés courantes: color, background-color, font-size, margin, padding, border.','Flexbox: display:flex + justify-content + align-items pour disposition flexible.'],
+              ar: ['CSS = أوراق الأنماط. ملف style.css مربوط بـ link rel="stylesheet" href="style.css".','المحددات: h1 { color: blue; } = كل h1 يصبح أزرق.','الفئات: .ma-classe { } -> استخدم class="ma-classe" في HTML.','الخصائص الشائعة: color, background-color, font-size, margin, padding, border.','Flexbox: display:flex + justify-content + align-items للترتيب المرن.'],
+              en: ['CSS = Cascading Style Sheets. style.css file linked with link rel="stylesheet" href="style.css".','Selectors: h1 { color: blue; } = all h1 become blue.','Classes: .my-class { } -> use class="my-class" in HTML.','Common properties: color, background-color, font-size, margin, padding, border.','Flexbox: display:flex + justify-content + align-items for flexible layout.']
             },
-            {
-              step: 4,
-              image: 'images/lessons/web/step4-v0-dev.jpg',
-              caption: { fr: 'v0.dev : Générer des composants UI', ar: 'v0.dev: توليد مكونات UI', en: 'v0.dev: Generate UI Components' },
-              detail: { fr: 'v0.dev (par Vercel) → Décrivez un composant: "Hero section avec image de fond, titre en arabe, bouton CTA vert, responsive" → L\'IA génère le code React + Tailwind → Copiez-collez dans Cursor. Parfait pour les sections complexes.', ar: 'v0.dev (من Vercel) → صف مكون: "قسم Hero بصورة خلفية، عنوان بالعربية، زر CTA أخضر، responsive" → الذكاء الاصطناعي يولّد كود React + Tailwind → انسخ-ألصق ف Cursor. مثالي للأقسام المعقدة.', en: 'v0.dev (by Vercel) → Describe a component: "Hero section with background image, Arabic title, green CTA button, responsive" → AI generates React + Tailwind code → Copy-paste into Cursor. Perfect for complex sections.' },
-              hotspot: { x: 50, y: 50, label: 'v0.dev' },
-              shortcuts: ['v0.dev → Describe → Copy → Paste in Cursor'],
-              aiPrompt: { tool: 'v0.dev', prompt: 'Hero section for Algerian restaurant, background image overlay, Arabic title right-aligned, green CTA button, mobile responsive, warm color palette', result: 'React + Tailwind code prêt' }
-            }
-          ],
-          method: { fr: 'Créez un site vitrine complet avec Cursor + déployez sur Vercel. Utilisez v0.dev pour les composants complexes.', ar: 'أنشئ موقع تعريفي كامل بـ Cursor + انشر على Vercel. استخدم v0.dev للمكونات المعقدة.', en: 'Create a complete showcase site with Cursor + deploy on Vercel. Use v0.dev for complex components.' },
-          exercise: { fr: 'Site pour "Café des Amis" (Tlemcen): (1) Cursor: site complet avec Hero, Menu (prix DZD), Galerie, Contact WhatsApp, (2) v0.dev: composant "Réservation de table", (3) Vercel: déploiement, (4) Test mobile. Livrable: URL live + code source.', ar: 'موقع لـ "Café des Amis" (تلمسان): (1) Cursor: موقع كامل بـ Hero، Menu (أسعار بالدينار)، معرض، Contact WhatsApp، (2) v0.dev: مكون "حجز طاولة"، (3) Vercel: نشر، (4) اختبار موبايل. تسليم: رابط مباشر + كود المصدر.', en: 'Site for "Café des Amis" (Tlemcen): (1) Cursor: complete site with Hero, Menu (DZD prices), Gallery, Contact WhatsApp, (2) v0.dev: "Table reservation" component, (3) Vercel: deploy, (4) Mobile test. Deliverable: live URL + source code.' },
-          tip: { fr: '💰 Secret Pro: Un site vitrine simple se vend 30,000–80,000 DZD. Avec réservation en ligne + paiement CCP: 100,000–200,000 DZD. Vibe Coding vous permet de livrer en 2 jours ce qui prenait 2 semaines.', ar: '💰 سر محترف: موقع تعريفي بسيط يتباع 30,000–80,000 دج. مع حجز أونلاين + دفع CCP: 100,000–200,000 دج. برمجة بالتوجه تسمح لك بتسليم فـ 2 أيام اللي كان ياخذ 2 أسبوع.', en: '💰 Pro Secret: A simple showcase site sells for 30,000–80,000 DZD. With online booking + CCP payment: 100,000–200,000 DZD. Vibe Coding lets you deliver in 2 days what used to take 2 weeks.' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 5: SEO + IA
-// ============================================================
-{
-  id: 'seo',
-  icon: '🔍',
-  color: '#9333EA',
-  accent: '#C084FC',
-  bg: 'linear-gradient(135deg, #1A0A2E 0%, #2D1050 50%, #1A0A2E 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=600&q=80',
-  earning: '20,000 – 250,000 DZD/mois',
-  firstClient: { fr: '2–3 semaines', ar: '2–3 أسابيع', en: '2–3 weeks' },
-  startTool: 'Ubersuggest + ChatGPT + Screaming Frog',
-  title: { fr: 'SEO', ar: 'تحسين محركات البحث', en: 'SEO' },
-  subtitle: { fr: 'Référencement + Contenu IA', ar: 'المرجعية + محتوى بالذكاء الاصطناعي', en: 'SEO + AI Content' },
-  tagline: { fr: 'Faites apparaître les entreprises algériennes en 1ère page Google', ar: 'خلّي المؤسسات الجزائرية تظهر في الصفحة الأولى لـ Google', en: 'Get Algerian businesses on Google page 1' },
-  aiTools: ['ChatGPT', 'Surfer SEO', 'Jasper', 'Clearscope', 'Ubersuggest AI'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
-      goal: { fr: 'Auditer un site + générer un plan de contenu IA + 10 articles optimisés', ar: 'تدقيق موقع + توليد خطة محتوى بالذكاء الاصطناعي + 10 مقالات محسّنة', en: 'Audit a site + generate AI content plan + 10 optimized articles' },
-      lessons: [
-        {
-          id: 'seo-b-1',
-          title: { fr: 'SEO Algérien : Mots-Clés + Contenu IA', ar: 'SEO جزائري: كلمات مفتاحية + محتوى بالذكاء الاصطناعي', en: 'Algerian SEO: Keywords + AI Content' },
-          image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/seo/step1-ubersuggest.jpg',
-              caption: { fr: 'Recherche de mots-clés avec Ubersuggest', ar: 'بحث الكلمات المفتاحية بـ Ubersuggest', en: 'Keyword research with Ubersuggest' },
-              detail: { fr: 'Ubersuggest (gratuit 3 recherches/jour) → Tapez "restaurant Oran" → L\'outil montre: volume de recherche, difficulté, suggestions. Secret SEO Algérie: Les gens cherchent en FRANÇAIS et en ARABE. Optimisez les DEUX langues.', ar: 'Ubersuggest (مجاني 3 بحث/يوم) → اكتب "restaurant Oran" → الأداة توري: حجم البحث، الصعوبة، اقتراحات. سر SEO الجزائر: الناس يبحثوا بالفرنسية وبالعربية. حسّن اللغتين.', en: 'Ubersuggest (free 3 searches/day) → Type "restaurant Oran" → Tool shows: search volume, difficulty, suggestions. Algeria SEO Secret: People search in FRENCH and ARABIC. Optimize BOTH languages.' },
-              hotspot: { x: 50, y: 50, label: 'Ubersuggest' },
-              shortcuts: [],
-              aiPrompt: { tool: 'ChatGPT', prompt: 'Analyse les intentions de recherche pour [MOT-CLÉ] en Algérie. Donne: 1. 10 long-tail keywords fr+ar 2. Questions fréquentes 3. Type de contenu optimal (article, vidéo, liste) 4. Saisonnalité', result: 'Plan SEO complet' }
+            method: { fr: 'Créez une page web et appliquez 5 styles différents.', ar: 'أنشئ صفحة ويب وطبّق 5 تصاميم مختلفة.', en: 'Create a web page and apply 5 different styles.' },
+            exercise: { fr: 'Stylisez votre page "À propos de moi": titre bleu, fond gris clair, texte centré, image arrondie.', ar: 'صمّم صفحة "عني": عنوان أزرق، خلفية رمادية، نص في المنتصف، صورة مدورة.', en: 'Style your "About Me" page: blue heading, light gray background, centered text, rounded image.' },
+            tip: { fr: '💡 Utilisez les outils de développement (F12) pour expérimenter le CSS en direct.', ar: '💡 استخدم أدوات المطور (F12) لتجربة CSS مباشرة.', en: '💡 Use DevTools (F12) to experiment with CSS live.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–8', ar: 'الأسابيع 5–8', en: 'Weeks 5–8' },
+        goal: { fr: 'Apprendre JavaScript et créer des interactions dynamiques', ar: 'تعلم JavaScript وإنشاء تفاعلات ديناميكية', en: 'Learn JavaScript and create dynamic interactions' },
+        lessons: [
+          {
+            id: 'w-i-1',
+            title: { fr: 'JavaScript - Rendre votre site interactif', ar: 'JavaScript - اخلّي موقعك تفاعلي', en: 'JavaScript - Make your site interactive' },
+            image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['JavaScript est le langage qui rend les sites web interactifs.','Ouvrez la console du navigateur (F12 → Console) pour tester du code.','Déclarez une variable: let nom = "Ahmed";','Affichez dans la console: console.log(nom);','Créez une fonction: function bonjour() { alert("Bonjour!"); }','Ajoutez un événement: document.getElementById("btn").onclick = function() { ... }'],
+              ar: ['JavaScript هي اللغة اللي تخلّي المواقع تفاعلية.','افتح وحدة التحكم (F12 → Console) لتجربة الكود.','صرّح بمتغير: let nom = "Ahmed";','أظهر في وحدة التحكم: console.log(nom);','أنشئ دالة: function bonjour() { alert("Bonjour!"); }','أضف حدث: document.getElementById("btn").onclick = function() { ... }'],
+              en: ['JavaScript is the language that makes websites interactive.','Open browser console (F12 → Console) to test code.','Declare a variable: let name = "Ahmed";','Display in console: console.log(name);','Create a function: function hello() { alert("Hello!"); }','Add an event: document.getElementById("btn").onclick = function() { ... }']
             },
-            {
-              step: 2,
-              image: 'images/lessons/seo/step2-chatgpt-article.jpg',
-              caption: { fr: '🤖 Générer 10 articles SEO avec ChatGPT', ar: '🤖 توليد 10 مقالات SEO بـ ChatGPT', en: '🤖 Generate 10 SEO articles with ChatGPT' },
-              detail: { fr: 'Prompt SEO: "Rédige un article de 1500 mots optimisé SEO pour le mot-clé 'meilleur restaurant Oran'. Structure: H1, H2, H3, introduction accrocheuse, 5 sections détaillées, FAQ, conclusion avec CTA. Ton: professionnel mais accessible. Inclus le mot-clé 15 fois naturellement."', ar: 'Prompt SEO: "اكتب مقال 1500 كلمة محسّن SEO لكلمة "أفضل مطعم وهران". هيكل: H1، H2، H3، مقدمة جاذبة، 5 أقسام مفصلة، FAQ، خاتمة بـ CTA. نبرة: احترافية لكن سهلة. ضمّن الكلمة المفتاحية 15 مرة بشكل طبيعي."', en: 'SEO Prompt: "Write a 1500-word SEO-optimized article for keyword 'best restaurant Oran'. Structure: H1, H2, H3, catchy intro, 5 detailed sections, FAQ, conclusion with CTA. Tone: professional but accessible. Include keyword 15 times naturally."' },
-              hotspot: { x: 50, y: 50, label: 'ChatGPT' },
-              shortcuts: [],
-              aiPrompt: { tool: 'ChatGPT', prompt: 'Rédige un article SEO 1500 mots pour [MOT-CLÉ]. Structure: H1, 5 H2 avec H3, intro accrocheuse, FAQ schema.org, CTA. Ton: [professionnel/amical]. Mots-clés secondaires: [liste]. Langue: fr+ar.', result: 'Article prêt en 3 min' }
+            method: { fr: 'Créez un bouton qui affiche une alerte quand on clique dessus.', ar: 'أنشئ زراً يعرض تنبيه عند النقر عليه.', en: 'Create a button that shows an alert when clicked.' },
+            exercise: { fr: 'Créez un compteur: un bouton "+" qui augmente un nombre affiché à l\'écran.', ar: 'أنشئ عداداً: زر "+" يزيد رقماً معروضاً على الشاشة.', en: 'Create a counter: a "+" button that increases a number displayed on screen.' },
+            tip: { fr: '💡 Utilisez console.log() pour déboguer votre code.', ar: '💡 استخدم console.log() لتصحيح أخطاء الكود.', en: '💡 Use console.log() to debug your code.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 9–16', ar: 'الأسابيع 9–16', en: 'Weeks 9–16' },
+        goal: { fr: 'Maîtriser React et les frameworks modernes', ar: 'إتقان React والأطر الحديثة', en: 'Master React and modern frameworks' },
+        lessons: [
+          {
+            id: 'w-a-1',
+            title: { fr: 'Introduction à React', ar: 'مقدمة في React', en: 'Introduction to React' },
+            image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['React est une bibliothèque JavaScript pour construire des interfaces utilisateur.','Créez un projet: npx create-react-app mon-projet','Structure: components, props, state, hooks.','JSX: mélange de HTML et JavaScript.','Props: passer des données entre composants.','State: gérer les données qui changent.'],
+              ar: ['React هي مكتبة JavaScript لبناء واجهات المستخدم.','أنشئ مشروعاً: npx create-react-app mon-projet','الهيكل: المكونات، props، state، hooks.','JSX: مزيج من HTML و JavaScript.','Props: تمرير البيانات بين المكونات.','State: إدارة البيانات المتغيرة.'],
+              en: ['React is a JavaScript library for building user interfaces.','Create a project: npx create-react-app my-project','Structure: components, props, state, hooks.','JSX: mix of HTML and JavaScript.','Props: pass data between components.','State: manage changing data.']
             },
-            {
-              step: 3,
-              image: 'images/lessons/seo/step3-schema-markup.jpg',
-              caption: { fr: 'Schema Markup pour Google Rich Snippets', ar: 'Schema Markup لـ Google Rich Snippets', en: 'Schema Markup for Google Rich Snippets' },
-              detail: { fr: 'Schema.org → Ajoutez du code JSON-LD pour apparaître avec étoiles, prix, horaires directement dans Google. Pour un restaurant: "LocalBusiness" schema avec menu, prix, avis. Générez-le avec ChatGPT: "Génère le schema.org LocalBusiness JSON-LD pour [restaurant] à [ville] avec menu, prix moyen, horaires, téléphone."', ar: 'Schema.org → زيد كود JSON-LD باش تظهر بنجوم، أسعار، أوقات مباشرة ف Google. لمطعم: schema "LocalBusiness" مع menu، أسعار، تقييمات. ولّده بـ ChatGPT: "ولّد schema.org LocalBusiness JSON-LD لـ [مطعم] فـ [مدينة] مع menu، متوسط الأسعار، أوقات، تليفون."', en: 'Schema.org → Add JSON-LD code to appear with stars, prices, hours directly in Google. For a restaurant: "LocalBusiness" schema with menu, prices, reviews. Generate with ChatGPT: "Generate schema.org LocalBusiness JSON-LD for [restaurant] in [city] with menu, average price, hours, phone."' },
-              hotspot: { x: 50, y: 50, label: 'Schema' },
-              shortcuts: [],
-              aiPrompt: { tool: 'ChatGPT', prompt: 'Génère le schema.org JSON-LD pour [TYPE BUSINESS] à [VILLE]. Inclus: @type, name, address, telephone, openingHours, priceRange, menu, aggregateRating. Format: JSON-LD valide.', result: 'Code schema prêt à copier' }
-            }
-          ],
-          method: { fr: 'Auditez un site algérien, générez un plan de contenu IA, écrivez 10 articles SEO, ajoutez Schema markup.', ar: 'دقق موقع جزائري، ولّد خطة محتوى بالذكاء الاصطناعي، اكتب 10 مقالات SEO، زيد Schema markup.', en: 'Audit an Algerian site, generate AI content plan, write 10 SEO articles, add Schema markup.' },
-          exercise: { fr: 'SEO pour "Hôtel El Mountazah" (Annaba): (1) Ubersuggest: 20 mots-clés fr+ar, (2) ChatGPT: 10 articles (1500 mots chacun), (3) Schema: LocalBusiness + FAQ, (4) Rapport: positions Google avant/après. Livrable: 10 articles + code schema + rapport.', ar: 'SEO لـ "Hôtel El Mountazah" (عنابة): (1) Ubersuggest: 20 كلمة مفتاحية fr+ar، (2) ChatGPT: 10 مقالات (1500 كلمة كل واحد)، (3) Schema: LocalBusiness + FAQ، (4) تقرير: مراكز Google قبل/بعد. تسليم: 10 مقالات + كود schema + تقرير.', en: 'SEO for "Hôtel El Mountazah" (Annaba): (1) Ubersuggest: 20 keywords fr+ar, (2) ChatGPT: 10 articles (1500 words each), (3) Schema: LocalBusiness + FAQ, (4) Report: Google rankings before/after. Deliverable: 10 articles + schema code + report.' },
-          tip: { fr: '💰 Secret Pro: Un consultant SEO en Algérie facture 30,000–100,000 DZD/mois par client. Avec ChatGPT, vous produisez 10x plus de contenu. Un client qui passe de page 5 à page 1 Google paie volontiers 50,000 DZD/mois.', ar: '💰 سر محترف: مستشار SEO في الجزائر يفاتورة 30,000–100,000 دج/شهر لكل زبون. بـ ChatGPT، تنتج 10 أضعاف المحتوى. زبون ينتقل من صفحة 5 لصفحة 1 Google يدفع بسهولة 50,000 دج/شهر.', en: '💰 Pro Secret: An SEO consultant in Algeria charges 30,000–100,000 DZD/month per client. With ChatGPT, you produce 10x more content. A client moving from page 5 to page 1 Google happily pays 50,000 DZD/month.' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 6: DATA ANALYSIS + IA
-// ============================================================
-{
-  id: 'data',
-  icon: '📊',
-  color: '#0891B2',
-  accent: '#22D3EE',
-  bg: 'linear-gradient(135deg, #051A1F 0%, #0A2E35 50%, #051A1F 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
-  earning: '25,000 – 400,000 DZD/mois',
-  firstClient: { fr: '2–3 semaines', ar: '2–3 أسابيع', en: '2–3 weeks' },
-  startTool: 'Google Sheets + ChatGPT + Looker Studio',
-  title: { fr: 'Data Analysis', ar: 'تحليل البيانات', en: 'Data Analysis' },
-  subtitle: { fr: 'Tableaux de Bord + Prédictions IA', ar: 'لوحات القيادة + توقعات بالذكاء الاصطناعي', en: 'Dashboards + AI Predictions' },
-  tagline: { fr: 'Transformez les données des entreprises algériennes en décisions intelligentes', ar: 'حوّل بيانات المؤسسات الجزائرية لقرارات ذكية', en: 'Transform Algerian business data into smart decisions' },
-  aiTools: ['ChatGPT Advanced Data Analysis', 'Julius AI', 'Ajelix', 'Looker Studio', 'Google Sheets AI'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
-      goal: { fr: 'Créer un dashboard interactif + analyser les données avec ChatGPT', ar: 'إنشاء لوحة قيادة تفاعلية + تحليل البيانات بـ ChatGPT', en: 'Create interactive dashboard + analyze data with ChatGPT' },
-      lessons: [
-        {
-          id: 'da-b-1',
-          title: { fr: 'Dashboard IA : De Excel à Looker Studio', ar: 'لوحة قيادة بالذكاء الاصطناعي: من Excel لـ Looker Studio', en: 'AI Dashboard: From Excel to Looker Studio' },
-          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/data/step1-sheets-import.jpg',
-              caption: { fr: 'Importer les données dans Google Sheets', ar: 'استيراد البيانات لـ Google Sheets', en: 'Import data into Google Sheets' },
-              detail: { fr: 'Créez une feuille avec: Date, Produit, Quantité, Prix, Ville, Canal (WhatsApp/Facebook/Physique). Utilisez "ImportRange" pour connecter plusieurs sources. Secret: Les commerçants algériens utilisent WhatsApp — intégrez les données WhatsApp Business.', ar: 'أنشئ ورقة تحتوي على: التاريخ، المنتج، الكمية، السعر، المدينة، القناة (WhatsApp/Facebook/فيزيك). استخدم "ImportRange" باش تربط مصادر متعددة. سر: التجار الجزائريين يستعملوا WhatsApp — ضمّن بيانات WhatsApp Business.', en: 'Create a sheet with: Date, Product, Quantity, Price, City, Channel (WhatsApp/Facebook/Physical). Use "ImportRange" to connect multiple sources. Secret: Algerian merchants use WhatsApp — integrate WhatsApp Business data.' },
-              hotspot: { x: 50, y: 50, label: 'Sheets' },
-              shortcuts: ['=IMPORTDATA(URL)', '=QUERY(data, "SELECT * WHERE...")'],
-              aiPrompt: null
+            method: { fr: 'Créez un composant React qui affiche "Bonjour, [nom]"', ar: 'أنشئ مكون React يعرض "Bonjour, [nom]"', en: 'Create a React component that displays "Hello, [name]"' },
+            exercise: { fr: 'Créez une todo-list avec React.', ar: 'أنشئ قائمة مهام مع React.', en: 'Create a todo-list with React.' },
+            tip: { fr: '💡 Utilisez les hooks (useState, useEffect) pour gérer l\'état.', ar: '💡 استخدم hooks (useState, useEffect) لإدارة الحالة.', en: '💡 Use hooks (useState, useEffect) to manage state.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Diriger une équipe de développement', ar: 'إدارة فريق تطوير', en: 'Lead a development team' },
+        lessons: [
+          {
+            id: 'w-m-1',
+            title: { fr: 'Architecture et Gestion de Projet Web', ar: 'هندسة وإدارة مشاريع الويب', en: 'Web Architecture and Project Management' },
+            image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Frontend (React) → Backend (Node.js) → Base de données (MongoDB/PostgreSQL).','Git: versionnez votre code avec git init, git add, git commit, git push.','Méthodologie: Agile / Scrum pour gérer les sprints.','Déploiement: Vercel, Netlify (frontend) et Heroku, AWS (backend).','Sécurité: HTTPS, authentification JWT, validation des inputs.','Tarification: site vitrine 50-200K DZD, site e-commerce 200K-1M DZD.'],
+              ar: ['Frontend (React) → Backend (Node.js) → قاعدة البيانات (MongoDB/PostgreSQL).','Git: versionnez كودك بـ git init, git add, git commit, git push.','Agile / Scrum لإدارة الـ sprints.','النشر: Vercel, Netlify (frontend) و Heroku, AWS (backend).','الأمان: HTTPS، مصادقة JWT، التحقق من المدخلات.','التسعير: موقع عرضي 50-200K دج، موقع تجاري 200K-1M دج.'],
+              en: ['Frontend (React) → Backend (Node.js) → Database (MongoDB/PostgreSQL).','Git: version your code with git init, git add, git commit, git push.','Agile / Scrum to manage sprints.','Deployment: Vercel, Netlify (frontend) and Heroku, AWS (backend).','Security: HTTPS, JWT authentication, input validation.','Pricing: portfolio site 50-200K DZD, e-commerce site 200K-1M DZD.']
             },
-            {
-              step: 2,
-              image: 'images/lessons/data/step2-chatgpt-analyze.jpg',
-              caption: { fr: '🤖 Analyser avec ChatGPT Advanced Data', ar: '🤖 تحليل بـ ChatGPT Advanced Data', en: '🤖 Analyze with ChatGPT Advanced Data' },
-              detail: { fr: 'Uploadez votre CSV dans ChatGPT → "Analyse ces ventes et donne: 1. Produit le plus vendu par ville 2. Meilleur canal de vente 3. Tendance mensuelle 4. Prévision des ventes pour le mois prochain 5. 3 recommandations pour augmenter les revenus." ChatGPT génère graphiques + interprétations.', ar: 'حمّل CSV ديالك ف ChatGPT → "حلل هالمبيعات وعطيني: 1. أكثر منتج مباع حسب المدينة 2. أفضل قناة بيع 3. الاتجاه الشهري 4. توقع المبيعات للشهر الجاي 5. 3 توصيات باش تزيد الدخل." ChatGPT يولّد رسوم بيانية + تحليلات.', en: 'Upload your CSV to ChatGPT → "Analyze these sales and give: 1. Best-selling product by city 2. Best sales channel 3. Monthly trend 4. Sales forecast for next month 5. 3 recommendations to increase revenue." ChatGPT generates charts + interpretations.' },
-              hotspot: { x: 50, y: 50, label: 'ChatGPT' },
-              shortcuts: ['Upload CSV → Ask for analysis → Download charts'],
-              aiPrompt: { tool: 'ChatGPT Advanced Data Analysis', prompt: 'Analyse ce fichier de ventes [CSV]. Donne: 1. KPIs clés (CA, marge, panier moyen) 2. Top 5 produits 3. Tendance 3 mois 4. Prévision mois prochain 5. 5 actions concrètes. Génère 3 graphiques.', result: 'Rapport complet avec graphiques' }
+            method: { fr: 'Créez un projet complet de A à Z.', ar: 'أنشئ مشروعاً كاملاً من الصفر.', en: 'Create a complete project from scratch.' },
+            exercise: { fr: 'Planifiez un projet web pour un client fictif.', ar: 'خطط لمشروع ويب لعميل وهمي.', en: 'Plan a web project for a fictional client.' },
+            tip: { fr: '💡 Spécialisez-vous dans une niche: e-commerce, SaaS, sites vitrines.', ar: '💡 تخصّص في مجال: التجارة الإلكترونية، SaaS، المواقع العرضية.', en: '💡 Specialize in a niche: e-commerce, SaaS, portfolio sites.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 5: SEO
+  // ============================================================
+  {
+    id: 'seo',
+    icon: '📈',
+    color: '#3B82F6',
+    accent: '#60A5FA',
+    bg: 'linear-gradient(135deg, #0A1428 0%, #1A2A50 50%, #0A1428 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1432889821006-ca37c5ce1bfa?w=600&q=80',
+    earning: '20,000 – 100,000 DZD/month',
+    firstClient: { fr: '2–4 semaines', ar: '2–4 أسابيع', en: '2–4 weeks' },
+    startTool: 'Google Analytics + Search Console',
+    title: { fr: 'SEO & Marketing Digital', ar: 'SEO والتسويق الرقمي', en: 'SEO & Digital Marketing' },
+    subtitle: { fr: 'Référencement Naturel', ar: 'تحسين محركات البحث', en: 'Search Engine Optimization' },
+    tagline: { fr: 'Faites apparaître les sites en première page de Google', ar: 'خلّي المواقع تظهر في الصفحة الأولى من Google', en: 'Make websites appear on Google\'s first page' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
+        goal: { fr: 'Comprendre le SEO et les mots-clés', ar: 'تفهم SEO والكلمات المفتاحية', en: 'Understand SEO and keywords' },
+        lessons: [
+          {
+            id: 'seo-b-1',
+            title: { fr: 'Introduction au SEO - Comment Google fonctionne', ar: 'مقدمة في SEO - كيفاش تشتغل Google', en: 'Introduction to SEO - How Google works' },
+            image: 'https://images.unsplash.com/photo-1432889821006-ca37c5ce1bfa?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['SEO = Search Engine Optimization.','Google utilise plus de 200 facteurs pour classer les sites.','Les 3 piliers du SEO: 1. Technique, 2. Contenu, 3. Backlinks.','Mots-clés: ce que les gens tapent dans Google.','On-Page: title, meta, H1, URL.','Off-Page: backlinks, autorité.'],
+              ar: ['SEO = تحسين محركات البحث.','Google يستخدم أكثر من 200 عامل لترتيب المواقع.','3 ركائز SEO: 1. التقني, 2. المحتوى, 3. الروابط الخلفية.','الكلمات المفتاحية: ما يكتبه الناس في Google.','On-Page: عنوان، meta، H1، رابط.','Off-Page: روابط خلفية، سلطة.'],
+              en: ['SEO = Search Engine Optimization.','Google uses over 200 factors to rank sites.','The 3 pillars of SEO: 1. Technical, 2. Content, 3. Backlinks.','Keywords: what people type into Google.','On-Page: title, meta, H1, URL.','Off-Page: backlinks, authority.']
             },
-            {
-              step: 3,
-              image: 'images/lessons/data/step3-looker-studio.jpg',
-              caption: { fr: 'Dashboard interactif avec Looker Studio', ar: 'لوحة قيادة تفاعلية بـ Looker Studio', en: 'Interactive Dashboard with Looker Studio' },
-              detail: { fr: 'Looker Studio (gratuit) → Connectez Google Sheets → Glissez-déposez les graphiques: camembert (répartition par ville), courbe (tendance temporelle), tableau (top produits). Partagez le lien avec le client — il voit les données en temps réel. Facturez 15,000–50,000 DZD le dashboard.', ar: 'Looker Studio (مجاني) → ربط Google Sheets → اسحب-أفلت الرسوم البيانية: دائري (توزيع حسب المدينة)، منحنى (اتجاه زمني)، جدول (أفضل المنتجات). شارك الرابط مع الزبون — يشوف البيانات فالوقت الحقيقي. فاتورة 15,000–50,000 دج للوحة القيادة.', en: 'Looker Studio (free) → Connect Google Sheets → Drag-and-drop charts: pie (city breakdown), line (time trend), table (top products). Share the link with client — they see data in real-time. Charge 15,000–50,000 DZD per dashboard.' },
-              hotspot: { x: 50, y: 50, label: 'Looker' },
-              shortcuts: ['Add data source → Google Sheets → Create chart → Share'],
-              aiPrompt: null
-            }
-          ],
-          method: { fr: 'Créez un dashboard complet pour un commerce algérien: import données, analyse ChatGPT, visualisation Looker Studio.', ar: 'أنشئ لوحة قيادة كاملة لتاجر جزائري: استيراد بيانات، تحليل ChatGPT، تصور Looker Studio.', en: 'Create a complete dashboard for an Algerian business: import data, ChatGPT analysis, Looker Studio visualization.' },
-          exercise: { fr: 'Dashboard pour "Épicerie Benali" (Batna): (1) Sheets: 6 mois de ventes (date, produit, qté, prix, ville, canal), (2) ChatGPT: analyse complète + prévisions, (3) Looker: 5 graphiques interactifs, (4) Rapport PDF avec recommandations. Livrable: lien dashboard + rapport.', ar: 'لوحة قيادة لـ "Épicerie Benali" (باتنة): (1) Sheets: 6 أشهر مبيعات (تاريخ، منتج، كمية، سعر، مدينة، قناة)، (2) ChatGPT: تحليل كامل + توقعات، (3) Looker: 5 رسوم بيانية تفاعلية، (4) تقرير PDF مع توصيات. تسليم: رابط لوحة + تقرير.', en: 'Dashboard for "Épicerie Benali" (Batna): (1) Sheets: 6 months sales (date, product, qty, price, city, channel), (2) ChatGPT: complete analysis + forecasts, (3) Looker: 5 interactive charts, (4) PDF report with recommendations. Deliverable: dashboard link + report.' },
-          tip: { fr: '🤖 Astuce IA: Julius AI (julius.ai) permet de converser avec vos données en langage naturel. "Montre-moi les ventes de Ramadan vs le reste de l\'année" → Graphique instantané. Parfait pour les présentations clients.', ar: '🤖 نصيحة الذكاء الاصطناعي: Julius AI (julius.ai) يسمح بالمحادثة مع بياناتك بلغة طبيعية. "وريني مبيعات رمضان مقابل باقي السنة" → رسم بياني فوري. مثالي لعروض الزبائن.', en: '🤖 AI Tip: Julius AI (julius.ai) lets you chat with your data in natural language. "Show me Ramadan sales vs rest of year" → Instant chart. Perfect for client presentations.' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 7: COPYWRITING + IA
-// ============================================================
-{
-  id: 'copy',
-  icon: '✍️',
-  color: '#CA8A04',
-  accent: '#FACC15',
-  bg: 'linear-gradient(135deg, #1F1505 0%, #352A0A 50%, #1F1505 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80',
-  earning: '15,000 – 300,000 DZD/projet',
-  firstClient: { fr: '1–2 semaines', ar: '1–2 أسابيع', en: '1–2 weeks' },
-  startTool: 'ChatGPT + Jasper + Notion AI',
-  title: { fr: 'Copywriting', ar: 'الكتابة الإعلانية', en: 'Copywriting' },
-  subtitle: { fr: 'Textes qui Vendent + IA', ar: 'نصوص تبيع + ذكاء اصطناعي', en: 'Words That Sell + AI' },
-  tagline: { fr: 'Rédigez des textes qui font acheter — en français, arabe et darija', ar: 'اكتب نصوص تخلي الناس يشريوا — بالفرنسية، العربية والدارجة', en: 'Write copy that makes people buy — in French, Arabic and darija' },
-  aiTools: ['ChatGPT', 'Jasper', 'Copy.ai', 'Notion AI', 'Claude'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
-      goal: { fr: 'Maîtriser AIDA + générer 50 textes avec ChatGPT', ar: 'إتقان AIDA + توليد 50 نص بـ ChatGPT', en: 'Master AIDA + generate 50 copies with ChatGPT' },
-      lessons: [
-        {
-          id: 'c-b-1',
-          title: { fr: 'Copywriting IA : AIDA + Prompts Gagnants', ar: 'كتابة إعلانية بالذكاء الاصطناعي: AIDA + Prompts رابحة', en: 'AI Copywriting: AIDA + Winning Prompts' },
-          image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/copy/step1-aida.jpg',
-              caption: { fr: 'La Formule AIDA', ar: 'قاعدة AIDA', en: 'The AIDA Formula' },
-              detail: { fr: 'A = Attention (accroche choc). I = Intérêt (bénéfice clair). D = Désir (preuve sociale). A = Action (CTA urgent). Exemple algérien: "🔥 PROMO RAMADAN — Couscous familial à 1,200 DZD seulement (au lieu de 1,800) — 50 plats dispos — Commandez avant 18h sur WhatsApp 👇"', ar: 'A = انتباه (مفتاح صادم). I = اهتمام (فائدة واضحة). D = رغبة (إثبات اجتماعي). A = عمل (CTA عاجل). مثال جزائري: "🔥 عرض رمضان — كسكس عائلي بـ 1,200 دج فقط (بدل 1,800) — 50 طبق متوفر — اطلب قبل 18h على WhatsApp 👇"', en: 'A = Attention (shock hook). I = Interest (clear benefit). D = Desire (social proof). A = Action (urgent CTA). Algerian example: "🔥 RAMADAN PROMO — Family couscous only 1,200 DZD (was 1,800) — 50 plates available — Order before 6pm on WhatsApp 👇"' },
-              hotspot: { x: 50, y: 50, label: 'AIDA' },
-              shortcuts: [],
-              aiPrompt: null
+            method: { fr: 'Recherchez 3 mots-clés sur Google et analysez les résultats.', ar: 'ابحث عن 3 كلمات مفتاحية في Google وحلل النتائج.', en: 'Search for 3 keywords on Google and analyze the results.' },
+            exercise: { fr: 'Listez 20 mots-clés pour une entreprise de votre choix.', ar: 'اكتب 20 كلمة مفتاحية لمشروع من اختيارك.', en: 'List 20 keywords for a business of your choice.' },
+            tip: { fr: '💡 Utilisez Google Keyword Planner pour trouver des mots-clés.', ar: '💡 استخدم Google Keyword Planner للعثور على كلمات مفتاحية.', en: '💡 Use Google Keyword Planner to find keywords.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 4–8', ar: 'الأسابيع 4–8', en: 'Weeks 4–8' },
+        goal: { fr: 'Maîtriser les techniques On-Page et Off-Page', ar: 'إتقان تقنيات On-Page و Off-Page', en: 'Master On-Page and Off-Page techniques' },
+        lessons: [
+          {
+            id: 'seo-i-1',
+            title: { fr: 'Optimisation On-Page et Contenu', ar: 'تحسين On-Page والمحتوى', en: 'On-Page Optimization and Content' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Title: 50-60 caractères avec mot-clé','Meta description: 150-160 caractères avec CTA','H1-H6: un seul H1 par page','URL: courte, descriptive, avec mot-clé','Contenu: 800+ mots, répondez aux questions','Liens internes: reliez vos pages'],
+              ar: ['Title: 50-60 حرف مع كلمة مفتاحية','Meta description: 150-160 حرف مع CTA','H1-H6: H1 واحد فقط لكل صفحة','الرابط: قصير، وصفي، مع كلمة مفتاحية','المحتوى: 800+ كلمة، جاوب على الأسئلة','الروابط الداخلية: اربط صفحاتك'],
+              en: ['Title: 50-60 characters with keyword','Meta description: 150-160 characters with CTA','H1-H6: one H1 per page','URL: short, descriptive, with keyword','Content: 800+ words, answer questions','Internal links: link your pages']
             },
-            {
-              step: 2,
-              image: 'images/lessons/copy/step2-chatgpt-prompts.jpg',
-              caption: { fr: '🤖 50 Prompts Copywriting avec ChatGPT', ar: '🤖 50 Prompt كتابة إعلانية بـ ChatGPT', en: '🤖 50 Copywriting Prompts with ChatGPT' },
-              detail: { fr: 'Prompt gagnant: "Rédige 5 captions Instagram pour un restaurant algérien à Béjaïa. Ton: chaleureux, familial, avec expressions locales. Structure: Accroche + Produit + Prix + Urgence + CTA WhatsApp. Inclus 1 émoji par phrase. Longueur: 80-120 mots. Langue: fr+darija."', ar: 'Prompt رابح: "اكتب 5 captions Instagram لمطعم جزائري في بجاية. نبرة: دافية، عائلية، مع تعبيرات محلية. هيكل: مفتاح + منتج + سعر + عجلة + CTA WhatsApp. ضمّن 1 emoji لكل جملة. الطول: 80-120 كلمة. اللغة: فرنسية+دارجة."', en: 'Winning prompt: "Write 5 Instagram captions for an Algerian restaurant in Béjaïa. Tone: warm, family-friendly, with local expressions. Structure: Hook + Product + Price + Urgency + WhatsApp CTA. Include 1 emoji per sentence. Length: 80-120 words. Language: French+darija."' },
-              hotspot: { x: 50, y: 50, label: 'ChatGPT' },
-              shortcuts: [],
-              aiPrompt: { tool: 'ChatGPT', prompt: 'Rédige [NOMBRE] [TYPE TEXTES] pour [BUSINESS] à [VILLE]. Ton: [chaleureux/professionnel/drôle]. Structure: [AIDA/PAS/4P]. Langue: fr+ar+darija. Inclus: prix en DZD, urgence, CTA WhatsApp, 3 hashtags locaux.', result: 'Textes prêts à publier' }
+            method: { fr: 'Optimisez une page existante de votre site.', ar: 'حسّن صفحة موجودة على موقعك.', en: 'Optimize an existing page on your site.' },
+            exercise: { fr: 'Rédigez un article SEO optimisé (800+ mots).', ar: 'اكتب مقالة SEO محسّنة (800+ كلمة).', en: 'Write an SEO-optimized article (800+ words).' },
+            tip: { fr: '💡 Utilisez Yoast SEO ou Rank Math.', ar: '💡 استخدم Yoast SEO أو Rank Math.', en: '💡 Use Yoast SEO or Rank Math.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 9–16', ar: 'الأسابيع 9–16', en: 'Weeks 9–16' },
+        goal: { fr: 'Maîtriser les backlinks', ar: 'إتقان الروابط الخلفية', en: 'Master backlinks' },
+        lessons: [
+          {
+            id: 'seo-a-1',
+            title: { fr: 'Stratégie de Backlinks', ar: 'استراتيجية الروابط الخلفية', en: 'Backlink Strategy' },
+            image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Backlinks = facteur de classement #1','Qualité > quantité','Guest blogging, broken link building, annuaires','Analysez concurrents avec Ahrefs/SEMrush','Contenu "linkable": guides, infographies','Évitez black hat'],
+              ar: ['الروابط الخلفية = عامل الترتيب #1','الجودة > الكمية','Guest blogging, broken link building, أدلة','حلل منافسيك مع Ahrefs/SEMrush','محتوى "linkable": أدلة، إنفوغرافيك','تجنّب black hat'],
+              en: ['Backlinks = ranking factor #1','Quality > quantity','Guest blogging, broken link building, directories','Analyze competitors with Ahrefs/SEMrush','"Linkable" content: guides, infographics','Avoid black hat']
             },
-            {
-              step: 3,
-              image: 'images/lessons/copy/step3-ab-test.jpg',
-              caption: { fr: 'A/B Testing : Quel texte vend plus ?', ar: 'A/B Testing: أنهو نص يبيع أكثر؟', en: 'A/B Testing: Which Copy Sells More?' },
-              detail: { fr: 'Créez 2 versions d\'un même post. Version A: "Prix bas" (1,200 DZD). Version B: "Valeur" (Économisez 600 DZD). Postez les 2 sur des jours différents. Comparez: likes, commentaires, messages WhatsApp. Gardez le gagnant. Secret: En Algérie, "Économisez X DZD" convertit 30% mieux que "Prix: X DZD".', ar: 'أنشئ نسختين من نفس المنشور. نسخة A: "سعر منخفض" (1,200 دج). نسخة B: "قيمة" (وفّر 600 دج). انشرهم فأيام مختلفة. قارن: likes، تعليقات، رسائل WhatsApp. احتفظ بالرابح. سر: في الجزائر، "وفّر X دج" يحول 30% أكثر من "السعر: X دج".', en: 'Create 2 versions of the same post. Version A: "Low price" (1,200 DZD). Version B: "Value" (Save 600 DZD). Post on different days. Compare: likes, comments, WhatsApp messages. Keep the winner. Secret: In Algeria, "Save X DZD" converts 30% better than "Price: X DZD".' },
-              hotspot: { x: 50, y: 50, label: 'A/B Test' },
-              shortcuts: [],
-              aiPrompt: null
-            }
-          ],
-          method: { fr: 'Rédigez 50 textes (captions, emails, scripts vidéo) pour un client algérien avec ChatGPT. Testez A/B.', ar: 'اكتب 50 نص (captions، emails، سكريبت فيديو) لزبون جزائري بـ ChatGPT. اختبر A/B.', en: 'Write 50 copies (captions, emails, video scripts) for an Algerian client with ChatGPT. A/B test.' },
-          exercise: { fr: 'Pour "Bijouterie El Or" (Oran): (1) ChatGPT: 20 captions Instagram (AIDA), (2) 10 emails promotionnels Ramadan, (3) 5 scripts Reels (30s), (4) A/B test: 2 versions de la même promo. Livrable: 35 textes + rapport A/B.', ar: 'لـ "Bijouterie El Or" (وهران): (1) ChatGPT: 20 caption Instagram (AIDA)، (2) 10 email ترويجي رمضان، (3) 5 سكريبت Reels (30 ثانية)، (4) A/B test: نسختين من نفس العرض. تسليم: 35 نص + تقرير A/B.', en: 'For "Bijouterie El Or" (Oran): (1) ChatGPT: 20 Instagram captions (AIDA), (2) 10 Ramadan promo emails, (3) 5 Reels scripts (30s), (4) A/B test: 2 versions of same promo. Deliverable: 35 copies + A/B report.' },
-          tip: { fr: '🤖 Astuce IA: Utilisez "Custom Instructions" dans ChatGPT pour créer un "Copywriter Algérien" personnalisé. Décrivez votre style, vos expressions locales préférées, votre ton. ChatGPT générera toujours dans VOTRE style.', ar: '🤖 نصيحة الذكاء الاصطناعي: استخدم "Custom Instructions" ف ChatGPT باش تخلق "كاتب إعلاني جزائري" مخصص. صف ستايلك، تعبيراتك المحلية المفضلة، نبرتك. ChatGPT يولّد دايماً فـ ستايلك.', en: '🤖 AI Tip: Use "Custom Instructions" in ChatGPT to create a custom "Algerian Copywriter". Describe your style, favorite local expressions, your tone. ChatGPT will always generate in YOUR style.' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 8: UI/UX DESIGN + IA
-// ============================================================
-{
-  id: 'uiux',
-  icon: '🎯',
-  color: '#DB2777',
-  accent: '#F472B6',
-  bg: 'linear-gradient(135deg, #1A0512 0%, #2D0A1F 50%, #1A0512 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80',
-  earning: '30,000 – 400,000 DZD/projet',
-  firstClient: { fr: '3–4 semaines', ar: '3–4 أسابيع', en: '3–4 weeks' },
-  startTool: 'Figma + FigJam AI + Uizard',
-  title: { fr: 'UI/UX Design', ar: 'تصميم تجربة المستخدم', en: 'UI/UX Design' },
-  subtitle: { fr: 'Interfaces + Prototypage IA', ar: 'واجهات + نماذج بالذكاء الاصطناعي', en: 'Interfaces + AI Prototyping' },
-  tagline: { fr: 'Concevez des applications et sites web intuitifs avec l\'IA', ar: 'صمم تطبيقات ومواقع بديهية بالذكاء الاصطناعي', en: 'Design intuitive apps and websites with AI' },
-  aiTools: ['Figma AI', 'Uizard', 'Galileo AI', 'FigJam AI', 'Maze'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-      goal: { fr: 'Créer un prototype interactif avec Figma + générer des wireframes IA', ar: 'إنشاء نموذج تفاعلي بـ Figma + توليد wireframes بالذكاء الاصطناعي', en: 'Create interactive prototype with Figma + generate AI wireframes' },
-      lessons: [
-        {
-          id: 'ux-b-1',
-          title: { fr: 'Figma + IA : Prototype en 1 Jour', ar: 'Figma + الذكاء الاصطناعي: نموذج فـ 1 يوم', en: 'Figma + AI: Prototype in 1 Day' },
-          image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/uiux/step1-uizard.jpg',
-              caption: { fr: 'Générer des wireframes avec Uizard', ar: 'توليد wireframes بـ Uizard', en: 'Generate wireframes with Uizard' },
-              detail: { fr: 'Uizard.io → Décrivez votre app: "App de livraison de nourriture algérienne, écran d\'accueil avec liste de restaurants, panier, profil utilisateur, paiement CCP". L\'IA génère les wireframes complets en 30s. Exportez vers Figma.', ar: 'Uizard.io → صف تطبيقك: "App توصيل أكل جزائري، شاشة رئيسية بقائمة مطاعم، سلّة، بروفيل مستخدم، دفع CCP". الذكاء الاصطناعي يولّد الـ wireframes كاملة فـ 30 ثانية. صدّر لـ Figma.', en: 'Uizard.io → Describe your app: "Algerian food delivery app, home screen with restaurant list, cart, user profile, CCP payment". AI generates complete wireframes in 30s. Export to Figma.' },
-              hotspot: { x: 50, y: 50, label: 'Uizard' },
-              shortcuts: [],
-              aiPrompt: { tool: 'Uizard', prompt: 'Generate wireframes for [TYPE APP] with screens: [liste des écrans]. Style: [modern/minimal]. Include: navigation, CTAs, forms. Export to Figma.', result: 'Wireframes complets en 30s' }
+            method: { fr: 'Créez une stratégie de backlinks.', ar: 'أنشئ استراتيجية روابط خلفية.', en: 'Create a backlink strategy.' },
+            exercise: { fr: 'Identifiez 20 sites pour obtenir un backlink.', ar: 'حدّد 20 موقعاً للحصول على رابط خلفي.', en: 'Identify 20 sites to get a backlink.' },
+            tip: { fr: '💡 Les backlinks locaux (blogs algériens) sont très puissants.', ar: '💡 الروابط الخلفية المحلية (المدونات الجزائرية) قوية جداً.', en: '💡 Local backlinks (Algerian blogs) are very powerful.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Diriger une agence SEO', ar: 'إدارة وكالة SEO', en: 'Lead an SEO agency' },
+        lessons: [
+          {
+            id: 'seo-m-1',
+            title: { fr: 'Agence SEO - De la Stratégie aux Résultats', ar: 'وكالة SEO - من الاستراتيجية للنتائج', en: 'SEO Agency - From Strategy to Results' },
+            image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Audit SEO complet: technique, contenu, backlinks','Rapport PDF avec recommandations','Stratégie 6 mois: objectifs SMART, budget','KPIs: positions Google, trafic, taux de conversion','Outils: Search Console, Analytics, Ahrefs, SEMrush','Tarification: audit 30-80K, forfait 50-200K DZD'],
+              ar: ['تدقيق SEO كامل: تقني، محتوى، روابط','تقرير PDF مع توصيات','استراتيجية 6 أشهر: أهداف SMART، ميزانية','KPIs: مراكز Google، الزيارات، معدل التحويل','الأدوات: Search Console, Analytics, Ahrefs, SEMrush','التسعير: تدقيق 30-80K، باقة 50-200K دج'],
+              en: ['Complete SEO audit: technical, content, backlinks','PDF report with recommendations','6-month strategy: SMART goals, budget','KPIs: Google positions, traffic, conversion rate','Tools: Search Console, Analytics, Ahrefs, SEMrush','Pricing: audit 30-80K, package 50-200K DZD']
             },
-            {
-              step: 2,
-              image: 'images/lessons/uiux/step2-figma-prototype.jpg',
-              caption: { fr: 'Prototype interactif Figma', ar: 'نموذج تفاعلي Figma', en: 'Figma Interactive Prototype' },
-              detail: { fr: 'Figma → Importez les wireframes Uizard → Ajoutez des couleurs, typographie, images. Prototype mode: reliez les écrans avec des transitions (clic → écran suivant). Partagez le lien — le client clique et navigue comme sur une vraie app.', ar: 'Figma → استورد wireframes Uizard → زيد ألوان، خطوط، صور. وضع النموذج: ربط الشاشات بانتقالات (clic → الشاشة الجاية). شارك الرابط — الزبون يضغط ويتنقل كأنها app حقيقية.', en: 'Figma → Import Uizard wireframes → Add colors, typography, images. Prototype mode: connect screens with transitions (click → next screen). Share the link — client clicks and navigates like a real app.' },
-              hotspot: { x: 50, y: 50, label: 'Figma' },
-              shortcuts: ['Shift+E : Prototype mode', 'Ctrl+Alt+K : Create component'],
-              aiPrompt: null
+            method: { fr: 'Réalisez un audit SEO complet.', ar: 'قم بتدقيق SEO كامل.', en: 'Perform a complete SEO audit.' },
+            exercise: { fr: 'Créez votre offre de services SEO.', ar: 'أنشئ عرض الخدمات SEO الخاص بك.', en: 'Create your SEO service offering.' },
+            tip: { fr: '💡 Les clients paient pour des résultats, pas pour du travail.', ar: '💡 الزبائن يدفعون للنتائج، مش للشغل.', en: '💡 Clients pay for results, not for work.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 6: DATA ANALYSIS
+  // ============================================================
+  {
+    id: 'data',
+    icon: '📊',
+    color: '#8B5CF6',
+    accent: '#A78BFA',
+    bg: 'linear-gradient(135deg, #0D0818 0%, #1A1040 50%, #0D0818 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+    earning: '25,000 – 90,000 DZD/project',
+    firstClient: { fr: '3–5 semaines', ar: '3–5 أسابيع', en: '3–5 weeks' },
+    startTool: 'Excel + Power BI (free)',
+    title: { fr: 'Data Analysis', ar: 'تحليل البيانات', en: 'Data Analysis' },
+    subtitle: { fr: 'Analyse de Données', ar: 'تحليل البيانات', en: 'Data Analytics' },
+    tagline: { fr: 'Transformez les données en décisions qui rapportent', ar: 'حوّل البيانات لقرارات تدرّ عليك', en: 'Turn data into decisions that generate revenue' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
+        goal: { fr: 'Comprendre Excel', ar: 'تفهم Excel', en: 'Understand Excel' },
+        lessons: [
+          {
+            id: 'data-b-1',
+            title: { fr: 'Excel pour Débutants', ar: 'Excel للمبتدئين', en: 'Excel for Beginners' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Ouvrez Excel → Nouveau classeur','Colonnes: A, B, C... Lignes: 1, 2, 3...','Somme automatique pour additionner','Filtres: sélectionnez → Filtrer','Graphiques: Insérer → Graphique','Formules: =SOMME, =MOYENNE'],
+              ar: ['افتح Excel → مصنف جديد','الأعمدة: A, B, C... الصفوف: 1, 2, 3...','الجمع التلقائي','تصفية: اختر → تصفية','الرسوم: إدراج → رسم بياني','الصيغ: =SUM, =AVERAGE'],
+              en: ['Open Excel → New Workbook','Columns: A, B, C... Rows: 1, 2, 3...','AutoSum to add','Filters: select → Filter','Charts: Insert → Chart','Formulas: =SUM, =AVERAGE']
             },
-            {
-              step: 3,
-              image: 'images/lessons/uiux/step3-user-testing.jpg',
-              caption: { fr: 'Tests utilisateurs avec Maze', ar: 'اختبارات المستخدمين بـ Maze', en: 'User Testing with Maze' },
-              detail: { fr: 'Maze.co → Importez votre prototype Figma → Créez des missions: "Commandez un couscous et payez par CCP". Envoyez le lien à 5 amis. Maze enregistre: où ils cliquent, où ils bloquent, temps passé. Corrigez les problèmes avant de coder.', ar: 'Maze.co → استورد نموذج Figma ديالك → أنشئ مهام: "اطلب كسكس وادفع بـ CCP". بعت الرابط لـ 5 أصحاب. Maze يسجل: واش يضغطوا، واش يتعثروا، الوقت المقضى. صحح المشاكل قبل البرمجة.', en: 'Maze.co → Import your Figma prototype → Create missions: "Order couscous and pay by CCP". Send link to 5 friends. Maze records: where they click, where they get stuck, time spent. Fix issues before coding.' },
-              hotspot: { x: 50, y: 50, label: 'Maze' },
-              shortcuts: [],
-              aiPrompt: null
-            }
-          ],
-          method: { fr: 'Concevez un prototype complet pour une app algérienne: wireframes Uizard, design Figma, tests Maze.', ar: 'صمم نموذج كامل لتطبيق جزائري: wireframes Uizard، تصميم Figma، اختبارات Maze.', en: 'Design a complete prototype for an Algerian app: Uizard wireframes, Figma design, Maze tests.' },
-          exercise: { fr: 'App "DzLivraison" (livraison à Sétif): (1) Uizard: wireframes 5 écrans, (2) Figma: design complet avec branding, (3) Prototype: navigation + transitions, (4) Maze: test avec 5 utilisateurs, (5) Rapport: problèmes + solutions. Livrable: lien prototype + rapport tests.', ar: 'App "DzLivraison" (توصيل فـ سطيف): (1) Uizard: wireframes 5 شاشات، (2) Figma: تصميم كامل مع branding، (3) نموذج: تنقل + انتقالات، (4) Maze: اختبار مع 5 مستخدمين، (5) تقرير: مشاكل + حلول. تسليم: رابط النموذج + تقرير الاختبارات.', en: 'App "DzLivraison" (delivery in Sétif): (1) Uizard: 5-screen wireframes, (2) Figma: complete design with branding, (3) Prototype: navigation + transitions, (4) Maze: test with 5 users, (5) Report: issues + solutions. Deliverable: prototype link + test report.' },
-          tip: { fr: '💰 Secret Pro: Un prototype Figma interactif se vend 50,000–150,000 DZD. Les clients algériens paient pour VOIR et TOUCHER avant d\'investir dans le développement. C\'est votre meilleur argument de vente.', ar: '💰 سر محترف: نموذج Figma تفاعلي يتباع 50,000–150,000 دج. الزبائن الجزائريين يدفعوا باش يشوفوا ويلمسوا قبل الاستثمار فالتطوير. هاذا أحسن حجة بيع عندك.', en: '💰 Pro Secret: An interactive Figma prototype sells for 50,000–150,000 DZD. Algerian clients pay to SEE and TOUCH before investing in development. It\'s your best sales argument.' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 9: AUTOMATION + IA (Zapier, Make, n8n)
-// ============================================================
-{
-  id: 'auto',
-  icon: '⚙️',
-  color: '#65A30D',
-  accent: '#A3E635',
-  bg: 'linear-gradient(135deg, #0F1A05 0%, #1A2E0A 50%, #0F1A05 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
-  earning: '20,000 – 250,000 DZD/mois',
-  firstClient: { fr: '2–3 semaines', ar: '2–3 أسابيع', en: '2–3 weeks' },
-  startTool: 'Make.com + Zapier + n8n',
-  title: { fr: 'Automation', ar: 'الأتمتة', en: 'Automation' },
-  subtitle: { fr: 'Workflows IA + Bots', ar: 'سير عمل بالذكاء الاصطناعي + بوتات', en: 'AI Workflows + Bots' },
-  tagline: { fr: 'Automatisez les tâches répétitives des entreprises algériennes', ar: 'أتمت المهام المتكررة للمؤسسات الجزائرية', en: 'Automate repetitive tasks for Algerian businesses' },
-  aiTools: ['Make.com', 'Zapier', 'n8n', 'ChatGPT API', 'WhatsApp Business API'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
-      goal: { fr: 'Créer 5 automatisations pour un commerce algérien', ar: 'إنشاء 5 أتمتات لتاجر جزائري', en: 'Create 5 automations for an Algerian business' },
-      lessons: [
-        {
-          id: 'a-b-1',
-          title: { fr: 'Make.com : Bot WhatsApp + Sheets + Email', ar: 'Make.com: بوت WhatsApp + Sheets + Email', en: 'Make.com: WhatsApp Bot + Sheets + Email' },
-          image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/auto/step1-make-trigger.jpg',
-              caption: { fr: 'Trigger: Nouveau message WhatsApp', ar: 'Trigger: رسالة WhatsApp جديدة', en: 'Trigger: New WhatsApp message' },
-              detail: { fr: 'Make.com → Scénario: "WhatsApp Business" (trigger) → Quand un client envoie "Prix" → Le bot répond automatiquement avec la liste des produits et prix. Connectez WhatsApp Business API (gratuit via Meta for Developers).', ar: 'Make.com → سيناريو: "WhatsApp Business" (trigger) → لما زبون يرسل "Prix" → البوت يجاوب تلقائياً بقائمة المنتجات والأسعار. ربط WhatsApp Business API (مجاني عبر Meta for Developers).', en: 'Make.com → Scenario: "WhatsApp Business" (trigger) → When a client sends "Price" → Bot auto-replies with product list and prices. Connect WhatsApp Business API (free via Meta for Developers).' },
-              hotspot: { x: 50, y: 50, label: 'Trigger' },
-              shortcuts: [],
-              aiPrompt: null
+            method: { fr: 'Importez un jeu de données.', ar: 'استورد مجموعة بيانات.', en: 'Import a dataset.' },
+            exercise: { fr: 'Tableau de ventes avec 10 produits.', ar: 'جدول مبيعات بـ10 منتجات.', en: 'Sales table with 10 products.' },
+            tip: { fr: '💡 Utilisez Ctrl+C Ctrl+V Ctrl+Z.', ar: '💡 استخدم Ctrl+C Ctrl+V Ctrl+Z.', en: '💡 Use Ctrl+C Ctrl+V Ctrl+Z.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 4–8', ar: 'الأسابيع 4–8', en: 'Weeks 4–8' },
+        goal: { fr: 'Maîtriser Power BI', ar: 'إتقان Power BI', en: 'Master Power BI' },
+        lessons: [
+          {
+            id: 'data-i-1',
+            title: { fr: 'Power BI - Visualisez vos données', ar: 'Power BI - صور بياناتك', en: 'Power BI - Visualize your data' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Power BI Desktop (gratuit)','Importez vos données: Excel, CSV','Créez des visualisations: graphiques, cartes, jauges','DAX: langage de formules avancées','Partagez: Power BI Service ou PDF'],
+              ar: ['Power BI Desktop (مجاني)','استورد بياناتك: Excel، CSV','أنشئ تصورات: رسوماً بيانية، خرائط، مقاييس','DAX: لغة صيغ متقدمة','شارك: Power BI Service أو PDF'],
+              en: ['Power BI Desktop (free)','Import your data: Excel, CSV','Create visualizations: charts, maps, gauges','DAX: advanced formula language','Share: Power BI Service or PDF']
             },
-            {
-              step: 2,
-              image: 'images/lessons/auto/step2-sheets-log.jpg',
-              caption: { fr: 'Action 1: Logger dans Google Sheets', ar: 'Action 1: تسجيل فـ Google Sheets', en: 'Action 1: Log to Google Sheets' },
-              detail: { fr: 'Make.com → "Google Sheets" → Ajoutez une ligne avec: Date, Numéro client, Message, Heure. Le commerçant voit TOUTES les demandes dans un tableau. Plus besoin de chercher dans WhatsApp.', ar: 'Make.com → "Google Sheets" → زيد سطر يحتوي على: التاريخ، رقم الزبون، الرسالة، الوقت. التاجر يشوف كل الطلبات فجدول. بلا حاجة يدور فـ WhatsApp.', en: 'Make.com → "Google Sheets" → Add row with: Date, Client number, Message, Time. The merchant sees ALL requests in a table. No need to search WhatsApp.' },
-              hotspot: { x: 50, y: 50, label: 'Sheets' },
-              shortcuts: [],
-              aiPrompt: null
+            method: { fr: 'Créez un dashboard avec 5 visualisations.', ar: 'أنشئ لوحة قيادة بـ5 تصورات.', en: 'Create a dashboard with 5 visualizations.' },
+            exercise: { fr: 'Dashboard de ventes par mois, produit, région.', ar: 'لوحة قيادة للمبيعات حسب الشهر، المنتج، المنطقة.', en: 'Sales dashboard by month, product, region.' },
+            tip: { fr: '💡 Utilisez les slicers pour filtrer.', ar: '💡 استخدم slicers للتصفية.', en: '💡 Use slicers to filter.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 9–16', ar: 'الأسابيع 9–16', en: 'Weeks 9–16' },
+        goal: { fr: 'Maîtriser SQL et Python', ar: 'إتقان SQL و Python', en: 'Master SQL and Python' },
+        lessons: [
+          {
+            id: 'data-a-1',
+            title: { fr: 'SQL - Interrogez vos données', ar: 'SQL - استعلم عن بياناتك', en: 'SQL - Query your data' },
+            image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['SQL est le langage standard pour interroger les bases de données.','SELECT * FROM clients;','SELECT nom FROM clients WHERE ville = "Alger";','JOIN: combinez plusieurs tables','GROUP BY: regroupez','ORDER BY: triez'],
+              ar: ['SQL هي اللغة القياسية للاستعلام عن قواعد البيانات.','SELECT * FROM clients;','SELECT nom FROM clients WHERE ville = "Alger";','JOIN: ادمج عدة جداول','GROUP BY: جمّع','ORDER BY: رتّب'],
+              en: ['SQL is the standard language for querying databases.','SELECT * FROM customers;','SELECT name FROM customers WHERE city = "Algiers";','JOIN: combine tables','GROUP BY: group','ORDER BY: sort']
             },
-            {
-              step: 3,
-              image: 'images/lessons/auto/step3-chatgpt-reply.jpg',
-              caption: { fr: '🤖 Action 2: Réponse IA avec ChatGPT', ar: '🤖 Action 2: رد بالذكاء الاصطناعي بـ ChatGPT', en: '🤖 Action 2: AI Reply with ChatGPT' },
-              detail: { fr: 'Make.com → "OpenAI (ChatGPT)" → Prompt: "Tu es un assistant pour [Commerce]. Le client demande: [message]. Réponds en darija algérienne avec les prix en DZD. Sois chaleureux et professionnel." → Le bot répond intelligemment, 24h/24.', ar: 'Make.com → "OpenAI (ChatGPT)" → Prompt: "أنت مساعد لـ [Commerce]. الزبون يسأل: [message]. جاوب بالدارجة الجزائرية مع الأسعار بالدينار. كن دافي واحترافي." → البوت يجاوب بذكاء، 24/24.', en: 'Make.com → "OpenAI (ChatGPT)" → Prompt: "You are an assistant for [Business]. The client asks: [message]. Reply in Algerian darija with prices in DZD. Be warm and professional." → Bot replies intelligently, 24/7.' },
-              hotspot: { x: 50, y: 50, label: 'ChatGPT' },
-              shortcuts: [],
-              aiPrompt: { tool: 'Make.com + ChatGPT API', prompt: 'Scénario: WhatsApp message → ChatGPT analyse → Réponse personnalisée darija + prix DZD → Envoi WhatsApp + Log Sheets', result: 'Bot 24/7 intelligent' }
-            }
-          ],
-          method: { fr: 'Créez un bot WhatsApp complet pour un commerce: auto-réponse, log Sheets, notification email pour commandes.', ar: 'أنشئ بوت WhatsApp كامل لتاجر: رد تلقائي، تسجيل Sheets، إشعار email للطلبات.', en: 'Create a complete WhatsApp bot for a business: auto-reply, Sheets log, email notification for orders.' },
-          exercise: { fr: 'Bot pour "Boucherie El Feth" (Blida): (1) WhatsApp: trigger mot-clé "Menu", (2) ChatGPT: réponse avec liste viandes + prix DZD, (3) Sheets: log chaque demande, (4) Email: alerte pour commandes >5,000 DZD, (5) Test: 10 conversations. Livrable: lien Make + doc.', ar: 'بوت لـ "Boucherie El Feth" (البليدة): (1) WhatsApp: trigger كلمة "Menu"، (2) ChatGPT: رد بقائمة اللحوم + أسعار بالدينار، (3) Sheets: تسجيل كل طلب، (4) Email: تنبيه للطلبات >5,000 دج، (5) اختبار: 10 محادثات. تسليم: رابط Make + وثيقة.', en: 'Bot for "Boucherie El Feth" (Blida): (1) WhatsApp: trigger word "Menu", (2) ChatGPT: reply with meat list + DZD prices, (3) Sheets: log each request, (4) Email: alert for orders >5,000 DZD, (5) Test: 10 conversations. Deliverable: Make link + doc.' },
-          tip: { fr: '💰 Secret Pro: Un bot WhatsApp IA se vend 30,000–80,000 DZD + 5,000–15,000 DZD/mois de maintenance. Un commerçant économise 20h/semaine de réponses manuelles. ROI en 1 semaine.', ar: '💰 سر محترف: بوت WhatsApp بالذكاء الاصطناعي يتباع 30,000–80,000 دج + 5,000–15,000 دج/شهر صيانة. تاجر يوفر 20 ساعة/أسبوع من الردود اليدوية. عائد الاستثمار فـ أسبوع واحد.', en: '💰 Pro Secret: An AI WhatsApp bot sells for 30,000–80,000 DZD + 5,000–15,000 DZD/month maintenance. A merchant saves 20h/week of manual replies. ROI in 1 week.' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 10: VIBE CODING
-// ============================================================
-{
-  id: 'vibe',
-  icon: '💻',
-  color: '#7C3AED',
-  accent: '#A78BFA',
-  bg: 'linear-gradient(135deg, #0D0818 0%, #1A0A30 50%, #0D0818 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80',
-  earning: '50,000 – 600,000 DZD/projet',
-  firstClient: { fr: '3–4 semaines', ar: '3–4 أسابيع', en: '3–4 weeks' },
-  startTool: 'Cursor.sh + Replit + Claude',
-  title: { fr: 'Vibe Coding', ar: 'البرمجة بالتوجه', en: 'Vibe Coding' },
-  subtitle: { fr: 'Développement Accéléré par IA', ar: 'تطوير مسرع بالذكاء الاصطناعي', en: 'AI-Accelerated Development' },
-  tagline: { fr: 'Créez des apps et outils complexes sans être développeur', ar: 'أنشئ تطبيقات وأدوات معقدة بلا ما تكون مطوّر', en: 'Build complex apps and tools without being a developer' },
-  aiTools: ['Cursor.sh', 'Claude', 'GitHub Copilot', 'Replit', 'v0.dev'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-      goal: { fr: 'Créer une app fonctionnelle avec IA + la déployer', ar: 'إنشاء تطبيق شغال بالذكاء الاصطناعي + نشره', en: 'Create a functional app with AI + deploy it' },
-      lessons: [
-        {
-          id: 'v-b-1',
-          title: { fr: 'Vibe Coding : App de Réservation en 2h', ar: 'برمجة بالتوجه: تطبيق حجز فـ 2 ساعات', en: 'Vibe Coding: Booking App in 2 Hours' },
-          image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/vibe/step1-cursor-prompt.jpg',
-              caption: { fr: 'Décrivez l\'app en langage naturel', ar: 'صف التطبيق بلغة طبيعية', en: 'Describe the app in natural language' },
-              detail: { fr: 'Cursor.sh → Ctrl+K → "Crée une app de réservation de tables pour restaurant algérien. Fonctions: calendrier de réservation, formulaire (nom, téléphone, nombre de personnes, date/heure), confirmation WhatsApp, admin dashboard pour voir les réservations. Stack: HTML, CSS, JavaScript, Supabase pour la base de données. Style: moderne, couleurs chaudes, responsive."', ar: 'Cursor.sh → Ctrl+K → "أنشئ تطبيق حجز طاولات لمطعم جزائري. وظائف: تقويم حجز، استمارة (اسم، تليفون، عدد الأشخاص، تاريخ/وقت)، تأكيد WhatsApp، لوحة تحكم admin باش يشوف الحجوزات. Stack: HTML، CSS، JavaScript، Supabase للقاعدة. ستايل: عصري، ألوان دافئة، responsive."', en: 'Cursor.sh → Ctrl+K → "Create a table reservation app for an Algerian restaurant. Features: booking calendar, form (name, phone, number of people, date/time), WhatsApp confirmation, admin dashboard to view bookings. Stack: HTML, CSS, JavaScript, Supabase for database. Style: modern, warm colors, responsive."' },
-              hotspot: { x: 50, y: 50, label: 'Cursor' },
-              shortcuts: ['Ctrl+K : AI Chat', 'Ctrl+L : Edit mode'],
-              aiPrompt: { tool: 'Cursor.sh', prompt: 'Crée une [TYPE APP] avec [FONCTIONS]. Stack: [technologies]. Style: [description]. Inclus: [liste features]. Base de données: [Supabase/Firebase]. Déploie sur: [Vercel/Netlify].', result: 'App complète en 1-2h' }
+            method: { fr: 'Créez une base SQLite et écrivez 10 requêtes.', ar: 'أنشئ قاعدة SQLite واكتب 10 استعلامات.', en: 'Create an SQLite database and write 10 queries.' },
+            exercise: { fr: 'Requête SQL pour les ventes par mois et produit.', ar: 'استعلام SQL للمبيعات حسب الشهر والمنتج.', en: 'SQL query for sales by month and product.' },
+            tip: { fr: '💡 Utilisez SQLite Browser ou DBeaver.', ar: '💡 استخدم SQLite Browser أو DBeaver.', en: '💡 Use SQLite Browser or DBeaver.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Devenir consultant data', ar: 'كن مستشار بيانات', en: 'Become a data consultant' },
+        lessons: [
+          {
+            id: 'data-m-1',
+            title: { fr: 'Consultant Data', ar: 'مستشار بيانات', en: 'Data Consultant' },
+            image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Collecte → Analyse → Visualisation → Recommandations','Outils: Excel, Power BI, SQL, Python','Livrables: dashboards, rapports PDF','Tarification: projet 50-200K, forfait 80-300K DZD'],
+              ar: ['جمع → تحليل → تصور → توصيات','الأدوات: Excel, Power BI, SQL, Python','التسليمات: لوحات قيادة، تقارير PDF','التسعير: مشروع 50-200K، باقة 80-300K دج'],
+              en: ['Collection → Analysis → Visualization → Recommendations','Tools: Excel, Power BI, SQL, Python','Deliverables: dashboards, PDF reports','Pricing: project 50-200K, package 80-300K DZD']
             },
-            {
-              step: 2,
-              image: 'images/lessons/vibe/step2-debug.jpg',
-              caption: { fr: 'Déboguer avec l\'IA', ar: 'تصحيح الأخطاء بالذكاء الاصطناعي', en: 'Debug with AI' },
-              detail: { fr: 'Quand il y a une erreur → Copiez le message d\'erreur → Ctrl+K → "J\'ai cette erreur: [message]. Corrige le code." L\'IA explique le problème ET corrige le code. Secret: Ne copiez pas l\'erreur sur Google — Cursor est 10x plus rapide.', ar: 'لما يكون خطأ → انسخ رسالة الخطأ → Ctrl+K → "عندي هالخطأ: [message]. صحح الكود." الذكاء الاصطناعي يشرح المشكل ويصحح الكود. سر: ما تنسخش الخطأ فـ Google — Cursor أسرع 10 مرات.', en: 'When there\'s an error → Copy the error message → Ctrl+K → "I have this error: [message]. Fix the code." AI explains the problem AND fixes the code. Secret: Don\'t copy the error to Google — Cursor is 10x faster.' },
-              hotspot: { x: 50, y: 50, label: 'Debug' },
-              shortcuts: ['Ctrl+K : "Fix this error"', 'F5 : Run & test'],
-              aiPrompt: null
+            method: { fr: 'Réalisez une analyse complète pour une entreprise fictive.', ar: 'قم بتحليل كامل لمشروع وهمي.', en: 'Perform a complete analysis for a fictional company.' },
+            exercise: { fr: 'Créez votre offre de services data.', ar: 'أنشئ عرض الخدمات data الخاص بك.', en: 'Create your data service offering.' },
+            tip: { fr: '💡 Les données sont le nouvel or.', ar: '💡 البيانات هي الذهب الجديد.', en: '💡 Data is the new gold.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 7: COPYWRITING
+  // ============================================================
+  {
+    id: 'copy',
+    icon: '✍️',
+    color: '#EC4899',
+    accent: '#F472B6',
+    bg: 'linear-gradient(135deg, #1A0512 0%, #3A0A28 50%, #1A0512 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80',
+    earning: '10,000 – 50,000 DZD/project',
+    firstClient: { fr: '1–2 semaines', ar: '1–2 أسابيع', en: '1–2 weeks' },
+    startTool: 'Google Docs + Grammarly',
+    title: { fr: 'Copywriting', ar: 'الكتابة الإعلانية', en: 'Copywriting' },
+    subtitle: { fr: 'Rédaction Publicitaire', ar: 'الكتابة التسويقية', en: 'Copywriting' },
+    tagline: { fr: 'Des mots qui vendent, convertissent et persuadent', ar: 'كلمات تبيع وتحوّل وتقنع', en: 'Words that sell, convert and persuade' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–2', ar: 'الأسابيع 1–2', en: 'Weeks 1–2' },
+        goal: { fr: 'Maîtriser les bases du copywriting', ar: 'إتقان أساسيات الكتابة الإعلانية', en: 'Master copywriting basics' },
+        lessons: [
+          {
+            id: 'copy-b-1',
+            title: { fr: 'Les Fondamentaux du Copywriting', ar: 'أساسيات الكتابة الإعلانية', en: 'Copywriting Fundamentals' },
+            image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Le Copywriting est l\'art de vendre avec des mots.','AIDA: Attention → Intérêt → Désir → Action.','Headlines: 80% lisent les titres, 20% le reste.','Caractéristiques vs Avantages: une caractéristique est un fait, l\'avantage est ce que ça apporte.','Call to Action: dites EXACTEMENT quoi faire.','Storytelling: les histoires vendent mieux que les faits.'],
+              ar: ['الكتابة الإعلانية هي فن البيع بالكلمات.','AIDA: الانتباه → الاهتمام → الرغبة → الفعل.','العناوين: 80% يقرأون العناوين، 20% الباقي.','الميزات vs الفوائد: الميزة حقيقة، الفائدة هي ما يعود على الزبون.','الدعوة للفعل: قل بالضبط شو يدير.','سرد القصص: القصص تبيع أفضل من الحقائق.'],
+              en: ['Copywriting is the art of selling with words.','AIDA: Attention → Interest → Desire → Action.','Headlines: 80% read headlines, 20% the rest.','Features vs Benefits: a feature is a fact, the benefit is what it brings.','Call to Action: tell EXACTLY what to do.','Storytelling: stories sell better than facts.']
             },
-            {
-              step: 3,
-              image: 'images/lessons/vibe/step3-deploy.jpg',
-              caption: { fr: 'Déployer sur Vercel en 1 clic', ar: 'انشر على Vercel بـ 1 كليك', en: 'Deploy on Vercel in 1 click' },
-              detail: { fr: 'Vercel → Connectez GitHub → Push votre code → Déploiement auto. Domaine gratuit: monapp.vercel.app. Pour un domaine .dz: achetez chez Hostinger.dz (~3,000 DZD/an) → Connectez à Vercel. Secret: Vercel est gratuit et illimité pour les projets personnels.', ar: 'Vercel → ربط GitHub → Push كودك → نشر تلقائي. دومين مجاني: monapp.vercel.app. لدومين .dz: اشتري عند Hostinger.dz (~3,000 دج/سنة) → ربط بـ Vercel. سر: Vercel مجاني وغير محدود للمشاريع الشخصية.', en: 'Vercel → Connect GitHub → Push your code → Auto deploy. Free domain: monapp.vercel.app. For .dz domain: buy at Hostinger.dz (~3,000 DZD/year) → Connect to Vercel. Secret: Vercel is free and unlimited for personal projects.' },
-              hotspot: { x: 50, y: 50, label: 'Vercel' },
-              shortcuts: ['Git push → Auto-deploy'],
-              aiPrompt: null
-            }
-          ],
-          method: { fr: 'Créez une app complète avec Cursor: description → code → debug IA → déploiement Vercel.', ar: 'أنشئ تطبيق كامل بـ Cursor: وصف → كود → تصحيح بالذكاء الاصطناعي → نشر Vercel.', en: 'Create a complete app with Cursor: description → code → AI debug → Vercel deploy.' },
-          exercise: { fr: 'App "ReservDZ" pour salon de coiffure (Alger): (1) Cursor: app complète (réservation, calendrier, confirmation SMS), (2) Supabase: base de données réservations, (3) Vercel: déploiement, (4) Test: 10 réservations test. Livrable: URL live + code source + doc.', ar: 'App "ReservDZ" لصالون حلاقة (الجزائر العاصمة): (1) Cursor: تطبيق كامل (حجز، تقويم، تأكيد SMS)، (2) Supabase: قاعدة بيانات الحجوزات، (3) Vercel: نشر، (4) اختبار: 10 حجوزات تجريبية. تسليم: رابط مباشر + كود المصدر + وثيقة.', en: 'App "ReservDZ" for hair salon (Algiers): (1) Cursor: complete app (booking, calendar, SMS confirmation), (2) Supabase: reservations database, (3) Vercel: deploy, (4) Test: 10 test bookings. Deliverable: live URL + source code + doc.' },
-          tip: { fr: '💰 Secret Pro: Une app simple (réservation, devis, catalogue) se vend 100,000–300,000 DZD. Avec Vibe Coding, vous la livrez en 2-3 jours. Un développeur traditionnel prend 2-3 semaines et facture 500,000+ DZD.', ar: '💰 سر محترف: تطبيق بسيط (حجز، عرض سعر، كتالوج) يتباع 100,000–300,000 دج. بالبرمجة بالتوجه، تسلمه فـ 2-3 أيام. مطوّر تقليدي ياخذ 2-3 أسابيع ويفاتورة 500,000+ دج.', en: '💰 Pro Secret: A simple app (booking, quote, catalog) sells for 100,000–300,000 DZD. With Vibe Coding, you deliver in 2-3 days. A traditional developer takes 2-3 weeks and charges 500,000+ DZD.' }
-        }
-      ]
-    }
-  ]
-},
-
-// ============================================================
-// SKILL 11: ARTIFICIAL INTELLIGENCE (MAÎTRISE)
-// ============================================================
-{
-  id: 'ai',
-  icon: '🤖',
-  color: '#E11D48',
-  accent: '#FB7185',
-  bg: 'linear-gradient(135deg, #1A0510 0%, #2D0A1A 50%, #1A0510 100%)',
-  bgImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
-  earning: '50,000 – 1,000,000 DZD/mois',
-  firstClient: { fr: '2–4 semaines', ar: '2–4 أسابيع', en: '2–4 weeks' },
-  startTool: 'ChatGPT + Claude + Midjourney + API OpenAI',
-  title: { fr: 'Artificial Intelligence', ar: 'الذكاء الاصطناعي', en: 'Artificial Intelligence' },
-  subtitle: { fr: 'Maîtrise Complète de l\'IA', ar: 'إتقان كامل للذكاء الاصطناعي', en: 'Complete AI Mastery' },
-  tagline: { fr: 'Devenez l\'expert IA que les entreprises algériennes embauchent', ar: 'ولّي خبير الذكاء الاصطناعي اللي المؤسسات الجزائرية توظفو', en: 'Become the AI expert Algerian companies hire' },
-  aiTools: ['ChatGPT', 'Claude', 'Midjourney', 'DALL-E', 'OpenAI API', 'LangChain', 'Pinecone'],
-  levels: [
-    {
-      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-      badge: '🌱',
-      duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-      goal: { fr: 'Maîtriser les prompts avancés + créer des agents IA simples', ar: 'إتقان prompts متقدمة + إنشاء وكلاء ذكاء اصطناعي بسيطين', en: 'Master advanced prompts + create simple AI agents' },
-      lessons: [
-        {
-          id: 'ai-b-1',
-          title: { fr: 'Prompt Engineering : De Débutant à Expert', ar: 'هندسة Prompts: من مبتدئ لخبير', en: 'Prompt Engineering: From Beginner to Expert' },
-          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
-          layout: 'top',
-          visualSteps: [
-            {
-              step: 1,
-              image: 'images/lessons/ai/step1-prompt-structure.jpg',
-              caption: { fr: 'Structure CRISPE pour prompts parfaits', ar: 'هيكل CRISPE لـ prompts مثالية', en: 'CRISPE Structure for Perfect Prompts' },
-              detail: { fr: 'C = Contexte (qui, quoi, où). R = Rôle (tu es expert en...). I = Instructions (fais ceci, puis cela). S = Spécifications (format, longueur, ton). P = Précautions (évite ceci, inclus cela). E = Exemples (voici un exemple de sortie). Exemple: "Tu es un consultant SEO algérien avec 10 ans d\'expérience. Rédige un plan de contenu pour un restaurant à Constantine. Format: table JSON. Ton: professionnel mais chaleureux. Évite le jargon technique. Exemple de sortie: [{mois: \"Janvier\", sujet: \"Meilleurs restaurants Constantine\"}]"', ar: 'C = سياق (شكون، شنو، فين). R = دور (أنت خبير فـ...). I = تعليمات (دير هاذا، بعدها هاذا). S = مواصفات (صيغة، طول، نبرة). P = احتياطات (تجنب هاذا، ضمّن هاذا). E = أمثلة (ها مثال للخروج). مثال: "أنت مستشار SEO جزائري مع 10 سنوات خبرة. اكتب خطة محتوى لمطعم فـ قسنطينة. صيغة: table JSON. نبرة: احترافية لكن دافية. تجنب المصطلحات التقنية. مثال الخروج: [{mois: \"جانفي\"، sujet: \"أفضل مطاعم قسنطينة\"}]"', en: 'C = Context (who, what, where). R = Role (you are an expert in...). I = Instructions (do this, then that). S = Specifications (format, length, tone). P = Precautions (avoid this, include that). E = Examples (here\'s a sample output). Example: "You are an Algerian SEO consultant with 10 years experience. Write a content plan for a restaurant in Constantine. Format: JSON table. Tone: professional but warm. Avoid technical jargon. Sample output: [{month: \"January\", topic: \"Best restaurants Constantine\"}]"' },
-              hotspot: { x: 50, y: 50, label: 'CRISPE' },
-              shortcuts: [],
-              aiPrompt: null
+            method: { fr: 'Analysez 10 publicités.', ar: 'حلّل 10 إعلانات.', en: 'Analyze 10 ads.' },
+            exercise: { fr: 'Écrivez un titre accrocheur.', ar: 'اكتب عنواناً جذاباً.', en: 'Write a catchy headline.' },
+            tip: { fr: '💡 Les chiffres fonctionnent toujours: "5 secrets"', ar: '💡 الأرقام دائماً تشتغل: "5 أسرار"', en: '💡 Numbers always work: "5 secrets"' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 3–6', ar: 'الأسابيع 3–6', en: 'Weeks 3–6' },
+        goal: { fr: 'Rédiger pour différents supports', ar: 'الكتابة لمنصات مختلفة', en: 'Write for different platforms' },
+        lessons: [
+          {
+            id: 'copy-i-1',
+            title: { fr: 'Copywriting pour les Réseaux Sociaux', ar: 'الكتابة الإعلانية للسوشيال ميديا', en: 'Copywriting for Social Media' },
+            image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Facebook: posts 100-200 mots, questions, émotions','Instagram: légendes 50-150 mots, hashtags, CTA','LinkedIn: posts 200-500 mots, professionnel','Twitter: 280 caractères max, concis','Reels/TikTok: scripts 15-30s, accroche forte'],
+              ar: ['Facebook: منشورات 100-200 كلمة، أسئلة، عواطف','Instagram: تعليقات 50-150 كلمة، هاشتاجات، CTA','LinkedIn: منشورات 200-500 كلمة، احترافي','Twitter: 280 حرف كحد أقصى، موجز','Reels/TikTok: سكريبتات 15-30ث، جذبة قوية'],
+              en: ['Facebook: 100-200 word posts, questions, emotions','Instagram: 50-150 word captions, hashtags, CTA','LinkedIn: 200-500 word posts, professional','Twitter: 280 characters max, concise','Reels/TikTok: 15-30s scripts, strong hook']
             },
-            {
-              step: 2,
-              image: 'images/lessons/ai/step2-chain-prompts.jpg',
-              caption: { fr: 'Chaînage de Prompts : Du brief au livrable', ar: 'تسلسل Prompts: من الموجز للتسليم', en: 'Prompt Chaining: From Brief to Deliverable' },
-              detail: { fr: 'Au lieu d\'un seul prompt → Chaînez plusieurs: Prompt 1: "Génère 10 idées d\'articles pour [sujet]" → Prompt 2: "Choisis la meilleure idée et développe un plan détaillé" → Prompt 3: "Rédige l\'article complet basé sur ce plan" → Prompt 4: "Crée 5 captions sociaux média pour promouvoir cet article". Chaque prompt utilise la sortie du précédent. Résultat: qualité 10x supérieure.', ar: 'بدل prompt واحد → سلسل عدة: Prompt 1: "ولّد 10 أفكار مقالات لـ [موضوع]" → Prompt 2: "اختار أفضل فكرة وطوّر خطة مفصلة" → Prompt 3: "اكتب المقال الكامل بناءً على هالخطة" → Prompt 4: "أنشئ 5 captions سوشيال ميديا باش تروج للمقال". كل prompt يستخدم خروج اللي قبلو. النتيجة: جودة أعلى 10 مرات.', en: 'Instead of one prompt → Chain multiple: Prompt 1: "Generate 10 article ideas for [topic]" → Prompt 2: "Pick the best idea and develop a detailed plan" → Prompt 3: "Write the full article based on this plan" → Prompt 4: "Create 5 social media captions to promote this article". Each prompt uses the previous output. Result: 10x better quality.' },
-              hotspot: { x: 50, y: 50, label: 'Chain' },
-              shortcuts: [],
-              aiPrompt: { tool: 'ChatGPT', prompt: 'Prompt 1: [idées] → Prompt 2: [sélection+plan] → Prompt 3: [rédaction] → Prompt 4: [promotion]. Chaînez les sorties.', result: 'Workflow IA complet' }
+            method: { fr: 'Créez 5 posts pour différentes plateformes.', ar: 'أنشئ 5 منشورات لمنصات مختلفة.', en: 'Create 5 posts for different platforms.' },
+            exercise: { fr: 'Rédigez une légende Instagram complète.', ar: 'اكتب تعليقاً إعلانياً كاملاً لـ Instagram.', en: 'Write a complete Instagram caption.' },
+            tip: { fr: '💡 Adaptez votre ton à chaque plateforme.', ar: '💡 طوّع نبرتك لكل منصة.', en: '💡 Adapt your tone to each platform.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 7–12', ar: 'الأسابيع 7–12', en: 'Weeks 7–12' },
+        goal: { fr: 'Maîtriser le copywriting de vente', ar: 'إتقان الكتابة الإعلانية للبيع', en: 'Master sales copywriting' },
+        lessons: [
+          {
+            id: 'copy-a-1',
+            title: { fr: 'Copywriting de Vente - Landing Pages', ar: 'الكتابة الإعلانية للبيع - صفحات الهبوط', en: 'Sales Copywriting - Landing Pages' },
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Landing page: Accroche → Problème → Solution → Preuve → Offre → CTA','VSL: vidéo de vente 20-40 minutes','Anticipez les objections','Urgence: offres limitées'],
+              ar: ['صفحة الهبوط: جذبة → مشكلة → حل → دليل → عرض → CTA','VSL: فيديو بيعي 20-40 دقيقة','توقع الاعتراضات','الإلحاح: عروض محدودة'],
+              en: ['Landing page: Hook → Problem → Solution → Proof → Offer → CTA','VSL: 20-40 minute sales video','Anticipate objections','Urgency: limited offers']
             },
-            {
-              step: 3,
-              image: 'images/lessons/ai/step3-custom-gpt.jpg',
-              caption: { fr: 'Créer un GPT Personnalisé pour clients', ar: 'إنشاء GPT مخصص للزبائن', en: 'Create a Custom GPT for Clients' },
-              detail: { fr: 'ChatGPT → "Explore GPTs" → "Create" → Nom: "Assistant [Entreprise]" → Instructions: "Tu es l\'assistant virtuel de [Entreprise]. Tu connais tous les produits, prix, horaires. Tu réponds en darija algérienne. Tu proposes toujours une promotion en cours." → Upload: catalogue produits PDF → Partagez le lien avec le client. Il a maintenant un chatbot IA personnalisé.', ar: 'ChatGPT → "Explore GPTs" → "Create" → الاسم: "مساعد [المؤسسة]" → تعليمات: "أنت المساعد الافتراضي لـ [المؤسسة]. تعرف كل المنتجات، الأسعار، الأوقات. تجاوب بالدارجة الجزائرية. تقترح دايماً عرض حالي." → Upload: كتالوج منتجات PDF → شارك الرابط مع الزبون. عندو الآن chatbot ذكاء اصطناعي مخصص.', en: 'ChatGPT → "Explore GPTs" → "Create" → Name: "[Business] Assistant" → Instructions: "You are the virtual assistant of [Business]. You know all products, prices, hours. You reply in Algerian darija. You always suggest a current promotion." → Upload: product catalog PDF → Share the link with the client. They now have a custom AI chatbot.' },
-              hotspot: { x: 50, y: 50, label: 'Custom GPT' },
-              shortcuts: ['ChatGPT → Explore → Create GPT'],
-              aiPrompt: { tool: 'ChatGPT Custom GPTs', prompt: 'Create a GPT for [BUSINESS TYPE]. Knowledge: [upload PDFs/URLs]. Personality: [warm/professional/funny]. Language: [fr/ar/darija]. Special features: [promotions/booking/FAQ].', result: 'Chatbot personnalisé en 10 min' }
-            }
-          ],
-          method: { fr: 'Maîtrisez CRISPE, le chaînage de prompts, et la création de GPTs personnalisés.', ar: 'إتقان CRISPE، تسلسل prompts، وإنشاء GPTs مخصصة.', en: 'Master CRISPE, prompt chaining, and custom GPT creation.' },
-          exercise: { fr: 'Pour "Pharmacie El Hikma" (Tizi Ouzou): (1) CRISPE: 10 prompts optimisés, (2) Chaînage: brief → plan → article → captions, (3) Custom GPT: assistant pharmacie (médicaments, horaires, conseils). Livrable: 10 prompts + article complet + lien GPT.', ar: 'لـ "Pharmacie El Hikma" (تيزي وزو): (1) CRISPE: 10 prompts محسّنة، (2) تسلسل: موجز → خطة → مقال → captions، (3) GPT مخصص: مساعد صيدلية (أدوية، أوقات، نصائح). تسليم: 10 prompts + مقال كامل + رابط GPT.', en: 'For "Pharmacie El Hikma" (Tizi Ouzou): (1) CRISPE: 10 optimized prompts, (2) Chaining: brief → plan → article → captions, (3) Custom GPT: pharmacy assistant (medicines, hours, advice). Deliverable: 10 prompts + full article + GPT link.' },
-          tip: { fr: '👑 Secret Ultime: Un expert Prompt Engineer en Algérie facture 50,000–200,000 DZD/mois par client. Vous ne vendez pas du code — vous vendez du TEMPS économisé. Un GPT personnalisé remplace 2 employés à temps plein.', ar: '👑 السر الأخير: خبير Prompt Engineering في الجزائر يفاتورة 50,000–200,000 دج/شهر لكل زبون. ما تبيعش كود — تبيع الوقت الموفّر. GPT مخصص يعوض موظفين بدوام كامل.', en: '👑 Ultimate Secret: A Prompt Engineering expert in Algeria charges 50,000–200,000 DZD/month per client. You don\'t sell code — you sell SAVED TIME. A custom GPT replaces 2 full-time employees.' }
-        }
-      ]
-    }
-  ]
-}
+            method: { fr: 'Créez une landing page complète.', ar: 'أنشئ صفحة هبوط كاملة.', en: 'Create a complete landing page.' },
+            exercise: { fr: 'Rédigez un script VSL complet.', ar: 'اكتب سكريبت VSL كامل.', en: 'Write a complete VSL script.' },
+            tip: { fr: '💡 Parlez UNIQUEMENT des avantages client.', ar: '💡 تحدث فقط عن فوائد الزبون.', en: '💡 Talk ONLY about client benefits.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 4+', ar: 'الشهر 4+', en: 'Month 4+' },
+        goal: { fr: 'Devenir consultant copywriting', ar: 'كن مستشار كتابة إعلانية', en: 'Become a copywriting consultant' },
+        lessons: [
+          {
+            id: 'copy-m-1',
+            title: { fr: 'Consultant Copywriting', ar: 'مستشار كتابة إعلانية', en: 'Copywriting Consultant' },
+            image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Services: audit, rédaction, scripts, emails','Processus: Brief → Recherche → Rédaction → Révision → Livraison','Tarification: landing page 20-50K, VSL 50-100K, forfait 30-80K DZD','Spécialisez-vous dans une niche'],
+              ar: ['الخدمات: تدقيق، كتابة، سكريبتات، إيميلات','العملية: بريف → بحث → كتابة → مراجعة → تسليم','التسعير: صفحة هبوط 20-50K، VSL 50-100K، باقة 30-80K دج','تخصّص في مجال'],
+              en: ['Services: audit, writing, scripts, emails','Process: Brief → Research → Writing → Revision → Delivery','Pricing: landing page 20-50K, VSL 50-100K, package 30-80K DZD','Specialize in a niche']
+            },
+            method: { fr: 'Réalisez un audit de copywriting.', ar: 'قم بتدقيق كتابة إعلانية.', en: 'Perform a copywriting audit.' },
+            exercise: { fr: 'Créez votre offre de services copywriting.', ar: 'أنشئ عرض الخدمات الكتابية الخاص بك.', en: 'Create your copywriting service offering.' },
+            tip: { fr: '💡 Les meilleurs copywriters facturent à la performance.', ar: '💡 أفضل كتاب الإعلانات يشحنون على الأداء.', en: '💡 The best copywriters charge on performance.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 8: UI/UX DESIGN
+  // ============================================================
+  {
+    id: 'uiux',
+    icon: '🎨',
+    color: '#6366F1',
+    accent: '#818CF8',
+    bg: 'linear-gradient(135deg, #0C0A1A 0%, #1A1040 50%, #0C0A1A 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80',
+    earning: '20,000 – 100,000 DZD/month',
+    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
+    startTool: 'Figma + Spline (3D) + Pen & Paper',
+    title: { fr: 'UI/UX Design 3D', ar: 'تصميم واجهات 3D', en: '3D UI/UX Design' },
+    subtitle: { fr: 'User Interface & 3D Experience', ar: 'واجهات وتجارب 3D', en: 'User Interface & 3D Experience' },
+    tagline: { fr: 'Créez des expériences numériques immersives en 3D', ar: 'أنشئ تجارب رقمية غامرة بتقنية 3D', en: 'Create immersive 3D digital experiences' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les fondamentaux du UI/UX Design', ar: 'إتقان أساسيات UI/UX', en: 'Master UI/UX fundamentals' },
+        lessons: [
+          {
+            id: 'uiux-b-1',
+            title: { fr: 'UI vs UX en 3D', ar: 'UI vs UX في 3D', en: 'UI vs UX in 3D' },
+            image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['UI = Interface Utilisateur = apparence du produit','UX = Expérience Utilisateur = comment l\'utilisateur se sent','En 3D: UI devient immersive (profondeur, perspective)','Objectif: créer des produits 3D que les gens aiment'],
+              ar: ['UI = واجهة المستخدم = مظهر المنتج','UX = تجربة المستخدم = كيف يشعر المستخدم','في 3D: UI تصبح غامرة (عمق، منظور)','الهدف: إنشاء منتجات 3D يحبها الناس'],
+              en: ['UI = User Interface = appearance of the product','UX = User Experience = how the user feels','In 3D: UI becomes immersive (depth, perspective)','Goal: create 3D products people love']
+            },
+            method: { fr: 'Analysez 3 apps avec des éléments 3D.', ar: 'حلل 3 تطبيقات بعناصر 3D.', en: 'Analyze 3 apps with 3D elements.' },
+            exercise: { fr: 'Comparez un design 2D vs 3D. Notez 10 différences.', ar: 'قارن تصميم 2D vs 3D. سجل 10 اختلافات.', en: 'Compare a 2D vs 3D design. Note 10 differences.' },
+            tip: { fr: '💡 Le 3D doit être subtil. Trop de 3D tue le 3D.', ar: '💡 يجب أن يكون 3D خفيفاً. الكثير من 3D يقتل 3D.', en: '💡 3D must be subtle. Too much 3D kills 3D.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–12', ar: 'الأسابيع 5–12', en: 'Weeks 5–12' },
+        goal: { fr: 'Maîtriser Figma + Spline', ar: 'إتقان Figma + Spline', en: 'Master Figma + Spline' },
+        lessons: [
+          {
+            id: 'uiux-i-1',
+            title: { fr: 'Figma + Spline - 3D Mastery', ar: 'Figma + Spline - إتقان 3D', en: 'Figma + Spline - 3D Mastery' },
+            image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Figma: design collaboratif (gratuit)','Spline: design 3D (gratuit)','Export: Spline → Figma en PNG/SVG','Composants 3D réutilisables','Animations 3D avec Spline'],
+              ar: ['Figma: تصميم تعاوني (مجاني)','Spline: تصميم 3D (مجاني)','تصدير: Spline → Figma كـ PNG/SVG','مكونات 3D قابلة لإعادة الاستخدام','رسوم متحركة 3D مع Spline'],
+              en: ['Figma: collaborative design (free)','Spline: 3D design (free)','Export: Spline → Figma as PNG/SVG','Reusable 3D components','3D animations with Spline']
+            },
+            method: { fr: 'Créez un cube rotatif 3D dans Spline. Exportez-le en PNG.', ar: 'أنشئ مكعباً دواراً 3D في Spline. صدّره PNG.', en: 'Create a rotating 3D cube in Spline. Export it as PNG.' },
+            exercise: { fr: 'Créez 5 composants 3D avec glassmorphism.', ar: 'أنشئ 5 مكونات 3D مع زجاجية.', en: 'Create 5 3D components with glassmorphism.' },
+            tip: { fr: '💡 Spline est l\'outil 3D le plus accessible pour les designers UI/UX.', ar: '💡 Spline هي أداة 3D الأكثر سهولة لمصممي UI/UX.', en: '💡 Spline is the most accessible 3D tool for UI/UX designers.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 13–24', ar: 'الأسابيع 13–24', en: 'Weeks 13–24' },
+        goal: { fr: 'Maîtriser la recherche UX et le prototypage avancé', ar: 'إتقان بحث UX والنماذج الأولية المتقدمة', en: 'Master UX research and advanced prototyping' },
+        lessons: [
+          {
+            id: 'uiux-a-1',
+            title: { fr: 'Recherche UX 3D', ar: 'بحث تجربة المستخدم 3D', en: '3D UX Research' },
+            image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['UX Research 3D = comprendre les besoins en 3D','Méthodes: interviews, observations','Interview: 5-8 utilisateurs','Personas 3D','Objectif: décisions basées sur des données 3D'],
+              ar: ['بحث UX 3D = فهم الاحتياجات في 3D','الطرق: مقابلات، ملاحظات','المقابلة: 5-8 مستخدمين','شخصيات 3D','الهدف: قرارات مبنية على بيانات 3D'],
+              en: ['3D UX Research = understanding 3D needs','Methods: interviews, observations','Interview: 5-8 users','3D Personas','Goal: 3D data-driven decisions']
+            },
+            method: { fr: 'Menez 5 interviews sur l\'expérience 3D.', ar: 'أجرِ 5 مقابلات عن تجربة 3D.', en: 'Conduct 5 interviews about 3D experience.' },
+            exercise: { fr: 'Créez un plan de recherche UX 3D complet.', ar: 'أنشئ خطة بحث UX 3D كاملة.', en: 'Create a complete 3D UX research plan.' },
+            tip: { fr: '💡 La recherche UX 3D est essentielle pour comprendre la perception de la profondeur.', ar: '💡 بحث UX 3D ضروري لفهم إدراك العمق.', en: '💡 3D UX research is essential to understand depth perception.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Livrer des projets professionnels et construire une agence UI/UX', ar: 'تسليم مشاريع احترافية وبناء وكالة UI/UX', en: 'Deliver professional projects and build a UI/UX agency' },
+        lessons: [
+          {
+            id: 'uiux-m-1',
+            title: { fr: 'Agence UI/UX', ar: 'وكالة UI/UX', en: 'UI/UX Agency' },
+            image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Services: Audit UI/UX, Design 3D, Prototypage','Processus: Brief → Recherche → Design → Prototype → Test → Livraison','Tarification: audit 50-150K, design complet 200K-1M DZD','Spécialisez-vous: SaaS, e-commerce, apps mobiles','Portfolio: 3 projets 3D'],
+              ar: ['الخدمات: تدقيق UI/UX، تصميم 3D، نمذجة أولية','العملية: بريف → بحث → تصميم → نموذج أولي → اختبار → تسليم','التسعير: تدقيق 50-150K، تصميم كامل 200K-1M دج','تخصّص: SaaS، التجارة الإلكترونية، تطبيقات موبايل','البورتفوليو: 3 مشاريع 3D'],
+              en: ['Services: UI/UX Audit, 3D Design, Prototyping','Process: Brief → Research → Design → Prototype → Test → Delivery','Pricing: audit 50-150K, complete design 200K-1M DZD','Specialize: SaaS, e-commerce, mobile apps','Portfolio: 3 3D projects']
+            },
+            method: { fr: 'Réalisez un audit UI/UX pour un site.', ar: 'قم بتدقيق UI/UX لموقع.', en: 'Perform a UI/UX audit for a site.' },
+            exercise: { fr: 'Créez votre offre de services UI/UX.', ar: 'أنشئ عرض الخدمات UI/UX الخاص بك.', en: 'Create your UI/UX service offering.' },
+            tip: { fr: '💡 Les clients paient pour des résultats, pas pour du travail.', ar: '💡 الزبائن يدفعون للنتائج، مش للشغل.', en: '💡 Clients pay for results, not for work.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 9: AUTOMATION WITH N8N
+  // ============================================================
+  {
+    id: 'n8n',
+    icon: '⚡',
+    color: '#E94E1B',
+    accent: '#FF6B35',
+    bg: 'linear-gradient(135deg, #1A0A04 0%, #3A1808 50%, #1A0A04 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+    earning: '25,000 – 120,000 DZD/month',
+    firstClient: { fr: '3–6 semaines', ar: '3–6 أسابيع', en: '3–6 weeks' },
+    startTool: 'n8n (self-hosted or cloud) + Docker',
+    title: { fr: 'Automation avec n8n', ar: 'الأتمتة مع n8n', en: 'Automation with n8n' },
+    subtitle: { fr: 'Workflow Automation', ar: 'أتمتة سير العمل', en: 'Workflow Automation' },
+    tagline: { fr: 'Automatisez tout sans coder', ar: 'أتمتة كل شيء بدون برمجة', en: 'Automate everything without coding' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les bases de n8n', ar: 'إتقان أساسيات n8n', en: 'Master n8n basics' },
+        lessons: [
+          {
+            id: 'n8n-b-1',
+            title: { fr: 'Introduction à l\'Automatisation', ar: 'مقدمة في الأتمتة', en: 'Introduction to Automation' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Automatisation = faire faire par des machines ce qui est répétitif.','n8n = outil open-source qui connecte vos applications.','Alternative à Zapier/Make (gratuit, auto-hébergé).','Workflows = chaînes d\'actions qui s\'exécutent automatiquement.','Nodes = actions, Triggers = déclencheurs, Connections = liens.'],
+              ar: ['الأتمتة = جعل الآلات تقوم بما هو متكرر.','n8n = أداة مفتوحة المصدر تربط تطبيقاتك.','بديل لـ Zapier/Make (مجاني، مستضاف ذاتياً).','سير العمل = سلاسل إجراءات يتم تنفيذها تلقائياً.','العقد = إجراءات، المشغلات = مبتدئات، الروابط = وصلات.'],
+              en: ['Automation = having machines do what is repetitive.','n8n = open-source tool that connects your apps.','Alternative to Zapier/Make (free, self-hosted).','Workflows = chains of actions that execute automatically.','Nodes = actions, Triggers = starters, Connections = links.']
+            },
+            method: { fr: 'Identifiez 5 tâches répétitives que vous faites chaque semaine.', ar: 'حدد 5 مهام متكررة تقوم بها كل أسبوع.', en: 'Identify 5 repetitive tasks you do every week.' },
+            exercise: { fr: 'Listez 10 processus à automatiser.', ar: 'اكتب 10 عمليات لأتمتتها.', en: 'List 10 processes to automate.' },
+            tip: { fr: '💡 Si vous faites une tâche plus de 3 fois, automatisez-la.', ar: '💡 إذا قمت بمهمة أكثر من 3 مرات، قم بأتمتتها.', en: '💡 If you do a task more than 3 times, automate it.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–10', ar: 'الأسابيع 5–10', en: 'Weeks 5–10' },
+        goal: { fr: 'Connecter n8n aux APIs', ar: 'ربط n8n بـ APIs', en: 'Connect n8n to APIs' },
+        lessons: [
+          {
+            id: 'n8n-i-1',
+            title: { fr: 'Requêtes HTTP avec n8n', ar: 'طلبات HTTP مع n8n', en: 'HTTP Requests with n8n' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['HTTP Request = appels API.','Méthodes: GET, POST, PUT, DELETE.','URL: endpoint de l\'API.','Headers: authentification.','Body: données JSON.'],
+              ar: ['HTTP Request = استدعاء APIs.','الطرق: GET, POST, PUT, DELETE.','الرابط: نقطة نهاية API.','الرؤوس: مصادقة.','الجسم: بيانات JSON.'],
+              en: ['HTTP Request = API calls.','Methods: GET, POST, PUT, DELETE.','URL: API endpoint.','Headers: authentication.','Body: JSON data.']
+            },
+            method: { fr: 'Utilisez JSONPlaceholder pour tester vos requêtes.', ar: 'استخدم JSONPlaceholder لاختبار طلباتك.', en: 'Use JSONPlaceholder to test your requests.' },
+            exercise: { fr: 'Créez un workflow qui récupère des données d\'une API.', ar: 'أنشئ سير عمل يسترجع بيانات من API.', en: 'Create a workflow that fetches data from an API.' },
+            tip: { fr: '💡 Testez avec Postman avant de mettre dans n8n.', ar: '💡 اختبر مع Postman قبل وضعها في n8n.', en: '💡 Test with Postman before putting in n8n.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 11–20', ar: 'الأسابيع 11–20', en: 'Weeks 11–20' },
+        goal: { fr: 'Maîtriser les workflows avancés et l\'IA', ar: 'إتقان سير العمل المتقدم والذكاء الاصطناعي', en: 'Master advanced workflows and AI' },
+        lessons: [
+          {
+            id: 'n8n-a-1',
+            title: { fr: 'Agents IA avec n8n', ar: 'وكلاء الذكاء الاصطناعي مع n8n', en: 'AI Agents with n8n' },
+            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Node AI: utiliser OpenAI.','GPT-4 pour analyse, génération de contenu, analyse de sentiments, résumé automatique.'],
+              ar: ['عقدة الذكاء الاصطناعي: استخدام OpenAI.','GPT-4 للتحليل، توليد المحتوى، تحليل المشاعر، تلخيص تلقائي.'],
+              en: ['AI Node: use OpenAI.','GPT-4 for analysis, content generation, sentiment analysis, automatic summarization.']
+            },
+            method: { fr: 'Intégrez OpenAI dans n8n.', ar: 'ادمج OpenAI في n8n.', en: 'Integrate OpenAI into n8n.' },
+            exercise: { fr: 'Créez un agent IA qui répond automatiquement.', ar: 'أنشئ وكيل ذكاء اصطناعي يرد تلقائياً.', en: 'Create an AI agent that replies automatically.' },
+            tip: { fr: '💡 L\'IA + n8n = automatisation intelligente.', ar: '💡 الذكاء الاصطناعي + n8n = أتمتة ذكية.', en: '💡 AI + n8n = intelligent automation.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Construire des automations commerciales', ar: 'بناء أتمتة تجارية', en: 'Build business automations' },
+        lessons: [
+          {
+            id: 'n8n-m-1',
+            title: { fr: 'Automatisations Commerciales', ar: 'أتمتة تجارية', en: 'Business Automations' },
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Processus de vente complet (lead → client)','Gestion de contenu (idée → publication)','Support client (ticket → résolution)','Recrutement (candidature → embauche)','Gestion de projet (tâche → livraison)'],
+              ar: ['عملية مبيعات كاملة (عميل محتمل → عميل)','إدارة المحتوى (فكرة → نشر)','دعم العملاء (تذكرة → حل)','التوظيف (طلب → تعيين)','إدارة المشاريع (مهمة → تسليم)'],
+              en: ['Complete sales process (lead → client)','Content management (idea → publication)','Customer support (ticket → resolution)','Recruitment (application → hiring)','Project management (task → delivery)']
+            },
+            method: { fr: 'Automatisez un processus métier complet de A à Z.', ar: 'أتمتة عملية تجارية كاملة من الألف إلى الياء.', en: 'Automate a complete business process from A to Z.' },
+            exercise: { fr: 'Créez une automatisation pour un processus de vente.', ar: 'أنشئ أتمتة لعملية مبيعات.', en: 'Create an automation for a sales process.' },
+            tip: { fr: '💡 Objectif: des automations sans intervention humaine.', ar: '💡 الهدف: أتمتة بدون تدخل بشري.', en: '💡 Goal: automations without human intervention.' }
+          }
+        ]
+      }
+    ]
+  },
+  // ============================================================
+  // SKILL 10: VIBE CODING
+  // ============================================================
+  {
+    id: 'vibecoding',
+    icon: '🤖',
+    color: '#8B5CF6',
+    accent: '#A78BFA',
+    bg: 'linear-gradient(135deg, #0D0618 0%, #1A0A30 50%, #0D0618 100%)',
+    bgImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80',
+    earning: '30,000 – 150,000 DZD/month',
+    firstClient: { fr: '4–8 semaines', ar: '4–8 أسابيع', en: '4–8 weeks' },
+    startTool: 'Cursor AI + VSCode + GitHub Copilot',
+    title: { fr: 'Vibe Coding', ar: 'البرمجة بالذكاء الاصطناعي', en: 'Vibe Coding' },
+    subtitle: { fr: 'Développement IA', ar: 'التطوير بالذكاء الاصطناعي', en: 'AI Development' },
+    tagline: { fr: 'Construisez des produits professionnels avec l\'IA sans être un développeur traditionnel', ar: 'ابنِ منتجات احترافية بالذكاء الاصطناعي دون أن تكون مبرمجاً تقليدياً', en: 'Build professional products with AI without being a traditional developer' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les bases du Vibe Coding', ar: 'إتقان أساسيات البرمجة بالذكاء الاصطناعي', en: 'Master Vibe Coding basics' },
+        lessons: [
+          {
+            id: 'vc-b-1',
+            title: { fr: 'Qu\'est-ce que le Vibe Coding?', ar: 'ما هي البرمجة بالذكاء الاصطناعي؟', en: 'What is Vibe Coding?' },
+            image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Vibe Coding = utiliser des assistants IA pour écrire du code.','L\'IA génère le code, vous guidez et validez.','Rôle: prompt engineer, architecte, testeur.','Outils: Cursor, GitHub Copilot, ChatGPT, Claude.'],
+              ar: ['البرمجة بالذكاء الاصطناعي = استخدام مساعدين ذكاء اصطناعي لكتابة الأكواد.','الذكاء الاصطناعي يكتب الكود، وأنت توجه وتتحقق.','دورك: مهندس أوامر، مهندس معماري، مختبر.','الأدوات: Cursor، GitHub Copilot، ChatGPT، Claude.'],
+              en: ['Vibe Coding = using AI assistants to write code.','AI generates code, you guide and validate.','Role: prompt engineer, architect, tester.','Tools: Cursor, GitHub Copilot, ChatGPT, Claude.']
+            },
+            method: { fr: 'Installez ChatGPT et posez une question.', ar: 'ثبّت ChatGPT واسأل سؤالاً.', en: 'Install ChatGPT and ask a question.' },
+            exercise: { fr: 'Demandez à ChatGPT d\'expliquer le Vibe Coding.', ar: 'اطلب من ChatGPT شرح البرمجة بالذكاء الاصطناعي.', en: 'Ask ChatGPT to explain Vibe Coding.' },
+            tip: { fr: '💡 Le Vibe Coding n\'est PAS une triche. C\'est la nouvelle façon de développer.', ar: '💡 البرمجة بالذكاء الاصطناعي ليست غشاً. هذه هي الطريقة الجديدة للتطوير.', en: '💡 Vibe Coding is NOT cheating. It\'s the new way to develop.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+        badge: '⚡',
+        duration: { fr: 'Semaines 5–12', ar: 'الأسابيع 5–12', en: 'Weeks 5–12' },
+        goal: { fr: 'Construire des apps modernes avec React et l\'IA', ar: 'بناء تطبيقات عصرية مع React والذكاء الاصطناعي', en: 'Build modern apps with React and AI' },
+        lessons: [
+          {
+            id: 'vc-i-1',
+            title: { fr: 'Construire des Apps React avec l\'IA', ar: 'بناء تطبيقات React بالذكاء الاصطناعي', en: 'Building React Apps with AI' },
+            image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Prompt: "Crée un composant React"','L\'IA écrit le code','Reconnaître props, state, hooks','Tester dans Cursor','Déployer sur Vercel'],
+              ar: ['الأمر: "أنشئ مكون React"','الذكاء الاصطناعي يكتب الكود','التعرف على الخصائص، الحالة، الخطافات','الاختبار في Cursor','النشر على Vercel'],
+              en: ['Prompt: "Create a React component"','AI writes the code','Recognize props, state, hooks','Test in Cursor','Deploy to Vercel']
+            },
+            method: { fr: 'Générez un composant React avec l\'IA.', ar: 'ولّد مكون React بالذكاء الاصطناعي.', en: 'Generate a React component with AI.' },
+            exercise: { fr: 'Construisez une application React avec l\'IA.', ar: 'ابنِ تطبيق React بالذكاء الاصطناعي.', en: 'Build a React app with AI.' },
+            tip: { fr: '💡 Structure: composant → props → interactions → style.', ar: '💡 الهيكل: المكون → الخصائص → التفاعلات → التنسيق.', en: '💡 Structure: component → props → interactions → styling.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+        badge: '🔥',
+        duration: { fr: 'Semaines 13–24', ar: 'الأسابيع 13–24', en: 'Weeks 13–24' },
+        goal: { fr: 'Construire des SaaS complets', ar: 'بناء SaaS كاملة', en: 'Build complete SaaS' },
+        lessons: [
+          {
+            id: 'vc-a-1',
+            title: { fr: 'Construire des SaaS avec l\'IA', ar: 'بناء SaaS بالذكاء الاصطناعي', en: 'Building SaaS with AI' },
+            image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Architecture: React + Node + Supabase','Modèle: Abonnements','Fonctionnalités: Auth, Paiement, Dashboard','Multi-tenant','Pricing: Gratuit, Pro, Enterprise'],
+              ar: ['الهندسة: React + Node + Supabase','النموذج: اشتراكات','الميزات: مصادقة، دفع، لوحة تحكم','متعدد المستأجرين','التسعير: مجاني، Pro، Enterprise'],
+              en: ['Architecture: React + Node + Supabase','Model: Subscriptions','Features: Auth, Payment, Dashboard','Multi-tenant','Pricing: Free, Pro, Enterprise']
+            },
+            method: { fr: 'Demandez à l\'IA de créer un plan SaaS.', ar: 'اطلب من الذكاء الاصطناعي إنشاء خطة SaaS.', en: 'Ask AI to create a SaaS plan.' },
+            exercise: { fr: 'Construisez un SaaS de gestion de projets.', ar: 'ابنِ SaaS لإدارة المشاريع.', en: 'Build a project management SaaS.' },
+            tip: { fr: '💡 Commencez par un SaaS simple et spécialisé.', ar: '💡 ابدأ بـ SaaS بسيط ومتخصص.', en: '💡 Start with a simple specialized SaaS.' }
+          }
+        ]
+      },
+      {
+        name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+        badge: '👑',
+        duration: { fr: 'Mois 6+', ar: 'الشهر 6+', en: 'Month 6+' },
+        goal: { fr: 'Créer des produits commercialisables', ar: 'إنشاء منتجات قابلة للتسويق', en: 'Create marketable products' },
+        lessons: [
+          {
+            id: 'vc-m-1',
+            title: { fr: 'Monétiser les Produits IA', ar: 'تحقيق الربح من منتجات الذكاء الاصطناعي', en: 'Monetizing AI Products' },
+            image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Modèles: Abonnement, Freemium, Pay-per-use','Prix Algérie: adapté','3 niveaux de prix','Stratégie marketing','Page de vente'],
+              ar: ['النماذج: اشتراك، Freemium، دفع لكل استخدام','أسعار الجزائر: مكيفة','3 مستويات أسعار','استراتيجية تسويق','صفحة بيع'],
+              en: ['Models: Subscription, Freemium, Pay-per-use','Algeria pricing: adapted','3 pricing tiers','Marketing strategy','Sales page']
+            },
+            method: { fr: 'Développez un plan de monétisation.', ar: 'طور خطة ربح.', en: 'Develop a monetization plan.' },
+            exercise: { fr: 'Créez un plan de monétisation complet avec l\'IA.', ar: 'أنشئ خطة ربح كاملة بالذكاء الاصطناعي.', en: 'Create a complete monetization plan with AI.' },
+            tip: { fr: '💡 Les produits IA les plus rentables résolvent un problème spécifique.', ar: '💡 أكثر منتجات الذكاء الاصطناعي ربحاً تحل مشكلة محددة.', en: '💡 The most profitable AI products solve a specific problem.' }
+          }
+        ]
+      }
+    ]
+  }
 ];
