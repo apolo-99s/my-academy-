@@ -20,8 +20,6 @@
 .gen-btn { background: linear-gradient(135deg, #16A34A 0%, #15803d 100%); border: none; border-radius: 8px; padding: 10px 20px; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; }
 .gen-btn.secondary { background: #1C1C28; border: 1px solid #374151; color: #9CA3AF; }
 .gen-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-/* Debug panel */
 .debug-panel { background: #1a1a2e; border: 1px solid #374151; border-radius: 8px; padding: 12px; margin-top: 16px; font-family: monospace; font-size: 11px; color: #9CA3AF; max-height: 200px; overflow-y: auto; }
 .debug-panel .debug-line { margin-bottom: 4px; }
 .debug-panel .debug-ok { color: #4ADE80; }
@@ -126,13 +124,12 @@ var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSI
 var sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // ============================================================
-// DEBUG HELPER — Visible on page
+// DEBUG HELPER
 // ============================================================
 function debug(msg, type) {
   var panel = document.getElementById('debug-panel');
   var content = document.getElementById('debug-content');
   if (!panel || !content) return;
-  
   panel.style.display = 'block';
   var colorClass = type === 'ok' ? 'debug-ok' : (type === 'err' ? 'debug-err' : 'debug-info');
   var line = document.createElement('div');
@@ -171,7 +168,7 @@ function showAdminPanel() {
 }
 
 // ============================================================
-// CODE GENERATOR — FIXED VERSION
+// CODE GENERATOR — FIXED (no student_phone in insert)
 // ============================================================
 function generateRandomCode() {
   var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -227,15 +224,14 @@ async function generateCode() {
     return;
   }
 
-  // Step 2: Insert into database
+  // Step 2: Insert into database — FIXED: only columns that exist
   debug('Inserting code into Supabase...', 'info');
-  var insertData = {
-    code: newCode,
-    student_name: name,
-    student_phone: phone,
-    used: false,
-    used_at: null
-  };
+  
+  // FIXED: Build insert data dynamically, only including existing columns
+  var insertData = { code: newCode, used: false };
+  if (name) insertData.student_name = name;
+  // NOTE: student_phone removed because column not in schema cache
+  
   debug('Insert data: ' + JSON.stringify(insertData), 'info');
   
   var insert = await sb.from('access_codes').insert(insertData);
@@ -351,5 +347,5 @@ async function renderAdminStats() {
 </script>
 
 </body>
-</html>'''
+</html>
 
