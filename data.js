@@ -1936,4 +1936,171 @@ var SKILLS = [
       }
     ]
   }
+  // ============================================================
+// SKILL 11: AI TOOLS MASTERY — paste this object INSIDE the SKILLS
+// array in data.js, as the last element (add a comma after the
+// closing }, of the vibecoding skill, then paste this object before
+// the final "];" that closes SKILLS).
+// ============================================================
+{
+  id: 'aitools',
+  icon: '🧠',
+  color: '#06B6D4',
+  accent: '#67E8F9',
+  bg: 'linear-gradient(135deg, #001A1F 0%, #033A45 50%, #001A1F 100%)',
+  bgImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+  earning: '20,000 – 100,000 DZD/month',
+  firstClient: { fr: '2–4 semaines', ar: '2–4 أسابيع', en: '2–4 weeks' },
+  startTool: 'ChatGPT + Claude + Canva (free tiers)',
+  title: { fr: 'Maîtrise des Outils IA', ar: 'إتقان أدوات الذكاء الاصطناعي', en: 'AI Tools Mastery' },
+  subtitle: { fr: 'Productivité & Création avec l\'IA', ar: 'الإنتاجية والإبداع بالذكاء الاصطناعي', en: 'AI Productivity & Creation' },
+  tagline: { fr: 'Du débutant total à l\'utilisateur qui gagne sa vie avec l\'IA', ar: 'من الصفر لمستخدم يربح فلوسه بالذكاء الاصطناعي', en: 'From total beginner to someone who earns a living with AI' },
+  levels: [
+    {
+      name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+      badge: '🌱',
+      duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
+      goal: { fr: 'Comprendre l\'IA générative et configurer vos premiers outils', ar: 'تفهم الذكاء الاصطناعي التوليدي وتعدّ أول أدواتك', en: 'Understand generative AI and set up your first tools' },
+      lessons: [
+        {
+          id: 'ai-b-1',
+          title: { fr: 'Comprendre l\'IA et Choisir son Premier Outil', ar: 'فهم الذكاء الاصطناعي واختيار أول أداة', en: 'Understanding AI and Choosing Your First Tool' },
+          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: ['L\'IA générative (ChatGPT, Claude, Gemini) génère du texte en prédisant le mot suivant à partir de milliards d\'exemples — ce n\'est ni magique ni conscient, mais un outil statistique très puissant.','Créez un compte gratuit sur chatgpt.com ou claude.ai avec votre email — les deux ont une version gratuite largement suffisante pour débuter.','Claude et ChatGPT servent au texte (rédaction, résumé, analyse); Midjourney/DALL-E aux images; ElevenLabs à la voix; Runway à la vidéo — chaque outil a son domaine.','Posez une première question simple ("explique-moi X comme si j\'avais 12 ans") pour comprendre le style de réponse avant de complexifier vos demandes.','Ne payez rien avant 2-3 semaines d\'utilisation gratuite — la plupart des besoins de débutant sont couverts par les versions gratuites.'],
+            ar: ['الذكاء الاصطناعي التوليدي (ChatGPT، Claude، Gemini) يولد نص بتوقع الكلمة الجاية من مليارات الأمثلة — ماشي سحر ولا وعي، بس أداة إحصائية قوية بزاف.','أنشئ حساب مجاني ف chatgpt.com أو claude.ai بإيميلك — الاثنين عندهم نسخة مجانية كافية بزاف للبداية.','Claude و ChatGPT للنص (كتابة، تلخيص، تحليل)؛ Midjourney/DALL-E للصور؛ ElevenLabs للصوت؛ Runway للفيديو — كل أداة عندها مجالها.','اطرح أول سؤال بسيط ("اشرح ليا X كأني عندي 12 سنة") باش تفهم أسلوب الرد قبل ما تعقد طلباتك.','ما تخلصش والو قبل 2-3 أسابيع استعمال مجاني — أغلب احتياجات المبتدئ تغطيها النسخ المجانية.'],
+            en: ['Generative AI (ChatGPT, Claude, Gemini) generates text by predicting the next word from billions of examples — it\'s neither magic nor conscious, just a very powerful statistical tool.','Create a free account on chatgpt.com or claude.ai with your email — both have a free tier that\'s plenty to get started.','Claude and ChatGPT are for text (writing, summarizing, analysis); Midjourney/DALL-E for images; ElevenLabs for voice; Runway for video — each tool has its domain.','Ask a first simple question ("explain X like I\'m 12") to understand the response style before making requests more complex.','Don\'t pay for anything for the first 2-3 weeks — most beginner needs are covered by free versions.']
+          },
+          method: { fr: 'Créez un compte ChatGPT et un compte Claude, et posez la même question aux deux pour comparer les styles.', ar: 'أنشئ حساب ChatGPT وحساب Claude، واطرح نفس السؤال للاثنين باش تقارن الأسلوب.', en: 'Create a ChatGPT account and a Claude account, and ask both the same question to compare styles.' },
+          exercise: { fr: 'Demandez à un assistant IA d\'expliquer votre propre métier ou projet à un enfant de 10 ans, puis à un investisseur.', ar: 'اطلب من مساعد ذكاء اصطناعي يشرح مهنتك أو مشروعك لطفل عمرو 10 سنين، بعدها لمستثمر.', en: 'Ask an AI assistant to explain your own job or project to a 10-year-old, then to an investor.' },
+          tip: { fr: '💡 Un outil gratuit bien utilisé bat un outil payant mal utilisé — maîtrisez le gratuit avant de payer.', ar: '💡 أداة مجانية مستعملة مزيان تفوق أداة مدفوعة مستعملة بطريقة سيئة — اتقن المجاني قبل ما تخلص.', en: '💡 A well-used free tool beats a poorly-used paid one — master the free version before paying.' }
+        },
+        {
+          id: 'ai-b-2',
+          title: { fr: 'Les 4 Règles d\'Or du Prompting', ar: 'القواعد الذهبية الأربعة للبرومبت', en: 'The 4 Golden Rules of Prompting' },
+          image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+          layout: 'right',
+          steps: {
+            fr: ['CONTEXTE: dites à l\'IA qui vous êtes et pourquoi vous demandez ça — "je suis débutant en cuisine" change complètement la réponse par rapport à rien préciser.','TÂCHE PRÉCISE: remplacez "aide-moi avec mon CV" par "réécris ce paragraphe pour un poste de vendeur, en 3 phrases maximum".','FORMAT: précisez toujours le format attendu (liste, tableau, email, 100 mots) — sans ça, l\'IA choisit un format par défaut qui ne convient pas toujours.','EXEMPLES: montrez un exemple de ce que vous voulez ("dans ce style: [exemple]") — c\'est la façon la plus rapide d\'obtenir exactement le ton recherché.','Itérez toujours: si la première réponse ne convient pas, dites précisément ce qui cloche ("trop formel, rends-le plus direct") plutôt que de reformuler tout depuis le début.'],
+            ar: ['السياق: قول للذكاء الاصطناعي شكون انت وعلاش تسأل هكذا — "أنا مبتدئ ف الطبخ" يبدل الجواب بالكامل مقارنة بلا ما تحدد.','مهمة دقيقة: بدل "عاوني ف CV ديالي" بـ"أعد كتابة هذي الفقرة لمنصب بائع، بـ3 جمل كحد أقصى".','الصيغة: حدد دائماً الصيغة المتوقعة (لائحة، جدول، إيميل، 100 كلمة) — بلاها، الذكاء الاصطناعي يختار صيغة افتراضية ما تناسبش دائماً.','أمثلة: وري مثال على شنو تبغي ("بهاد الستايل: [مثال]") — هذي أسرع طريقة باش توصل بالضبط للنبرة اللي تبغيها.','كرر دائماً: إذا أول رد ما ناسبش، قول بالضبط شنو ما خدمش ("رسمي بزاف، خليه مباشر أكثر") بدل ما تعاود الصياغة من الصفر.'],
+            en: ['CONTEXT: tell the AI who you are and why you\'re asking — "I\'m a beginner cook" completely changes the answer compared to specifying nothing.','PRECISE TASK: replace "help me with my resume" with "rewrite this paragraph for a sales job, in 3 sentences max".','FORMAT: always specify the expected format (list, table, email, 100 words) — without it, the AI picks a default format that doesn\'t always fit.','EXAMPLES: show an example of what you want ("in this style: [example]") — this is the fastest way to get exactly the tone you\'re after.','Always iterate: if the first answer isn\'t right, say precisely what\'s off ("too formal, make it more direct") rather than rewriting the whole request from scratch.']
+          },
+          method: { fr: 'Prenez un prompt vague que vous avez déjà utilisé et réécrivez-le en appliquant les 4 règles.', ar: 'خد أمر غامض استعملتو من قبل وأعد كتابتو بتطبيق القواعد الأربعة.', en: 'Take a vague prompt you\'ve used before and rewrite it applying the 4 rules.' },
+          exercise: { fr: 'Écrivez un prompt complet (contexte + tâche + format + exemple) pour générer une légende Instagram pour un commerce local.', ar: 'اكتب أمر كامل (سياق + مهمة + صيغة + مثال) باش تولد تعليق Instagram لمحل محلي.', en: 'Write a complete prompt (context + task + format + example) to generate an Instagram caption for a local business.' },
+          tip: { fr: '💡 Un prompt de 3 lignes bien construit bat un prompt d\'un mot à chaque fois.', ar: '💡 أمر بـ3 أسطر مبني مزيان يفوز على أمر بكلمة وحدة ف كل مرة.', en: '💡 A well-built 3-line prompt beats a one-word prompt every time.' }
+        }
+      ]
+    },
+    {
+      name: { fr: 'Intermédiaire', ar: 'متوسط', en: 'Intermediate' },
+      badge: '⚡',
+      duration: { fr: 'Semaines 4–8', ar: 'الأسابيع 4–8', en: 'Weeks 4–8' },
+      goal: { fr: 'Maîtriser la génération d\'images, de voix et de vidéo', ar: 'إتقان توليد الصور والصوت والفيديو', en: 'Master image, voice and video generation' },
+      lessons: [
+        {
+          id: 'ai-i-1',
+          title: { fr: 'Générer des Images avec l\'IA', ar: 'توليد صور بالذكاء الاصطناعي', en: 'Generating Images with AI' },
+          image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: ['Midjourney (payant, via Discord) donne le rendu le plus artistique; DALL-E (intégré à ChatGPT Plus) et Stable Diffusion (gratuit, open-source) sont de bonnes alternatives.','Un bon prompt image décrit: le sujet, le style (photo réaliste, illustration, 3D), l\'éclairage, et la composition — plus c\'est précis, plus le résultat est proche de l\'attente.','Utilisez des références de style connues ("dans le style d\'une photo de studio professionnelle") plutôt que des descriptions vagues ("joli", "beau").','Générez toujours 4 variations minimum d\'un même prompt — la première image n\'est presque jamais la meilleure.','Vérifiez toujours les droits d\'usage: les images IA générées via un outil payant pour un usage commercial ont des conditions différentes des versions gratuites.'],
+            ar: ['Midjourney (مدفوع، عبر Discord) يعطي أفضل نتيجة فنية؛ DALL-E (مدمج ف ChatGPT Plus) و Stable Diffusion (مجاني، مفتوح المصدر) بدائل جيدة.','أمر صورة جيد يوصف: الموضوع، الستايل (صورة واقعية، رسم، 3D)، الإضاءة، والتكوين — كل ما كان دقيق، كل ما كانت النتيجة قريبة من المتوقع.','استخدم مراجع ستايل معروفة ("بستايل صورة استوديو احترافية") بدل أوصاف غامضة ("جميل"، "زوين").','ولّد دائماً 4 تنويعات على الأقل لنفس الأمر — أول صورة نادراً ما تكون الأحسن.','تحقق دائماً من حقوق الاستخدام: الصور المولدة بأداة مدفوعة للاستخدام التجاري عندها شروط مختلفة عن النسخ المجانية.'],
+            en: ['Midjourney (paid, via Discord) gives the most artistic result; DALL-E (built into ChatGPT Plus) and Stable Diffusion (free, open-source) are good alternatives.','A good image prompt describes: the subject, the style (realistic photo, illustration, 3D), the lighting, and the composition — the more precise, the closer the result to expectations.','Use known style references ("in the style of a professional studio photo") rather than vague descriptions ("nice", "beautiful").','Always generate at least 4 variations of the same prompt — the first image is almost never the best one.','Always check usage rights: AI images generated via a paid tool for commercial use have different terms than free versions.']
+          },
+          method: { fr: 'Générez la même idée d\'image avec 3 descriptions de style différentes et comparez les résultats.', ar: 'ولد نفس فكرة الصورة بـ3 أوصاف ستايل مختلفة وقارن النتائج.', en: 'Generate the same image idea with 3 different style descriptions and compare the results.' },
+          exercise: { fr: 'Créez un visuel produit pour un commerce algérien fictif avec un prompt complet (sujet + style + éclairage).', ar: 'أنشئ صورة منتج لمحل جزائري وهمي بأمر كامل (موضوع + ستايل + إضاءة).', en: 'Create a product visual for a fictional Algerian shop with a complete prompt (subject + style + lighting).' },
+          tip: { fr: '💡 Gardez vos meilleurs prompts dans un document — un prompt qui a bien marché une fois refonctionne presque toujours.', ar: '💡 احتفظ بأحسن أوامرك ف وثيقة — أمر خدم مزيان مرة يعاود يخدم دائماً تقريباً.', en: '💡 Keep your best prompts in a document — a prompt that worked well once almost always works again.' }
+        },
+        {
+          id: 'ai-i-2',
+          title: { fr: 'Vidéo et Voix IA : Combiner les Outils', ar: 'الفيديو والصوت بالذكاء الاصطناعي: دمج الأدوات', en: 'AI Video and Voice: Combining Tools' },
+          image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: ['ElevenLabs (voix IA) clone ou génère une voix naturelle à partir de texte — utile pour des voix off sans avoir à enregistrer soi-même.','Runway et Pika transforment du texte ou une image fixe en courte vidéo (5-10 secondes) — parfait pour des accroches ou des transitions, pas encore pour des films entiers.','Le vrai gain de temps vient de la CHAÎNE d\'outils: script écrit par un assistant texte → voix générée par ElevenLabs → visuels par Midjourney → montage assemblé dans CapCut.','Chaque outil de la chaîne doit recevoir une consigne claire et cohérente avec les autres — un changement de ton dans le script doit se refléter dans le choix de voix.','Toujours réécouter/revoir le résultat final avant publication — les voix IA restent parfois légèrement artificielles sur certains mots, un point que l\'oreille humaine détecte mieux qu\'un contrôle rapide.'],
+            ar: ['ElevenLabs (صوت بالذكاء الاصطناعي) يستنسخ أو يولد صوت طبيعي من نص — مفيد لتعليقات صوتية بلا ما تسجل بروحك.','Runway و Pika يحولو نص أو صورة ثابتة لفيديو قصير (5-10 ثوانٍ) — مثالي لجذبات أو انتقالات، ماشي بعد لأفلام كاملة.','الربح الحقيقي ف الوقت يجي من سلسلة الأدوات: سكريبت مكتوب بمساعد نص → صوت مولد بـ ElevenLabs → صور بـ Midjourney → مونتاج مجمع ف CapCut.','كل أداة ف السلسلة خاصها تستقبل تعليمة واضحة ومتناسقة مع الباقي — تغيير النبرة ف السكريبت خاصو يبان ف اختيار الصوت.','دائماً عاود اسمع/شوف النتيجة النهائية قبل النشر — الأصوات بالذكاء الاصطناعي تبقى أحياناً اصطناعية شوية ف بعض الكلمات، حاجة الأذن البشرية تكتشفها أحسن من مراقبة سريعة.'],
+            en: ['ElevenLabs (AI voice) clones or generates a natural-sounding voice from text — useful for voiceovers without recording yourself.','Runway and Pika turn text or a still image into a short video (5-10 seconds) — great for hooks or transitions, not yet for whole films.','The real time savings come from CHAINING tools: script written by a text assistant → voice generated by ElevenLabs → visuals by Midjourney → edit assembled in CapCut.','Every tool in the chain needs a clear instruction consistent with the others — a tone change in the script should be reflected in the voice choice.','Always re-listen/re-watch the final result before publishing — AI voices sometimes still sound slightly artificial on certain words, something a human ear catches better than a quick check.']
+          },
+          method: { fr: 'Générez une courte voix off avec ElevenLabs à partir d\'un texte de 2 phrases et écoutez-la au casque.', ar: 'ولد تعليق صوتي قصير بـ ElevenLabs من نص جملتين واسمعو بسماعة.', en: 'Generate a short voiceover with ElevenLabs from a 2-sentence text and listen to it on headphones.' },
+          exercise: { fr: 'Créez une chaîne complète pour une pub de 15 secondes: script → voix → 2 visuels → montage simple.', ar: 'أنشئ سلسلة كاملة لإعلان 15 ثانية: سكريبت → صوت → صورتين → مونتاج بسيط.', en: 'Create a complete chain for a 15-second ad: script → voice → 2 visuals → simple edit.' },
+          tip: { fr: '💡 Un mauvais maillon (voix robotique, image floue) ruine toute la chaîne — vérifiez chaque étape avant de passer à la suivante.', ar: '💡 حلقة سيئة (صوت آلي، صورة معتمة) تخرب السلسلة كاملة — تحقق من كل خطوة قبل ما تنتقل للي بعدها.', en: '💡 One bad link (robotic voice, blurry image) ruins the whole chain — check each step before moving to the next.' }
+        }
+      ]
+    },
+    {
+      name: { fr: 'Avancé', ar: 'متقدم', en: 'Advanced' },
+      badge: '🔥',
+      duration: { fr: 'Semaines 9–16', ar: 'الأسابيع 9–16', en: 'Weeks 9–16' },
+      goal: { fr: 'Maîtriser le prompting avancé et construire des workflows IA complets', ar: 'إتقان البرومبت المتقدم وبناء سير عمل ذكاء اصطناعي كامل', en: 'Master advanced prompting and build complete AI workflows' },
+      lessons: [
+        {
+          id: 'ai-a-1',
+          title: { fr: 'Prompt Engineering Avancé', ar: 'هندسة أوامر متقدمة', en: 'Advanced Prompt Engineering' },
+          image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: ['Chain-of-thought: demandez explicitement à l\'IA de "réfléchir étape par étape avant de répondre" — cela améliore nettement les réponses sur les tâches complexes (calculs, logique, décisions).','Few-shot prompting: donnez 2-3 exemples de paires question/réponse dans le format voulu avant de poser votre vraie question — l\'IA imite le pattern montré.','Attribution de rôle: "Tu es un expert-comptable algérien" oriente le vocabulaire et le niveau de détail bien mieux qu\'une question neutre.','Décomposition: pour une tâche complexe (business plan complet), demandez section par section plutôt qu\'en un seul prompt géant — chaque section reçoit plus d\'attention et de qualité.','Vérifiez toujours les faits, chiffres et citations générés — l\'IA peut "halluciner" des informations qui semblent plausibles mais sont fausses, surtout sur des données précises ou récentes.'],
+            ar: ['Chain-of-thought: اطلب صراحة من الذكاء الاصطناعي "يفكر خطوة بخطوة قبل ما يجاوب" — هذا يحسن بوضوح الأجوبة ف المهام المعقدة (حسابات، منطق، قرارات).','Few-shot prompting: أعطي 2-3 أمثلة سؤال/جواب بالصيغة المرغوبة قبل ما تطرح سؤالك الحقيقي — الذكاء الاصطناعي يقلد النمط المعروض.','إعطاء دور: "انت خبير محاسبة جزائري" يوجه المفردات ومستوى التفصيل أحسن بزاف من سؤال عادي.','التقسيم: لمهمة معقدة (خطة عمل كاملة)، اطلب قسم بقسم بدل أمر واحد ضخم — كل قسم ياخذ اهتمام وجودة أكثر.','تحقق دائماً من الحقائق، الأرقام والاقتباسات المولدة — الذكاء الاصطناعي يقدر "يهلوس" معلومات تبان معقولة لكن غلط، خاصة ف بيانات دقيقة أو حديثة.'],
+            en: ['Chain-of-thought: explicitly ask the AI to "think step by step before answering" — this noticeably improves answers on complex tasks (calculations, logic, decisions).','Few-shot prompting: give 2-3 example question/answer pairs in the desired format before asking your real question — the AI mimics the shown pattern.','Role assignment: "You are an Algerian accounting expert" shapes vocabulary and level of detail far better than a neutral question.','Decomposition: for a complex task (a full business plan), ask section by section rather than one giant prompt — each section gets more attention and quality.','Always verify generated facts, figures and quotes — AI can "hallucinate" information that sounds plausible but is false, especially on precise or recent data.']
+          },
+          method: { fr: 'Reprenez une tâche complexe que vous avez déjà demandée d\'un coup, et redécomposez-la en 3-4 sous-prompts.', ar: 'خد مهمة معقدة طلبتيها من قبل مرة وحدة، وقسمها لـ3-4 أوامر فرعية.', en: 'Take a complex task you previously asked all at once, and break it into 3-4 sub-prompts.' },
+          exercise: { fr: 'Rédigez un prompt avec attribution de rôle + chain-of-thought pour obtenir un conseil financier structuré sur un investissement fictif.', ar: 'اكتب أمر بإعطاء دور + chain-of-thought باش تحصل على نصيحة مالية منظمة على استثمار وهمي.', en: 'Write a prompt with role assignment + chain-of-thought to get structured financial advice on a fictional investment.' },
+          tip: { fr: '💡 Ne faites jamais confiance aveuglément à un chiffre ou une date donnée par l\'IA — vérifiez toujours avec une source indépendante.', ar: '💡 عمرك ما تثق عمياً برقم أو تاريخ عطاه الذكاء الاصطناعي — تحقق دائماً بمصدر مستقل.', en: '💡 Never blindly trust a figure or date given by AI — always verify with an independent source.' }
+        },
+        {
+          id: 'ai-a-2',
+          title: { fr: 'Construire un Workflow IA Complet', ar: 'بناء سير عمل ذكاء اصطناعي كامل', en: 'Building a Complete AI Workflow' },
+          image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: ['Un workflow IA combine plusieurs outils IA avec de l\'automatisation (n8n/Zapier) pour qu\'une tâche entière tourne sans intervention manuelle à chaque étape.','Exemple concret: un formulaire reçoit une demande client → un node IA (GPT) rédige une réponse personnalisée → l\'automatisation l\'envoie par email, sans que vous n\'ouvriez votre boîte mail.','Identifiez d\'abord la tâche répétitive (ex: répondre aux mêmes questions clients), puis seulement ensuite choisissez les outils — jamais l\'inverse.','Ajoutez toujours une étape de vérification humaine sur les workflows à fort enjeu (envoi d\'emails à des clients, publication publique) avant de tout automatiser à 100%.','Documentez votre workflow avec un schéma simple (étape 1 → étape 2 → étape 3) — cela permet de le corriger facilement quand un outil change ou tombe en panne.'],
+            ar: ['سير عمل ذكاء اصطناعي يدمج عدة أدوات ذكاء اصطناعي بأتمتة (n8n/Zapier) باش مهمة كاملة تخدم بلا تدخل يدوي ف كل خطوة.','مثال ملموس: استمارة تستقبل طلب زبون → node ذكاء اصطناعي (GPT) يكتب رد مخصص → الأتمتة تبعثو بالإيميل، بلا ما تفتح صندوق الإيميل ديالك.','حدد أولاً المهمة المتكررة (مثلاً الرد على نفس أسئلة الزبائن)، بعدها فقط اختار الأدوات — عمرك بالعكس.','زيد دائماً خطوة تحقق بشري ف سير العمل عالي المخاطر (بعث إيميلات لزبائن، نشر عمومي) قبل ما تؤتمت كل شيء 100%.','وثق سير العملك بمخطط بسيط (خطوة 1 → خطوة 2 → خطوة 3) — هذا يسمح تصححو بسهولة منين أداة تتبدل أو تطيح.'],
+            en: ['An AI workflow combines several AI tools with automation (n8n/Zapier) so an entire task runs without manual intervention at every step.','Concrete example: a form receives a customer request → an AI node (GPT) drafts a personalized reply → automation sends it by email, without you opening your inbox.','First identify the repetitive task (e.g. answering the same customer questions), only then choose the tools — never the reverse.','Always add a human review step on high-stakes workflows (sending emails to clients, public posting) before automating 100%.','Document your workflow with a simple diagram (step 1 → step 2 → step 3) — this makes it easy to fix when a tool changes or breaks.']
+          },
+          method: { fr: 'Schématisez sur papier un workflow simple: quelle tâche répétitive, quels outils IA, quelle automatisation.', ar: 'ارسم على ورقة سير عمل بسيط: أي مهمة متكررة، أي أدوات ذكاء اصطناعي، أي أتمتة.', en: 'Sketch on paper a simple workflow: which repetitive task, which AI tools, which automation.' },
+          exercise: { fr: 'Concevez (schéma + outils) un workflow qui rédige automatiquement une réponse à un avis client négatif, avec une étape de relecture humaine avant envoi.', ar: 'صمم (مخطط + أدوات) سير عمل يكتب تلقائياً رد على تقييم زبون سلبي، بخطوة مراجعة بشرية قبل البعث.', en: 'Design (diagram + tools) a workflow that automatically drafts a reply to a negative customer review, with a human review step before sending.' },
+          tip: { fr: '💡 Automatisez d\'abord la partie répétitive et gardez le jugement humain sur la partie sensible — pas l\'inverse.', ar: '💡 أتمت أولاً الجزء المتكرر واحتفظ بالحكم البشري على الجزء الحساس — ماشي العكس.', en: '💡 Automate the repetitive part first and keep human judgment on the sensitive part — not the other way around.' }
+        }
+      ]
+    },
+    {
+      name: { fr: 'Maître', ar: 'محترف', en: 'Master' },
+      badge: '👑',
+      duration: { fr: 'Mois 5+', ar: 'الشهر 5+', en: 'Month 5+' },
+      goal: { fr: 'Vendre des services IA et construire une offre professionnelle', ar: 'بيع خدمات ذكاء اصطناعي وبناء عرض احترافي', en: 'Sell AI services and build a professional offering' },
+      lessons: [
+        {
+          id: 'ai-m-1',
+          title: { fr: 'Vendre des Services IA aux Clients', ar: 'بيع خدمات الذكاء الاصطناعي للزبائن', en: 'Selling AI Services to Clients' },
+          image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: ['Les clients n\'achètent pas "de l\'IA" — ils achètent du temps gagné ou des revenus en plus. Chiffrez toujours l\'impact ("ce contenu vous aurait pris 5h, livré en 1h").','Services vendables: rédaction de contenu assistée par IA, création de visuels produits, chatbots simples pour répondre aux clients, automatisation de tâches répétitives.','Tarification: petite mission ponctuelle (5-15K DZD), forfait mensuel de contenu (15-40K DZD/mois), système complet avec automatisation (60-150K DZD).','Soyez toujours transparent sur l\'usage de l\'IA dans votre prestation — la valeur que vous vendez est votre supervision, votre goût, et votre connaissance du client, pas juste l\'outil.','Commencez par un client test ou un projet gratuit/à prix réduit pour construire un premier exemple concret à montrer.'],
+            ar: ['الزبائن ما يشريوش "ذكاء اصطناعي" — يشريو وقت مربوح أو دخل إضافي. احسب دائماً التأثير ("هذا المحتوى كان راح ياخذ 5 ساعات، سلمناه ف ساعة").','خدمات قابلة للبيع: كتابة محتوى بمساعدة ذكاء اصطناعي، إنشاء صور منتجات، chatbots بسيطة للرد على الزبائن، أتمتة مهام متكررة.','التسعير: مهمة صغيرة لمرة وحدة (5-15K دج)، باقة محتوى شهرية (15-40K دج/شهر)، نظام كامل بأتمتة (60-150K دج).','كن دائماً شفاف على استخدام الذكاء الاصطناعي ف خدمتك — القيمة اللي تبيعها هي إشرافك، ذوقك، ومعرفتك بالزبون، ماشي غير الأداة.','ابدا بزبون تجريبي أو مشروع مجاني/بسعر مخفض باش تبني أول مثال ملموس توريه.'],
+            en: ['Clients don\'t buy "AI" — they buy saved time or extra revenue. Always quantify the impact ("this content would have taken 5h, delivered in 1h").','Sellable services: AI-assisted content writing, product visual creation, simple chatbots to answer customers, repetitive task automation.','Pricing: small one-off task (5-15K DZD), monthly content package (15-40K DZD/month), full system with automation (60-150K DZD).','Always be transparent about your use of AI in your service — the value you sell is your oversight, taste, and knowledge of the client, not just the tool.','Start with a test client or a free/discounted project to build a first concrete example to show.']
+          },
+          method: { fr: 'Identifiez 1 tâche répétitive chez une personne de votre entourage (commerçant, ami entrepreneur) que l\'IA pourrait accélérer.', ar: 'حدد مهمة متكررة وحدة عند شخص من محيطك (تاجر، صاحب مقاول) اللي الذكاء الاصطناعي يقدر يسرعها.', en: 'Identify 1 repetitive task for someone around you (shop owner, entrepreneur friend) that AI could speed up.' },
+          exercise: { fr: 'Créez une grille de 3 offres de services IA (Starter/Standard/Premium) avec prix en DZD pour chacune.', ar: 'أنشئ جدول بـ3 عروض خدمات ذكاء اصطناعي (Starter/Standard/Premium) بسعر بالدينار لكل واحد.', en: 'Create a table of 3 AI service offers (Starter/Standard/Premium) with a price in DZD for each.' },
+          tip: { fr: '💡 Le client qui comprend le gain de temps concret paie plus facilement que celui à qui on vante "la technologie".', ar: '💡 الزبون اللي يفهم الربح الملموس ف الوقت يخلص أسهل من اللي نمدحلو "التكنولوجيا".', en: '💡 A client who understands the concrete time savings pays more easily than one you praise "the technology" to.' }
+        },
+        {
+          id: 'ai-m-2',
+          title: { fr: 'Construire un Portfolio et Rester à Jour', ar: 'بناء بورتفوليو والبقاء محدثاً', en: 'Building a Portfolio and Staying Current' },
+          image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+          layout: 'top',
+          steps: {
+            fr: ['Un portfolio de services IA montre des transformations concrètes (avant/après: "brief client" → "livrable final"), pas seulement une liste d\'outils que vous savez utiliser.','Sélectionnez 4-6 exemples couvrant vos différents services (un texte, un visuel, une automatisation) plutôt que 20 exemples similaires.','Les outils IA changent tous les mois — bloquez 1h/semaine pour tester les nouveautés (newsletters spécialisées, communautés) plutôt que d\'apprendre un outil "à fond" une seule fois.','Restez toujours capable d\'expliquer simplement à un client pourquoi vous recommandez tel outil plutôt qu\'un autre pour son besoin précis — la veille sert le client, pas juste votre curiosité.','Votre valeur professionnelle grandit avec votre jugement (savoir quel outil pour quel problème), pas seulement avec le nombre d\'outils que vous connaissez.'],
+            ar: ['بورتفوليو خدمات ذكاء اصطناعي يوري تحولات ملموسة (قبل/بعد: "بريف الزبون" → "التسليم النهائي")، ماشي غير لائحة أدوات تعرف تستعملها.','اختار 4-6 أمثلة تغطي خدماتك المختلفة (نص، صورة، أتمتة) بدل 20 مثال متشابه.','أدوات الذكاء الاصطناعي تتبدل كل شهر — خصص ساعة/أسبوع باش تجرب الجديد (نشرات متخصصة، مجتمعات) بدل ما تتعلم أداة "بالكامل" مرة وحدة.','ابقى دائماً قادر تشرح ببساطة لزبون علاش تنصح بأداة معينة بدل وحدة أخرى لاحتياجه الدقيق — المتابعة تخدم الزبون، ماشي غير فضولك.','قيمتك المهنية تكبر بحكمك (تعرف أي أداة لأي مشكل)، ماشي بس بعدد الأدوات اللي تعرفها.'],
+            en: ['An AI services portfolio shows concrete transformations (before/after: "client brief" → "final deliverable"), not just a list of tools you know how to use.','Select 4-6 examples covering your different services (a text, a visual, an automation) rather than 20 similar examples.','AI tools change every month — block 1h/week to test new releases (specialized newsletters, communities) rather than "fully" learning one tool once.','Always stay able to simply explain to a client why you recommend one tool over another for their precise need — staying current serves the client, not just your curiosity.','Your professional value grows with your judgment (knowing which tool for which problem), not just the number of tools you know.']
+          },
+          method: { fr: 'Sélectionnez vos 2 meilleurs livrables réalisés jusqu\'ici (même dans les exercices de cette formation) et rédigez un avant/après pour chacun.', ar: 'اختار أحسن تسليمين ديالك لحد الآن (حتى ف تمارين هاد التكوين) واكتب قبل/بعد لكل واحد.', en: 'Select your 2 best deliverables so far (even from this course\'s exercises) and write a before/after for each.' },
+          exercise: { fr: 'Créez la structure de votre portfolio de services IA (liste des exemples dans l\'ordre, avec 1 phrase de contexte pour chacun).', ar: 'أنشئ هيكل بورتفوليو خدمات الذكاء الاصطناعي ديالك (لائحة الأمثلة بالترتيب، بجملة سياق لكل واحد).', en: 'Create your AI services portfolio structure (list of examples in order, with 1 context sentence each).' },
+          tip: { fr: '💡 Un portfolio de 5 exemples avec un vrai avant/après convainc plus qu\'une liste de 15 logos d\'outils.', ar: '💡 بورتفوليو بـ5 أمثلة بقبل/بعد حقيقي يقنع أكثر من لائحة بـ15 شعار أدوات.', en: '💡 A portfolio of 5 examples with a real before/after convinces more than a list of 15 tool logos.' }
+        }
+      ]
+    }
+  ]
+}
 ];
+
