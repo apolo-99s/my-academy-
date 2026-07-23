@@ -78,6 +78,10 @@
   border: 1px solid #374151;
   color: #9CA3AF;
 }
+.gen-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 </style>
 </head>
 <body>
@@ -130,7 +134,7 @@
         <input type="text" id="gen-phone" placeholder="Téléphone (optionnel)">
         <input type="email" id="gen-email" class="full-width" placeholder="Email de l\'élève (optionnel)">
       </div>
-      <button class="gen-btn" style="margin-top:12px;width:100%" onclick="generateCode()">✨ Générer un code d\'activation</button>
+      <button class="gen-btn" id="gen-btn" style="margin-top:12px;width:100%" onclick="generateCode()">✨ Générer un code d\'activation</button>
       
       <div class="gen-result" id="gen-result">
         <div style="color:#6B7280;font-size:12px;margin-bottom:4px">Code généré avec succès</div>
@@ -213,7 +217,7 @@ function generateRandomCode() {
 }
 
 async function generateCode() {
-  var btn = event.target;
+  var btn = document.getElementById('gen-btn');
   var originalText = btn.textContent;
   btn.textContent = 'Génération…';
   btn.disabled = true;
@@ -259,8 +263,11 @@ async function generateCode() {
 
   if (insert.error) {
     alert('Erreur lors de la sauvegarde : ' + insert.error.message);
+    console.error('[Admin] Insert error:', insert.error);
     return;
   }
+
+  console.log('[Admin] Code inserted:', newCode);
 
   // Show result
   document.getElementById('gen-code-display').textContent = newCode;
@@ -271,8 +278,10 @@ async function generateCode() {
   document.getElementById('gen-phone').value = '';
   document.getElementById('gen-email').value = '';
 
-  // Refresh stats
-  renderAdminStats();
+  // FIXED: Force refresh with small delay to ensure Supabase replication
+  setTimeout(function() {
+    renderAdminStats();
+  }, 500);
 }
 
 function copyGeneratedCode() {
@@ -283,28 +292,36 @@ function copyGeneratedCode() {
 }
 
 // ============================================================
-// STATS RENDERER
+// STATS RENDERER — FIXED VERSION
 // ============================================================
 async function renderAdminStats() {
   var table = document.getElementById('codes-table');
   table.innerHTML = '<tbody><tr><td style="padding:16px;color:#6B7280">Chargement…</td></tr></tbody>';
 
   try {
+    // FIXED: Add explicit error logging
     var codesRes = await sb.from('access_codes').select('*').order('code');
+    
+    console.log('[Admin] Fetch result:', codesRes);
 
     if (codesRes.error) {
-      table.innerHTML = '<tbody><tr><td style="padding:16px;color:#F87171">Erreur : ' + codesRes.error.message + '</td></tr></tbody>';
+      console.error('[Admin] Fetch error:', codesRes.error);
+      table.innerHTML = '<tbody><tr><td style="padding:16px;color:#F87171">Erreur Supabase : ' + codesRes.error.message + '</td></tr></tbody>';
       return;
     }
 
     var codes = codesRes.data || [];
+    console.log('[Admin] Codes loaded:', codes.length);
+    
     var total = codes.length;
     var usedCount = codes.filter(function(c) { return c.used === true; }).length;
 
+    // Update stats with animation
     document.getElementById('stat-total').textContent = total;
     document.getElementById('stat-used').textContent = usedCount;
     document.getElementById('stat-remaining').textContent = total - usedCount;
 
+    // Fetch progress
     var progressByCode = {};
     try {
       var progressRes = await sb.from('progress').select('*');
@@ -316,6 +333,7 @@ async function renderAdminStats() {
       }
     } catch(e) {}
 
+    // Build rows
     var rows = codes.map(function(c) {
       var usedDate = c.used_at ? new Date(c.used_at).toLocaleDateString('fr-FR') : '—';
       var lessonsCount = progressByCode[c.code] || 0;
@@ -337,6 +355,7 @@ async function renderAdminStats() {
     table.innerHTML = '<thead><tr><th>Code</th><th>Statut</th><th>Élève</th><th>Utilisé le</th><th>Leçons faites</th></tr></thead><tbody>' + (rows || '<tr><td colspan="5" style="text-align:center;padding:20px;color:#6B7280">Aucun code</td></tr>') + '</tbody>';
 
   } catch(err) {
+    console.error('[Admin] Fatal error:', err);
     table.innerHTML = '<tbody><tr><td style="padding:16px;color:#F87171">Erreur : ' + err.message + '</td></tr></tbody>';
   }
 }
