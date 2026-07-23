@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -25,6 +24,26 @@
 .debug-panel .debug-ok { color: #4ADE80; }
 .debug-panel .debug-err { color: #F87171; }
 .debug-panel .debug-info { color: #60A5FA; }
+
+/* ---- Skills editor tab ---- */
+.admin-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.admin-tab-btn { background: #1C1C28; border: 1px solid #374151; color: #9CA3AF; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.admin-tab-btn.active { background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%); color: #fff; border-color: #7C3AED; }
+.sk-field { margin-bottom: 12px; }
+.sk-field label { display: block; font-size: 12px; color: #9CA3AF; margin-bottom: 4px; }
+.sk-field input, .sk-field textarea, .sk-field select { width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #1C1C28; background: #111118; color: #E5E7EB; font-size: 13px; font-family: inherit; }
+.sk-field textarea { min-height: 60px; resize: vertical; }
+.sk-row3 { display: grid; grid-template-columns: 1fr; gap: 8px; }
+@media(min-width:640px){ .sk-row3 { grid-template-columns: 1fr 1fr 1fr; } }
+.sk-lang-tag { font-size: 11px; color: #A78BFA; font-weight: 700; margin-bottom: 2px; }
+.sk-level-block { background: #111118; border: 1px solid #1C1C28; border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+.sk-lesson-block { background: #0B0B10; border: 1px dashed #374151; border-radius: 10px; padding: 10px; margin: 10px 0; }
+.sk-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.sk-card { background: #111118; border: 1px solid #1C1C28; border-radius: 10px; padding: 14px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.sk-card .icon { font-size: 22px; }
+.sk-card .name { font-weight: 700; color: #E5E7EB; }
+.sk-card .sub { color: #6B7280; font-size: 12px; }
+#skExportBox { width: 100%; min-height: 300px; font-family: monospace; font-size: 12px; background: #0B0B10; color: #4ADE80; border: 1px solid #1C1C28; border-radius: 8px; padding: 10px; }
 </style>
 </head>
 <body>
@@ -34,7 +53,7 @@
   <div class="admin-login-box glass">
     <div class="hero-badge" style="margin-bottom:12px">🔒 ADMIN</div>
     <h1 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 8px">Digital Skills Academy</h1>
-    <p style="color:#6B7280;font-size:13px;margin:0 0 20px">Accès réservé à l\'administrateur.</p>
+    <p style="color:#6B7280;font-size:13px;margin:0 0 20px">Accès réservé à l'administrateur.</p>
     <input type="password" id="admin-pass-input" class="access-input glass" placeholder="Mot de passe admin" onkeydown="if(event.key==='Enter')adminLogin()">
     <div class="error-msg" id="admin-login-error" style="display:none;color:#F87171;font-size:12px;margin-top:8px">Mot de passe incorrect.</div>
     <button class="access-btn glass-btn" style="margin-top:16px" onclick="adminLogin()">Se connecter →</button>
@@ -49,68 +68,129 @@
   </nav>
 
   <div class="admin-body">
-    <div class="admin-warning glass">
-      ✅ Ces statistiques viennent maintenant de <strong>Supabase</strong>.
+
+    <div class="admin-tabs">
+      <button class="admin-tab-btn active" id="tab-btn-codes" onclick="switchAdminTab('codes')">🎫 Codes</button>
+      <button class="admin-tab-btn" id="tab-btn-skills" onclick="switchAdminTab('skills')">🧩 Skills</button>
     </div>
 
-    <!-- STATS -->
-    <div class="admin-stats">
-      <div class="admin-stat-card glass">
-        <div class="admin-stat-num" id="stat-total">0</div>
-        <div class="admin-stat-lbl">Codes au total</div>
+    <!-- ============================== -->
+    <!-- TAB: CODES (existing, unchanged) -->
+    <!-- ============================== -->
+    <div id="tab-codes">
+      <div class="admin-warning glass">
+        ✅ Ces statistiques viennent maintenant de <strong>Supabase</strong>.
       </div>
-      <div class="admin-stat-card glass">
-        <div class="admin-stat-num" style="color:#4ADE80" id="stat-used">0</div>
-        <div class="admin-stat-lbl">Utilisés</div>
-      </div>
-      <div class="admin-stat-card glass">
-        <div class="admin-stat-num" style="color:#60A5FA" id="stat-remaining">0</div>
-        <div class="admin-stat-lbl">Disponibles</div>
-      </div>
-    </div>
 
-    <!-- CODE GENERATOR -->
-    <div class="admin-table-wrap glass admin-generator">
-      <div class="admin-table-title">🎫 Générer un nouveau code</div>
-      <div class="gen-form">
-        <input type="text" id="gen-name" placeholder="Nom de l\'élève (optionnel)">
-        <input type="text" id="gen-phone" placeholder="Téléphone (optionnel)">
-        <input type="email" id="gen-email" class="full-width" placeholder="Email de l\'élève (optionnel)">
-      </div>
-      <button class="gen-btn" id="gen-btn" style="margin-top:12px;width:100%" onclick="generateCode()">✨ Générer un code d\'activation</button>
-      
-      <div class="gen-result" id="gen-result">
-        <div style="color:#6B7280;font-size:12px;margin-bottom:4px">Code généré avec succès</div>
-        <div class="code-display" id="gen-code-display"></div>
-        <div class="gen-actions">
-          <button class="gen-btn secondary" onclick="copyGeneratedCode()">📋 Copier</button>
-          <button class="gen-btn" onclick="generateCode()">🔄 Nouveau</button>
+      <!-- STATS -->
+      <div class="admin-stats">
+        <div class="admin-stat-card glass">
+          <div class="admin-stat-num" id="stat-total">0</div>
+          <div class="admin-stat-lbl">Codes au total</div>
+        </div>
+        <div class="admin-stat-card glass">
+          <div class="admin-stat-num" style="color:#4ADE80" id="stat-used">0</div>
+          <div class="admin-stat-lbl">Utilisés</div>
+        </div>
+        <div class="admin-stat-card glass">
+          <div class="admin-stat-num" style="color:#60A5FA" id="stat-remaining">0</div>
+          <div class="admin-stat-lbl">Disponibles</div>
         </div>
       </div>
 
-      <!-- DEBUG PANEL -->
-      <div class="debug-panel" id="debug-panel" style="display:none">
-        <div style="color:#6B7280;margin-bottom:8px;font-weight:700">🔧 Debug Logs</div>
-        <div id="debug-content"></div>
+      <!-- CODE GENERATOR -->
+      <div class="admin-table-wrap glass admin-generator">
+        <div class="admin-table-title">🎫 Générer un nouveau code</div>
+        <div class="gen-form">
+          <input type="text" id="gen-name" placeholder="Nom de l'élève (optionnel)">
+          <input type="text" id="gen-phone" placeholder="Téléphone (optionnel)">
+          <input type="email" id="gen-email" class="full-width" placeholder="Email de l'élève (optionnel)">
+        </div>
+        <button class="gen-btn" id="gen-btn" style="margin-top:12px;width:100%" onclick="generateCode()">✨ Générer un code d'activation</button>
+
+        <div class="gen-result" id="gen-result">
+          <div style="color:#6B7280;font-size:12px;margin-bottom:4px">Code généré avec succès</div>
+          <div class="code-display" id="gen-code-display"></div>
+          <div class="gen-actions">
+            <button class="gen-btn secondary" onclick="copyGeneratedCode()">📋 Copier</button>
+            <button class="gen-btn" onclick="generateCode()">🔄 Nouveau</button>
+          </div>
+        </div>
+
+        <!-- DEBUG PANEL -->
+        <div class="debug-panel" id="debug-panel" style="display:none">
+          <div style="color:#6B7280;margin-bottom:8px;font-weight:700">🔧 Debug Logs</div>
+          <div id="debug-content"></div>
+        </div>
+      </div>
+
+      <!-- CODES TABLE -->
+      <div class="admin-table-wrap glass">
+        <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span>Codes d'accès</span>
+          <button class="dash-btn" onclick="renderAdminStats()">🔄 Actualiser</button>
+        </div>
+        <table class="admin-table" id="codes-table">
+          <thead><tr><th>Code</th><th>Statut</th><th>Élève</th><th>Utilisé le</th><th>Leçons faites</th></tr></thead>
+          <tbody><tr><td colspan="5" style="padding:20px;text-align:center;color:#6B7280">Cliquez sur Actualiser pour charger les données</td></tr></tbody>
+        </table>
       </div>
     </div>
 
-    <!-- CODES TABLE -->
-    <div class="admin-table-wrap glass">
-      <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-        <span>Codes d\'accès</span>
-        <button class="dash-btn" onclick="renderAdminStats()">🔄 Actualiser</button>
+    <!-- ============================== -->
+    <!-- TAB: SKILLS (new) -->
+    <!-- ============================== -->
+    <div id="tab-skills" style="display:none">
+
+      <div id="sk-view-list">
+        <div class="admin-table-wrap glass">
+          <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+            <span id="sk-status">🧩 Skills</span>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="dash-btn" onclick="importFromDataJs()">⬇️ Importer depuis data.js</button>
+              <button class="gen-btn" onclick="openSkillEditor(null)">+ Nouvelle skill</button>
+              <button class="gen-btn secondary" onclick="openExport()">📤 Exporter le code</button>
+            </div>
+          </div>
+          <div id="skillList"></div>
+        </div>
       </div>
-      <table class="admin-table" id="codes-table">
-        <thead><tr><th>Code</th><th>Statut</th><th>Élève</th><th>Utilisé le</th><th>Leçons faites</th></tr></thead>
-        <tbody><tr><td colspan="5" style="padding:20px;text-align:center;color:#6B7280">Cliquez sur Actualiser pour charger les données</td></tr></tbody>
-      </table>
+
+      <div id="sk-view-editor" style="display:none">
+        <div class="admin-table-wrap glass">
+          <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+            <button class="dash-btn" onclick="skBackToList()">← Retour</button>
+            <button class="gen-btn" onclick="saveSkill()">💾 Enregistrer</button>
+            <button class="gen-btn secondary" id="skDeleteBtn" onclick="deleteCurrentSkill()" style="background:#450A0A;color:#F87171">🗑️ Supprimer cette skill</button>
+          </div>
+          <div id="skEditorForm"></div>
+        </div>
+      </div>
+
+      <div id="sk-view-export" style="display:none">
+        <div class="admin-table-wrap glass">
+          <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+            <button class="dash-btn" onclick="skBackToList()">← Retour</button>
+            <button class="gen-btn" onclick="copySkillsExport()">📋 Copier</button>
+            <button class="gen-btn secondary" onclick="downloadSkillsExport()">⬇️ Télécharger</button>
+          </div>
+          <p style="color:#6B7280;font-size:12px;line-height:1.6;margin-bottom:10px">
+            Colle ce contenu dans <b>data.js</b> à la place du bloc qui commence par
+            <code>var SKILLS = [</code> et se termine par <code>];</code>.
+          </p>
+          <textarea id="skExportBox" readonly></textarea>
+        </div>
+      </div>
+
     </div>
+
   </div>
 </div>
 
 <!-- SUPABASE CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<!-- data.js exposes window.SKILLS, used as the one-time import seed for the Skills tab -->
+<script src="data.js"></script>
 
 <!-- ADMIN LOGIC -->
 <script>
@@ -168,6 +248,18 @@ function showAdminPanel() {
 }
 
 // ============================================================
+// TABS
+// ============================================================
+function switchAdminTab(tab) {
+  var isCodes = tab === 'codes';
+  document.getElementById('tab-codes').style.display = isCodes ? 'block' : 'none';
+  document.getElementById('tab-skills').style.display = isCodes ? 'none' : 'block';
+  document.getElementById('tab-btn-codes').classList.toggle('active', isCodes);
+  document.getElementById('tab-btn-skills').classList.toggle('active', !isCodes);
+  if (!isCodes && skillsRows.length === 0) loadSkills();
+}
+
+// ============================================================
 // CODE GENERATOR — FIXED (no student_phone in insert)
 // ============================================================
 function generateRandomCode() {
@@ -182,7 +274,7 @@ function generateRandomCode() {
 
 async function generateCode() {
   debug('=== START generateCode() ===', 'info');
-  
+
   var btn = document.getElementById('gen-btn');
   var originalText = btn.textContent;
   btn.textContent = 'Génération…';
@@ -191,13 +283,13 @@ async function generateCode() {
   var name = document.getElementById('gen-name').value.trim() || null;
   var phone = document.getElementById('gen-phone').value.trim() || null;
   var email = document.getElementById('gen-email').value.trim() || null;
-  
+
   debug('Inputs: name=' + name + ', phone=' + phone + ', email=' + email, 'info');
 
   // Step 1: Generate unique code
   var newCode = generateRandomCode();
   debug('Generated code: ' + newCode, 'info');
-  
+
   var attempts = 0;
   var isUnique = false;
 
@@ -205,7 +297,7 @@ async function generateCode() {
     debug('Checking uniqueness (attempt ' + (attempts + 1) + ')...', 'info');
     var check = await sb.from('access_codes').select('code').eq('code', newCode).maybeSingle();
     debug('Check result: data=' + JSON.stringify(check.data) + ', error=' + JSON.stringify(check.error), 'info');
-    
+
     if (!check.data) {
       isUnique = true;
       debug('Code is unique!', 'ok');
@@ -226,16 +318,14 @@ async function generateCode() {
 
   // Step 2: Insert into database — FIXED: only columns that exist
   debug('Inserting code into Supabase...', 'info');
-  
-  // FIXED: Build insert data dynamically, only including existing columns
+
   var insertData = { code: newCode, used: false };
   if (name) insertData.student_name = name;
-  // NOTE: student_phone removed because column not in schema cache
-  
+
   debug('Insert data: ' + JSON.stringify(insertData), 'info');
-  
+
   var insert = await sb.from('access_codes').insert(insertData);
-  
+
   debug('Insert result: data=' + JSON.stringify(insert.data) + ', error=' + JSON.stringify(insert.error), insert.error ? 'err' : 'ok');
 
   btn.textContent = originalText;
@@ -247,17 +337,14 @@ async function generateCode() {
     return;
   }
 
-  // Success
   debug('SUCCESS! Code saved: ' + newCode, 'ok');
   document.getElementById('gen-code-display').textContent = newCode;
   document.getElementById('gen-result').classList.add('show');
 
-  // Clear inputs
   document.getElementById('gen-name').value = '';
   document.getElementById('gen-phone').value = '';
   document.getElementById('gen-email').value = '';
 
-  // Refresh stats
   debug('Refreshing stats...', 'info');
   await renderAdminStats();
   debug('=== END generateCode() ===', 'info');
@@ -335,6 +422,294 @@ async function renderAdminStats() {
 }
 
 // ============================================================
+// SKILLS EDITOR (Supabase table: skills_content)
+// ============================================================
+var SK_TABLE = 'skills_content';
+var skillsRows = [];
+var skEditingId = null;
+var skEditingPayload = null;
+var skIsNew = false;
+
+function skEscape(str) {
+  return String(str || '').replace(/[&<>"]/g, function(c) {
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+  });
+}
+
+async function loadSkills() {
+  document.getElementById('sk-status').textContent = 'Chargement...';
+  var res = await sb.from(SK_TABLE).select('*').order('sort_order', { ascending: true });
+  if (res.error) {
+    document.getElementById('sk-status').textContent = 'Erreur: ' + res.error.message;
+    return;
+  }
+  skillsRows = res.data || [];
+  document.getElementById('sk-status').textContent = '🧩 Skills (' + skillsRows.length + ')';
+  renderSkillList();
+}
+
+async function importFromDataJs() {
+  if (!window.SKILLS || !window.SKILLS.length) {
+    alert("window.SKILLS est introuvable — vérifie que data.js est bien chargé.");
+    return;
+  }
+  if (!confirm('Ça va écraser dans Supabase toute skill ayant le même id que dans data.js actuel. Continuer ?')) return;
+  var rows = window.SKILLS.map(function(s, idx) {
+    return { skill_id: s.id, sort_order: idx, payload: s };
+  });
+  var res = await sb.from(SK_TABLE).upsert(rows, { onConflict: 'skill_id' });
+  if (res.error) { alert('Erreur import: ' + res.error.message); return; }
+  await loadSkills();
+  alert('Import terminé.');
+}
+
+function renderSkillList() {
+  var el = document.getElementById('skillList');
+  if (!skillsRows.length) {
+    el.innerHTML = '<p style="color:#6B7280;font-size:13px">Aucune skill dans Supabase pour l\'instant. Clique sur "Importer depuis data.js".</p>';
+    return;
+  }
+  el.innerHTML = skillsRows.map(function(row) {
+    var s = row.payload;
+    var title = (s.title && s.title.fr) || s.id;
+    var levels = (s.levels || []).length;
+    var lessons = (s.levels || []).reduce(function(n, lv) { return n + (lv.lessons || []).length; }, 0);
+    return '<div class="sk-card">' +
+      '<div style="display:flex;align-items:center;gap:10px">' +
+      '<span class="icon">' + (s.icon || '📦') + '</span>' +
+      '<div><div class="name">' + skEscape(title) + ' <span class="sub">(' + skEscape(s.id) + ')</span></div>' +
+      '<div class="sub">' + levels + ' niveaux · ' + lessons + ' leçons</div></div></div>' +
+      '<button class="dash-btn" onclick="openSkillEditor(\'' + s.id + '\')">Modifier</button>' +
+      '</div>';
+  }).join('');
+}
+
+function skBlankTri() { return { fr: '', ar: '', en: '' }; }
+function skBlankLesson() {
+  return {
+    id: 'new-lesson-' + Date.now(),
+    title: skBlankTri(), image: '', layout: 'top',
+    steps: { fr: [], ar: [], en: [] },
+    method: skBlankTri(), exercise: skBlankTri(), tip: skBlankTri()
+  };
+}
+function skBlankLevel() {
+  return { name: skBlankTri(), badge: '🌱', duration: skBlankTri(), goal: skBlankTri(), lessons: [] };
+}
+function skBlankSkill() {
+  return {
+    id: '', icon: '✨', color: '#7C3AED', accent: '#A78BFA',
+    bg: 'linear-gradient(135deg, #0D0818 0%, #1A0A30 50%, #0D0818 100%)',
+    bgImage: '', earning: '', firstClient: skBlankTri(), startTool: '',
+    title: skBlankTri(), subtitle: skBlankTri(), tagline: skBlankTri(), levels: []
+  };
+}
+
+function openSkillEditor(skillId) {
+  if (skillId === null) {
+    skIsNew = true; skEditingId = null; skEditingPayload = skBlankSkill();
+  } else {
+    skIsNew = false;
+    var row = skillsRows.find(function(r) { return r.skill_id === skillId; });
+    if (!row) return;
+    skEditingId = skillId;
+    skEditingPayload = JSON.parse(JSON.stringify(row.payload));
+  }
+  document.getElementById('sk-view-list').style.display = 'none';
+  document.getElementById('sk-view-export').style.display = 'none';
+  document.getElementById('sk-view-editor').style.display = 'block';
+  document.getElementById('skDeleteBtn').style.display = skIsNew ? 'none' : 'inline-block';
+  renderSkillEditorForm();
+}
+
+function skBackToList() {
+  document.getElementById('sk-view-editor').style.display = 'none';
+  document.getElementById('sk-view-export').style.display = 'none';
+  document.getElementById('sk-view-list').style.display = 'block';
+}
+
+function skField(label, key, value, editable) {
+  editable = editable === undefined ? true : editable;
+  return '<div class="sk-field"><label>' + label + '</label>' +
+    '<input value="' + skEscape(value) + '" ' + (editable ? '' : 'readonly') +
+    ' oninput="skSetField(\'' + key + '\', this.value)"></div>';
+}
+function skFieldArea(label, key, value) {
+  return '<div class="sk-field"><label>' + label + '</label>' +
+    '<textarea oninput="skSetField(\'' + key + '\', this.value)">' + skEscape(value) + '</textarea></div>';
+}
+function skSetField(key, value) {
+  var m;
+  if ((m = /^__level_badge_(\d+)$/.exec(key))) { skEditingPayload.levels[+m[1]].badge = value; return; }
+  if ((m = /^__lesson_id_(\d+)_(\d+)$/.exec(key))) { skEditingPayload.levels[+m[1]].lessons[+m[2]].id = value; return; }
+  if ((m = /^__lesson_image_(\d+)_(\d+)$/.exec(key))) { skEditingPayload.levels[+m[1]].lessons[+m[2]].image = value; return; }
+  skEditingPayload[key] = value;
+}
+function skTriFields(obj, setterName) {
+  return '<div class="sk-row3">' + ['fr','ar','en'].map(function(lang) {
+    return '<div><div class="sk-lang-tag">' + lang.toUpperCase() + '</div>' +
+      '<input value="' + skEscape(obj[lang]) + '" oninput="' + setterName + '(this.value,\'' + lang + '\')"></div>';
+  }).join('') + '</div>';
+}
+['firstClient','title','subtitle','tagline'].forEach(function(key) {
+  window['skSetTri_' + key] = function(value, lang) { skEditingPayload[key][lang] = value; };
+});
+
+function renderSkillEditorForm() {
+  var s = skEditingPayload;
+  var html = '';
+
+  html += '<div style="border:1px solid #1C1C28;border-radius:10px;padding:14px;margin-bottom:16px">';
+  html += '<div style="color:#9CA3AF;font-size:13px;margin-bottom:10px">Infos générales</div>';
+  html += skField('ID (slug, ex: design)', 'id', s.id, skIsNew);
+  html += skField('Icône (emoji)', 'icon', s.icon);
+  html += skField('Couleur (hex)', 'color', s.color);
+  html += skField('Couleur accent (hex)', 'accent', s.accent);
+  html += skFieldArea('Fond (gradient CSS)', 'bg', s.bg);
+  html += skField('Image de fond (URL)', 'bgImage', s.bgImage);
+  html += skField('Gains estimés', 'earning', s.earning);
+  html += skField('Outil de départ', 'startTool', s.startTool);
+  html += '<div class="sk-field"><label>Premier client (FR / AR / EN)</label>' + skTriFields(s.firstClient, 'skSetTri_firstClient') + '</div>';
+  html += '<div class="sk-field"><label>Titre (FR / AR / EN)</label>' + skTriFields(s.title, 'skSetTri_title') + '</div>';
+  html += '<div class="sk-field"><label>Sous-titre (FR / AR / EN)</label>' + skTriFields(s.subtitle, 'skSetTri_subtitle') + '</div>';
+  html += '<div class="sk-field"><label>Tagline (FR / AR / EN)</label>' + skTriFields(s.tagline, 'skSetTri_tagline') + '</div>';
+  html += '</div>';
+
+  html += '<div style="border:1px solid #1C1C28;border-radius:10px;padding:14px">';
+  html += '<div style="color:#9CA3AF;font-size:13px;margin-bottom:10px">Niveaux (' + s.levels.length + ')</div>';
+  s.levels.forEach(function(level, li) { html += skRenderLevel(level, li); });
+  html += '<button class="dash-btn" onclick="skAddLevel()">+ Ajouter un niveau</button>';
+  html += '</div>';
+
+  document.getElementById('skEditorForm').innerHTML = html;
+}
+
+function skRenderLevel(level, li) {
+  var h = '<div class="sk-level-block">';
+  h += '<div class="sk-head"><b>Niveau ' + (li+1) + '</b>' +
+    '<button class="gen-btn secondary" style="background:#450A0A;color:#F87171" onclick="skRemoveLevel(' + li + ')">Supprimer</button></div>';
+  h += '<div class="sk-field"><label>Nom (FR / AR / EN)</label>' + skTriFieldsLevel(li, 'name', level.name) + '</div>';
+  h += skField('Badge (emoji)', '__level_badge_' + li, level.badge);
+  h += '<div class="sk-field"><label>Durée (FR / AR / EN)</label>' + skTriFieldsLevel(li, 'duration', level.duration) + '</div>';
+  h += '<div class="sk-field"><label>Objectif (FR / AR / EN)</label>' + skTriFieldsLevel(li, 'goal', level.goal) + '</div>';
+
+  h += '<div style="color:#9CA3AF;font-size:12px;margin:10px 0">Leçons (' + level.lessons.length + ')</div>';
+  level.lessons.forEach(function(lesson, ki) { h += skRenderLesson(lesson, li, ki); });
+  h += '<button class="dash-btn" onclick="skAddLesson(' + li + ')">+ Ajouter une leçon</button>';
+  h += '</div>';
+  return h;
+}
+function skTriFieldsLevel(li, key, obj) {
+  return '<div class="sk-row3">' + ['fr','ar','en'].map(function(lang) {
+    return '<div><div class="sk-lang-tag">' + lang.toUpperCase() + '</div>' +
+      '<input value="' + skEscape(obj[lang]) + '" oninput="skSetLevelTri(' + li + ',\'' + key + '\',\'' + lang + '\',this.value)"></div>';
+  }).join('') + '</div>';
+}
+function skSetLevelTri(li, key, lang, value) { skEditingPayload.levels[li][key][lang] = value; }
+
+function skRenderLesson(lesson, li, ki) {
+  var h = '<div class="sk-lesson-block">';
+  h += '<div class="sk-head"><b>Leçon ' + (ki+1) + '</b>' +
+    '<button class="gen-btn secondary" style="background:#450A0A;color:#F87171" onclick="skRemoveLesson(' + li + ',' + ki + ')">Supprimer</button></div>';
+  h += skField('ID leçon', '__lesson_id_' + li + '_' + ki, lesson.id);
+  h += '<div class="sk-field"><label>Titre (FR / AR / EN)</label>' + skTriFieldsLesson(li, ki, 'title', lesson.title) + '</div>';
+  h += skField('Image (URL)', '__lesson_image_' + li + '_' + ki, lesson.image);
+  h += '<div class="sk-field"><label>Layout</label><select onchange="skSetLessonField(' + li + ',' + ki + ',\'layout\',this.value)">' +
+    ['top','left','right'].map(function(o) {
+      return '<option value="' + o + '"' + (lesson.layout===o?' selected':'') + '>' + o + '</option>';
+    }).join('') + '</select></div>';
+  h += '<div class="sk-field"><label>Étapes — une par ligne (FR / AR / EN)</label>' + skTriAreaLesson(li, ki, 'steps', lesson.steps, true) + '</div>';
+  h += '<div class="sk-field"><label>Méthode (FR / AR / EN)</label>' + skTriAreaLesson(li, ki, 'method', lesson.method) + '</div>';
+  h += '<div class="sk-field"><label>Exercice (FR / AR / EN)</label>' + skTriAreaLesson(li, ki, 'exercise', lesson.exercise) + '</div>';
+  h += '<div class="sk-field"><label>Astuce / Tip (FR / AR / EN)</label>' + skTriAreaLesson(li, ki, 'tip', lesson.tip) + '</div>';
+  h += '</div>';
+  return h;
+}
+function skTriFieldsLesson(li, ki, key, obj) {
+  return '<div class="sk-row3">' + ['fr','ar','en'].map(function(lang) {
+    return '<div><div class="sk-lang-tag">' + lang.toUpperCase() + '</div>' +
+      '<input value="' + skEscape(obj[lang]) + '" oninput="skSetLessonTri(' + li + ',' + ki + ',\'' + key + '\',\'' + lang + '\',this.value)"></div>';
+  }).join('') + '</div>';
+}
+function skTriAreaLesson(li, ki, key, obj, isArray) {
+  return '<div class="sk-row3">' + ['fr','ar','en'].map(function(lang) {
+    var val = isArray ? (obj[lang]||[]).join('\n') : obj[lang];
+    return '<div><div class="sk-lang-tag">' + lang.toUpperCase() + '</div>' +
+      '<textarea oninput="skSetLessonTriArea(' + li + ',' + ki + ',\'' + key + '\',\'' + lang + '\',this.value,' + !!isArray + ')">' +
+      skEscape(val) + '</textarea></div>';
+  }).join('') + '</div>';
+}
+function skSetLessonField(li, ki, key, value) { skEditingPayload.levels[li].lessons[ki][key] = value; }
+function skSetLessonTri(li, ki, key, lang, value) { skEditingPayload.levels[li].lessons[ki][key][lang] = value; }
+function skSetLessonTriArea(li, ki, key, lang, value, isArray) {
+  skEditingPayload.levels[li].lessons[ki][key][lang] = isArray
+    ? value.split('\n').map(function(l){return l.trim();}).filter(Boolean)
+    : value;
+}
+
+function skAddLevel() { skEditingPayload.levels.push(skBlankLevel()); renderSkillEditorForm(); }
+function skRemoveLevel(li) {
+  if (!confirm('Supprimer ce niveau et toutes ses leçons ?')) return;
+  skEditingPayload.levels.splice(li, 1);
+  renderSkillEditorForm();
+}
+function skAddLesson(li) { skEditingPayload.levels[li].lessons.push(skBlankLesson()); renderSkillEditorForm(); }
+function skRemoveLesson(li, ki) {
+  if (!confirm('Supprimer cette leçon ?')) return;
+  skEditingPayload.levels[li].lessons.splice(ki, 1);
+  renderSkillEditorForm();
+}
+
+async function saveSkill() {
+  if (!skEditingPayload.id) {
+    alert("L'ID de la skill est obligatoire (ex: design, smm, video...).");
+    return;
+  }
+  var existing = skillsRows.find(function(r){return r.skill_id===skEditingId;});
+  var sortOrder = skIsNew ? skillsRows.length : (existing ? existing.sort_order : skillsRows.length);
+  var res = await sb.from(SK_TABLE).upsert(
+    [{ skill_id: skEditingPayload.id, sort_order: sortOrder, payload: skEditingPayload }],
+    { onConflict: 'skill_id' }
+  );
+  if (res.error) { alert('Erreur enregistrement: ' + res.error.message); return; }
+  await loadSkills();
+  skBackToList();
+}
+
+async function deleteCurrentSkill() {
+  if (!skEditingId) return;
+  if (!confirm('Supprimer définitivement la skill "' + skEditingId + '" de Supabase ?')) return;
+  var res = await sb.from(SK_TABLE).delete().eq('skill_id', skEditingId);
+  if (res.error) { alert('Erreur suppression: ' + res.error.message); return; }
+  await loadSkills();
+  skBackToList();
+}
+
+function openExport() {
+  var ordered = skillsRows.slice().sort(function(a,b){ return a.sort_order - b.sort_order; });
+  var arr = ordered.map(function(r){ return r.payload; });
+  var code = 'var SKILLS = ' + JSON.stringify(arr, null, 2) + ';';
+  document.getElementById('skExportBox').value = code;
+  document.getElementById('sk-view-list').style.display = 'none';
+  document.getElementById('sk-view-editor').style.display = 'none';
+  document.getElementById('sk-view-export').style.display = 'block';
+}
+function copySkillsExport() {
+  var box = document.getElementById('skExportBox');
+  box.select();
+  navigator.clipboard.writeText(box.value).then(function() {
+    alert('Code copié ! Colle-le dans data.js à la place du bloc SKILLS.');
+  });
+}
+function downloadSkillsExport() {
+  var blob = new Blob([document.getElementById('skExportBox').value], { type: 'text/javascript' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'skills-export.js';
+  a.click();
+}
+
+// ============================================================
 // AUTO-LOGIN
 // ============================================================
 (function() {
@@ -348,4 +723,3 @@ async function renderAdminStats() {
 
 </body>
 </html>
-
