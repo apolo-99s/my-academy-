@@ -7,6 +7,78 @@
 <title>Admin — Digital Skills Academy 🇩🇿</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="admin.css">
+<style>
+/* Additional styles for code generation */
+.admin-generator {
+  margin-bottom: 24px;
+}
+.gen-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+.gen-form input {
+  background: #111118;
+  border: 1px solid #1C1C28;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #E5E7EB;
+  font-size: 13px;
+}
+.gen-form input:focus {
+  outline: none;
+  border-color: #16A34A;
+}
+.gen-form .full-width {
+  grid-column: 1 / -1;
+}
+.gen-result {
+  background: #052E16;
+  border: 1px solid #16A34A44;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 12px;
+  text-align: center;
+  display: none;
+}
+.gen-result.show {
+  display: block;
+}
+.gen-result .code-display {
+  font-family: monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #4ADE80;
+  letter-spacing: 2px;
+  background: #0B0B10;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 8px 0;
+  display: inline-block;
+}
+.gen-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+.gen-btn {
+  background: linear-gradient(135deg, #16A34A 0%, #15803d 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gen-btn.secondary {
+  background: #1C1C28;
+  border: 1px solid #374151;
+  color: #9CA3AF;
+}
+</style>
 </head>
 <body>
 
@@ -31,9 +103,10 @@
 
   <div class="admin-body">
     <div class="admin-warning glass">
-      ✅ Ces statistiques viennent maintenant de <strong>Supabase</strong> — elles reflètent tous les appareils, pas seulement ce navigateur.
+      ✅ Ces statistiques viennent maintenant de <strong>Supabase</strong> — elles reflètent tous les appareils.
     </div>
 
+    <!-- STATS -->
     <div class="admin-stats">
       <div class="admin-stat-card glass">
         <div class="admin-stat-num" id="stat-total">0</div>
@@ -49,6 +122,27 @@
       </div>
     </div>
 
+    <!-- CODE GENERATOR -->
+    <div class="admin-table-wrap glass admin-generator">
+      <div class="admin-table-title">🎫 Générer un nouveau code</div>
+      <div class="gen-form">
+        <input type="text" id="gen-name" placeholder="Nom de l\'élève (optionnel)">
+        <input type="text" id="gen-phone" placeholder="Téléphone (optionnel)">
+        <input type="email" id="gen-email" class="full-width" placeholder="Email de l\'élève (optionnel)">
+      </div>
+      <button class="gen-btn" style="margin-top:12px;width:100%" onclick="generateCode()">✨ Générer un code d\'activation</button>
+      
+      <div class="gen-result" id="gen-result">
+        <div style="color:#6B7280;font-size:12px;margin-bottom:4px">Code généré avec succès</div>
+        <div class="code-display" id="gen-code-display"></div>
+        <div class="gen-actions">
+          <button class="gen-btn secondary" onclick="copyGeneratedCode()">📋 Copier</button>
+          <button class="gen-btn" onclick="generateCode()">🔄 Nouveau</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CODES TABLE -->
     <div class="admin-table-wrap glass">
       <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
         <span>Codes d\'accès</span>
@@ -65,21 +159,21 @@
 <!-- SUPABASE CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 
-<!-- ADMIN.JS INLINE (no external dependency) -->
+<!-- ADMIN LOGIC -->
 <script>
 // ============================================================
-// ADMIN.JS — Autonomous version
+// CONFIG
 // ============================================================
 var ADMIN_PASSWORD = 'Fycal2299';
-
-// Supabase config
 var SUPABASE_URL = 'https://vvqkxtiepgxvymhtllwa.supabase.co';
 var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2cWt4dGllcGd4dnltaHRsbHdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3NDQ0NDgsImV4cCI6MjEwMDMyMDQ0OH0.oaY-_zDZDFVuIuv4szLyJRZ8cnfDyOlg7mbPtRG0yTE';
 
-// Initialize Supabase client
 var sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-console.log('[Admin] Supabase client initialized');
+console.log('[Admin] Ready');
 
+// ============================================================
+// AUTH
+// ============================================================
 function adminLogin() {
   var val = document.getElementById('admin-pass-input').value;
   var err = document.getElementById('admin-login-error');
@@ -105,18 +199,101 @@ function showAdminPanel() {
   renderAdminStats();
 }
 
+// ============================================================
+// CODE GENERATOR
+// ============================================================
+function generateRandomCode() {
+  var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  var part1 = '', part2 = '';
+  for (var i = 0; i < 4; i++) {
+    part1 += chars[Math.floor(Math.random() * chars.length)];
+    part2 += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return 'DSA-' + part1 + '-' + part2;
+}
+
+async function generateCode() {
+  var btn = event.target;
+  var originalText = btn.textContent;
+  btn.textContent = 'Génération…';
+  btn.disabled = true;
+
+  var name = document.getElementById('gen-name').value.trim() || null;
+  var phone = document.getElementById('gen-phone').value.trim() || null;
+  var email = document.getElementById('gen-email').value.trim() || null;
+
+  // Generate unique code
+  var newCode = generateRandomCode();
+  var attempts = 0;
+  var isUnique = false;
+
+  while (!isUnique && attempts < 10) {
+    var check = await sb.from('access_codes').select('code').eq('code', newCode).maybeSingle();
+    if (!check.data) {
+      isUnique = true;
+    } else {
+      newCode = generateRandomCode();
+      attempts++;
+    }
+  }
+
+  if (!isUnique) {
+    alert('Impossible de générer un code unique. Réessayez.');
+    btn.textContent = originalText;
+    btn.disabled = false;
+    return;
+  }
+
+  // Insert into database
+  var insert = await sb.from('access_codes').insert({
+    code: newCode,
+    student_name: name,
+    student_phone: phone,
+    student_email: email,
+    used: false,
+    used_at: null
+  });
+
+  btn.textContent = originalText;
+  btn.disabled = false;
+
+  if (insert.error) {
+    alert('Erreur lors de la sauvegarde : ' + insert.error.message);
+    return;
+  }
+
+  // Show result
+  document.getElementById('gen-code-display').textContent = newCode;
+  document.getElementById('gen-result').classList.add('show');
+
+  // Clear inputs
+  document.getElementById('gen-name').value = '';
+  document.getElementById('gen-phone').value = '';
+  document.getElementById('gen-email').value = '';
+
+  // Refresh stats
+  renderAdminStats();
+}
+
+function copyGeneratedCode() {
+  var code = document.getElementById('gen-code-display').textContent;
+  navigator.clipboard.writeText(code).then(function() {
+    alert('Code copié : ' + code);
+  });
+}
+
+// ============================================================
+// STATS RENDERER
+// ============================================================
 async function renderAdminStats() {
   var table = document.getElementById('codes-table');
   table.innerHTML = '<tbody><tr><td style="padding:16px;color:#6B7280">Chargement…</td></tr></tbody>';
 
   try {
-    var codesRes = await sb.from('access_codes')
-      .select('*')
-      .order('code');
+    var codesRes = await sb.from('access_codes').select('*').order('code');
 
     if (codesRes.error) {
-      table.innerHTML = '<tbody><tr><td style="padding:16px;color:#F87171">Erreur Supabase : ' + codesRes.error.message + '</td></tr></tbody>';
-      console.error('[Admin] Supabase error:', codesRes.error);
+      table.innerHTML = '<tbody><tr><td style="padding:16px;color:#F87171">Erreur : ' + codesRes.error.message + '</td></tr></tbody>';
       return;
     }
 
@@ -137,7 +314,7 @@ async function renderAdminStats() {
           if (codeKey) progressByCode[codeKey] = (progressByCode[codeKey] || 0) + 1;
         });
       }
-    } catch(e) { console.log('[Admin] Progress error:', e.message); }
+    } catch(e) {}
 
     var rows = codes.map(function(c) {
       var usedDate = c.used_at ? new Date(c.used_at).toLocaleDateString('fr-FR') : '—';
@@ -161,10 +338,12 @@ async function renderAdminStats() {
 
   } catch(err) {
     table.innerHTML = '<tbody><tr><td style="padding:16px;color:#F87171">Erreur : ' + err.message + '</td></tr></tbody>';
-    console.error('[Admin] Fatal error:', err);
   }
 }
 
+// ============================================================
+// AUTO-LOGIN
+// ============================================================
 (function() {
   if (sessionStorage.getItem('adminAuth') === 'true') {
     showAdminPanel();
@@ -176,3 +355,9 @@ async function renderAdminStats() {
 
 </body>
 </html>'''
+
+with open('/mnt/agents/output/admin.html', 'w') as f:
+    f.write(admin_html_v2)
+
+print("✅ admin.html v2 avec générateur de codes!")
+print(f"Taille: {len(admin_html_v2)} caractères")
