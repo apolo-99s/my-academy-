@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+# Create the complete fixed admin.html with everything inline
+admin_html = '''<!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
 <meta charset="UTF-8">
@@ -9,28 +11,28 @@
 </head>
 <body>
 
+<!-- LOGIN SCREEN -->
 <div id="admin-login" class="admin-screen">
   <div class="admin-login-box glass">
-    <div class="hero-badge" style="margin-bottom:18px">🔒 ADMIN</div>
-    <h1 style="font-size:22px;font-weight:800;color:#fff;margin-bottom:8px">Digital Skills Academy</h1>
-    <p style="color:#6B7280;font-size:13px;margin-bottom:22px">Accès réservé à l'administrateur.</p>
-    <input type="password" id="admin-pass-input" class="access-input glass" placeholder="MOT DE PASSE" style="text-transform:none;letter-spacing:normal" onkeydown="if(event.key==='Enter')adminLogin()">
-    <div class="error-msg" id="admin-login-error">Mot de passe incorrect.</div>
-    <button class="access-btn glass-btn" onclick="adminLogin()">Se connecter →</button>
+    <div class="hero-badge" style="margin-bottom:12px">🔒 ADMIN</div>
+    <h1 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 8px">Digital Skills Academy</h1>
+    <p style="color:#6B7280;font-size:13px;margin:0 0 20px">Accès réservé à l\'administrateur.</p>
+    <input type="password" id="admin-pass-input" class="access-input glass" placeholder="Mot de passe admin" onkeydown="if(event.key==='Enter')adminLogin()">
+    <div class="error-msg" id="admin-login-error" style="display:none;color:#F87171;font-size:12px;margin-top:8px">Mot de passe incorrect.</div>
+    <button class="access-btn glass-btn" style="margin-top:16px" onclick="adminLogin()">Se connecter →</button>
   </div>
 </div>
 
+<!-- ADMIN PANEL -->
 <div id="admin-panel" class="admin-screen" style="display:none">
   <nav>
-    <div class="brand"><span>Digital</span>Skills.dz <span style="color:#6B7280;font-weight:400;font-size:13px">/ admin</span></div>
-    <button class="dash-btn" onclick="adminLogout()">Déconnexion</button>
+    <div class="brand"><span>Digital</span>Skills.dz</div>
+    <button class="dash-btn" onclick="adminLogout()">🔒 Déconnexion</button>
   </nav>
 
   <div class="admin-body">
     <div class="admin-warning glass">
-      ✅ Ces statistiques viennent maintenant de <strong>Supabase</strong> — elles reflètent tous les appareils,
-      pas seulement ce navigateur. La colonne "Leçons faites" compte les leçons complétées pour ce code, tous
-      appareils confondus.
+      ✅ Ces statistiques viennent maintenant de <strong>Supabase</strong> — elles reflètent tous les appareils, pas seulement ce navigateur.
     </div>
 
     <div class="admin-stats">
@@ -43,24 +45,141 @@
         <div class="admin-stat-lbl">Utilisés</div>
       </div>
       <div class="admin-stat-card glass">
-        <div class="admin-stat-num" style="color:#818CF8" id="stat-remaining">0</div>
+        <div class="admin-stat-num" style="color:#60A5FA" id="stat-remaining">0</div>
         <div class="admin-stat-lbl">Disponibles</div>
       </div>
     </div>
 
     <div class="admin-table-wrap glass">
-      <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center">
-        <span>Codes d'accès</span>
+      <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <span>Codes d\'accès</span>
         <button class="dash-btn" onclick="renderAdminStats()">🔄 Actualiser</button>
       </div>
-      <table class="admin-table" id="codes-table"></table>
+      <table class="admin-table" id="codes-table">
+        <thead><tr><th>Code</th><th>Statut</th><th>Élève</th><th>Utilisé le</th><th>Leçons faites</th></tr></thead>
+        <tbody><tr><td colspan="5" style="padding:20px;text-align:center;color:#6B7280">Cliquez sur Actualiser pour charger les données</td></tr></tbody>
+      </table>
     </div>
   </div>
 </div>
 
-<script src="data.js"></script>
+<!-- SUPABASE CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-<script src="supabase-client.js"></script>
-<script src="admin.js"></script>
+
+<!-- ADMIN.JS INLINE (no external dependency) -->
+<script>
+// ============================================================
+// ADMIN.JS — Autonomous version
+// ============================================================
+var ADMIN_PASSWORD = 'Fycal2299';
+
+// Supabase config
+var SUPABASE_URL = 'https://vvqkxtiepgxvymhtllwa.supabase.co';
+var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2cWt4dGllcGd4dnltaHRsbHdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3NDQ0NDgsImV4cCI6MjEwMDMyMDQ0OH0.oaY-_zDZDFVuIuv4szLyJRZ8cnfDyOlg7mbPtRG0yTE';
+
+// Initialize Supabase client
+var sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+console.log('[Admin] Supabase client initialized');
+
+function adminLogin() {
+  var val = document.getElementById('admin-pass-input').value;
+  var err = document.getElementById('admin-login-error');
+  if (val !== ADMIN_PASSWORD) {
+    err.style.display = 'block';
+    return;
+  }
+  err.style.display = 'none';
+  sessionStorage.setItem('adminAuth', 'true');
+  showAdminPanel();
+}
+
+function adminLogout() {
+  sessionStorage.removeItem('adminAuth');
+  document.getElementById('admin-panel').style.display = 'none';
+  document.getElementById('admin-login').style.display = 'flex';
+  document.getElementById('admin-pass-input').value = '';
+}
+
+function showAdminPanel() {
+  document.getElementById('admin-login').style.display = 'none';
+  document.getElementById('admin-panel').style.display = 'flex';
+  renderAdminStats();
+}
+
+async function renderAdminStats() {
+  var table = document.getElementById('codes-table');
+  table.innerHTML = '<tbody><tr><td style="padding:16px;color:#6B7280">Chargement…</td></tr></tbody>';
+
+  try {
+    var codesRes = await sb.from('access_codes')
+      .select('*')
+      .order('code');
+
+    if (codesRes.error) {
+      table.innerHTML = '<tbody><tr><td style="padding:16px;color:#F87171">Erreur Supabase : ' + codesRes.error.message + '</td></tr></tbody>';
+      console.error('[Admin] Supabase error:', codesRes.error);
+      return;
+    }
+
+    var codes = codesRes.data || [];
+    var total = codes.length;
+    var usedCount = codes.filter(function(c) { return c.used === true; }).length;
+
+    document.getElementById('stat-total').textContent = total;
+    document.getElementById('stat-used').textContent = usedCount;
+    document.getElementById('stat-remaining').textContent = total - usedCount;
+
+    var progressByCode = {};
+    try {
+      var progressRes = await sb.from('progress').select('*');
+      if (!progressRes.error && progressRes.data) {
+        progressRes.data.forEach(function(row) {
+          var codeKey = row.code || row.user_code || row.activation_code;
+          if (codeKey) progressByCode[codeKey] = (progressByCode[codeKey] || 0) + 1;
+        });
+      }
+    } catch(e) { console.log('[Admin] Progress error:', e.message); }
+
+    var rows = codes.map(function(c) {
+      var usedDate = c.used_at ? new Date(c.used_at).toLocaleDateString('fr-FR') : '—';
+      var lessonsCount = progressByCode[c.code] || 0;
+      var studentName = c.student_name || '—';
+      var studentPhone = c.student_phone || '';
+      var studentInfo = studentName;
+      if (studentPhone && studentPhone !== '—' && studentPhone !== 'null') {
+        studentInfo += ' <span style="color:#6B7280;font-size:11px">(' + studentPhone + ')</span>';
+      }
+      return '<tr>' +
+        '<td style="font-family:monospace;letter-spacing:1px">' + c.code + '</td>' +
+        '<td><span class="admin-badge ' + (c.used ? 'used' : 'free') + '">' + (c.used ? '✓ Utilisé' : 'Disponible') + '</span></td>' +
+        '<td>' + studentInfo + '</td>' +
+        '<td>' + usedDate + '</td>' +
+        '<td>' + lessonsCount + '</td>' +
+        '</tr>';
+    }).join('');
+
+    table.innerHTML = '<thead><tr><th>Code</th><th>Statut</th><th>Élève</th><th>Utilisé le</th><th>Leçons faites</th></tr></thead><tbody>' + (rows || '<tr><td colspan="5" style="text-align:center;padding:20px;color:#6B7280">Aucun code</td></tr>') + '</tbody>';
+
+  } catch(err) {
+    table.innerHTML = '<tbody><tr><td style="padding:16px;color:#F87171">Erreur : ' + err.message + '</td></tr></tbody>';
+    console.error('[Admin] Fatal error:', err);
+  }
+}
+
+(function() {
+  if (sessionStorage.getItem('adminAuth') === 'true') {
+    showAdminPanel();
+  } else {
+    document.getElementById('admin-login').style.display = 'flex';
+  }
+})();
+</script>
+
 </body>
-</html>
+</html>'''
+
+with open('/mnt/agents/output/admin.html', 'w') as f:
+    f.write(admin_html)
+
+print("✅ admin.html complet généré!")
+print(f"Taille: {len(admin_html)} caractères")
