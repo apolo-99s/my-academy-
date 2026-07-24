@@ -163,6 +163,13 @@
             <button class="gen-btn" onclick="saveSkill()">💾 Enregistrer</button>
             <button class="gen-btn secondary" id="skDeleteBtn" onclick="deleteCurrentSkill()" style="background:#450A0A;color:#F87171">🗑️ Supprimer cette skill</button>
           </div>
+
+          <div style="border:1px solid #1C1C28;border-radius:10px;padding:14px;margin-bottom:16px;background:#0B0B10">
+            <div style="color:#9CA3AF;font-size:13px;margin-bottom:10px">📥 Coller le code d'une skill (remplace tous les champs ci-dessous — utile si je t'ai donné le code dans le chat)</div>
+            <textarea id="skPasteBox" placeholder="Colle ici l'objet skill complet, ex: { id: 'design', icon: '🎨', title: {fr:'...',ar:'...',en:'...'}, levels: [...] }" style="width:100%;min-height:120px;font-family:monospace;font-size:12px;background:#111118;color:#E5E7EB;border:1px solid #1C1C28;border-radius:8px;padding:10px"></textarea>
+            <button class="dash-btn" style="margin-top:8px" onclick="skLoadFromPaste()">⬆️ Charger ce code</button>
+          </div>
+
           <div id="skEditorForm"></div>
         </div>
       </div>
@@ -658,6 +665,35 @@ function skRemoveLesson(li, ki) {
   if (!confirm('Supprimer cette leçon ?')) return;
   skEditingPayload.levels[li].lessons.splice(ki, 1);
   renderSkillEditorForm();
+}
+
+function skLoadFromPaste() {
+  var text = document.getElementById('skPasteBox').value.trim();
+  if (!text) { alert("Colle du code d'abord."); return; }
+  var obj;
+  try {
+    obj = (new Function('return (' + text + ')'))();
+  } catch (e) {
+    alert('Code illisible — vérifie que tu as bien copié un objet complet (accolades ouvertes/fermées). Détail: ' + e.message);
+    return;
+  }
+  if (Array.isArray(obj)) {
+    if (!obj.length) { alert('Le tableau collé est vide.'); return; }
+    obj = obj[0];
+    alert("C'était un tableau de plusieurs skills — seule la première a été chargée. Colle-les une par une.");
+  }
+  if (!obj || typeof obj !== 'object' || !obj.id) {
+    alert("Ce code ne ressemble pas à une skill valide (il doit avoir au moins un champ 'id').");
+    return;
+  }
+  // Fill in anything missing so the form doesn't break on incomplete pastes
+  var blank = skBlankSkill();
+  Object.keys(blank).forEach(function(k){ if (obj[k] === undefined) obj[k] = blank[k]; });
+  if (!Array.isArray(obj.levels)) obj.levels = [];
+  skEditingPayload = obj;
+  document.getElementById('skPasteBox').value = '';
+  renderSkillEditorForm();
+  alert('Code chargé — vérifie les champs puis clique sur Enregistrer.');
 }
 
 async function saveSkill() {
