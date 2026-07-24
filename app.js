@@ -227,6 +227,29 @@ function renderLesson() {
   showView('lesson-view');
 }
 
+// ============================================================
+// LIVE SKILLS — loads the latest content saved from the admin
+// "Skills" tab (Supabase table skills_content) so changes appear
+// on the site immediately, without editing data.js.
+// If Supabase is unreachable or the table is empty, the site
+// silently falls back to the SKILLS array already defined in
+// data.js, so it never breaks.
+// ============================================================
+async function loadLiveSkills() {
+  try {
+    if (typeof sb === 'undefined') return;
+    var res = await sb.from('skills_content').select('*').order('sort_order', { ascending: true });
+    if (!res.error && res.data && res.data.length) {
+      SKILLS = res.data.map(function(r) { return r.payload; });
+      console.log('[Skills] Chargées depuis Supabase (' + SKILLS.length + ')');
+    } else {
+      console.log('[Skills] Supabase vide/erreur — fallback sur data.js');
+    }
+  } catch (e) {
+    console.error('[Skills] Échec du chargement live, fallback sur data.js', e);
+  }
+}
+
 (function() {
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -234,9 +257,11 @@ function renderLesson() {
     var txt = b.textContent.trim();
     b.classList.toggle('active', (lang === 'fr' && txt === 'FR') || (lang === 'ar' && txt === 'ع') || (lang === 'en' && txt === 'EN'));
   });
-  if (hasAccess) {
-    loadProgress().then(renderAcademy);
-  } else {
-    renderLanding();
-  }
+  loadLiveSkills().then(function() {
+    if (hasAccess) {
+      loadProgress().then(renderAcademy);
+    } else {
+      renderLanding();
+    }
+  });
 })();
