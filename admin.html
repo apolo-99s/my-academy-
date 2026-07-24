@@ -165,6 +165,12 @@
           </div>
 
           <div style="border:1px solid #1C1C28;border-radius:10px;padding:14px;margin-bottom:16px;background:#0B0B10">
+            <div style="color:#9CA3AF;font-size:13px;margin-bottom:10px">🤖 Générer / développer avec l'IA (crée une nouvelle skill si le formulaire est vide, ou modifie celle affichée en dessous)</div>
+            <textarea id="skAiCommand" placeholder="Ex: Crée une skill complète sur la photographie de produit pour Instagram, marché algérien, 4 niveaux avec 2-3 leçons chacun&#10;Ex: Ajoute un niveau Maître à cette skill&#10;Ex: Réécris la leçon 1 du niveau Débutant pour qu'elle soit plus détaillée" style="width:100%;min-height:80px;font-size:13px;background:#111118;color:#E5E7EB;border:1px solid #1C1C28;border-radius:8px;padding:10px"></textarea>
+            <button class="gen-btn" id="skAiBtn" style="margin-top:8px" onclick="skGenerateWithAI()">✨ Générer avec l'IA</button>
+          </div>
+
+          <div style="border:1px solid #1C1C28;border-radius:10px;padding:14px;margin-bottom:16px;background:#0B0B10">
             <div style="color:#9CA3AF;font-size:13px;margin-bottom:10px">📥 Coller le code d'une skill (remplace tous les champs ci-dessous — utile si je t'ai donné le code dans le chat)</div>
             <textarea id="skPasteBox" placeholder="Colle ici l'objet skill complet, ex: { id: 'design', icon: '🎨', title: {fr:'...',ar:'...',en:'...'}, levels: [...] }" style="width:100%;min-height:120px;font-family:monospace;font-size:12px;background:#111118;color:#E5E7EB;border:1px solid #1C1C28;border-radius:8px;padding:10px"></textarea>
             <button class="dash-btn" style="margin-top:8px" onclick="skLoadFromPaste()">⬆️ Charger ce code</button>
@@ -665,6 +671,40 @@ function skRemoveLesson(li, ki) {
   if (!confirm('Supprimer cette leçon ?')) return;
   skEditingPayload.levels[li].lessons.splice(ki, 1);
   renderSkillEditorForm();
+}
+
+async function skGenerateWithAI() {
+  var cmdBox = document.getElementById('skAiCommand');
+  var cmd = cmdBox.value.trim();
+  if (!cmd) { alert("Écris une commande d'abord."); return; }
+  var btn = document.getElementById('skAiBtn');
+  var orig = btn.textContent;
+  btn.textContent = '⏳ Génération...';
+  btn.disabled = true;
+  try {
+    var res = await sb.functions.invoke('generate-skill', {
+      body: { command: cmd, context: (skEditingPayload && skEditingPayload.id) ? skEditingPayload : null }
+    });
+    if (res.error) throw new Error(res.error.message || 'Erreur de connexion à la fonction IA.');
+    var data = res.data;
+    if (data && data.error) throw new Error(data.error);
+    if (!data || !data.skill) throw new Error("Réponse de l'IA invalide.");
+    var obj = data.skill;
+    var blank = skBlankSkill();
+    Object.keys(blank).forEach(function(k){ if (obj[k] === undefined) obj[k] = blank[k]; });
+    if (!Array.isArray(obj.levels)) obj.levels = [];
+    skEditingPayload = obj;
+    skIsNew = !skillsRows.some(function(r){ return r.skill_id === obj.id; });
+    document.getElementById('skDeleteBtn').style.display = skIsNew ? 'none' : 'inline-block';
+    cmdBox.value = '';
+    renderSkillEditorForm();
+    alert('Skill générée — vérifie les champs puis clique sur Enregistrer.');
+  } catch (e) {
+    alert('Erreur IA: ' + e.message);
+  } finally {
+    btn.textContent = orig;
+    btn.disabled = false;
+  }
 }
 
 function skLoadFromPaste() {
