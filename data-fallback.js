@@ -18,7 +18,7 @@ var T = {
   fr: {
     badge: 'Formation Complète — 11 Skills',
     title: 'Maîtrisez les Compétences\nDigitales qui Paient en Algérie',
-    subtitle: '11 formations complètes. Graphisme, Social Media, Vidéo, Web, SEO, Data, Copywriting, UI/UX, Automation, Vibe Coding, IA.',
+    subtitle: (typeof SKILLS !== 'undefined' && SKILLS.length ? SKILLS.length : 11) + " skills, du débutant au maître. Chaque leçon vous dit exactement comment faire.",
     f1: '✓ Méthodes étape par étape', f2: '✓ Exercices réels', f3: '✓ Outils gratuits', f4: '✓ Tarifs marché algérien',
     includesTitle: 'Ce que vous obtenez',
     includes: ['11 formations complètes — Beginner → Master','Chaque leçon: méthode exacte étape par étape','Exercices pratiques avec livrables concrets','Outils gratuits','Prix du marché algérien en DZD','Scripts de communication client','Accès à vie — mises à jour incluses'],
