@@ -1,3 +1,7 @@
+// ============================================================
+// SUPABASE CLIENT — DigitalSkills.dz
+// ============================================================
 var SUPABASE_URL = 'https://vvqkxtiepgxvymhtllwa.supabase.co';
 var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2cWt4dGllcGd4dnltaHRsbHdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3NDQ0NDgsImV4cCI6MjEwMDMyMDQ0OH0.oaY-_zDZDFVuIuv4szLyJRZ8cnfDyOlg7mbPtRG0yTE';
 var sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+console.log('[Supabase] Client initialisé');
