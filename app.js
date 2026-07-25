@@ -271,3 +271,196 @@ async function loadLiveSkills() {
     }
   });
 })();
+// ============================================================
+// 3D ANIMATION BACKGROUND
+// S'exécute sur toutes les pages du site
+// ============================================================
+(function() {
+    // Attendre que le DOM soit prêt
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init3DBackground);
+    } else {
+        init3DBackground();
+    }
+
+    function init3DBackground() {
+        // Vérifier que le canvas existe
+        var canvas = document.getElementById('bg-3d');
+        if (!canvas) {
+            console.warn('Canvas #bg-3d non trouvé, création automatique');
+            canvas = document.createElement('canvas');
+            canvas.id = 'bg-3d';
+            canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;';
+            document.body.prepend(canvas);
+        }
+
+        // Initialisation Three.js
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer({ 
+            canvas: canvas, 
+            alpha: true,
+            antialias: true 
+        });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // ============ PARTICULES (étoiles) ============
+        var particlesGeometry = new THREE.BufferGeometry();
+        var particlesCount = 400;
+        var posArray = new Float32Array(particlesCount * 3);
+        var colorArray = new Float32Array(particlesCount * 3);
+
+        for (var i = 0; i < particlesCount * 3; i += 3) {
+            posArray[i] = (Math.random() - 0.5) * 12;
+            posArray[i + 1] = (Math.random() - 0.5) * 8;
+            posArray[i + 2] = (Math.random() - 0.5) * 6;
+            
+            colorArray[i] = Math.random() * 0.4 + 0.3;
+            colorArray[i + 1] = Math.random() * 0.2 + 0.1;
+            colorArray[i + 2] = Math.random() * 0.7 + 0.3;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+
+        var particlesMaterial = new THREE.PointsMaterial({
+            size: 0.035,
+            vertexColors: true,
+            blending: THREE.AdditiveBlending,
+            transparent: true,
+            opacity: 0.6
+        });
+
+        var particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
+        // ============ TORE 1 (violet) ============
+        var torus1Geo = new THREE.TorusGeometry(2, 0.35, 16, 100);
+        var torus1Mat = new THREE.MeshStandardMaterial({
+            color: '#6C63FF',
+            wireframe: true,
+            transparent: true,
+            opacity: 0.1,
+            emissive: '#6C63FF',
+            emissiveIntensity: 0.15
+        });
+        var torus1 = new THREE.Mesh(torus1Geo, torus1Mat);
+        torus1.position.set(-3, 1.5, -4);
+        scene.add(torus1);
+
+        // ============ TORE 2 (rose) ============
+        var torus2Geo = new THREE.TorusGeometry(1.3, 0.2, 16, 80);
+        var torus2Mat = new THREE.MeshStandardMaterial({
+            color: '#FF6584',
+            wireframe: true,
+            transparent: true,
+            opacity: 0.1,
+            emissive: '#FF6584',
+            emissiveIntensity: 0.15
+        });
+        var torus2 = new THREE.Mesh(torus2Geo, torus2Mat);
+        torus2.position.set(3, -1, -3);
+        scene.add(torus2);
+
+        // ============ SPHÈRE (verte) ============
+        var sphereGeo = new THREE.SphereGeometry(0.5, 32, 32);
+        var sphereMat = new THREE.MeshStandardMaterial({
+            color: '#43E97B',
+            wireframe: true,
+            transparent: true,
+            opacity: 0.12,
+            emissive: '#43E97B',
+            emissiveIntensity: 0.15
+        });
+        var sphere = new THREE.Mesh(sphereGeo, sphereMat);
+        sphere.position.set(-1.5, -2, -2);
+        scene.add(sphere);
+
+        // ============ CUBE (orange) ============
+        var cubeGeo = new THREE.BoxGeometry(0.7, 0.7, 0.7);
+        var cubeMat = new THREE.MeshStandardMaterial({
+            color: '#FFA502',
+            wireframe: true,
+            transparent: true,
+            opacity: 0.1,
+            emissive: '#FFA502',
+            emissiveIntensity: 0.12
+        });
+        var cube = new THREE.Mesh(cubeGeo, cubeMat);
+        cube.position.set(2.5, 1.8, -3);
+        scene.add(cube);
+
+        // ============ ANNEAU ============
+        var ringGeo = new THREE.TorusGeometry(1, 0.12, 16, 60);
+        var ringMat = new THREE.MeshStandardMaterial({
+            color: '#8B85FF',
+            wireframe: false,
+            transparent: true,
+            opacity: 0.06,
+            emissive: '#8B85FF',
+            emissiveIntensity: 0.2,
+            metalness: 0.8,
+            roughness: 0.2
+        });
+        var ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.position.set(0, 0.5, -1.5);
+        scene.add(ring);
+
+        // ============ LUMIÈRES ============
+        var light1 = new THREE.PointLight('#6C63FF', 0.5, 50);
+        light1.position.set(5, 5, 5);
+        scene.add(light1);
+
+        var light2 = new THREE.PointLight('#FF6584', 0.3, 30);
+        light2.position.set(-5, -2, 3);
+        scene.add(light2);
+
+        var ambientLight = new THREE.AmbientLight('#ffffff', 0.25);
+        scene.add(ambientLight);
+
+        camera.position.z = 5;
+
+        // ============ ANIMATION ============
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Rotation particules
+            particlesMesh.rotation.y += 0.0002;
+            particlesMesh.rotation.x += 0.0001;
+            
+            // Rotation tores
+            torus1.rotation.x += 0.003;
+            torus1.rotation.y += 0.005;
+            
+            torus2.rotation.x += 0.004;
+            torus2.rotation.z += 0.003;
+            
+            // Rotation sphère
+            sphere.rotation.x += 0.005;
+            sphere.rotation.y += 0.003;
+            
+            // Rotation cube
+            cube.rotation.x += 0.003;
+            cube.rotation.y += 0.005;
+            
+            // Rotation anneau
+            ring.rotation.z += 0.002;
+            ring.rotation.x += 0.003;
+            
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // ============ RESIZE ============
+        window.addEventListener('resize', function() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        console.log('✅ 3D Background initialisé');
+    }
+})();
