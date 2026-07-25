@@ -579,7 +579,13 @@ function renderSkillEditorForm() {
   html += skField('Couleur (hex)', 'color', s.color);
   html += skField('Couleur accent (hex)', 'accent', s.accent);
   html += skFieldArea('Fond (gradient CSS)', 'bg', s.bg);
-  html += skField('Image de fond (URL)', 'bgImage', s.bgImage);
+  html += '<div class="sk-field"><label>Image de fond</label>';
+  if (s.bgImage) html += '<img src="' + skEscape(s.bgImage) + '" style="max-width:100%;border-radius:8px;margin-bottom:6px;display:block">';
+  html += '<input value="' + skEscape(s.bgImage) + '" oninput="skSetField(\'bgImage\', this.value)" placeholder="URL de l\'image">';
+  html += '<div style="display:flex;gap:6px;margin-top:6px">';
+  html += '<input id="__skill_imgprompt" placeholder="Décris l\'image (optionnel, sinon utilise le titre)" style="flex:1;padding:8px;border-radius:8px;border:1px solid #1C1C28;background:#111118;color:#E5E7EB;font-size:13px">';
+  html += '<button class="dash-btn" onclick="skGenSkillBgImage()">🎨 Générer</button>';
+  html += '</div></div>';
   html += skField('Gains estimés', 'earning', s.earning);
   html += skField('Outil de départ', 'startTool', s.startTool);
   html += '<div class="sk-field"><label>Premier client (FR / AR / EN)</label>' + skTriFields(s.firstClient, 'skSetTri_firstClient') + '</div>';
@@ -626,7 +632,13 @@ function skRenderLesson(lesson, li, ki) {
     '<button class="gen-btn secondary" style="background:#450A0A;color:#F87171" onclick="skRemoveLesson(' + li + ',' + ki + ')">Supprimer</button></div>';
   h += skField('ID leçon', '__lesson_id_' + li + '_' + ki, lesson.id);
   h += '<div class="sk-field"><label>Titre (FR / AR / EN)</label>' + skTriFieldsLesson(li, ki, 'title', lesson.title) + '</div>';
-  h += skField('Image (URL)', '__lesson_image_' + li + '_' + ki, lesson.image);
+  h += '<div class="sk-field"><label>Image</label>';
+  if (lesson.image) h += '<img src="' + skEscape(lesson.image) + '" style="max-width:100%;border-radius:8px;margin-bottom:6px;display:block">';
+  h += '<input value="' + skEscape(lesson.image) + '" oninput="skSetField(\'__lesson_image_' + li + '_' + ki + '\', this.value)" placeholder="URL de l\'image">';
+  h += '<div style="display:flex;gap:6px;margin-top:6px">';
+  h += '<input id="__lesson_imgprompt_' + li + '_' + ki + '" placeholder="Décris l\'image (optionnel, sinon utilise le titre)" style="flex:1;padding:8px;border-radius:8px;border:1px solid #1C1C28;background:#111118;color:#E5E7EB;font-size:13px">';
+  h += '<button class="dash-btn" onclick="skGenLessonImage(' + li + ',' + ki + ')">🎨 Générer</button>';
+  h += '</div></div>';
   h += '<div class="sk-field"><label>Layout</label><select onchange="skSetLessonField(' + li + ',' + ki + ',\'layout\',this.value)">' +
     ['top','left','right'].map(function(o) {
       return '<option value="' + o + '"' + (lesson.layout===o?' selected':'') + '>' + o + '</option>';
@@ -705,6 +717,37 @@ async function skGenerateWithAI() {
     btn.textContent = orig;
     btn.disabled = false;
   }
+}
+
+// ------------------------------------------------------------
+// IMAGE GENERATION (Pollinations AI — free, no key, no signup)
+// ------------------------------------------------------------
+function skGenerateImageUrl(promptText) {
+  var clean = (promptText || '').trim() || 'illustration éducative digital skills';
+  var seed = Math.floor(Math.random() * 100000);
+  return 'https://image.pollinations.ai/prompt/' + encodeURIComponent(clean) +
+    '?width=800&height=450&nologo=true&seed=' + seed;
+}
+
+function skGenSkillBgImage() {
+  var promptInput = document.getElementById('__skill_imgprompt');
+  var promptText = promptInput ? promptInput.value.trim() : '';
+  if (!promptText) {
+    promptText = (skEditingPayload.title && skEditingPayload.title.fr) || skEditingPayload.id || '';
+  }
+  skEditingPayload.bgImage = skGenerateImageUrl(promptText);
+  renderSkillEditorForm();
+}
+
+function skGenLessonImage(li, ki) {
+  var promptInput = document.getElementById('__lesson_imgprompt_' + li + '_' + ki);
+  var promptText = promptInput ? promptInput.value.trim() : '';
+  if (!promptText) {
+    var lesson = skEditingPayload.levels[li].lessons[ki];
+    promptText = (lesson.title && lesson.title.fr) || '';
+  }
+  skEditingPayload.levels[li].lessons[ki].image = skGenerateImageUrl(promptText);
+  renderSkillEditorForm();
 }
 
 function skLoadFromPaste() {
