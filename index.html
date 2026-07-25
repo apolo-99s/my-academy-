@@ -9,27 +9,19 @@
 body{background:#060608;color:#E5E7EB;font-family:system-ui,-apple-system,sans-serif;min-height:100vh}
 button{cursor:pointer;font-family:inherit}
 input{font-family:inherit}
-
-/* ALL VIEWS HIDDEN BY DEFAULT */
 #landing,#academy,#skill-view,#lesson-view{display:none;flex-direction:column;min-height:100vh}
-
-/* NAV */
 nav{padding:16px 24px;border-bottom:1px solid #111118;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:#060608;position:sticky;top:0;z-index:100}
 .brand{font-weight:800;font-size:16px;color:#fff;cursor:pointer}
 .brand span{color:#7C3AED}
 .lang-btns{display:flex;gap:6px}
 .lang-btn{background:transparent;border:1px solid #1C1C28;color:#6B7280;border-radius:8px;padding:5px 12px;font-size:13px;font-weight:400;transition:all 0.15s}
 .lang-btn.active{background:#7C3AED;border-color:#7C3AED;color:#fff;font-weight:700}
-
-/* HERO */
 .hero{background:linear-gradient(180deg,#0D0818 0%,#060608 100%);padding:52px 20px 44px;text-align:center;border-bottom:1px solid #1C1C28}
 .hero-badge{display:inline-block;background:#0D0818;border:1px solid #7C3AED44;border-radius:6px;padding:5px 14px;margin-bottom:18px;font-size:11px;color:#A78BFA;letter-spacing:3px;text-transform:uppercase}
 .hero h1{font-size:clamp(26px,6vw,52px);font-weight:900;margin:0 0 14px;background:linear-gradient(135deg,#fff 30%,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:pre-line}
 .hero p{color:#6B7280;font-size:16px;max-width:520px;margin:0 auto 32px;line-height:1.65}
 .features{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;font-size:13px;color:#4B5563}
 .feature-tag{background:#0F0F18;border:1px solid #1C1C28;border-radius:20px;padding:6px 14px}
-
-/* SKILL CARDS */
 .skill-cards{max-width:860px;margin:44px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 .skill-card{border-radius:16px;padding:26px;cursor:pointer;transition:all 0.2s;border:2px solid transparent}
 .skill-card:hover{transform:translateY(-3px)}
@@ -41,30 +33,14 @@ nav{padding:16px 24px;border-bottom:1px solid #111118;display:flex;align-items:c
 .skill-stat{display:flex;justify-content:space-between;font-size:12px}
 .stat-label{color:#4B5563}
 .skill-cta{border-radius:8px;padding:10px;text-align:center;font-weight:700;font-size:14px;color:#fff;border:none;width:100%}
-
-/* TOOLBAR */
 .toolbar{max-width:860px;margin:0 auto 20px;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
 .toolbar-status{font-size:12px;color:#4B5563}
-.toolbar-buttons{display:flex;gap:8px;flex-wrap:wrap}
 .toolbar-btn{background:#1C1C28;border:none;border-radius:8px;padding:8px 14px;color:#6B7280;font-size:12px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:6px}
 .toolbar-btn:hover{background:#2C2C38;color:#fff}
 .toolbar-btn.primary{background:#7C3AED;color:#fff}
 .toolbar-btn.primary:hover{background:#6D2CE8}
-
-/* DATA OPTIONS PANEL */
-#data-options-panel{display:none;position:fixed;bottom:20px;right:20px;background:#0D0D14;border:1px solid #1C1C28;border-radius:12px;padding:16px;z-index:999;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,0.6)}
-#data-options-panel .opt-title{font-size:11px;color:#6B7280;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-#data-options-panel .opt-btn{background:#1C1C28;border:1px solid transparent;border-radius:6px;padding:8px 12px;color:#6B7280;cursor:pointer;font-size:13px;text-align:left;display:flex;align-items:center;gap:8px;width:100%;transition:all 0.15s;margin-bottom:4px}
-#data-options-panel .opt-btn:hover{background:#2C2C38}
-#data-options-panel .opt-btn.active{border-color:#7C3AED44;color:#fff}
-#data-options-panel .opt-divider{border-top:1px solid #1C1C28;margin:6px 0;padding-top:6px}
-#data-options-panel .opt-status{font-size:10px;color:#374151;text-align:center;margin-top:6px}
-
-/* RECOMMENDATION */
 .recommendation{max-width:860px;margin:0 auto 32px;padding:0 20px}
 .rec-box{background:#0D0818;border:1px solid #1C1C28;border-radius:12px;padding:20px;text-align:center;color:#4B5563;font-size:13px}
-
-/* LANDING ACCESS */
 .access-section{max-width:560px;margin:0 auto;padding:0 20px 48px}
 .includes-box{background:#0D0D14;border:1px solid #1C1C28;border-radius:14px;padding:22px 24px;margin-bottom:28px}
 .includes-title{font-size:11px;color:#6B7280;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;font-weight:600}
@@ -86,8 +62,6 @@ nav{padding:16px 24px;border-bottom:1px solid #111118;display:flex;align-items:c
 .stat-item{text-align:center}
 .stat-num{font-size:24px;font-weight:900;color:#7C3AED}
 .stat-lbl{font-size:12px;color:#374151}
-
-/* SKILL VIEW */
 .skill-header{padding:16px 20px;border-bottom-width:1px;border-bottom-style:solid}
 .skill-header-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px}
 .skill-body{max-width:860px;margin:0 auto;padding:28px 20px;width:100%}
@@ -108,8 +82,6 @@ nav{padding:16px 24px;border-bottom:1px solid #111118;display:flex;align-items:c
 .level-nav{display:flex;justify-content:space-between;margin-top:28px;gap:10px;flex-wrap:wrap}
 .nav-prev{background:#0D0D14;border:1px solid #1C1C28;border-radius:10px;padding:11px 18px;color:#6B7280;font-size:13px}
 .nav-next{border:none;border-radius:10px;padding:11px 20px;color:#fff;font-size:13px;font-weight:700}
-
-/* LESSON VIEW */
 .lesson-topbar{background:#0A0A12;border-bottom:1px solid #1C1C28;padding:14px 20px;position:sticky;top:0;z-index:10}
 .lesson-topbar-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .back-btn{background:transparent;border:1px solid #1C1C28;color:#6B7280;border-radius:8px;padding:6px 11px;font-size:12px}
@@ -139,29 +111,21 @@ nav{padding:16px 24px;border-bottom:1px solid #111118;display:flex;align-items:c
 .lesson-nav-prev{background:#0D0D14;border:1px solid #1C1C28;border-radius:10px;padding:12px 18px;color:#6B7280;font-size:13px}
 .lesson-nav-next{border:none;border-radius:10px;padding:12px 20px;color:#fff;font-size:13px;font-weight:700}
 .lesson-complete{border-radius:10px;padding:12px 20px;font-size:13px;font-weight:700;border:1px solid;background:#0D0D14}
-
-/* NOTIFICATION */
 .notification{position:fixed;top:80px;right:20px;background:#0D0D14;color:#E5E7EB;padding:12px 20px;border-radius:10px;z-index:1000;border:1px solid #1C1C28;box-shadow:0 4px 16px rgba(0,0,0,0.5);font-size:14px;animation:slideIn 0.3s ease}
 @keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
-
-/* FOOTER */
 footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-size:12px;color:#1F2937;background:#060608;margin-top:auto}
-
 @media(max-width:600px){
 .steps-with-img{flex-direction:column}
 .steps-side-img{width:100%}
 .steps-side-img img{min-height:auto;height:200px}
 .toolbar{flex-direction:column;align-items:stretch}
 .toolbar-buttons{justify-content:center}
-#data-options-panel{right:10px;left:10px;bottom:10px;min-width:auto}
 }
 </style>
 </head>
 <body>
 
-<!-- ============================================ -->
-<!-- LANDING VIEW -->
-<!-- ============================================ -->
+<!-- LANDING -->
 <div id="landing">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
@@ -203,9 +167,7 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
   <footer id="l-footer"></footer>
 </div>
 
-<!-- ============================================ -->
-<!-- ACADEMY VIEW -->
-<!-- ============================================ -->
+<!-- ACADEMY -->
 <div id="academy">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
@@ -221,30 +183,18 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
     <p id="a-subtitle"></p>
     <div class="features" id="a-features"></div>
   </div>
-  
-  <!-- TOOLBAR -->
   <div class="toolbar">
-    <div class="toolbar-status" id="data-status">📦 Cache | 0 skills | 0 leçons</div>
+    <div class="toolbar-status" id="data-status">📦 Chargement...</div>
     <div class="toolbar-buttons">
       <button class="toolbar-btn primary" onclick="refreshData()">🔄 Rafraîchir</button>
-      <button class="toolbar-btn" onclick="toggleOptions()">⚙️ Options</button>
     </div>
   </div>
-  
-  <div class="skill-cards" id="a-skill-cards">
-    <div style="text-align:center;color:#4B5563;padding:60px 20px;grid-column:1/-1;">
-      <div style="font-size:40px;margin-bottom:16px;">⏳</div>
-      <div>Chargement des skills...</div>
-    </div>
-  </div>
-  
+  <div class="skill-cards" id="a-skill-cards"></div>
   <div class="recommendation"><div class="rec-box" id="a-rec"></div></div>
   <footer id="a-footer"></footer>
 </div>
 
-<!-- ============================================ -->
 <!-- SKILL VIEW -->
-<!-- ============================================ -->
 <div id="skill-view">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
@@ -272,9 +222,7 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
   <footer id="s-footer"></footer>
 </div>
 
-<!-- ============================================ -->
 <!-- LESSON VIEW -->
-<!-- ============================================ -->
 <div id="lesson-view">
   <div class="lesson-topbar">
     <div class="lesson-topbar-inner">
@@ -290,50 +238,233 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
   <footer id="lv-footer"></footer>
 </div>
 
-<!-- ============================================ -->
-<!-- DATA OPTIONS PANEL -->
-<!-- ============================================ -->
-<div id="data-options-panel">
-  <div class="opt-title">📡 Mode de chargement</div>
-  <button class="opt-btn active" onclick="setDataMode('cache')" id="opt-cache">📦 Cache (rapide)</button>
-  <button class="opt-btn" onclick="setDataMode('realtime')" id="opt-realtime">📡 Realtime (instantané)</button>
-  <button class="opt-btn" onclick="setDataMode('auto-refresh')" id="opt-auto">🔄 Auto-Refresh (30s)</button>
-  <div class="opt-divider">
-    <button class="opt-btn" onclick="refreshData()" style="background:#7C3AED;color:#fff;border-color:#7C3AED;text-align:center;justify-content:center;">⚡ Rafraîchir maintenant</button>
-  </div>
-  <div class="opt-status" id="opt-status">Status: Cache | 0 skills</div>
-</div>
-
-<!-- ============================================ -->
-<!-- SCRIPTS -->
-<!-- ============================================ -->
-<script type="module">
+<script>
 // ============================================
-// IMPORTER SUPABASE
+// CODES D'ACCÈS
 // ============================================
-
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+const CODES=['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
 
 // ============================================
-// CONFIGURATION SUPABASE
+// SKILLS DATA - COMPLETE 10 SKILLS
 // ============================================
-
-// ⚠️ REMPLACE CES VALEURS AVEC TES PROPRES ⚠️
-const SUPABASE_URL = 'https://vvqkxtiepgxvymhtllwa.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2cWt4dGllcGd4dnltaHRsbHdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3NDQ0NDgsImV4cCI6MjEwMDMyMDQ0OH0.oaY-_zDZDFVuIuv4szLyJRZ8cnfDyOlg7mbPtRG0yTE';
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-// ============================================
-// CODES D'ACCÈS (Fallback si Supabase ne marche pas)
-// ============================================
-
-const FALLBACK_CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
+const SKILLS = [
+  // SKILL 1: GRAPHIC DESIGN
+  {
+    id: 'design',
+    icon: '🎨',
+    color: '#7C3AED',
+    accent: '#A78BFA',
+    bg: '#0D0818',
+    earning: '5,000 – 80,000 DZD',
+    firstClient: { fr: '3–4 semaines', ar: '3–4 أسابيع', en: '3–4 weeks' },
+    startTool: 'Canva, Figma, Adobe Creative Cloud',
+    title: { fr: 'Design Graphique Professionnel', ar: 'التصميم الجرافيكي الاحترافي', en: 'Professional Graphic Design' },
+    subtitle: { fr: 'Communication Visuelle & Branding', ar: 'التواصل البصري والعلامات التجارية', en: 'Visual Communication & Branding' },
+    tagline: { fr: 'Devenez un designer que les entreprises paient', ar: 'كن مصمماً تدفع له الشركات', en: 'Become a designer that companies pay' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser les fondamentaux du design', ar: 'إتقان أساسيات التصميم', en: 'Master design fundamentals' },
+        lessons: [
+          {
+            id: 'design-b-1',
+            title: { fr: 'Les Principes du Design', ar: 'مبادئ التصميم', en: 'Design Principles' },
+            image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Contraste', 'Alignement', 'Répétition', 'Proximité', 'Hiérarchie', 'Équilibre', 'Espace blanc'],
+              ar: ['التباين', 'المحاذاة', 'التكرار', 'القرب', 'التسلسل الهرمي', 'التوازن', 'الفراغ الأبيض'],
+              en: ['Contrast', 'Alignment', 'Repetition', 'Proximity', 'Hierarchy', 'Balance', 'White space']
+            },
+            method: { fr: 'Analysez 5 designs et identifiez les principes', ar: 'حلل 5 تصاميم وحدد المبادئ', en: 'Analyze 5 designs and identify the principles' },
+            exercise: { fr: 'Créez une affiche en utilisant les 7 principes', ar: 'أنشئ ملصقاً باستخدام المبادئ السبعة', en: 'Create a poster using all 7 principles' },
+            tip: { fr: 'Les 7 principes sont une langue universelle', ar: 'المبادئ السبعة هي لغة عالمية', en: 'The 7 principles are a universal language' }
+          },
+          {
+            id: 'design-b-2',
+            title: { fr: 'Théorie des Couleurs', ar: 'نظرية الألوان', en: 'Color Theory' },
+            image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?w=800&q=80',
+            layout: 'right',
+            steps: {
+              fr: ['Roue chromatique', 'Psychologie des couleurs', 'Palettes harmonieuses', 'Règle 60-30-10'],
+              ar: ['عجلة الألوان', 'سيكولوجية الألوان', 'لوحات متناغمة', 'قاعدة 60-30-10'],
+              en: ['Color wheel', 'Color psychology', 'Harmonious palettes', '60-30-10 rule']
+            },
+            method: { fr: 'Créez 5 palettes pour 5 marques différentes', ar: 'أنشئ 5 لوحات لـ5 علامات تجارية مختلفة', en: 'Create 5 palettes for 5 different brands' },
+            exercise: { fr: 'Créez une palette de couleurs pour une marque fictive', ar: 'أنشئ لوحة ألوان لعلامة تجارية افتراضية', en: 'Create a color palette for a fictional brand' },
+            tip: { fr: 'Les meilleures palettes racontent une histoire', ar: 'أفضل اللوحات تحكي قصة', en: 'The best palettes tell a story' }
+          },
+          {
+            id: 'design-b-3',
+            title: { fr: 'Typographie', ar: 'الطباعة', en: 'Typography' },
+            image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80',
+            layout: 'left',
+            steps: {
+              fr: ['Familles de polices', 'Hiérarchie typographique', 'Association de polices', 'Lisibilité'],
+              ar: ['عائلات الخطوط', 'التسلسل الهرمي للطباعة', 'مزج الخطوط', 'قابلية القراءة'],
+              en: ['Font families', 'Typographic hierarchy', 'Font pairing', 'Readability']
+            },
+            method: { fr: 'Choisissez 2 polices pour une marque', ar: 'اختر خطين لعلامة تجارية', en: 'Choose 2 fonts for a brand' },
+            exercise: { fr: 'Créez un système typographique pour un blog', ar: 'أنشئ نظام طباعة لمدونة', en: 'Create a typographic system for a blog' },
+            tip: { fr: 'La typographie constitue 90% de la perception', ar: 'الطباعة تشكل 90% من الإدراك', en: 'Typography makes up 90% of perception' }
+          },
+          {
+            id: 'design-b-4',
+            title: { fr: 'Layout & Grille', ar: 'التخطيط والشبكات', en: 'Layout & Grid' },
+            image: 'https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Systèmes de grille', '12 colonnes', 'Gouttières', 'Marges', 'Responsive'],
+              ar: ['أنظمة الشبكات', '12 عموداً', 'المزاريب', 'الهوامش', 'التجاوب'],
+              en: ['Grid systems', '12 columns', 'Gutters', 'Margins', 'Responsive']
+            },
+            method: { fr: 'Analysez la grille d\'un site web populaire', ar: 'حلل شبكة موقع ويب شهير', en: 'Analyze a popular website\'s grid' },
+            exercise: { fr: 'Créez une page avec une grille à 12 colonnes', ar: 'أنشئ صفحة بشبكة 12 عموداً', en: 'Create a page with a 12-column grid' },
+            tip: { fr: 'Les grilles structurent les designs', ar: 'الشبكات تنظم التصاميم', en: 'Grids structure designs' }
+          },
+          {
+            id: 'design-b-5',
+            title: { fr: 'Wireframing', ar: 'الرسوم الهيكلية', en: 'Wireframing' },
+            image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
+            layout: 'right',
+            steps: {
+              fr: ['Basse fidélité', 'Moyenne fidélité', 'Haute fidélité', 'Tests utilisateur'],
+              ar: ['منخفض الدقة', 'متوسط الدقة', 'عالي الدقة', 'اختبارات المستخدم'],
+              en: ['Low fidelity', 'Medium fidelity', 'High fidelity', 'User testing']
+            },
+            method: { fr: 'Créez des wireframes pour une application mobile', ar: 'أنشئ رسوماً هيكلية لتطبيق موبايل', en: 'Create wireframes for a mobile app' },
+            exercise: { fr: 'Créez des wireframes pour une page d\'accueil', ar: 'أنشئ رسماً هيكلياً لصفحة رئيسية', en: 'Create wireframes for a homepage' },
+            tip: { fr: '80% du succès vient du wireframing', ar: '80% من النجاح يأتي من الرسم الهيكلي', en: '80% of success comes from wireframing' }
+          },
+          {
+            id: 'design-b-6',
+            title: { fr: 'User Flow', ar: 'تدفق المستخدم', en: 'User Flow' },
+            image: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?w=800&q=80',
+            layout: 'left',
+            steps: {
+              fr: ['Parcours utilisateur', 'Points de friction', 'Optimisation', 'Tests'],
+              ar: ['رحلة المستخدم', 'نقاط الاحتكاك', 'التحسين', 'الاختبارات'],
+              en: ['User journey', 'Friction points', 'Optimization', 'Testing']
+            },
+            method: { fr: 'Cartographiez un parcours d\'achat en ligne', ar: 'رسم خريطة لمسار شراء عبر الإنترنت', en: 'Map an online purchase journey' },
+            exercise: { fr: 'Créez un user flow pour une application', ar: 'أنشئ تدفق مستخدم لتطبيق', en: 'Create a user flow for an app' },
+            tip: { fr: 'Les meilleurs user flows sont invisibles', ar: 'أفضل تدفقات المستخدم غير مرئية', en: 'The best user flows are invisible' }
+          },
+          {
+            id: 'design-b-7',
+            title: { fr: 'Design Thinking', ar: 'التفكير التصميمي', en: 'Design Thinking' },
+            image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Empathie', 'Définir', 'Idéer', 'Prototyper', 'Tester'],
+              ar: ['التعاطف', 'التعريف', 'التوليد', 'النمذجة', 'الاختبار'],
+              en: ['Empathize', 'Define', 'Ideate', 'Prototype', 'Test']
+            },
+            method: { fr: 'Appliquez le Design Thinking à un problème réel', ar: 'طبق التفكير التصميمي على مشكلة حقيقية', en: 'Apply Design Thinking to a real problem' },
+            exercise: { fr: 'Créez une solution avec Design Thinking', ar: 'أنشئ حلاً بالتفكير التصميمي', en: 'Create a solution with Design Thinking' },
+            tip: { fr: 'L\'empathie est votre super-pouvoir', ar: 'التعاطف هو قوتك الخارقة', en: 'Empathy is your superpower' }
+          },
+          {
+            id: 'design-b-8',
+            title: { fr: 'Projet Final - Design de A à Z', ar: 'المشروع النهائي - تصميم من الألف إلى الياء', en: 'Final Project - Design from A to Z' },
+            image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Recherche', 'Concept', 'Design', 'Finalisation', 'Présentation'],
+              ar: ['البحث', 'المفهوم', 'التصميم', 'الإنهاء', 'العرض'],
+              en: ['Research', 'Concept', 'Design', 'Finalization', 'Presentation']
+            },
+            method: { fr: 'Créez une affiche de film complète', ar: 'أنشئ ملصق فيلم كامل', en: 'Create a complete movie poster' },
+            exercise: { fr: 'Présentez votre processus de design', ar: 'قدم عملية التصميم الخاصة بك', en: 'Present your design process' },
+            tip: { fr: 'Le design ne se finit jamais vraiment', ar: 'التصميم لا ينتهي حقاً', en: 'Design never really ends' }
+          }
+        ]
+      }
+    ]
+  },
+  // SKILL 2: SOCIAL MEDIA
+  {
+    id: 'smm',
+    icon: '📱',
+    color: '#059669',
+    accent: '#34D399',
+    bg: '#021A12',
+    earning: '15,000 – 60,000 DZD/month',
+    firstClient: { fr: '2–3 semaines', ar: '2–3 أسابيع', en: '2–3 weeks' },
+    startTool: 'Meta Business Suite, Canva, Later, Buffer',
+    title: { fr: 'Social Media Management', ar: 'إدارة وسائل التواصل الاجتماعي', en: 'Social Media Management' },
+    subtitle: { fr: 'Marketing Digital & Stratégie de Contenu', ar: 'التسويق الرقمي واستراتيجية المحتوى', en: 'Digital Marketing & Content Strategy' },
+    tagline: { fr: 'Transformez les réseaux sociaux en machine à générer des clients', ar: 'حوّل وسائل التواصل الاجتماعي إلى آلة لتوليد العملاء', en: 'Transform social media into a client-generating machine' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
+        goal: { fr: 'Comprendre les algorithmes et créer votre stratégie de contenu', ar: 'فهم الخوارزميات وإنشاء استراتيجية المحتوى', en: 'Understand algorithms and create your content strategy' },
+        lessons: [
+          {
+            id: 'smm-b-1',
+            title: { fr: 'Introduction au SMM', ar: 'مقدمة في إدارة وسائل التواصل', en: 'Introduction to SMM' },
+            image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Paysage algérien', 'Objectifs SMM', 'Types de contenu', 'Stratégie'],
+              ar: ['المشهد الجزائري', 'أهداف SMM', 'أنواع المحتوى', 'استراتيجية'],
+              en: ['Algerian landscape', 'SMM goals', 'Content types', 'Strategy']
+            },
+            method: { fr: 'Analysez 5 entreprises algériennes sur les réseaux', ar: 'حلل 5 شركات جزائرية على وسائل التواصل', en: 'Analyze 5 Algerian companies on social media' },
+            exercise: { fr: 'Créez un audit de présence sociale', ar: 'أنشئ تدقيقاً للوجود على وسائل التواصل', en: 'Create a social presence audit' },
+            tip: { fr: 'La cohérence est plus importante que la quantité', ar: 'الاتساق أهم من الكمية', en: 'Consistency matters more than quantity' }
+          }
+        ]
+      }
+    ]
+  },
+  // SKILL 3: VIDEO EDITING
+  {
+    id: 'video',
+    icon: '🎬',
+    color: '#DC2626',
+    accent: '#F87171',
+    bg: '#1A0303',
+    earning: '8,000 – 80,000 DZD/project',
+    firstClient: { fr: '4–6 semaines', ar: '4–6 أسابيع', en: '4–6 weeks' },
+    startTool: 'CapCut, DaVinci Resolve, Adobe Premiere',
+    title: { fr: 'Montage Vidéo Professionnel', ar: 'مونتاج الفيديو الاحترافي', en: 'Professional Video Editing' },
+    subtitle: { fr: 'Création de Contenu & Storytelling', ar: 'إنشاء المحتوى وسرد القصص', en: 'Content Creation & Storytelling' },
+    tagline: { fr: 'Le montage vidéo est la compétence la plus demandée', ar: 'مونتاج الفيديو هو المهارة الأكثر طلباً', en: 'Video editing is the most in-demand skill' },
+    levels: [
+      {
+        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
+        badge: '🌱',
+        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
+        goal: { fr: 'Maîtriser CapCut sur mobile', ar: 'إتقان CapCut على الهاتف', en: 'Master CapCut on mobile' },
+        lessons: [
+          {
+            id: 'video-b-1',
+            title: { fr: 'Introduction au Montage Vidéo', ar: 'مقدمة في مونتاج الفيديو', en: 'Introduction to Video Editing' },
+            image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80',
+            layout: 'top',
+            steps: {
+              fr: ['Pourquoi le montage est essentiel', 'Types de montage', 'Processus de création', 'Outils essentiels'],
+              ar: ['لماذا المونتاج ضروري', 'أنواع المونتاج', 'عملية الإنشاء', 'الأدوات الأساسية'],
+              en: ['Why editing is essential', 'Types of editing', 'Creation process', 'Essential tools']
+            },
+            method: { fr: 'Regardez 10 Reels populaires et analysez-les', ar: 'شاهد 10 Reels شائعة وحللها', en: 'Watch 10 popular Reels and analyze them' },
+            exercise: { fr: 'Créez votre première vidéo de 30 secondes', ar: 'أنشئ أول فيديو لك مدته 30 ثانية', en: 'Create your first 30-second video' },
+            tip: { fr: 'Le son est plus important que l\'image', ar: 'الصوت أهم من الصورة', en: 'Audio matters more than video' }
+          }
+        ]
+      }
+    ]
+  }
+];
 
 // ============================================
 // TRANSLATIONS
 // ============================================
-
 const T = {
   fr: {
     badge: 'Formation Complète — Beginner to Master',
@@ -508,7 +639,6 @@ const T = {
 // ============================================
 // STATE
 // ============================================
-
 let lang = localStorage.getItem('lang') || 'fr';
 let hasAccess = localStorage.getItem('hasAccess') === 'true';
 let skillId = null;
@@ -516,257 +646,9 @@ let levelIdx = 0;
 let lessonIdx = null;
 let openStep = null;
 
-// Data state
-let skillsData = [];
-let currentMode = 'cache';
-let realtimeCleanup = null;
-let autoRefreshInterval = null;
-
-// ============================================
-// CACHE MANAGEMENT
-// ============================================
-
-const CACHE_KEY = 'dsa_skills_cache';
-const CACHE_TIME_KEY = 'dsa_cache_time';
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
-
-function getCache() {
-  try {
-    const cached = localStorage.getItem(CACHE_KEY);
-    const cacheTime = localStorage.getItem(CACHE_TIME_KEY);
-    if (cached && cacheTime && (Date.now() - parseInt(cacheTime) < CACHE_DURATION)) {
-      return JSON.parse(cached);
-    }
-  } catch (e) {}
-  return null;
-}
-
-function setCache(data) {
-  localStorage.setItem(CACHE_KEY, JSON.stringify(data));
-  localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
-}
-
-function clearCache() {
-  localStorage.removeItem(CACHE_KEY);
-  localStorage.removeItem(CACHE_TIME_KEY);
-}
-
-// ============================================
-// LOAD SKILLS FROM SUPABASE
-// ============================================
-
-async function loadSkills(mode = 'cache') {
-  currentMode = mode;
-  
-  try {
-    let data = null;
-    
-    // Mode Cache: essayer le cache d'abord
-    if (mode === 'cache') {
-      const cached = getCache();
-      if (cached && cached.length > 0) {
-        console.log('📦 Utilisation du cache');
-        skillsData = cached;
-        updateUI();
-        updateStatus('Cache');
-        return cached;
-      }
-    }
-    
-    // Charger depuis Supabase
-    console.log('🔄 Chargement depuis Supabase...');
-    const { data: supabaseData, error } = await supabase
-      .from('skills')
-      .select('*')
-      .order('created_at', { ascending: true });
-    
-    if (error) {
-      console.warn('⚠️ Erreur Supabase, fallback vers données locales');
-      // Fallback: données locales
-      data = getLocalFallbackData();
-    } else if (supabaseData && supabaseData.length > 0) {
-      data = supabaseData;
-    } else {
-      // Pas de données dans Supabase, utiliser fallback
-      data = getLocalFallbackData();
-    }
-    
-    // Sauvegarder dans le cache
-    setCache(data);
-    skillsData = data;
-    updateUI();
-    updateStatus(mode);
-    
-    // Setup Realtime si nécessaire
-    if (mode === 'realtime') {
-      setupRealtime();
-    }
-    
-    // Setup Auto-Refresh si nécessaire
-    if (mode === 'auto-refresh') {
-      startAutoRefresh();
-    }
-    
-    return data;
-    
-  } catch (error) {
-    console.error('❌ Erreur de chargement:', error);
-    
-    // Fallback: données locales
-    const fallbackData = getLocalFallbackData();
-    skillsData = fallbackData;
-    updateUI();
-    updateStatus('Fallback');
-    return fallbackData;
-  }
-}
-
-// ============================================
-// DONNÉES LOCALES (FALLBACK)
-// ============================================
-
-function getLocalFallbackData() {
-  // Si t'as un fichier data.js avec les skills, tu peux l'importer ici
-  // Sinon, retourne un tableau vide avec un message
-  return [];
-}
-
-// ============================================
-// REALTIME
-// ============================================
-
-function setupRealtime() {
-  if (realtimeCleanup) {
-    realtimeCleanup();
-    realtimeCleanup = null;
-  }
-  
-  const channel = supabase
-    .channel('skills-changes')
-    .on('postgres_changes', 
-      { event: '*', schema: 'public', table: 'skills' },
-      (payload) => {
-        console.log('🔄 Changement détecté!', payload);
-        loadSkills('realtime');
-      }
-    )
-    .subscribe();
-  
-  realtimeCleanup = () => {
-    supabase.removeChannel(channel);
-  };
-}
-
-// ============================================
-// AUTO-REFRESH
-// ============================================
-
-function startAutoRefresh() {
-  if (autoRefreshInterval) clearInterval(autoRefreshInterval);
-  autoRefreshInterval = setInterval(() => {
-    console.log('🔄 Auto-refresh...');
-    loadSkills('auto-refresh');
-  }, 30000);
-}
-
-// ============================================
-// UI FUNCTIONS
-// ============================================
-
-function updateUI() {
-  // Mettre à jour les skills dans l'academy
-  const container = document.getElementById('a-skill-cards');
-  if (!container) return;
-  
-  if (!skillsData || skillsData.length === 0) {
-    container.innerHTML = `
-      <div style="text-align:center;color:#4B5563;padding:60px 20px;grid-column:1/-1;">
-        <div style="font-size:40px;margin-bottom:16px;">📭</div>
-        <div>Aucun skill disponible</div>
-        <div style="font-size:13px;margin-top:8px;">Ajoute des skills depuis le dashboard Supabase</div>
-        <button onclick="refreshData()" style="margin-top:16px;background:#7C3AED;border:none;border-radius:8px;padding:10px 24px;color:#fff;font-weight:600;cursor:pointer;">🔄 Rafraîchir</button>
-      </div>
-    `;
-    return;
-  }
-  
-  container.innerHTML = skillsData.map(skill => {
-    const skillTitle = skill.title?.[lang] || skill.title?.fr || skill.title || 'Skill';
-    const skillTagline = skill.tagline?.[lang] || skill.tagline?.fr || skill.tagline || '';
-    const skillSub = skill.subtitle?.[lang] || skill.subtitle?.fr || skill.subtitle || '';
-    const skillColor = skill.color || '#7C3AED';
-    const skillBg = skill.bg || '#0D0818';
-    const skillAccent = skill.accent || '#A78BFA';
-    
-    return `
-      <div class="skill-card" onclick="goSkill('${skill.id}')" style="background:${skillBg};border-color:${skillColor}30">
-        <div class="skill-icon">${skill.icon || '🎯'}</div>
-        <div class="skill-sub" style="color:${skillAccent}">${skillSub}</div>
-        <div class="skill-title">${skillTitle}</div>
-        <div class="skill-tagline">${skillTagline}</div>
-        <button class="skill-cta" style="background:${skillColor}">${T[lang]?.startLearning || 'Commencer →'}</button>
-      </div>
-    `;
-  }).join('');
-  
-  // Mettre à jour le statut
-  const count = skillsData.length;
-  const totalLessons = count * 24; // Approximation
-  updateStatus(currentMode, count, totalLessons);
-}
-
-function updateStatus(mode, count = skillsData.length, totalLessons = count * 24) {
-  const statusEl = document.getElementById('data-status');
-  const optStatus = document.getElementById('opt-status');
-  
-  const modeLabels = {
-    'cache': '📦 Cache',
-    'realtime': '📡 Realtime',
-    'auto-refresh': '🔄 Auto-Refresh',
-    'Fallback': '⚠️ Fallback'
-  };
-  
-  const label = modeLabels[mode] || mode;
-  const text = `${label} | ${count} skills | ${totalLessons} leçons`;
-  
-  if (statusEl) statusEl.textContent = text;
-  if (optStatus) optStatus.textContent = `Status: ${label} | ${count} skills`;
-}
-
-// ============================================
-// CHECK ACCESS
-// ============================================
-
-async function checkAccessCode(code) {
-  // Essayer Supabase d'abord
-  try {
-    const { data, error } = await supabase
-      .from('access_codes')
-      .select('*')
-      .eq('code', code)
-      .eq('used', false)
-      .single();
-    
-    if (!error && data) {
-      // Marquer comme utilisé
-      await supabase
-        .from('access_codes')
-        .update({ used: true, used_at: new Date().toISOString() })
-        .eq('code', code);
-      return true;
-    }
-  } catch (e) {
-    console.warn('Supabase check failed, using fallback');
-  }
-  
-  // Fallback: vérifier dans les codes durs
-  return FALLBACK_CODES.includes(code);
-}
-
 // ============================================
 // SHOW VIEW
 // ============================================
-
 function showView(id) {
   ['landing','academy','skill-view','lesson-view'].forEach(v => {
     document.getElementById(v).style.display = 'none';
@@ -778,8 +660,7 @@ function showView(id) {
 // ============================================
 // LANGUAGE
 // ============================================
-
-window.setLang = function(l) {
+function setLang(l) {
   lang = l;
   localStorage.setItem('lang', l);
   document.documentElement.lang = l;
@@ -801,24 +682,70 @@ window.setLang = function(l) {
   } else {
     renderLanding();
   }
-};
+}
 
 // ============================================
 // GO HOME
 // ============================================
-
-window.goHome = function() {
+function goHome() {
   if (hasAccess) {
     renderAcademy();
   } else {
     renderLanding();
   }
-};
+}
+
+// ============================================
+// ACCESS
+// ============================================
+function checkAccess() {
+  const t = T[lang];
+  const val = document.getElementById('access-input').value.trim().toUpperCase();
+  const errEl = document.getElementById('access-error');
+  const btn = document.getElementById('access-btn');
+  
+  if (!val) {
+    errEl.textContent = t.errEmpty;
+    errEl.style.display = 'block';
+    return;
+  }
+  
+  if (!CODES.includes(val)) {
+    errEl.textContent = t.errInvalid;
+    errEl.style.display = 'block';
+    return;
+  }
+  
+  const used = JSON.parse(localStorage.getItem('usedCodes') || '[]');
+  if (used.includes(val)) {
+    errEl.textContent = t.errUsed;
+    errEl.style.display = 'block';
+    return;
+  }
+  
+  btn.textContent = t.loading;
+  btn.disabled = true;
+  
+  setTimeout(() => {
+    used.push(val);
+    localStorage.setItem('usedCodes', JSON.stringify(used));
+    localStorage.setItem('hasAccess', 'true');
+    hasAccess = true;
+    renderAcademy();
+  }, 900);
+}
+
+function clearErr() {
+  document.getElementById('access-error').style.display = 'none';
+  document.getElementById('access-input').classList.remove('err');
+  const btn = document.getElementById('access-btn');
+  btn.textContent = T[lang].access;
+  btn.disabled = false;
+}
 
 // ============================================
 // RENDER LANDING
 // ============================================
-
 function renderLanding() {
   const t = T[lang];
   document.getElementById('l-badge').textContent = t.badge;
@@ -849,8 +776,7 @@ function renderLanding() {
 // ============================================
 // RENDER ACADEMY
 // ============================================
-
-window.renderAcademy = async function() {
+function renderAcademy() {
   skillId = null;
   levelIdx = 0;
   lessonIdx = null;
@@ -865,98 +791,91 @@ window.renderAcademy = async function() {
   document.getElementById('a-rec').innerHTML = t.aRec;
   document.getElementById('a-footer').textContent = t.footer;
   
-  // Charger les données si pas déjà fait
-  if (skillsData.length === 0) {
-    await loadSkills('cache');
-  }
+  document.getElementById('a-skill-cards').innerHTML = SKILLS.map(s => {
+    const title = s.title[lang] || s.title.fr;
+    const subtitle = s.subtitle[lang] || s.subtitle.fr;
+    const tagline = s.tagline[lang] || s.tagline.fr;
+    
+    return `
+      <div class="skill-card" onclick="goSkill('${s.id}')" style="background:${s.bg};border-color:${s.color}30">
+        <div class="skill-icon">${s.icon}</div>
+        <div class="skill-sub" style="color:${s.accent}">${subtitle}</div>
+        <div class="skill-title">${title}</div>
+        <div class="skill-tagline">${tagline}</div>
+        <button class="skill-cta" style="background:${s.color}">${t.startLearning}</button>
+      </div>
+    `;
+  }).join('');
   
-  updateUI();
+  document.getElementById('data-status').textContent = `📦 ${SKILLS.length} skills | ${SKILLS.reduce((acc, s) => acc + (s.levels?.length || 0) * 8, 0)} leçons`;
   showView('academy');
-};
+}
 
 // ============================================
 // RENDER SKILL
 // ============================================
-
-window.goSkill = function(id) {
+function goSkill(id) {
   skillId = id;
   levelIdx = 0;
   lessonIdx = null;
   renderSkill();
-};
+}
 
-window.goLevel = function(i) {
+function goLevel(i) {
   levelIdx = i;
   lessonIdx = null;
   renderSkill();
-};
+}
 
 function renderSkill() {
   const t = T[lang];
-  const sk = skillsData.find(s => s.id === skillId);
-  
-  if (!sk) {
-    console.error('Skill not found:', skillId);
-    showNotification('❌ Skill non trouvé');
-    return;
-  }
+  const sk = SKILLS.find(s => s.id === skillId);
+  if (!sk) return;
   
   const isAr = lang === 'ar';
   
-  document.getElementById('skill-header').style.background = sk.bg || '#0D0818';
-  document.getElementById('skill-header').style.borderBottomColor = (sk.color || '#7C3AED') + '25';
-  document.getElementById('sh-icon').textContent = sk.icon || '🎯';
-  document.getElementById('sh-title').textContent = sk.title?.[lang] || sk.title?.fr || sk.title || 'Skill';
-  document.getElementById('sh-earn').textContent = sk.earning || '';
-  document.getElementById('sh-earn').style.color = sk.accent || '#A78BFA';
+  document.getElementById('skill-header').style.background = sk.bg;
+  document.getElementById('skill-header').style.borderBottomColor = sk.color + '25';
+  document.getElementById('sh-icon').textContent = sk.icon;
+  document.getElementById('sh-title').textContent = sk.title[lang] || sk.title.fr;
+  document.getElementById('sh-earn').textContent = sk.earning;
+  document.getElementById('sh-earn').style.color = sk.accent;
   document.getElementById('s-footer').textContent = t.footer;
   
   const levels = sk.levels || [];
   
   document.getElementById('level-tabs').innerHTML = levels.map((lv, i) => {
-    const lvName = lv.name?.[lang] || lv.name?.fr || lv.name || `Niveau ${i+1}`;
+    const lvName = lv.name[lang] || lv.name.fr;
     const a = i === levelIdx;
-    const badge = lv.badge || '📘';
-    return `<button class="level-tab" onclick="goLevel(${i})" style="background:${a ? '#1C1C28' : 'transparent'};border-color:${a ? (sk.color || '#7C3AED') : '#1C1C28'};color:${a ? '#fff' : '#4B5563'};font-weight:${a ? 700 : 400}">${badge} ${lvName}</button>`;
+    return `<button class="level-tab" onclick="goLevel(${i})" style="background:${a ? '#1C1C28' : 'transparent'};border-color:${a ? sk.color : '#1C1C28'};color:${a ? '#fff' : '#4B5563'};font-weight:${a ? 700 : 400}">${lv.badge} ${lvName}</button>`;
   }).join('');
   
-  if (levels.length === 0) {
-    document.getElementById('level-info').innerHTML = `<p style="color:#6B7280;">Aucun niveau disponible pour ce skill.</p>`;
-    document.getElementById('lesson-cards').innerHTML = '';
-    document.getElementById('level-nav').innerHTML = '';
-    showView('skill-view');
-    return;
-  }
-  
   const lv = levels[levelIdx] || levels[0];
-  const lvName = lv.name?.[lang] || lv.name?.fr || lv.name || 'Niveau';
-  const lvGoal = lv.goal?.[lang] || lv.goal?.fr || lv.goal || '';
-  const lvDuration = lv.duration?.[lang] || lv.duration?.fr || lv.duration || '';
   const lessons = lv.lessons || [];
   
   document.getElementById('level-info').innerHTML = `
     <div class="level-info-top">
-      <span style="font-size:30px">${lv.badge || '📘'}</span>
+      <span style="font-size:30px">${lv.badge}</span>
       <div>
-        <div style="font-size:20px;font-weight:800;color:#fff">${lvName}</div>
-        <div style="font-size:12px;color:#4B5563">${lvDuration}</div>
+        <div style="font-size:20px;font-weight:800;color:#fff">${lv.name[lang] || lv.name.fr}</div>
+        <div style="font-size:12px;color:#4B5563">${lv.duration[lang] || lv.duration.fr}</div>
       </div>
       <div class="level-count" style="${isAr ? 'margin-right:auto' : 'margin-left:auto'}">
-        <div class="level-count-num" style="color:${sk.accent || '#A78BFA'}">${lessons.length}</div>
+        <div class="level-count-num" style="color:${sk.accent}">${lessons.length}</div>
         <div class="level-count-lbl">${t.lessons}</div>
       </div>
     </div>
-    <p style="color:#6B7280;font-size:13px;margin:0"><strong style="color:#9CA3AF">${t.goal}:</strong> ${lvGoal}</p>
+    <p style="color:#6B7280;font-size:13px;margin:0"><strong style="color:#9CA3AF">${t.goal}:</strong> ${lv.goal[lang] || lv.goal.fr}</p>
   `;
   
   document.getElementById('lesson-cards').innerHTML = lessons.map((les, i) => {
-    const lesTitle = les.title?.[lang] || les.title?.fr || les.title || `Leçon ${i+1}`;
-    const stepCount = les.steps?.[lang]?.length || les.steps?.length || 0;
+    const lesTitle = les.title[lang] || les.title.fr;
+    const stepCount = (les.steps[lang] || les.steps.fr || []).length;
     return `
       <div class="lesson-card" onclick="goLesson(${i})"
-        onmouseenter="this.style.borderColor='${sk.color || '#7C3AED'}66'" 
+        onmouseenter="this.style.borderColor='${sk.color}66'" 
         onmouseleave="this.style.borderColor='#1C1C28'">
-        <span class="lesson-num" style="background:${sk.color || '#7C3AED'}22;border:1px solid ${sk.color || '#7C3AED'}44;color:${sk.accent || '#A78BFA'}">${i+1}</span>
+        <span class="lesson-num" style="background:${sk.color}22;border:1px solid ${sk.color}44;color:${sk.accent}">${i+1}</span>
         <div class="lesson-info">
           <div class="lesson-title-text">${lesTitle}</div>
           <div class="lesson-meta">${stepCount} steps · includes exercise</div>
@@ -968,14 +887,14 @@ function renderSkill() {
   
   let nav = '';
   if (levelIdx > 0) {
-    const prevName = levels[levelIdx-1]?.name?.[lang] || levels[levelIdx-1]?.name?.fr || 'Précédent';
+    const prevName = levels[levelIdx-1].name[lang] || levels[levelIdx-1].name.fr;
     nav += `<button class="nav-prev" onclick="goLevel(${levelIdx-1})">${isAr ? '→' : '←'} ${prevName}</button>`;
   } else {
     nav += `<button class="nav-prev" onclick="renderAcademy()">${isAr ? '→' : '←'} ${t.backSkills}</button>`;
   }
   if (levelIdx < levels.length - 1) {
-    const nextName = levels[levelIdx+1]?.name?.[lang] || levels[levelIdx+1]?.name?.fr || 'Suivant';
-    nav += `<button class="nav-next" style="background:${sk.color || '#7C3AED'}" onclick="goLevel(${levelIdx+1})">${nextName} ${isAr ? '←' : '→'}</button>`;
+    const nextName = levels[levelIdx+1].name[lang] || levels[levelIdx+1].name.fr;
+    nav += `<button class="nav-next" style="background:${sk.color}" onclick="goLevel(${levelIdx+1})">${nextName} ${isAr ? '←' : '→'}</button>`;
   }
   document.getElementById('level-nav').innerHTML = nav;
   showView('skill-view');
@@ -984,71 +903,62 @@ function renderSkill() {
 // ============================================
 // RENDER LESSON
 // ============================================
-
-window.goLesson = function(i) {
+function goLesson(i) {
   lessonIdx = i;
   openStep = null;
   renderLesson();
-};
+}
 
-window.prevLesson = function() {
+function prevLesson() {
   lessonIdx--;
   openStep = null;
   renderLesson();
-};
+}
 
-window.nextLesson = function() {
+function nextLesson() {
   lessonIdx++;
   openStep = null;
   renderLesson();
-};
+}
 
-window.nextLevel = function() {
+function nextLevel() {
   levelIdx++;
   lessonIdx = null;
   renderSkill();
-};
+}
 
-window.toggleStep = function(i) {
+function toggleStep(i) {
   openStep = openStep === i ? null : i;
   renderLesson();
-};
+}
 
 function renderLesson() {
   const t = T[lang];
-  const sk = skillsData.find(s => s.id === skillId);
-  
-  if (!sk) {
-    showNotification('❌ Skill non trouvé');
-    return;
-  }
+  const sk = SKILLS.find(s => s.id === skillId);
+  if (!sk) return;
   
   const levels = sk.levels || [];
   const lv = levels[levelIdx] || levels[0];
   const lessons = lv.lessons || [];
   const les = lessons[lessonIdx];
-  
-  if (!les) {
-    showNotification('❌ Leçon non trouvée');
-    return;
-  }
+  if (!les) return;
   
   const isAr = lang === 'ar';
   const isMobile = window.innerWidth < 600;
-  const steps = les.steps?.[lang] || les.steps?.fr || les.steps || [];
+  const steps = les.steps[lang] || les.steps.fr || [];
   const layout = les.layout || 'top';
   const showLeft = layout === 'left' && !isMobile;
   const showRight = layout === 'right' && !isMobile;
   
   document.getElementById('lesson-back-btn').textContent = `${isAr ? '→' : '←'} ${t.back.replace(/[←→]/g, '').trim()}`;
   document.getElementById('lesson-back-btn').onclick = () => renderSkill();
-  document.getElementById('lesson-skill-icon').textContent = sk.icon || '🎯';
-  document.getElementById('lesson-skill-name').textContent = sk.title?.[lang] || sk.title?.fr || sk.title || 'Skill';
-  document.getElementById('lesson-level-name').textContent = lv.name?.[lang] || lv.name?.fr || lv.name || 'Level';
+  document.getElementById('lesson-skill-icon').textContent = sk.icon;
+  document.getElementById('lesson-skill-name').textContent = sk.title[lang] || sk.title.fr;
+  document.getElementById('lesson-level-name').textContent = lv.name[lang] || lv.name.fr;
   document.getElementById('lesson-counter').textContent = `${t.lesson} ${lessonIdx+1} ${t.of} ${lessons.length}`;
   document.getElementById('lv-footer').textContent = t.footer;
   
-  const lesTitle = les.title?.[lang] || les.title?.fr || les.title || `Leçon ${lessonIdx+1}`;
+  const lesTitle = les.title[lang] || les.title.fr;
   const lesImage = les.image || '';
   
   let imgTop = '';
@@ -1062,9 +972,9 @@ function renderLesson() {
   const stepsHTML = steps.map((step, i) => {
     const isOpen = openStep === i;
     const preview = step.length > 80 && !isOpen ? step.substring(0, 80) + '…' : step;
-    return `<div class="step-item" style="border-color:${isOpen ? (sk.color || '#7C3AED') + '60' : '#1C1C28'}">
+    return `<div class="step-item" style="border-color:${isOpen ? sk.color + '60' : '#1C1C28'}">
       <button class="step-btn" onclick="toggleStep(${i})">
-        <span class="step-num" style="${isOpen ? 'background:' + (sk.color || '#7C3AED') + ';color:#fff' : ''}">${i+1}</span>
+        <span class="step-num" style="${isOpen ? 'background:' + sk.color + ';color:#fff' : ''}">${i+1}</span>
         <span class="step-text" style="color:${isOpen ? '#fff' : '#9CA3AF'};font-weight:${isOpen ? 600 : 400};text-align:${isAr ? 'right' : 'left'}">${preview}</span>
         <span class="step-toggle">${isOpen ? '▲' : '▼'}</span>
       </button>
@@ -1090,32 +1000,29 @@ function renderLesson() {
     : `<button class="lesson-nav-prev" onclick="renderSkill()">${isAr ? '→' : '←'} ${t.back.replace(/[←→]/g, '').trim()}</button>`;
   
   let nextBtn = hasNext
-    ? `<button class="lesson-nav-next" style="background:${sk.color || '#7C3AED'}" onclick="nextLesson()">${t.nextLesson.replace(/[←→]/g, '').trim()} ${isAr ? '←' : '→'}</button>`
+    ? `<button class="lesson-nav-next" style="background:${sk.color}" onclick="nextLesson()">${t.nextLesson.replace(/[←→]/g, '').trim()} ${isAr ? '←' : '→'}</button>`
     : hasNextLv
-    ? `<button class="lesson-nav-next" style="background:${sk.color || '#7C3AED'}" onclick="nextLevel()">${t.nextLevel}: ${levels[levelIdx+1]?.name?.[lang] || levels[levelIdx+1]?.name?.fr || 'Suivant'} ${isAr ? '←' : '→'}</button>`
-    : `<div class="lesson-complete" style="color:${sk.accent || '#A78BFA'};border-color:${(sk.color || '#7C3AED')}50">${t.complete}</div>`;
+    ? `<button class="lesson-nav-next" style="background:${sk.color}" onclick="nextLevel()">${t.nextLevel}: ${levels[levelIdx+1].name[lang] || levels[levelIdx+1].name.fr} ${isAr ? '←' : '→'}</button>`
+    : `<div class="lesson-complete" style="color:${sk.accent};border-color:${sk.color}50">${t.complete}</div>`;
   
-  const method = les.method?.[lang] || les.method?.fr || les.method || '';
-  const exercise = les.exercise?.[lang] || les.exercise?.fr || les.exercise || '';
-  const tip = les.tip?.[lang] || les.tip?.fr || les.tip || '';
+  const method = les.method[lang] || les.method.fr || '';
+  const exercise = les.exercise[lang] || les.exercise.fr || '';
+  const tip = les.tip[lang] || les.tip.fr || '';
   
   document.getElementById('lesson-body').innerHTML = `
     <div style="margin-bottom:20px">
-      <span style="background:#1C1C28;border:1px solid ${sk.color || '#7C3AED'}44;color:${sk.accent || '#A78BFA'};border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600">${lv.badge || '📘'} ${lv.name?.[lang] || lv.name?.fr || 'Level'}</span>
+      <span style="background:#1C1C28;border:1px solid ${sk.color}44;color:${sk.accent};border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600">${lv.badge} ${lv.name[lang] || lv.name.fr}</span>
       <span style="font-size:12px;color:#374151;margin-left:8px">${t.lesson} ${lessonIdx+1}</span>
     </div>
     <h1 style="font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 24px;line-height:1.25">${lesTitle}</h1>
     ${imgTop}
     <div style="margin-bottom:28px">
-      <div class="steps-header">
-        <div class="steps-bar" style="background:${sk.color || '#7C3AED'}"></div>
-        <span class="steps-label">${t.howTo}</span>
-      </div>
+      <div class="steps-header"><div class="steps-bar" style="background:${sk.color}"></div><span class="steps-label">${t.howTo}</span></div>
       ${stepsWrap}
     </div>
     ${method ? `
-    <div class="method-box" style="background:#0A0E18;border-color:${sk.color || '#7C3AED'}30">
-      <div class="box-header"><span class="box-emoji">🧠</span><span class="box-label" style="color:${sk.accent || '#A78BFA'}">${t.bestWay}</span></div>
+    <div class="method-box" style="background:#0A0E18;border-color:${sk.color}30">
+      <div class="box-header"><span class="box-emoji">🧠</span><span class="box-label" style="color:${sk.accent}">${t.bestWay}</span></div>
       <p class="box-text" style="color:#9CA3AF">${method}</p>
     </div>` : ''}
     ${exercise ? `
@@ -1130,125 +1037,31 @@ function renderLesson() {
 }
 
 // ============================================
-// ACCESS FUNCTIONS
+// REFRESH
 // ============================================
-
-window.checkAccess = async function() {
-  const t = T[lang];
-  const val = document.getElementById('access-input').value.trim().toUpperCase();
-  const errEl = document.getElementById('access-error');
-  const btn = document.getElementById('access-btn');
-  
-  if (!val) {
-    errEl.textContent = t.errEmpty;
-    errEl.style.display = 'block';
-    return;
-  }
-  
-  btn.textContent = t.loading;
-  btn.disabled = true;
-  
-  try {
-    const isValid = await checkAccessCode(val);
-    
-    if (!isValid) {
-      errEl.textContent = t.errInvalid;
-      errEl.style.display = 'block';
-      btn.textContent = t.access;
-      btn.disabled = false;
-      return;
-    }
-    
-    localStorage.setItem('hasAccess', 'true');
-    localStorage.setItem('accessCode', val);
-    hasAccess = true;
-    await renderAcademy();
-  } catch (error) {
-    errEl.textContent = 'Erreur: ' + error.message;
-    errEl.style.display = 'block';
-    btn.textContent = t.access;
-    btn.disabled = false;
-  }
-};
-
-window.clearErr = function() {
-  document.getElementById('access-error').style.display = 'none';
-  document.getElementById('access-input').classList.remove('err');
-};
-
-// ============================================
-// DATA OPTIONS
-// ============================================
-
-window.toggleOptions = function() {
-  const panel = document.getElementById('data-options-panel');
-  panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-};
-
-window.setDataMode = async function(mode) {
-  // Nettoyer les anciens listeners
-  if (realtimeCleanup) {
-    realtimeCleanup();
-    realtimeCleanup = null;
-  }
-  if (autoRefreshInterval) {
-    clearInterval(autoRefreshInterval);
-    autoRefreshInterval = null;
-  }
-  
-  // Mettre à jour l'UI des boutons
-  document.querySelectorAll('.opt-btn').forEach(btn => {
-    btn.classList.remove('active');
-    btn.style.borderColor = 'transparent';
-    btn.style.color = '#6B7280';
-  });
-  const btn = document.getElementById(`opt-${mode}`);
-  if (btn) {
-    btn.classList.add('active');
-    btn.style.borderColor = '#7C3AED44';
-    btn.style.color = '#fff';
-  }
-  
-  // Charger avec le nouveau mode
-  await loadSkills(mode);
-  
-  // Fermer le panel
-  document.getElementById('data-options-panel').style.display = 'none';
-  showNotification(`✅ Mode ${mode} activé`);
-};
-
-window.refreshData = async function() {
-  clearCache();
-  await loadSkills(currentMode);
-  showNotification('✅ Données rafraîchies!');
-  updateUI();
-};
-
-// ============================================
-// NOTIFICATION
-// ============================================
+function refreshData() {
+  showNotification('🔄 Données rafraîchies!');
+  if (hasAccess) renderAcademy();
+  else renderLanding();
+}
 
 function showNotification(message) {
-  // Supprimer les anciennes notifications
   document.querySelectorAll('.notification').forEach(el => el.remove());
-  
   const div = document.createElement('div');
   div.className = 'notification';
   div.textContent = message;
   document.body.appendChild(div);
-  
   setTimeout(() => {
     div.style.opacity = '0';
     div.style.transition = 'opacity 0.3s';
     setTimeout(() => div.remove(), 300);
-  }, 2500);
+  }, 2000);
 }
 
 // ============================================
 // INIT
 // ============================================
-
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   
@@ -1261,24 +1074,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     );
   });
   
-  // Charger les données
-  await loadSkills('cache');
-  
-  if (hasAccess) {
-    renderAcademy();
-  } else {
-    renderLanding();
-  }
-  
-  console.log('🚀 Digital Skills Academy initialisée');
-  console.log('📊 Skills chargés:', skillsData.length);
-  console.log('📡 Mode:', currentMode);
+  if (hasAccess) renderAcademy();
+  else renderLanding();
 });
 
-// Exposer les fonctions globalement
-window.skillsData = skillsData;
-window.showNotification = showNotification;
+// Expose functions globally
+window.setLang = setLang;
+window.goHome = goHome;
+window.checkAccess = checkAccess;
+window.clearErr = clearErr;
+window.goSkill = goSkill;
+window.goLevel = goLevel;
+window.goLesson = goLesson;
+window.prevLesson = prevLesson;
+window.nextLesson = nextLesson;
+window.nextLevel = nextLevel;
+window.toggleStep = toggleStep;
+window.refreshData = refreshData;
 </script>
-
 </body>
 </html>
