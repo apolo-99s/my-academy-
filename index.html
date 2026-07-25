@@ -244,109 +244,13 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
 // SUPABASE CONFIG
 // ============================================
 // ⚠️ REMPLACE AVEC TES VRAIES VALEURS ⚠️
-const SUPABASE_URL = 'https://vvqkxtiepgxvymhtllwa.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2cWt4dGllcGd4dnltaHRsbHdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3NDQ0NDgsImV4cCI6MjEwMDMyMDQ0OH0.oaY-_zDZDFVuIuv4szLyJRZ8cnfDyOlg7mbPtRG0yTE';
+const SUPABASE_URL = 'https://ton-projet.supabase.co';
+const SUPABASE_ANON_KEY = 'ton-anon-key';
 
 // ============================================
-// FALLBACK CODES & SKILLS (Si Supabase échoue)
+// FALLBACK DATA (Si Supabase échoue)
 // ============================================
 const FALLBACK_CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
-
-const FALLBACK_SKILLS = [
-  {
-    id: 'design',
-    icon: '🎨',
-    color: '#7C3AED',
-    accent: '#A78BFA',
-    bg: '#0D0818',
-    earning: '5,000 – 80,000 DZD',
-    title: { fr: 'Design Graphique', ar: 'التصميم الجرافيكي', en: 'Graphic Design' },
-    subtitle: { fr: 'Communication Visuelle', ar: 'التواصل البصري', en: 'Visual Communication' },
-    tagline: { fr: 'Créez l\'identité visuelle des marques', ar: 'أنشئ الهوية البصرية', en: 'Create brand identities' },
-    levels: [
-      {
-        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-        badge: '🌱',
-        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-        goal: { fr: 'Maîtrisez les bases du design', ar: 'إتقان أساسيات التصميم', en: 'Master design basics' },
-        lessons: [
-          {
-            id: 'design-b-1',
-            title: { fr: 'Les 7 Principes du Design', ar: 'مبادئ التصميم السبعة', en: 'The 7 Design Principles' },
-            image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&q=80',
-            layout: 'top',
-            steps: { fr: ['Contraste', 'Alignement', 'Répétition', 'Proximité', 'Hiérarchie', 'Équilibre', 'Espace blanc'], ar: ['التباين', 'المحاذاة', 'التكرار', 'القرب', 'التسلسل الهرمي', 'التوازن', 'الفراغ الأبيض'], en: ['Contrast', 'Alignment', 'Repetition', 'Proximity', 'Hierarchy', 'Balance', 'White space'] },
-            method: { fr: 'Analysez 5 designs de marques connues', ar: 'حلل 5 تصاميم لعلامات تجارية معروفة', en: 'Analyze 5 designs from well-known brands' },
-            exercise: { fr: 'Créez une affiche en utilisant les 7 principes', ar: 'أنشئ ملصقاً باستخدام المبادئ السبعة', en: 'Create a poster using all 7 principles' },
-            tip: { fr: 'Les principes de design sont une langue universelle', ar: 'مبادئ التصميم هي لغة عالمية', en: 'Design principles are a universal language' }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'smm',
-    icon: '📱',
-    color: '#059669',
-    accent: '#34D399',
-    bg: '#021A12',
-    earning: '15,000 – 60,000 DZD/month',
-    title: { fr: 'Social Media', ar: 'وسائل التواصل', en: 'Social Media' },
-    subtitle: { fr: 'Marketing Digital', ar: 'التسويق الرقمي', en: 'Digital Marketing' },
-    tagline: { fr: 'Gérez les réseaux sociaux comme un pro', ar: 'أدر وسائل التواصل كالمحترفين', en: 'Manage social media like a pro' },
-    levels: [
-      {
-        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-        badge: '🌱',
-        duration: { fr: 'Semaines 1–3', ar: 'الأسابيع 1–3', en: 'Weeks 1–3' },
-        goal: { fr: 'Comprenez les réseaux sociaux', ar: 'افهم وسائل التواصل', en: 'Understand social media' },
-        lessons: [
-          {
-            id: 'smm-b-1',
-            title: { fr: 'Introduction au SMM', ar: 'مقدمة في إدارة وسائل التواصل', en: 'Introduction to SMM' },
-            image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80',
-            layout: 'top',
-            steps: { fr: ['Paysage algérien', 'Objectifs', 'Types de contenu', 'Stratégie'], ar: ['المشهد الجزائري', 'الأهداف', 'أنواع المحتوى', 'الاستراتيجية'], en: ['Algerian landscape', 'Goals', 'Content types', 'Strategy'] },
-            method: { fr: 'Analysez 5 entreprises algériennes', ar: 'حلل 5 شركات جزائرية', en: 'Analyze 5 Algerian companies' },
-            exercise: { fr: 'Créez un audit de présence sociale', ar: 'أنشئ تدقيقاً للوجود', en: 'Create a social presence audit' },
-            tip: { fr: 'La cohérence est clé', ar: 'الاتساق هو المفتاح', en: 'Consistency is key' }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'video',
-    icon: '🎬',
-    color: '#DC2626',
-    accent: '#F87171',
-    bg: '#1A0303',
-    earning: '8,000 – 80,000 DZD/project',
-    title: { fr: 'Montage Vidéo', ar: 'مونتاج الفيديو', en: 'Video Editing' },
-    subtitle: { fr: 'Storytelling Visuel', ar: 'سرد القصص البصري', en: 'Visual Storytelling' },
-    tagline: { fr: 'Créez des vidéos qui captivent', ar: 'أنشئ فيديوهات آسرة', en: 'Create captivating videos' },
-    levels: [
-      {
-        name: { fr: 'Débutant', ar: 'مبتدئ', en: 'Beginner' },
-        badge: '🌱',
-        duration: { fr: 'Semaines 1–4', ar: 'الأسابيع 1–4', en: 'Weeks 1–4' },
-        goal: { fr: 'Maîtrisez CapCut sur mobile', ar: 'إتقان CapCut على الهاتف', en: 'Master CapCut on mobile' },
-        lessons: [
-          {
-            id: 'video-b-1',
-            title: { fr: 'Introduction au Montage', ar: 'مقدمة في المونتاج', en: 'Introduction to Editing' },
-            image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80',
-            layout: 'top',
-            steps: { fr: ['Pourquoi monter?', 'Types de montage', 'Processus', 'Outils'], ar: ['لماذا المونتاج؟', 'أنواع المونتاج', 'العملية', 'الأدوات'], en: ['Why edit?', 'Types of editing', 'Process', 'Tools'] },
-            method: { fr: 'Regardez 10 Reels populaires', ar: 'شاهد 10 Reels شائعة', en: 'Watch 10 popular Reels' },
-            exercise: { fr: 'Créez votre première vidéo', ar: 'أنشئ أول فيديو لك', en: 'Create your first video' },
-            tip: { fr: 'Le son est plus important que l\'image', ar: 'الصوت أهم من الصورة', en: 'Audio matters more than video' }
-          }
-        ]
-      }
-    ]
-  }
-];
 
 // ============================================
 // TRANSLATIONS
@@ -520,25 +424,21 @@ let levelIdx = 0;
 let lessonIdx = null;
 let openStep = null;
 
-// Data state
 let skillsData = [];
 let usingSupabase = false;
 let supabaseConnected = false;
 let syncInterval = null;
+let supabase = null;
 
 // ============================================
 // SUPABASE CLIENT
 // ============================================
-let supabase = null;
-
 async function initSupabase() {
   try {
-    // Dynamically import Supabase
     const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
     supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     
-    // Test connection
-    const { error } = await supabase.from('skills').select('count', { count: 'exact', head: true });
+    const { error } = await supabase.from('skills_content').select('count', { count: 'exact', head: true });
     
     if (!error) {
       supabaseConnected = true;
@@ -550,7 +450,7 @@ async function initSupabase() {
       return false;
     }
   } catch (e) {
-    console.warn('⚠️ Supabase non disponible, fallback vers données locales');
+    console.warn('⚠️ Supabase non disponible');
     supabaseConnected = false;
     return false;
   }
@@ -561,99 +461,193 @@ async function initSupabase() {
 // ============================================
 async function loadSkills() {
   try {
-    // Essayer Supabase d'abord
     if (supabaseConnected && supabase) {
-      const { data, error } = await supabase
-        .from('skills')
-        .select('*')
-        .order('created_at', { ascending: true });
+      // Récupérer depuis skills_content
+      const { data: skillsList, error: listError } = await supabase
+        .from('skills_content')
+        .select('skill_id, sort_order, payload')
+        .order('sort_order', { ascending: true });
       
-      if (!error && data && data.length > 0) {
-        console.log('📡 Données chargées depuis Supabase:', data.length);
-        skillsData = data;
+      if (!listError && skillsList && skillsList.length > 0) {
+        console.log('📡 Skills chargés depuis Supabase:', skillsList.length);
+        
+        // Transformer les données
+        skillsData = skillsList.map(item => {
+          const p = item.payload || {};
+          return {
+            id: item.skill_id,
+            sort_order: item.sort_order,
+            icon: p.icon || '🎯',
+            color: p.color || '#7C3AED',
+            accent: p.accent || '#A78BFA',
+            bg: p.bg || '#0D0818',
+            earning: p.earning || '0 DZD',
+            title: p.title || { fr: 'Skill', ar: 'مهارة', en: 'Skill' },
+            subtitle: p.subtitle || { fr: '', ar: '', en: '' },
+            tagline: p.tagline || { fr: '', ar: '', en: '' },
+            levels: p.levels || [],
+            firstClient: p.firstClient || { fr: '4 semaines', ar: '4 أسابيع', en: '4 weeks' },
+            startTool: p.startTool || ''
+          };
+        });
+        
         usingSupabase = true;
         updateUI();
         updateStatus('Supabase');
-        return data;
+        return skillsData;
       }
     }
     
     // Fallback: données locales
     console.log('📦 Utilisation des données locales (fallback)');
-    skillsData = FALLBACK_SKILLS;
+    skillsData = getFallbackSkills();
     usingSupabase = false;
     updateUI();
-    updateStatus('Local (fallback)');
+    updateStatus('Local');
     return skillsData;
     
   } catch (e) {
     console.warn('⚠️ Erreur, fallback vers données locales');
-    skillsData = FALLBACK_SKILLS;
+    skillsData = getFallbackSkills();
     usingSupabase = false;
     updateUI();
-    updateStatus('Local (fallback)');
+    updateStatus('Local');
     return skillsData;
   }
 }
 
 // ============================================
-// REFRESH DATA (Manuel)
+// FALLBACK SKILLS
 // ============================================
-async function refreshData() {
-  showNotification('🔄 Rafraîchissement...');
-  await loadSkills();
-  showNotification('✅ Données mises à jour!');
-  if (hasAccess) renderAcademy();
-  else renderLanding();
-}
-
-// ============================================
-// AUTO-SYNC (Realtime via Supabase)
-// ============================================
-function setupAutoSync() {
-  if (!supabaseConnected || !supabase) {
-    console.log('⏳ Auto-sync non disponible (Supabase hors ligne)');
-    return;
-  }
-  
-  // Nettoyer l'ancien interval
-  if (syncInterval) clearInterval(syncInterval);
-  
-  // Synchronisation périodique (toutes les 30 secondes)
-  syncInterval = setInterval(async () => {
-    console.log('🔄 Auto-sync check...');
-    await loadSkills();
-    if (hasAccess && document.getElementById('academy').style.display !== 'none') {
-      renderAcademy();
+function getFallbackSkills() {
+  return [
+    {
+      id: 'design',
+      icon: '🎨',
+      color: '#7C3AED',
+      accent: '#A78BFA',
+      bg: '#0D0818',
+      earning: '5,000 – 80,000 DZD',
+      title: { fr: 'Design Graphique', ar: 'التصميم الجرافيكي', en: 'Graphic Design' },
+      subtitle: { fr: 'Communication Visuelle', ar: 'التواصل البصري', en: 'Visual Communication' },
+      tagline: { fr: 'Créez l\'identité visuelle des marques', ar: 'أنشئ الهوية البصرية', en: 'Create brand identities' },
+      levels: []
+    },
+    {
+      id: 'smm',
+      icon: '📱',
+      color: '#059669',
+      accent: '#34D399',
+      bg: '#021A12',
+      earning: '15,000 – 60,000 DZD/month',
+      title: { fr: 'Social Media', ar: 'وسائل التواصل', en: 'Social Media' },
+      subtitle: { fr: 'Marketing Digital', ar: 'التسويق الرقمي', en: 'Digital Marketing' },
+      tagline: { fr: 'Gérez les réseaux sociaux comme un pro', ar: 'أدر وسائل التواصل كالمحترفين', en: 'Manage social media like a pro' },
+      levels: []
+    },
+    {
+      id: 'video',
+      icon: '🎬',
+      color: '#DC2626',
+      accent: '#F87171',
+      bg: '#1A0303',
+      earning: '8,000 – 80,000 DZD/project',
+      title: { fr: 'Montage Vidéo', ar: 'مونتاج الفيديو', en: 'Video Editing' },
+      subtitle: { fr: 'Storytelling Visuel', ar: 'سرد القصص البصري', en: 'Visual Storytelling' },
+      tagline: { fr: 'Créez des vidéos qui captivent', ar: 'أنشئ فيديوهات آسرة', en: 'Create captivating videos' },
+      levels: []
+    },
+    {
+      id: 'uiux',
+      icon: '🎨',
+      color: '#6366F1',
+      accent: '#818CF8',
+      bg: '#0C0A1A',
+      earning: '20,000 – 100,000 DZD/month',
+      title: { fr: 'UI/UX Design', ar: 'تصميم واجهات وتجارب المستخدم', en: 'UI/UX Design' },
+      subtitle: { fr: 'Design d\'Interfaces', ar: 'تصميم الواجهات', en: 'Interface Design' },
+      tagline: { fr: 'Créez des expériences mémorables', ar: 'أنشئ تجارب لا تُنسى', en: 'Create memorable experiences' },
+      levels: []
+    },
+    {
+      id: 'vibecoding',
+      icon: '🤖',
+      color: '#8B5CF6',
+      accent: '#A78BFA',
+      bg: '#0D0618',
+      earning: '30,000 – 150,000 DZD/month',
+      title: { fr: 'Vibe Coding', ar: 'البرمجة بالذكاء الاصطناعي', en: 'Vibe Coding' },
+      subtitle: { fr: 'Développement avec IA', ar: 'التطوير بالذكاء الاصطناعي', en: 'AI Development' },
+      tagline: { fr: 'Codez avec l\'IA comme outil', ar: 'برمج بالذكاء الاصطناعي كأداة', en: 'Code with AI as your tool' },
+      levels: []
+    },
+    {
+      id: 'n8n',
+      icon: '⚡',
+      color: '#E94E1B',
+      accent: '#FF6B35',
+      bg: '#1A0A04',
+      earning: '25,000 – 120,000 DZD/month',
+      title: { fr: 'Automation n8n', ar: 'الأتمتة مع n8n', en: 'Automation with n8n' },
+      subtitle: { fr: 'Workflow Automation', ar: 'أتمتة سير العمل', en: 'Workflow Automation' },
+      tagline: { fr: 'Automatisez vos tâches sans coder', ar: 'أتمتة مهامك بدون برمجة', en: 'Automate tasks without coding' },
+      levels: []
+    },
+    {
+      id: 'copywriting',
+      icon: '✍️',
+      color: '#F59E0B',
+      accent: '#FBBF24',
+      bg: '#1A1200',
+      earning: '10,000 – 50,000 DZD/month',
+      title: { fr: 'Copywriting', ar: 'كتابة المحتوى والإعلانات', en: 'Copywriting' },
+      subtitle: { fr: 'Rédaction Persuasive', ar: 'الكتابة المقنعة', en: 'Persuasive Writing' },
+      tagline: { fr: 'Les mots qui vendent', ar: 'الكلمات التي تبيع', en: 'Words that sell' },
+      levels: []
+    },
+    {
+      id: 'seo',
+      icon: '🔍',
+      color: '#1E40AF',
+      accent: '#60A5FA',
+      bg: '#0A0F1A',
+      earning: '20,000 – 80,000 DZD/month',
+      title: { fr: 'SEO & Digital Marketing', ar: 'تحسين محركات البحث', en: 'SEO & Digital Marketing' },
+      subtitle: { fr: 'Optimisation pour Google', ar: 'تحسين محركات البحث', en: 'Search Engine Optimization' },
+      tagline: { fr: 'Soyez en première page de Google', ar: 'كن في الصفحة الأولى من Google', en: 'Be on Google\'s first page' },
+      levels: []
+    },
+    {
+      id: 'webdev',
+      icon: '🌐',
+      color: '#0EA5E9',
+      accent: '#38BDF8',
+      bg: '#0A1628',
+      earning: '15,000 – 70,000 DZD/month',
+      title: { fr: 'Web Development No-Code', ar: 'تطوير الويب بدون كود', en: 'No-Code Web Development' },
+      subtitle: { fr: 'Créez des sites sans coder', ar: 'إنشاء مواقع بدون برمجة', en: 'Build websites without coding' },
+      tagline: { fr: 'Construisez des sites professionnels', ar: 'ابنِ مواقع احترافية', en: 'Build professional websites' },
+      levels: []
+    },
+    {
+      id: 'aimastery',
+      icon: '🧠',
+      color: '#3B5BFF',
+      accent: '#5B7BFF',
+      bg: '#0A0F1A',
+      earning: '20,000 – 100,000 DZD/month',
+      title: { fr: 'AI Mastery', ar: 'إتقان الذكاء الاصطناعي', en: 'AI Mastery' },
+      subtitle: { fr: 'Maîtrisez les outils IA', ar: 'إتقان أدوات الذكاء الاصطناعي', en: 'Master AI Tools' },
+      tagline: { fr: 'Devenez un expert en IA', ar: 'كن خبيراً في الذكاء الاصطناعي', en: 'Become an AI expert' },
+      levels: []
     }
-  }, 30000);
-  
-  console.log('✅ Auto-sync activé (30s)');
-}
-
-function stopAutoSync() {
-  if (syncInterval) {
-    clearInterval(syncInterval);
-    syncInterval = null;
-    console.log('⏹️ Auto-sync désactivé');
-  }
-}
-
-function toggleMode() {
-  if (syncInterval) {
-    stopAutoSync();
-    showNotification('⏹️ Auto-sync désactivé');
-  } else {
-    setupAutoSync();
-    showNotification('🔄 Auto-sync activé (30s)');
-  }
+  ];
 }
 
 // ============================================
 // CHECK ACCESS (Supabase + Fallback)
 // ============================================
 async function checkAccessCode(code) {
-  // Essayer Supabase d'abord
   if (supabaseConnected && supabase) {
     try {
       const { data, error } = await supabase
@@ -664,19 +658,11 @@ async function checkAccessCode(code) {
         .single();
       
       if (!error && data) {
-        // Marquer comme utilisé
-        await supabase
-          .from('access_codes')
-          .update({ used: true, used_at: new Date().toISOString() })
-          .eq('code', code);
+        await supabase.from('access_codes').update({ used: true, used_at: new Date().toISOString() }).eq('code', code);
         return true;
       }
-    } catch (e) {
-      console.warn('Supabase check failed, fallback');
-    }
+    } catch (e) {}
   }
-  
-  // Fallback: codes en dur
   return FALLBACK_CODES.includes(code);
 }
 
@@ -684,7 +670,6 @@ async function checkAccessCode(code) {
 // UI UPDATE
 // ============================================
 function updateUI() {
-  // Mettre à jour l'academy si affichée
   if (hasAccess && document.getElementById('academy').style.display !== 'none') {
     renderAcademy();
   }
@@ -745,7 +730,6 @@ async function checkAccess() {
   
   if (!val) { errEl.textContent = t.errEmpty; errEl.style.display = 'block'; return; }
   
-  // Vérifier avec Supabase ou fallback
   const isValid = await checkAccessCode(val);
   
   if (!isValid) {
@@ -819,7 +803,7 @@ function renderAcademy() {
   document.getElementById('a-rec').innerHTML = t.aRec;
   document.getElementById('a-footer').textContent = t.footer;
   
-  const data = skillsData.length > 0 ? skillsData : FALLBACK_SKILLS;
+  const data = skillsData.length > 0 ? skillsData : getFallbackSkills();
   
   document.getElementById('a-skill-cards').innerHTML = data.map(s => {
     const title = s.title[lang] || s.title.fr || s.title || 'Skill';
@@ -853,9 +837,9 @@ function goLevel(i) { levelIdx = i; lessonIdx = null; renderSkill(); }
 
 function renderSkill() {
   const t = T[lang];
-  const data = skillsData.length > 0 ? skillsData : FALLBACK_SKILLS;
+  const data = skillsData.length > 0 ? skillsData : getFallbackSkills();
   const sk = data.find(s => s.id === skillId);
-  if (!sk) return;
+  if (!sk) { showNotification('⚠️ Skill non trouvé'); return; }
   
   const isAr = lang === 'ar';
   const color = sk.color || '#7C3AED';
@@ -877,7 +861,7 @@ function renderSkill() {
     return `<button class="level-tab" onclick="goLevel(${i})" style="background:${a ? '#1C1C28' : 'transparent'};border-color:${a ? color : '#1C1C28'};color:${a ? '#fff' : '#4B5563'};font-weight:${a ? 700 : 400}">${lv.badge || '📘'} ${lvName}</button>`;
   }).join('');
   
-  const lv = levels[levelIdx] || levels[0];
+  const lv = levels[levelIdx] || levels[0] || { name: { fr: 'Niveau', ar: 'مستوى', en: 'Level' }, badge: '📘', duration: { fr: '', ar: '', en: '' }, goal: { fr: '', ar: '', en: '' }, lessons: [] };
   const lessons = lv.lessons || [];
   
   document.getElementById('level-info').innerHTML = `
@@ -900,9 +884,9 @@ function renderSkill() {
   }).join('');
   
   let nav = '';
-  if (levelIdx > 0) { const prevName = levels[levelIdx-1].name[lang] || levels[levelIdx-1].name.fr || 'Précédent'; nav += `<button class="nav-prev" onclick="goLevel(${levelIdx-1})">${isAr ? '→' : '←'} ${prevName}</button>`; }
+  if (levelIdx > 0) { const prevName = levels[levelIdx-1]?.name[lang] || levels[levelIdx-1]?.name.fr || 'Précédent'; nav += `<button class="nav-prev" onclick="goLevel(${levelIdx-1})">${isAr ? '→' : '←'} ${prevName}</button>`; }
   else nav += `<button class="nav-prev" onclick="renderAcademy()">${isAr ? '→' : '←'} ${t.backSkills}</button>`;
-  if (levelIdx < levels.length - 1) { const nextName = levels[levelIdx+1].name[lang] || levels[levelIdx+1].name.fr || 'Suivant'; nav += `<button class="nav-next" style="background:${color}" onclick="goLevel(${levelIdx+1})">${nextName} ${isAr ? '←' : '→'}</button>`; }
+  if (levelIdx < levels.length - 1) { const nextName = levels[levelIdx+1]?.name[lang] || levels[levelIdx+1]?.name.fr || 'Suivant'; nav += `<button class="nav-next" style="background:${color}" onclick="goLevel(${levelIdx+1})">${nextName} ${isAr ? '←' : '→'}</button>`; }
   document.getElementById('level-nav').innerHTML = nav;
   showView('skill-view');
 }
@@ -918,15 +902,15 @@ function toggleStep(i) { openStep = openStep === i ? null : i; renderLesson(); }
 
 function renderLesson() {
   const t = T[lang];
-  const data = skillsData.length > 0 ? skillsData : FALLBACK_SKILLS;
+  const data = skillsData.length > 0 ? skillsData : getFallbackSkills();
   const sk = data.find(s => s.id === skillId);
-  if (!sk) return;
+  if (!sk) { showNotification('⚠️ Skill non trouvé'); return; }
   
   const levels = sk.levels || [];
-  const lv = levels[levelIdx] || levels[0];
+  const lv = levels[levelIdx] || levels[0] || { name: { fr: 'Niveau', ar: 'مستوى', en: 'Level' }, badge: '📘', lessons: [] };
   const lessons = lv.lessons || [];
   const les = lessons[lessonIdx];
-  if (!les) return;
+  if (!les) { showNotification('⚠️ Leçon non trouvée'); return; }
   
   const isAr = lang === 'ar';
   const isMobile = window.innerWidth < 600;
@@ -976,7 +960,7 @@ function renderLesson() {
   const hasNextLv = levelIdx < levels.length - 1;
   
   let prevBtn = hasPrev ? `<button class="lesson-nav-prev" onclick="prevLesson()">${isAr ? '→' : '←'} ${t.prevLesson.replace(/[←→]/g, '').trim()}</button>` : `<button class="lesson-nav-prev" onclick="renderSkill()">${isAr ? '→' : '←'} ${t.back.replace(/[←→]/g, '').trim()}</button>`;
-  let nextBtn = hasNext ? `<button class="lesson-nav-next" style="background:${color}" onclick="nextLesson()">${t.nextLesson.replace(/[←→]/g, '').trim()} ${isAr ? '←' : '→'}</button>` : hasNextLv ? `<button class="lesson-nav-next" style="background:${color}" onclick="nextLevel()">${t.nextLevel}: ${levels[levelIdx+1].name[lang] || levels[levelIdx+1].name.fr || 'Suivant'} ${isAr ? '←' : '→'}</button>` : `<div class="lesson-complete" style="color:${accent};border-color:${color}50">${t.complete}</div>`;
+  let nextBtn = hasNext ? `<button class="lesson-nav-next" style="background:${color}" onclick="nextLesson()">${t.nextLesson.replace(/[←→]/g, '').trim()} ${isAr ? '←' : '→'}</button>` : hasNextLv ? `<button class="lesson-nav-next" style="background:${color}" onclick="nextLevel()">${t.nextLevel}: ${levels[levelIdx+1]?.name[lang] || levels[levelIdx+1]?.name.fr || 'Suivant'} ${isAr ? '←' : '→'}</button>` : `<div class="lesson-complete" style="color:${accent};border-color:${color}50">${t.complete}</div>`;
   
   const method = les.method[lang] || les.method.fr || les.method || '';
   const exercise = les.exercise[lang] || les.exercise.fr || les.exercise || '';
@@ -996,8 +980,39 @@ function renderLesson() {
 }
 
 // ============================================
-// NOTIFICATION
+// REFRESH & SYNC
 // ============================================
+async function refreshData() {
+  showNotification('🔄 Rafraîchissement...');
+  await loadSkills();
+  showNotification('✅ Données mises à jour!');
+  if (hasAccess) renderAcademy();
+  else renderLanding();
+}
+
+function setupAutoSync() {
+  if (!supabaseConnected) {
+    console.log('⏳ Auto-sync non disponible');
+    return;
+  }
+  if (syncInterval) clearInterval(syncInterval);
+  syncInterval = setInterval(async () => {
+    console.log('🔄 Auto-sync check...');
+    await loadSkills();
+    if (hasAccess && document.getElementById('academy').style.display !== 'none') renderAcademy();
+  }, 30000);
+  console.log('✅ Auto-sync activé (30s)');
+}
+
+function stopAutoSync() {
+  if (syncInterval) { clearInterval(syncInterval); syncInterval = null; console.log('⏹️ Auto-sync désactivé'); }
+}
+
+function toggleMode() {
+  if (syncInterval) { stopAutoSync(); showNotification('⏹️ Auto-sync désactivé'); }
+  else { setupAutoSync(); showNotification('🔄 Auto-sync activé (30s)'); }
+}
+
 function showNotification(message) {
   document.querySelectorAll('.notification').forEach(el => el.remove());
   const div = document.createElement('div');
@@ -1019,21 +1034,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     b.classList.toggle('active', (lang === 'fr' && lbl === 'FR') || (lang === 'ar' && lbl === 'ع') || (lang === 'en' && lbl === 'EN'));
   });
   
-  // Initialiser Supabase
   await initSupabase();
-  
-  // Charger les données
   await loadSkills();
-  
-  // Activer auto-sync
   setupAutoSync();
   
   if (hasAccess) renderAcademy();
   else renderLanding();
   
   console.log('🚀 Digital Skills Academy prêt!');
-  console.log('📡 Source:', usingSupabase ? 'Supabase' : 'Local');
-  console.log('📦 Skills:', skillsData.length);
 });
 
 // Expose
