@@ -4,182 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Skills Academy 🇩🇿</title>
-<style>
-/* ============================================
-   STYLES COMPLETS
-   ============================================ */
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#060608;color:#E5E7EB;font-family:system-ui,-apple-system,sans-serif;min-height:100vh}
-button{cursor:pointer;font-family:inherit}
-input{font-family:inherit}
-
-/* ===== BRAND LOGO ===== */
-.brand{font-weight:800;font-size:16px;color:#fff;cursor:pointer;transition:transform 0.2s ease}
-.brand:hover{transform:scale(1.03)}
-.brand span{color:#7C3AED}
-
-/* ===== VIEWS ===== */
-#landing,#academy,#skill-view,#lesson-view,#dashboard{display:none;flex-direction:column;min-height:100vh}
-
-/* ===== NAV ===== */
-nav{padding:16px 24px;border-bottom:1px solid #111118;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:#060608;position:sticky;top:0;z-index:100}
-.nav-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.lang-btns{display:flex;gap:6px}
-.lang-btn{background:transparent;border:1px solid #1C1C28;color:#6B7280;border-radius:8px;padding:5px 12px;font-size:13px;font-weight:400;transition:all 0.15s}
-.lang-btn.active{background:#7C3AED;border-color:#7C3AED;color:#fff;font-weight:700}
-.dash-btn{background:#1C1C28;border:1px solid #1C1C28;color:#6B7280;border-radius:8px;padding:5px 12px;font-size:13px;cursor:pointer;transition:all 0.15s}
-.dash-btn:hover{background:#2C2C38;color:#fff}
-
-/* ===== GLASS ===== */
-.glass{background:#0D0D14;border:1px solid #1C1C28}
-.glass-btn{background:#0D0D14;border:1px solid #1C1C28;color:#6B7280;border-radius:8px;padding:8px 16px;font-size:13px;cursor:pointer;transition:all 0.15s}
-.glass-btn:hover{background:#1C1C28;color:#fff}
-
-/* ===== HERO ===== */
-.hero{background:linear-gradient(180deg,#0D0818 0%,#060608 100%);padding:52px 20px 44px;text-align:center;border-bottom:1px solid #1C1C28}
-.hero-badge{display:inline-block;background:#0D0818;border:1px solid #7C3AED44;border-radius:6px;padding:5px 14px;margin-bottom:18px;font-size:11px;color:#A78BFA;letter-spacing:3px;text-transform:uppercase}
-.hero h1{font-size:clamp(26px,6vw,52px);font-weight:900;margin:0 0 14px;background:linear-gradient(135deg,#fff 30%,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:pre-line}
-.hero p{color:#6B7280;font-size:16px;max-width:520px;margin:0 auto 32px;line-height:1.65}
-.features{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;font-size:13px;color:#4B5563}
-.feature-tag{background:#0F0F18;border:1px solid #1C1C28;border-radius:20px;padding:6px 14px}
-
-/* ===== SKILL CARDS ===== */
-.skill-cards{max-width:860px;margin:44px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.skill-card{border-radius:16px;padding:26px;cursor:pointer;transition:all 0.2s;border:2px solid transparent}
-.skill-card:hover{transform:translateY(-3px)}
-.skill-icon{font-size:44px;margin-bottom:14px}
-.skill-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
-.skill-title{font-size:22px;font-weight:800;color:#fff;margin:0 0 8px}
-.skill-tagline{color:#6B7280;font-size:13px;line-height:1.5;margin:0 0 18px}
-.skill-cta{border-radius:8px;padding:10px;text-align:center;font-weight:700;font-size:14px;color:#fff;border:none;width:100%}
-
-/* ===== ACCESS ===== */
-.access-section{max-width:560px;margin:0 auto;padding:0 20px 48px}
-.includes-box{background:#0D0D14;border:1px solid #1C1C28;border-radius:14px;padding:22px 24px;margin-bottom:28px}
-.includes-title{font-size:11px;color:#6B7280;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;font-weight:600}
-.include-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
-.include-check{color:#7C3AED;font-size:14px;flex-shrink:0}
-.include-text{font-size:13px;color:#9CA3AF;line-height:1.5}
-.access-box{background:#0A0818;border:1px solid #7C3AED44;border-radius:16px;padding:26px 24px}
-.access-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
-.access-sub{font-size:13px;color:#4B5563;margin-bottom:18px}
-.access-input{width:100%;background:#060608;border:1px solid #1C1C28;border-radius:10px;padding:13px 16px;color:#fff;font-size:15px;margin-bottom:10px;outline:none;letter-spacing:2px;text-transform:uppercase}
-.access-input.err{border-color:#DC2626}
-.error-msg{color:#F87171;font-size:13px;margin-bottom:10px;display:none}
-.access-btn{width:100%;background:#7C3AED;border:none;border-radius:10px;padding:14px;color:#fff;font-size:15px;font-weight:700}
-.access-btn:disabled{background:#4C1D95;cursor:default}
-.divider{margin-top:18px;padding-top:16px;border-top:1px solid #1C1C28}
-.not-bought{font-size:12px;color:#374151;text-align:center;margin-bottom:8px}
-.whatsapp-btn{display:block;background:#064E3B;border:1px solid #16A34A44;border-radius:10px;padding:12px;text-align:center;color:#4ADE80;font-size:14px;font-weight:600;text-decoration:none}
-.stats-row{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap;justify-content:center}
-.stat-item{text-align:center}
-.stat-num{font-size:24px;font-weight:900;color:#7C3AED}
-.stat-lbl{font-size:12px;color:#374151}
-
-/* ===== RECOMMENDATION ===== */
-.recommendation{max-width:860px;margin:0 auto 32px;padding:0 20px}
-.rec-box{background:#0D0818;border:1px solid #1C1C28;border-radius:12px;padding:20px;text-align:center;color:#4B5563;font-size:13px}
-
-/* ===== SKILL VIEW ===== */
-.skill-header{padding:16px 20px;border-bottom:1px solid #1C1C28}
-.skill-header-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px}
-.skill-body{max-width:860px;margin:0 auto;padding:28px 20px;width:100%}
-.level-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
-.level-tab{border-width:2px;border-style:solid;border-radius:10px;padding:9px 16px;font-size:13px;display:flex;align-items:center;gap:6px;background:transparent;transition:all 0.15s}
-.level-info{border-radius:12px;padding:20px;margin-bottom:24px;border:1px solid #1C1C28}
-.level-info-top{display:flex;gap:12px;align-items:center;margin-bottom:10px}
-.level-count{background:#00000030;border-radius:8px;padding:8px 14px;text-align:center;margin-left:auto}
-.level-count-num{font-size:22px;font-weight:800}
-.level-count-lbl{font-size:10px;color:#4B5563}
-.lesson-cards{display:flex;flex-direction:column;gap:10px}
-.lesson-card{background:#0D0D14;border:1px solid #1C1C28;border-radius:12px;padding:18px 20px;cursor:pointer;display:flex;align-items:center;gap:14px;transition:all 0.15s}
-.lesson-card:hover{background:#111118}
-.lesson-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
-.lesson-info{flex:1}
-.lesson-title-text{font-weight:600;font-size:15px;color:#E5E7EB;margin-bottom:3px}
-.lesson-meta{font-size:12px;color:#4B5563}
-.level-nav{display:flex;justify-content:space-between;margin-top:28px;gap:10px;flex-wrap:wrap}
-.nav-prev{background:#0D0D14;border:1px solid #1C1C28;border-radius:10px;padding:11px 18px;color:#6B7280;font-size:13px}
-.nav-next{border:none;border-radius:10px;padding:11px 20px;color:#fff;font-size:13px;font-weight:700}
-
-/* ===== LESSON VIEW ===== */
-.lesson-topbar{background:#0A0A12;border-bottom:1px solid #1C1C28;padding:14px 20px;position:sticky;top:0;z-index:10}
-.lesson-topbar-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.lesson-counter{margin-left:auto;font-size:12px;color:#374151}
-.lesson-body{max-width:780px;margin:0 auto;padding:32px 20px 60px;width:100%}
-.lesson-img-top{width:100%;border-radius:12px;object-fit:cover;height:220px;display:block;margin-bottom:20px}
-.steps-with-img{display:flex;gap:20px;align-items:flex-start}
-.steps-side-img{width:38%;flex-shrink:0;border-radius:12px;overflow:hidden}
-.steps-side-img img{width:100%;min-height:220px;object-fit:cover;display:block;border-radius:12px}
-.steps-list{display:flex;flex-direction:column;gap:8px;flex:1}
-.steps-header{display:flex;align-items:center;gap:8px;margin-bottom:16px}
-.steps-bar{width:4px;height:20px;border-radius:2px;flex-shrink:0}
-.steps-label{font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px}
-.step-item{background:#0D0D14;border:1px solid #1C1C28;border-radius:10px;overflow:hidden}
-.step-btn{width:100%;background:transparent;border:none;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;text-align:left}
-.step-num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;background:#1C1C28;color:#4B5563}
-.step-text{font-size:14px;color:#9CA3AF;flex:1;line-height:1.5}
-.step-toggle{color:#374151;font-size:16px;flex-shrink:0;margin-top:2px}
-.step-expanded{padding:0 16px 16px 52px;color:#9CA3AF;font-size:14px;line-height:1.75;display:none}
-.method-box{border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid transparent}
-.box-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
-.box-emoji{font-size:18px}
-.box-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
-.box-text{font-size:14px;line-height:1.75;margin:0}
-.tip-box{background:#0A100A;border:1px solid #16A34A30;border-radius:10px;padding:16px;margin-bottom:28px}
-.lesson-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.lesson-nav-prev{background:#0D0D14;border:1px solid #1C1C28;border-radius:10px;padding:12px 18px;color:#6B7280;font-size:13px}
-.lesson-nav-next{border:none;border-radius:10px;padding:12px 20px;color:#fff;font-size:13px;font-weight:700}
-.lesson-complete{border-radius:10px;padding:12px 20px;font-size:13px;font-weight:700;border:1px solid;background:#0D0D14}
-
-/* ===== DASHBOARD ===== */
-.dash-body{max-width:860px;margin:0 auto;padding:32px 20px;width:100%}
-.dash-summary{display:flex;align-items:center;gap:24px;padding:24px;border-radius:16px;margin-bottom:32px;flex-wrap:wrap}
-.dash-ring{position:relative;width:88px;height:88px;flex-shrink:0}
-.dash-ring svg{width:88px;height:88px;transform:rotate(-90deg)}
-.dash-ring-bg{fill:none;stroke:#1C1C28;stroke-width:8}
-.dash-ring-fg{fill:none;stroke:#7C3AED;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 0.5s;stroke-dasharray:226.19;stroke-dashoffset:226.19}
-.dash-ring-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:14px;font-weight:700;color:#fff}
-.dash-summary-text{flex:1;min-width:140px}
-.dash-summary-text h2{font-size:18px;color:#fff;margin-bottom:4px}
-.dash-summary-text p{font-size:13px;color:#6B7280;margin:0}
-.dash-continue{background:#7C3AED;border:none;border-radius:10px;padding:10px 20px;color:#fff;font-weight:600;cursor:pointer;transition:0.2s;font-size:14px}
-.dash-continue:hover{background:#6D2CE8}
-.dash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.dash-card{background:#0D0D14;border:1px solid #1C1C28;border-radius:12px;padding:16px;cursor:pointer;transition:all 0.2s}
-.dash-card:hover{transform:translateY(-2px);border-color:#7C3AED44}
-.dash-card .card-icon{font-size:28px;margin-bottom:8px}
-.dash-card .card-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
-.dash-card .card-sub{font-size:11px;color:#6B7280}
-.dash-card .card-progress{height:4px;background:#1C1C28;border-radius:2px;margin-top:10px;overflow:hidden}
-.dash-card .card-progress-bar{height:100%;background:#7C3AED;border-radius:2px;transition:width 0.5s}
-.dash-card .card-progress-label{font-size:10px;color:#4B5563;margin-top:4px;display:block}
-
-/* ===== NOTIFICATION ===== */
-.notification{position:fixed;top:80px;right:20px;background:#0D0D14;color:#E5E7EB;padding:12px 20px;border-radius:10px;z-index:1000;border:1px solid #1C1C28;box-shadow:0 4px 16px rgba(0,0,0,0.5);font-size:14px;animation:slideIn 0.3s ease}
-@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
-
-/* ===== FOOTER ===== */
-footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-size:12px;color:#1F2937;background:#060608;margin-top:auto}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:600px){
-.steps-with-img{flex-direction:column}
-.steps-side-img{width:100%}
-.steps-side-img img{min-height:auto;height:200px}
-.nav-actions{width:100%;justify-content:space-between}
-.dash-summary{flex-direction:column;align-items:stretch;text-align:center}
-.dash-ring{margin:0 auto}
-.dash-continue{width:100%}
-.dash-grid{grid-template-columns:1fr}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ========================================== -->
 <!-- LANDING -->
-<!-- ========================================== -->
 <div id="landing">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
@@ -189,7 +18,7 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
       <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
   </nav>
-  <div class="hero">
+  <div class="hero glass">
     <div class="hero-badge" id="l-badge"></div>
     <h1 id="l-title"></h1>
     <p id="l-subtitle"></p>
@@ -200,35 +29,32 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
       <span class="feature-tag" id="l-f4"></span>
     </div>
   </div>
-  <div class="access-section">
-    <div class="includes-box">
+  <div class="access-section" style="margin-top:32px">
+    <div class="includes-box glass">
       <div class="includes-title" id="l-includes-title"></div>
       <div id="l-includes-list"></div>
     </div>
-    <div class="access-box">
+    <div class="access-box glass">
       <div class="access-title" id="l-already"></div>
       <div class="access-sub" id="l-enter"></div>
-      <input type="text" class="access-input" id="access-input" placeholder="VOTRE CODE D'ACCÈS..." oninput="clearErr()" onkeydown="if(event.key==='Enter')checkAccess()">
+      <input type="text" class="access-input glass" id="access-input" oninput="clearErr()" onkeydown="if(event.key==='Enter')checkAccess()">
       <div class="error-msg" id="access-error"></div>
-      <button class="access-btn" id="access-btn" onclick="checkAccess()">Accéder à la Formation →</button>
-      <div class="divider">
-        <div class="not-bought" id="l-not-bought"></div>
-        <a class="whatsapp-btn" id="l-whatsapp" href="#" target="_blank">💬 Commander via WhatsApp</a>
-      </div>
+      <button class="access-btn glass-btn" id="access-btn" onclick="checkAccess()"></button>
+      <div class="divider"></div>
+      <div class="not-bought" id="l-not-bought"></div>
+      <a class="whatsapp-btn glass-btn" id="l-whatsapp" href="#" target="_blank"></a>
     </div>
     <div class="stats-row" id="l-stats"></div>
   </div>
   <footer id="l-footer"></footer>
 </div>
 
-<!-- ========================================== -->
 <!-- ACADEMY -->
-<!-- ========================================== -->
 <div id="academy">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
     <div class="nav-actions">
-      <button class="dash-btn" onclick="goDashboard()">📊 Dashboard</button>
+      <button class="dash-btn" onclick="goDashboard()">📊 <span id="nav-dash-label"></span></button>
       <div class="lang-btns">
         <button class="lang-btn" onclick="setLang('fr')">FR</button>
         <button class="lang-btn" onclick="setLang('ar')">ع</button>
@@ -236,25 +62,23 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
       </div>
     </div>
   </nav>
-  <div class="hero">
+  <div class="hero glass">
     <div class="hero-badge" id="a-badge"></div>
     <h1 id="a-title"></h1>
     <p id="a-subtitle"></p>
     <div class="features" id="a-features"></div>
   </div>
   <div class="skill-cards" id="a-skill-cards"></div>
-  <div class="recommendation"><div class="rec-box" id="a-rec"></div></div>
+  <div class="recommendation"><div class="rec-box glass" id="a-rec"></div></div>
   <footer id="a-footer"></footer>
 </div>
 
-<!-- ========================================== -->
 <!-- SKILL VIEW -->
-<!-- ========================================== -->
 <div id="skill-view">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
     <div class="nav-actions">
-      <button class="dash-btn" onclick="goDashboard()">📊 Dashboard</button>
+      <button class="dash-btn" onclick="goDashboard()">📊 <span id="nav-dash-label-2"></span></button>
       <div class="lang-btns">
         <button class="lang-btn" onclick="setLang('fr')">FR</button>
         <button class="lang-btn" onclick="setLang('ar')">ع</button>
@@ -262,7 +86,7 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
       </div>
     </div>
   </nav>
-  <div class="skill-header" id="skill-header">
+  <div class="skill-header glass" id="skill-header">
     <div class="skill-header-inner">
       <span id="sh-icon" style="font-size:26px"></span>
       <div>
@@ -273,20 +97,18 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
   </div>
   <div class="skill-body">
     <div class="level-tabs" id="level-tabs"></div>
-    <div class="level-info" id="level-info"></div>
+    <div class="level-info glass" id="level-info"></div>
     <div class="lesson-cards" id="lesson-cards"></div>
     <div class="level-nav" id="level-nav"></div>
   </div>
   <footer id="s-footer"></footer>
 </div>
 
-<!-- ========================================== -->
 <!-- LESSON VIEW -->
-<!-- ========================================== -->
 <div id="lesson-view">
-  <div class="lesson-topbar">
+  <div class="lesson-topbar glass">
     <div class="lesson-topbar-inner">
-      <button class="back-btn" id="lesson-back-btn" onclick="goBackFromLesson()">← Retour</button>
+      <button class="back-btn glass-btn" id="lesson-back-btn"></button>
       <span id="lesson-skill-icon" style="font-size:16px"></span>
       <span id="lesson-skill-name" style="font-size:12px;color:#4B5563"></span>
       <span style="font-size:12px;color:#4B5563">/</span>
@@ -298,14 +120,11 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
   <footer id="lv-footer"></footer>
 </div>
 
-<!-- ========================================== -->
 <!-- DASHBOARD -->
-<!-- ========================================== -->
 <div id="dashboard">
   <nav>
     <div class="brand" onclick="goHome()"><span>Digital</span>Skills.dz</div>
     <div class="nav-actions">
-      <button class="dash-btn" onclick="goHome()">🏠 Accueil</button>
       <div class="lang-btns">
         <button class="lang-btn" onclick="setLang('fr')">FR</button>
         <button class="lang-btn" onclick="setLang('ar')">ع</button>
@@ -314,22 +133,22 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
     </div>
   </nav>
   <div class="dash-body">
-    <h1 id="dash-title" style="font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 6px">📊 Dashboard</h1>
-    <p id="dash-subtitle" style="color:#6B7280;font-size:14px;margin:0 0 24px">Suivez votre progression</p>
+    <h1 id="dash-title" style="font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 6px"></h1>
+    <p id="dash-subtitle" style="color:#6B7280;font-size:14px;margin:0 0 24px"></p>
 
-    <div class="dash-summary">
+    <div class="dash-summary glass">
       <div class="dash-ring">
         <svg viewBox="0 0 88 88">
           <circle class="dash-ring-bg" cx="44" cy="44" r="36"></circle>
           <circle class="dash-ring-fg" id="dash-ring-fg" cx="44" cy="44" r="36"></circle>
         </svg>
-        <div class="dash-ring-label" id="dash-ring-label">0%</div>
+        <div class="dash-ring-label" id="dash-ring-label"></div>
       </div>
       <div class="dash-summary-text">
-        <h2 id="dash-summary-title">Progression totale</h2>
-        <p id="dash-summary-sub">0 leçons complétées sur 0</p>
+        <h2 id="dash-summary-title"></h2>
+        <p id="dash-summary-sub"></p>
       </div>
-      <button class="dash-continue" id="dash-continue-btn" onclick="goHome()">Continuer →</button>
+      <button class="dash-continue" id="dash-continue-btn"></button>
     </div>
 
     <div class="dash-grid" id="dash-grid"></div>
@@ -337,52 +156,11 @@ footer{padding:18px 24px;border-top:1px solid #111118;text-align:center;font-siz
   <footer id="dash-footer"></footer>
 </div>
 
-<!-- ========================================== -->
-<!-- SCRIPTS -->
-<!-- ========================================== -->
-<script>
-// ============================================
-// CONFIGURATION SUPABASE
-// ============================================
-const SUPABASE_URL = 'https://ton-projet.supabase.co';
-const SUPABASE_ANON_KEY = 'ton-anon-key';
-
-// ============================================
-// CODES D'ACCÈS (Fallback)
-// ============================================
-const FALLBACK_CODES = ['DSA2026','STUDENT01','VIP2026','DZSKILL2025','ATLAS-PRO','LEARN-DZ-01','LEARN-DZ-02','LEARN-DZ-03','ACADEMY-VIP','FORMATION01','FORMATION02'];
-
-// ============================================
-// FALLBACK SKILLS
-// ============================================
-const FALLBACK_SKILLS = [
-  {
-    id: 'design',
-    icon: '🎨',
-    color: '#7C3AED',
-    accent: '#A78BFA',
-    bg: '#0D0818',
-    earning: '5,000 – 80,000 DZD',
-    title: { fr: 'Design Graphique', ar: 'التصميم الجرافيكي', en: 'Graphic Design' },
-    subtitle: { fr: 'Communication Visuelle', ar: 'التواصل البصري', en: 'Visual Communication' },
-    tagline: { fr: 'Créez l\'identité visuelle des marques', ar: 'أنشئ الهوية البصرية', en: 'Create brand identities' },
-    levels: []
-  },
-  {
-    id: 'smm',
-    icon: '📱',
-    color: '#059669',
-    accent: '#34D399',
-    bg: '#021A12',
-    earning: '15,000 – 60,000 DZD/month',
-    title: { fr: 'Social Media', ar: 'وسائل التواصل', en: 'Social Media' },
-    subtitle: { fr: 'Marketing Digital', ar: 'التسويق الرقمي', en: 'Digital Marketing' },
-    tagline: { fr: 'Gérez les réseaux sociaux comme un pro', ar: 'أدر وسائل التواصل كالمحترفين', en: 'Manage social media like a pro' },
-    levels: []
-  },
-  {
-    id: 'video',
-    icon: '🎬',
-    color: '#DC2626',
-    accent: '#F87171',
-    bg: '#
+<script src="data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="supabase-client.js"></script>
+<script src="progress.js"></script>
+<script src="app.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
