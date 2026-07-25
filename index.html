@@ -5,8 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Skills Academy 🇩🇿</title>
 <link rel="stylesheet" href="style.css">
+<!-- Three.js pour l'animation 3D -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+
+<!-- Canvas 3D Background -->
+<canvas id="bg-3d" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;"></canvas>
+
 <div id="loading-screen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a0a;display:flex;align-items:center;justify-content:center;z-index:9999;color:#fff;flex-direction:column;gap:12px;"><div style="font-size:32px">🔄</div><div>Chargement...</div></div>
 
 <!-- LANDING -->
@@ -163,5 +169,178 @@
 <script src="progress.js"></script>
 <script src="app.js"></script>
 <script src="dashboard.js"></script>
+
+<!-- 3D Animation Background Script -->
+<script>
+(function() {
+    // Création de la scène 3D
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ 
+        canvas: document.getElementById('bg-3d'), 
+        alpha: true,
+        antialias: true 
+    });
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Particules (étoiles)
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesCount = 500;
+    const posArray = new Float32Array(particlesCount * 3);
+    const colorArray = new Float32Array(particlesCount * 3);
+
+    for(let i = 0; i < particlesCount * 3; i += 3) {
+        posArray[i] = (Math.random() - 0.5) * 12;
+        posArray[i + 1] = (Math.random() - 0.5) * 8;
+        posArray[i + 2] = (Math.random() - 0.5) * 8;
+        
+        colorArray[i] = Math.random() * 0.4 + 0.3;
+        colorArray[i + 1] = Math.random() * 0.2 + 0.1;
+        colorArray[i + 2] = Math.random() * 0.7 + 0.3;
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+
+    const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.04,
+        vertexColors: true,
+        blending: THREE.AdditiveBlending,
+        transparent: true,
+        opacity: 0.7
+    });
+
+    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particlesMesh);
+
+    // Tore 1 (violet)
+    const torus1Geo = new THREE.TorusGeometry(2, 0.3, 16, 100);
+    const torus1Mat = new THREE.MeshStandardMaterial({
+        color: '#6C63FF',
+        wireframe: true,
+        transparent: true,
+        opacity: 0.12,
+        emissive: '#6C63FF',
+        emissiveIntensity: 0.2
+    });
+    const torus1 = new THREE.Mesh(torus1Geo, torus1Mat);
+    torus1.position.set(-3, 1.5, -4);
+    scene.add(torus1);
+
+    // Tore 2 (rose)
+    const torus2Geo = new THREE.TorusGeometry(1.4, 0.2, 16, 80);
+    const torus2Mat = new THREE.MeshStandardMaterial({
+        color: '#FF6584',
+        wireframe: true,
+        transparent: true,
+        opacity: 0.12,
+        emissive: '#FF6584',
+        emissiveIntensity: 0.2
+    });
+    const torus2 = new THREE.Mesh(torus2Geo, torus2Mat);
+    torus2.position.set(3, -1, -3);
+    scene.add(torus2);
+
+    // Sphère (verte)
+    const sphereGeo = new THREE.SphereGeometry(0.5, 32, 32);
+    const sphereMat = new THREE.MeshStandardMaterial({
+        color: '#43E97B',
+        wireframe: true,
+        transparent: true,
+        opacity: 0.15,
+        emissive: '#43E97B',
+        emissiveIntensity: 0.2
+    });
+    const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+    sphere.position.set(-1, -2, -2);
+    scene.add(sphere);
+
+    // Cube (orange)
+    const cubeGeo = new THREE.BoxGeometry(0.7, 0.7, 0.7);
+    const cubeMat = new THREE.MeshStandardMaterial({
+        color: '#FFA502',
+        wireframe: true,
+        transparent: true,
+        opacity: 0.12,
+        emissive: '#FFA502',
+        emissiveIntensity: 0.15
+    });
+    const cube = new THREE.Mesh(cubeGeo, cubeMat);
+    cube.position.set(2.5, 1.8, -3);
+    scene.add(cube);
+
+    // Anneau supplémentaire
+    const ringGeo = new THREE.TorusGeometry(1, 0.15, 16, 60);
+    const ringMat = new THREE.MeshStandardMaterial({
+        color: '#8B85FF',
+        wireframe: false,
+        transparent: true,
+        opacity: 0.08,
+        emissive: '#8B85FF',
+        emissiveIntensity: 0.3,
+        metalness: 0.8,
+        roughness: 0.2
+    });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.set(0, 0.5, -2);
+    scene.add(ring);
+
+    // Lumières
+    const light1 = new THREE.PointLight('#6C63FF', 0.6, 50);
+    light1.position.set(5, 5, 5);
+    scene.add(light1);
+
+    const light2 = new THREE.PointLight('#FF6584', 0.4, 30);
+    light2.position.set(-5, -2, 3);
+    scene.add(light2);
+
+    const ambientLight = new THREE.AmbientLight('#ffffff', 0.3);
+    scene.add(ambientLight);
+
+    camera.position.z = 5;
+
+    // Animation
+    function animate() {
+        requestAnimationFrame(animate);
+        
+        // Rotation des particules
+        particlesMesh.rotation.y += 0.0002;
+        particlesMesh.rotation.x += 0.0001;
+        
+        // Rotation des tores
+        torus1.rotation.x += 0.003;
+        torus1.rotation.y += 0.005;
+        
+        torus2.rotation.x += 0.004;
+        torus2.rotation.z += 0.003;
+        
+        // Rotation sphère
+        sphere.rotation.x += 0.005;
+        sphere.rotation.y += 0.003;
+        
+        // Rotation cube
+        cube.rotation.x += 0.003;
+        cube.rotation.y += 0.005;
+        
+        // Rotation anneau
+        ring.rotation.z += 0.002;
+        ring.rotation.x += 0.003;
+        
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Gestion du redimensionnement
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+})();
+</script>
+
 </body>
 </html>
