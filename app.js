@@ -1,3 +1,9 @@
+var SKILLS=[],skillsLoaded=!1,sb=null;
+async function initSupabase(){sb=window.sb||supabase.createClient(SUPABASE_URL,SUPABASE_KEY)}
+async function loadSkillsFromSupabase(){try{var{data,error}=await sb.from('skills_content').select('*').order('sort_order',{ascending:!0});if(error)throw error;data&&data.length>0?(SKILLS=data.map(r=>r.payload),skillsLoaded=!0,console.log('✅',SKILLS.length,'skills')):(console.log('⚠️ fallback'),SKILLS=window.SKILLS_FALLBACK||[])}catch(e){console.error('❌',e.message),SKILLS=window.SKILLS_FALLBACK||[]}}
+function subscribeToSkills(){sb.channel('skills-changes').on('postgres_changes',{event:'*',schema:'public',table:'skills_content'},()=>{console.log('🔄 sync');loadSkillsFromSupabase().then(()=>{typeof renderAcademy==='function'&&renderAcademy()})}).subscribe()}
+function hideLoader(){var l=document.getElementById('loading-screen');l&&(l.style.display='none')}
+initSupabase().then(()=>{loadSkillsFromSupabase().then(()=>{hideLoader();subscribeToSkills()})});
 var lang = localStorage.getItem('lang') || 'fr';
 var hasAccess = localStorage.getItem('hasAccess') === 'true';
 var skillId = null, levelIdx = 0, lessonIdx = null, openStep = null;
