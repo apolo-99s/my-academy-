@@ -55,6 +55,11 @@
 .pending-actions button{ flex:1;min-width:110px;padding:9px;border-radius:8px;border:none;font-size:12px;font-weight:700;cursor:pointer }
 .pending-approve{ background:linear-gradient(135deg,#16A34A 0%,#15803d 100%);color:#fff }
 .pending-reject{ background:#450A0A;color:#F87171 }
+.stage-badge{ font-size:10px;font-weight:700;padding:4px 9px;border-radius:8px;white-space:nowrap;flex-shrink:0 }
+.pending-intro{ color:#9CA3AF;font-size:12px;font-style:italic;margin-bottom:8px }
+.pending-step-img{ display:block;width:100%;max-height:150px;object-fit:cover;border-radius:8px;margin-top:6px }
+.pending-tools{ display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px }
+.tool-chip{ font-size:11px;background:#1C1C28;color:#A78BFA;padding:5px 10px;border-radius:8px;text-decoration:none;font-weight:600 }
 #skExportBox { width: 100%; min-height: 300px; font-family: monospace; font-size: 12px; background: #0B0B10; color: #4ADE80; border: 1px solid #1C1C28; border-radius: 8px; padding: 10px; }
 
 /* ---- News dashboard tab ---- */
@@ -840,28 +845,78 @@ async function loadPendingSuggestions() {
   box.style.display = rows.length ? 'block' : 'none';
   if (!rows.length) return;
 
-  list.innerHTML = rows.map(function(row) {
-    var lesson = row.lesson;
-    var title = skEscape((lesson.title && lesson.title.fr) || '');
-    var img = lesson.image ? '<img class="pending-img" src="' + skEscape(lesson.image) + '" onerror="this.style.display=\'none\'">' : '';
-    var stepsFr = (lesson.steps && lesson.steps.fr) || [];
-    var tipFr = skEscape((lesson.tip && lesson.tip.fr) || '');
+  // Gather every tool id referenced across all pending lessons, look
+  // them up once from tools_library instead of per-card.
+  var allToolIds = [];
+  rows.forEach(function(row) {
+    (row.lesson.toolsUsed || []).forEach(function(id) {
+      if (allToolIds.indexOf(id) === -1) allToolIds.push(id);
+    });
+  });
+  var toolsMap = {};
+  if (allToolIds.length) {
+    var toolsRes = await sb.from('tools_library').select('*').in('id', allToolIds);
+    (toolsRes.data || []).forEach(function(t) { toolsMap[t.id] = t; });
+  }
 
-    return '<div class="pending-card">' +
-      '<div class="pending-head"><div>' +
+  list.innerHTML = rows.map(function(row) { return renderPendingCard(row, toolsMap); }).join('');
+}
+
+var STAGE_LABELS = { foundation: '🌱 Fondamental', practice: '⚡ Pratique', challenge: '🔥 Avancé' };
+var STAGE_COLORS = { foundation: '#16A34A', practice: '#2563EB', challenge: '#DC2626' };
+
+function renderPendingCard(row, toolsMap) {
+  var lesson = row.lesson;
+  var title = skEscape((lesson.title && lesson.title.fr) || '');
+  var intro = skEscape((lesson.intro && lesson.intro.fr) || '');
+  var stage = lesson.stage || 'foundation';
+  var stageLabel = STAGE_LABELS[stage] || stage;
+  var stageColor = STAGE_COLORS[stage] || '#6B7280';
+  var tipFr = skEscape((lesson.tip && lesson.tip.fr) || '');
+
+  return '<div class="pending-card">' +
+    '<div class="pending-head">' +
+      '<div>' +
         '<div class="pending-title">' + title + '</div>' +
         '<div class="pending-sub">Skill: ' + skEscape(row.skill_id) + ' · Niveau: ' + skEscape(row.level_name || '') + '</div>' +
-      '</div></div>' +
-      img +
-      '<div class="pending-section-label">ÉTAPES</div>' +
-      '<ol class="pending-steps">' + stepsFr.map(function(s){ return '<li>' + skEscape(s) + '</li>'; }).join('') + '</ol>' +
-      (tipFr ? '<div class="pending-tip">' + tipFr + '</div>' : '') +
-      '<div class="pending-actions">' +
-        '<button class="pending-approve" onclick="approvePendingSuggestion(\'' + row.id + '\')">✅ Approuver et ajouter</button>' +
-        '<button class="pending-reject" onclick="rejectPendingSuggestion(\'' + row.id + '\')">🚫 Rejeter</button>' +
       '</div>' +
-    '</div>';
+      '<span class="stage-badge" style="background:' + stageColor + '22;color:' + stageColor + '">' + stageLabel + '</span>' +
+    '</div>' +
+    (intro ? '<div class="pending-intro">' + intro + '</div>' : '') +
+    '<div class="pending-section-label">ÉTAPES</div>' +
+    renderStepsHtml(lesson.steps) +
+    renderToolsHtml(lesson.toolsUsed, toolsMap) +
+    (tipFr ? '<div class="pending-tip">' + tipFr + '</div>' : '') +
+    '<div class="pending-actions">' +
+      '<button class="pending-approve" onclick="approvePendingSuggestion(\'' + row.id + '\')">✅ Approuver et ajouter</button>' +
+      '<button class="pending-reject" onclick="rejectPendingSuggestion(\'' + row.id + '\')">🚫 Rejeter</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function renderStepsHtml(steps) {
+  if (!steps || !steps.length) return '<p style="color:#6B7280;font-size:12px">Aucune étape.</p>';
+  return '<ol class="pending-steps">' + steps.map(function(s) {
+    // backward compatible: old lessons had plain strings for steps
+    var isOldShape = typeof s === 'string';
+    var text = isOldShape ? s : ((s.text && s.text.fr) || '');
+    var visual = isOldShape ? null : s.visual;
+    var visualHtml = (visual && visual.url)
+      ? '<img class="pending-step-img" src="' + skEscape(visual.url) + '" onerror="this.style.display=\'none\'">'
+      : '';
+    return '<li>' + skEscape(text) + visualHtml + '</li>';
+  }).join('') + '</ol>';
+}
+
+function renderToolsHtml(toolIds, toolsMap) {
+  if (!toolIds || !toolIds.length) return '';
+  var chips = toolIds.map(function(id) {
+    var t = toolsMap[id];
+    if (!t) return '<span class="tool-chip">' + skEscape(id) + '</span>';
+    var priceIcon = t.pricing === 'free' ? '🆓' : (t.pricing === 'freemium' ? '💰🆓' : '💰');
+    return '<a class="tool-chip" href="' + skEscape(t.official_url) + '" target="_blank" rel="noopener">' + priceIcon + ' ' + skEscape(t.name) + '</a>';
   }).join('');
+  return '<div class="pending-section-label">OUTILS</div><div class="pending-tools">' + chips + '</div>';
 }
 
 async function approvePendingSuggestion(pendingId) {
