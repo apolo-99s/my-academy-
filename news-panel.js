@@ -144,11 +144,13 @@
         '<div class="np-head">' +
           '<h3 id="npTitle">Le Bulletin</h3>' +
           '<div style="display:flex;gap:8px;align-items:center">' +
-            '<div class="np-langs">' +
-              '<button class="np-lang-btn active" data-lang="fr">FR</button>' +
-              '<button class="np-lang-btn" data-lang="ar">AR</button>' +
-              '<button class="np-lang-btn" data-lang="en">EN</button>' +
-            '</div>' +
+                    '<div class="np-tabs" id="npTabs">' +
+          '<button class="np-tab active" data-sort="latest">🕐 Récent</button>' +
+          '<button class="np-tab" data-sort="tips">💡 Astuces</button>' +
+          '<button class="np-tab" data-sort="trending">🔥 Top</button>' +
+          '<button class="np-tab" data-sort="featured">⭐ IA</button>' +
+          '<button class="np-tab" data-sort="saved">🔖 Sauvés</button>' +
+        '</div>' +
             '<button class="np-close">✕</button>' +
           '</div>' +
         '</div>' +
