@@ -824,6 +824,77 @@ async function skGenerateWithAI() {
   }
 }
 
+// ============================================================
+// PENDING LESSON SUGGESTIONS (from enrich-skills)
+// ============================================================
+var PENDING_TABLE = 'pending_lesson_suggestions';
+
+async function loadPendingSuggestions() {
+  var res = await sb.from(PENDING_TABLE).select('*').eq('status', 'pending').order('created_at', { ascending: false });
+  var box = document.getElementById('pendingBox');
+  var list = document.getElementById('pendingList');
+  if (res.error) { box.style.display = 'none'; return; }
+
+  var rows = res.data || [];
+  document.getElementById('pendingStatus').textContent = '🤖 Suggestions IA en attente (' + rows.length + ')';
+  box.style.display = rows.length ? 'block' : 'none';
+  if (!rows.length) return;
+
+  list.innerHTML = rows.map(function(row) {
+    var lesson = row.lesson;
+    var title = skEscape((lesson.title && lesson.title.fr) || '');
+    var img = lesson.image ? '<img class="pending-img" src="' + skEscape(lesson.image) + '" onerror="this.style.display=\'none\'">' : '';
+    var stepsFr = (lesson.steps && lesson.steps.fr) || [];
+    var tipFr = skEscape((lesson.tip && lesson.tip.fr) || '');
+
+    return '<div class="pending-card">' +
+      '<div class="pending-head"><div>' +
+        '<div class="pending-title">' + title + '</div>' +
+        '<div class="pending-sub">Skill: ' + skEscape(row.skill_id) + ' · Niveau: ' + skEscape(row.level_name || '') + '</div>' +
+      '</div></div>' +
+      img +
+      '<div class="pending-section-label">ÉTAPES</div>' +
+      '<ol class="pending-steps">' + stepsFr.map(function(s){ return '<li>' + skEscape(s) + '</li>'; }).join('') + '</ol>' +
+      (tipFr ? '<div class="pending-tip">' + tipFr + '</div>' : '') +
+      '<div class="pending-actions">' +
+        '<button class="pending-approve" onclick="approvePendingSuggestion(\'' + row.id + '\')">✅ Approuver et ajouter</button>' +
+        '<button class="pending-reject" onclick="rejectPendingSuggestion(\'' + row.id + '\')">🚫 Rejeter</button>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+async function approvePendingSuggestion(pendingId) {
+  var pendingRes = await sb.from(PENDING_TABLE).select('*').eq('id', pendingId).maybeSingle();
+  if (pendingRes.error || !pendingRes.data) { alert('Erreur: suggestion introuvable.'); return; }
+  var pending = pendingRes.data;
+
+  var skillRes = await sb.from(SK_TABLE).select('*').eq('skill_id', pending.skill_id).maybeSingle();
+  if (skillRes.error || !skillRes.data) { alert('Erreur: skill introuvable.'); return; }
+  var skillRow = skillRes.data;
+  var payload = skillRow.payload;
+
+  if (!payload.levels[pending.level_index]) { alert('Erreur: ce niveau n\'existe plus (structure modifiée depuis).'); return; }
+  payload.levels[pending.level_index].lessons.push(pending.lesson);
+
+  var upsertRes = await sb.from(SK_TABLE).upsert(
+    [{ skill_id: skillRow.skill_id, sort_order: skillRow.sort_order, payload: payload }],
+    { onConflict: 'skill_id' }
+  );
+  if (upsertRes.error) { alert('Erreur enregistrement: ' + upsertRes.error.message); return; }
+
+  await sb.from(PENDING_TABLE).update({ status: 'approved' }).eq('id', pendingId);
+  await loadPendingSuggestions();
+  await loadSkills();
+  alert('Leçon ajoutée à "' + pending.skill_id + '" !');
+}
+
+async function rejectPendingSuggestion(pendingId) {
+  if (!confirm('Rejeter cette suggestion ?')) return;
+  await sb.from(PENDING_TABLE).update({ status: 'rejected' }).eq('id', pendingId);
+  loadPendingSuggestions();
+}
+
 // ------------------------------------------------------------
 // IMAGE GENERATION (Pollinations AI — free, no key, no signup)
 // ------------------------------------------------------------
