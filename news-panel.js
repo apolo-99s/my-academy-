@@ -259,9 +259,11 @@
         var r = await sbClient.from('articles').select('*').in('id', state.savedIds).eq('status', 'approved');
         data = r.data || [];
       } else {
-        var q = sbClient.from('articles').select('*').eq('status', 'approved').limit(25);
+               var q = sbClient.from('articles').select('*').eq('status', 'approved').limit(25);
         if (state.category !== 'all') q = q.eq('category_slug', state.category);
         if (state.sort === 'featured') q = q.eq('is_featured', true);
+        if (state.sort === 'tips') q = q.eq('content_type', 'tip');
+        else q = q.eq('content_type', 'news');
         var searchVal = document.getElementById('npSearch').value.trim();
         if (searchVal) q = q.or('title_fr.ilike.%' + searchVal + '%,title_en.ilike.%' + searchVal + '%');
         if (state.sort === 'trending') q = q.order('views_count', { ascending: false });
