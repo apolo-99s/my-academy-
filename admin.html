@@ -163,7 +163,15 @@
     <div id="tab-skills" style="display:none">
 
       <div id="sk-view-list">
-        <div class="admin-table-wrap glass">
+  <div class="admin-table-wrap glass" id="pendingBox" style="display:none">
+    <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <span id="pendingStatus">🤖 Suggestions IA en attente</span>
+      <button class="dash-btn" onclick="loadPendingSuggestions()">🔄 Actualiser</button>
+    </div>
+    <div id="pendingList"></div>
+  </div>
+
+  <div class="admin-table-wrap glass">
           <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px">
             <span id="sk-status">🧩 Skills</span>
             <div style="display:flex;gap:8px;flex-wrap:wrap">
