@@ -1351,7 +1351,7 @@ function initGeneratorsTab() {
     {icon:'📋',title:'Curriculum Generator',desc:'Parcours complet'}
   ];
   container.innerHTML = gens.map(function(g){
-    return '<div class="generator-card" onclick="document.getElementById(\'generator-modal\').style.display=\'flex\';document.getElementById(\'gen-modal-title\').textContent=\''+g.title+'\'">'+
+    return '<div class="generator-card" onclick="openGenModal(\''+g.title+'\')">'+
       '<div style="font-size:32px;margin-bottom:12px">'+g.icon+'</div>'+
       '<h3 style="margin:0 0 8px 0;font-size:16px;color:#fff">'+g.title+'</h3>'+
       '<p style="margin:0;font-size:12px;color:#94a3b8">'+g.desc+'</p></div>';
