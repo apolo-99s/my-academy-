@@ -1375,9 +1375,44 @@ function initResearchTab() {
   if (outdated) outdated.innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">⚠️ Obsolète</div><p style="color:#6B7280;font-size:13px">Aucun contenu obsolète détecté</p></div>';
   if (suggestions) suggestions.innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">💡 Suggestions</div><p style="color:#6B7280;font-size:13px">Lance la veille pour voir les suggestions</p></div>';
 }
-function runResearchEngine() {
-  alert('Veille lancée! (connecte l\'Edge Function enrich-skills)');
+function researchDebug(msg, type) {
+  var panel = document.getElementById('research-status');
+  if (!panel) return;
+  panel.style.display = 'block';
+  var colorClass = type === 'ok' ? 'debug-ok' : (type === 'err' ? 'debug-err' : 'debug-info');
+  var line = document.createElement('div');
+  line.className = 'debug-line ' + colorClass;
+  line.textContent = '[' + new Date().toLocaleTimeString() + '] ' + msg;
+  panel.appendChild(line);
+  panel.scrollTop = panel.scrollHeight;
 }
+
+async function runResearchEngine() {
+  researchDebug('=== Lancement de la veille (enrich-skills) ===', 'info');
+  try {
+    var res = await fetch(SUPABASE_URL + '/functions/v1/enrich-skills', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'apikey': SUPABASE_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+    var result = await res.json();
+    if (!res.ok) {
+      researchDebug('Erreur HTTP ' + res.status + ': ' + JSON.stringify(result), 'err');
+      return;
+    }
+    if (result.message) {
+      researchDebug(result.message, 'info');
+    } else {
+      researchDebug('Suggestion générée pour "' + result.suggested_for_skill + '" (niveau: ' + result.level + ', stage: ' + result.stage + ') — en attente d\'approbation.', 'ok');
+    }
+  } catch (err) {
+    researchDebug('Erreur: ' + err.message, 'err');
+  }
+}
+
 
 function initAnalyticsTab() {
   var container = document.getElementById('analytics-stats');
