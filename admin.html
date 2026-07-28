@@ -1406,10 +1406,44 @@ async function runGenerator() {
   }
 }
 
-function initWorkflowTab() {
+var WORKFLOW_FILTER = 'all';
+async function initWorkflowTab() {
   var container = document.getElementById('workflow-list');
   if (!container) return;
-  container.innerHTML = '<p style="color:#6B7280;text-align:center;padding:40px">Aucun brouillon en attente. Utilise les générateurs pour en créer!</p>';
+  container.innerHTML = '<p style="color:#6B7280">Chargement...</p>';
+  var query = sb.from('content_drafts').select('*').order('created_at', { ascending: false });
+  if (WORKFLOW_FILTER !== 'all') query = query.eq('status', WORKFLOW_FILTER);
+  var res = await query;
+  if (res.error) { container.innerHTML = '<p style="color:#F87171">Erreur: ' + res.error.message + '</p>'; return; }
+  var rows = res.data || [];
+  if (!rows.length) { container.innerHTML = '<p style="color:#6B7280;text-align:center;padding:40px">Aucun brouillon' + (WORKFLOW_FILTER !== 'all' ? ' (' + WORKFLOW_FILTER + ')' : '') + '. Utilise les générateurs pour en créer!</p>'; return; }
+  container.innerHTML = rows.map(renderDraftItem).join('');
+}
+function filterWorkflow(status) {
+  WORKFLOW_FILTER = status;
+  initWorkflowTab();
+}
+var DRAFT_ICONS = { project: '🚀', quiz: '❓', code: '💻', curriculum: '📋' };
+function renderDraftItem(row) {
+  var badgeClass = row.status === 'approved' ? 'badge-approved' : (row.status === 'rejected' ? 'badge-rejected' : 'badge-pending');
+  var title = skEscape(row.title || '(sans titre)');
+  var icon = DRAFT_ICONS[row.type] || '📄';
+  var actions = row.status === 'pending'
+    ? '<button class="btn-success" onclick="approveDraft(\'' + row.id + '\')">✅</button><button class="btn-danger" onclick="rejectDraft(\'' + row.id + '\')">❌</button>'
+    : '';
+  return '<div class="draft-item">' +
+    '<div><div style="font-weight:700;color:#fff">' + icon + ' ' + title + '</div>' +
+    '<div style="font-size:11px;color:#6B7280;margin-top:4px">' + skEscape(row.type) + ' · ' + skEscape(row.skill_id || '') + '</div></div>' +
+    '<div style="display:flex;gap:8px;align-items:center"><span class="badge ' + badgeClass + '">' + row.status + '</span>' + actions + '</div>' +
+    '</div>';
+}
+async function approveDraft(id) {
+  await sb.from('content_drafts').update({ status: 'approved' }).eq('id', id);
+  initWorkflowTab();
+}
+async function rejectDraft(id) {
+  await sb.from('content_drafts').update({ status: 'rejected' }).eq('id', id);
+  initWorkflowTab();
 }
 function filterWorkflow(status) {
   initWorkflowTab();
