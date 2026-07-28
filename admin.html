@@ -26,7 +26,7 @@
 .debug-panel .debug-info { color: #60A5FA; }
 
 /* ---- Skills editor tab ---- */
-.admin-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.admin-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
 .admin-tab-btn { background: #1C1C28; border: 1px solid #374151; color: #9CA3AF; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; }
 .admin-tab-btn.active { background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%); color: #fff; border-color: #7C3AED; }
 .sk-field { margin-bottom: 12px; }
@@ -101,6 +101,12 @@
 .select-field{background:#111118;border:1px solid #1C1C28;border-radius:10px;padding:12px 16px;color:#E5E7EB;font-size:14px;width:100%;box-sizing:border-box;cursor:pointer}
 .modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:1000}
 .modal-content{background:#1a1a2e;border:1px solid #2d2d44;border-radius:20px;padding:24px;max-width:600px;width:90%;max-height:85vh;overflow-y:auto}
+
+/* FIX: admin body layout */
+.admin-body { display: flex; flex-direction: column; gap: 24px; width: 100%; }
+#admin-panel { display: none; flex-direction: column; gap: 20px; width: 100%; }
+.admin-screen { width: 100%; max-width: 1400px; padding: 20px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+#admin-login { display: flex; align-items: center; justify-content: center; min-height: 80vh; }
 </style>
 </head>
 <body>
@@ -118,77 +124,34 @@
 </div>
 
 <!-- ADMIN PANEL -->
-<div id="admin-panel" class="admin-screen" style="display:none">
+<div id="admin-panel" class="admin-screen">
   <nav>
     <div class="brand"><span>Digital</span>Skills.dz</div>
     <button class="dash-btn" onclick="adminLogout()">🔒 Déconnexion</button>
   </nav>
-<!-- ===== TAB: OVERVIEW ===== -->
-<div id="tab-overview">
-  <div id="overview-stats"></div>
-  <div id="overview-pipeline" style="margin-top:20px"></div>
-  <div id="overview-activity" style="margin-top:20px"></div>
-</div>
 
-<!-- ===== TAB: GENERATORS ===== -->
-<div id="tab-generators" style="display:none">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-    <h2 style="margin:0;font-size:20px;color:#fff">⚡ Générateurs IA</h2>
+  <div class="admin-tabs">
+    <button class="admin-tab-btn active" id="tab-btn-overview" onclick="switchAdminTab('overview')">📊 Vue d'ensemble</button>
+    <button class="admin-tab-btn" id="tab-btn-codes" onclick="switchAdminTab('codes')">🎫 Codes</button>
+    <button class="admin-tab-btn" id="tab-btn-skills" onclick="switchAdminTab('skills')">🧩 Skills</button>
+    <button class="admin-tab-btn" id="tab-btn-news" onclick="switchAdminTab('news')">📰 News</button>
+    <button class="admin-tab-btn" id="tab-btn-generators" onclick="switchAdminTab('generators')">⚡ Générateurs</button>
+    <button class="admin-tab-btn" id="tab-btn-workflow" onclick="switchAdminTab('workflow')">✅ Workflow</button>
+    <button class="admin-tab-btn" id="tab-btn-research" onclick="switchAdminTab('research')">🔬 Research</button>
+    <button class="admin-tab-btn" id="tab-btn-analytics" onclick="switchAdminTab('analytics')">📈 Analytics</button>
   </div>
-  <div id="generators-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px"></div>
-</div>
-
-<!-- ===== TAB: WORKFLOW ===== -->
-<div id="tab-workflow" style="display:none">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-    <h2 style="margin:0;font-size:20px;color:#fff">✅ Content Review Workflow</h2>
-  </div>
-  <div style="display:flex;gap:8px;margin-bottom:20px">
-    <button class="btn-primary" onclick="filterWorkflow('all')">Tout</button>
-    <button class="btn-secondary" onclick="filterWorkflow('pending')">⏳ En attente</button>
-    <button class="btn-secondary" onclick="filterWorkflow('approved')">✅ Approuvés</button>
-    <button class="btn-secondary" onclick="filterWorkflow('rejected')">❌ Rejetés</button>
-  </div>
-  <div id="workflow-list"></div>
-</div>
-
-<!-- ===== TAB: RESEARCH ===== -->
-<div id="tab-research" style="display:none">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-    <h2 style="margin:0;font-size:20px;color:#fff">🔬 AI Research Engine</h2>
-    <button class="gen-btn" onclick="runResearchEngine()">🔬 Lancer la veille</button>
-  </div>
-  <div id="research-sources" style="margin-bottom:20px"></div>
-  <div id="research-outdated" style="margin-bottom:20px"></div>
-  <div id="research-suggestions"></div>
-</div>
-
-<!-- ===== TAB: ANALYTICS ===== -->
-<div id="tab-analytics" style="display:none">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-    <h2 style="margin:0;font-size:20px;color:#fff">📈 Analytics</h2>
-  </div>
-  <div id="analytics-stats"></div>
-  <div id="analytics-charts" style="margin-top:20px"></div>
-</div>
 
   <div class="admin-body">
 
-  <div class="admin-tabs">
-  <button class="admin-tab-btn active" id="tab-btn-overview" onclick="switchAdminTab('overview')">📊 Vue d'ensemble</button>
-  <button class="admin-tab-btn" id="tab-btn-codes" onclick="switchAdminTab('codes')">🎫 Codes</button>
-  <button class="admin-tab-btn" id="tab-btn-skills" onclick="switchAdminTab('skills')">🧩 Skills</button>
-  <button class="admin-tab-btn" id="tab-btn-news" onclick="switchAdminTab('news')">📰 News</button>
-  <button class="admin-tab-btn" id="tab-btn-generators" onclick="switchAdminTab('generators')">⚡ Générateurs</button>
-  <button class="admin-tab-btn" id="tab-btn-workflow" onclick="switchAdminTab('workflow')">✅ Workflow</button>
-  <button class="admin-tab-btn" id="tab-btn-research" onclick="switchAdminTab('research')">🔬 Research</button>
-  <button class="admin-tab-btn" id="tab-btn-analytics" onclick="switchAdminTab('analytics')">📈 Analytics</button>
-</div>
+    <!-- ===== TAB: OVERVIEW ===== -->
+    <div id="tab-overview">
+      <div id="overview-stats"></div>
+      <div id="overview-pipeline" style="margin-top:20px"></div>
+      <div id="overview-activity" style="margin-top:20px"></div>
+    </div>
 
-    <!-- ============================== -->
-    <!-- TAB: CODES (existing, unchanged) -->
-    <!-- ============================== -->
-    <div id="tab-codes">
+    <!-- ===== TAB: CODES ===== -->
+    <div id="tab-codes" style="display:none">
       <div class="admin-warning glass">
         ✅ Ces statistiques viennent maintenant de <strong>Supabase</strong>.
       </div>
@@ -228,7 +191,6 @@
           </div>
         </div>
 
-        <!-- DEBUG PANEL -->
         <div class="debug-panel" id="debug-panel" style="display:none">
           <div style="color:#6B7280;margin-bottom:8px;font-weight:700">🔧 Debug Logs</div>
           <div id="debug-content"></div>
@@ -248,21 +210,19 @@
       </div>
     </div>
 
-    <!-- ============================== -->
-    <!-- TAB: SKILLS (existing, unchanged) -->
-    <!-- ============================== -->
+    <!-- ===== TAB: SKILLS ===== -->
     <div id="tab-skills" style="display:none">
 
       <div id="sk-view-list">
-  <div class="admin-table-wrap glass" id="pendingBox" style="display:none">
-    <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-      <span id="pendingStatus">🤖 Suggestions IA en attente</span>
-      <button class="dash-btn" onclick="loadPendingSuggestions()">🔄 Actualiser</button>
-    </div>
-    <div id="pendingList"></div>
-  </div>
+        <div class="admin-table-wrap glass" id="pendingBox" style="display:none">
+          <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <span id="pendingStatus">🤖 Suggestions IA en attente</span>
+            <button class="dash-btn" onclick="loadPendingSuggestions()">🔄 Actualiser</button>
+          </div>
+          <div id="pendingList"></div>
+        </div>
 
-  <div class="admin-table-wrap glass">
+        <div class="admin-table-wrap glass">
           <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px">
             <span id="sk-status">🧩 Skills</span>
             <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -316,12 +276,9 @@
 
     </div>
 
-    <!-- ============================== -->
-    <!-- TAB: NEWS (new) -->
-    <!-- ============================== -->
+    <!-- ===== TAB: NEWS ===== -->
     <div id="tab-news" style="display:none">
 
-      <!-- STATS -->
       <div class="admin-stats">
         <div class="admin-stat-card glass">
           <div class="admin-stat-num" id="news-stat-total">0</div>
@@ -341,7 +298,6 @@
         </div>
       </div>
 
-      <!-- PIPELINE TRIGGER -->
       <div class="admin-table-wrap glass admin-generator">
         <div class="admin-table-title">⚡ Pipeline IA — News</div>
         <p style="color:#6B7280;font-size:12px;margin-bottom:10px">Récupère les flux RSS, traite chaque nouvel article avec l'IA (résumé, traductions, tags...) et l'enregistre dans Supabase. Tourne aussi automatiquement via cron si configuré.</p>
@@ -349,7 +305,6 @@
         <div class="debug-panel" id="news-pipeline-status" style="display:none"></div>
       </div>
 
-      <!-- FILTERS + LIST -->
       <div class="admin-table-wrap glass">
         <div class="admin-table-title" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
           <span id="news-list-status">📰 Articles</span>
@@ -373,15 +328,59 @@
 
     </div>
 
+    <!-- ===== TAB: GENERATORS ===== -->
+    <div id="tab-generators" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <h2 style="margin:0;font-size:20px;color:#fff">⚡ Générateurs IA</h2>
+      </div>
+      <div id="generators-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px"></div>
+    </div>
+
+    <!-- ===== TAB: WORKFLOW ===== -->
+    <div id="tab-workflow" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <h2 style="margin:0;font-size:20px;color:#fff">✅ Content Review Workflow</h2>
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:20px">
+        <button class="btn-primary" onclick="filterWorkflow('all')">Tout</button>
+        <button class="btn-secondary" onclick="filterWorkflow('pending')">⏳ En attente</button>
+        <button class="btn-secondary" onclick="filterWorkflow('approved')">✅ Approuvés</button>
+        <button class="btn-secondary" onclick="filterWorkflow('rejected')">❌ Rejetés</button>
+      </div>
+      <div id="workflow-list"></div>
+    </div>
+
+    <!-- ===== TAB: RESEARCH ===== -->
+    <div id="tab-research" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <h2 style="margin:0;font-size:20px;color:#fff">🔬 AI Research Engine</h2>
+        <button class="gen-btn" onclick="runResearchEngine()">🔬 Lancer la veille</button>
+      </div>
+      <div id="research-sources" style="margin-bottom:20px"></div>
+      <div id="research-outdated" style="margin-bottom:20px"></div>
+      <div id="research-suggestions"></div>
+    </div>
+
+    <!-- ===== TAB: ANALYTICS ===== -->
+    <div id="tab-analytics" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <h2 style="margin:0;font-size:20px;color:#fff">📈 Analytics</h2>
+      </div>
+      <div id="analytics-stats"></div>
+      <div id="analytics-charts" style="margin-top:20px"></div>
+    </div>
+
   </div>
 </div>
 
 <!-- SUPABASE CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-<!-- data.js exposes window.SKILLS, used as the one-time import seed for the Skills tab -->
+<!-- data.js exposes window.SKILLS -->
 <script src="data.js"></script>
 
-<!-- ADMIN LOGIC -->
+<!-- ============================================================ -->
+<!-- ADMIN LOGIC — CORRIGÉ (DOMContentLoaded + switchAdminTab fix) -->
+<!-- ============================================================ -->
 <script>
 // ============================================================
 // CONFIG
@@ -434,30 +433,43 @@ function showAdminPanel() {
   document.getElementById('admin-login').style.display = 'none';
   document.getElementById('admin-panel').style.display = 'flex';
   renderAdminStats();
+  // Load overview stats if tab is visible
+  if (document.getElementById('tab-overview').style.display !== 'none') {
+    initOverviewTab();
+  }
 }
 
 // ============================================================
-// TABS
+// TABS — FIX: preserve old behavior + add new tabs
 // ============================================================
 var newsTabInitialized = false;
+var OVERVIEW_TAB_INIT = false;
+var GENERATORS_TAB_INIT = false;
+var WORKFLOW_TAB_INIT = false;
+var RESEARCH_TAB_INIT = false;
+var ANALYTICS_TAB_INIT = false;
 
 function switchAdminTab(tab) {
-  var tabs = ['codes', 'skills', 'news'];
-  tabs.forEach(function(t) {
+  var allTabs = ['overview','codes','skills','news','generators','workflow','research','analytics'];
+  allTabs.forEach(function(t) {
     var panel = document.getElementById('tab-' + t);
     var btn = document.getElementById('tab-btn-' + t);
     if (panel) panel.style.display = (t === tab) ? 'block' : 'none';
     if (btn) btn.classList.toggle('active', t === tab);
   });
+
+  // Initialize tab content on first visit
   if (tab === 'skills' && skillsRows.length === 0) loadSkills();
-  if (tab === 'news' && !newsTabInitialized) {
-    newsTabInitialized = true;
-    initNewsTab();
-  }
+  if (tab === 'news' && !newsTabInitialized) { newsTabInitialized = true; initNewsTab(); }
+  if (tab === 'overview' && !OVERVIEW_TAB_INIT) { OVERVIEW_TAB_INIT = true; initOverviewTab(); }
+  if (tab === 'generators' && !GENERATORS_TAB_INIT) { GENERATORS_TAB_INIT = true; initGeneratorsTab(); }
+  if (tab === 'workflow' && !WORKFLOW_TAB_INIT) { WORKFLOW_TAB_INIT = true; initWorkflowTab(); }
+  if (tab === 'research' && !RESEARCH_TAB_INIT) { RESEARCH_TAB_INIT = true; initResearchTab(); }
+  if (tab === 'analytics' && !ANALYTICS_TAB_INIT) { ANALYTICS_TAB_INIT = true; initAnalyticsTab(); }
 }
 
 // ============================================================
-// CODE GENERATOR — FIXED (no student_phone in insert)
+// CODE GENERATOR
 // ============================================================
 function generateRandomCode() {
   var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -483,7 +495,6 @@ async function generateCode() {
 
   debug('Inputs: name=' + name + ', phone=' + phone + ', email=' + email, 'info');
 
-  // Step 1: Generate unique code
   var newCode = generateRandomCode();
   debug('Generated code: ' + newCode, 'info');
 
@@ -512,9 +523,6 @@ async function generateCode() {
     btn.disabled = false;
     return;
   }
-
-  // Step 2: Insert into database — FIXED: only columns that exist
-  debug('Inserting code into Supabase...', 'info');
 
   var insertData = { code: newCode, used: false };
   if (name) insertData.student_name = name;
@@ -559,6 +567,7 @@ function copyGeneratedCode() {
 // ============================================================
 async function renderAdminStats() {
   var table = document.getElementById('codes-table');
+  if (!table) return;
   table.innerHTML = '<tbody><tr><td style="padding:16px;color:#6B7280">Chargement…</td></tr></tbody>';
   debug('Fetching codes from Supabase...', 'info');
 
@@ -619,7 +628,7 @@ async function renderAdminStats() {
 }
 
 // ============================================================
-// SKILLS EDITOR (Supabase table: skills_content)
+// SKILLS EDITOR
 // ============================================================
 var SK_TABLE = 'skills_content';
 var skillsRows = [];
@@ -634,14 +643,16 @@ function skEscape(str) {
 }
 
 async function loadSkills() {
-  document.getElementById('sk-status').textContent = 'Chargement...';
+  var statusEl = document.getElementById('sk-status');
+  if (!statusEl) return;
+  statusEl.textContent = 'Chargement...';
   var res = await sb.from(SK_TABLE).select('*').order('sort_order', { ascending: true });
   if (res.error) {
-    document.getElementById('sk-status').textContent = 'Erreur: ' + res.error.message;
+    statusEl.textContent = 'Erreur: ' + res.error.message;
     return;
   }
   skillsRows = res.data || [];
-  document.getElementById('sk-status').textContent = '🧩 Skills (' + skillsRows.length + ')';
+  statusEl.textContent = '🧩 Skills (' + skillsRows.length + ')';
   renderSkillList();
 }
 
@@ -662,6 +673,7 @@ async function importFromDataJs() {
 
 function renderSkillList() {
   var el = document.getElementById('skillList');
+  if (!el) return;
   if (!skillsRows.length) {
     el.innerHTML = '<p style="color:#6B7280;font-size:13px">Aucune skill dans Supabase pour l\'instant. Clique sur "Importer depuis data.js".</p>';
     return;
@@ -715,7 +727,8 @@ function openSkillEditor(skillId) {
   document.getElementById('sk-view-list').style.display = 'none';
   document.getElementById('sk-view-export').style.display = 'none';
   document.getElementById('sk-view-editor').style.display = 'block';
-  document.getElementById('skDeleteBtn').style.display = skIsNew ? 'none' : 'inline-block';
+  var delBtn = document.getElementById('skDeleteBtn');
+  if (delBtn) delBtn.style.display = skIsNew ? 'none' : 'inline-block';
   renderSkillEditorForm();
 }
 
@@ -784,7 +797,8 @@ function renderSkillEditorForm() {
   html += '<button class="dash-btn" onclick="skAddLevel()">+ Ajouter un niveau</button>';
   html += '</div>';
 
-  document.getElementById('skEditorForm').innerHTML = html;
+  var formEl = document.getElementById('skEditorForm');
+  if (formEl) formEl.innerHTML = html;
 }
 
 function skRenderLevel(level, li) {
@@ -891,7 +905,8 @@ async function skGenerateWithAI() {
     if (!Array.isArray(obj.levels)) obj.levels = [];
     skEditingPayload = obj;
     skIsNew = !skillsRows.some(function(r){ return r.skill_id === obj.id; });
-    document.getElementById('skDeleteBtn').style.display = skIsNew ? 'none' : 'inline-block';
+    var delBtn = document.getElementById('skDeleteBtn');
+    if (delBtn) delBtn.style.display = skIsNew ? 'none' : 'inline-block';
     cmdBox.value = '';
     renderSkillEditorForm();
     alert('Skill générée — vérifie les champs puis clique sur Enregistrer.');
@@ -904,7 +919,7 @@ async function skGenerateWithAI() {
 }
 
 // ============================================================
-// PENDING LESSON SUGGESTIONS (from enrich-skills)
+// PENDING LESSON SUGGESTIONS
 // ============================================================
 var PENDING_TABLE = 'pending_lesson_suggestions';
 
@@ -912,15 +927,14 @@ async function loadPendingSuggestions() {
   var res = await sb.from(PENDING_TABLE).select('*').eq('status', 'pending').order('created_at', { ascending: false });
   var box = document.getElementById('pendingBox');
   var list = document.getElementById('pendingList');
-  if (res.error) { box.style.display = 'none'; return; }
+  if (res.error || !box || !list) { if (box) box.style.display = 'none'; return; }
 
   var rows = res.data || [];
-  document.getElementById('pendingStatus').textContent = '🤖 Suggestions IA en attente (' + rows.length + ')';
+  var statusEl = document.getElementById('pendingStatus');
+  if (statusEl) statusEl.textContent = '🤖 Suggestions IA en attente (' + rows.length + ')';
   box.style.display = rows.length ? 'block' : 'none';
-  if (!rows.length) return;
+  if (!rows.length) { list.innerHTML = ''; return; }
 
-  // Gather every tool id referenced across all pending lessons, look
-  // them up once from tools_library instead of per-card.
   var allToolIds = [];
   rows.forEach(function(row) {
     (row.lesson.toolsUsed || []).forEach(function(id) {
@@ -971,7 +985,6 @@ function renderPendingCard(row, toolsMap) {
 function renderStepsHtml(steps) {
   if (!steps || !steps.length) return '<p style="color:#6B7280;font-size:12px">Aucune étape.</p>';
   return '<ol class="pending-steps">' + steps.map(function(s) {
-    // backward compatible: old lessons had plain strings for steps
     var isOldShape = typeof s === 'string';
     var text = isOldShape ? s : ((s.text && s.text.fr) || '');
     var visual = isOldShape ? null : s.visual;
@@ -1024,9 +1037,9 @@ async function rejectPendingSuggestion(pendingId) {
   loadPendingSuggestions();
 }
 
-// ------------------------------------------------------------
-// IMAGE GENERATION (Pollinations AI — free, no key, no signup)
-// ------------------------------------------------------------
+// ============================================================
+// IMAGE GENERATION (Pollinations AI)
+// ============================================================
 function skGenerateImageUrl(promptText) {
   var clean = (promptText || '').trim() || 'illustration éducative digital skills';
   var seed = Math.floor(Math.random() * 100000);
@@ -1074,7 +1087,6 @@ function skLoadFromPaste() {
     alert("Ce code ne ressemble pas à une skill valide (il doit avoir au moins un champ 'id').");
     return;
   }
-  // Fill in anything missing so the form doesn't break on incomplete pastes
   var blank = skBlankSkill();
   Object.keys(blank).forEach(function(k){ if (obj[k] === undefined) obj[k] = blank[k]; });
   if (!Array.isArray(obj.levels)) obj.levels = [];
@@ -1134,7 +1146,7 @@ function downloadSkillsExport() {
 }
 
 // ============================================================
-// NEWS DASHBOARD (Supabase tables: articles, categories)
+// NEWS DASHBOARD
 // ============================================================
 function newsDebug(msg, type) {
   var panel = document.getElementById('news-pipeline-status');
@@ -1158,6 +1170,7 @@ async function loadNewsCategories() {
   var res = await sb.from('categories').select('slug, name_fr').order('sort_order');
   if (res.error) { newsDebug('Erreur catégories: ' + res.error.message, 'err'); return; }
   var select = document.getElementById('news-filter-category');
+  if (!select) return;
   (res.data || []).forEach(function(cat) {
     var opt = document.createElement('option');
     opt.value = cat.slug;
@@ -1170,18 +1183,24 @@ async function loadNewsStats() {
   var res = await sb.from('articles').select('status, is_pinned');
   if (res.error) { newsDebug('Erreur stats: ' + res.error.message, 'err'); return; }
   var data = res.data || [];
-  document.getElementById('news-stat-total').textContent = data.length;
-  document.getElementById('news-stat-approved').textContent = data.filter(function(a){ return a.status === 'approved'; }).length;
-  document.getElementById('news-stat-pending').textContent = data.filter(function(a){ return a.status === 'pending'; }).length;
-  document.getElementById('news-stat-pinned').textContent = data.filter(function(a){ return a.is_pinned; }).length;
+  var totalEl = document.getElementById('news-stat-total');
+  var approvedEl = document.getElementById('news-stat-approved');
+  var pendingEl = document.getElementById('news-stat-pending');
+  var pinnedEl = document.getElementById('news-stat-pinned');
+  if (totalEl) totalEl.textContent = data.length;
+  if (approvedEl) approvedEl.textContent = data.filter(function(a){ return a.status === 'approved'; }).length;
+  if (pendingEl) pendingEl.textContent = data.filter(function(a){ return a.status === 'pending'; }).length;
+  if (pinnedEl) pinnedEl.textContent = data.filter(function(a){ return a.is_pinned; }).length;
 }
 
 async function loadNewsArticles() {
-  var status = document.getElementById('news-filter-status').value;
-  var category = document.getElementById('news-filter-category').value;
-  var search = document.getElementById('news-search').value.trim();
+  var status = document.getElementById('news-filter-status');
+  var category = document.getElementById('news-filter-category');
+  var search = document.getElementById('news-search');
   var listStatus = document.getElementById('news-list-status');
   var container = document.getElementById('news-articles-list');
+
+  if (!status || !category || !search || !listStatus || !container) return;
 
   listStatus.textContent = '📰 Chargement...';
 
@@ -1190,9 +1209,13 @@ async function loadNewsArticles() {
     .order('published_at', { ascending: false })
     .limit(50);
 
-  if (status !== 'all') query = query.eq('status', status);
-  if (category !== 'all') query = query.eq('category_slug', category);
-  if (search) query = query.ilike('title_fr', '%' + search + '%');
+  var statusVal = status.value;
+  var categoryVal = category.value;
+  var searchVal = search.value.trim();
+
+  if (statusVal !== 'all') query = query.eq('status', statusVal);
+  if (categoryVal !== 'all') query = query.eq('category_slug', categoryVal);
+  if (searchVal) query = query.ilike('title_fr', '%' + searchVal + '%');
 
   var res = await query;
 
@@ -1258,6 +1281,7 @@ async function newsDeleteArticle(id) {
 
 async function runNewsPipeline() {
   var btn = document.getElementById('news-pipeline-btn');
+  if (!btn) return;
   var orig = btn.textContent;
   btn.textContent = '⏳ Traitement en cours...';
   btn.disabled = true;
@@ -1292,41 +1316,8 @@ async function runNewsPipeline() {
 }
 
 // ============================================================
-// AUTO-LOGIN
+// NEW TABS: OVERVIEW, GENERATORS, WORKFLOW, RESEARCH, ANALYTICS
 // ============================================================
-(function() {
-  if (sessionStorage.getItem('adminAuth') === 'true') {
-    showAdminPanel();
-  } else {
-    document.getElementById('admin-login').style.display = 'flex';
-  }
-})();
-// ===== NOUVEAUX TABS =====
-var OVERVIEW_TAB_INIT = false;
-var GENERATORS_TAB_INIT = false;
-var WORKFLOW_TAB_INIT = false;
-var RESEARCH_TAB_INIT = false;
-var ANALYTICS_TAB_INIT = false;
-
-// Remplacer ta fonction switchAdminTab par celle-ci
-function switchAdminTab(tab) {
-  var allTabs = ['overview','codes','skills','news','generators','workflow','research','analytics'];
-  allTabs.forEach(function(t) {
-    var panel = document.getElementById('tab-' + t);
-    var btn = document.getElementById('tab-btn-' + t);
-    if (panel) panel.style.display = (t === tab) ? 'block' : 'none';
-    if (btn) btn.classList.toggle('active', t === tab);
-  });
-  if (tab === 'skills' && skillsRows.length === 0) loadSkills();
-  if (tab === 'news' && !newsTabInitialized) { newsTabInitialized = true; initNewsTab(); }
-  if (tab === 'overview' && !OVERVIEW_TAB_INIT) { OVERVIEW_TAB_INIT = true; initOverviewTab(); }
-  if (tab === 'generators' && !GENERATORS_TAB_INIT) { GENERATORS_TAB_INIT = true; initGeneratorsTab(); }
-  if (tab === 'workflow' && !WORKFLOW_TAB_INIT) { WORKFLOW_TAB_INIT = true; initWorkflowTab(); }
-  if (tab === 'research' && !RESEARCH_TAB_INIT) { RESEARCH_TAB_INIT = true; initResearchTab(); }
-  if (tab === 'analytics' && !ANALYTICS_TAB_INIT) { ANALYTICS_TAB_INIT = true; initAnalyticsTab(); }
-}
-
-// ===== OVERVIEW =====
 function initOverviewTab() {
   renderOverviewStats();
 }
@@ -1345,7 +1336,6 @@ async function renderOverviewStats() {
     '</div>';
 }
 
-// ===== GENERATORS =====
 function initGeneratorsTab() {
   var container = document.getElementById('generators-grid');
   if (!container) return;
@@ -1367,37 +1357,56 @@ function initGeneratorsTab() {
   }).join('');
 }
 
-// ===== WORKFLOW =====
 function initWorkflowTab() {
   var container = document.getElementById('workflow-list');
+  if (!container) return;
   container.innerHTML = '<p style="color:#6B7280;text-align:center;padding:40px">Aucun brouillon en attente. Utilise les générateurs pour en créer!</p>';
 }
 function filterWorkflow(status) {
   initWorkflowTab();
 }
 
-// ===== RESEARCH =====
 function initResearchTab() {
-  document.getElementById('research-sources').innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">📡 Sources</div><p style="color:#6B7280;font-size:13px">Connecte la table research_sources</p></div>';
-  document.getElementById('research-outdated').innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">⚠️ Obsolète</div><p style="color:#6B7280;font-size:13px">Aucun contenu obsolète détecté</p></div>';
-  document.getElementById('research-suggestions').innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">💡 Suggestions</div><p style="color:#6B7280;font-size:13px">Lance la veille pour voir les suggestions</p></div>';
+  var sources = document.getElementById('research-sources');
+  var outdated = document.getElementById('research-outdated');
+  var suggestions = document.getElementById('research-suggestions');
+  if (sources) sources.innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">📡 Sources</div><p style="color:#6B7280;font-size:13px">Connecte la table research_sources</p></div>';
+  if (outdated) outdated.innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">⚠️ Obsolète</div><p style="color:#6B7280;font-size:13px">Aucun contenu obsolète détecté</p></div>';
+  if (suggestions) suggestions.innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">💡 Suggestions</div><p style="color:#6B7280;font-size:13px">Lance la veille pour voir les suggestions</p></div>';
 }
 function runResearchEngine() {
-  alert('Veille lancée! (connecte l\\'Edge Function enrich-skills)');
+  alert('Veille lancée! (connecte l\'Edge Function enrich-skills)');
 }
 
-// ===== ANALYTICS =====
 function initAnalyticsTab() {
   var container = document.getElementById('analytics-stats');
+  if (!container) return;
   container.innerHTML = '<div class="admin-stats">' +
     '<div class="admin-stat-card glass"><div class="admin-stat-num" style="color:#6366f1">--</div><div class="admin-stat-lbl">Visites</div></div>' +
     '<div class="admin-stat-card glass"><div class="admin-stat-num" style="color:#8b5cf6">--</div><div class="admin-stat-lbl">Étudiants</div></div>' +
     '<div class="admin-stat-card glass"><div class="admin-stat-num" style="color:#22c55e">--</div><div class="admin-stat-lbl">Leçons</div></div>' +
     '</div>';
-  document.getElementById('analytics-charts').innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">📊 Charts</div><p style="color:#6B7280;font-size:13px">Connecte student_activity pour les stats</p></div>';
+  var charts = document.getElementById('analytics-charts');
+  if (charts) charts.innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">📊 Charts</div><p style="color:#6B7280;font-size:13px">Connecte student_activity pour les stats</p></div>';
 }
 
+// ============================================================
+// GENERATOR MODAL
+// ============================================================
+// (already defined in HTML)
+
+// ============================================================
+// AUTO-LOGIN + DOM READY
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+  if (sessionStorage.getItem('adminAuth') === 'true') {
+    showAdminPanel();
+  } else {
+    document.getElementById('admin-login').style.display = 'flex';
+  }
+});
 </script>
+
 <!-- Generator Modal -->
 <div id="generator-modal" class="modal-overlay" style="display:none">
   <div class="modal-content" style="max-width:500px">
