@@ -103,36 +103,6 @@
 .modal-content{background:#1a1a2e;border:1px solid #2d2d44;border-radius:20px;padding:24px;max-width:600px;width:90%;max-height:85vh;overflow-y:auto}
 </style>
 </head>
-<!-- Generator Modal -->
-<div id="generator-modal" class="modal-overlay" style="display:none">
-  <div class="modal-content" style="max-width:500px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-      <h3 style="margin:0;color:#fff;font-size:18px" id="gen-modal-title">⚡ Générateur</h3>
-      <button onclick="document.getElementById('generator-modal').style.display='none'" style="background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer">✕</button>
-    </div>
-    <div style="margin-bottom:16px">
-      <label style="display:block;color:#94a3b8;font-size:12px;margin-bottom:6px">Sujet / Titre</label>
-      <input type="text" id="gen-modal-topic" class="input-field" placeholder="Ex: React Hooks...">
-    </div>
-    <div style="margin-bottom:16px">
-      <label style="display:block;color:#94a3b8;font-size:12px;margin-bottom:6px">Skill liée</label>
-      <select id="gen-modal-skill" class="select-field"><option value="">Aucune</option></select>
-    </div>
-    <div style="margin-bottom:16px">
-      <label style="display:block;color:#94a3b8;font-size:12px;margin-bottom:6px">Niveau</label>
-      <select id="gen-modal-level" class="select-field">
-        <option value="all">Tous</option>
-        <option value="beginner">Débutant</option>
-        <option value="intermediate">Intermédiaire</option>
-        <option value="advanced">Avancé</option>
-      </select>
-    </div>
-    <div style="display:flex;gap:12px;justify-content:flex-end">
-      <button class="btn-secondary" onclick="document.getElementById('generator-modal').style.display='none'">Annuler</button>
-      <button class="btn-primary" onclick="alert('Génération lancée! (connecte les Edge Functions)')">🚀 Générer</button>
-    </div>
-  </div>
-</div>
 <body>
 
 <!-- LOGIN SCREEN -->
@@ -1331,7 +1301,133 @@ async function runNewsPipeline() {
     document.getElementById('admin-login').style.display = 'flex';
   }
 })();
+// ===== NOUVEAUX TABS =====
+var OVERVIEW_TAB_INIT = false;
+var GENERATORS_TAB_INIT = false;
+var WORKFLOW_TAB_INIT = false;
+var RESEARCH_TAB_INIT = false;
+var ANALYTICS_TAB_INIT = false;
+
+// Remplacer ta fonction switchAdminTab par celle-ci
+function switchAdminTab(tab) {
+  var allTabs = ['overview','codes','skills','news','generators','workflow','research','analytics'];
+  allTabs.forEach(function(t) {
+    var panel = document.getElementById('tab-' + t);
+    var btn = document.getElementById('tab-btn-' + t);
+    if (panel) panel.style.display = (t === tab) ? 'block' : 'none';
+    if (btn) btn.classList.toggle('active', t === tab);
+  });
+  if (tab === 'skills' && skillsRows.length === 0) loadSkills();
+  if (tab === 'news' && !newsTabInitialized) { newsTabInitialized = true; initNewsTab(); }
+  if (tab === 'overview' && !OVERVIEW_TAB_INIT) { OVERVIEW_TAB_INIT = true; initOverviewTab(); }
+  if (tab === 'generators' && !GENERATORS_TAB_INIT) { GENERATORS_TAB_INIT = true; initGeneratorsTab(); }
+  if (tab === 'workflow' && !WORKFLOW_TAB_INIT) { WORKFLOW_TAB_INIT = true; initWorkflowTab(); }
+  if (tab === 'research' && !RESEARCH_TAB_INIT) { RESEARCH_TAB_INIT = true; initResearchTab(); }
+  if (tab === 'analytics' && !ANALYTICS_TAB_INIT) { ANALYTICS_TAB_INIT = true; initAnalyticsTab(); }
+}
+
+// ===== OVERVIEW =====
+function initOverviewTab() {
+  renderOverviewStats();
+}
+async function renderOverviewStats() {
+  var container = document.getElementById('overview-stats');
+  if (!container) return;
+  var [skillsRes, articlesRes, codesRes] = await Promise.all([
+    sb.from('skills_content').select('id', {count:'exact', head:true}),
+    sb.from('articles').select('id', {count:'exact', head:true}),
+    sb.from('access_codes').select('id', {count:'exact', head:true})
+  ]);
+  container.innerHTML = '<div class="admin-stats">' +
+    '<div class="admin-stat-card glass"><div class="admin-stat-num" style="color:#6366f1">'+(skillsRes.count||0)+'</div><div class="admin-stat-lbl">Skills</div></div>' +
+    '<div class="admin-stat-card glass"><div class="admin-stat-num" style="color:#8b5cf6">'+(articlesRes.count||0)+'</div><div class="admin-stat-lbl">Articles</div></div>' +
+    '<div class="admin-stat-card glass"><div class="admin-stat-num" style="color:#22c55e">'+(codesRes.count||0)+'</div><div class="admin-stat-lbl">Codes</div></div>' +
+    '</div>';
+}
+
+// ===== GENERATORS =====
+function initGeneratorsTab() {
+  var container = document.getElementById('generators-grid');
+  if (!container) return;
+  var gens = [
+    {icon:'🧩',title:'Skill Generator',desc:'Compétence complète avec roadmap'},
+    {icon:'📖',title:'Lesson Generator',desc:'Leçons avec exercices'},
+    {icon:'🚀',title:'Project Generator',desc:'Projets réels avec étapes'},
+    {icon:'❓',title:'Quiz Generator',desc:'Quiz avec explications'},
+    {icon:'💻',title:'Code Generator',desc:'Snippets commentés'},
+    {icon:'📰',title:'News Generator',desc:'Veille RSS automatisée'},
+    {icon:'💡',title:'Tips Generator',desc:'Astuces quotidiennes'},
+    {icon:'📋',title:'Curriculum Generator',desc:'Parcours complet'}
+  ];
+  container.innerHTML = gens.map(function(g){
+    return '<div class="generator-card" onclick="document.getElementById(\'generator-modal\').style.display=\'flex\';document.getElementById(\'gen-modal-title\').textContent=\''+g.title+'\'">'+
+      '<div style="font-size:32px;margin-bottom:12px">'+g.icon+'</div>'+
+      '<h3 style="margin:0 0 8px 0;font-size:16px;color:#fff">'+g.title+'</h3>'+
+      '<p style="margin:0;font-size:12px;color:#94a3b8">'+g.desc+'</p></div>';
+  }).join('');
+}
+
+// ===== WORKFLOW =====
+function initWorkflowTab() {
+  var container = document.getElementById('workflow-list');
+  container.innerHTML = '<p style="color:#6B7280;text-align:center;padding:40px">Aucun brouillon en attente. Utilise les générateurs pour en créer!</p>';
+}
+function filterWorkflow(status) {
+  initWorkflowTab();
+}
+
+// ===== RESEARCH =====
+function initResearchTab() {
+  document.getElementById('research-sources').innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">📡 Sources</div><p style="color:#6B7280;font-size:13px">Connecte la table research_sources</p></div>';
+  document.getElementById('research-outdated').innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">⚠️ Obsolète</div><p style="color:#6B7280;font-size:13px">Aucun contenu obsolète détecté</p></div>';
+  document.getElementById('research-suggestions').innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">💡 Suggestions</div><p style="color:#6B7280;font-size:13px">Lance la veille pour voir les suggestions</p></div>';
+}
+function runResearchEngine() {
+  alert('Veille lancée! (connecte l\\'Edge Function enrich-skills)');
+}
+
+// ===== ANALYTICS =====
+function initAnalyticsTab() {
+  var container = document.getElementById('analytics-stats');
+  container.innerHTML = '<div class="admin-stats">' +
+    '<div class="admin-stat-card glass"><div class="admin-stat-num" style="color:#6366f1">--</div><div class="admin-stat-lbl">Visites</div></div>' +
+    '<div class="admin-stat-card glass"><div class="admin-stat-num" style="color:#8b5cf6">--</div><div class="admin-stat-lbl">Étudiants</div></div>' +
+    '<div class="admin-stat-card glass"><div class="admin-stat-num" style="color:#22c55e">--</div><div class="admin-stat-lbl">Leçons</div></div>' +
+    '</div>';
+  document.getElementById('analytics-charts').innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">📊 Charts</div><p style="color:#6B7280;font-size:13px">Connecte student_activity pour les stats</p></div>';
+}
+
 </script>
+<!-- Generator Modal -->
+<div id="generator-modal" class="modal-overlay" style="display:none">
+  <div class="modal-content" style="max-width:500px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <h3 style="margin:0;color:#fff;font-size:18px" id="gen-modal-title">⚡ Générateur</h3>
+      <button onclick="document.getElementById('generator-modal').style.display='none'" style="background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer">✕</button>
+    </div>
+    <div style="margin-bottom:16px">
+      <label style="display:block;color:#94a3b8;font-size:12px;margin-bottom:6px">Sujet / Titre</label>
+      <input type="text" id="gen-modal-topic" class="input-field" placeholder="Ex: React Hooks...">
+    </div>
+    <div style="margin-bottom:16px">
+      <label style="display:block;color:#94a3b8;font-size:12px;margin-bottom:6px">Skill liée</label>
+      <select id="gen-modal-skill" class="select-field"><option value="">Aucune</option></select>
+    </div>
+    <div style="margin-bottom:16px">
+      <label style="display:block;color:#94a3b8;font-size:12px;margin-bottom:6px">Niveau</label>
+      <select id="gen-modal-level" class="select-field">
+        <option value="all">Tous</option>
+        <option value="beginner">Débutant</option>
+        <option value="intermediate">Intermédiaire</option>
+        <option value="advanced">Avancé</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:flex-end">
+      <button class="btn-secondary" onclick="document.getElementById('generator-modal').style.display='none'">Annuler</button>
+      <button class="btn-primary" onclick="alert('Génération lancée! (connecte les Edge Functions)')">🚀 Générer</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
