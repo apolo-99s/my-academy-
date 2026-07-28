@@ -80,6 +80,27 @@
 .news-badge.rejected, .news-badge.deleted { background: #450A0A99; color: #F87171; }
 .news-badge.pinned { background: #1E3A5F99; color: #60A5FA; }
 .news-badge.featured { background: #43140799; color: #FBBF24; }
+
+/* ===== NOUVEAUX ONGLETS ===== */
+.generator-card{background:#111118;border:1px solid #1C1C28;border-radius:16px;padding:20px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.generator-card:hover{border-color:#7C3AED;transform:translateY(-2px)}
+.generator-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7C3AED,#6366f1);opacity:0;transition:opacity .2s}
+.generator-card:hover::before{opacity:1}
+.draft-item{background:#111118;border:1px solid #1C1C28;border-radius:12px;padding:16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.badge{font-size:11px;padding:4px 10px;border-radius:20px;font-weight:600;display:inline-block}
+.badge-pending{background:#F59E0B22;color:#F59E0B;border:1px solid #F59E0B44}
+.badge-approved{background:#16A34A22;color:#4ADE80;border:1px solid #16A34A44}
+.badge-rejected{background:#EF444422;color:#F87171;border:1px solid #EF444444}
+.btn-primary{background:linear-gradient(135deg,#7C3AED,#5B21B6);border:none;color:#fff;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer}
+.btn-secondary{background:#1C1C28;border:1px solid #374151;color:#9CA3AF;padding:10px 20px;border-radius:10px;font-size:13px;cursor:pointer}
+.btn-success{background:linear-gradient(135deg,#16A34A,#15803d);border:none;color:#fff;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer}
+.btn-danger{background:linear-gradient(135deg,#EF4444,#DC2626);border:none;color:#fff;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer}
+.progress-bar{background:#0f0f1a;border-radius:8px;height:8px;overflow:hidden}
+.progress-fill{background:linear-gradient(90deg,#7C3AED,#6366f1);height:100%;border-radius:8px;transition:width .3s}
+.input-field{background:#111118;border:1px solid #1C1C28;border-radius:10px;padding:12px 16px;color:#E5E7EB;font-size:14px;width:100%;box-sizing:border-box}
+.select-field{background:#111118;border:1px solid #1C1C28;border-radius:10px;padding:12px 16px;color:#E5E7EB;font-size:14px;width:100%;box-sizing:border-box;cursor:pointer}
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:1000}
+.modal-content{background:#1a1a2e;border:1px solid #2d2d44;border-radius:20px;padding:24px;max-width:600px;width:90%;max-height:85vh;overflow-y:auto}
 </style>
 </head>
 <body>
