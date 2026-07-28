@@ -123,14 +123,67 @@
     <div class="brand"><span>Digital</span>Skills.dz</div>
     <button class="dash-btn" onclick="adminLogout()">🔒 Déconnexion</button>
   </nav>
+<!-- ===== TAB: OVERVIEW ===== -->
+<div id="tab-overview">
+  <div id="overview-stats"></div>
+  <div id="overview-pipeline" style="margin-top:20px"></div>
+  <div id="overview-activity" style="margin-top:20px"></div>
+</div>
+
+<!-- ===== TAB: GENERATORS ===== -->
+<div id="tab-generators" style="display:none">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+    <h2 style="margin:0;font-size:20px;color:#fff">⚡ Générateurs IA</h2>
+  </div>
+  <div id="generators-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px"></div>
+</div>
+
+<!-- ===== TAB: WORKFLOW ===== -->
+<div id="tab-workflow" style="display:none">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+    <h2 style="margin:0;font-size:20px;color:#fff">✅ Content Review Workflow</h2>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:20px">
+    <button class="btn-primary" onclick="filterWorkflow('all')">Tout</button>
+    <button class="btn-secondary" onclick="filterWorkflow('pending')">⏳ En attente</button>
+    <button class="btn-secondary" onclick="filterWorkflow('approved')">✅ Approuvés</button>
+    <button class="btn-secondary" onclick="filterWorkflow('rejected')">❌ Rejetés</button>
+  </div>
+  <div id="workflow-list"></div>
+</div>
+
+<!-- ===== TAB: RESEARCH ===== -->
+<div id="tab-research" style="display:none">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+    <h2 style="margin:0;font-size:20px;color:#fff">🔬 AI Research Engine</h2>
+    <button class="gen-btn" onclick="runResearchEngine()">🔬 Lancer la veille</button>
+  </div>
+  <div id="research-sources" style="margin-bottom:20px"></div>
+  <div id="research-outdated" style="margin-bottom:20px"></div>
+  <div id="research-suggestions"></div>
+</div>
+
+<!-- ===== TAB: ANALYTICS ===== -->
+<div id="tab-analytics" style="display:none">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+    <h2 style="margin:0;font-size:20px;color:#fff">📈 Analytics</h2>
+  </div>
+  <div id="analytics-stats"></div>
+  <div id="analytics-charts" style="margin-top:20px"></div>
+</div>
 
   <div class="admin-body">
 
-    <div class="admin-tabs">
-      <button class="admin-tab-btn active" id="tab-btn-codes" onclick="switchAdminTab('codes')">🎫 Codes</button>
-      <button class="admin-tab-btn" id="tab-btn-skills" onclick="switchAdminTab('skills')">🧩 Skills</button>
-      <button class="admin-tab-btn" id="tab-btn-news" onclick="switchAdminTab('news')">📰 News</button>
-    </div>
+  <div class="admin-tabs">
+  <button class="admin-tab-btn active" id="tab-btn-overview" onclick="switchAdminTab('overview')">📊 Vue d'ensemble</button>
+  <button class="admin-tab-btn" id="tab-btn-codes" onclick="switchAdminTab('codes')">🎫 Codes</button>
+  <button class="admin-tab-btn" id="tab-btn-skills" onclick="switchAdminTab('skills')">🧩 Skills</button>
+  <button class="admin-tab-btn" id="tab-btn-news" onclick="switchAdminTab('news')">📰 News</button>
+  <button class="admin-tab-btn" id="tab-btn-generators" onclick="switchAdminTab('generators')">⚡ Générateurs</button>
+  <button class="admin-tab-btn" id="tab-btn-workflow" onclick="switchAdminTab('workflow')">✅ Workflow</button>
+  <button class="admin-tab-btn" id="tab-btn-research" onclick="switchAdminTab('research')">🔬 Research</button>
+  <button class="admin-tab-btn" id="tab-btn-analytics" onclick="switchAdminTab('analytics')">📈 Analytics</button>
+</div>
 
     <!-- ============================== -->
     <!-- TAB: CODES (existing, unchanged) -->
