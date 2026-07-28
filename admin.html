@@ -103,6 +103,36 @@
 .modal-content{background:#1a1a2e;border:1px solid #2d2d44;border-radius:20px;padding:24px;max-width:600px;width:90%;max-height:85vh;overflow-y:auto}
 </style>
 </head>
+<!-- Generator Modal -->
+<div id="generator-modal" class="modal-overlay" style="display:none">
+  <div class="modal-content" style="max-width:500px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <h3 style="margin:0;color:#fff;font-size:18px" id="gen-modal-title">⚡ Générateur</h3>
+      <button onclick="document.getElementById('generator-modal').style.display='none'" style="background:none;border:none;color:#94a3b8;font-size:20px;cursor:pointer">✕</button>
+    </div>
+    <div style="margin-bottom:16px">
+      <label style="display:block;color:#94a3b8;font-size:12px;margin-bottom:6px">Sujet / Titre</label>
+      <input type="text" id="gen-modal-topic" class="input-field" placeholder="Ex: React Hooks...">
+    </div>
+    <div style="margin-bottom:16px">
+      <label style="display:block;color:#94a3b8;font-size:12px;margin-bottom:6px">Skill liée</label>
+      <select id="gen-modal-skill" class="select-field"><option value="">Aucune</option></select>
+    </div>
+    <div style="margin-bottom:16px">
+      <label style="display:block;color:#94a3b8;font-size:12px;margin-bottom:6px">Niveau</label>
+      <select id="gen-modal-level" class="select-field">
+        <option value="all">Tous</option>
+        <option value="beginner">Débutant</option>
+        <option value="intermediate">Intermédiaire</option>
+        <option value="advanced">Avancé</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:flex-end">
+      <button class="btn-secondary" onclick="document.getElementById('generator-modal').style.display='none'">Annuler</button>
+      <button class="btn-primary" onclick="alert('Génération lancée! (connecte les Edge Functions)')">🚀 Générer</button>
+    </div>
+  </div>
+</div>
 <body>
 
 <!-- LOGIN SCREEN -->
