@@ -1371,7 +1371,17 @@ async function populateGenModalSkills() {
   select.dataset.loaded = 'true';
 }
 
-async function runGenerateLesson() {
+var GEN_TYPE_MAP = { 'Skill Generator':'generate-skill', 'Lesson Generator':'generate-lesson', 'Project Generator':'generate-project', 'Quiz Generator':'generate-quiz', 'Code Generator':'generate-code', 'Curriculum Generator':'generate-curriculum' };
+
+function openGenModal(title) {
+  document.getElementById('generator-modal').style.display = 'flex';
+  document.getElementById('gen-modal-title').textContent = title;
+  document.getElementById('generator-modal').dataset.genTitle = title;
+}
+
+async function runGenerator() {
+  var title = document.getElementById('generator-modal').dataset.genTitle || 'Lesson Generator';
+  var fn = GEN_TYPE_MAP[title];
   var topic = document.getElementById('gen-modal-topic').value.trim();
   var skillId = document.getElementById('gen-modal-skill').value;
   var level = document.getElementById('gen-modal-level').value;
@@ -1380,14 +1390,14 @@ async function runGenerateLesson() {
   var orig = btn.textContent;
   btn.textContent = '⏳...'; btn.disabled = true;
   try {
-    var res = await fetch(SUPABASE_URL + '/functions/v1/generate-lesson', {
+    var res = await fetch(SUPABASE_URL + '/functions/v1/' + fn, {
       method: 'POST',
       headers: { 'Authorization': 'Bearer ' + SUPABASE_KEY, 'apikey': SUPABASE_KEY, 'Content-Type': 'application/json' },
       body: JSON.stringify({ topic: topic, skill_id: skillId, level_index: 0, stage: level === 'all' ? null : level })
     });
     var result = await res.json();
     if (!res.ok || result.error) throw new Error(result.error || 'Erreur inconnue');
-    alert('Leçon générée: ' + (result.lesson_title.fr || topic) + ' — en attente dans Skills > Suggestions IA.');
+    alert('Généré ! ' + (result.status || 'en attente d\'approbation.'));
     document.getElementById('generator-modal').style.display = 'none';
   } catch (e) {
     alert('Erreur: ' + e.message);
@@ -1502,7 +1512,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div style="display:flex;gap:12px;justify-content:flex-end">
       <button class="btn-secondary" onclick="document.getElementById('generator-modal').style.display='none'">Annuler</button>
-      <button class="btn-primary" onclick="runGenerateLesson()">🚀 Générer</button>
+      <button class="btn-primary" onclick="runGenerator()">🚀 Générer</button>
     </div>
   </div>
 </div>
