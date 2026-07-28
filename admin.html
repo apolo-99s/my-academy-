@@ -356,7 +356,7 @@
         <h2 style="margin:0;font-size:20px;color:#fff">🔬 AI Research Engine</h2>
         <button class="gen-btn" onclick="runResearchEngine()">🔬 Lancer la veille</button>
       </div>
-            <div id="research-sources" style="margin-bottom:20px"></div>
+      <div id="research-sources" style="margin-bottom:20px"></div>
       <div id="research-outdated" style="margin-bottom:20px"></div>
       <div id="research-suggestions"></div>
       <div class="debug-panel" id="research-status" style="display:none;margin-top:16px"></div>
@@ -463,7 +463,7 @@ function switchAdminTab(tab) {
   if (tab === 'skills' && skillsRows.length === 0) loadSkills();
   if (tab === 'news' && !newsTabInitialized) { newsTabInitialized = true; initNewsTab(); }
   if (tab === 'overview' && !OVERVIEW_TAB_INIT) { OVERVIEW_TAB_INIT = true; initOverviewTab(); }
-  if (tab === 'generators' && !GENERATORS_TAB_INIT) { GENERATORS_TAB_INIT = true; initGeneratorsTab(); }
+  if (tab === 'generators' && !GENERATORS_TAB_INIT) { GENERATORS_TAB_INIT = true; initGeneratorsTab(); populateGenModalSkills(); }
   if (tab === 'workflow' && !WORKFLOW_TAB_INIT) { WORKFLOW_TAB_INIT = true; initWorkflowTab(); }
   if (tab === 'research' && !RESEARCH_TAB_INIT) { RESEARCH_TAB_INIT = true; initResearchTab(); }
   if (tab === 'analytics' && !ANALYTICS_TAB_INIT) { ANALYTICS_TAB_INIT = true; initAnalyticsTab(); }
@@ -1358,6 +1358,44 @@ function initGeneratorsTab() {
   }).join('');
 }
 
+async function populateGenModalSkills() {
+  var select = document.getElementById('gen-modal-skill');
+  if (!select || select.dataset.loaded) return;
+  var res = await sb.from('skills_content').select('skill_id, payload').order('sort_order');
+  (res.data || []).forEach(function(row) {
+    var opt = document.createElement('option');
+    opt.value = row.skill_id;
+    opt.textContent = (row.payload.title && row.payload.title.fr) || row.skill_id;
+    select.appendChild(opt);
+  });
+  select.dataset.loaded = 'true';
+}
+
+async function runGenerateLesson() {
+  var topic = document.getElementById('gen-modal-topic').value.trim();
+  var skillId = document.getElementById('gen-modal-skill').value;
+  var level = document.getElementById('gen-modal-level').value;
+  if (!topic || !skillId) { alert('Sujet et Skill sont requis.'); return; }
+  var btn = event.target;
+  var orig = btn.textContent;
+  btn.textContent = '⏳...'; btn.disabled = true;
+  try {
+    var res = await fetch(SUPABASE_URL + '/functions/v1/generate-lesson', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + SUPABASE_KEY, 'apikey': SUPABASE_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic: topic, skill_id: skillId, level_index: 0, stage: level === 'all' ? null : level })
+    });
+    var result = await res.json();
+    if (!res.ok || result.error) throw new Error(result.error || 'Erreur inconnue');
+    alert('Leçon générée: ' + (result.lesson_title.fr || topic) + ' — en attente dans Skills > Suggestions IA.');
+    document.getElementById('generator-modal').style.display = 'none';
+  } catch (e) {
+    alert('Erreur: ' + e.message);
+  } finally {
+    btn.textContent = orig; btn.disabled = false;
+  }
+}
+
 function initWorkflowTab() {
   var container = document.getElementById('workflow-list');
   if (!container) return;
@@ -1375,6 +1413,7 @@ function initResearchTab() {
   if (outdated) outdated.innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">⚠️ Obsolète</div><p style="color:#6B7280;font-size:13px">Aucun contenu obsolète détecté</p></div>';
   if (suggestions) suggestions.innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">💡 Suggestions</div><p style="color:#6B7280;font-size:13px">Lance la veille pour voir les suggestions</p></div>';
 }
+
 function researchDebug(msg, type) {
   var panel = document.getElementById('research-status');
   if (!panel) return;
@@ -1413,7 +1452,6 @@ async function runResearchEngine() {
   }
 }
 
-
 function initAnalyticsTab() {
   var container = document.getElementById('analytics-stats');
   if (!container) return;
@@ -1425,11 +1463,6 @@ function initAnalyticsTab() {
   var charts = document.getElementById('analytics-charts');
   if (charts) charts.innerHTML = '<div class="admin-table-wrap glass"><div class="admin-table-title">📊 Charts</div><p style="color:#6B7280;font-size:13px">Connecte student_activity pour les stats</p></div>';
 }
-
-// ============================================================
-// GENERATOR MODAL
-// ============================================================
-// (already defined in HTML)
 
 // ============================================================
 // AUTO-LOGIN + DOM READY
@@ -1469,7 +1502,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div style="display:flex;gap:12px;justify-content:flex-end">
       <button class="btn-secondary" onclick="document.getElementById('generator-modal').style.display='none'">Annuler</button>
-      <button class="btn-primary" onclick="alert('Génération lancée! (connecte les Edge Functions)')">🚀 Générer</button>
+      <button class="btn-primary" onclick="runGenerateLesson()">🚀 Générer</button>
     </div>
   </div>
 </div>
