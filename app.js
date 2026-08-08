@@ -9,6 +9,31 @@ var hasAccess = localStorage.getItem('hasAccess') === 'true';
 var skillId = null, levelIdx = 0, lessonIdx = null, openStep = null;
 var currentView = 'academy';
 
+// ============================================================
+// LANGUAGE HELPERS — support both content shapes:
+//  - OLD lessons: { fr:'...', ar:'...', en:'...' } for title/method/
+//    exercise/tip, and steps as { fr:[...strings], ar:[...], en:[...] }
+//  - NEW lessons (from enrich-skills v3/v4): title/method/exercise/
+//    tip are still { fr, ar, en } (compatible as-is), but steps are
+//    an ARRAY of { text:{fr,ar,en}, visual }, and fr/ar are often
+//    still empty (content generated in English only for now).
+// pickLang() falls back en -> fr -> ar so nothing renders blank.
+// getStepsArray() normalizes either steps shape into a plain array
+// of strings for the current language before the existing render
+// logic runs, unchanged.
+// ============================================================
+function pickLang(field, l) {
+  if (!field) return '';
+  return field[l] || field.en || field.fr || field.ar || '';
+}
+function getStepsArray(les, l) {
+  var raw = les.steps;
+  if (Array.isArray(raw)) {
+    return raw.map(function(s) { return pickLang(s && s.text, l); });
+  }
+  return (raw && raw[l]) || [];
+}
+
 function showView(id) {
   ['landing','academy','skill-view','lesson-view','dashboard'].forEach(function(v) {
     document.getElementById(v).style.display = 'none';
@@ -169,7 +194,7 @@ function renderSkill() {
   document.getElementById('level-info').innerHTML = '<div class="level-info-top"><span style="font-size:30px">' + lv.badge + '</span><div><div style="font-size:20px;font-weight:800;color:#fff">' + lv.name[lang] + '</div><div style="font-size:12px;color:#4B5563">' + lv.duration[lang] + '</div></div><div class="level-count" style="' + (isAr ? 'margin-right:auto' : 'margin-left:auto') + '"><div class="level-count-num" style="color:' + style.text + '">' + lv.lessons.length + '</div><div class="level-count-lbl">' + t.lessons + '</div></div></div><p style="color:#6B7280;font-size:13px;margin:0"><strong style="color:#9CA3AF">' + t.goal + ':</strong> ' + lv.goal[lang] + '</p>';
   document.getElementById('lesson-cards').innerHTML = lv.lessons.map(function(les, i) {
     var done = isLessonComplete(skill.id, levelIdx, i);
-    return '<div class="lesson-card" onclick="goLesson(' + i + ')" onmouseenter="this.style.borderColor=\'' + skill.color + '66\'" onmouseleave="this.style.borderColor=\'#1C1C28\'"><span class="lesson-num' + (done ? ' done' : '') + '" style="' + (done ? '' : 'background:' + skill.color + '22;border:1px solid ' + skill.color + '44;color:' + skill.accent) + '">' + (done ? '✓' : (i + 1)) + '</span><div class="lesson-info"><div class="lesson-title-text">' + les.title[lang] + '</div><div class="lesson-meta">' + les.steps[lang].length + ' étapes · exercice inclus</div></div><span style="color:#374151;font-size:20px;flex-shrink:0;transform:' + (isAr ? 'rotate(180deg)' : 'none') + '">→</span></div>';
+    return '<div class="lesson-card" onclick="goLesson(' + i + ')" onmouseenter="this.style.borderColor=\'' + skill.color + '66\'" onmouseleave="this.style.borderColor=\'#1C1C28\'"><span class="lesson-num' + (done ? ' done' : '') + '" style="' + (done ? '' : 'background:' + skill.color + '22;border:1px solid ' + skill.color + '44;color:' + skill.accent) + '">' + (done ? '✓' : (i + 1)) + '</span><div class="lesson-info"><div class="lesson-title-text">' + pickLang(les.title, lang) + '</div><div class="lesson-meta">' + getStepsArray(les, lang).length + ' étapes · exercice inclus</div></div><span style="color:#374151;font-size:20px;flex-shrink:0;transform:' + (isAr ? 'rotate(180deg)' : 'none') + '">→</span></div>';
   }).join('');
   var nav = '';
   if (levelIdx > 0) nav += '<button class="nav-prev" onclick="goLevel(' + (levelIdx - 1) + ')">' + (isAr ? '→' : '←') + ' ' + skill.levels[levelIdx - 1].name[lang] + '</button>';
@@ -197,7 +222,7 @@ function renderLesson() {
   var style = getLevelStyle(lv.name[lang]);
   var isAr = lang === 'ar';
   var isMobile = window.innerWidth < 600;
-  var steps = les.steps[lang];
+  var steps = getStepsArray(les, lang);
   var layout = les.layout || 'top';
   var showLeft = layout === 'left' && !isMobile;
   var showRight = layout === 'right' && !isMobile;
@@ -210,10 +235,11 @@ function renderLesson() {
   document.getElementById('lesson-counter').textContent = t.lesson + ' ' + (lessonIdx + 1) + ' ' + t.of + ' ' + lv.lessons.length;
   document.getElementById('lv-footer').textContent = t.footer;
   var imgTop = '', imgSide = '';
+  var lesTitle = pickLang(les.title, lang);
   if (les.image && (layout === 'top' || isMobile)) {
-    imgTop = '<img class="lesson-img-top" src="' + les.image + '" alt="' + les.title[lang] + '" loading="lazy">';
+    imgTop = '<img class="lesson-img-top" src="' + les.image + '" alt="' + lesTitle + '" loading="lazy">';
   } else if (les.image && (showLeft || showRight)) {
-    imgSide = '<div class="steps-side-img"><img src="' + les.image + '" alt="' + les.title[lang] + '" loading="lazy"></div>';
+    imgSide = '<div class="steps-side-img"><img src="' + les.image + '" alt="' + lesTitle + '" loading="lazy"></div>';
   }
   var stepsHTML = steps.map(function(step, i) {
     var isOpen = openStep === i;
@@ -229,7 +255,7 @@ function renderLesson() {
   var hasNextLv = levelIdx < skill.levels.length - 1;
   var prevBtn = hasPrev ? '<button class="lesson-nav-prev" onclick="prevLesson()">' + (isAr ? '→' : '←') + ' ' + t.prevLesson.replace(/[←→]/g, '').trim() + '</button>' : '<button class="lesson-nav-prev" onclick="renderSkill()">' + (isAr ? '→' : '←') + ' ' + t.back.replace(/[←→]/g, '').trim() + '</button>';
   var nextBtn = hasNext ? '<button class="lesson-nav-next" style="background:' + skill.color + '" onclick="nextLesson()">' + t.nextLesson.replace(/[←→]/g, '').trim() + ' ' + (isAr ? '←' : '→') + '</button>' : hasNextLv ? '<button class="lesson-nav-next" style="background:' + skill.color + '" onclick="nextLevel()">' + t.nextLevel + ': ' + skill.levels[levelIdx + 1].name[lang] + ' ' + (isAr ? '←' : '→') + '</button>' : '<div class="lesson-complete" style="color:' + skill.accent + ';border-color:' + skill.color + '50">' + t.complete + '</div>';
-  document.getElementById('lesson-body').innerHTML = '<div style="margin-bottom:20px"><span style="background:' + style.bg + ';border:1px solid ' + style.border + ';color:' + style.text + ';border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600">' + style.badge + ' ' + lv.name[lang] + '</span><span style="font-size:12px;color:#374151;margin-left:8px">' + t.lesson + ' ' + (lessonIdx + 1) + '</span></div><h1 style="font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 24px;line-height:1.25">' + les.title[lang] + '</h1>' + imgTop + '<div style="margin-bottom:28px"><div class="steps-header"><div class="steps-bar" style="background:' + skill.color + '"></div><span class="steps-label">' + t.howTo + '</span></div>' + stepsWrap + '</div><div class="method-box" style="background:#0A0E18;border-color:' + skill.color + '30"><div class="box-header"><span class="box-emoji">🧠</span><span class="box-label" style="color:' + skill.accent + '">' + t.bestWay + '</span></div><p class="box-text" style="color:#9CA3AF">' + les.method[lang] + '</p></div><div class="method-box" style="background:#0E0A00;border-color:#92400E40"><div class="box-header"><span class="box-emoji">💪</span><span class="box-label" style="color:#FCD34D">' + t.exercise + '</span></div><p class="box-text" style="color:#D97706">' + les.exercise[lang] + '</p></div>' + (les.tip ? '<div class="tip-box"><p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0">' + les.tip[lang] + '</p></div>' : '') + '<div class="lesson-nav">' + prevBtn + nextBtn + '</div>';
+  document.getElementById('lesson-body').innerHTML = '<div style="margin-bottom:20px"><span style="background:' + style.bg + ';border:1px solid ' + style.border + ';color:' + style.text + ';border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600">' + style.badge + ' ' + lv.name[lang] + '</span><span style="font-size:12px;color:#374151;margin-left:8px">' + t.lesson + ' ' + (lessonIdx + 1) + '</span></div><h1 style="font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 24px;line-height:1.25">' + lesTitle + '</h1>' + imgTop + '<div style="margin-bottom:28px"><div class="steps-header"><div class="steps-bar" style="background:' + skill.color + '"></div><span class="steps-label">' + t.howTo + '</span></div>' + stepsWrap + '</div><div class="method-box" style="background:#0A0E18;border-color:' + skill.color + '30"><div class="box-header"><span class="box-emoji">🧠</span><span class="box-label" style="color:' + skill.accent + '">' + t.bestWay + '</span></div><p class="box-text" style="color:#9CA3AF">' + pickLang(les.method, lang) + '</p></div><div class="method-box" style="background:#0E0A00;border-color:#92400E40"><div class="box-header"><span class="box-emoji">💪</span><span class="box-label" style="color:#FCD34D">' + t.exercise + '</span></div><p class="box-text" style="color:#D97706">' + pickLang(les.exercise, lang) + '</p></div>' + (les.tip ? '<div class="tip-box"><p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0">' + pickLang(les.tip, lang) + '</p></div>' : '') + '<div class="lesson-nav">' + prevBtn + nextBtn + '</div>';
   showView('lesson-view');
 }
 
