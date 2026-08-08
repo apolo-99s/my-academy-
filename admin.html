@@ -461,6 +461,7 @@ function switchAdminTab(tab) {
 
   // Initialize tab content on first visit
   if (tab === 'skills' && skillsRows.length === 0) loadSkills();
+  if (tab === 'skills') loadPendingSuggestions();
   if (tab === 'news' && !newsTabInitialized) { newsTabInitialized = true; initNewsTab(); }
   if (tab === 'overview' && !OVERVIEW_TAB_INIT) { OVERVIEW_TAB_INIT = true; initOverviewTab(); }
   if (tab === 'generators' && !GENERATORS_TAB_INIT) { GENERATORS_TAB_INIT = true; initGeneratorsTab(); populateGenModalSkills(); }
