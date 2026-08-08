@@ -217,7 +217,7 @@ function renderLesson() {
   }
   var stepsHTML = steps.map(function(step, i) {
     var isOpen = openStep === i;
-    var preview = step.length > 80 && !isOpen ? step.substring(0, 80) + '…' : step;
+    var preview = step.length > 80 ? step.substring(0, 80) + '…' : step;
     return '<div class="step-item" style="border-color:' + (isOpen ? skill.color + '60' : '#1C1C28') + '"><button class="step-btn" onclick="toggleStep(' + i + ')"><span class="step-num" style="' + (isOpen ? 'background:' + skill.color + ';color:#fff' : '') + '">' + (i + 1) + '</span><span class="step-text" style="color:' + (isOpen ? '#fff' : '#9CA3AF') + ';font-weight:' + (isOpen ? 600 : 400) + ';text-align:' + (isAr ? 'right' : 'left') + '">' + preview + '</span><span class="step-toggle">' + (isOpen ? '▲' : '▼') + '</span></button>' + (isOpen ? '<div class="step-expanded" style="display:block;padding:' + (isAr ? '0 52px 16px 16px' : '0 16px 16px 52px') + '">' + step + '</div>' : '') + '</div>';
   }).join('');
   var stepsWrap = '';
