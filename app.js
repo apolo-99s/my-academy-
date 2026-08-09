@@ -120,7 +120,6 @@ async function checkAccess() {
     .eq('used', false)
     .select();
   if (claim.error || !claim.data || claim.data.length === 0) {
-    // someone else claimed it between our check and this update
     err.textContent = t.errUsed; err.style.display = 'block';
     btn.textContent = t.access; btn.disabled = false;
     return;
@@ -219,8 +218,6 @@ function renderSkill() {
   document.getElementById('level-info').style.borderColor = style.border + '40';
   document.getElementById('level-info').innerHTML = '<div class="level-info-top"><span style="font-size:30px">' + lv.badge + '</span><div><div style="font-size:20px;font-weight:800;color:#fff">' + lv.name[lang] + '</div><div style="font-size:12px;color:#4B5563">' + lv.duration[lang] + '</div></div><div class="level-count" style="' + (isAr ? 'margin-right:auto' : 'margin-left:auto') + '"><div class="level-count-num" style="color:' + style.text + '">' + allLessons.length + '</div><div class="level-count-lbl">' + t.lessons + '</div></div></div><p style="color:#6B7280;font-size:13px;margin:0"><strong style="color:#9CA3AF">' + t.goal + ':</strong> ' + lv.goal[lang] + '</p>';
 
-  // Build lesson cards, inserting a module header whenever the
-  // module changes (legacy lessons with moduleIndex -1 get no header)
   var cardsHtml = '';
   var lastModuleIndex = 'none';
   allLessons.forEach(function(entry, i) {
@@ -252,12 +249,6 @@ function nextLevel() { levelIdx++; lessonIdx = null; renderSkill(); }
 function toggleStep(i) { openStep = openStep === i ? null : i; renderLesson(); }
 function toggleSection(key) { openSection = openSection === key ? null : key; renderLesson(); }
 
-// ------------------------------------------------------------
-// Accordion section renderer for the new rich fields — reuses the
-// same visual language as the steps accordion (border, click to
-// expand, arrow indicator) so it feels native to the existing page.
-// Skips rendering entirely if the field is empty (old lessons).
-// ------------------------------------------------------------
 function renderAccordionSection(key, emoji, label, bodyHtml, skillColor) {
   if (!bodyHtml) return '';
   var isOpen = openSection === key;
@@ -314,7 +305,7 @@ function renderLesson() {
   document.getElementById('lesson-skill-name').textContent = skill.title[lang];
   document.getElementById('lesson-level-name').textContent = lv.name[lang];
   document.getElementById('lesson-level-name').style.color = style.text;
-  document.getElementById('lesson-counter').textContent = t.lesson + ' ' + (lessonIdx + 1) + ' ' + t.of + ' ' + lv.lessons.length;
+  document.getElementById('lesson-counter').textContent = t.lesson + ' ' + (lessonIdx + 1) + ' ' + t.of + ' ' + allLessons.length;
   document.getElementById('lv-footer').textContent = t.footer;
   var imgTop = '', imgSide = '';
   var lesTitle = pickLang(les.title, lang);
@@ -324,7 +315,6 @@ function renderLesson() {
     imgSide = '<div class="steps-side-img"><img src="' + les.image + '" alt="' + lesTitle + '" loading="lazy"></div>';
   }
 
-  // Module breadcrumb, shown only if this lesson belongs to a module
   var moduleBadge = entry.moduleTitle
     ? '<div style="margin-bottom:10px;font-size:12px;color:' + skill.accent + '">📦 ' + pickLang(entry.moduleTitle, lang) + '</div>'
     : '';
@@ -339,10 +329,9 @@ function renderLesson() {
   else if (showRight) stepsWrap = '<div class="steps-with-img" style="flex-direction:row-reverse">' + imgSide + '<div class="steps-list">' + stepsHTML + '</div></div>';
   else stepsWrap = '<div class="steps-list">' + stepsHTML + '</div>';
 
-  // ---- NEW: always-visible boxes (short, high-value context) ----
   var objectives = pickLangArr(les.learningObjectives, lang);
   var objectivesBox = objectives.length
-    ? '<div class="method-box" style="background:#0A1628;border-color:#2563EB40"><div class="box-header"><span class="box-emoji">🎯</span><span class="box-label" style="color:#60A5FA">' + t.howTo.replace('COMMENT FAIRE — ÉTAPE PAR ÉTAPE','OBJECTIFS') + (t.learningObjectives || 'Objectifs') + '</span></div>' + listToHtml(objectives) + '</div>'
+    ? '<div class="method-box" style="background:#0A1628;border-color:#2563EB40"><div class="box-header"><span class="box-emoji">🎯</span><span class="box-label" style="color:#60A5FA">Objectifs</span></div>' + listToHtml(objectives) + '</div>'
     : '';
   var whyItMatters = pickLang(les.whyItMatters, lang);
   var whyBox = whyItMatters
@@ -353,7 +342,6 @@ function renderLesson() {
     ? '<div class="method-box" style="background:#052E16;border-color:#16A34A40"><div class="box-header"><span class="box-emoji">✅</span><span class="box-label" style="color:#4ADE80">À retenir</span></div>' + listToHtml(takeaways) + '</div>'
     : '';
 
-  // ---- NEW: accordion sections (long/dense content) ----
   var dataTableHtml = tableToHtml(les.dataTable);
   var deepExpHtml = paraToHtml(pickLang(les.deepExplanation, lang));
   var accordionSections =
@@ -387,12 +375,7 @@ function renderLesson() {
 }
 
 // ============================================================
-// LIVE SKILLS — loads the latest content saved from the admin
-// "Skills" tab (Supabase table skills_content) so changes appear
-// on the site immediately, without editing data.js.
-// If Supabase is unreachable or the table is empty, the site
-// silently falls back to the SKILLS array already defined in
-// data.js, so it never breaks.
+// LIVE SKILLS
 // ============================================================
 async function loadLiveSkills() {
   try {
@@ -426,10 +409,8 @@ async function loadLiveSkills() {
 })();
 // ============================================================
 // 3D ANIMATION BACKGROUND
-// S'exécute sur toutes les pages du site
 // ============================================================
 (function() {
-    // Attendre que le DOM soit prêt
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init3DBackground);
     } else {
@@ -437,7 +418,6 @@ async function loadLiveSkills() {
     }
 
     function init3DBackground() {
-        // Vérifier que le canvas existe
         var canvas = document.getElementById('bg-3d');
         if (!canvas) {
             console.warn('Canvas #bg-3d non trouvé, création automatique');
@@ -447,7 +427,6 @@ async function loadLiveSkills() {
             document.body.prepend(canvas);
         }
 
-        // Initialisation Three.js
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         var renderer = new THREE.WebGLRenderer({ 
@@ -459,7 +438,6 @@ async function loadLiveSkills() {
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        // ============ PARTICULES (étoiles) ============
         var particlesGeometry = new THREE.BufferGeometry();
         var particlesCount = 400;
         var posArray = new Float32Array(particlesCount * 3);
@@ -489,7 +467,6 @@ async function loadLiveSkills() {
         var particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
         scene.add(particlesMesh);
 
-        // ============ TORE 1 (violet) ============
         var torus1Geo = new THREE.TorusGeometry(2, 0.35, 16, 100);
         var torus1Mat = new THREE.MeshStandardMaterial({
             color: '#6C63FF',
@@ -503,7 +480,6 @@ async function loadLiveSkills() {
         torus1.position.set(-3, 1.5, -4);
         scene.add(torus1);
 
-        // ============ TORE 2 (rose) ============
         var torus2Geo = new THREE.TorusGeometry(1.3, 0.2, 16, 80);
         var torus2Mat = new THREE.MeshStandardMaterial({
             color: '#FF6584',
@@ -517,7 +493,6 @@ async function loadLiveSkills() {
         torus2.position.set(3, -1, -3);
         scene.add(torus2);
 
-        // ============ SPHÈRE (verte) ============
         var sphereGeo = new THREE.SphereGeometry(0.5, 32, 32);
         var sphereMat = new THREE.MeshStandardMaterial({
             color: '#43E97B',
@@ -531,7 +506,6 @@ async function loadLiveSkills() {
         sphere.position.set(-1.5, -2, -2);
         scene.add(sphere);
 
-        // ============ CUBE (orange) ============
         var cubeGeo = new THREE.BoxGeometry(0.7, 0.7, 0.7);
         var cubeMat = new THREE.MeshStandardMaterial({
             color: '#FFA502',
@@ -545,7 +519,6 @@ async function loadLiveSkills() {
         cube.position.set(2.5, 1.8, -3);
         scene.add(cube);
 
-        // ============ ANNEAU ============
         var ringGeo = new THREE.TorusGeometry(1, 0.12, 16, 60);
         var ringMat = new THREE.MeshStandardMaterial({
             color: '#8B85FF',
@@ -561,7 +534,6 @@ async function loadLiveSkills() {
         ring.position.set(0, 0.5, -1.5);
         scene.add(ring);
 
-        // ============ LUMIÈRES ============
         var light1 = new THREE.PointLight('#6C63FF', 0.5, 50);
         light1.position.set(5, 5, 5);
         scene.add(light1);
@@ -575,39 +547,25 @@ async function loadLiveSkills() {
 
         camera.position.z = 5;
 
-        // ============ ANIMATION ============
         function animate() {
             requestAnimationFrame(animate);
-            
-            // Rotation particules
             particlesMesh.rotation.y += 0.0002;
             particlesMesh.rotation.x += 0.0001;
-            
-            // Rotation tores
             torus1.rotation.x += 0.003;
             torus1.rotation.y += 0.005;
-            
             torus2.rotation.x += 0.004;
             torus2.rotation.z += 0.003;
-            
-            // Rotation sphère
             sphere.rotation.x += 0.005;
             sphere.rotation.y += 0.003;
-            
-            // Rotation cube
             cube.rotation.x += 0.003;
             cube.rotation.y += 0.005;
-            
-            // Rotation anneau
             ring.rotation.z += 0.002;
             ring.rotation.x += 0.003;
-            
             renderer.render(scene, camera);
         }
 
         animate();
 
-        // ============ RESIZE ============
         window.addEventListener('resize', function() {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
