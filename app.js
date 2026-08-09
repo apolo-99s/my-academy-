@@ -13,7 +13,7 @@ var currentView = 'academy';
 // LANGUAGE HELPERS — support both content shapes:
 //  - OLD lessons: { fr:'...', ar:'...', en:'...' } for title/method/
 //    exercise/tip, and steps as { fr:[...strings], ar:[...], en:[...] }
-//  - NEW lessons (from enrich-skills v3+): title/method/exercise/
+//  - NEW lessons (from enrich-skills ): title/method/exercise/
 //    tip are still { fr, ar, en } (compatible as-is), but steps are
 //    an ARRAY of { text:{fr,ar,en}, visual }, and fr/ar are often
 //    still empty (content generated in English only for now).
