@@ -6,14 +6,14 @@ function hideLoader(){var l=document.getElementById('loading-screen');l&&(l.styl
 initSupabase().then(()=>{loadSkillsFromSupabase().then(()=>{hideLoader();subscribeToSkills()})});
 var lang = localStorage.getItem('lang') || 'fr';
 var hasAccess = localStorage.getItem('hasAccess') === 'true';
-var skillId = null, levelIdx = 0, lessonIdx = null, openStep = null;
+var skillId = null, levelIdx = 0, lessonIdx = null, openStep = null, openSection = null;
 var currentView = 'academy';
 
 // ============================================================
 // LANGUAGE HELPERS — support both content shapes:
 //  - OLD lessons: { fr:'...', ar:'...', en:'...' } for title/method/
 //    exercise/tip, and steps as { fr:[...strings], ar:[...], en:[...] }
-//  - NEW lessons (from enrich-skills v3/v4): title/method/exercise/
+//  - NEW lessons (from enrich-skills v3+): title/method/exercise/
 //    tip are still { fr, ar, en } (compatible as-is), but steps are
 //    an ARRAY of { text:{fr,ar,en}, visual }, and fr/ar are often
 //    still empty (content generated in English only for now).
@@ -26,12 +26,37 @@ function pickLang(field, l) {
   if (!field) return '';
   return field[l] || field.en || field.fr || field.ar || '';
 }
+function pickLangArr(field, l) {
+  if (!field) return [];
+  return (field[l] && field[l].length ? field[l] : null) || field.en || field.fr || field.ar || [];
+}
 function getStepsArray(les, l) {
   var raw = les.steps;
   if (Array.isArray(raw)) {
     return raw.map(function(s) { return pickLang(s && s.text, l); });
   }
   return (raw && raw[l]) || [];
+}
+
+// ============================================================
+// MODULES HELPER — flattens a level's content into one ordered
+// lesson list: legacy lv.lessons first (unchanged order, so
+// existing progress-by-index stays valid), then each lv.modules[]
+// lesson in order. Levels with no modules behave exactly as
+// before. moduleTitle/moduleDescription are null for legacy
+// lessons so the UI can skip the module header for them.
+// ============================================================
+function getLevelLessons(lv) {
+  var out = [];
+  (lv.lessons || []).forEach(function(les) {
+    out.push({ lesson: les, moduleTitle: null, moduleDescription: null, moduleIndex: -1 });
+  });
+  (lv.modules || []).forEach(function(mod, mi) {
+    (mod.lessons || []).forEach(function(les) {
+      out.push({ lesson: les, moduleTitle: mod.title, moduleDescription: mod.description, moduleIndex: mi });
+    });
+  });
+  return out;
 }
 
 function showView(id) {
@@ -189,13 +214,29 @@ function renderSkill() {
   }).join('');
   var lv = skill.levels[levelIdx];
   var style = getLevelStyle(lv.name[lang]);
+  var allLessons = getLevelLessons(lv);
   document.getElementById('level-info').style.background = style.bg;
   document.getElementById('level-info').style.borderColor = style.border + '40';
-  document.getElementById('level-info').innerHTML = '<div class="level-info-top"><span style="font-size:30px">' + lv.badge + '</span><div><div style="font-size:20px;font-weight:800;color:#fff">' + lv.name[lang] + '</div><div style="font-size:12px;color:#4B5563">' + lv.duration[lang] + '</div></div><div class="level-count" style="' + (isAr ? 'margin-right:auto' : 'margin-left:auto') + '"><div class="level-count-num" style="color:' + style.text + '">' + lv.lessons.length + '</div><div class="level-count-lbl">' + t.lessons + '</div></div></div><p style="color:#6B7280;font-size:13px;margin:0"><strong style="color:#9CA3AF">' + t.goal + ':</strong> ' + lv.goal[lang] + '</p>';
-  document.getElementById('lesson-cards').innerHTML = lv.lessons.map(function(les, i) {
+  document.getElementById('level-info').innerHTML = '<div class="level-info-top"><span style="font-size:30px">' + lv.badge + '</span><div><div style="font-size:20px;font-weight:800;color:#fff">' + lv.name[lang] + '</div><div style="font-size:12px;color:#4B5563">' + lv.duration[lang] + '</div></div><div class="level-count" style="' + (isAr ? 'margin-right:auto' : 'margin-left:auto') + '"><div class="level-count-num" style="color:' + style.text + '">' + allLessons.length + '</div><div class="level-count-lbl">' + t.lessons + '</div></div></div><p style="color:#6B7280;font-size:13px;margin:0"><strong style="color:#9CA3AF">' + t.goal + ':</strong> ' + lv.goal[lang] + '</p>';
+
+  // Build lesson cards, inserting a module header whenever the
+  // module changes (legacy lessons with moduleIndex -1 get no header)
+  var cardsHtml = '';
+  var lastModuleIndex = 'none';
+  allLessons.forEach(function(entry, i) {
+    if (entry.moduleIndex !== lastModuleIndex && entry.moduleTitle) {
+      cardsHtml += '<div class="module-header" style="margin:' + (i === 0 ? '0' : '20px') + ' 0 10px;padding:12px 16px;border-radius:10px;background:' + skill.color + '14;border-left:3px solid ' + skill.color + '">' +
+        '<div style="font-weight:800;font-size:14px;color:#fff">📦 ' + pickLang(entry.moduleTitle, lang) + '</div>' +
+        (entry.moduleDescription ? '<div style="font-size:12px;color:#9CA3AF;margin-top:4px">' + pickLang(entry.moduleDescription, lang) + '</div>' : '') +
+        '</div>';
+    }
+    lastModuleIndex = entry.moduleIndex;
+    var les = entry.lesson;
     var done = isLessonComplete(skill.id, levelIdx, i);
-    return '<div class="lesson-card" onclick="goLesson(' + i + ')" onmouseenter="this.style.borderColor=\'' + skill.color + '66\'" onmouseleave="this.style.borderColor=\'#1C1C28\'"><span class="lesson-num' + (done ? ' done' : '') + '" style="' + (done ? '' : 'background:' + skill.color + '22;border:1px solid ' + skill.color + '44;color:' + skill.accent) + '">' + (done ? '✓' : (i + 1)) + '</span><div class="lesson-info"><div class="lesson-title-text">' + pickLang(les.title, lang) + '</div><div class="lesson-meta">' + getStepsArray(les, lang).length + ' étapes · exercice inclus</div></div><span style="color:#374151;font-size:20px;flex-shrink:0;transform:' + (isAr ? 'rotate(180deg)' : 'none') + '">→</span></div>';
-  }).join('');
+    cardsHtml += '<div class="lesson-card" onclick="goLesson(' + i + ')" onmouseenter="this.style.borderColor=\'' + skill.color + '66\'" onmouseleave="this.style.borderColor=\'#1C1C28\'"><span class="lesson-num' + (done ? ' done' : '') + '" style="' + (done ? '' : 'background:' + skill.color + '22;border:1px solid ' + skill.color + '44;color:' + skill.accent) + '">' + (done ? '✓' : (i + 1)) + '</span><div class="lesson-info"><div class="lesson-title-text">' + pickLang(les.title, lang) + '</div><div class="lesson-meta">' + getStepsArray(les, lang).length + ' étapes · exercice inclus</div></div><span style="color:#374151;font-size:20px;flex-shrink:0;transform:' + (isAr ? 'rotate(180deg)' : 'none') + '">→</span></div>';
+  });
+  document.getElementById('lesson-cards').innerHTML = cardsHtml;
+
   var nav = '';
   if (levelIdx > 0) nav += '<button class="nav-prev" onclick="goLevel(' + (levelIdx - 1) + ')">' + (isAr ? '→' : '←') + ' ' + skill.levels[levelIdx - 1].name[lang] + '</button>';
   else nav += '<button class="nav-prev" onclick="renderAcademy()">' + (isAr ? '→' : '←') + ' ' + t.backSkills + '</button>';
@@ -204,11 +245,50 @@ function renderSkill() {
   showView('skill-view');
 }
 
-function goLesson(i) { lessonIdx = i; openStep = null; renderLesson(); }
-function prevLesson() { lessonIdx--; openStep = null; renderLesson(); }
-function nextLesson() { lessonIdx++; openStep = null; renderLesson(); }
+function goLesson(i) { lessonIdx = i; openStep = null; openSection = null; renderLesson(); }
+function prevLesson() { lessonIdx--; openStep = null; openSection = null; renderLesson(); }
+function nextLesson() { lessonIdx++; openStep = null; openSection = null; renderLesson(); }
 function nextLevel() { levelIdx++; lessonIdx = null; renderSkill(); }
 function toggleStep(i) { openStep = openStep === i ? null : i; renderLesson(); }
+function toggleSection(key) { openSection = openSection === key ? null : key; renderLesson(); }
+
+// ------------------------------------------------------------
+// Accordion section renderer for the new rich fields — reuses the
+// same visual language as the steps accordion (border, click to
+// expand, arrow indicator) so it feels native to the existing page.
+// Skips rendering entirely if the field is empty (old lessons).
+// ------------------------------------------------------------
+function renderAccordionSection(key, emoji, label, bodyHtml, skillColor) {
+  if (!bodyHtml) return '';
+  var isOpen = openSection === key;
+  return '<div class="step-item" style="border-color:' + (isOpen ? skillColor + '60' : '#1C1C28') + ';margin-bottom:8px">' +
+    '<button class="step-btn" onclick="toggleSection(\'' + key + '\')">' +
+      '<span class="step-num" style="' + (isOpen ? 'background:' + skillColor + ';color:#fff' : '') + '">' + emoji + '</span>' +
+      '<span class="step-text" style="color:' + (isOpen ? '#fff' : '#9CA3AF') + ';font-weight:' + (isOpen ? 600 : 400) + '">' + label + '</span>' +
+      '<span class="step-toggle">' + (isOpen ? '▲' : '▼') + '</span>' +
+    '</button>' +
+    (isOpen ? '<div class="step-expanded" style="display:block;padding:0 16px 16px 52px">' + bodyHtml + '</div>' : '') +
+  '</div>';
+}
+function listToHtml(items) {
+  if (!items || !items.length) return '';
+  return '<ul style="margin:0;padding-left:18px;line-height:1.7">' + items.map(function(i) { return '<li>' + i + '</li>'; }).join('') + '</ul>';
+}
+function paraToHtml(text) {
+  if (!text) return '';
+  return text.split('\n\n').map(function(p) {
+    return '<p style="margin:0 0 12px;line-height:1.7">' + p.replace(/\n- /g, '<br>• ') + '</p>';
+  }).join('');
+}
+function tableToHtml(dt) {
+  if (!dt || !dt.headers || !dt.rows) return '';
+  var head = '<tr>' + dt.headers.map(function(h) { return '<th style="text-align:left;padding:8px 10px;border-bottom:2px solid #374151;color:#E5E7EB;font-size:12px">' + h + '</th>'; }).join('') + '</tr>';
+  var body = dt.rows.map(function(row) {
+    return '<tr>' + row.map(function(c) { return '<td style="padding:8px 10px;border-bottom:1px solid #1C1C28;color:#9CA3AF;font-size:12px">' + c + '</td>'; }).join('') + '</tr>';
+  }).join('');
+  return (dt.caption ? '<div style="font-size:11px;color:#6B7280;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">' + dt.caption + '</div>' : '') +
+    '<table style="width:100%;border-collapse:collapse;margin-bottom:14px">' + head + body + '</table>';
+}
 
 function renderLesson() {
   var t = T[lang];
@@ -216,8 +296,10 @@ function renderLesson() {
   if (!skill) { console.error('Skill not found'); return; }
   var lv = skill.levels[levelIdx];
   if (!lv) { console.error('Level not found'); return; }
-  var les = lv.lessons[lessonIdx];
-  if (!les) { console.error('Lesson not found'); return; }
+  var allLessons = getLevelLessons(lv);
+  var entry = allLessons[lessonIdx];
+  if (!entry) { console.error('Lesson not found'); return; }
+  var les = entry.lesson;
   markLessonComplete(skill.id, levelIdx, lessonIdx);
   var style = getLevelStyle(lv.name[lang]);
   var isAr = lang === 'ar';
@@ -241,6 +323,12 @@ function renderLesson() {
   } else if (les.image && (showLeft || showRight)) {
     imgSide = '<div class="steps-side-img"><img src="' + les.image + '" alt="' + lesTitle + '" loading="lazy"></div>';
   }
+
+  // Module breadcrumb, shown only if this lesson belongs to a module
+  var moduleBadge = entry.moduleTitle
+    ? '<div style="margin-bottom:10px;font-size:12px;color:' + skill.accent + '">📦 ' + pickLang(entry.moduleTitle, lang) + '</div>'
+    : '';
+
   var stepsHTML = steps.map(function(step, i) {
     var isOpen = openStep === i;
     var preview = step.length > 80 ? step.substring(0, 80) + '…' : step;
@@ -250,12 +338,51 @@ function renderLesson() {
   if (showLeft) stepsWrap = '<div class="steps-with-img">' + imgSide + '<div class="steps-list">' + stepsHTML + '</div></div>';
   else if (showRight) stepsWrap = '<div class="steps-with-img" style="flex-direction:row-reverse">' + imgSide + '<div class="steps-list">' + stepsHTML + '</div></div>';
   else stepsWrap = '<div class="steps-list">' + stepsHTML + '</div>';
+
+  // ---- NEW: always-visible boxes (short, high-value context) ----
+  var objectives = pickLangArr(les.learningObjectives, lang);
+  var objectivesBox = objectives.length
+    ? '<div class="method-box" style="background:#0A1628;border-color:#2563EB40"><div class="box-header"><span class="box-emoji">🎯</span><span class="box-label" style="color:#60A5FA">' + t.howTo.replace('COMMENT FAIRE — ÉTAPE PAR ÉTAPE','OBJECTIFS') + (t.learningObjectives || 'Objectifs') + '</span></div>' + listToHtml(objectives) + '</div>'
+    : '';
+  var whyItMatters = pickLang(les.whyItMatters, lang);
+  var whyBox = whyItMatters
+    ? '<div class="method-box" style="background:#1A0E00;border-color:#B4530940"><div class="box-header"><span class="box-emoji">⚡</span><span class="box-label" style="color:#FB923C">Pourquoi c\'est important</span></div><p class="box-text" style="color:#D1A374">' + whyItMatters + '</p></div>'
+    : '';
+  var takeaways = pickLangArr(les.keyTakeaways, lang);
+  var takeawaysBox = takeaways.length
+    ? '<div class="method-box" style="background:#052E16;border-color:#16A34A40"><div class="box-header"><span class="box-emoji">✅</span><span class="box-label" style="color:#4ADE80">À retenir</span></div>' + listToHtml(takeaways) + '</div>'
+    : '';
+
+  // ---- NEW: accordion sections (long/dense content) ----
+  var dataTableHtml = tableToHtml(les.dataTable);
+  var deepExpHtml = paraToHtml(pickLang(les.deepExplanation, lang));
+  var accordionSections =
+    renderAccordionSection('deep', '🧬', 'Explication détaillée', dataTableHtml + deepExpHtml, skill.color) +
+    renderAccordionSection('example', '🌍', 'Exemple concret', pickLang(les.realWorldExample, lang) ? '<p style="line-height:1.7;margin:0">' + pickLang(les.realWorldExample, lang) + '</p>' : '', skill.color) +
+    renderAccordionSection('mistakes', '⚠️', 'Erreurs courantes', listToHtml(pickLangArr(les.commonMistakes, lang)), skill.color) +
+    renderAccordionSection('best', '🏆', 'Bonnes pratiques du métier', listToHtml(pickLangArr(les.industryBestPractices, lang)), skill.color) +
+    renderAccordionSection('quiz', '❓', 'Quiz', listToHtml(pickLangArr(les.quiz, lang)), skill.color);
+
   var hasPrev = lessonIdx > 0;
-  var hasNext = lessonIdx < lv.lessons.length - 1;
+  var hasNext = lessonIdx < allLessons.length - 1;
   var hasNextLv = levelIdx < skill.levels.length - 1;
   var prevBtn = hasPrev ? '<button class="lesson-nav-prev" onclick="prevLesson()">' + (isAr ? '→' : '←') + ' ' + t.prevLesson.replace(/[←→]/g, '').trim() + '</button>' : '<button class="lesson-nav-prev" onclick="renderSkill()">' + (isAr ? '→' : '←') + ' ' + t.back.replace(/[←→]/g, '').trim() + '</button>';
   var nextBtn = hasNext ? '<button class="lesson-nav-next" style="background:' + skill.color + '" onclick="nextLesson()">' + t.nextLesson.replace(/[←→]/g, '').trim() + ' ' + (isAr ? '←' : '→') + '</button>' : hasNextLv ? '<button class="lesson-nav-next" style="background:' + skill.color + '" onclick="nextLevel()">' + t.nextLevel + ': ' + skill.levels[levelIdx + 1].name[lang] + ' ' + (isAr ? '←' : '→') + '</button>' : '<div class="lesson-complete" style="color:' + skill.accent + ';border-color:' + skill.color + '50">' + t.complete + '</div>';
-  document.getElementById('lesson-body').innerHTML = '<div style="margin-bottom:20px"><span style="background:' + style.bg + ';border:1px solid ' + style.border + ';color:' + style.text + ';border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600">' + style.badge + ' ' + lv.name[lang] + '</span><span style="font-size:12px;color:#374151;margin-left:8px">' + t.lesson + ' ' + (lessonIdx + 1) + '</span></div><h1 style="font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 24px;line-height:1.25">' + lesTitle + '</h1>' + imgTop + '<div style="margin-bottom:28px"><div class="steps-header"><div class="steps-bar" style="background:' + skill.color + '"></div><span class="steps-label">' + t.howTo + '</span></div>' + stepsWrap + '</div><div class="method-box" style="background:#0A0E18;border-color:' + skill.color + '30"><div class="box-header"><span class="box-emoji">🧠</span><span class="box-label" style="color:' + skill.accent + '">' + t.bestWay + '</span></div><p class="box-text" style="color:#9CA3AF">' + pickLang(les.method, lang) + '</p></div><div class="method-box" style="background:#0E0A00;border-color:#92400E40"><div class="box-header"><span class="box-emoji">💪</span><span class="box-label" style="color:#FCD34D">' + t.exercise + '</span></div><p class="box-text" style="color:#D97706">' + pickLang(les.exercise, lang) + '</p></div>' + (les.tip ? '<div class="tip-box"><p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0">' + pickLang(les.tip, lang) + '</p></div>' : '') + '<div class="lesson-nav">' + prevBtn + nextBtn + '</div>';
+
+  document.getElementById('lesson-body').innerHTML =
+    '<div style="margin-bottom:20px"><span style="background:' + style.bg + ';border:1px solid ' + style.border + ';color:' + style.text + ';border-radius:8px;padding:4px 12px;font-size:12px;font-weight:600">' + style.badge + ' ' + lv.name[lang] + '</span><span style="font-size:12px;color:#374151;margin-left:8px">' + t.lesson + ' ' + (lessonIdx + 1) + '</span></div>' +
+    moduleBadge +
+    '<h1 style="font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin:0 0 24px;line-height:1.25">' + lesTitle + '</h1>' +
+    imgTop +
+    objectivesBox + whyBox +
+    '<div style="margin-bottom:28px"><div class="steps-header"><div class="steps-bar" style="background:' + skill.color + '"></div><span class="steps-label">' + t.howTo + '</span></div>' + stepsWrap + '</div>' +
+    '<div class="method-box" style="background:#0A0E18;border-color:' + skill.color + '30"><div class="box-header"><span class="box-emoji">🧠</span><span class="box-label" style="color:' + skill.accent + '">' + t.bestWay + '</span></div><p class="box-text" style="color:#9CA3AF">' + pickLang(les.method, lang) + '</p></div>' +
+    '<div class="method-box" style="background:#0E0A00;border-color:#92400E40"><div class="box-header"><span class="box-emoji">💪</span><span class="box-label" style="color:#FCD34D">' + t.exercise + '</span></div><p class="box-text" style="color:#D97706">' + pickLang(les.exercise, lang) + '</p></div>' +
+    accordionSections +
+    takeawaysBox +
+    (les.tip ? '<div class="tip-box"><p style="color:#6B7280;font-size:13px;line-height:1.65;margin:0">' + pickLang(les.tip, lang) + '</p></div>' : '') +
+    '<div class="lesson-nav">' + prevBtn + nextBtn + '</div>';
+
   showView('lesson-view');
 }
 
